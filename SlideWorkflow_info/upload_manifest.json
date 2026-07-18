@@ -1,0 +1,14 @@
+{
+	"packageName":"SlideWorkflow",
+	"files":[
+		"SlideWorkflow.wl",
+		"test codes\/slideworkflow_test.wls"
+	],
+	"directories":[
+		"SlideWorkflow_info"
+	],
+	"excludePatterns":[
+		"SlideWorkflow_info\/history\/",
+		"SlideWorkflow_info\/references\/"
+	]
+}
