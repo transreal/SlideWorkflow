@@ -1,8 +1,7 @@
 {
 	"packageName":"SlideWorkflow",
 	"files":[
-		"SlideWorkflow.wl",
-		"test codes\/slideworkflow_test.wls"
+		"SlideWorkflow.wl"
 	],
 	"directories":[
 		"SlideWorkflow_info"

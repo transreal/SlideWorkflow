@@ -16,7 +16,7 @@
 
 ### ラスタライズの安定性へのこだわり
 
-画像・動画書き出しは、クリップボードやウィンドウのスナップショットに依存しない設計になっている点が最大の特徴です。スライドのセル列からNotebook式を直接構成し、`ScreenStyleEnvironment->"SlideShow"` で `Rasterize` してから16:9キャンバスへ合成するため、FEセッションが裏で他の操作をしていても、あるいは `wolframscript` のheadless環境でも同じ結果が得られます。合成時には `$SlideMargins` に基づく余白処理(全面画像ページには適用しない)や、内容が高さに収まらない場合の自動リフロー・縮小(警告メッセージ付き)といった安定化ロジックが組み込まれています。動画書き出し(`SlideDeckExportVideo`)はSliden(VRChat)との互換性を重視し、既定では1枚あたり約1秒(30fps)・先頭スライドは29フレーム・末尾スライドを重複させるフレーム構成を採用しています。
+画像・動画書き出しは、クリップボードやウィンドウのスナップショットに依存しない設計になっている点が最大の特徴です。スライドのセル列からNotebook式を直接構成し、`ScreenStyleEnvironment->"SlideShow"` で `Rasterize` してから16:9キャンバスへ合成するため、FEセッションが裏で他の操作をしていても、あるいは `wolframscript` のheadless環境でも同じ結果が得られます。合成時には `$SlideMargins` に基づく余白処理(全面画像ページには適用しない)や、内容が高さに収まらない場合の自動リフロー・縮小(警告メッセージ付き)といった安定化ロジックが組み込まれています。書き出しに含めるInput/Codeセルの扱いは `$SlideIncludeInput`(既定`Automatic`)で一元制御でき、個別セルは`CellTags->"ShowInput"`で設定によらず常に残せます。動画書き出し(`SlideDeckExportVideo`)はSliden(VRChat)との互換性を重視し、既定では1枚あたり約1秒(30fps)・先頭スライドは29フレーム・末尾スライドを重複させるフレーム構成を採用しています。
 
 ### テーマとフォントの一元管理
 
@@ -24,7 +24,7 @@
 
 ### インタラクティブ編集レイヤーの統合
 
-旧 `SlideWorkflow_interactive.wl` は2026-07-13に本体 `SlideWorkflow.wl` へ統合され、個別に `Needs` する必要がなくなりました。`ShowSlidePalette[]` で開くパレットから、スライドの追加・LLMによる本文展開(`SlideExpand`)・翻訳・出典やメモなど補助セルの挿入までを対話的に行えます。既定の展開経路(`$SlideExpandMode="Agent"`)では `ClaudeEval`([ClaudeRuntime](https://github.com/transreal/ClaudeRuntime)経由)にエージェント処理を委譲し、文献検索・図生成・出典付与を行った上で、書き込みは常に決定的な `SlideApplyScenario` の一点に限定されます。これにより、LLMによる自由度の高い展開と、ノートブック構造を壊さない安全な適用とを両立させています。
+旧 `SlideWorkflow_interactive.wl` は2026-07-13に本体 `SlideWorkflow.wl` へ統合され、個別に `Needs` する必要がなくなりました。`ShowSlidePalette[]` で開くパレットから、スライドの追加・LLMによる本文展開(`SlideExpand`)・翻訳・出典やメモなど補助セルの挿入までを対話的に行えます。既定の展開経路(`$SlideExpandMode="Agent"`)では `ClaudeEval`([ClaudeRuntime](https://github.com/transreal/ClaudeRuntime)経由)にエージェント処理を委譲し、文献検索・図生成・出典付与を行った上で、書き込みは常に決定的な `SlideApplyScenario` の一点に限定されます。これにより、LLMによる自由度の高い展開と、ノートブック構造を壊さない安全な適用とを両立させています。展開プロンプトの挙動は `$SlideVisualsPerSlide`(各スライドに図・表を要求)や `$SlideTalkPerSlide`(発表原稿を各スライド末尾に要求)で調整でき、発表原稿・音声応答・手元リモコン連携は [SourceVault](https://github.com/transreal/SourceVault) と組み合わせて拡張できます。
 
 ---
 
@@ -38,6 +38,7 @@
   - `SlideDeckExportVideo` でmp4を書き出す場合、環境によってはFFmpegが必要です。未インストールの場合は事前に導入し、PATHに通しておいてください。
   - クリップボードやウィンドウスナップショットに依存しないため、headless(wolframscript)環境でも同じ結果が得られます。
   - インタラクティブ編集レイヤーの `SlideExpand[]` を既定の `$SlideExpandMode="Agent"` で使う場合は、[ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) 経由で `ClaudeEval` が呼び出せる環境が必要です。未導入でも `$SlideExpandMode = "Direct"` に切り替えれば軽量経路で動作します。
+  - 発表原稿の読み上げ・リアルタイム音声応答・手元リモコン連携(SlideTalk系列・`SlidePlay`・`SlideRemoteStart`など)を使う場合は [SourceVault](https://github.com/transreal/SourceVault) が必要です。未導入でもスライド生成・画像/動画書き出しなど基本機能には影響しません。手元リモコン連携はWindows専用です。
 - **フォント(任意)**: タイトル強調に既定で "Hiragino Kaku Gothic Std" を使用します。同フォントがない環境では `$SlideHeavyFontFamily` を手元のフォント名に上書きしてください。
 
 ### インストール
@@ -73,6 +74,8 @@
 5. (任意)[NotebookExtensions](https://github.com/transreal/NotebookExtensions) を導入すると、`NotebookExtensions\`$fontFamily` が定義されていれば `$SlideFontFamily` が自動でそれを利用します。未導入でも動作します。
 
 6. (任意)`SlideExpand[]` を既定の `"Agent"` モードで使う場合は、[ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) を併せて導入してください。未導入の場合は `$SlideExpandMode = "Direct"` に設定すれば軽量経路で動作します。
+
+7. (任意)発表原稿のローカル音声合成・再生、リアルタイム音声応答、文献・PDF参照(`SlidePDFFigure`等)を使う場合は、[SourceVault](https://github.com/transreal/SourceVault) を同様に `$packageDirectory` へ配置し `Needs` で読み込んでください。未導入でもスライド生成・画像/動画書き出しは通常どおり動作します。
 
 ### クイックスタート
 
@@ -111,15 +114,16 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 
 ### 主な機能
 
-- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。
+- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)や `talk:` 行による発表原稿の埋め込みにも対応。
 - **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。
 - **デッキ参照**: `SlideDeckSlides`(コア分解関数、Appendix領域も分離)、`SlideDeckOverview`(番号・タイトル・セル数・画像有無のDataset表示)。
 - **スライド単位編集**: `SlideDeckReplaceSlide` / `SlideDeckInsertSlide` / `SlideDeckDeleteSlide` / `SlideDeckMoveSlide`。既定で`.bak`付き上書き、`"Target"`指定で別名保存可能。
-- **安定した画像書き出し**: `SlideDeckImages` / `SlideDeckExportImages` によるクリップボード・ウィンドウ非依存の16:9ラスタライズ(headless環境対応)。内容が縦に収まらないスライドは `"Reflow"` オプション(既定 `True`)により折返し幅を自動探索し、余白を抑えて縮小率を最小化する。
-- **動画書き出し**: `SlideDeckExportVideo` によるSliden(VRChat)互換mp4の生成(表示秒数のカスタマイズ可)。
+- **安定した画像書き出し**: `SlideDeckImages` / `SlideDeckExportImages` によるクリップボード・ウィンドウ非依存の16:9ラスタライズ(headless環境対応)。内容が縦に収まらないスライドは `"Reflow"` オプション(既定 `True`、上限は`"MaxWindowWidth"`)により折返し幅を自動探索し、余白を抑えて縮小率を最小化する。書き出しに含めるInput/Codeセルは `$SlideIncludeInput`(既定`Automatic`、ノートブックの表示どおり)で制御でき、個別セルは`CellTags->"ShowInput"`で常に残せる。
+- **動画書き出し**: `SlideDeckExportVideo` によるSliden(VRChat)互換mp4の生成(表示秒数のカスタマイズ可)。パレットからの書き出しは `$SlideExportExternal`(既定`Automatic`)で別プロセス(wolframscript)実行とFE内処理を自動フォールバック切り替え。
 - **テーマ管理**: `$SlideTheme` / `SlideThemeColor` によるスライド・図の配色統一。
-- **補助セル・出典**: `"Note"`/`"Directive"`/`"Dictionary"`/`"Bibliography"`/`"SlidePrompt"` の各メタセル(書き出し除外)と、出典明記用のCitationセルに対応。図・コードセルは `<<FIGn>>` トークンで再展開時にも保持できる。
-- **インタラクティブ編集(統合パレット)**: `ShowSlidePalette` から、スライド追加(`SlideAddSlide`)・LLMによる展開(`SlideExpand`、決定的な適用口として`SlideApplyScenario`)・翻訳(`SlideTranslate`/`SlideTranslateRevert`/`SlideTranslateDeck`)・各種補助セルの挿入をまとめて行える。`$SlideExpandMode`(既定`"Agent"`、軽量な`"Direct"`も選択可)、`$SlideTranslationLanguage` で挙動を調整。
+- **補助セル・出典・文献**: `"Note"`/`"Directive"`/`"Dictionary"`/`"Bibliography"`/`"References"`/`"SlidePrompt"`/`"SlideTalk"` の各メタセル(書き出し除外)と、出典明記用のCitationセルに対応。`SlideInsertReferences` で文献リストセルを挿入し、`SlidePDFFigure` でPDFページを図として切り出せる。図・コードセルは `<<FIGn>>` トークンで再展開時にも保持できる。
+- **インタラクティブ編集(統合パレット)**: `ShowSlidePalette` から、スライド追加(`SlideAddSlide`)・LLMによる展開(`SlideExpand`、決定的な適用口として`SlideApplyScenario`)・翻訳(`SlideTranslate`/`SlideTranslateRevert`/`SlideTranslateDeck`)・各種補助セルの挿入をまとめて行える。`$SlideExpandMode`(既定`"Agent"`、軽量な`"Direct"`も選択可)、`$SlideTranslationLanguage`、`$SlideVisualsPerSlide`(図表の自動付与)、`$SlideTalkPerSlide`(発表原稿の自動生成)、`$SlideHideToolbarInSlideshow`(SlideShow切替時のツールバー退避)で挙動を調整。
+- **発表原稿・音声・リモコン連携(SourceVault併用)**: `SlideTalk`系のローカル音声合成・再生、リアルタイム音声応答、手元デバイス(メディアキー)によるリモート操作(`SlidePlay`・`SlideRemoteStart`など、Windows専用)。未導入でもスライド生成・画像/動画書き出しには影響しません。
 
 ### ドキュメント一覧
 
@@ -130,7 +134,7 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 
 ## 使用例・デモ
 
-上記「クイックスタート」の一連の流れが基本的な使用例です。さらに詳しい例(スライドの差し替え・挿入・削除・移動、テーマカラーの取得など)は [example.md](example.md) を参照してください。インタラクティブ編集レイヤー(パレット・`SlideExpand`・翻訳)の使用例は [user_manual.md](user_manual.md) にまとめています。本パッケージにはオンラインのデモURLは特に用意されていません。
+上記「クイックスタート」の一連の流れが基本的な使用例です。さらに詳しい例(スライドの差し替え・挿入・削除・移動、テーマカラーの取得など)は [example.md](example.md) を参照してください。インタラクティブ編集レイヤー(パレット・`SlideExpand`・翻訳・発表原稿/音声/リモコン連携)の使用例は [user_manual.md](user_manual.md) にまとめています。本パッケージにはオンラインのデモURLは特に用意されていません。
 
 ---
 
