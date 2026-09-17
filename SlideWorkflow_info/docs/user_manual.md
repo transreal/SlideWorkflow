@@ -1,11 +1,3 @@
-# SlideWorkflow ユーザーマニュアル
-
-`SlideWorkflow`は、Markdownや連想リストで書いたシナリオからスライドノートブックを生成し、既存デッキをスライド単位で編集し、16:9画像やSliden用mp4として安定して書き出すためのパッケージです。加えて、スライド作成用パレットからのインタラクティブな編集(スライド追加・LLMによる展開・翻訳・補助セル挿入)、発表原稿(トーク)の作成とSourceVaultのローカル音声/クラウド音声応答による自動読み上げ、手元デバイス(メディアキー)でのリモート操作にも対応します。
-
-導入・環境設定については `setup.md` を参照してください。ここでは各公開関数の使い方を機能別に説明します。
-
----
-
 ## 1. 定数($-記号)
 
 スタイルやレイアウトの既定値を保持するグローバル変数です。値を直接書き換えることで以降の生成・書き出しに反映されます。
@@ -238,7 +230,7 @@ $SlideExportExternal = False;
 
 ## 8. インタラクティブ編集(スライドパレット)
 
-旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
+旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿・質疑応答・調整)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
 
 ### 8.1 バージョンとパレット表示
 
@@ -312,6 +304,20 @@ SlideApplyScenario[3, "## 更新後のタイトル {expected=45}\n- 新しい要
   "Figures" -> {myNewGraphic}]
 ```
 
+#### `SlideDeckInsertScenario`
+
+`SlideDeckInsertScenario[nb, afterN, md]`は、シナリオMarkdown `md`のスライド群を、開いているデッキの`afterN`枚目の直後へ挿入します(`afterN=0`で先頭)。`SlideApplyScenario`と違い、既存スライドには一切触れません(既存スライドを差し替えたいときは`SlideApplyScenario`を使います)。
+
+- `md`には複数の`##`を含められ、その枚数だけスライドが挿入されます。
+- `md`中の`<<FIGn>>`トークンは`"Figures"`オプションで渡した新規図(`Graphics`/`Image`)に対応します(既存セルの再利用はありません)。
+- 成功時は`Success`、失敗時は`Failure`を返します。
+
+オプション: `"Figures"->{}`
+
+```wolfram
+SlideDeckInsertScenario[nb, 3, "## 追加スライド {expected=30}\n- 新しい要点\n"]
+```
+
 ### 8.4 翻訳
 
 `SlideTranslate` / `SlideTranslateRevert` / `SlideTranslateDeck` / `$SlideTranslationLanguage`
@@ -366,7 +372,7 @@ SlideToggleScreenEnvironment[]
 
 #### `SlideEnsureDeckStyles`
 
-デッキにメタセル用スタイル定義(`Note`/`Directive`/`Dictionary`/`Bibliography`/`References`/`SlidePrompt`。`SlideShow`環境で非表示)を埋め込みます。パレットの挿入・展開・表示切替から自動で呼ばれ、`documentation.wl`の`DocInsert*`もこの定義を共用します。
+デッキにメタセル用スタイル定義(`Note`/`Directive`/`Dictionary`/`Bibliography`/`References`/`SlidePrompt`/`SlideTalk`/`SlideQA`。`SlideShow`環境で非表示)を埋め込みます。パレットの挿入・展開・表示切替から自動で呼ばれ、`documentation.wl`の`DocInsert*`もこの定義を共用します。
 
 ```wolfram
 SlideEnsureDeckStyles[nb]
@@ -380,7 +386,7 @@ SlideEnsureDeckStyles[nb]
 $SlideHideToolbarInSlideshow = True;
 ```
 
-### 8.7 図・表・引用元PDFの補助関数
+### 8.7 図・表・引用元PDF・素材ノートブックの補助関数
 
 #### `SlideTable`
 
@@ -414,6 +420,52 @@ SlidePDFImages["C:\\papers\\paper.pdf", "MinSize" -> 120]
 SlideDeckFigure["lecture1.nb", 5]
 ```
 
+#### `SlideNotebookOutline`
+
+`SlideNotebookOutline[src]`は素材ノートブック(論文の和訳.nbなど、スライドデッキでない一般の.nb)の見出し構成を返します。各要素は`<|"N", "Style", "Title", "Chars"(その節の本文文字数), "Figures"(その節にある図番号)|>`。まず構成を見て、必要な節だけを`SlideNotebookText[src, 見出し]`で読むと文脈を節約できます。`src`は`SlidePDFFigure`と同じlocator(パス / `eagle:ID` / `sv://URI` / Referencesのkey)。
+
+```wolfram
+SlideNotebookOutline["paper_ja.nb"]
+```
+
+#### `SlideNotebookText`
+
+`SlideNotebookText[src]`は素材ノートブックの本文を`"[Style] 本文"`行の並びで返します(図の位置は`"[FIGn]"`行)。`SlideNotebookText[src, 見出し|見出し番号]`はその節だけを返します。数式(DisplayFormula)も含みます。セルから画像ボックスを外してから文字列化するので、生のImportと違ってRasterの圧縮データが本文に混ざりません。数式セルの行頭には`"[EQn]"`が付き、本文には元のLaTeX(変換ノートがTaggingRulesに保持していれば)を出すので、数式を誤読しません。そのままスライドへ引用するには`SlideNotebookFormula[src, n]`を使います。
+
+オプション: `"MaxCharacters"`(既定40000、超過分は切り詰めて注記) / `"Styles"`(既定Automatic = 本文系スタイル)。LLM生成コードではImport / Getが恒久禁止headなので、素材.nbを読むときはこれを使います。
+
+```wolfram
+SlideNotebookText["paper_ja.nb", "3. 提案手法"]
+```
+
+#### `SlideNotebookFormula`
+
+`SlideNotebookFormula[src, n]`は素材ノートブックのn番目の数式(`SlideNotebookText`の`"[EQn]"`に対応)を、**元セルの組版を保ったまま**Cellで返します。`SlideApplyScenario`の`"Figures"->{...}`にそのまま渡せば、スライドに組版済みの数式として載ります(プレーン文字列へ潰して書き直さないこと)。
+
+オプション: `"Style"`(既定`"DisplayFormula"`) / `FontSize` / `FontColor`。
+
+```wolfram
+SlideApplyScenario[3, md, "Figures" -> {SlideNotebookFormula["paper_ja.nb", 2]}]
+```
+
+#### `SlideNotebookFigure`
+
+`SlideNotebookFigure[src, n]`は素材ノートブックのn番目の図(`SlideNotebookText`の`"[FIGn]"`に対応)を`Image`で返します。原図をそのまま引用するための入口で、`SlideApplyScenario`の`"Figures"->{...}`にそのまま渡せます(`cite: `を必ず付します)。図の総数と所在は`SlideNotebookOutline` / `SlideNotebookText`の`[FIGn]`で分かります。返す画像は長辺`$SlideNotebookFigureMaxSize`(既定1200px、`"MaxSize"`で変更可)に収めます — デッキのラスタ化で実際に出るのは高々1120pxなので、それ以上はノートブックを重くするだけになります。
+
+```wolfram
+SlideNotebookFigure["paper_ja.nb", 1]
+```
+
+#### `$SlideNotebookFigureMaxSize` / `$SlideNotebookRasterizeSeconds`
+
+- `$SlideNotebookFigureMaxSize` — `SlideNotebookFigure`が返す図の長辺上限px(既定1200)。デッキはWindowWidth 960を1920へ2倍でラスタ化し、図セルは`ImageSize->560`なので、最終画像に出るのは高々1120px。それを超える画素はノートブックを重くするだけです。
+- `$SlideNotebookRasterizeSeconds` — `SlideNotebookFigure`がベクタ図を`Rasterize`する際の上限秒(既定30)。`Rasterize`はフロントエンドを要求するので、必ず時間で切ります。
+
+```wolfram
+$SlideNotebookFigureMaxSize = 1200;
+$SlideNotebookRasterizeSeconds = 30;
+```
+
 #### `SlideSourceFile`
 
 `SlideSourceFile[locator]`は文献locator(パス / `eagle:ID` / `sv://URI` / URL / `arxiv:ID` / Google Slides URL / Referencesのkey)を解決してローカルファイルパスを返します(URL系は自動ダウンロード+PDF化+キャッシュ)。展開エージェントが`ClaudeAttach[SlideSourceFile[...]]`で資料を閲覧し、引用するページ・領域を決めるのに使います。
@@ -432,11 +484,210 @@ $SlideVisualsPerSlide = False;
 
 ---
 
-## 9. 発表原稿・読み上げ・リモート操作
+## 9. 知識グラフによるスライド生成(Story / Graph)
+
+論文などの素材から知識グラフ(KG)を作り、聴衆・尺・戦略を指定して順序木とスライド計画を決定的に立て、スライドMarkdownへ投影して適用するパイプラインです。図・数式・原スライドの実体化は`SlideNotebookFigure`/`SlideNotebookFormula`/`SlidePDFFigure`/`SlideDeckFigure`に委ねられ、KG自体は文章の要約・構造・話す順序だけを持ちます。
+
+### 9.1 Story セルと仕様
+
+#### `SlideInsertStory`
+
+`SlideInsertStory[]`はストーリー/聴き手仕様セル(`SlideStory`スタイル)を挿入します。`Key: value`行で`Graph:` / `Audience:` / `Slides:` / `Minutes:` / `Language:` / `Strategy:` / `Story:`を書きます(`Audience`は`"高校生, 電気化学=0.3, 高校数学III"`のようにプリセットと領域=理解度の併記)。`Working`で可視、`SlideShow`では非表示、書き出し・英訳の対象外です。
+
+```wolfram
+SlideInsertStory[]
+```
+
+#### `SlideGraphSpec`
+
+`SlideGraphSpec[nb]`はStoryセルとDirectiveセル(`Title:` / `Language:`)から知識グラフ生成の仕様連想`<|"Graph", "Audience", "Slides", "Minutes", "Seconds", "Language", "Strategy", "Story", "Title", "SecondsPerSlide"|>`を返します。`nb`はNotebookObject / Notebook式 / 保存済みパス。
+
+```wolfram
+SlideGraphSpec[nb]
+```
+
+### 9.2 第一次KGの構築(Seed)
+
+#### `SlideGraphSeed`
+
+`SlideGraphSeed[nb|key|path, opts]`は和訳ノートブック(`DocImportPaper`の出力など)の段落構造から**第一次の知識グラフ**を決定的に作って保存します。見出し→Section、段落→Concept(本文は`"Text"`に保持)、図→Figure(NotebookFigure資産、キャプション「図1 |」「Figure 1:」を合流)、数式→Equation(Formula資産)、Contains / Precedes / Supports辺を作ります。Titleセルが無ければ最初の見出し(論文題名)をrootに畳み、著者行は落とし、root直下の最初の長い段落を「概要」ノードにします。付録(A. / Appendix / 付録)はImportance 0.3、参考文献・謝辞・AI Disclosureなどは読み飛ばします。LLMは使いません。
+
+オプション: `"Graph"`(GraphId、既定はStoryセル) / `"Title"` / `"Language"` / `"MinCharacters"`(40) / `"Save"` / `"Reconstruction"`(既定False: `DocImportPaper`の第二部「計算の再構成」を除外) / `"Keep"`(既定`"Background"`: 再seedでも保存済みKGのBackground/Shared層のノードと辺を残す。`None`で捨てる)。
+
+戻り値: `<|"Graph", "Title", "PaperTitle", "NodeCount", "EdgeCount", "Sections", "Paragraphs", "Figures", "Formulas", "Kept", "Skipped", "Warnings", "KG"|>`。
+
+```wolfram
+SlideGraphSeed["paper_ja.nb"]
+```
+
+#### `SlideGraphSeedScenario`
+
+`SlideGraphSeedScenario[nb | {<|"Title"->.., "Text"->..|>..}, opts]`は、文書(論文)の無い発表のために、プロンプトセル(`SlidePrompt`)に書いた筋書き(シナリオ)から第一次KGを決定的に作って保存します。セルは見出し(`#`)/行頭の番号/空行で部に分け、部ごとに節ノード`sc<i>`と筋書きノード`sc<i>_d`(本文=筋書き、要点なし)を置きます。KGのKindは`"Scenario"`です。続く推敲(`SlideGraphRefine`)が筋書きを発表用のノード(`sc<i>_1..`、関連研究`rw_<候補番号>`、前提`bg_*`)に展開します。
+
+オプション: `"Graph"`, `"Title"`, `"Language"`, `"Save"`, `"Keep"`(`"Background"` = 作り直しても周辺知識を残す)。
+
+```wolfram
+SlideGraphSeedScenario[nb]
+```
+
+#### `SlideGraphSectionText`
+
+`SlideGraphSectionText[graphId, sectionId, opts]`は知識グラフの節(Sectionノード)の**自身の本文ノード**(直下の段落・図・式。入れ子の下位節は別扱い)をId / Kind / Label / Textの読みやすいテキストで返します(エージェントが節ごとに磨くための読み口。戻り値は読むためのもので解析は不要)。長い節は`"MaxCharacters"`(既定4000)ごとにノード境界でページに分かれ、`"Page"->n`で続きを読みます(末尾に次ページの式を示す)。`SlideGraphSectionText[graphId]`は節の一覧(Id / Label / 本文ノード数 / 下位節)。`"Format"->"JSON"`でJSON文字列(`<|"Section", "Nodes", "Nested", "Edges"|>`、ページ無し)を返します。
+
+```wolfram
+SlideGraphSectionText[graphId]
+SlideGraphSectionText[graphId, "s3"]
+```
+
+### 9.3 推敲・取り込み・共有知識・翻訳
+
+#### `SlideGraphRefine`
+
+`SlideGraphRefine[]` / `SlideGraphRefine[nb, opts]` / `SlideGraphRefine[graphId, opts]`は第一次KG(`SlideGraphSeed`)を節ごとに磨きます。既定(`"Mode"->"Direct"`)はLLMを節ごとに直接呼ぶ連鎖で、未推敲(節一覧で「済」でない)の節を一覧の順に、本文ノード合計`"BatchNodes"`(8)以下の隣接節をまとめて1リクエストにし、節本文を指示に同梱して差分JSON(Nodes(Label / Summary / Points / Talk) / Edges / Remove)を受け取り`SlideGraphIngest[.., "Merge"->True]`で取り込みます(形式違反は1回再問合せ、Idは本文に出た既存IdとBackground/Shared層のIdだけを受理、節とrootはRemoveしない)。Talkは要点(Points)と同じ順の原稿(スライドの箇条書きと原稿を対応させる)。途中で止めても「済」の節を飛ばして再開できます。
+
+`"Mode"->"Talk"`は要点はあるがTalkの無いノードに原稿だけを足す軽い回(推敲済みの古いKG用)。`"Mode"->"Agent"`は従来のエージェント委譲。`"Sections"->{"s3", ..}`で対象を絞る。graphId形式では`"Audience"` / `"Story"`を渡せます。
+
+```wolfram
+SlideGraphRefine[nb]
+```
+
+#### `SlideGraphIngest`
+
+`SlideGraphIngest[graphId, json, opts]`は知識グラフのJSON(文字列 / 連想)を検証して保存する唯一の書き込み口です。`"Merge"->True`で保存済みKGへの差分取り込み、`"Language"->"en"`で翻訳の併記、`"Link"->True`(既定)で周辺知識ノードを共有background層へ接続します。`Success["GraphIngested", <|NodeCount, EdgeCount, Warnings, ..|>]`またはFailureを返します。
+
+```wolfram
+SlideGraphIngest[graphId, json]
+```
+
+#### `SlideGraphBackground`
+
+`SlideGraphBackground[]` / `SlideGraphBackground[nb]`はStoryセルの聴き手に足りない周辺知識ノード(前提知識)の追加をエージェントに委譲します。取り込みは`SlideGraphIngest[.., "Merge"->True]`で、共有background層への連結は自動です。
+
+```wolfram
+SlideGraphBackground[nb]
+```
+
+#### `SlideGraphTranslate`
+
+`SlideGraphTranslate[nb, lang]`は知識グラフのノード単位翻訳をエージェントに委譲します(`SlideGraphIngest[.., "Merge"->True, "Language"->lang]`で併記)。以後`SlideGraphGenerate[.., "Language"->lang]`でその言語のスライドを生成できます(デッキのセル単位英訳`SlideTranslate`とは独立です)。
+
+```wolfram
+SlideGraphTranslate[nb, "English"]
+```
+
+### 9.4 計画・生成・適用・調整
+
+#### `SlideGraphBuild`
+
+`SlideGraphBuild[]` / `SlideGraphBuild[nb, "Mode" -> Automatic | "Agent" | "Extract"]`はReferencesの和訳ノートブックから`SlideGraphSeed`で第一次KGを決定的に作って保存し、続けて節ごとの推敲を行います。既定は`SlideGraphRefine`のDirect連鎖(LLMを節ごとに直接呼ぶ)、`"Agent"`は推敲をエージェント(ClaudeEval)に委譲、`"Extract"`は和訳ノート無しでPDFをエージェントに読ませる旧経路です。和訳ノートが無ければFailure(`NoSourceNotebook`)で`DocImportPaper`を案内します。文献に和訳ノートが無く(またはStoryに`Source:`シナリオ)、プロンプトセルに筋書きがあれば、筋書きからKGを作ります(`SlideGraphSeedScenario` → 関連研究の候補`SlideGraphRelated`(Storyの`Survey:` local | web | off) → 筋書きの展開)。
+
+```wolfram
+SlideGraphBuild[nb]
+SlideGraphBuild[nb, "Mode" -> "Agent"]
+```
+
+#### `SlideGraphPlan` / `SlideGraphPlanView`
+
+- `SlideGraphPlan[nb | graphId | kg, opts]` — 知識グラフから順序木とスライド計画を決定的に作ります。オプション: `"Slides"` / `"Seconds"` / `"Audience"` / `"Strategy"`(`Source`|`Coherent`|`Importance`|`Difficulty`) / `"SecondsPerSlide"` / `"Language"`(未指定はStoryセル)。戻り値`<|"Graph", "Tree", "Plan", "Verify", "Spec"|>`。
+- `SlideGraphPlanView[nb | graphId, opts]` — 計画のDataset(番号 / タイトル / 詰め込んだ子 / 秒 / フラグ)。オプションは`SlideGraphPlan`と同じです。
+
+```wolfram
+plan = SlideGraphPlan[nb, "Slides" -> 12, "Strategy" -> "Coherent"];
+SlideGraphPlanView[nb]
+```
+
+#### `SlideGraphGenerate`
+
+`SlideGraphGenerate[nb | graphId | kg, opts]`は計画をシナリオMarkdownに投影し、図資産(NotebookFigure / Formula / PDFFigure / DeckSlide)を`SlideNotebookFigure` / `SlideNotebookFormula` / `SlidePDFFigure` / `SlideDeckFigure`で実体化します。戻り値`<|"Markdown", "Figures", "Plan", "Tree", "Outline", "Warnings", "SlideCount"|>`。オプションは`SlideGraphPlan`と同じ+`"Language"` / `"Talks"`(枚ごとの原稿の差し替え) / `"Title"`。
+
+```wolfram
+gen = SlideGraphGenerate[nb, "Slides" -> 12];
+```
+
+#### `SlideGraphApply`
+
+`SlideGraphApply[]` / `SlideGraphApply[nb, opts]`は知識グラフから生成したスライド群をデッキへ適用します(10枚ずつ`SlideDeckInsertScenario`を呼びます)。`"Mode"->Automatic`(既定)は、前回KGから作った枚(題目セルの`CellTags`に`"KGNode:<id>"`)があれば`"Replace"`(質疑応答セルをKGのノードへ保存してから前回の枚を消し、同じ位置に作り直す。問答は新しい枚へ戻る)、無ければ`"Append"`(最後のスライドの後、`"After"->n`で位置指定)。`"Polish"->True`ならtalkの推敲をエージェントへ委譲し、エージェントが`SlideGraphApply["Talks"->{..}]`で適用します。
+
+```wolfram
+SlideGraphApply[nb]
+```
+
+#### `SlideGraphAdjust`
+
+`SlideGraphAdjust[]` / `SlideGraphAdjust[nb]`は、生成のあとで直したいことを調整セル(`SlideAdjust`)に書いて知識グラフへ反映します(パレットの「調整」)。調整セルが無ければ入れます。`SlideGraphAdjust[nb | graphId, "指示"]`は指示を直接渡します。LLMがKGの差分(スライドの追加・文の修正・スライドから外す・図の指定)を返し、反映後に「生成」で作り直します。
+
+オプション: `"PDF"`(論文PDFのlocator、既定は文献欄から) / `"Then"`(反映後に呼ぶ関数) / `"Refine"`(既定False = 未推敲の節を先に推敲する。v1.29: 推敲されていない節があれば先に推敲してから反映)。指示にスライド番号(「43以降」「17枚目」)があれば、その枚のノードの元の本文をLLMに渡します。
+
+```wolfram
+SlideGraphAdjust[nb]
+```
+
+#### `SlideInsertAdjust`
+
+`SlideInsertAdjust[]`は調整セル(`SlideAdjust`)を入れます。`Working`で見え、`SlideShow`と書き出しでは隠れます。
+
+```wolfram
+SlideInsertAdjust[]
+```
+
+### 9.5 閲覧
+
+#### `SlideGraphVisualize` / `SlideGraphViewer`
+
+- `SlideGraphVisualize[nb | graphId | kg, opts]` — 知識グラフの図を返します(`SourceVaultKGVisualize`へのつなぎ)。デッキを渡すとStoryセルの聴き手・枚数で計画を立てて枚番号(#n)を重ねます(`"Plan"->Automatic|True|False|計画`)。オプションは`SourceVaultKGVisualize`と同じ: `"View"->"Story"|"Sections"|"Focus"|"Graph"`、`"Focus"`、`"Radius"`、`"EdgeKinds"`、`"Layers"`、`"Labels"`、`"Selected"`、`"OnClick"`、`"Legend"`、`"Hidden"`、`"Language"`。
+- `SlideGraphViewer[]` / `SlideGraphViewer[nb | graphId]` — 知識グラフを見る窓を開きます(パレットの「KG図」)。表示(話の流れ / 節 / 周辺 / 計画 / 一覧)、辺と層の絞り込み、計画の重ね書き、名前の量、周辺の半径を切り替えられ、図のノードをクリックすると右に中身(導入文・要点・補足・原稿・図・質疑応答・出典・本文・つながり)が出ます。ボタン: 周辺を見る / スライドへ(その枚、詰め込まれていれば詰め込み先の枚の題目へ移動) / 調整に書く(調整セルに「題目」(Id):を足す)。検索欄で一覧を絞れます。「更新」でKGを読み直します。
+
+```wolfram
+SlideGraphViewer[nb]
+```
+
+#### `SlideGraphView` / `SlideGraphShow` / `SlideGraphLoad`
+
+- `SlideGraphView[nb | graphId]` — 知識グラフのノード一覧Dataset。`SlideGraphView[src, "Map"]`は`SlideGraphVisualize`の図、`SlideGraphView[src, "Graph"]`はWL Graph、`"Tree"`は順序木のDataset、`"Plan"`は計画のDataset。
+- `SlideGraphShow["Plan" | "Nodes" | "Graph" | "Tree"]` — 開いているデッキのAppendix(終端マーカー以降)に知識グラフの表示を書き出します(パレットの「計画」「KG表示」)。
+- `SlideGraphLoad[nb | graphId]` — 保存済みの知識グラフ連想を返します(nbならStoryセルのGraph:から)。
+
+```wolfram
+SlideGraphView[nb]
+SlideGraphView[nb, "Map"]
+SlideGraphShow["Plan"]
+```
+
+### 9.6 デッキ生成・複数文献の統合
+
+#### `SlideGraphBuildDeck`
+
+`SlideGraphBuildDeck[graphId | kg, "deck.nb", opts]`は知識グラフから新しいデッキファイルを生成します(headless可)。オプションは`SlideGraphGenerate`と同じ+`"TitleSlide"` / `"Event"` / `"Author"` / `"Date"`。戻り値`<|"File", "Slides", "Warnings", "Verify", "Plan"|>`。
+
+```wolfram
+SlideGraphBuildDeck[graphId, "C:\\slides\\survey.nb", "Slides" -> 15]
+```
+
+#### `SlideGraphSurvey`
+
+`SlideGraphSurvey[{graphId1, graphId2, ..}, "deck.nb", opts]`は複数の知識グラフを合成(共有background層を統合、論文間にRelatedTo辺を付与)してサーベイデッキを生成します。オプション: `"Title"` / `"Slides"` / `"Seconds"` / `"Audience"` / `"Language"` / `"Chronological"` / `"GraphId"` / `"Save"`(合成KGを保存、既定True)。
+
+```wolfram
+SlideGraphSurvey[{graphId1, graphId2}, "C:\\slides\\survey.nb"]
+```
+
+#### `SlideGraphRelated`
+
+`SlideGraphRelated[nb | graphId, opts]`はシナリオKGの関連研究の候補を集めてKGの`"Related"`に保存します(非同期)。LLMが筋書きから検索語(短い語句4〜8個)を作り、`SourceVaultSummaries`(取り込み済みの論文・Eagle)で探します。`"Web"->True`(Storyの`Survey: web`)のときだけ`SourceVaultWebSearch`も使います(検索語が外に出るため)。PrivacyLevel >= 0.5の候補はデッキのPrivacyLevelがそれ以上のときだけ残します。
+
+オプション: `"Web"`, `"MaxCandidates"`(20), `"Then"`(終わったら呼ぶ関数), `"Audience"`, `"Story"`。結果は`SlideWorkflow`\``Private`\`$iSWRelatedLast`に入ります。
+
+```wolfram
+SlideGraphRelated[nb]
+```
+
+---
+
+## 10. 発表原稿・読み上げ・リモート操作
 
 スライドの「中身」ではなく「話す原稿」を扱うレイヤーです。1枚ずつ独立に説明文を作ると発表としての流れが出ないため、原稿はデッキ全体を1度に見て書きます。読み上げには、SourceVaultのローカル音声資産(Piper)またはクラウドのリアルタイム音声応答(OpenAI Realtime)を使えます。
 
-### 9.1 発表原稿シナリオ(talk markdown)
+### 10.1 発表原稿シナリオ(talk markdown)
 
 発表原稿は次のMarkdown形式で表します。
 
@@ -481,12 +732,20 @@ SlideTalkPrompt["lecture1.nb"]
 
 #### `SlideTalkBuild`
 
-発表原稿を生成して`<deck>_talk.md`へ書き出します。LLMが使えるときは非同期(`SlideExpand`と同じ経路)で、使えないときは骨格を同期で書きます。
+発表原稿を生成して`<deck>_talk.md`へ書き出します(v1.30: パレットからは外しました。原稿の正本はトークセルで、原稿の無い枚を埋めるのは`SlideTalkFill`です)。LLMが使えるときは非同期(`SlideExpand`と同じ経路)で、使えないときは骨格を同期で書きます。
 
 オプション: `"Output"`, `"UseLLM"`, `"Notebook"`, `"OpenResult"` と`SlideTalkPrompt`のオプション。
 
 ```wolfram
 SlideTalkBuild["lecture1.nb"]
+```
+
+#### `SlideTalkFill`
+
+`SlideTalkFill[]` / `SlideTalkFill[nb]`は原稿(トークセル)の無いスライドにだけ原稿を書きます(パレットの「発表の準備」の「原稿」)。LLMがデッキ全体の流れを見て8枚ずつ書き、各スライドのトークセルに入れます(質疑応答セルがあればその前)。全枚に原稿があれば何もしません(原稿を`_talk.md`へ書き出すのは`SlideTalkBuild`)。
+
+```wolfram
+SlideTalkFill["lecture1.nb"]
 ```
 
 #### `SlideTalkFile`
@@ -521,11 +780,111 @@ SlideInsertTalk[]
 $SlideTalkPerSlide = False;
 ```
 
-### 9.2 発表登録簿(SourceVault連携)
+### 質疑応答セル (パレットの「質疑」)
+
+`SlideInsertQA[]`で、トークセルの隣にそのスライドで訊かれそうな質問と回答を書くセル(`SlideQA`スタイル、mdでは`"qa: "`行)を挿入します。見え方と書き出しの扱いはトークセルと同じです(`Working`で可視、`SlideShow`で非表示、画像・mp4の書き出しからも除外)。
+
+```
+Q: 想定質問
+A: そのまま読み上げられる回答
+cite: sv://... または出典テキスト
+PL: 0.6
+```
+
+`Q:` が来るたびに新しい 1 問で、接頭辞の無い行は直前の項目の続きです。`cite:` と `PL:` は省略できます(`PL:` を書くとその 1 問だけ非公開扱いになり、発表モードでは答えません)。
+
+下書きは「QA 生成」で LLM に作らせられます。内容は必ず自分で確かめて直してください。「QA 一覧」で全体と、スライドごとの状態を表で見られます。
+
+#### `SlideQAGenerate`
+
+`SlideQAGenerate[nb]`はLLMで想定問答の下書きを質疑応答セルへ書き込みます(非同期、1枚ずつ順に)。書いたあとは人が直すことが前提です。
+
+`"Mode"`の3つ:
+- `"Regenerate"`(パレット上は1) — 全スライドを作り直します。既存の質疑応答は捨てます(`SlideQAGenerateAll`と同じ)。
+- `"Update"`(2) — 全スライドを見直します。既存をLLMに見せ、活かしたまま直させます(`SlideQAUpdateAll`と同じ)。
+- `"Changed"`(3、既定) — 質疑応答セルの無いスライドと、質疑応答を書いたあとで直したスライドだけを更新します。パレットの「QA 生成」はこのモードです。
+
+**変わった分だけ**: 変更の判定はセル先頭の`"# slide: <ハッシュ>"`行(自動で付く、書いた時点のスライドの印)で行います。セルに付いて回るので、スライドを並べ替えても対応は崩れません。このマーカーの無い手書きのセルは`"Changed"`では触りません。全枚に手を入れたいときは`SlideQAGenerateAll`/`SlideQAUpdateAll`を使います。
+
+**図や写真のあるスライド**: そのスライドを描画した画像をLLMに渡すので、本文に書いていない「図に何が描かれているか」(軸や系列、写っているもの)についての問答も作られます(`"Vision"`、既定`$SlideQAVision = True`)。画像はデッキの隣の`<deck>_qa_images`フォルダにキャッシュされるので、二度目からは描画しません。デッキを保存してから実行してください(未保存だと描画できず、テキストだけになります)。
+
+オプション: `"Mode"`, `"QuestionsPerSlide"`(既定`$SlideQAPerSlide = 3`), `"Vision"`, `"Slides"->All`または`{n..}`
+
+全枚に手を入れたいときは専用関数を使います。
+
+```wolfram
+SlideQAGenerateAll[nb]   (* 全スライドを作り直す。既存は置き換え。SlideQAGenerate[nb, "Mode" -> "Regenerate"] と同じ *)
+SlideQAUpdateAll[nb]     (* 全スライドを見直す。既存は活かし、ものだけ直す。SlideQAGenerate[nb, "Mode" -> "Update"] と同じ *)
+SlideQAStateView[nb]     (* どの枚が未作成・要更新かを Dataset で表示 *)
+```
+
+#### `SlideQAEntries` / `SlideQAView`
+
+- `SlideQAEntries[nb]` — デッキ内の質疑応答セルを`<|"SlideCount", "Questions", "Answered", "Missing"(質疑応答セルの無いスライド), "Slides"|>`にして返すコア関数です。
+- `SlideQAView[nb]` — 質疑応答セルの中身を1行1問の`Dataset`で表示します(パレットの「QA一覧」)。
+
+```wolfram
+SlideQAEntries["lecture1.nb"]
+SlideQAView["lecture1.nb"]
+```
+
+#### `SlideQAMarkCurrent`
+
+`SlideQAMarkCurrent[nb]`は、既にある質疑応答セルに今のスライドの印(`# slide: `行)だけを打ちます。LLMを使わず、問答の文面は変えません。このマーカーの無い古いデッキを「QA生成」(変更分のみ)の対象に乗せるための土台です。**今の中身を「確認済み」と宣言する操作**なので、中身を見てから使ってください。
+
+```wolfram
+SlideQAMarkCurrent["lecture1.nb"]
+```
+
+#### `$SlideQAVision` / `$SlideQAPerSlide`
+
+- `$SlideQAVision` — 既定`True`。図・写真・表を含むスライドのQA生成で描画画像をLLMに添付するかどうか。画像は`<deck>_qa_images/`にスライドのハッシュでキャッシュされます。
+- `$SlideQAPerSlide` — `SlideQAGenerate`が1枚あたりに作る想定質問の数(既定3)。
+
+```wolfram
+$SlideQAVision = True;
+$SlideQAPerSlide = 3;
+```
+
+「登録」を押すと、このセル群が gpt-realtime から引ける形(SourceVault の QA パック)に焼かれ(`SlideQABuild`)、発表中に声で訊かれたときの即答に使われます。**回答の空な問は焼かれません**(作り置きに当たってしまうと、資料側に答えがあっても届かないため)。
+
+#### `SlideQABuild` / `SlideQAFromPack`
+
+- `SlideQABuild[nb]` — 質疑応答セルをSourceVaultのQAパックへ焼き、発表中のgpt-realtimeが数十msで引けるようにします(`SourceVaultTalkQAImport`へ委譲)。「登録」から自動で呼ばれます。オプション: `"PrivacyLevel"`, `"Ingest"`(既定True=KBへも取り込む), `"Enrich"`(既定True=回答が空の問だけKBから補う)。
+- `SlideQAFromPack[nb]` — すでに登録済みのQAパック(以前に`SourceVaultTalkQABuild`でLLMから作ったものを含む)を、スライドの質疑応答セルへ書き戻します。セルが正本になったあとも、古い作り置きを捨てずに人が直せる形へ移せます。LLMは使いません。オプション: `"Rebuild"`(既定False=既に質疑応答セルのあるスライドは触らない)。
+
+```wolfram
+SlideQABuild["lecture1.nb"]
+SlideQAFromPack["lecture1.nb"]
+```
+
+### 「登録」は変わった分だけ
+
+「登録」は登録簿・QA パック・mp4 の 3 つを見ますが、変わっていないものはやり直しません。mp4 の判定はファイル日付ではなく「スライドとして描かれるセルの並び」で行うので、トークや質疑応答セルを直しただけなら mp4 は作り直されません。スライドを並べ替えた・挿入した・削除したときは列が変わるので必ず作り直されます。何がやり直されるかは `SlideDeckChangeStatus[]` で見られます。
+
+#### `SlideDeckChangeStatus`
+
+`SlideDeckChangeStatus[nb|deck.nb]`は「登録」が何をやり直すか(スライドの並びのハッシュ、mp4が古いか、QAが焼き直されるか)を返します。「登録しても何も起きない」ときの切り分けに使います。
+
+```wolfram
+SlideDeckChangeStatus["lecture1.nb"]
+```
+
+#### `SlideDeckMarkVideoCurrent`
+
+`SlideDeckMarkVideoCurrent[nb|deck.nb]`は、今ある`<deck>.mp4`を「今のスライドで作られたもの」として記録します。既存のデッキをこの仕組みへ移すとき、すでに配信済みのmp4を1回だけ作り直すのを避けるためのものです。**スライドを直したのに呼ぶと、古いmp4が最新扱いで固定される**ので、見た目が一致しているときだけ使ってください。
+
+```wolfram
+SlideDeckMarkVideoCurrent["lecture1.nb"]
+```
+
+### 10.2 発表登録簿(SourceVault連携)とアップロード
 
 #### `SlideTalkMeta`
 
-`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`SlideURL` / `Aliases` / `PrivacyLevel`など)を返します。`SlideTalkMeta[nb, "SlideURL" -> url, ...]`はノートブックの`TaggingRules`に永続化します(登録簿への登録が`_talk.md`無しで完結します)。
+`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `Aliases` / `PrivacyLevel`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `Host: sftp://user@host/dir`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
+
+`SlideTalkMeta[nb, "SlideURL" -> url, ...]`はノートブックの`TaggingRules`に永続化します(指示セルに同名の行があればそちらが優先されるため、登録簿への登録が`_talk.md`無しで完結します)。
 
 ```wolfram
 SlideTalkMeta["lecture1.nb"]
@@ -534,9 +893,11 @@ SlideTalkMeta["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
 
 #### `SlideDeckRegister`
 
-`SlideDeckRegister[deck|talkfile|md]`は発表原稿のfront matter(Title / SlideURL)を使って、発表をSourceVaultの登録簿へ登録します。以後、VRCRealtimeが発表タイトルからスライドURLと原稿を引けます。
+`SlideDeckRegister[nb|deck.nb|talkfile|md]`は発表(トークセル+指示セルのメタ)をSourceVaultの登録簿へ登録します。メタに`UploadURL`(指示セルの`Host:`行)があれば、Sliden用mp4をwebサーバへ自動でアップロードします(結果は戻り値の`"Upload"`キー)。以後、VRCRealtimeが発表タイトルからスライドURLと原稿を引けます。
 
-オプション: `"SlideURL"`, `"Title"`, `"Id"`, `"DeckFile"`, `"PrivacyLevel"`, `"SlideCount"`
+同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きします(前回の特定は`Id` > `DeckFile` > `SlideURL`の順。指示セルの`Id:`行で固定できます)。何が変わったかは戻り値の`RegistryStatus`(`"Created"`|`"Updated"`)と`ChangedKeys`で分かります。
+
+オプション: `"SlideURL"`, `"Title"`, `"Id"`, `"DeckFile"`, `"PrivacyLevel"`, `"SlideCount"`, `"Upload"`(`Automatic`|`True`|`False`)
 
 ```wolfram
 SlideDeckRegister["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
@@ -550,7 +911,32 @@ SlideDeckRegister["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
 SlideDeckRegistry[]
 ```
 
-### 9.3 ローカル音声読み上げと自動ページ送り
+#### `SlideDeckUpload`
+
+`SlideDeckUpload[nb|deck.nb|deck.mp4]`は、Sliden用mp4(`<deck>.mp4`)を発表メタの`UploadURL`(指示セルの`Host: sftp://user@host/dir`行)へsftpで送り、`SlideURL`のHEADで配信を確認します。同じサイズで配信中のファイルは送りません(`"Force"->True`で強制送信)。`SlideDeckRegister`から`UploadURL`があれば自動で呼ばれますが、単独でも呼べます。
+
+デッキがmp4より新しければ書き出し直してから送ります(`"ExportVideo"->False`で抑止、`True`で常に作り直します)。転送手段は`$SlideUploadMethod`に従います(既定`Automatic`は`"Native"`を試し、だめなら`"curl"`)。パスワードは`SlideUploadCredential`で保存したものをNBAccess管轄のSystemCredentialから取得します。
+
+オプション: `"UploadURL"`, `"SlideURL"`, `"File"`, `"Method"`(`Automatic`|`"Native"`|`"curl"`), `"Password"`, `"User"`, `"Force"`, `"Verify"`, `"ExportVideo"`, `"Interactive"`
+
+```wolfram
+SlideDeckUpload["lecture1.nb"]
+SlideDeckUpload["lecture1.nb", "Force" -> True]
+```
+
+#### `SlideUploadCredential` / `SlideUploadCredentialQ` / `$SlideUploadMethod`
+
+- `SlideUploadCredential[url|nb]` — sftpのパスワードをダイアログで尋ね、NBAccess経由でSystemCredentialに保存します(名前は`sftp://user@host`)。`SlideUploadCredential[url, password]`で直接保存、`SlideUploadCredential[url, None]`で削除できます。
+- `SlideUploadCredentialQ[url|nb]` — sftpのパスワードが保存済みかどうかを返します(値そのものは返しません)。
+- `$SlideUploadMethod` — mp4の転送手段。既定`Automatic`は`"Native"`(`CopyFile`->`RemoteFile`、WL組込み)を試し、使えなければ`"curl"`(Git for Windows同梱のsftp対応curl)。
+
+```wolfram
+SlideUploadCredential["sftp://user@host"]
+SlideUploadCredentialQ["lecture1.nb"]
+$SlideUploadMethod = "curl";
+```
+
+### 10.3 ローカル音声読み上げと自動ページ送り
 
 `<deck>_talk.md`の原稿をSourceVaultのローカル音声(Piper)で読み上げながら、1枚読み終わるごとにスライドを1枚進めます。対象はスクリーン環境が`SlideShow`のノートブックです。合成結果は`<deck>_voice/`にキャッシュするため、2回目以降の再生は待たされません。ウィンドウのスナップショットやクリップボードには依存しないため、FEを止めずに裏で動きます。
 
@@ -559,6 +945,8 @@ SlideDeckRegistry[]
 ```wolfram
 $SlideVoice              (* 読み上げに使うボイスモデル名。既定 Automatic は SourceVaultVoice[] の既定の声。SlideVoices[] で候補一覧 *)
 $SlideVoiceGap            (* スライドを読み終えてから次へ送るまでの間(秒、既定 0.8) *)
+$SlideRenderSettle        (* 次のスライドを表示してから読み上げを始めるまでの間(秒、既定 0.6)。重いスライドの描画中に鳴らし始めると音が止まるため、描画が落ち着くのを待つ。0 で待たない *)
+$SlidePrepareBeforePlay   (* True(既定)なら SlidePlay は再生開始前に未合成の全スライド分をローカル音声で用意する(再生中に合成を走らせると音が途切れるため)。False で従来の1枚先読み *)
 $SlideQuestionSeconds     (* 1枚読み終えてから次へ送るまでに質問を待つ秒数(既定 3)。クラウド音声(realtime:)のときだけ有効 *)
 $SlideVoiceInputGate      (* 質問受付でマイクを送る下限の音量(0〜1、既定 0 = 制限なし) *)
 $SlideQuestionMaxSeconds  (* 1枚の合間に質疑で留まれる上限の秒数(既定 60) *)
@@ -582,7 +970,7 @@ SlideVoicePrepare["lecture1.nb"]
 
 #### `SlidePlay` / `SlidePause` / `SlideStop`
 
-- `SlidePlay[]` — `<deck>_talk.md`の原稿をSourceVaultのローカル音声で読み上げながらスライドを自動で進めます(ノートブックのスクリーン環境が`SlideShow`のとき)。一時停止中に呼ぶと再開します。`SlidePlay[nb]`で対象ノートブックを指定。
+- `SlidePlay[]` — `<deck>_talk.md`の原稿をSourceVaultのローカル音声で読み上げながらスライドを自動で進めます(ノートブックのスクリーン環境が`SlideShow`のとき)。既定(`$SlidePrepareBeforePlay=True`)では、再生開始前に未合成のスライド分をまとめて音声合成してから読み上げを始めます(`False`で従来の1枚先読み)。一時停止中に呼ぶと再開します。`SlidePlay[nb]`で対象ノートブックを指定。
 - `SlidePause[]` — 読み上げを一時停止します。`SlidePlay[]`で続きから再開します。
 - `SlideStop[]` — 読み上げを止めて再生状態を初期化します。
 
@@ -620,7 +1008,7 @@ SlideTalkDuration["lecture1.nb", "Questions" -> True]
 SlidePlayStatus[]
 ```
 
-### 9.4 クラウド音声応答(Realtime)と質問受付
+### 10.4 クラウド音声応答(Realtime)と質問受付
 
 #### `SlideToggleRealtime` / `SlideToggleMic`
 
@@ -634,7 +1022,7 @@ SlideToggleMic["Quiet" -> True]
 
 読み上げ中(`SlidePlay`)は、クラウド音声(`realtime:`)のときだけ`$SlideQuestionSeconds`の間、質問を待ちます。話しかけられたら`$SlideQuestionMaxSeconds`まではデッキが止まらずに待ち、答えている最中は打ち切りません。会場の物音で勝手に応答が始まるときは`$SlideVoiceInputGate`を上げて、マイクを送る下限音量を設定します。
 
-### 9.5 手元デバイス(メディアキー)によるリモート操作
+### 10.5 手元デバイス(メディアキー)によるリモート操作
 
 Elecom Relaconなどのメディアキーを持つ手元デバイスの見張りを行い、キー入力にマイクのmute/unmuteや読み上げの再生/一時停止を割り当てます。スライドを全画面表示したままでも効きます(フロントエンドのキーイベントを経由しないため)。Windows専用です。
 
@@ -675,6 +1063,6 @@ $SlideRemoteAuto = True;
 ## 関連パッケージ
 
 - フォント設定は [NotebookExtensions](https://github.com/transreal/NotebookExtensions) の `$fontFamily` と連携できます。
-- 文献検索・PDF資産・ローカル音声(Piper)・クラウド音声応答・発表登録簿は [SourceVault](https://github.com/transreal/SourceVault) と連携します。
-- LLMによる展開・翻訳の承認ゲート付き実行は [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) を経由します。
+- 文献検索・PDF資産・知識グラフ・ローカル音声(Piper)・クラウド音声応答・発表登録簿は [SourceVault](https://github.com/transreal/SourceVault) と連携します。
+- LLMによる展開・翻訳・知識グラフ推敲の承認ゲート付き実行は [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) を経由します。
 - 生成した動画はSlidenやVRChatでの発表用途に[VRChatPresentationUploader](https://github.com/transreal/VRChatPresentationUploader)と組み合わせて利用できます。

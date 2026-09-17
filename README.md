@@ -114,27 +114,31 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 
 ### 主な機能
 
-- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)や `talk:` 行による発表原稿の埋め込みにも対応。
+- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込みにも対応。
 - **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。
 - **デッキ参照**: `SlideDeckSlides`(コア分解関数、Appendix領域も分離)、`SlideDeckOverview`(番号・タイトル・セル数・画像有無のDataset表示)。
 - **スライド単位編集**: `SlideDeckReplaceSlide` / `SlideDeckInsertSlide` / `SlideDeckDeleteSlide` / `SlideDeckMoveSlide`。既定で`.bak`付き上書き、`"Target"`指定で別名保存可能。
 - **安定した画像書き出し**: `SlideDeckImages` / `SlideDeckExportImages` によるクリップボード・ウィンドウ非依存の16:9ラスタライズ(headless環境対応)。内容が縦に収まらないスライドは `"Reflow"` オプション(既定 `True`、上限は`"MaxWindowWidth"`)により折返し幅を自動探索し、余白を抑えて縮小率を最小化する。書き出しに含めるInput/Codeセルは `$SlideIncludeInput`(既定`Automatic`、ノートブックの表示どおり)で制御でき、個別セルは`CellTags->"ShowInput"`で常に残せる。
 - **動画書き出し**: `SlideDeckExportVideo` によるSliden(VRChat)互換mp4の生成(表示秒数のカスタマイズ可)。パレットからの書き出しは `$SlideExportExternal`(既定`Automatic`)で別プロセス(wolframscript)実行とFE内処理を自動フォールバック切り替え。
 - **テーマ管理**: `$SlideTheme` / `SlideThemeColor` によるスライド・図の配色統一。
-- **補助セル・出典・文献**: `"Note"`/`"Directive"`/`"Dictionary"`/`"Bibliography"`/`"References"`/`"SlidePrompt"`/`"SlideTalk"` の各メタセル(書き出し除外)と、出典明記用のCitationセルに対応。`SlideInsertReferences` で文献リストセルを挿入し、`SlidePDFFigure` でPDFページを図として切り出せる。図・コードセルは `<<FIGn>>` トークンで再展開時にも保持できる。
-- **インタラクティブ編集(統合パレット)**: `ShowSlidePalette` から、スライド追加(`SlideAddSlide`)・LLMによる展開(`SlideExpand`、決定的な適用口として`SlideApplyScenario`)・翻訳(`SlideTranslate`/`SlideTranslateRevert`/`SlideTranslateDeck`)・各種補助セルの挿入をまとめて行える。`$SlideExpandMode`(既定`"Agent"`、軽量な`"Direct"`も選択可)、`$SlideTranslationLanguage`、`$SlideVisualsPerSlide`(図表の自動付与)、`$SlideTalkPerSlide`(発表原稿の自動生成)、`$SlideHideToolbarInSlideshow`(SlideShow切替時のツールバー退避)で挙動を調整。
+- **補助セル・出典・文献**: `"Note"`/`"Directive"`/`"Dictionary"`/`"Bibliography"`/`"References"`/`"SlidePrompt"`/`"SlideTalk"`/`"SlideQA"` の各メタセル(書き出し除外)と、出典明記用のCitationセルに対応。`SlideInsertReferences` で文献リストセルを挿入し、`SlidePDFFigure` でPDFページを図として切り出せる。図・コードセルは `<<FIGn>>` トークンで再展開時にも保持できる。
+- **インタラクティブ編集(統合パレット)**: `ShowSlidePalette` から、スライド追加(`SlideAddSlide`)・LLMによる展開(`SlideExpand`、決定的な適用口として`SlideApplyScenario`)・翻訳(`SlideTranslate`/`SlideTranslateRevert`/`SlideTranslateDeck`)・各種補助セルの挿入をまとめて行える。`$SlideExpandMode`(既定`"Agent"`、軽量な`"Direct"`も選択可)、`$SlideTranslationLanguage`、`$SlideVisualsPerSlide`(図表の自動付与)、`$SlideTalkPerSlide`(発表原稿の自動生成)、`$SlideHideToolbarInSlideshow`(SlideShow切替時のツールバー退避)で挙動を調整。パレットは`"Safe"->True`でClaudeCodeなど外部エージェントの処理に完全に非干渉なモードでも開け(フリーズ時の切り分け用)、現在のバージョンは`$SlideWorkflowInteractiveVersion`で確認できる。
 - **発表原稿・音声・リモコン連携(SourceVault併用)**: `SlideTalk`系のローカル音声合成・再生、リアルタイム音声応答、手元デバイス(メディアキー)によるリモート操作(`SlidePlay`・`SlideRemoteStart`など、Windows専用)。未導入でもスライド生成・画像/動画書き出しには影響しません。
 
 ### ドキュメント一覧
 
-- [API リファレンス](api.md) — 全公開関数・定数の仕様
+- [API リファレンス](SlideWorkflow_info/docs/api.md) — 全公開関数・定数の仕様
 - [使用例集](example.md) — 実践的なコード例
-- [セットアップ手順書](setup.md) — 導入・動作確認の詳細手順
-- [ユーザーマニュアル](user_manual.md) — 機能別の詳しい使い方(インタラクティブ編集レイヤーの詳細を含む)
+- [セットアップ手順書](SlideWorkflow_info/docs/setup.md) — 導入・動作確認の詳細手順
+- [ユーザーマニュアル](SlideWorkflow_info/docs/user_manual.md) — 機能別の詳しい使い方(インタラクティブ編集レイヤーの詳細を含む)
 
 ## 使用例・デモ
 
-上記「クイックスタート」の一連の流れが基本的な使用例です。さらに詳しい例(スライドの差し替え・挿入・削除・移動、テーマカラーの取得など)は [example.md](example.md) を参照してください。インタラクティブ編集レイヤー(パレット・`SlideExpand`・翻訳・発表原稿/音声/リモコン連携)の使用例は [user_manual.md](user_manual.md) にまとめています。本パッケージにはオンラインのデモURLは特に用意されていません。
+上記「クイックスタート」の一連の流れが基本的な使用例です。さらに詳しい例(スライドの差し替え・挿入・削除・移動、テーマカラーの取得など)は [example.md](example.md) を参照してください。インタラクティブ編集レイヤー(パレット・`SlideExpand`・翻訳・発表原稿/音声/リモコン連携)の使用例は [user_manual.md](SlideWorkflow_info/docs/user_manual.md) にまとめています。
+
+### 動画
+
+- [SlideWorkflowの使い方デモ](https://www.youtube.com/watch?v=romv4EEPnWw) — パッケージの操作を実際に動かして紹介する動画です。
 
 ---
 

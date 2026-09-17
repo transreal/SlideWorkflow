@@ -135,8 +135,8 @@ ShowSlidePalette[]
 - `SlideInsertReferences[]`: 文献リストセルを挿入する(パレットの「文献」)。1 行 1 文献 `[key] locator | メモ` の形式で記入する。`locator` は URL / arxiv:ID / sv://URI / eagle:ID / PDF・ノートブックのパス(過去スライド可)。スライドの指示(プロンプト)からは `[key]` で参照し、展開エージェントがそれを取得・引用する。`#` で始まる行はコメント。
 - `SlideInsertTalk[]`: トークセル(`SlideTalk` スタイル、そのスライドの発表原稿)を挿入する。各スライドの最後に置く。Working で可視、SlideShow 環境では非表示になり、書き出しからも除外される。md では `talk: 原稿` の行に対応する。全スライドにトークがそろうと `SlideTalkBuild` が LLM なしで `<deck>_talk.md` を束ねられる。
 - `SlideInsertEndMarker[]`: カーソル位置にスライド終端マーカーを挿入する。以降のセルはスライド・書き出しに含まれない。
-- `SlideInsertNote[]`: メモセルを挿入する(`documentation.wl` 互換、書き出し除外)。
-- `SlideInsertDirective[]`: 指示セルを挿入する。展開・翻訳時に LLM が厳守する。
+- `SlideInsertNote[]`: メモセルを挿入する(`documentation.wl` 互換、書き出し除外)。Working で可視、SlideShow(スライドショー環境)では非表示になる。
+- `SlideInsertDirective[]`: 指示セルを挿入する。展開・翻訳時に LLM が厳守する。Working で可視、SlideShow(スライドショー環境)では非表示になる。
 - `SlideInsertDictionary[]`: 辞書セルを挿入する。翻訳時の用語対応を指定する。
 - `SlideInsertBibliography[]`: 文献セルを挿入する(`documentation.wl` 互換)。
 - `SlideToggleScreenEnvironment[]`: 対象ノートブックのスクリーン環境を Working ⇄ SlideShow で切り替える(書式メニューの「スクリーンスタイル環境」と同じ)。メモ・指示・辞書・文献・プロンプト・トークの各セルは Working で可視、SlideShow で非表示になる。
