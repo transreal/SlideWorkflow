@@ -90,6 +90,19 @@ SlideVoices::usage = "SlideVoices[] \:306f\:9078\:3079\:308b\:30dc\:30a4\:30b9\:
 SlideCycleVoice::usage = "SlideCycleVoice[] \:306f $SlideVoice \:3092\:6b21\:306e\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:3078\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:30c8\:30b0\:30eb)\:3002";
 SlideVoicePrepare::usage = "SlideVoicePrepare[] \:306f\:767a\:8868\:30b7\:30ca\:30ea\:30aa\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066 <deck>_voice/ \:306b\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b\:3002SlideVoicePrepare[nb] \:3067\:5bfe\:8c61\:6307\:5b9a\:3002";
 $SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002";
+$SlideVoiceProvider::usage = "$SlideVoiceProvider \:306f\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0\:3067\:306e\:8aad\:307f\:4e0a\:3052) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:65e2\:5b9a Automatic = \:767b\:9332\:7c3f\:306e\:5148\:982d (\"OpenAI\")\:3002\:5019\:88dc\:306f SlideVoiceModels[] \:306e\:30ad\:30fc\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3068\:540c\:3058\:3002";
+$SlideVoiceModel::usage = "$SlideVoiceModel \:306f\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3002\:65e2\:5b9a Automatic = $SourceVaultRealtimeModel (gpt-realtime-2.1)\:3002\"gpt-live-1\" \:3067 GPT-Live (\:5168\:4e8c\:91cd\:3002\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f\:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:59d4\:8b72\:3067 SourceVault / \:8a31\:53ef\:3092\:5f97\:3066\:30a6\:30a7\:30d6\:3078)\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306b\:306f\:3001\:5fdc\:7b54 off \:2192 on (\:307e\:305f\:306f\:6b21\:306e\:518d\:751f) \:304b\:3089\:52b9\:304f\:3002";
+SlideVoiceModels::usage = "SlideVoiceModels[] \:306f\:30d7\:30ed\:30d0\:30a4\:30c0 -> \:9078\:3079\:308b\:97f3\:58f0\:4f1a\:8a71\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3092\:8fd4\:3059 (SourceVault_realtime \:306e\:767b\:9332\:7c3f\:3002\:672a\:30ed\:30fc\:30c9\:306a\:3089\:7d44\:307f\:8fbc\:307f\:306e\:65e2\:5b9a)\:3002";
+SlideCycleVoiceProvider::usage = "SlideCycleVoiceProvider[] \:306f $SlideVoiceProvider \:3092\:6b21\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3078\:5207\:308a\:66ff\:3048\:308b (\:30e2\:30c7\:30eb\:304c\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306b\:7121\:3051\:308c\:3070\:65e2\:5b9a\:306b\:623b\:3059)\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3002";
+SlideCycleVoiceModel::usage = "SlideCycleVoiceModel[] \:306f $SlideVoiceModel \:3092\:540c\:3058\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:6b21\:306e\:30e2\:30c7\:30eb\:3078\:5207\:308a\:66ff\:3048\:308b\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3002";
+SlideSetVoiceModel::usage = "SlideSetVoiceModel[model] \:306f\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3092\:9078\:3076 (\:767b\:9332\:7c3f\:306b\:3042\:308c\:3070\:30d7\:30ed\:30d0\:30a4\:30c0\:3082\:5408\:308f\:305b\:308b)\:3002SlideSetVoiceModel[Automatic] \:3067\:65e2\:5b9a\:306b\:623b\:3059\:3002";
+$SlideQuestionMode::usage = "$SlideQuestionMode \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3002\"QuestionTime\" (\:65e2\:5b9a) = 1 \:679a\:8aad\:3080\:3054\:3068\:306b\:8cea\:554f\:6642\:9593\:3092\:53d6\:308a\:3001\:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:3092\:5207\:308b\:3002\n" <>
+  "\"Words\" (\:7279\:5b9a\:30ef\:30fc\:30c9) = \:8aad\:307f\:4e0a\:3052\:4e2d\:3082\:30de\:30a4\:30af\:3092\:805e\:304d\:3001\:30a8\:30b3\:30fc\:3088\:308a\:5927\:304d\:3044\:805e\:304d\:624b\:306e\:58f0\:3067 $SlideInterruptWords (\:65e2\:5b9a \:8cea\:554f / \:30b9\:30e9\:30a4\:30c9) \:304c\:805e\:3053\:3048\:305f\:3068\:304d\:3060\:3051\:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591 (\:8cea\:7591\:4e2d\:306f\:4f55\:3067\:3082\:53d7\:3051\:4ed8\:3051\:3001\:9759\:304b\:306b\:306a\:3063\:305f\:3089\:4e2d\:65ad\:3057\:305f\:6587\:304b\:3089\:518d\:958b)\:3002\n" <>
+  "\"Detect\" (\:4e8c\:6bb5\:69cb\:3048) = \:805e\:304d\:624b\:306e\:58f0\:3092\:691c\:77e5\:3057\:305f\:3089\:767a\:8868\:3092\:6b62\:3081\:3001\:8cea\:554f\:304b\:3069\:3046\:304b\:306f gpt-live \:304c\:5224\:65ad (\:72ec\:308a\:8a00\:306a\:3089\:9ed9\:3063\:3066\:518d\:958b)\:3002\n" <>
+  "Words / Detect \:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051\:52b9\:304d\:3001\:4ed6\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:52d5\:304f\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:8cea\:554f: \:2026\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:308b\:3002";
+$SlideInterruptWords::usage = "$SlideInterruptWords \:306f \"Words\" \:30e2\:30fc\:30c9\:3067\:767a\:8868\:3092\:6b62\:3081\:3066\:3088\:3044\:8a9e\:306e\:30ea\:30b9\:30c8 (\:65e2\:5b9a Automatic = $SourceVaultRealtimeInterruptWords = {\"\:8cea\:554f\", \"\:30b9\:30e9\:30a4\:30c9\"})\:3002\:30ed\:30fc\:30ab\:30eb\:306e Vosk \:3067\:805e\:304d\:53d6\:308b (SourceVaultRealtimeInstall[\"Vosk\" -> True] \:3068 SourceVaultSpeechModel[] \:304c\:8981\:308b)\:3002";
+SlideCycleQuestionMode::usage = "SlideCycleQuestionMode[] \:306f $SlideQuestionMode \:3092 \:8cea\:554f\:30bf\:30a4\:30e0 \:2192 \:7279\:5b9a\:30ef\:30fc\:30c9 \:2192 \:4e8c\:6bb5\:69cb\:3048 \:306e\:9806\:306b\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:8cea\:554f: \:2026\:300d\:884c)\:3002SlideSetQuestionMode[mode] \:3067\:76f4\:63a5\:6307\:5b9a\:3002";
+SlideSetQuestionMode::usage = "SlideSetQuestionMode[\"QuestionTime\"|\"Words\"|\"Detect\"] \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3092\:9078\:3076\:3002";
 SlidePlay::usage = "SlidePlay[] \:306f <deck>_talk.md \:306e\:539f\:7a3f\:3092 SourceVault \:306e\:30ed\:30fc\:30ab\:30eb\:97f3\:58f0\:3067\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:81ea\:52d5\:3067\:9032\:3081\:308b (\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883\:304c SlideShow \:306e\:3068\:304d)\:3002\:4e00\:6642\:505c\:6b62\:4e2d\:306b\:547c\:3076\:3068\:518d\:958b\:3059\:308b\:3002SlidePlay[nb] \:3067\:5bfe\:8c61\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:6307\:5b9a\:3002";
 SlidePause::usage = "SlidePause[] \:306f\:8aad\:307f\:4e0a\:3052\:3092\:4e00\:6642\:505c\:6b62\:3059\:308b\:3002SlidePlay[] \:3067\:7d9a\:304d\:304b\:3089\:518d\:958b\:3059\:308b\:3002";
 SlideStop::usage = "SlideStop[] \:306f\:8aad\:307f\:4e0a\:3052\:3092\:6b62\:3081\:3066\:518d\:751f\:72b6\:614b\:3092\:521d\:671f\:5316\:3059\:308b\:3002";
@@ -4435,6 +4448,10 @@ If[!ValueQ[$SlideRenderSettle], $SlideRenderSettle = 0.6];
 If[!ValueQ[$SlidePrepareBeforePlay], $SlidePrepareBeforePlay = True];
 If[!ValueQ[$SlideVoiceTick], $SlideVoiceTick = 0.3];
 If[!ValueQ[$SlideRealtimeVoices], $SlideRealtimeVoices = {"marin", "cedar"}];
+If[!ValueQ[$SlideVoiceProvider], $SlideVoiceProvider = Automatic];
+If[!ValueQ[$SlideVoiceModel], $SlideVoiceModel = Automatic];
+If[!ValueQ[$SlideQuestionMode], $SlideQuestionMode = "QuestionTime"];
+If[!ValueQ[$SlideInterruptWords], $SlideInterruptWords = Automatic];
 If[!ValueQ[$SlideQuestionSeconds], $SlideQuestionSeconds = 3.];
 If[!ValueQ[$SlideQuestionMaxSeconds], $SlideQuestionMaxSeconds = 60.];
 If[!ValueQ[$SlideVoiceInputGate], $SlideVoiceInputGate = 0.];
@@ -4508,6 +4525,179 @@ iSWRealtimeVoiceOf[name_] := If[iSWVoiceRealtimeQ[name], StringDrop[name, 9], na
 
 iSWPlayRealtimeQ[] := $iSWPlayState["Engine"] === "Realtime";
 
+(* ---- \:97f3\:58f0\:4f1a\:8a71\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3068\:30e2\:30c7\:30eb (v1.32) ----
+   \:5fdc\:7b54 on \:3068 realtime: \:306e\:58f0\:306e\:8aad\:307f\:4e0a\:3052\:306b\:4f7f\:3046\:30e2\:30c7\:30eb\:3002gpt-realtime-* \:306f Realtime API
+   (show_slide / ask_sourcevault \:3092\:95a2\:6570\:547c\:3073\:51fa\:3057\:3067)\:3001gpt-live-* \:306f GPT-Live (\:5168\:4e8c\:91cd\:3002
+   \:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f\:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:59d4\:8b72\:3067\:30ef\:30fc\:30ab\:30fc\:306b\:56de\:308a\:3001\:540c\:3058 handler = \:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c /
+   SourceVault / \:8a31\:53ef\:3092\:5f97\:3066\:30a6\:30a7\:30d6\:3001\:3067\:7b54\:3048\:308b)\:3002\:3069\:3061\:3089\:3067\:3082\:30ab\:30fc\:30cd\:30eb\:5074\:306e\:5951\:7d04
+   (Narrate / NarrationDone / slideRequest / askRequest) \:306f\:540c\:3058\:306a\:306e\:3067\:3001\:3053\:3053\:306f
+   \:30e2\:30c7\:30eb\:3092\:9078\:3093\:3067 SourceVaultRealtimeStart \:306b\:6e21\:3059\:3060\:3051\:3002
+   \:4e00\:89a7\:306f SourceVault_realtime \:306e\:767b\:9332\:7c3f\:304c\:6b63\:3002\:672a\:30ed\:30fc\:30c9\:3067\:3082\:9078\:3079\:308b\:3088\:3046\:65e2\:5b9a\:3092\:6301\:3064 *)
+$iSWVoiceModelFallback = <|"OpenAI" -> {"gpt-realtime-2.1", "gpt-realtime-2.1-mini", "gpt-live-1"}|>;
+
+SlideVoiceModels[] := Module[{reg},
+  reg = If[Length[DownValues[SourceVault`SourceVaultRealtimeModels]] > 0,
+    Quiet[SourceVault`SourceVaultRealtimeModels["ByProvider"]], None];
+  If[AssociationQ[reg] && Length[reg] > 0 && AllTrue[Values[reg], ListQ[#] && # =!= {} &],
+    reg, $iSWVoiceModelFallback]];
+
+iSWVoiceProvider[] := Module[{ms = SlideVoiceModels[], p = $SlideVoiceProvider, m = $SlideVoiceModel},
+  Which[
+    StringQ[p] && KeyExistsQ[ms, p], p,
+    (* \:30e2\:30c7\:30eb\:3060\:3051\:6307\:5b9a\:3055\:308c\:3066\:3044\:308c\:3070\:3001\:305d\:306e\:30e2\:30c7\:30eb\:3092\:6301\:3064\:30d7\:30ed\:30d0\:30a4\:30c0 *)
+    StringQ[m] && AnyTrue[Values[ms], MemberQ[#, m] &],
+      First[Keys[Select[ms, MemberQ[#, m] &]]],
+    True, First[Keys[ms], "OpenAI"]]];
+
+iSWVoiceModel[] := Module[{models, m = $SlideVoiceModel, def},
+  (* \:660e\:793a\:306e\:6307\:5b9a\:306f\:305d\:306e\:307e\:307e\:4f7f\:3046 (\:767b\:9332\:7c3f\:306b\:7121\:3044\:65b0\:3057\:3044\:30e2\:30c7\:30eb\:3082\:8a66\:305b\:308b) *)
+  If[StringQ[m] && StringTrim[m] =!= "", Return[m]];
+  models = Lookup[SlideVoiceModels[], iSWVoiceProvider[], {}];
+  def = If[iSWRealtimeLayerQ[], SourceVault`$SourceVaultRealtimeModel, None];
+  Which[
+    StringQ[def] && (models === {} || MemberQ[models, def]), def,
+    models =!= {}, First[models],
+    StringQ[def], def,
+    True, "gpt-realtime-2.1"]];
+
+iSWVoiceModelAPI[m_String] :=
+  If[Length[DownValues[SourceVault`SourceVaultRealtimeModelAPI]] > 0,
+    With[{a = Quiet[SourceVault`SourceVaultRealtimeModelAPI[m]]},
+      If[MemberQ[{"Realtime", "Live"}, a], a, "Realtime"]],
+    If[StringStartsQ[ToLowerCase[m], "gpt-live"], "Live", "Realtime"]];
+iSWVoiceModelAPI[_] := "Realtime";
+
+(* \:30d1\:30ec\:30c3\:30c8\:306e\:5e45\:306b\:53ce\:3081\:308b\:77ed\:3044\:540d\:524d\:3002\:5b8c\:5168\:540d\:306f\:30c4\:30fc\:30eb\:30c1\:30c3\:30d7\:3068\:300c\:60c5\:5831\:300d\:3067\:51fa\:3059 *)
+iSWVoiceModelShortName[m_String] := Module[{s},
+  s = StringReplace[m, StartOfString ~~ "gpt-" -> ""];
+  If[StringLength[s] > 12, s = StringReplace[s, "realtime" -> "rt"]];
+  If[StringLength[s] > 14, StringTake[s, 13] <> "\[Ellipsis]", s]];
+iSWVoiceModelShortName[_] := "-";
+
+$iSWVoiceProviderLabel = "";
+$iSWVoiceModelLabel = "";
+iSWRefreshVoiceModelLabels[] := (
+  $iSWVoiceProviderLabel = iSL["\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0: ", "Voice provider: "] <> iSWVoiceProvider[];
+  $iSWVoiceModelLabel = iSL["\:97f3\:58f0\:30e2\:30c7\:30eb: ", "Voice model: "] <>
+    iSWVoiceModelShortName[iSWVoiceModel[]];
+  (* \:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:306f gpt-live \:306e\:3068\:304d\:3060\:3051\:52b9\:304f\:306e\:3067\:3001\:30e2\:30c7\:30eb\:3092\:5909\:3048\:305f\:3089\:5370\:3082\:5909\:308f\:308b *)
+  iSWRefreshQuestionModeLabel[]);
+
+(* ---- \:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9 (v1.33) ----
+   QuestionTime: \:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:3092\:5207\:308a\:30011 \:679a\:3054\:3068\:306e\:8cea\:554f\:6642\:9593\:3060\:3051\:805e\:304f (\:5f93\:6765\:3069\:304a\:308a\:3001\:5168\:30e2\:30c7\:30eb)\:3002
+   Words / Detect: gpt-live \:306e\:3068\:304d\:3001\:8aad\:307f\:4e0a\:3052\:4e2d\:3082\:30ef\:30fc\:30ab\:30fc\:304c\:30de\:30a4\:30af\:3092\:30ed\:30fc\:30ab\:30eb\:3067\:805e\:304f\:3002
+   \:30e2\:30c7\:30eb\:306b\:306f\:8cea\:7591\:3092\:958b\:304f\:307e\:3067\:90e8\:5c4b\:306e\:97f3\:3092\:6e21\:3055\:306a\:3044 (\:30b9\:30d4\:30fc\:30ab\:30fc\:306e\:81ea\:5206\:306e\:58f0\:3092\:62fe\:3046\:305f\:3081)\:3002
+     Words  = \:30a8\:30b3\:30fc\:3088\:308a\:5927\:304d\:3044\:805e\:304d\:624b\:306e\:58f0\:3067\:8a31\:53ef\:30ef\:30fc\:30c9 (Vosk\:3001\:6587\:6cd5\:5236\:9650) \:304c\:805e\:3053\:3048\:305f\:3089
+     Detect = \:805e\:304d\:624b\:306e\:58f0\:304c 0.35 \:79d2\:7d9a\:3044\:305f\:3089 (\:8cea\:554f\:304b\:3069\:3046\:304b\:306f gpt-live \:304c\:5224\:65ad)
+   \:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591\:3001\:9759\:304b\:306b\:306a\:3063\:305f\:3089\:4e2d\:65ad\:3057\:305f\:6587\:304b\:3089\:300c\:305d\:308c\:3067\:306f\:3001\:8aac\:660e\:306b\:623b\:308a\:307e\:3059\:300d\:3067\:518d\:958b\:3002
+   \:8cea\:7591\:4e2d\:306b\:30b9\:30e9\:30a4\:30c9\:304c\:52d5\:3044\:305f\:3089\:3001\:518d\:958b\:524d\:306b\:5143\:306e\:30b9\:30e9\:30a4\:30c9\:3078\:623b\:3059 (\:30ef\:30fc\:30ab\:30fc\:304c slideRequest \:3092\:51fa\:3059)\:3002
+   \:30ab\:30fc\:30cd\:30eb\:5074\:306f\:300c\:4e2d\:65ad\:4e2d\:3082 NarrationActive \:306e\:307e\:307e\:300d\:306a\:306e\:3067\:3001\:65e2\:5b58\:306e\:5f85\:3061\:65b9\:304c\:305d\:306e\:307e\:307e\:52b9\:304f *)
+$iSWQuestionModes = {"QuestionTime", "Words", "Detect"};
+
+iSWVoiceLiveQ[] := iSWVoiceModelAPI[iSWVoiceModel[]] === "Live";
+
+iSWQuestionModePreference[] :=
+  If[MemberQ[$iSWQuestionModes, $SlideQuestionMode], $SlideQuestionMode, "QuestionTime"];
+
+iSWQuestionModeEffective[] := With[{m = iSWQuestionModePreference[]},
+  If[m =!= "QuestionTime" && iSWVoiceLiveQ[], m, "QuestionTime"]];
+
+iSWQuestionModeName["Words"] := iSL["\:7279\:5b9a\:30ef\:30fc\:30c9", "keywords"];
+iSWQuestionModeName["Detect"] := iSL["\:4e8c\:6bb5\:69cb\:3048", "two-stage"];
+iSWQuestionModeName[_] := iSL["\:8cea\:554f\:30bf\:30a4\:30e0", "question time"];
+
+$iSWQuestionModeLabel = "";
+(* \:300c*\:300d = \:9078\:3093\:3060\:30e2\:30fc\:30c9\:304c\:4eca\:306e\:30e2\:30c7\:30eb\:3067\:306f\:52b9\:304b\:306a\:3044 (gpt-live \:4ee5\:5916\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:52d5\:304f) *)
+iSWRefreshQuestionModeLabel[] := ($iSWQuestionModeLabel =
+  iSL["\:8cea\:554f: ", "Questions: "] <> iSWQuestionModeName[iSWQuestionModePreference[]] <>
+    If[iSWQuestionModePreference[] =!= iSWQuestionModeEffective[], "*", ""]);
+
+(* \:9078\:3093\:3060\:30e2\:30fc\:30c9\:3067\:8db3\:308a\:306a\:3044\:3082\:306e\:3092 1 \:884c\:3067\:77e5\:3089\:305b\:308b (\:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc) *)
+iSWQuestionModeNotice[] := Module[{m = iSWQuestionModePreference[], nb, msg = None, rt, sm},
+  Which[
+    m =!= "QuestionTime" && ! iSWVoiceLiveQ[],
+      msg = iSL["\:300c" <> iSWQuestionModeName[m] <> "\:300d\:306f\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-1 \:306e\:3068\:304d\:3060\:3051\:52b9\:304d\:307e\:3059\:3002\:3044\:307e\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:52d5\:304d\:307e\:3059\:3002",
+        "\"" <> iSWQuestionModeName[m] <> "\" needs the gpt-live-1 voice model; question time is used meanwhile."],
+    m === "Words" && iSWRealtimeLayerQ[],
+      rt = Quiet[SourceVault`SourceVaultRealtimeRuntime[]];
+      sm = If[Length[DownValues[SourceVault`SourceVaultSpeechModel]] > 0,
+        Quiet[SourceVault`SourceVaultSpeechModel[]], $Failed];
+      Which[
+        AssociationQ[rt] && ! TrueQ[Lookup[rt, "Vosk", False]],
+          msg = iSL["\:7279\:5b9a\:30ef\:30fc\:30c9\:306e\:805e\:304d\:53d6\:308a\:306b vosk \:304c\:8981\:308a\:307e\:3059: SourceVaultRealtimeInstall[\"Vosk\" -> True] (\:7121\:3044\:9593\:306f\:4e8c\:6bb5\:69cb\:3048\:3067\:52d5\:304d\:307e\:3059)",
+            "Keywords need vosk: SourceVaultRealtimeInstall[\"Vosk\" -> True] (two-stage is used meanwhile)"],
+        ! AssociationQ[sm],
+          msg = iSL["\:7279\:5b9a\:30ef\:30fc\:30c9\:306e\:805e\:304d\:53d6\:308a\:306b\:97f3\:58f0\:8a8d\:8b58\:30e2\:30c7\:30eb\:304c\:8981\:308a\:307e\:3059: SourceVaultInstallSpeechModel[] (\:7121\:3044\:9593\:306f\:4e8c\:6bb5\:69cb\:3048\:3067\:52d5\:304d\:307e\:3059)",
+            "Keywords need a speech model: SourceVaultInstallSpeechModel[] (two-stage is used meanwhile)"]]];
+  nb = iSWResolveTargetNb[];
+  If[StringQ[msg] && Head[nb] === NotebookObject,
+    iSWStatus[nb, msg]; iSWStatusClearLater[nb]];
+  msg];
+
+SlideCycleQuestionMode[] := Module[{ms = $iSWQuestionModes, idx},
+  idx = First[FirstPosition[ms, iSWQuestionModePreference[], {0}]];
+  $SlideQuestionMode = ms[[Mod[idx, Length[ms]] + 1]];
+  iSWRefreshQuestionModeLabel[];
+  iSWQuestionModeNotice[];
+  $SlideQuestionMode];
+
+SlideSetQuestionMode[m_String] /; MemberQ[$iSWQuestionModes, m] := (
+  $SlideQuestionMode = m;
+  iSWRefreshQuestionModeLabel[];
+  iSWQuestionModeNotice[];
+  m);
+
+(* \:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:4f1a\:8a71\:304c\:5225\:306e\:30e2\:30c7\:30eb\:306a\:3089\:3001\:5207\:308a\:66ff\:3048\:306f\:6b21\:306b\:8d77\:3053\:3057\:305f\:3068\:304d\:304b\:3089\:3002
+   \:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:30e2\:30c7\:30eb\:306f\:9014\:4e2d\:3067\:5909\:3048\:3089\:308c\:306a\:3044 (Realtime \:3082 Live \:3082) *)
+iSWVoiceModelNotice[] := Module[{st = iSWRealtimeStatus[], running, nb},
+  running = Lookup[st, "Model", None];
+  If[! TrueQ[Lookup[st, "Running", False]] || ! StringQ[running] ||
+      running === iSWVoiceModel[], Return[Null]];
+  nb = iSWResolveTargetNb[];
+  If[Head[nb] === NotebookObject,
+    iSWStatus[nb, iSL["\:97f3\:58f0\:30e2\:30c7\:30eb\:3092 " <> iSWVoiceModel[] <> " \:306b\:3057\:307e\:3057\:305f\:3002\:3044\:307e\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306f " <>
+        running <> " \:306e\:307e\:307e\:3067\:3059 (\:5fdc\:7b54 off \:2192 on \:3067\:5207\:308a\:66ff\:308f\:308a\:307e\:3059)\:3002",
+      "Voice model set to " <> iSWVoiceModel[] <> ". The running session stays on " <>
+        running <> " until answering is restarted (off -> on)."]];
+    iSWStatusClearLater[nb]];
+  Null];
+
+SlideCycleVoiceProvider[] := Module[{ps = Keys[SlideVoiceModels[]], cur, idx},
+  cur = iSWVoiceProvider[];
+  idx = With[{p = Position[ps, cur]}, If[Length[p] >= 1, p[[1, 1]], 0]];
+  $SlideVoiceProvider = If[ps === {}, Automatic, ps[[Mod[idx, Length[ps]] + 1]]];
+  (* \:9078\:3093\:3060\:30d7\:30ed\:30d0\:30a4\:30c0\:306b\:7121\:3044\:30e2\:30c7\:30eb\:306f\:65e2\:5b9a\:3078\:623b\:3059 *)
+  If[StringQ[$SlideVoiceModel] &&
+      ! MemberQ[Lookup[SlideVoiceModels[], iSWVoiceProvider[], {}], $SlideVoiceModel],
+    $SlideVoiceModel = Automatic];
+  iSWRefreshVoiceModelLabels[];
+  iSWVoiceModelNotice[];
+  $SlideVoiceProvider];
+
+SlideCycleVoiceModel[] := Module[{ms, cur, idx},
+  ms = Lookup[SlideVoiceModels[], iSWVoiceProvider[], {}];
+  If[ms === {}, iSWRefreshVoiceModelLabels[]; Return[iSWVoiceModel[]]];
+  cur = iSWVoiceModel[];
+  idx = With[{p = Position[ms, cur]}, If[Length[p] >= 1, p[[1, 1]], 0]];
+  $SlideVoiceModel = ms[[Mod[idx, Length[ms]] + 1]];
+  iSWRefreshVoiceModelLabels[];
+  iSWVoiceModelNotice[];
+  $SlideVoiceModel];
+
+SlideSetVoiceModel[Automatic] := (
+  $SlideVoiceModel = Automatic;
+  $SlideVoiceProvider = Automatic;
+  iSWRefreshVoiceModelLabels[];
+  iSWVoiceModel[]);
+
+SlideSetVoiceModel[m_String] := Module[{owner},
+  owner = Keys[Select[SlideVoiceModels[], MemberQ[#, m] &]];
+  $SlideVoiceModel = m;
+  If[owner =!= {}, $SlideVoiceProvider = First[owner]];
+  iSWRefreshVoiceModelLabels[];
+  iSWVoiceModelNotice[];
+  m];
+
 (* \:3044\:307e\:958b\:3044\:3066\:3044\:308b\:30da\:30fc\:30b8\:3092\:8cc7\:6599\:5c64\:3078\:4f1d\:3048\:308b\:3002\:8cea\:554f\:304c\:6765\:305f\:3068\:304d\:306b\:3001\:305d\:306e\:30da\:30fc\:30b8\:306e
    \:5468\:8fba\:304b\:3089\:5148\:306b\:63a2\:305b\:308b\:3088\:3046\:306b\:3059\:308b\:305f\:3081 (SourceVault_talkqa) *)
 iSWNoteSlide[n_Integer] := If[
@@ -4533,8 +4723,8 @@ iSWQuestionWindow[] := With[{v = $SlideQuestionSeconds},
 
 (* \:76f8\:624b\:304c\:8a71\:3057\:3066\:3044\:308b / \:3053\:3061\:3089\:304c\:7b54\:3048\:3066\:3044\:308b\:9593\:306f\:6b21\:3078\:9001\:3089\:306a\:3044 *)
 iSWRealtimeBusyQ[rt_Association] :=
-  TrueQ[Lookup[rt, "Speaking", False]] ||
-    MemberQ[{"listening", "thinking", "answering"}, Lookup[rt, "Mode", ""]];
+  TrueQ[Lookup[rt, "Speaking", False]] || TrueQ[Lookup[rt, "QAOpen", False]] ||
+    MemberQ[{"listening", "thinking", "answering", "interrupted"}, Lookup[rt, "Mode", ""]];
 
 (* \:7b54\:3048\:3066\:3044\:308b\:6700\:4e2d\:304b (\:3053\:3053\:3092\:6253\:3061\:5207\:308b\:306e\:306f\:5931\:793c) *)
 iSWRealtimeAnsweringQ[rt_Association] :=
@@ -4560,7 +4750,20 @@ iSWFailureText[f_] := If[FailureQ[f],
   ToString[Lookup[Last[f], "MessageTemplate", ToString[f]]], ToString[f]];
 
 (* \:767a\:8868\:7528\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:6307\:793a\:3002\:539f\:7a3f\:306f 1 \:679a\:305a\:3064\:6e21\:3059\:306e\:3067\:3001\:3053\:3053\:3067\:306f\:5f79\:5272\:3060\:3051\:3092\:8a00\:3046 *)
-iSWRealtimeSessionInstructions[] := iSL[
+iSWRealtimeSessionInstructions[] := iSWRealtimeSessionInstructions["Realtime"];
+
+(* GPT-Live: show_slide \:3068\:3044\:3046\:95a2\:6570\:306f\:7121\:3044\:3002\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cc7\:6599\:306e\:8cea\:554f\:306f\:59d4\:8b72\:3067
+   \:30ef\:30fc\:30ab\:30fc\:306b\:56de\:308a\:3001\:540c\:3058 handler \:3067\:7b54\:3048\:308b\:3002\:305d\:308c\:4ee5\:5916 (\:539f\:7a3f\:306e\:8aad\:307f\:65b9\:30fb\:8cea\:554f\:3078\:306e\:69cb\:3048\:30fb
+   \:805e\:304d\:8fd4\:3057) \:306f Realtime \:3068\:540c\:3058\:6587\:9762\:3092\:4f7f\:3046 *)
+iSWRealtimeSessionInstructions["Live"] := StringReplace[
+  iSWRealtimeSessionInstructions["Realtime"],
+  RegularExpression["(?m)^.*show_slide.*$"] -> iSL[
+    "\:30b9\:30e9\:30a4\:30c9\:306e\:8868\:793a\:306b\:3064\:3044\:3066\:306e\:4f9d\:983c (\:6b21/\:524d/\:6700\:521d/\:6700\:5f8c/\:4f55\:679a\:76ee/\:7279\:5b9a\:306e\:5185\:5bb9\:306e\:30b9\:30e9\:30a4\:30c9) \:3068\:3001\:767a\:8868\:306e\:5185\:5bb9\:3084\:4e8b\:5b9f\:306b\:3064\:3044\:3066\:306e\:8cea\:554f\:306f\:3001\:81ea\:5206\:3067\:51e6\:7406\:305b\:305a\:5fc5\:305a\:30d0\:30c3\:30af\:30a8\:30f3\:30c9\:3078\:59d4\:8b72\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
+    "Delegate requests to change the slide shown (next / previous / first / last / a number / one about something) and questions about the talk's content or facts to the backend instead of handling them yourself."]];
+
+iSWRealtimeSessionInstructions[_] := iSWRealtimeSessionInstructions["Realtime"];
+
+iSWRealtimeSessionInstructions["Realtime"] := iSL[
   "\:3042\:306a\:305f\:306f\:767a\:8868\:306e\:9032\:884c\:5f79\:3067\:3059\:3002\:51fa\:529b\:306f\:5fc5\:305a\:65e5\:672c\:8a9e\:3067\:3059\:3002\:76f8\:624b\:304c\:82f1\:8a9e\:306a\:3069\:4ed6\:306e\:8a00\:8a9e\:3067\:8a71\:3057\:3066\:3082\:3001\:65e5\:672c\:8a9e\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002
 \:539f\:7a3f\:3092\:6e21\:3055\:308c\:305f\:3068\:304d\:306f\:3001\:305d\:306e\:539f\:7a3f\:306e\:5185\:5bb9\:3060\:3051\:3092\:81ea\:7136\:306a\:767a\:8868\:53e3\:8abf\:3067\:8a71\:3057\:307e\:3059\:3002\:539f\:7a3f\:306b\:7121\:3044\:4e8b\:5b9f\:306f\:8db3\:3057\:307e\:305b\:3093\:3002
 \:8cea\:554f\:3055\:308c\:305f\:3068\:304d\:306f\:539f\:7a3f\:306b\:7e1b\:3089\:308c\:307e\:305b\:3093\:3002\:30b9\:30e9\:30a4\:30c9\:306e\:5185\:5bb9\:3084\:3042\:306a\:305f\:306e\:77e5\:8b58\:3092\:3082\:3068\:306b\:3001\:77ed\:304f\:5206\:304b\:308a\:3084\:3059\:304f\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002\:300c\:539f\:7a3f\:304c\:7121\:3044\:306e\:3067\:7b54\:3048\:3089\:308c\:307e\:305b\:3093\:300d\:3068\:306f\:8a00\:308f\:306a\:3044\:3053\:3068\:3002\:5206\:304b\:3089\:306a\:3044\:3053\:3068\:306f\:6b63\:76f4\:306b\:5206\:304b\:3089\:306a\:3044\:3068\:8a00\:3063\:3066\:304f\:3060\:3055\:3044\:3002
@@ -5072,7 +5275,7 @@ iSWInfoRows[nb_] := Module[{est, count, talkPath, talk, voice, engine, rt, src},
   talkPath = SlideTalkFile[nb];
   talk = iSWTalkResolve[nb];
   voice = iSWVoiceName[];
-  engine = If[iSWVoiceRealtimeQ[voice], iSL["\:30af\:30e9\:30a6\:30c9 (realtime)", "cloud (realtime)"],
+  engine = If[iSWVoiceRealtimeQ[voice], iSL["\:30af\:30e9\:30a6\:30c9 (", "cloud ("] <> iSWVoiceModel[] <> ")",
     With[{v = If[StringQ[voice], Quiet @ Check[SourceVault`SourceVaultVoice[voice], $Failed], $Failed]},
       If[AssociationQ[v] && v["Engine"] === "AivisSpeech",
         iSL["\:30ed\:30fc\:30ab\:30eb (AivisSpeech)", "local (AivisSpeech)"],
@@ -5118,9 +5321,25 @@ iSWInfoRows[nb_] := Module[{est, count, talkPath, talk, voice, engine, rt, src},
           iSL[" \:679a (\:5408\:6210\:6e08\:307f)", " slides synthesized"]}},
       {{iSL["\:898b\:7a4d\:6642\:9593", "Estimated"], iSL["\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093", "no talk scenario"]}}],
     {{iSL["\:58f0", "Voice"], If[StringQ[voice], voice, iSL["\:672a\:5c0e\:5165", "none"]] <> "  (" <> engine <> ")"},
+     {iSL["\:97f3\:58f0\:30e2\:30c7\:30eb", "Voice model"], iSWVoiceProvider[] <> " / " <> iSWVoiceModel[] <>
+        " (" <> iSWVoiceModelAPI[iSWVoiceModel[]] <> ")"},
+     {iSL["\:8cea\:554f\:306e\:53d7\:3051\:65b9", "Questions"],
+        iSWQuestionModeName[iSWQuestionModeEffective[]] <>
+          If[iSWQuestionModePreference[] =!= iSWQuestionModeEffective[],
+            iSL[" (\:300c" <> iSWQuestionModeName[iSWQuestionModePreference[]] <> "\:300d\:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051)",
+              " (\"" <> iSWQuestionModeName[iSWQuestionModePreference[]] <> "\" needs gpt-live-1)"], ""] <>
+          If[StringQ[Lookup[rt, "InterruptGate", None]] && rt["InterruptGate"] =!= "none",
+            iSL[" / \:5b9f\:969b\:306e\:9580: ", " / gate in force: "] <> rt["InterruptGate"] <>
+              If[NumericQ[Lookup[rt, "Interruptions", None]],
+                iSL[" / \:4e2d\:65ad ", " / interruptions "] <> ToString[rt["Interruptions"]] <> iSL[" \:56de", ""], ""],
+            ""]},
      {iSL["\:97f3\:58f0\:4f1a\:8a71", "Voice answering"],
         If[TrueQ[Lookup[rt, "Running", False]],
-          iSL["\:5b9f\:884c\:4e2d", "running"] <> " - " <> ToString[Lookup[rt, "Mode", ""]] <>
+          iSL["\:5b9f\:884c\:4e2d", "running"] <>
+            If[StringQ[Lookup[rt, "Model", None]], " (" <> rt["Model"] <> ")", ""] <>
+            If[NumericQ[Lookup[rt, "UsageSeconds", None]],
+              iSL[" \:901a\:8a71 ", " billed "] <> ToString[Round[rt["UsageSeconds"]]] <> iSL[" \:79d2", " s"], ""] <>
+            " - " <> ToString[Lookup[rt, "Mode", ""]] <>
             iSL[" / \:30de\:30a4\:30af ", " / mic "] <>
             If[TrueQ[Lookup[rt, "Muted", False]], iSL["\:5207", "off"], iSL["\:5165", "on"]],
           iSL["\:505c\:6b62\:4e2d", "stopped"]]},
@@ -5388,8 +5607,13 @@ iSWSlideRequestHandler[req_Association] := Module[
       "message" -> If[dest < 1, "\:6700\:521d\:306e\:30b9\:30e9\:30a4\:30c9\:3067\:3059\:3002", "\:6700\:5f8c\:306e\:30b9\:30e9\:30a4\:30c9\:3067\:3059\:3002"]|>]];
   dest = iSWSlideGoTo[nb, dest];
   iSWNoteSlide[dest];
-  (* \:8aad\:307f\:4e0a\:3052\:4e2d\:306a\:3089\:3001\:305d\:306e\:679a\:3092\:8aad\:307f\:76f4\:3059 (\:8868\:793a\:3068\:8a71\:304c\:98df\:3044\:9055\:308f\:306a\:3044\:3088\:3046\:306b) *)
-  If[$iSWPlayState["Status"] === "Playing" && iSWPlayRealtimeQ[],
+  (* \:8aad\:307f\:4e0a\:3052\:4e2d\:306a\:3089\:3001\:305d\:306e\:679a\:3092\:8aad\:307f\:76f4\:3059 (\:8868\:793a\:3068\:8a71\:304c\:98df\:3044\:9055\:308f\:306a\:3044\:3088\:3046\:306b)\:3002
+     \:305f\:3060\:3057 GPT-Live \:306e\:767a\:8868\:4e2d\:306e\:8cea\:7591 (\:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048) \:304b\:3089\:6765\:305f\:8981\:6c42\:306f
+     "keepNarration" \:4ed8\:304d: \:767a\:8868\:306f\:30ef\:30fc\:30ab\:30fc\:304c\:4e2d\:65ad\:3057\:305f\:6587\:304b\:3089\:518d\:958b\:3057\:3001\:518d\:958b\:524d\:306b\:5143\:306e
+     \:30b9\:30e9\:30a4\:30c9\:3078\:623b\:3059\:306e\:3067\:3001\:3053\:3053\:306f\:8868\:793a\:3092\:52d5\:304b\:3059\:3060\:3051\:3002\:518d\:751f\:72b6\:614b\:3092\:66f8\:304d\:63db\:3048\:308b\:3068
+     \:518d\:958b\:3057\:305f\:8aad\:307f\:4e0a\:3052\:3092\:898b\:5931\:3063\:3066\:767a\:8868\:304c\:6b62\:307e\:308b (\:5b9f\:6e2c 2026-09-19) *)
+  If[$iSWPlayState["Status"] === "Playing" && iSWPlayRealtimeQ[] &&
+      ! TrueQ[Lookup[req, "keepNarration", False]],
     $iSWPlayState["Slide"] = dest;
     $iSWPlayState["NarrationId"] = None;
     $iSWPlayState["Deadline"] = AbsoluteTime[] + 3.;
@@ -5459,8 +5683,9 @@ SlideToggleRealtime[nb_NotebookObject] := Module[{res, voice},
     If[iSWVoiceRealtimeQ[v], iSWRealtimeVoiceOf[v], Automatic]];
   res = Quiet[SourceVault`SourceVaultRealtimeStart[
     "Notebook" -> nb, "Voice" -> voice, "StartMuted" -> False,
+    "Model" -> iSWVoiceModel[],
     "SlideControl" -> True, "InputLevelGate" -> iSWInputGate[],
-    "Instructions" -> iSWRealtimeSessionInstructions[]]];
+    "Instructions" -> iSWRealtimeSessionInstructions[iSWVoiceModelAPI[iSWVoiceModel[]]]]];
   iSWRefreshTalkLabel[];
   (* \:624b\:5143\:30ea\:30e2\:30b3\:30f3 (Relacon \:306e\:518d\:751f/\:4e00\:6642\:505c\:6b62) \:3092\:97f3\:58f0\:5fdc\:7b54\:3068\:9023\:52d5\:3055\:305b\:308b *)
   iSWRemoteAutoStart[];
@@ -5587,13 +5812,24 @@ iSWPlaySlideLocal[nb_, n_Integer, text_String] :=
 
 (* Realtime (gpt-realtime): \:539f\:7a3f\:3092\:6e21\:3057\:3066\:8aad\:307e\:305b\:3001\:300c\:9cf4\:308a\:7d42\:308f\:3063\:305f\:300d\:3068\:8a00\:3063\:3066\:304d\:305f\:3089\:6b21\:3078\:3002
    \:9577\:3055\:306f\:4e8b\:524d\:306b\:5206\:304b\:3089\:306a\:3044\:306e\:3067\:3001\:7de0\:5207\:306f\:66b4\:8d70\:3088\:3051\:306e\:4e0a\:9650\:3068\:3057\:3066\:3060\:3051\:4f7f\:3046\:3002 *)
-iSWPlaySlideRealtime[n_Integer, text_String] := Module[{id, res, now, budget},
+iSWPlaySlideRealtime[n_Integer, text_String] := Module[{id, res, now, budget, qmode},
   id = "s" <> ToString[n] <> "r" <> ToString[$iSWPlayState["Run"]];
-  iSWRealtimeMic[False];
+  qmode = iSWQuestionModeEffective[];
+  $iSWPlayState["QuestionMode"] = qmode;
+  If[qmode === "QuestionTime",
+    (* \:8cea\:554f\:30bf\:30a4\:30e0: \:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:3092\:5207\:308b (\:81ea\:5206\:3067\:5207\:3063\:305f\:5370\:3092\:6b8b\:3059) *)
+    iSWRealtimeMic[False]; $iSWPlayState["AutoMuted"] = True,
+    (* \:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048: \:30de\:30a4\:30af\:306f\:958b\:3051\:305f\:307e\:307e\:3002\:30e2\:30c7\:30eb\:306b\:90e8\:5c4b\:306e\:97f3\:3092\:6e21\:3059\:304b\:306f
+       \:30ef\:30fc\:30ab\:30fc\:304c\:6c7a\:3081\:308b\:3002\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:81ea\:5206\:304c\:5207\:3063\:305f\:307e\:307e\:306a\:3089\:958b\:3051\:76f4\:3059 (\:624b\:3067\:5207\:3063\:305f\:306e\:306f\:89e6\:3089\:306a\:3044) *)
+    If[TrueQ[Lookup[$iSWPlayState, "AutoMuted", False]],
+      iSWRealtimeMic[True]; $iSWPlayState["AutoMuted"] = False]];
   res = Quiet[SourceVault`SourceVaultRealtimeNarrate[id, text,
     "Heading" -> (iSL["\:30b9\:30e9\:30a4\:30c9 ", "Slide "] <> ToString[n] <> "/" <>
       ToString[$iSWPlayState["Count"]]),
-    "Instructions" -> ToString[$iSWPlayState["Instructions"]]]];
+    "Instructions" -> ToString[$iSWPlayState["Instructions"]],
+    "Slide" -> n,
+    "Interrupt" -> Replace[qmode, "QuestionTime" -> None],
+    "InterruptWords" -> $SlideInterruptWords]];
   If[FailureQ[res],
     $iSWPlayState["LastFailure"] = res;
     iSWPlayFailReason[iSL["\:8aad\:307f\:4e0a\:3052\:3092\:4f9d\:983c\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f",
@@ -5677,10 +5913,14 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
       If[Lookup[rt, "NarrationDone", None] === $iSWPlayState["NarrationId"],
         $iSWPlayState["NarrationId"] = None;
         $iSWPlayState["AudioEnd"] = now;
-        (* \:8aad\:307f\:7d42\:308f\:308a\:3002\:3053\:3053\:3067\:30de\:30a4\:30af\:3092\:958b\:3051\:3066\:8cea\:554f\:3092\:5f85\:3064 *)
+        (* \:8aad\:307f\:7d42\:308f\:308a\:3002\:8cea\:554f\:30bf\:30a4\:30e0\:306a\:3089\:3053\:3053\:3067\:30de\:30a4\:30af\:3092\:958b\:3051\:3066\:8cea\:554f\:3092\:5f85\:3064\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 /
+           \:4e8c\:6bb5\:69cb\:3048\:306f\:8aad\:307f\:4e0a\:3052\:4e2d\:3082\:805e\:3044\:3066\:3044\:308b\:306e\:3067\:8cea\:554f\:6642\:9593\:306f\:53d6\:3089\:306a\:3044 (\:8cea\:7591\:4e2d\:306f
+           NarrationDone \:304c\:51fa\:306a\:3044\:306e\:3067\:3001\:3053\:3053\:3078\:6765\:308b\:306e\:306f\:8cea\:7591\:304c\:6e08\:3093\:3067\:304b\:3089) *)
         $iSWPlayState["WindowStart"] = now;
-        iSWRealtimeMic[True];
-        $iSWPlayState["Deadline"] = now + $SlideVoiceGap + iSWQuestionWindow[],
+        If[Lookup[$iSWPlayState, "QuestionMode", "QuestionTime"] === "QuestionTime",
+          iSWRealtimeMic[True]; $iSWPlayState["AutoMuted"] = False;
+          $iSWPlayState["Deadline"] = now + $SlideVoiceGap + iSWQuestionWindow[],
+          $iSWPlayState["Deadline"] = now + $SlideVoiceGap],
         (* \:307e\:3060\:8aad\:3093\:3067\:3044\:308b\:6700\:4e2d\:306b\:7de0\:5207\:304c\:6765\:3066\:3082\:6253\:3061\:5207\:3089\:306a\:3044\:3002\:7de0\:5207\:306f\:300c\:8fd4\:4e8b\:304c
            \:6765\:306a\:304f\:306a\:3063\:305f\:300d\:3068\:304d\:306e\:4fdd\:967a\:3067\:3042\:3063\:3066\:3001\:8a71\:306e\:9577\:3055\:306e\:4e0a\:9650\:3067\:306f\:306a\:3044 *)
         If[now >= $iSWPlayState["Deadline"] &&
@@ -5756,7 +5996,9 @@ iSWEnsureRealtimeBridge[nb_, voiceName_String] := Module[{st, res},
   If[TrueQ[Lookup[st, "Running", False]],
     (* \:58f0\:304c\:540c\:3058\:3067\:3001\:304b\:3064\:30ef\:30fc\:30ab\:30fc\:304c\:4eca\:306e\:5951\:7d04\:306a\:3089\:4f7f\:3044\:56de\:3059\:3002\:53e4\:3044\:30ef\:30fc\:30ab\:30fc\:306f
        \:77e5\:3089\:306a\:3044\:30b3\:30de\:30f3\:30c9 (narrate) \:3092\:9ed9\:3063\:3066\:6368\:3066\:308b\:306e\:3067\:5165\:308c\:76f4\:3059 *)
+    (* \:30e2\:30c7\:30eb\:3082\:30bb\:30c3\:30b7\:30e7\:30f3\:958b\:59cb\:5f8c\:306b\:306f\:5909\:3048\:3089\:308c\:306a\:3044\:306e\:3067\:3001\:9055\:3048\:3070\:5165\:308c\:76f4\:3059 *)
     If[Lookup[st, "Voice", ""] === voiceName &&
+        Lookup[st, "Model", ""] === iSWVoiceModel[] &&
         Lookup[st, "WorkerVersion", None] ===
           SourceVault`$SourceVaultRealtimeWorkerVersion,
       Return[<|"Status" -> "Reused", "Voice" -> voiceName|>]];
@@ -5766,8 +6008,9 @@ iSWEnsureRealtimeBridge[nb_, voiceName_String] := Module[{st, res},
      \:8aad\:307f\:7d42\:3048\:305f\:5408\:9593\:3060\:3051\:8cea\:554f\:304c\:5c4a\:304f\:3002\:30df\:30e5\:30fc\:30c8\:3057\:3066\:3044\:308b\:3068\:8cea\:554f\:3067\:304d\:306a\:3044 *)
   res = Quiet[SourceVault`SourceVaultRealtimeStart[
     "Notebook" -> nb, "Voice" -> voiceName, "StartMuted" -> False,
+    "Model" -> iSWVoiceModel[],
     "SlideControl" -> True, "InputLevelGate" -> iSWInputGate[],
-    "Instructions" -> iSWRealtimeSessionInstructions[]]];
+    "Instructions" -> iSWRealtimeSessionInstructions[iSWVoiceModelAPI[iSWVoiceModel[]]]]];
   If[FailureQ[res] || res === $Failed, Return[res]];
   $iSWPlayState["StartedBridge"] = True;
   iSWRefreshTalkLabel[];
@@ -6570,12 +6813,14 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.31";
+$SlideWorkflowInteractiveVersion = "1.33";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
 ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]},
   If[$iSWPalette =!= None, Quiet[NotebookClose[$iSWPalette]]];
   iSWRefreshVoiceLabel[];
+  iSWRefreshVoiceModelLabels[];
+  iSWRefreshQuestionModeLabel[];
   iSWRefreshTalkLabel[];
   iSWRefreshMicLabel[];
   iSWRefreshEnvLabel[];
@@ -6715,7 +6960,31 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
         Dynamic[Style[$iSWVoiceLabel, 9, Bold, GrayLevel[0.2]],
           TrackedSymbols :> {$iSWVoiceLabel}, SynchronousUpdating -> False],
         SlideCycleVoice[],
-        Appearance -> "Frameless", Method -> "Queued"]
+        Appearance -> "Frameless", Method -> "Queued"],
+      (* v1.32: \:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3068\:30e2\:30c7\:30eb\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078\:3002
+         \:30e9\:30d9\:30eb\:306f kernel \:5074\:306e\:6587\:5b57\:5217\:5909\:6570\:3092\:8ffd\:3046\:3060\:3051 (\:63cf\:753b\:6642\:306b kernel \:3092\:547c\:3070\:306a\:3044) *)
+      iSWTip[Button[
+        Dynamic[Style[$iSWVoiceProviderLabel, 9, Bold, GrayLevel[0.2]],
+          TrackedSymbols :> {$iSWVoiceProviderLabel}, SynchronousUpdating -> False],
+        SlideCycleVoiceProvider[],
+        Appearance -> "Frameless", Method -> "Queued"],
+        iSL["\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078",
+          "Provider for voice answering (answer on / realtime: voices). Click to cycle"]],
+      iSWTip[Button[
+        Dynamic[Style[$iSWVoiceModelLabel, 9, Bold, GrayLevel[0.2]],
+          TrackedSymbols :> {$iSWVoiceModelLabel}, SynchronousUpdating -> False],
+        SlideCycleVoiceModel[],
+        Appearance -> "Frameless", Method -> "Queued"],
+        iSL["\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078 (gpt-realtime-2.1 / gpt-realtime-2.1-mini / gpt-live-1)\:3002gpt-live-1 \:306f\:5168\:4e8c\:91cd\:3067\:3001\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f SourceVault\:30fb\:30a6\:30a7\:30d6\:3078\:59d4\:8b72\:3057\:3066\:7b54\:3048\:308b\:3002\:5fdc\:7b54 off \:2192 on \:3067\:53cd\:6620",
+          "Voice answering model; click to cycle (gpt-realtime-2.1 / -mini / gpt-live-1). gpt-live-1 is full duplex and answers by delegating to slide control, SourceVault and the web. Takes effect when answering restarts"]],
+      (* v1.33: \:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3002\:62bc\:3059\:305f\:3073\:306b \:8cea\:554f\:30bf\:30a4\:30e0 \:2192 \:7279\:5b9a\:30ef\:30fc\:30c9 \:2192 \:4e8c\:6bb5\:69cb\:3048 *)
+      iSWTip[Button[
+        Dynamic[Style[$iSWQuestionModeLabel, 9, Bold, GrayLevel[0.2]],
+          TrackedSymbols :> {$iSWQuestionModeLabel}, SynchronousUpdating -> False],
+        SlideCycleQuestionMode[],
+        Appearance -> "Frameless", Method -> "Queued"],
+        iSL["\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078)\:3002\:8cea\:554f\:30bf\:30a4\:30e0 = 1 \:679a\:3054\:3068\:306b\:8cea\:554f\:6642\:9593 (\:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:5207)\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 = \:8aad\:307f\:4e0a\:3052\:4e2d\:306b\:300c\:8cea\:554f\:300d\:300c\:30b9\:30e9\:30a4\:30c9\:300d\:306a\:3069\:304c\:805e\:3053\:3048\:305f\:3089\:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591\:3002\:4e8c\:6bb5\:69cb\:3048 = \:805e\:304d\:624b\:306e\:58f0\:3067\:6b62\:3081\:3001\:8cea\:554f\:304b\:306f gpt-live \:304c\:5224\:65ad\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051 (* \:306f\:4eca\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0)",
+          "How questions are taken during a talk (click to cycle). Question time = a window after each slide (mic off while reading). Keywords = stop the talk when a listener says an allowed word. Two-stage = stop on a listener's voice; gpt-live judges if it was a question. Keywords / two-stage need gpt-live-1 (* = question time with the current model)"]]
     }, Alignment -> Center, Spacings -> 0],
     WindowTitle -> "Slides", WindowMargins -> {{Automatic, 60}, {Automatic, 60}}]];
   $iSWPalette];
@@ -9566,6 +9835,8 @@ Print["
   SlideDeckUpload[nb] / SlideUploadCredential[nb] \:2192 mp4 \:3092 sftp \:3067 web \:30b5\:30fc\:30d0\:3078\:914d\:7f6e (\:6307\:793a\:30bb\:30eb\:306e Host: \:884c) / \:30d1\:30b9\:30ef\:30fc\:30c9\:4fdd\:5b58 (NBAccess \:7ba1\:8f44)
   SlidePlay[] / SlidePause[] / SlideStop[]  \:2192 \:539f\:7a3f\:3092\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:81ea\:52d5\:9001\:308a
   SlideVoices[] / SlideCycleVoice[]        \:2192 \:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3068\:5207\:308a\:66ff\:3048 ($SlideVoice)
+  SlideVoiceModels[] / SlideCycleVoiceModel[] \:2192 \:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb (gpt-realtime / gpt-live-1\:3001$SlideVoiceModel)
+  SlideCycleQuestionMode[]                 \:2192 \:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:8cea\:554f\:30bf\:30a4\:30e0 / \:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:3001$SlideQuestionMode)
   SlideVoicePrepare[]                      \:2192 \:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066\:30ad\:30e3\:30c3\:30b7\:30e5
   SlideTalkDuration[]                      \:2192 \:539f\:7a3f\:304b\:3089\:767a\:8868\:6642\:9593\:3092\:898b\:7a4d\:3082\:308b (\:8cea\:554f\:306a\:3057)
   SlideIndex[] / SlideInfo[]               \:2192 \:982d\:51fa\:3057\:30fb\:8a66\:8074\:4ed8\:304d\:306e\:7d22\:5f15 / \:767a\:8868\:306e\:60c5\:5831

@@ -6,13 +6,13 @@
 
 ### なぜシナリオ駆動なのか
 
-発表資料の作成では、内容の推敲(何を話すか)とレイアウトの調整(どう見せるか)を分離できると効率が上がります。SlideWorkflowはこの分離を、Markdownベースの軽量な記法で実現します。`--- Title:/Event:/Author:/Date: ---` のメタブロック、`## タイトル {expected=秒}` によるスライド区切り、`- ` の箇条書き(インデントでItem/Subitem/Subsubitemの階層を表現)、`> ` の説明段落、`![w=幅pt](画像パス)` の画像挿入といった最小限の記法だけで、`SlideScenarioFromMarkdown` がスライド内容を連想リスト(シナリオ)に変換します。シナリオはMarkdownへ逆変換(`SlideScenarioToMarkdown`)できるため、テキストベースでの版管理やレビューとの相性も考慮されています。
+発表資料の作成では、内容の推敲(何を話すか)とレイアウトの調整(どう見せるか)を分離できると効率が上がります。SlideWorkflowはこの分離を、Markdownベースの軽量な記法で実現します。`--- Title:/Event:/Author:/Date: ---` のメタブロック、`## タイトル {expected=秒}` によるスライド区切り、`- ` の箇条書き(インデントでItem/Subitem/Subsubitemの階層を表現)、`> ` の説明段落、`![w=幅pt](画像パス)` の画像挿入、`| a | b |` + 区切り行による表、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込みといった最小限の記法だけで、`SlideScenarioFromMarkdown` がスライド内容を連想リスト(シナリオ)に変換します。シナリオはMarkdownへ逆変換(`SlideScenarioToMarkdown`)できるため、テキストベースでの版管理やレビューとの相性も考慮されています。
 
 ### デッキ構造とコア関数の設計
 
 生成されるノートブックは `Templates/slides-template.nb` の構造に従います。各スライドは `Cell["","SlideShowNavigationBar",CellTags->"SlideShowHeader"]` を区切りとして始まり、スライドタイトルは `"Subsection"` スタイル、本文は Item/Subitem/Subsubitem(および対応するParagraphスタイル)で構成されます。スタイルシートには既定で "Normal use.nb"(Hiragino系)を使用します。
 
-この構造をもとに、`SlideDeckSlides` がノートブックをナビゲーションバーのセルタグを目印にプレリュード部とスライド単位のセル配列に分解する「コア関数」として位置づけられており、`SlideDeckOverview`(一覧参照)や `SlideDeckReplaceSlide`/`InsertSlide`/`DeleteSlide`/`MoveSlide`(スライド単位の編集)はすべてこのコア関数の上に構築されています。編集系関数は既定で元ファイルを `.bak` 付きで上書きしますが、`"Target"` オプションで別名保存もできるため、版を分けた編集フローにも対応します。デッキには `"SlideDeckEnd"` タグの終端マーカーを境に Appendix 領域(メモ・作業指示・辞書などを自由に置ける非書き出し領域)を持たせられ、`SlideDeckSlides` はこれを `"Appendix"` キーに分離します。
+この構造をもとに、`SlideDeckSlides` がノートブックをナビゲーションバーのセルタグを目印にプレリュード部とスライド単位のセル配列に分解する「コア関数」として位置づけられており、`SlideDeckOverview`(一覧参照)や `SlideDeckReplaceSlide`/`InsertSlide`/`DeleteSlide`/`MoveSlide`(スライド単位の編集)はすべてこのコア関数の上に構築されています。編集系関数は既定で元ファイルを `.bak` 付きで上書きしますが、`"Target"` オプションで別名保存もできるため、版を分けた編集フローにも対応します。デッキには `"SlideDeckEnd"` タグの終端マーカーを境に Appendix 領域(メモ・作業指示・辞書などを自由に置ける非書き出し領域)を持たせられ、`SlideDeckSlides` はこれを `"Appendix"` キーに分離します。`SlideDeckBuild` はこの終端マーカーの付与可否を `"EndMarker"` オプション(既定 `True`)で、生成ノートブックのウィンドウサイズを `"WindowSize"` オプション(既定 `{960, 540}`)で制御できます。
 
 ### ラスタライズの安定性へのこだわり
 
@@ -115,7 +115,7 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 ### 主な機能
 
 - **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込みにも対応。
-- **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。
+- **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。終端マーカーの付与可否は`"EndMarker"`(既定`True`)、ノートブックのウィンドウサイズは`"WindowSize"`(既定`{960,540}`)で調整可能。
 - **デッキ参照**: `SlideDeckSlides`(コア分解関数、Appendix領域も分離)、`SlideDeckOverview`(番号・タイトル・セル数・画像有無のDataset表示)。
 - **スライド単位編集**: `SlideDeckReplaceSlide` / `SlideDeckInsertSlide` / `SlideDeckDeleteSlide` / `SlideDeckMoveSlide`。既定で`.bak`付き上書き、`"Target"`指定で別名保存可能。
 - **安定した画像書き出し**: `SlideDeckImages` / `SlideDeckExportImages` によるクリップボード・ウィンドウ非依存の16:9ラスタライズ(headless環境対応)。内容が縦に収まらないスライドは `"Reflow"` オプション(既定 `True`、上限は`"MaxWindowWidth"`)により折返し幅を自動探索し、余白を抑えて縮小率を最小化する。書き出しに含めるInput/Codeセルは `$SlideIncludeInput`(既定`Automatic`、ノートブックの表示どおり)で制御でき、個別セルは`CellTags->"ShowInput"`で常に残せる。
