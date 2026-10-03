@@ -1,56 +1,58 @@
-# SlideWorkflow セットアップ手順書
+# SlideWorkflow Setup Guide
 
-## 1. 前提条件
+## 1. Prerequisites
 
-- **Mathematica / Wolfram Engine**: バージョン 13.0 以降を推奨します(Notebook 式操作・`Rasterize`・`ScreenStyleEnvironment` を使用します)。
-- **OS**: Windows 11 を前提とします。macOS/Linux ではパス区切りやシェルコマンドを適宜読み替えてください。
-- **外部ツール**:
-  - `SlideDeckExportVideo` で mp4 を書き出す場合、環境によっては FFmpeg が必要です。未インストールの場合は事前に導入し、PATH に通しておいてください。
-  - クリップボードやウィンドウスナップショットには依存していないため、headless(wolframscript)環境でも同じ結果が得られます。
-  - インタラクティブ編集レイヤーの `SlideExpand[]` を既定の `$SlideExpandMode="Agent"` で使う場合は、[ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) 経由で `ClaudeEval` が呼び出せる環境が必要です。未導入でも `$SlideExpandMode = "Direct"` に切り替えれば動作します(詳細は 7 章)。
-  - 発表原稿の読み上げ・リアルタイム音声応答・手元リモコン連携(SlideTalk 系列、`SlidePlay`、`SlideRemoteStart` など)を使う場合は [SourceVault](https://github.com/transreal/SourceVault) が必要です。未導入でもスライド生成・画像/動画書き出しなどの基本機能には影響しません。手元リモコン連携は Windows 専用です。
-- **フォント**(任意): タイトル強調に既定で "Hiragino Kaku Gothic Std" を使用します。Windows 環境で同フォントがない場合は `$SlideHeavyFontFamily` を手元のフォント名に上書きしてください。
+- **Mathematica / Wolfram Engine**: Version 13.0 or later is recommended. The package uses notebook expression manipulation, `Rasterize`, and `ScreenStyleEnvironment`.
+- **OS**: Windows 11 is assumed. On macOS/Linux, adapt path separators and shell commands as needed.
+- **External tools**:
+  - To write mp4 files with `SlideDeckExportVideo`, FFmpeg may be required depending on your environment. If it is not installed, install it beforehand and add it to your PATH.
+  - The package does not depend on the clipboard or window snapshots, so headless (wolframscript) environments produce the same results.
+  - To use `SlideExpand[]` of the interactive editing layer with the default `$SlideExpandMode="Agent"`, you need an environment where `ClaudeEval` can be called via [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime). Without it, switching to `$SlideExpandMode = "Direct"` still works (see chapter 7).
+  - To use the presentation features (the SlideTalk family, `SlidePlay`, real-time voice dialogue, `SlideRemoteStart` for the handheld remote, QA cells, and so on), [SourceVault](https://github.com/transreal/SourceVault) is required. Basic features such as slide generation and image/video export work without it. The handheld remote integration is Windows-only.
+  - To upload a Sliden mp4 with `SlideDeckUpload` / `SlideDeckRegister`, you need an sftp destination (a `Host: sftp://user@host/dir` line in the Directive cell) and either the built-in `CopyFile` to a remote file or an sftp-capable `curl` (such as the one bundled with Git for Windows). The password is kept in the system credential store through NBAccess.
+- **Fonts** (optional): "Hiragino Kaku Gothic Std" is used by default for title emphasis. If this font is not available on your Windows environment, override `$SlideHeavyFontFamily` with a font name available on your machine.
 
-## 2. インストール手順
+## 2. Installation
 
-1. リポジトリを取得します。
+1. Get the repository.
 
    ```
    git clone https://github.com/transreal/SlideWorkflow.git
    ```
 
-2. `SlideWorkflow.wl` を、他の `.wl` パッケージと同じディレクトリ(以下 `$packageDirectory`)に直接配置します。サブフォルダは作らず、フラットに置いてください。
+2. Place `SlideWorkflow.wl` directly in the same directory as your other `.wl` packages (hereafter `$packageDirectory`). Do not create subfolders; keep the layout flat.
 
-3. Notebook 側で `$Path` に `$packageDirectory` を追加します(パッケージ名のサブパスは書きません)。
+3. On the Notebook side, add `$packageDirectory` to `$Path` (do not write a package-name subpath).
 
    ```wolfram
    AppendTo[$Path, $packageDirectory];
    ```
 
-   すでに claudecode をお使いの場合、`$Path` は自動的に設定されるためこの手順は不要です。
+   If you already use claudecode, `$Path` is set automatically and this step is unnecessary.
 
-4. UTF-8 環境でパッケージを読み込みます。
+4. Load the package in a UTF-8 environment.
 
    ```wolfram
    Block[{$CharacterEncoding = "UTF-8"},
      Needs["SlideWorkflow`", "SlideWorkflow.wl"]];
    ```
 
-   ファイル名のみの指定で読み込めるのは、`$packageDirectory` が `$Path` に含まれているためです。
+   Specifying only the file name works because `$packageDirectory` is on `$Path`.
 
-   なお、旧 `SlideWorkflow_interactive.wl`(パレット・スライド展開・翻訳などの対話編集機能)は 2026-07-13 に `SlideWorkflow.wl` 本体へ統合されました。個別に `Needs` する必要はありません。
+   The former `SlideWorkflow_interactive.wl` (interactive editing features such as the palette, slide expansion, and translation) was merged into `SlideWorkflow.wl` on 2026-07-13. You do not need to `Needs` it separately.
 
-## 3. 依存パッケージ(任意)
+## 3. Dependent Packages (optional)
 
-- [NotebookExtensions](https://github.com/transreal/NotebookExtensions): `NotebookExtensions`$fontFamily` が定義されていれば `$SlideFontFamily` が自動でそれを利用します。未導入でも動作しますが、フォント統一のため導入を推奨します。導入する場合も同様に `$packageDirectory` へ直接配置し、`Needs` で読み込んでください。
-- [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime): `SlideExpand[]` を既定の `"Agent"` モードで使う場合に必要です(`ClaudeEval` の実行経路)。使わない場合は `$SlideExpandMode = "Direct"` に設定してください。
-- [SourceVault](https://github.com/transreal/SourceVault): 発表原稿(`SlideTalkFromMarkdown` 等)のローカル音声合成・再生、リアルタイム音声応答、文献・PDF 参照(`SlidePDFFigure` 等)に使います。未導入でもスライド生成・画像/動画書き出しは通常どおり動作します。導入する場合も `$packageDirectory` へ直接配置し、`Needs` で読み込んでください。
+- [NotebookExtensions](https://github.com/transreal/NotebookExtensions): If `NotebookExtensions`$fontFamily` is defined, `$SlideFontFamily` uses it automatically. The package works without it, but installing it is recommended for font consistency. Place it directly in `$packageDirectory` and load it with `Needs`.
+- [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime): Required to use `SlideExpand[]` in the default `"Agent"` mode (the `ClaudeEval` execution path). If you do not use it, set `$SlideExpandMode = "Direct"`.
+- [NBAccess](https://github.com/transreal/NBAccess): Used to call the LLM in `"Direct"` mode (`NBAccess`\`$NBLLMQueryFunc`) and to store the sftp password as a SystemCredential (`SlideUploadCredential`).
+- [SourceVault](https://github.com/transreal/SourceVault): Used for local speech synthesis and playback of presentation scripts (`SlideTalkFromMarkdown`, etc.), real-time voice dialogue, the deck registry and QA packs, and literature/PDF references (`SlidePDFFigure`, etc.). Slide generation and image/video export work as usual without it. Place it directly in `$packageDirectory` and load it with `Needs`. The voice features rely on [SourceVault_voice](https://github.com/transreal/SourceVault_voice) and [SourceVault_realtime](https://github.com/transreal/SourceVault_realtime), and QA packs rely on [SourceVault_talkqa](https://github.com/transreal/SourceVault_talkqa).
 
-## 4. APIキー設定
+## 4. API Key Settings
 
-SlideWorkflow はローカルの Notebook 操作と画像/動画書き出しのみを行うパッケージで、外部 API キーは使用しません。設定は不要です。`SlideExpand[]` の `"Agent"` モードを使う場合の認証・承認ゲートは `ClaudeRuntime`/`ClaudeEval` 側の設定に従います。発表原稿の音声合成・応答機能を使う場合の設定は `SourceVault` 側に従います。
+SlideWorkflow itself only performs local Notebook operations and image/video export, and uses no external API keys of its own. No settings are needed for these. When you use the `"Agent"` mode of `SlideExpand[]`, authentication and approval gates follow the settings of `ClaudeRuntime`/`ClaudeEval`. The settings for speech synthesis, real-time voice dialogue, and QA packs follow `SourceVault`. For sftp uploads, run `SlideUploadCredential[url]` once to save the password through NBAccess. Use `SlideUploadCredentialQ[url]` to check whether it is saved, and `SlideUploadCredential[url, None]` to delete it.
 
-## 5. 基本設定変数(必要に応じて調整)
+## 5. Basic Configuration Variables (adjust as needed)
 
 ```wolfram
 $SlideImageSize = {1920, 1080};
@@ -60,26 +62,46 @@ $SlideExpandMode = "Agent";
 $SlideTranslationLanguage = "English";
 ```
 
-- `$SlideTheme`: 図の配色を統一したい場合に使う色パレットの連想配列です。
-- `$SlideStyleDefinitions`: デッキ生成に使うスタイルシート名です。既定は `Templates/slides-template.nb` に準拠した "Normal use.nb" です。
-- `$SlideExpandMode`: `SlideExpand[]` の実行経路。既定 `"Agent"`(`ClaudeEval`/`ClaudeRuntime` 経由、文献検索・図生成・承認ゲート付きで複雑な処理が可能)、または軽量な `"Direct"`(`NBAccess`\`$NBLLMQueryFunc` を直接呼ぶ)。
-- `$SlideTranslationLanguage`: `SlideTranslate[]`/`SlideTranslateDeck[]` の翻訳先言語。既定は日本語環境なら `"English"`。
-- `$SlideVisualsPerSlide`: True(既定)で `SlideExpand[]` の展開プロンプトが「原則すべてのスライドに図か表を1つ以上」要求するようになります。False にすると従来どおり文章中心の生成に戻ります。
-- `$SlideTalkPerSlide`: True(既定)で展開プロンプトが各スライド末尾に発表原稿(`talk:`、です・ます調 2〜6 文)を要求し、スライド本文は図表+体言止め中心に絞られます(スライドとトークで説明が完成する分業)。False で従来どおりです。
-- `$SlideExportExternal`: パレットの画像/mp4 書き出しを別プロセス(wolframscript)で行うかどうか。既定 `Automatic`(1 度試し、ライセンス席不足等で起動できなければ以後は FE 内処理にフォールバック)。`True`/`False` で固定も可能です。
-- `$SlideHideToolbarInSlideshow`: True(既定)で `SlideToggleScreenEnvironment[]` により SlideShow へ切り替えるときにノートブックツールバーやドックセルを一時退避し、Working へ戻すときに復元します。
+- `$SlideTheme`: An association of color palettes for unifying figure colors.
+- `$SlideStyleDefinitions`: The stylesheet name used for deck generation. The default is "Normal use.nb", following `Templates/slides-template.nb`.
+- `$SlideIncludeInput`: The default for whether Input/Code cells are included in exports. `Automatic` (default) follows what the notebook displays (only collapsed or `CellOpen->False` cells are excluded). `True` is the same as `Automatic`. `False` excludes all Input/Code cells. `"Visual"` keeps only Input cells that contain figures (the old default). A cell with `"ShowInput"` in its `CellTags` is always kept.
+- `$SlideExpandMode`: The execution path of `SlideExpand[]`. The default `"Agent"` goes through `ClaudeEval`/`ClaudeRuntime`, which supports literature search, figure generation, and approval gates for complex processing. The lightweight `"Direct"` calls `NBAccess`\`$NBLLMQueryFunc` directly.
+- `$SlideTranslationLanguage`: The target language of `SlideTranslate[]`/`SlideTranslateDeck[]`. The default is `"English"` in a Japanese environment.
+- `$SlideVisualsPerSlide`: When True (default), the expansion prompt of `SlideExpand[]` asks for "at least one figure or table on every slide in principle". Set it to False to return to the prose-centered generation.
+- `$SlideTalkPerSlide`: When True (default), the expansion prompt requests a presentation script (`talk:`, polite style, 2–6 sentences) at the end of each slide, and the slide body is narrowed to figures/tables plus noun-ending phrases (a division of labor in which slide and talk together complete the explanation). False restores the earlier behavior.
+- `$SlideExportExternal`: Whether the palette's image/mp4 export runs in a separate process (wolframscript). The default `Automatic` tries once and, if it cannot start (for example, no license seat), falls back to in-FE processing afterward. `True`/`False` fix the behavior.
+- `$SlideHideToolbarInSlideshow`: When True (default), `SlideToggleScreenEnvironment[]` temporarily hides the notebook toolbar and dock cells when switching to SlideShow and restores them when returning to Working.
 
-## 6. 動作確認
+### Presentation (talk / voice) variables
 
-1. パッケージが読み込めているか確認します。
+These apply only when SourceVault is installed.
+
+- `$SlideTalkLanguage`: The default language in which the presentation is read aloud (`"en"`, `"English"`, and so on). `Automatic` (default) uses `$Language`. A `Language:` line in the deck's Directive cell takes priority. `SlideTalkLanguage[nb]` returns the resolved code, and `SlideTalkLanguages[nb]` reports per-language translation status.
+- `$SlideTalkSecondsPerSlide`: The default number of seconds per slide for the presentation scenario (default 25).
+- `$SlideVoice`: The voice model name used for reading aloud. The default `Automatic` follows the default of `SourceVaultVoice[]`. Use `SlideVoices[]` to list candidates and `SlideCycleVoice[]` to switch.
+- `$SlideRealtimeVoices`: The cloud voices (OpenAI Realtime) lined up in the voice toggle (default `{"marin", "cedar"}`).
+- `$SlideVoiceProvider` / `$SlideVoiceModel` / `$SlideVoiceDefaultModel`: The provider and model for voice dialogue. The default provider is the first entry of the registry (`"OpenAI"`). The default model is `$SlideVoiceDefaultModel` (`"gpt-live-1"`). Use `SlideVoiceModels[]`, `SlideCycleVoiceProvider[]`, `SlideCycleVoiceModel[]`, and `SlideSetVoiceModel[model]` to inspect and switch them.
+- `$SlideQuestionMode`: How questions are accepted during a presentation. `"QuestionTime"` (default) opens a question window after each slide and mutes the mic while reading. `"Words"` listens even while reading and stops only when `$SlideInterruptWords` is heard. `"Detect"` stops when a listener's voice is detected and lets gpt-live decide whether it is a question. `"Words"` and `"Detect"` work only with gpt-live-1. Switch with `SlideCycleQuestionMode[]` or `SlideSetQuestionMode[mode]`.
+- `$SlideInterruptWords`: The words that may stop the presentation in `"Words"` mode (default `Automatic` = `$SourceVaultRealtimeInterruptWords`, that is, "質問" and "スライド"). Recognition uses local Vosk, which needs `SourceVaultRealtimeInstall["Vosk" -> True]` and `SourceVaultSpeechModel[]`.
+- `$SlideQuestionSeconds` (default 3), `$SlideQuestionMaxSeconds` (default 60), `$SlideVoiceInputGate` (default 0, meaning no restriction): Control the question window, its upper limit, and the minimum input volume for accepting the mic.
+- `$SlideVoiceGap` (default 0.8 s), `$SlideRenderSettle` (default 0.6 s), `$SlideVoiceTick` (default 0.3 s): The pause between slides, the wait for rendering to settle, and the polling period of the kernel-side ScheduledTask.
+- `$SlidePrepareBeforePlay`: When True (default), `SlidePlay` synthesizes the local voice audio for all slides before playback starts (only slides not yet synthesized), so the audio is not interrupted by synthesis during playback.
+- `$SlideSpeechRate` / `$SlideSpeechLatency`: Per-engine speech rate and per-slide latency used by `SlideTalkDuration`.
+- `$SlideRemoteBindings` / `$SlideRemoteTick` / `$SlideRemoteAuto`: The handheld remote (Windows only). The default bindings map "MediaPrevTrack" to "Mic" and "MediaPlayPause" to "Play". Measure a button's virtual key with `SlideRemoteProbe[]`. Start and stop watching with `SlideRemoteStart[]`/`SlideRemoteStop[]`, and check the state with `SlideRemoteStatus[]`. With `$SlideRemoteAuto = True` (default), watching starts and stops together with the voice dialogue.
+- `$SlideQAPerSlide` (default 3) and `$SlideQAVision` (default True): The number of expected questions per slide generated by `SlideQAGenerate`, and whether rendered slide images are attached to the LLM for slides that contain figures, photos, or tables. Images are cached in `<deck>_qa_images/`.
+- `$SlideUploadMethod`: The transfer method for mp4 uploads. `Automatic` (default) tries `"Native"` (`CopyFile` to a remote file) and falls back to `"curl"`.
+
+## 6. Verification
+
+1. Check that the package is loaded.
 
    ```wolfram
    ?SlideDeckBuild
    ```
 
-   使用方法(usage)メッセージが表示されれば読み込み成功です。
+   If the usage message is displayed, loading succeeded.
 
-2. サンプルシナリオからデッキを生成してみます。
+2. Generate a deck from a sample scenario.
 
    ```wolfram
    md = "--- Title: Test / Event: Demo / Author: Imai / Date: 2026-07-13 ---\n## Slide1 {expected=30}\n- Hello";
@@ -87,66 +109,99 @@ $SlideTranslationLanguage = "English";
    nbfile = SlideDeckBuild[scenario, FileNameJoin[{$TemporaryDirectory, "test-slides.nb"}]];
    ```
 
-   エラーなくファイルパスが返れば正常です。
+   If a file path is returned without errors, it works.
 
-3. 生成したデッキの概要とサムネイルを確認します。
+3. Check the overview and thumbnails of the generated deck.
 
    ```wolfram
    SlideDeckOverview[nbfile]
    SlideDeckImages[nbfile]
    ```
 
-   Dataset と 16:9 の画像リストが得られれば、インストールとセットアップは完了です。
+   When you get a Dataset and a list of 16:9 images, installation and setup are complete.
 
-4. mp4 書き出しを利用する場合は、以下も確認してください。
+4. If you use mp4 export, also check the following.
 
    ```wolfram
    SlideDeckExportVideo[nbfile, FileNameJoin[{$TemporaryDirectory, "test.mp4"}]]
    ```
 
-   ファイルが生成されない場合は、FFmpeg のインストールと PATH 設定を見直してください。
+   If no file is created, review the FFmpeg installation and PATH setting.
 
-5. インタラクティブ編集レイヤーを使う場合は、パレットが開けることを確認します。
+5. If you use the interactive editing layer, confirm that the palette opens.
 
    ```wolfram
    ShowSlidePalette[]
    ```
 
-   パレットが表示され、`?SlideAddSlide` などで usage メッセージが表示されれば、統合済みの対話編集機能も利用可能です。
+   If the palette appears and `?SlideAddSlide` and similar queries show usage messages, the integrated interactive editing features are available.
 
-## 7. インタラクティブ編集レイヤー(パレット)
+6. If you use the presentation features (SourceVault required), confirm that the presentation palette opens and that the voice list is populated.
 
-`SlideWorkflow` には、スライド Notebook 上で対話的に編集を行うためのパレット機能が統合されています(旧 `SlideWorkflow_interactive.wl`、2026-07-13 に本体へ統合)。
+   ```wolfram
+   ShowSlideTalkPalette[]
+   SlideVoices[]
+   ```
+
+   `SlideVoices[]` returns `{}` when SourceVault_voice is not loaded. `SlideInfo[]` opens a window summarizing the deck, script, estimated duration, voice, and voice dialogue state.
+
+## 7. Interactive Editing Layer (Palette)
+
+`SlideWorkflow` integrates palette features for interactive editing on slide Notebooks (formerly `SlideWorkflow_interactive.wl`, merged into the main file on 2026-07-13).
 
 ```wolfram
 ShowSlidePalette[]
 ```
 
-でパレットを表示します。`"Safe"->True` を指定すると、ClaudeCode から完全に非干渉な状態でパレットを開けます(フリーズ切り分け用)。現在のバージョンは `$SlideWorkflowInteractiveVersion` で確認できます。
+displays the palette. With `"Safe"->True`, the palette opens in a state completely non-interfering with ClaudeCode (for isolating freezes). The current version is available as `$SlideWorkflowInteractiveVersion`. The presentation palette (slideshow, playback, voice dialogue, camera, and voice/language/question settings) opens with `ShowSlideTalkPalette[]`, and also from a button on the authoring palette.
 
-主なパレット操作(いずれもスライド Notebook 上のセル選択位置に対して動作します):
+Main palette operations (all act on the current cell selection in the slide Notebook):
 
-- `SlideAddSlide[]`: 現在のスライド直後に新規スライド骨格(navbar+タイトル+プロンプトセル)を挿入する。プロンプトに「○枚構成で」等と書いておけば「展開」で複数スライドへ一括展開できる(`SlideApplyScenario` は複数 `##` を複数枚のスライドに分割する)。
-- `SlideExpand[]`: 選択中の `SlidePrompt` セル(なければ選択セルの本文)を指示として、スライドを展開・更新する。既定(`$SlideExpandMode="Agent"`)では `ClaudeEval`(`ClaudeRuntime` 経由、文献検索・図生成・承認ゲート付き)に処理を委譲し、エージェントが最後に `SlideApplyScenario` を呼んで適用する。エージェントの作業ログは終端マーカー以降(Appendix)に記録される。指示(Directive)・辞書(Dictionary)セルは厳守され、既存の図・コードセルは `<<FIGn>>` トークンで保持される。
-- `SlideApplyScenario[slideNo, md]`: シナリオ Markdown で対象スライドを差し替える決定的適用関数(展開エージェントの唯一の書き込み口)。`md` は複数 `##` 可(複数枚展開)。`<<FIGn>>` は既存図・コードセル(n=1..k)または `"Figures"` オプションで渡した新規図(Graphics/Image、n=k+1..)に対応する。適用成功時 `Success`、失敗時 `Failure` を返す。
-- `SlideTranslate[]` / `SlideTranslateRevert[]` / `SlideTranslateDeck[]`: 現在のスライド(またはデッキ全体)のテキストセルを `$SlideTranslationLanguage` へ一括翻訳・原文復帰する。原文は `TaggingRules "SWOrigText"` に保存される。
-- `SlideInsertPrompt[]`: カーソル位置に `SlidePrompt` セルを挿入する(ラスタライズからは除外される)。
-- `SlideInsertCitation[]`: カーソル位置に出典セル(小フォント)を挿入する。図・引用の直後に置き、URL または (著者, 年) を記入する。
-- `SlideInsertReferences[]`: 文献リストセルを挿入する(パレットの「文献」)。1 行 1 文献 `[key] locator | メモ` の形式で記入する。`locator` は URL / arxiv:ID / sv://URI / eagle:ID / PDF・ノートブックのパス(過去スライド可)。スライドの指示(プロンプト)からは `[key]` で参照し、展開エージェントがそれを取得・引用する。`#` で始まる行はコメント。
-- `SlideInsertTalk[]`: トークセル(`SlideTalk` スタイル、そのスライドの発表原稿)を挿入する。各スライドの最後に置く。Working で可視、SlideShow 環境では非表示になり、書き出しからも除外される。md では `talk: 原稿` の行に対応する。全スライドにトークがそろうと `SlideTalkBuild` が LLM なしで `<deck>_talk.md` を束ねられる。
-- `SlideInsertEndMarker[]`: カーソル位置にスライド終端マーカーを挿入する。以降のセルはスライド・書き出しに含まれない。
-- `SlideInsertNote[]`: メモセルを挿入する(`documentation.wl` 互換、書き出し除外)。Working で可視、SlideShow(スライドショー環境)では非表示になる。
-- `SlideInsertDirective[]`: 指示セルを挿入する。展開・翻訳時に LLM が厳守する。Working で可視、SlideShow(スライドショー環境)では非表示になる。
-- `SlideInsertDictionary[]`: 辞書セルを挿入する。翻訳時の用語対応を指定する。
-- `SlideInsertBibliography[]`: 文献セルを挿入する(`documentation.wl` 互換)。
-- `SlideToggleScreenEnvironment[]`: 対象ノートブックのスクリーン環境を Working ⇄ SlideShow で切り替える(書式メニューの「スクリーンスタイル環境」と同じ)。メモ・指示・辞書・文献・プロンプト・トークの各セルは Working で可視、SlideShow で非表示になる。
-- `SlideTogglePrompts[]`: 全 `SlidePrompt` セルの表示/非表示を切り替える。
+- `SlideAddSlide[]`: Inserts a new slide skeleton (navbar + title + prompt cell) right after the current slide. If you write something like "N slides" in the prompt, "Expand" can expand it into multiple slides at once (`SlideApplyScenario` splits multiple `##` into multiple slides).
+- `SlideExpand[]`: Expands and updates the slide, using the selected `SlidePrompt` cell (or the body of the selected cell if there is none) as the instruction. By default (`$SlideExpandMode="Agent"`) it delegates to `ClaudeEval` (via `ClaudeRuntime`, with literature search, figure generation, and approval gates), and the agent applies the result by calling `SlideApplyScenario` at the end. The agent's work log is recorded after the end marker (Appendix). Directive and Dictionary cells are strictly followed, and existing figure and code cells are preserved with `<<FIGn>>` tokens.
+- `SlideApplyScenario[slideNo, md]`: A deterministic function that replaces the target slide with scenario Markdown (the only write path of the expansion agent). `md` may contain multiple `##` (multi-slide expansion). `<<FIGn>>` refers to existing figure/code cells (n=1..k) or new figures (Graphics/Image, n=k+1..) passed with the `"Figures"` option. It returns `Success` on success and `Failure` on failure. If a new figure is a `Failure` / `$Failed` or an unevaluated image-processing expression, it writes nothing and returns `Failure["BadFigures"]`. `SlidePrompt` cells are automatically moved back to the first slide.
+- `SlideTranslate[]` / `SlideTranslateRevert[]` / `SlideTranslateDeck[]`: Translate the text cells (headings, bullets, body) of the current slide, or of the whole deck (asynchronously, one slide at a time), into `$SlideTranslationLanguage`, and revert to the original. The original is never deleted. It remains in the cell's TaggingRules (`"documentation"` -> translationSrc / translation / showTranslation, as in documentation.wl; the original of a formatted cell is kept in `SWOrigContent`). Reverting therefore keeps the translation, and any hand corrections to it are also kept. Cells that already have a translation only switch display; only cells without a translation and cells whose original was edited are sent to the LLM, one slide at a time. Japanese strings inside figures on the same slide (Output / Print / Graphics cells) are translated as well, with the original figure in `SWOrigContent` and the translated one in `SWTransContent`. Option values such as font names and text embedded in images are not translated. The talk script (talk cells) is not translated by these functions; use `SlideTalkTranslate`.
+- `SlideShowLanguage[]` / `SlideShowLanguage[nb, "Toggle" | "Original" | "Translation"]`: Switches the display of the whole deck between the original and the translation without calling the LLM. Cells without a translation stay in the original. Image and mp4 export follow the language currently displayed.
+- `SlideInsertPrompt[]`: Inserts a `SlidePrompt` cell at the cursor (excluded from rasterization).
+- `SlideInsertCitation[]`: Inserts a citation cell (small font) at the cursor. Place it right after a figure or quote and fill in a URL or (author, year).
+- `SlideInsertReferences[]`: Inserts a reference list cell (the palette's "文献"). Write one reference per line as `[key] locator | memo`. `locator` is a URL / arxiv:ID / sv://URI / eagle:ID / PDF or notebook path (past slides allowed). The slide instruction (prompt) refers to it with `[key]`, and the expansion agent retrieves and cites it. Lines starting with `#` are comments.
+- `SlideInsertTalk[]`: Inserts a talk cell (`SlideTalk` style, the presentation script for that slide). Place it at the end of each slide. Visible in Working, hidden in the SlideShow environment, and excluded from export. In md it corresponds to a `talk: script` line. When all slides have talk, `SlideTalkBuild` can bundle `<deck>_talk.md` without an LLM.
+- `SlideInsertQA[]`: Inserts a Q&A cell (`SlideQA` style, the expected questions and answers for that slide). Place it at the end of each slide, next to the talk cell. Visible in Working, hidden in SlideShow, and excluded from image/mp4 export. In md it corresponds to a `qa:` line. Write each question as two lines, `Q: expected question` and `A: answer to read aloud` (optionally `cite: source` and `PL: 0.6`).
+- `SlideInsertEndMarker[]`: Inserts a slide end marker at the cursor. Cells after it are not included in slides or export.
+- `SlideInsertNote[]`: Inserts a note cell (compatible with `documentation.wl`, excluded from export). Visible in Working, hidden in SlideShow (the slide show environment).
+- `SlideInsertDirective[]`: Inserts a Directive cell, which the LLM strictly follows during expansion and translation. Visible in Working, hidden in SlideShow. At the top of the deck, `Key: value` lines (`Title:`, `SlideURL:`, `Host: sftp://user@host/dir`, `Language:`, `Id:`) provide the deck-level presentation metadata read by `SlideTalkMeta`.
+- `SlideInsertDictionary[]`: Inserts a Dictionary cell that specifies term correspondences for translation.
+- `SlideInsertBibliography[]`: Inserts a bibliography cell (compatible with `documentation.wl`).
+- `SlideToggleScreenEnvironment[]`: Switches the screen environment of the target notebook between Working and SlideShow (same as the Format menu's "Screen Style Environment"). Note, Directive, Dictionary, Bibliography, Prompt, Talk, and QA cells are visible in Working and hidden in SlideShow.
+- `SlideTogglePrompts[]`: Toggles the visibility of all `SlidePrompt` cells.
+- `SlideEnsureDeckStyles[nb]`: Embeds the style definitions for meta cells (Note / Directive / Dictionary / Bibliography / References / SlidePrompt / SlideTalk / SlideQA) into the deck. It is called automatically on insertion, expansion, and display switching.
 
-関連する設定変数(詳細は 5 章):
+Figure helpers usable in scenarios and code:
 
-- `$SlideExpandMode`: `"Agent"`(既定)または `"Direct"`。
-- `$SlideTranslationLanguage`: 翻訳先言語。既定は日本語環境なら `"English"`。
-- `$SlideVisualsPerSlide` / `$SlideTalkPerSlide`: 展開プロンプトが図表・発表原稿をどこまで要求するかの既定を切り替える。
-- `$SlideExportExternal` / `$SlideHideToolbarInSlideshow`: パレットの書き出し・画面切り替え時の挙動を制御する。
+- `SlideTable[rows]`: Returns a table in the deck colors (`$SlideTheme`). `"HeaderRows"->n` (default 1) emphasizes header rows. A `| a | b |` table in scenario md produces the same table (a `| --- | --- |` line as the second row marks the first row as the header).
+- `SlidePDFFigure[src, page]` (SourceVault required): Cuts a PDF page out as an Image. `src` can be a file path, `eagle:ID`, `sv://URI`, `src-ID`, URL, `arxiv:ID`, or a key of a References list. URLs, arXiv, and Google Slides are downloaded and cached automatically. Options include `"Crop"`, `"Trim"` (default `Automatic`), and `ImageResolution` (default 144). When quoting a literature PDF figure in a slide, add `cite:` right after it.
 
-`"Agent"` モードを使う場合は [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) 経由で `ClaudeEval` が呼び出せる環境が必要です。未導入・軽量に使いたい場合は `$SlideExpandMode = "Direct"` に切り替えれば `SlideExpand[]` は `NBAccess`\`$NBLLMQueryFunc` を直接呼ぶ経路で動作します(パレットのその他の機能に外部依存はありません)。発表原稿の読み上げ・音声応答(`SlidePlay`、`SlideIndex`、`SlideRemoteStart` など)を使う場合は [SourceVault](https://github.com/transreal/SourceVault) が必要です。
+QA cell tools:
+
+- `SlideQAEntries[nb]` returns the QA cells of the deck. `SlideQAView[nb]` shows their contents as a Dataset. `SlideQAStateView[nb]` shows per-slide state (not created / needs update / current / undeterminable).
+- `SlideQAGenerate[nb]` writes LLM drafts of expected Q&A into the QA cells, asynchronously and one slide at a time. Its `"Mode"` is `"Regenerate"` (rebuild all), `"Update"` (let the LLM revise the existing ones), or `"Changed"` (default; slides without a QA cell and slides edited since). Other options are `"QuestionsPerSlide"`, `"Vision"`, and `"Slides"`. `SlideQAGenerateAll` and `SlideQAUpdateAll` are shortcuts for the first two modes. Treat generated text as a draft to be corrected by a person.
+- `SlideQAMarkCurrent[nb]` stamps the current slide hash onto existing QA cells without calling the LLM or changing their text. Use it only after you have checked the contents.
+- `SlideQAFromPack[nb]` writes an already registered QA pack back into slide QA cells (no LLM). `"Rebuild"` defaults to False.
+- `SlideQABuild[nb|deck.nb]` bakes the QA cells into a SourceVault QA pack so that gpt-realtime can retrieve them during the presentation. Options are `"PrivacyLevel"`, `"Ingest"` (default True), and `"Enrich"` (default True).
+
+Presentation script and playback (SourceVault required):
+
+- Script: `SlideTalkFromMarkdown[md]` / `SlideTalkToMarkdown[talk]` convert between the presentation scenario Markdown and an association. `SlideTalkSkeleton[deck]` builds a deterministic skeleton without an LLM, `SlideTalkPrompt[deck]` returns an LLM prompt for a flowing script, and `SlideTalkBuild[deck]` writes `<deck>_talk.md` (the talk cells are the source of truth; slides lacking a script are filled with `SlideTalkFill`). `SlideTalkFile[deck]` returns the fallback path of `<deck>_talk.md`. `SlideTalkMeta[nb]` reads or persists deck-level metadata. `SlideTalkTranslate[nb]` translates the script with the LLM into talk cells tagged with `SWTalkLang`, so multiple languages can coexist.
+- Playback: `SlidePlay[]` reads the script aloud with the local voice while advancing slides (when the screen environment is SlideShow), `SlidePause[]` pauses, `SlideStop[]` stops and resets, and `SlidePlayStatus[]` reports the state. `SlideShowSlide[spec]` changes the displayed slide by number, `"Next"`/`"Previous"`/`"First"`/`"Last"`, or a word in the heading or body. `SlideTitles[]` lists headings, `SlideCurrentNumber[]` returns the displayed slide number, and `SlideSpeakSlide[n]` reads slide n aloud.
+- Index and estimates: `SlideIndex[]` returns the presentation index as a Dataset with Show and Play buttons per row. `SlideTalkDuration[]` estimates the duration (options `"Voice"`, `"Questions"`, `"View"`). `SlideVoicePrepare[]` synthesizes and caches voice for all slides in `<deck>_voice/`. `SlideInfo[]` opens the information window.
+- Voice dialogue: `SlideToggleRealtime[]` toggles voice dialogue, `SlideToggleMic[]` mutes or unmutes the mic (`"Quiet" -> True` suppresses notification dialogs).
+- Registration and upload: `SlideDeckRegister[...]` registers the presentation in SourceVault's registry and, when the Directive has a `Host:` line, uploads the Sliden mp4. Options include `"SlideURL"`, `"Title"`, `"Id"`, `"DeckFile"`, `"PrivacyLevel"`, `"SlideCount"`, and `"Upload"`. Running it again overwrites only the values you give. `SlideDeckRegistry[]` lists registered entries. `SlideDeckUpload[...]` sends `<deck>.mp4` by sftp and verifies delivery with a HEAD request on `SlideURL`. It skips the transfer if the same size is already served, unless `"Force"->True`. It re-exports the mp4 if the deck is newer (control with `"ExportVideo"`). `SlideDeckChangeStatus[nb]` reports what a registration would redo, and `SlideDeckMarkVideoCurrent[nb]` records the existing mp4 as current for the present slides. Use the latter only when the appearance really matches.
+
+Related configuration variables (details in chapter 5):
+
+- `$SlideExpandMode`: `"Agent"` (default) or `"Direct"`.
+- `$SlideTranslationLanguage`: The target language. The default is `"English"` in a Japanese environment.
+- `$SlideVisualsPerSlide` / `$SlideTalkPerSlide`: Switch how far the expansion prompt requests figures/tables and presentation scripts.
+- `$SlideExportExternal` / `$SlideHideToolbarInSlideshow`: Control behavior for palette export and screen switching.
+
+To use the `"Agent"` mode, an environment where `ClaudeEval` can be called via [ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) is required. If it is not installed or you want a lightweight setup, switch to `$SlideExpandMode = "Direct"` and `SlideExpand[]` will call `NBAccess`\`$NBLLMQueryFunc` directly (the other palette features have no external dependencies). To use script reading and voice dialogue (`SlidePlay`, `SlideIndex`, `SlideRemoteStart`, and so on), [SourceVault](https://github.com/transreal/SourceVault) is required.

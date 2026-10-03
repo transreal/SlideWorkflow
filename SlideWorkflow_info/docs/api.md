@@ -203,6 +203,26 @@ Options: `SlideTalkSkeleton`と同じ + `"Instructions" -> ""`, `"Meta" -> ""`
 ### SlideTalkFill[] / SlideTalkFill[nb] (v1.30)
 原稿 (トークセル) の無いスライドにだけ原稿を書く (パレット「発表の準備」の「原稿」)。LLM がデッキ全体の流れ (各枚の題目と既存原稿の冒頭) を見て 8 枚ずつ書き、JSON `{"Talks": [{"Slide", "Talk"}]}` で返したものを各スライドのトークセルへ入れる (質疑応答セルがあればその前、既にあるトークセルは上書き)。規則: です・ます調 2〜6 文、前の枚とのつながり、箇条書きと同じ順、スライドに無い事実を作らない、`$...$` や `**` を書かない。全枚に原稿があれば何もしない。
 
+### 話す言語と原稿の多言語化 (v1.34)
+読み上げ (SlidePlay / 索引の試聴 / SlideVoicePrepare) は **話す言語** で行う。話す言語 = 指示セルの `Language:` 行 (`en` / `English` / `英語` など) > `SlideTalkMeta[nb, "Language" -> ..]` > `$SlideTalkLanguage` (既定 Automatic = `$Language`)。質疑は従来どおり質問者の言語で答える (音声会話のセッション指示で指定)。
+
+原稿は元の言語のトークセルを正本として残し、訳は **同じスライドに並ぶ別のトークセル** (TaggingRules `{"SWTalkLang" -> "en", "SWTalkSrc" -> 元原稿のハッシュ16桁}`、左の帯が青緑) として持つので、複数言語を併用できる。再生は話す言語の訳 → 無ければ元の原稿。元の原稿を直すと「古い訳」になる。訳セルは md (`talk:`) にも `SlideTranslate` (セル単位の英訳) にも出ず、元の原稿を書く `SlideTalkFill` も触らない。スライドを作り直す (展開・生成・ReplaceSlide) と訳セルは消えるので訳し直す。
+
+#### SlideTalkLanguage[nb] → "ja" | "en" | ...
+そのデッキの話す言語コード。指示セルの `Language:` > SlideTalkMeta の Language > `$SlideTalkLanguage` > `$Language` の順。
+
+#### SlideTalkLanguages[nb] → <|"Language", "Base", "Slides", "Translated", "Missing", "Stale"|>
+Base = 元の原稿の言語 (文字種から推定)、Translated = 言語ごとの訳の枚数、Missing / Stale = 話す言語の訳が無い / 古い枚 (0 = 前置き)。パレット「情報」の「話す言語」行と同じ内容。
+
+#### SlideTalkTranslate[nb] / SlideTalkTranslate[nb, lang | {lang..}, opts]
+元の原稿を LLM で訳して訳セルを書く (パレット「発表の準備」の「原稿訳」)。非同期・8 枚ずつ。lang 省略で話す言語。Options: `"Mode" -> "Changed"` (既定: 訳の無い枚と原稿を直した枚だけ) | `"All"`、`"Then" -> f` (完了後に `f[]`)。話す言語が原稿と同じなら何もしない (`"SameLanguage"`)。
+
+#### $SlideTalkLanguage
+型: Automatic | String, 初期値: `Automatic`
+話す言語の既定 (`"en"` / `"English"` / `"英語"` など。Automatic = `$Language`)。デッキの指示セルの `Language:` 行が優先。
+
+`SlidePlay[nb, "Translate" -> Automatic | True | False]`: 話す言語の訳が欠けている/古いとき、Automatic は「訳してから再生 / このまま再生 / やめる」を聞く。ローカルの声 (Piper / AivisSpeech は日本語) が話す言語を読めないときも知らせる (英語などは realtime: の声を選ぶ)。
+
 ### SlideTalkBuild[deck, opts] → String
 (v1.30: パレットから外した。原稿を md に書き出したいときに呼ぶ) 発表シナリオを生成して`<deck>_talk.md`へ書き出す。LLMが使えるときは非同期(SlideExpandと同じ経路)で、使えないときは骨格(SlideTalkSkeleton)を同期で書く。
 Options: `"Output" -> Automatic`, `"UseLLM" -> Automatic`, `"Notebook" -> Automatic`, `"OpenResult" -> False` に加えSlideTalkPromptのオプション
@@ -217,21 +237,24 @@ Options: `"Output" -> Automatic`, `"UseLLM" -> Automatic`, `"Notebook" -> Automa
 Title: 計算と自然 32
 SlideURL: https://transreal.sakura.ne.jp/cn/32.mp4
 Host: sftp://transreal@transreal.sakura.ne.jp/home/transreal/www/cn
+Language: en
 ```
+
+`Language:` は読み上げの言語 (v1.34。空・無しなら `$SlideTalkLanguage` / `$Language`)。
 
 ### SlideTalkMeta[nb, "SlideURL" -> url, ...]
 ノートブックのTaggingRulesにメタを永続化する(指示セルに同じキーがあればそちらが優先)。
 
 ### SlideDeckRegister[nb | deck.nb | talkfile | md, opts] → 登録結果
 発表(トークセル + 指示セルのメタ)をSourceVaultの登録簿へ登録し、メタに `UploadURL`(指示セルの `Host:` 行)があれば続けて Sliden 用 mp4 を web サーバへアップロードする(結果は戻り値の `"Upload"` キー。登録簿への登録は mp4 の成否に関係なく完了する)。以後VRCRealtimeが発表タイトルからスライドURLと原稿を引ける。パレットの「登録」はこの関数。
-同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きする(前回の特定は `Id` > `DeckFile` > `SlideURL` の優先順。指示セルの `Id:` 行で固定できる)。何が変わったかは戻り値の `RegistryStatus`(Created|Updated)と`ChangedKeys`で分かる。
+同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きする(前回の特定は `Id` > `DeckFile` > `SlideURL` の優先順。指示セルの `Id:` 行で固定できる)。何が変わったかは戻り値の`RegistryStatus`(Created|Updated)と`ChangedKeys`で分かる。
 Options: `"SlideURL" -> Automatic`, `"Title" -> Automatic`, `"Id" -> Automatic`, `"DeckFile" -> Automatic`, `"PrivacyLevel" -> Automatic`, `"SlideCount" -> Automatic`, `"Upload" -> Automatic`(Automatic = UploadURL があれば送る / True = 必須 / False = 送らない), `"QA" -> Automatic` (Automaticなら質疑応答セルがあれば`SlideQABuild`を自動実行、`False`で抑止)
 
 ### SlideDeckRegistry[] → Dataset
 登録済み発表エントリの一覧を返す。
 
 ### SlideDeckUpload[nb | deck.nb | deck.mp4, opts] → Association | Failure
-Sliden 用 mp4(パレットの mp4 書き出しと同じ `<deck>.mp4`)を `UploadURL`(`sftp://user@host/dir`)へ sftp で送る。リモートのファイル名は `SlideURL` の末尾(例 `32.mp4`)。転送前に `SlideURL` の HEAD で「200 かつ Content-Length がローカルと同じ」なら送らず `"Status" -> "Unchanged"`(`"Force" -> True` で強制)。転送後も同じ HEAD で配信を確認し `"Verified"` に入れる。mp4 が無ければ既定で書き出してから送る(`"ExportVideo" -> False` で抑止)。パスワードは NBAccess 管轄の SystemCredential(名前 `sftp://user@host`)から読み、無ければ FE ではダイアログで尋ねて保存する(`"Interactive" -> False` で抑止)。
+Sliden 用 mp4(パレットの mp4 書き出しと同じ `<deck>.mp4`)を `UploadURL`(`sftp://user@host/dir`)へ sftp で送る。リモートのファイル名は `SlideURL` の末尾(例 `32.mp4`)。転送前に `SlideURL` の HEAD で「200 かつ Content-Length がローカルと同じ」なら送らず `"Status" -> "Unchanged"`(`"Force" -> True` で強制)。転送後も同じ HEAD で配信を確認し `"Verified"` に入れる。mp4 が無い、またはデッキが mp4 より新しければ既定で書き出し直してから送る(`"ExportVideo" -> False` で抑止、`True` で常に作り直す)。パスワードは NBAccess 管轄の SystemCredential(名前 `sftp://user@host`)から読み、無ければ FE ではダイアログで尋ねて保存する(`"Interactive" -> False` で抑止)。
 転送手段 `"Method"`: Automatic = `"Native"`(`CopyFile` → `RemoteFile`、WL 組込み)→ 使えなければ `"curl"`(Git for Windows 同梱の sftp 対応 curl。System32 の curl は sftp 非対応)。Windows OpenSSH の sftp.exe はコンソール無しではパスワード認証を試みないので使わない。
 戻り値: `<|Status ("Uploaded"|"Unchanged"), Method, File, Bytes, Remote, SlideURL, Verified, RemoteBytes, Seconds|>`。Failure タグ: `SlideUploadURLMissing` / `SlideUploadURLInvalid` / `SlideUploadUserMissing` / `SlideUploadFileMissing` / `SlideUploadCredentialMissing` / `SlideUploadAuthFailed` / `SlideUploadFailed` / `SlideUploadMethodUnavailable` / `NBAccessUnavailable`。
 Options: `"UploadURL" -> Automatic`, `"SlideURL" -> Automatic`, `"File" -> Automatic`, `"Method" -> Automatic`, `"Password" -> Automatic`(文字列で直接 / None で資格情報を使わない), `"User" -> Automatic`, `"Force" -> False`, `"Verify" -> True`, `"ExportVideo" -> Automatic`, `"Interactive" -> Automatic`
@@ -309,7 +332,7 @@ Options: `"Mode" -> Automatic`, `"QuestionsPerSlide" -> Automatic` (既定 `$Sli
 
 ### $SlideQAVision
 型: Boolean, 初期値: `True`
-図・写真を含むスライドの QA 生成で描画画像を添付するか。
+図・写真を含むスライドの QA 生成で描画画像を添付するか。画像は `<deck>_qa_images/` にスライドのハッシュでキャッシュされる。
 
 ### SlideQAFromPack[nb, opts] → Association
 すでに登録済みの QA パック(以前 `SourceVaultTalkQABuild` で LLM から作ったものを含む)を、スライドの質疑応答セルへ書き戻す。セルが正本になったあとも古い作り置きを捨てずに人が直せる形へ移せる。LLM は使わない。
@@ -326,6 +349,57 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 ### $SlideQAPerSlide
 型: Integer, 初期値: `3`
 `SlideQAGenerate` が 1 枚あたりに作る想定質問の数。
+
+## 発表の記録 (カメラ・進行・質問) と質問からの想定問答の候補 (v1.37)
+
+再生 (SlidePlay)・音声応答 on・カメラ on のどれかで **発表セッション** (`slidetalk-<UTC>-<id>`) が始まり、SourceVault の MultimodalEvent として残る。後から発表を振り返るための、進行のタイムスタンプと対応したデータの組。全部止まって `$SlideRecordIdleSeconds` (既定 120 秒) で閉じる。どの事象にも SessionID / Deck / At (UTC) / Elapsed (開始からの秒) / Slide が付く。
+
+| Kind | 中身 | PL 既定 |
+|---|---|---|
+| SessionMarker | Event = Start / End / CameraOn / CameraOff (Start に Title・DeckFile・Language・Voice・Model、End に Counts・Seconds) | 0.6 (`$SlideRecordPrivacyLevel`) |
+| SlideChange | 表示したスライドと題目。Source = Play (読み上げ) / Display (画面の番号) | 0.6 |
+| CameraFrame | カメラ画像 (JPEG) の BlobRef・CapturedAt・Device。**保存するだけで LLM には渡さない** | 0.6 (`$SlideCameraPrivacyLevel`) |
+| UserQuestion / ResponseDraft | 発表中に受けた質問 (音声応答の ask 経路) と答え (Route: deck / pack / kb …、Status) | 0.7 (`$SlideQuestionPrivacyLevel`) |
+| FAQCandidate | 想定問答の候補。Type = Add (新しい問い) / Revise (既存の問いに似ている・想定問答に当たった)、TargetSlide、MatchedQuestion。採否は同じ Kind に Decision = Accepted / Rejected を追記 | 0.7 |
+
+カメラは ffmpeg (dshow) を 1 本起動して `$SlideCameraInterval` 秒 (既定 30) ごとに時刻入りの JPEG を書かせ、2 秒ごとに取り込む (撮るたびにカーネルを止めない)。ffmpeg は `$SlideFFmpegPath` → PresentationListener の設定 → PATH → WinGet の順に探す。
+
+### SlideCameraToggle[] / SlideCameraStart[nb] / SlideCameraStop[] / SlideCameraStatus[]
+パレット「発表」の **カメラon/off**。`SlideCameraStatus[]` → `<|Camera, Device, IntervalSeconds, Frames, PrivacyLevel, Session|>`。
+
+### SlideCameraDevices[] / SlideCameraSelect[]
+カメラ一覧 (dshow 映像デバイス名) / カメラと間隔を選ぶダイアログ (パレット「カメラ設定」)。`$SlideCameraDevice` (Automatic = 仮想カメラでない最初のカメラ、None = 使わない)、`$SlideCameraInterval`、`$SlideCameraWidth` (既定 1280)。
+
+### SlideTalkSessions[] → Dataset
+記録した発表セッションの一覧 (Session, Deck, Title, Start, Seconds, Slides, Frames, Questions, Candidates)。
+
+### SlideTalkSessionData[sessionId] → Dataset
+その発表の時系列 (At 順: Elapsed, At, Kind, Slide, Text, BlobRef, PrivacyLevel)。画像は `SlideTalkSessionFrame[blobRef]` → Image。
+
+### SlideQACandidates[nb, "Status" -> "Pending" | "Accepted" | "Rejected" | All] → Dataset
+このデッキの想定問答の候補。同じセッションの同じ問い (ウェブ許可の前後など) は 1 件にまとめる。
+
+### SlideQACandidateView[nb] / SlideQACandidateAccept[nb, id] / SlideQACandidateReject[id]
+パレット「発表の準備」の **質問候補**。採用すると、そのスライドの質疑応答セルの末尾に足す (Add は `Q:`/`A:`、Revise は既存の問答を書き換えずに `#` のコメントで並べる)。
+
+## 構造・版・発表 (v1.38)
+
+- **知識グラフ = 構造 (正本)**: SourceVault の `knowledgegraph/graphs/<id>.json`。改訂は内容 (ノードと辺) のハッシュ GraphRev で指す。想定問答の正本もノード (QA)。
+- **版 (rendition) = 生成したデッキ**: .nb は作業場所 ($onWork など)、版の情報は SourceVault の `slidetalk/renditions/<Id>.json` (Id / Parent / DeckName / Graph / Spec / PrivacyLevel = 知識グラフの PL / Revisions)。デッキの TaggingRules `"SWRendition"` が Id を持つ。.nb の絶対パスは記録しない。
+  - **言語は版を分けない**: 訳は同じ .nb の訳セル (documentation.wl と同じ考え方)。
+  - 生成条件 (Graph / Audience / Slides / Minutes / Strategy) を変えて生成、または別名で保存したコピー → **親 (Parent) を持つ新しい版**。
+  - パレットの「生成」は、条件が前回と違えば「新しい版 (`<名前>_v2.nb` に写してそちらに生成) / このノートブックで / やめる」を聞く。
+  - Revisions には生成と発表のたびに DeckRev (描画ハッシュ。未保存なら "unsaved")・GraphRev・枚ごとの KG ノードが追記される。
+- **発表 = 1 回ごとの別のイベント**: 発表セッション (上の「発表の記録」) の Start に Rendition・DeckRev・GraphRev・話した言語 (Language)・声・モデル。どの事象にも Rendition・Graph・Node (その枚の KG ノード) が付く。同じ .nb を別の言語で発表すれば別のセッション。
+- **質問 → 想定問答**: 候補は TargetNode (KG ノード) を持つ。同じ知識グラフから作った版の候補はどの版からも見え、採用すると**この版でそのノードを扱う枚**の質疑応答セルに書き、知識グラフのノードにも保存する (生成し直すとどの版にも戻る)。KG から作っていないデッキは同じ版 (無ければ同じデッキ名) の候補だけ、枚番号で戻す。
+
+### SlideRendition[nb | renditionId] → Association
+版のマニフェスト。
+
+### SlideRenditions[] / SlideRenditions[graphId] → Dataset
+版の一覧 (Id, Parent, DeckName, Title, Graph, Audience, Slides, Revisions, Created, PrivacyLevel)。
+
+`SlideTalkSessions[]` の行には Rendition と Language が付く。`SlideQACandidates[nb]` の行には Node / Rendition / Graph が付き、`SlideQACandidateAccept` は `"KnowledgeGraph" -> "Saved" | "Unchanged" | "NoGraph"` を返す。
 
 ## 変更検出 (登録の空振りを避ける)
 
@@ -396,22 +470,30 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 ### SlideCycleVoice[]
 `$SlideVoice`を次のボイスモデルへ切り替える(パレットの設定欄「発表ボイス: <名前>」)。
 
-### $SlideVoiceProvider / $SlideVoiceModel
+### $SlideVoiceProvider
 型: String | Automatic, 初期値: `Automatic`
-音声会話(応答on、および`realtime:`の声での読み上げ)に使うプロバイダとモデル。`$SlideVoiceModel`の既定`Automatic`は`$SourceVaultRealtimeModel`(gpt-realtime-2.1)。`"gpt-live-1"`でGPT-Live(全二重: 聞きながら話す)。GPT-Liveはクライアント委譲で動き、スライド操作(次/前/最初/最後/N枚目/「〜のスライド」)と発表内容の質問はワーカーが書き起こしから読み取って、Realtimeと同じハンドラ(スライド操作 / SourceVault / 許可を得てウェブ)で答える。原稿の読み上げ・質問受付・マイク制御はどちらのモデルでも同じ操作。動いている音声応答のモデルは途中で変えられないので、応答off→on(または次の再生)から効く。
+音声会話(応答on、および`realtime:`の声での読み上げ)のプロバイダ。`Automatic`は登録簿の先頭(`"OpenAI"`)。候補は`SlideVoiceModels[]`のキー。
+
+### $SlideVoiceModel
+型: String | Automatic, 初期値: `Automatic`
+音声会話(読み上げと質疑)のモデル。既定`Automatic`は`$SlideVoiceDefaultModel`(v1.36から`"gpt-live-1"`。そのプロバイダの一覧に無ければ`$SourceVaultRealtimeModel`)。`"gpt-realtime-2.1"`などを直接指定もできる。`"gpt-live-1"`はGPT-Live(全二重: 聞きながら話す)。GPT-Liveはクライアント委譲で動き、スライド操作(次/前/最初/最後/N枚目/「〜のスライド」)と発表内容の質問はワーカーが書き起こしから読み取って、Realtimeと同じハンドラ(スライド操作 / SourceVault / 許可を得てウェブ)で答える。原稿の読み上げ・質問受付・マイク制御はどちらのモデルでも同じ操作。動いている音声応答のモデルは途中で変えられないので、応答off→on(または次の再生)から効く。
+
+### $SlideVoiceDefaultModel
+型: String, 初期値: `"gpt-live-1"`
+`$SlideVoiceModel`が`Automatic`のときに使うモデル。SourceVault全体の既定(`$SourceVaultRealtimeModel`)は変えない。
 
 ### SlideVoiceModels[] → Association
 プロバイダ → 選べるモデル名の一覧(`SourceVaultRealtimeModels["ByProvider"]`。SourceVault_realtime未ロードなら組み込みの`<|"OpenAI" -> {"gpt-realtime-2.1", "gpt-realtime-2.1-mini", "gpt-live-1"}|>`)。
 
 ### $SlideQuestionMode / $SlideInterruptWords
 型: String, 初期値: `"QuestionTime"` / `Automatic`
-発表中の質問の受け方。`"QuestionTime"`(既定、全モデル)=1枚読むごとに質問時間を取り、読み上げ中はマイクを切る。`"Words"`(特定ワード、gpt-live-1のみ)=読み上げ中もワーカーがマイクをローカルで聞き、エコーより大きい聞き手の声で`$SlideInterruptWords`(既定 質問 / スライド)が聞こえたときだけ発表を止めて質疑(質疑中は何でも受け付ける)。`"Detect"`(二段構え、gpt-live-1のみ)=聞き手の声を検知したら止め、質問かどうかはgpt-liveが判断。質疑が静かになったら中断した文から「それでは、説明に戻ります」で再開し、質疑中にスライドが動いていれば元のスライドへ戻す。特定ワードには`SourceVaultRealtimeInstall["Vosk" -> True]`と`SourceVaultSpeechModel[]`が要る(無い間は二段構えで動く)。
+発表中の質問の受け方。`"QuestionTime"`(既定、全モデル)=1枚読むごとに質問時間を取り、読み上げ中はマイクを切る。`"Words"`(特定ワード、gpt-live-1のみ)=読み上げ中もワーカーがマイクをローカルで聞き、エコーより大きい聞き手の声で`$SlideInterruptWords`(既定 `$SourceVaultRealtimeInterruptWords` = 質問 / スライド)が聞こえたときだけ発表を止めて質疑(質疑中は何でも受け付ける)。`"Detect"`(二段構え、gpt-live-1のみ)=聞き手の声を検知したら止め、質問かどうかはgpt-liveが判断(独り言なら黙って再開)。質疑が静かになったら中断した文から「それでは、説明に戻ります」で再開し、質疑中にスライドが動いていれば元のスライドへ戻す。特定ワードには`SourceVaultRealtimeInstall["Vosk" -> True]`と`SourceVaultSpeechModel[]`が要る(無い間は二段構えで動く)。Words/Detectはgpt-live-1以外では質問タイムで動く。
 
 ### SlideCycleQuestionMode[] / SlideSetQuestionMode[mode]
-パレットの設定欄「質問: <モード>」と同じ(質問タイム → 特定ワード → 二段構え)。今のモデルで効かないモードには「*」が付く。
+パレットの設定欄「質問: <モード>」と同じ(質問タイム → 特定ワード → 二段構え)。`SlideSetQuestionMode["QuestionTime"|"Words"|"Detect"]`で直接指定。今のモデルで効かないモードには「*」が付く。
 
 ### SlideCycleVoiceProvider[] / SlideCycleVoiceModel[] / SlideSetVoiceModel[model]
-パレットの設定欄「音声プロバイダ: <名前>」「音声モデル: <短縮名>」と同じ(押すたびに次へ)。`SlideSetVoiceModel["gpt-live-1"]`で直接指定(プロバイダも合わせる)、`SlideSetVoiceModel[Automatic]`で既定に戻す。動いている音声応答が別モデルなら、ステータスバーに「応答off→onで切り替わる」と出す。
+パレットの設定欄「音声プロバイダ: <名前>」「音声モデル: <短縮名>」と同じ(押すたびに次へ)。`SlideCycleVoiceProvider[]`はモデルがそのプロバイダに無ければ既定に戻す。`SlideSetVoiceModel["gpt-live-1"]`で直接指定(登録簿にあればプロバイダも合わせる)、`SlideSetVoiceModel[Automatic]`で既定に戻す。動いている音声応答が別モデルなら、ステータスバーに「応答off→onで切り替わる」と出す。
 
 ### SlideVoicePrepare[] / SlideVoicePrepare[nb]
 発表シナリオ全スライドの音声を先に合成して`<deck>_voice/`にキャッシュする。
@@ -505,6 +587,9 @@ Options: `"Seconds" -> 10.`, `"IncludeMouse" -> False` (マウスボタンも候
 - **設定**: 展開時のトーク生成 on/off、「発表ボイス: <名前>」(押すと次のボイスへ)、v1.32 から「音声プロバイダ: <名前>」「音声モデル: <短縮名>」(音声会話のモデル。gpt-realtime-2.1 / rt-2.1-mini / live-1 を押すたびに順に。ツールチップに完全名)、v1.33 から「質問: 質問タイム / 特定ワード / 二段構え」(発表中の質問の受け方)。**LLM の P:/M: は Claude Code パレットで設定する**。
 主なボタンにはツールチップ (`iSWTip`、静的) で何をするかを書いた。v1.29 までの発表欄「シナリオ」(`SlideTalkBuild` = トークセルを `<deck>_talk.md` に束ねる書き出し) はパレットから外した (トークセルが原稿の正本で、発表にも登録にも md は要らない。スライドのシナリオ = プロンプトと紛らわしかった)。`"Safe"->True` は互換のため残る (v1.21 で ClaudeCode を呼ぶ要素は無くなった)。FE セッションではパッケージロード時に自動表示され、FE の「パレット」メニューにも "SlideWorkflow" として登録される(headless ロードでは両方スキップ)。
 
+### ShowSlideTalkPalette[]
+発表パレット(Slideshow・再生・音声応答・カメラ・声や言語や質問の受け方の設定)を開く。作成パレット(`ShowSlidePalette`)の上のボタンからも開ける。
+
 ### SlideAddSlide[]
 現在スライドの直後に新規スライド骨格(navbar+タイトル+SlidePrompt セル)を挿入。プロンプトに「◯枚構成で」等と書けば「展開」で複数スライドに一括展開できる(SlideApplyScenario は複数 ## を複数枚に分割する)。
 
@@ -521,7 +606,7 @@ Options: `"Seconds" -> 10.`, `"IncludeMouse" -> False` (マウスボタンも候
 - `<<FIGn>>`: n=1..k は既存の図・コードセル(現スライド内の出現順)、n=k+1.. は `"Figures"` オプションで渡した新規図。
 - Options: `"Figures" -> {}` (Graphics/Graphics3D/Image/Cell のリスト。Graphics は ImageSize 560pt で貼付)
 - SlidePrompt セルは自動で先頭スライドのタイトル直後に戻される。
-- 失敗時は `Failure["SlideOutOfRange"|"BadScenario", ...]` を返す(エージェントは md を修正して再評価する)。
+- 失敗時は `Failure["SlideOutOfRange"|"BadScenario"|"BadFigures", ...]` を返す(エージェントは md を修正して再評価する)。新規図に Failure / $Failed や評価されずに残った画像処理の式があれば、何も書かずに `Failure["BadFigures"]`。
 例: `SlideApplyScenario[3, md, "Figures" -> {g1}]`
 
 ### SlideDeckInsertScenario[nb, afterN, md, opts] → Success | Failure
@@ -529,7 +614,11 @@ Options: `"Seconds" -> 10.`, `"IncludeMouse" -> False` (マウスボタンも候
 Options: `"Figures" -> {}` (mdの`<<FIG1>>`..に対応するGraphics/Graphics3D/Image/Cellのリスト)
 
 ### SlideTranslate[] / SlideTranslateRevert[] / SlideTranslateDeck[]
-現在スライド(/全スライド連鎖)のテキストセルを `$SlideTranslationLanguage` へ一括翻訳。Dictionary 厳守・出典セルは対象外。原文は TaggingRules `"SWOrigText"` に保存され Revert で復元。
+現在スライド(/全スライド連鎖)のテキストセルを `$SlideTranslationLanguage` へ一括翻訳。Dictionary 厳守・出典セルは対象外。原文は消さずに TaggingRules (documentation.wl と同じ `"documentation"` キー) に残り、`SlideTranslateRevert` / `SlideShowLanguage[nb, "Original"|"Translation"|"Toggle"]` で LLM なしに切り替える (v1.36)。
+**v1.40: 図も訳す** — 同じ枚の図のセル (Output / Print / Graphics = Mathematica で描いた図や表。v1.40.1: Canvas で書いた図は Input セルに入っているので、Input / Code セルも描画 (GraphicsBox) を持てば図として扱い、描画の中の文字列だけを訳す (コードの文字列には触らない)) の中の日本語の文字列 (ラベル・表の文字) を 1 枚ぶんまとめて訳し、箱の構造はそのまま文字列だけ差し替える。原文の図は `"SWOrigContent"`、訳の図は `"SWTransContent"` に持ち、上の切り替えがそのまま図にも効く。オプションの値 (フォント名など) と画像 (ラスタ) の中の文字は訳さない。入力セルを評価し直して図が描き直されたら「古い訳」になり、次の英訳で訳し直す。
+
+### SlideShowLanguage[] / SlideShowLanguage[nb, "Toggle" | "Original" | "Translation"]
+デッキ全体のスライドの表示を原文と訳で切り替える(LLM は呼ばない。訳の無いセルは原文のまま)。画像・mp4 の書き出しは表示中の言語になる。
 
 ### $SlideTranslationLanguage
 型: String, 初期値: 日本語環境なら`"English"`

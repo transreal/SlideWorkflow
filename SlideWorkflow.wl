@@ -8,7 +8,7 @@
 
 (*
   \:30b9\:30e9\:30a4\:30c9\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e3\:30ef\:30fc\:30af\:30d5\:30ed\:30fc\:3092\:63d0\:4f9b\:3059\:308b\:3002
-    1. \:30b7\:30ca\:30ea\:30aa(Markdown / \:9023\:60f3\:30ea\:30b9\:30c8) \:2192 \:30b9\:30e9\:30a4\:30c9\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:751f\:6210
+    1. \:30b7\:30ca\:30ea\:30aa(Markdown / \:9023\:60f3\:30ea\:30b9\:30c8) \[RightArrow] \:30b9\:30e9\:30a4\:30c9\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:751f\:6210
        SlideScenarioFromMarkdown / SlideDeckBuild
     2. \:65e2\:5b58\:30c7\:30c3\:30ad\:306e\:30b9\:30e9\:30a4\:30c9\:5358\:4f4d\:66f4\:65b0\:30fb\:5225\:30d0\:30fc\:30b8\:30e7\:30f3\:751f\:6210
        SlideDeckSlides / SlideDeckOverview / SlideDeckReplaceSlide /
@@ -91,7 +91,8 @@ SlideCycleVoice::usage = "SlideCycleVoice[] \:306f $SlideVoice \:3092\:6b21\:306
 SlideVoicePrepare::usage = "SlideVoicePrepare[] \:306f\:767a\:8868\:30b7\:30ca\:30ea\:30aa\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066 <deck>_voice/ \:306b\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b\:3002SlideVoicePrepare[nb] \:3067\:5bfe\:8c61\:6307\:5b9a\:3002";
 $SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002";
 $SlideVoiceProvider::usage = "$SlideVoiceProvider \:306f\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0\:3067\:306e\:8aad\:307f\:4e0a\:3052) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:65e2\:5b9a Automatic = \:767b\:9332\:7c3f\:306e\:5148\:982d (\"OpenAI\")\:3002\:5019\:88dc\:306f SlideVoiceModels[] \:306e\:30ad\:30fc\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3068\:540c\:3058\:3002";
-$SlideVoiceModel::usage = "$SlideVoiceModel \:306f\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3002\:65e2\:5b9a Automatic = $SourceVaultRealtimeModel (gpt-realtime-2.1)\:3002\"gpt-live-1\" \:3067 GPT-Live (\:5168\:4e8c\:91cd\:3002\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f\:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:59d4\:8b72\:3067 SourceVault / \:8a31\:53ef\:3092\:5f97\:3066\:30a6\:30a7\:30d6\:3078)\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306b\:306f\:3001\:5fdc\:7b54 off \:2192 on (\:307e\:305f\:306f\:6b21\:306e\:518d\:751f) \:304b\:3089\:52b9\:304f\:3002";
+$SlideVoiceModel::usage = "$SlideVoiceModel \:306f\:97f3\:58f0\:4f1a\:8a71 (\:8aad\:307f\:4e0a\:3052\:3068\:8cea\:7591) \:306e\:30e2\:30c7\:30eb\:3002\:65e2\:5b9a Automatic = $SlideVoiceDefaultModel (\"gpt-live-1\"\:3002v1.36 \:304b\:3089\:3002\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:4e00\:89a7\:306b\:7121\:3051\:308c\:3070 $SourceVaultRealtimeModel)\:3002\"gpt-realtime-2.1\" \:306a\:3069\:3092\:76f4\:63a5\:6307\:5b9a\:3082\:3067\:304d\:308b\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306b\:306f\:3001\:5fdc\:7b54 off \[RightArrow] on (\:307e\:305f\:306f\:6b21\:306e\:518d\:751f) \:304b\:3089\:52b9\:304f\:3002";
+$SlideVoiceDefaultModel::usage = "$SlideVoiceDefaultModel \:306f $SlideVoiceModel \:304c Automatic \:306e\:3068\:304d\:306b\:4f7f\:3046\:30e2\:30c7\:30eb (\:65e2\:5b9a \"gpt-live-1\")\:3002SourceVault \:5168\:4f53\:306e\:65e2\:5b9a ($SourceVaultRealtimeModel) \:306f\:5909\:3048\:306a\:3044\:3002";
 SlideVoiceModels::usage = "SlideVoiceModels[] \:306f\:30d7\:30ed\:30d0\:30a4\:30c0 -> \:9078\:3079\:308b\:97f3\:58f0\:4f1a\:8a71\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3092\:8fd4\:3059 (SourceVault_realtime \:306e\:767b\:9332\:7c3f\:3002\:672a\:30ed\:30fc\:30c9\:306a\:3089\:7d44\:307f\:8fbc\:307f\:306e\:65e2\:5b9a)\:3002";
 SlideCycleVoiceProvider::usage = "SlideCycleVoiceProvider[] \:306f $SlideVoiceProvider \:3092\:6b21\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3078\:5207\:308a\:66ff\:3048\:308b (\:30e2\:30c7\:30eb\:304c\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306b\:7121\:3051\:308c\:3070\:65e2\:5b9a\:306b\:623b\:3059)\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3002";
 SlideCycleVoiceModel::usage = "SlideCycleVoiceModel[] \:306f $SlideVoiceModel \:3092\:540c\:3058\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:6b21\:306e\:30e2\:30c7\:30eb\:3078\:5207\:308a\:66ff\:3048\:308b\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3002";
@@ -99,9 +100,9 @@ SlideSetVoiceModel::usage = "SlideSetVoiceModel[model] \:306f\:97f3\:58f0\:4f1a\
 $SlideQuestionMode::usage = "$SlideQuestionMode \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3002\"QuestionTime\" (\:65e2\:5b9a) = 1 \:679a\:8aad\:3080\:3054\:3068\:306b\:8cea\:554f\:6642\:9593\:3092\:53d6\:308a\:3001\:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:3092\:5207\:308b\:3002\n" <>
   "\"Words\" (\:7279\:5b9a\:30ef\:30fc\:30c9) = \:8aad\:307f\:4e0a\:3052\:4e2d\:3082\:30de\:30a4\:30af\:3092\:805e\:304d\:3001\:30a8\:30b3\:30fc\:3088\:308a\:5927\:304d\:3044\:805e\:304d\:624b\:306e\:58f0\:3067 $SlideInterruptWords (\:65e2\:5b9a \:8cea\:554f / \:30b9\:30e9\:30a4\:30c9) \:304c\:805e\:3053\:3048\:305f\:3068\:304d\:3060\:3051\:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591 (\:8cea\:7591\:4e2d\:306f\:4f55\:3067\:3082\:53d7\:3051\:4ed8\:3051\:3001\:9759\:304b\:306b\:306a\:3063\:305f\:3089\:4e2d\:65ad\:3057\:305f\:6587\:304b\:3089\:518d\:958b)\:3002\n" <>
   "\"Detect\" (\:4e8c\:6bb5\:69cb\:3048) = \:805e\:304d\:624b\:306e\:58f0\:3092\:691c\:77e5\:3057\:305f\:3089\:767a\:8868\:3092\:6b62\:3081\:3001\:8cea\:554f\:304b\:3069\:3046\:304b\:306f gpt-live \:304c\:5224\:65ad (\:72ec\:308a\:8a00\:306a\:3089\:9ed9\:3063\:3066\:518d\:958b)\:3002\n" <>
-  "Words / Detect \:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051\:52b9\:304d\:3001\:4ed6\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:52d5\:304f\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:8cea\:554f: \:2026\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:308b\:3002";
+  "Words / Detect \:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051\:52b9\:304d\:3001\:4ed6\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3067\:52d5\:304f\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:8cea\:554f: \[Ellipsis]\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:308b\:3002";
 $SlideInterruptWords::usage = "$SlideInterruptWords \:306f \"Words\" \:30e2\:30fc\:30c9\:3067\:767a\:8868\:3092\:6b62\:3081\:3066\:3088\:3044\:8a9e\:306e\:30ea\:30b9\:30c8 (\:65e2\:5b9a Automatic = $SourceVaultRealtimeInterruptWords = {\"\:8cea\:554f\", \"\:30b9\:30e9\:30a4\:30c9\"})\:3002\:30ed\:30fc\:30ab\:30eb\:306e Vosk \:3067\:805e\:304d\:53d6\:308b (SourceVaultRealtimeInstall[\"Vosk\" -> True] \:3068 SourceVaultSpeechModel[] \:304c\:8981\:308b)\:3002";
-SlideCycleQuestionMode::usage = "SlideCycleQuestionMode[] \:306f $SlideQuestionMode \:3092 \:8cea\:554f\:30bf\:30a4\:30e0 \:2192 \:7279\:5b9a\:30ef\:30fc\:30c9 \:2192 \:4e8c\:6bb5\:69cb\:3048 \:306e\:9806\:306b\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:8cea\:554f: \:2026\:300d\:884c)\:3002SlideSetQuestionMode[mode] \:3067\:76f4\:63a5\:6307\:5b9a\:3002";
+SlideCycleQuestionMode::usage = "SlideCycleQuestionMode[] \:306f $SlideQuestionMode \:3092 \:8cea\:554f\:30bf\:30a4\:30e0 \[RightArrow] \:7279\:5b9a\:30ef\:30fc\:30c9 \[RightArrow] \:4e8c\:6bb5\:69cb\:3048 \:306e\:9806\:306b\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:8cea\:554f: \[Ellipsis]\:300d\:884c)\:3002SlideSetQuestionMode[mode] \:3067\:76f4\:63a5\:6307\:5b9a\:3002";
 SlideSetQuestionMode::usage = "SlideSetQuestionMode[\"QuestionTime\"|\"Words\"|\"Detect\"] \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3092\:9078\:3076\:3002";
 SlidePlay::usage = "SlidePlay[] \:306f <deck>_talk.md \:306e\:539f\:7a3f\:3092 SourceVault \:306e\:30ed\:30fc\:30ab\:30eb\:97f3\:58f0\:3067\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:81ea\:52d5\:3067\:9032\:3081\:308b (\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883\:304c SlideShow \:306e\:3068\:304d)\:3002\:4e00\:6642\:505c\:6b62\:4e2d\:306b\:547c\:3076\:3068\:518d\:958b\:3059\:308b\:3002SlidePlay[nb] \:3067\:5bfe\:8c61\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:6307\:5b9a\:3002";
 SlidePause::usage = "SlidePause[] \:306f\:8aad\:307f\:4e0a\:3052\:3092\:4e00\:6642\:505c\:6b62\:3059\:308b\:3002SlidePlay[] \:3067\:7d9a\:304d\:304b\:3089\:518d\:958b\:3059\:308b\:3002";
@@ -146,14 +147,16 @@ SlidePlayStatus::usage = "SlidePlayStatus[] \:306f\:8aad\:307f\:4e0a\:3052\:518d
 (* --- Interactive layer (\:65e7 SlideWorkflow_interactive.wl, 2026-07-13 \:7d71\:5408) --- *)
 
 ShowSlidePalette::usage = "ShowSlidePalette[] \:306f\:30b9\:30e9\:30a4\:30c9\:4f5c\:6210\:7528\:30d1\:30ec\:30c3\:30c8\:3092\:8868\:793a\:3059\:308b\:3002\"Safe\"->True \:3067 ClaudeCode \:5b8c\:5168\:975e\:5e72\:6e09(\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528)\:3002";
+ShowSlideTalkPalette::usage = "ShowSlideTalkPalette[] \:306f\:767a\:8868\:30d1\:30ec\:30c3\:30c8 (Slideshow\:30fb\:518d\:751f\:30fb\:97f3\:58f0\:5fdc\:7b54\:30fb\:30ab\:30e1\:30e9\:30fb\:58f0\:3084\:8a00\:8a9e\:3084\:8cea\:554f\:306e\:53d7\:3051\:65b9\:306e\:8a2d\:5b9a) \:3092\:958b\:304f\:3002\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8 (ShowSlidePalette) \:306e\:4e0a\:306e\:30dc\:30bf\:30f3\:304b\:3089\:3082\:958b\:3051\:308b\:3002";
 $SlideWorkflowInteractiveVersion::usage = "$SlideWorkflowInteractiveVersion interactive \:30ec\:30a4\:30e4\:30fc\:306e\:7248\:3002";
 SlideAddSlide::usage = "SlideAddSlide[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:306e\:76f4\:5f8c\:306b\:65b0\:898f\:30b9\:30e9\:30a4\:30c9\:9aa8\:683c(navbar+\:30bf\:30a4\:30c8\:30eb+\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb)\:3092\:633f\:5165\:3059\:308b\:3002\:30d7\:30ed\:30f3\:30d7\:30c8\:306b\:300c\:25ef\:679a\:69cb\:6210\:3067\:300d\:7b49\:3068\:66f8\:3051\:3070\:300c\:5c55\:958b\:300d\:3067\:8907\:6570\:30b9\:30e9\:30a4\:30c9\:306b\:4e00\:62ec\:5c55\:958b\:3067\:304d\:308b(SlideApplyScenario \:306f\:8907\:6570 ## \:3092\:8907\:6570\:679a\:306b\:5206\:5272\:3059\:308b)\:3002";
 SlideExpand::usage = "SlideExpand[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:306e SlidePrompt \:30bb\:30eb(\:7121\:3051\:308c\:3070\:9078\:629e\:30bb\:30eb\:306e\:672c\:6587)\:3092\:6307\:793a\:3068\:3057\:3066\:30b9\:30e9\:30a4\:30c9\:3092\:5c55\:958b\:30fb\:66f4\:65b0\:3059\:308b\:3002\:65e2\:5b9a($SlideExpandMode=\"Agent\")\:3067\:306f ClaudeEval(ClaudeRuntime \:7d4c\:7531\:3001\:6587\:732e\:691c\:7d22\:30fb\:56f3\:751f\:6210\:30fb\:627f\:8a8d\:30b2\:30fc\:30c8\:4ed8\:304d)\:306b\:59d4\:8b72\:3057\:3001\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c\:6700\:5f8c\:306b SlideApplyScenario \:3092\:547c\:3093\:3067\:9069\:7528\:3059\:308b\:3002\:8ffd\:8de1\:30bb\:30eb\:306f\:7d42\:7aef\:30de\:30fc\:30ab\:30fc\:4ee5\:964d(Appendix)\:306b\:7f6e\:304b\:308c\:308b\:3002\:6307\:793a(Directive)\:30fb\:8f9e\:66f8(Dictionary)\:30bb\:30eb\:3092\:53b3\:5b88\:3057\:3001\:65e2\:5b58\:306e\:56f3\:30fb\:30b3\:30fc\:30c9\:30bb\:30eb\:306f <<FIGn>> \:30c8\:30fc\:30af\:30f3\:3067\:4fdd\:6301\:3055\:308c\:308b\:3002";
-SlideApplyScenario::usage = "SlideApplyScenario[slideNo, md] \:306f\:30b7\:30ca\:30ea\:30aa Markdown \:3067\:5bfe\:8c61\:30b9\:30e9\:30a4\:30c9\:3092\:5dee\:3057\:66ff\:3048\:308b\:6c7a\:5b9a\:7684\:9069\:7528\:95a2\:6570(\:5c55\:958b\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306e\:552f\:4e00\:306e\:66f8\:8fbc\:307f\:53e3)\:3002md \:306b\:8907\:6570 ## \:53ef(\:8907\:6570\:679a\:5c55\:958b)\:3002<<FIGn>> \:306f n=1..k \:304c\:65e2\:5b58\:306e\:56f3\:30fb\:30b3\:30fc\:30c9\:30bb\:30eb\:3001n=k+1.. \:304c \"Figures\" \:30aa\:30d7\:30b7\:30e7\:30f3\:3067\:6e21\:3057\:305f\:65b0\:898f\:56f3(Graphics/Image)\:3002SlidePrompt \:30bb\:30eb\:306f\:81ea\:52d5\:3067\:5148\:982d\:30b9\:30e9\:30a4\:30c9\:306b\:623b\:3055\:308c\:308b\:3002\:6210\:529f\:6642 Success\:3001\:5931\:6557\:6642 Failure \:3092\:8fd4\:3059\:3002";
+SlideApplyScenario::usage = "SlideApplyScenario[slideNo, md] \:306f\:30b7\:30ca\:30ea\:30aa Markdown \:3067\:5bfe\:8c61\:30b9\:30e9\:30a4\:30c9\:3092\:5dee\:3057\:66ff\:3048\:308b\:6c7a\:5b9a\:7684\:9069\:7528\:95a2\:6570(\:5c55\:958b\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306e\:552f\:4e00\:306e\:66f8\:8fbc\:307f\:53e3)\:3002md \:306b\:8907\:6570 ## \:53ef(\:8907\:6570\:679a\:5c55\:958b)\:3002<<FIGn>> \:306f n=1..k \:304c\:65e2\:5b58\:306e\:56f3\:30fb\:30b3\:30fc\:30c9\:30bb\:30eb\:3001n=k+1.. \:304c \"Figures\" \:30aa\:30d7\:30b7\:30e7\:30f3\:3067\:6e21\:3057\:305f\:65b0\:898f\:56f3(Graphics/Image)\:3002SlidePrompt \:30bb\:30eb\:306f\:81ea\:52d5\:3067\:5148\:982d\:30b9\:30e9\:30a4\:30c9\:306b\:623b\:3055\:308c\:308b\:3002\:6210\:529f\:6642 Success\:3001\:5931\:6557\:6642 Failure \:3092\:8fd4\:3059\:3002\:65b0\:898f\:56f3\:306b Failure / $Failed \:3084\:8a55\:4fa1\:3055\:308c\:305a\:306b\:6b8b\:3063\:305f\:753b\:50cf\:51e6\:7406\:306e\:5f0f\:304c\:3042\:308c\:3070\:3001\:4f55\:3082\:66f8\:304b\:305a\:306b Failure[\"BadFigures\"] \:3092\:8fd4\:3059\:3002";
 $SlideExpandMode::usage = "$SlideExpandMode \:5c55\:958b\:306e\:5b9f\:884c\:7d4c\:8def\:3002\"Agent\"(\:65e2\:5b9a: ClaudeEval/ClaudeRuntime \:7d4c\:7531\:3001\:8907\:96d1\:51e6\:7406\:53ef) | \"Direct\"(\:8efd\:91cf: NBAccess`$NBLLMQueryFunc \:76f4\:63a5)\:3002";
-SlideTranslate::usage = "SlideTranslate[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:306e\:30c6\:30ad\:30b9\:30c8\:30bb\:30eb\:3092 $SlideTranslationLanguage \:3078\:4e00\:62ec\:7ffb\:8a33\:3059\:308b(\:8f9e\:66f8\:53b3\:5b88)\:3002\:539f\:6587\:306f TaggingRules \"SWOrigText\" \:306b\:4fdd\:5b58\:3055\:308c\:308b\:3002";
-SlideTranslateRevert::usage = "SlideTranslateRevert[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:306e\:7ffb\:8a33\:3092\:539f\:6587\:306b\:623b\:3059\:3002";
-SlideTranslateDeck::usage = "SlideTranslateDeck[] \:306f\:5168\:30b9\:30e9\:30a4\:30c9\:3092\:9806\:306b\:7ffb\:8a33\:3059\:308b(\:975e\:540c\:671f\:9023\:9396)\:3002";
+SlideTranslate::usage = "SlideTranslate[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:306e\:898b\:51fa\:3057\:30fb\:7b87\:6761\:66f8\:304d\:30fb\:672c\:6587\:3092 $SlideTranslationLanguage \:306b\:8a33\:3057\:3066\:8a33\:306e\:8868\:793a\:306b\:3059\:308b (v1.36)\:3002\:539f\:6587\:306f\:6d88\:3055\:305a\:30bb\:30eb\:306e TaggingRules (documentation.wl \:3068\:540c\:3058 \"documentation\" -> translationSrc / translation / showTranslation\:3001\:66f8\:5f0f\:3064\:304d\:306e\:539f\:6587\:306f SWOrigContent) \:306b\:6b8b\:308b\:306e\:3067\:3001SlideTranslateRevert / SlideShowLanguage \:3067 LLM \:3092\:547c\:3070\:305a\:306b\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:8a33\:306e\:3042\:308b\:30bb\:30eb\:306f\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:308b\:3060\:3051\:3067\:3001\:8a33\:306e\:7121\:3044\:30bb\:30eb\:3068\:539f\:6587\:3092\:76f4\:3057\:305f\:30bb\:30eb\:3060\:3051\:3092 1 \:679a\:3076\:3093\:307e\:3068\:3081\:3066 LLM \:306b\:6e21\:3059\:3002\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:306f\:8a33\:3055\:306a\:3044 (\:539f\:7a3f\:306e\:8a33\:306f SlideTalkTranslate)\:3002 v1.40: \:540c\:3058\:679a\:306e\:56f3 (Output / Print / Graphics \:30bb\:30eb = Mathematica \:3067\:63cf\:3044\:305f\:56f3\:3084\:8868) \:306e\:4e2d\:306e\:65e5\:672c\:8a9e\:306e\:6587\:5b57\:5217\:3082\:8a33\:3057\:3001\:539f\:6587\:306e\:56f3 (SWOrigContent) \:3068\:8a33\:306e\:56f3 (SWTransContent) \:3092\:6301\:3063\:3066\:5207\:308a\:66ff\:3048\:308b (SlideTranslateRevert / SlideShowLanguage \:3082\:56f3\:306b\:52b9\:304f)\:3002\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:5024 (\:30d5\:30a9\:30f3\:30c8\:540d\:306a\:3069) \:3068\:753b\:50cf\:306e\:4e2d\:306e\:6587\:5b57\:306f\:8a33\:3055\:306a\:3044\:3002";
+SlideTranslateRevert::usage = "SlideTranslateRevert[] \:306f\:73fe\:5728\:30b9\:30e9\:30a4\:30c9\:3092\:539f\:6587\:306e\:8868\:793a\:306b\:623b\:3059 (\:8a33\:306f\:6b8b\:308b\:3002\:8a33\:3092\:624b\:3067\:76f4\:3057\:3066\:3044\:308c\:3070\:305d\:306e\:76f4\:3057\:3082\:6b8b\:308b)\:3002";
+SlideTranslateDeck::usage = "SlideTranslateDeck[] \:306f\:5168\:30b9\:30e9\:30a4\:30c9\:3092\:9806\:306b\:8a33\:306e\:8868\:793a\:306b\:3059\:308b (\:8a33\:306e\:7121\:3044\:30bb\:30eb\:3060\:3051 LLM \:3067\:8a33\:3059\:3002\:975e\:540c\:671f\:9023\:9396)\:3002";
+SlideShowLanguage::usage = "SlideShowLanguage[] / SlideShowLanguage[nb, \"Toggle\" | \"Original\" | \"Translation\"] \:306f\:30c7\:30c3\:30ad\:5168\:4f53\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:8868\:793a\:3092\:539f\:6587\:3068\:8a33\:3067\:5207\:308a\:66ff\:3048\:308b (LLM \:306f\:547c\:3070\:306a\:3044\:3002\:8a33\:306e\:7121\:3044\:30bb\:30eb\:306f\:539f\:6587\:306e\:307e\:307e)\:3002\:753b\:50cf\:30fbmp4 \:306e\:66f8\:304d\:51fa\:3057\:306f\:8868\:793a\:4e2d\:306e\:8a00\:8a9e\:306b\:306a\:308b\:3002";
 SlideInsertPrompt::usage = "SlideInsertPrompt[] \:306f\:30ab\:30fc\:30bd\:30eb\:4f4d\:7f6e\:306b SlidePrompt \:30bb\:30eb\:3092\:633f\:5165\:3059\:308b(\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:304b\:3089\:306f\:9664\:5916\:3055\:308c\:308b)\:3002";
 SlideInsertCitation::usage = "SlideInsertCitation[] \:306f\:30ab\:30fc\:30bd\:30eb\:4f4d\:7f6e\:306b\:51fa\:5178\:30bb\:30eb(\:5c0f\:30d5\:30a9\:30f3\:30c8)\:3092\:633f\:5165\:3059\:308b\:3002\:56f3\:30fb\:5f15\:7528\:306e\:76f4\:5f8c\:306b\:7f6e\:304d\:3001URL \:307e\:305f\:306f (\:8457\:8005, \:5e74) \:3092\:8a18\:5165\:3059\:308b\:3002";
 SlideInsertEndMarker::usage = "SlideInsertEndMarker[] \:306f\:30ab\:30fc\:30bd\:30eb\:4f4d\:7f6e\:306b\:30b9\:30e9\:30a4\:30c9\:7d42\:7aef\:30de\:30fc\:30ab\:30fc\:3092\:633f\:5165\:3059\:308b\:3002\:4ee5\:964d\:306e\:30bb\:30eb\:306f\:30b9\:30e9\:30a4\:30c9\:30fb\:66f8\:304d\:51fa\:3057\:306b\:542b\:307e\:308c\:306a\:3044\:3002";
@@ -162,7 +165,7 @@ SlideInsertDirective::usage = "SlideInsertDirective[] \:306f\:6307\:793a\:30bb\:
 SlideInsertDictionary::usage = "SlideInsertDictionary[] \:306f\:8f9e\:66f8\:30bb\:30eb\:3092\:633f\:5165\:3059\:308b\:3002\:7ffb\:8a33\:6642\:306e\:7528\:8a9e\:5bfe\:5fdc\:3092\:6307\:5b9a\:3059\:308b\:3002";
 SlideInsertBibliography::usage = "SlideInsertBibliography[] \:306f\:6587\:732e\:30bb\:30eb\:3092\:633f\:5165\:3059\:308b(documentation.wl \:4e92\:63db)\:3002";
 SlideInsertReferences::usage = "SlideInsertReferences[] \:306f\:6587\:732e\:30ea\:30b9\:30c8\:30bb\:30eb\:3092\:633f\:5165\:3059\:308b(\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:6587\:732e\:300d)\:30021 \:884c 1 \:6587\:732e \"[key] locator | \:30e1\:30e2\"\:3002locator \:306f URL / arxiv:ID / sv://URI / eagle:ID / PDF\:30fb\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30d1\:30b9(\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:53ef)\:3002\:30b9\:30e9\:30a4\:30c9\:6307\:793a(\:30d7\:30ed\:30f3\:30d7\:30c8)\:304b\:3089\:306f [key] \:3067\:53c2\:7167\:3057\:3001\:5c55\:958b\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c\:53d6\:5f97\:30fb\:5f15\:7528\:3059\:308b\:3002# \:3067\:59cb\:307e\:308b\:884c\:306f\:30b3\:30e1\:30f3\:30c8\:3002";
-SlideToggleScreenEnvironment::usage = "SlideToggleScreenEnvironment[] \:306f\:5bfe\:8c61\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883\:3092 Working \:21c4 SlideShow \:3067\:5207\:308a\:66ff\:3048\:308b(\:66f8\:5f0f\:30e1\:30cb\:30e5\:30fc\:306e\:300c\:30b9\:30af\:30ea\:30fc\:30f3\:30b9\:30bf\:30a4\:30eb\:74b0\:5883\:300d\:3068\:540c\:3058)\:3002\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:8f9e\:66f8\:30fb\:6587\:732e\:30fb\:30d7\:30ed\:30f3\:30d7\:30c8\:306e\:5404\:30bb\:30eb\:306f Working \:3067\:53ef\:8996\:3001SlideShow \:3067\:975e\:8868\:793a\:306b\:306a\:308b\:3002";
+SlideToggleScreenEnvironment::usage = "SlideToggleScreenEnvironment[] \:306f\:5bfe\:8c61\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883\:3092 Working \[RightArrowLeftArrow] SlideShow \:3067\:5207\:308a\:66ff\:3048\:308b(\:66f8\:5f0f\:30e1\:30cb\:30e5\:30fc\:306e\:300c\:30b9\:30af\:30ea\:30fc\:30f3\:30b9\:30bf\:30a4\:30eb\:74b0\:5883\:300d\:3068\:540c\:3058)\:3002\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:8f9e\:66f8\:30fb\:6587\:732e\:30fb\:30d7\:30ed\:30f3\:30d7\:30c8\:306e\:5404\:30bb\:30eb\:306f Working \:3067\:53ef\:8996\:3001SlideShow \:3067\:975e\:8868\:793a\:306b\:306a\:308b\:3002";
 SlideEnsureDeckStyles::usage = "SlideEnsureDeckStyles[nb] \:306f\:30c7\:30c3\:30ad\:306b\:30e1\:30bf\:30bb\:30eb\:7528\:30b9\:30bf\:30a4\:30eb\:5b9a\:7fa9(Note/Directive/Dictionary/Bibliography/References/SlidePrompt/SlideTalk/SlideQA\:3002SlideShow \:74b0\:5883\:3067\:975e\:8868\:793a)\:3092\:57cb\:3081\:8fbc\:3080\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:633f\:5165\:30fb\:5c55\:958b\:30fb\:8868\:793a\:5207\:66ff\:304b\:3089\:81ea\:52d5\:3067\:547c\:3070\:308c\:3001documentation.wl \:306e DocInsert* \:3082\:3053\:306e\:5b9a\:7fa9\:3092\:4f7f\:3046\:3002";
 SlideTogglePrompts::usage = "SlideTogglePrompts[] \:306f\:5168 SlidePrompt \:30bb\:30eb\:306e\:8868\:793a/\:975e\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:308b\:3002";
 $SlideTranslationLanguage::usage = "$SlideTranslationLanguage \:306f\:7ffb\:8a33\:5148\:8a00\:8a9e\:3002\:65e2\:5b9a\:306f\:65e5\:672c\:8a9e\:74b0\:5883\:306a\:3089 \"English\"\:3002";
@@ -195,6 +198,46 @@ SlideDeckMarkVideoCurrent::usage = "SlideDeckMarkVideoCurrent[nb|deck.nb] \:306f
 SlideDeckChangeStatus::usage = "SlideDeckChangeStatus[nb|deck.nb] \:306f\:300c\:767b\:9332\:300d\:304c\:4f55\:3092\:3084\:308a\:76f4\:3059\:304b\:3092\:8fd4\:3059(\:30b9\:30e9\:30a4\:30c9\:306e\:4e26\:3073\:306e\:30cf\:30c3\:30b7\:30e5\:3001mp4 \:304c\:53e4\:3044\:304b\:3001QA \:304c\:713c\:304d\:76f4\:3055\:308c\:308b\:304b)\:3002\:300c\:767b\:9332\:3057\:3066\:3082\:4f55\:3082\:8d77\:304d\:306a\:3044\:300d\:3068\:304d\:306e\:5207\:308a\:5206\:3051\:306b\:4f7f\:3046\:3002";
 
 SlideInsertTalk::usage = "SlideInsertTalk[] \:306f\:30c8\:30fc\:30af\:30bb\:30eb(SlideTalk \:30b9\:30bf\:30a4\:30eb\:3001\:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:767a\:8868\:539f\:7a3f)\:3092\:633f\:5165\:3059\:308b\:3002\:5404\:30b9\:30e9\:30a4\:30c9\:306e\:6700\:5f8c\:306b\:7f6e\:304f\:3002Working \:3067\:53ef\:8996\:3001SlideShow \:74b0\:5883\:3067\:306f\:975e\:8868\:793a\:3001\:66f8\:304d\:51fa\:3057\:304b\:3089\:3082\:9664\:5916\:3002md \:3067\:306f \"talk: \:539f\:7a3f\" \:884c\:3002\:5168\:30b9\:30e9\:30a4\:30c9\:306b\:30c8\:30fc\:30af\:304c\:3042\:308b\:3068 SlideTalkBuild(\:30d1\:30ec\:30c3\:30c8\:300c\:30b7\:30ca\:30ea\:30aa\:300d)\:304c LLM \:306a\:3057\:3067 deck_talk.md \:3092\:675f\:306d\:308b\:3002";
+$SlideTalkLanguage::usage = "$SlideTalkLanguage \:306f\:767a\:8868\:3092\:8aad\:307f\:4e0a\:3052\:308b\:8a00\:8a9e\:306e\:65e2\:5b9a (\"en\" / \"English\" / \"\:82f1\:8a9e\" \:306a\:3069)\:3002Automatic (\:65e2\:5b9a) \:306a\:3089 $Language\:3002\:30c7\:30c3\:30ad\:306e\:6307\:793a\:30bb\:30eb\:306b Language: \:884c\:304c\:3042\:308c\:3070\:305d\:3061\:3089\:304c\:512a\:5148\:3059\:308b\:3002";
+SlideTalkLanguage::usage = "SlideTalkLanguage[nb] \:306f\:305d\:306e\:30c7\:30c3\:30ad\:3092\:8aad\:307f\:4e0a\:3052\:308b\:8a00\:8a9e\:30b3\:30fc\:30c9 (\"ja\" / \"en\" \[Ellipsis]) \:3092\:8fd4\:3059\:3002\:6307\:793a\:30bb\:30eb\:306e Language: > SlideTalkMeta \:306e Language > $SlideTalkLanguage > $Language \:306e\:9806\:3002";
+SlideTalkLanguages::usage = "SlideTalkLanguages[nb] \:306f\:539f\:7a3f\:306e\:8a00\:8a9e\:306e\:72b6\:6cc1 <|\"Language\" (\:8a71\:3059\:8a00\:8a9e), \"Base\" (\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e), \"Slides\", \"Translated\" (\:8a00\:8a9e\:3054\:3068\:306e\:8a33\:306e\:679a\:6570), \"Missing\" (\:8a71\:3059\:8a00\:8a9e\:306e\:8a33\:304c\:7121\:3044\:679a), \"Stale\" (\:5143\:306e\:539f\:7a3f\:3092\:76f4\:3057\:305f\:5f8c\:306e\:53e4\:3044\:8a33)|> \:3092\:8fd4\:3059\:3002\:756a\:53f7 0 \:306f\:524d\:7f6e\:304d\:3002";
+SlideTalkTranslate::usage = "SlideTalkTranslate[nb] \:306f\:5143\:306e\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:3092 LLM \:3067\:8a33\:3057\:3001\:540c\:3058\:30b9\:30e9\:30a4\:30c9\:306b\:8a33\:306e\:30c8\:30fc\:30af\:30bb\:30eb (TaggingRules SWTalkLang) \:3092\:4e26\:3079\:308b\:3002\:5143\:306e\:539f\:7a3f\:306f\:6b8b\:308b\:306e\:3067\:8907\:6570\:8a00\:8a9e\:3092\:4f75\:7528\:3067\:304d\:308b\:3002\:8a33\:3059\:8a00\:8a9e\:306f\:3001\:6307\:793a\:30bb\:30eb\:306e Language: (\:307e\:305f\:306f SWTalkMeta / $SlideTalkLanguage) \:306e\:6307\:5b9a\:304c\:3042\:3063\:3066\:5143\:306e\:539f\:7a3f\:3068\:9055\:3048\:3070\:305d\:306e\:8a00\:8a9e\:3001\:7121\:3051\:308c\:3070 $Language \:304c\:82f1\:8a9e\:3067\:306a\:3051\:308c\:3070\:82f1\:8a9e\:3001\:82f1\:8a9e\:306a\:3089\:65e5\:672c\:8a9e (v1.36)\:3002SlideTalkTranslate[nb, \"jv\"] / SlideTalkTranslate[nb, {\"en\", \"zh\"}] \:3067\:8a00\:8a9e\:3092\:76f4\:63a5\:6307\:5b9a\:3002\:65e2\:5b9a \"Mode\"->\"Changed\" \:306f\:8a33\:306e\:7121\:3044\:679a\:3068\:539f\:7a3f\:3092\:76f4\:3057\:305f\:679a\:3060\:3051\:3001\"All\" \:306f\:5168\:90e8\:3002\"Then\"->f \:3067\:5b8c\:4e86\:5f8c\:306b f[] \:3092\:547c\:3076\:3002\:975e\:540c\:671f\:3002";
+SlideCameraToggle::usage = "SlideCameraToggle[] \:306f\:30ab\:30e1\:30e9 (\:30d1\:30ec\:30c3\:30c8\:300c\:767a\:8868\:300d\:306e\:30ab\:30e1\:30e9on/off) \:3092\:5207\:308a\:66ff\:3048\:308b\:3002on \:306e\:9593\:3001$SlideCameraDevice \:306e\:30ab\:30e1\:30e9\:3067 $SlideCameraInterval \:79d2\:3054\:3068\:306b\:64ae\:3063\:305f\:753b\:50cf\:3092\:3001\:767a\:8868\:306e\:8a18\:9332 (SlideTalkSessions) \:3068\:3057\:3066 SourceVault \:306b PL $SlideCameraPrivacyLevel (\:65e2\:5b9a 0.6) \:3067\:4fdd\:5b58\:3059\:308b\:3060\:3051 (LLM \:306b\:306f\:6e21\:3055\:306a\:3044)\:3002ffmpeg (dshow) \:3092\:4f7f\:3046\:3002";
+SlideCameraStart::usage = "SlideCameraStart[nb] \:306f\:30ab\:30e1\:30e9\:306e\:8a18\:9332\:3092\:59cb\:3081\:308b (\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:304c\:7121\:3051\:308c\:3070\:59cb\:3081\:308b)\:3002SlideCameraStop[] \:3067\:6b62\:3081\:308b\:3002";
+SlideCameraStop::usage = "SlideCameraStop[] \:306f\:30ab\:30e1\:30e9\:306e\:8a18\:9332\:3092\:6b62\:3081\:3001\:6b8b\:308a\:306e\:753b\:50cf\:3092 SourceVault \:306b\:53d6\:308a\:8fbc\:3080\:3002";
+SlideCameraStatus::usage = "SlideCameraStatus[] \:306f\:30ab\:30e1\:30e9\:306e\:72b6\:614b <|Camera, Device, IntervalSeconds, Frames, PrivacyLevel, Session|> \:3092\:8fd4\:3059\:3002";
+SlideCameraDevices::usage = "SlideCameraDevices[] \:306f\:4f7f\:3048\:308b\:30ab\:30e1\:30e9 (ffmpeg dshow \:306e\:6620\:50cf\:30c7\:30d0\:30a4\:30b9\:540d) \:306e\:4e00\:89a7\:3092\:8fd4\:3059\:3002";
+SlideCameraSelect::usage = "SlideCameraSelect[] \:306f\:30ab\:30e1\:30e9\:3068\:64ae\:5f71\:9593\:9694\:3092\:9078\:3076\:30c0\:30a4\:30a2\:30ed\:30b0\:3092\:958b\:304f (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30ab\:30e1\:30e9\:8a2d\:5b9a\:300d)\:3002";
+$SlideCameraDevice::usage = "$SlideCameraDevice \:306f\:767a\:8868\:306e\:8a18\:9332\:306b\:4f7f\:3046\:30ab\:30e1\:30e9\:540d\:3002Automatic (\:65e2\:5b9a) \:306f\:4eee\:60f3\:30ab\:30e1\:30e9\:3067\:306a\:3044\:6700\:521d\:306e\:30ab\:30e1\:30e9\:3001None \:306f\:4f7f\:308f\:306a\:3044\:3002";
+$SlideCameraInterval::usage = "$SlideCameraInterval \:306f\:30ab\:30e1\:30e9\:306e\:64ae\:5f71\:9593\:9694 (\:79d2\:3001\:65e2\:5b9a 30\:3001\:6700\:5c0f 5)\:3002";
+$SlideCameraWidth::usage = "$SlideCameraWidth \:306f\:4fdd\:5b58\:3059\:308b\:753b\:50cf\:306e\:5e45 (px\:3001\:65e2\:5b9a 1280)\:3002";
+$SlideCameraPrivacyLevel::usage = "$SlideCameraPrivacyLevel \:306f\:30ab\:30e1\:30e9\:753b\:50cf\:3092 SourceVault \:306b\:4fdd\:5b58\:3059\:308b\:3068\:304d\:306e\:30d7\:30e9\:30a4\:30d0\:30b7\:30fc\:30ec\:30d9\:30eb (\:65e2\:5b9a 0.6)\:3002";
+$SlideRecordPrivacyLevel::usage = "$SlideRecordPrivacyLevel \:306f\:767a\:8868\:306e\:8a18\:9332 (\:958b\:59cb\:30fb\:7d42\:4e86\:3001\:30b9\:30e9\:30a4\:30c9\:306e\:5207\:66ff) \:306e\:30d7\:30e9\:30a4\:30d0\:30b7\:30fc\:30ec\:30d9\:30eb (\:65e2\:5b9a 0.6)\:3002";
+$SlideQuestionPrivacyLevel::usage = "$SlideQuestionPrivacyLevel \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:30fb\:7b54\:3048\:30fb\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc\:306e\:30d7\:30e9\:30a4\:30d0\:30b7\:30fc\:30ec\:30d9\:30eb (\:65e2\:5b9a 0.7\:3002$SlideRecordPrivacyLevel \:3088\:308a\:4f4e\:304f\:306f\:3057\:306a\:3044)\:3002";
+$SlideRecordIdleSeconds::usage = "$SlideRecordIdleSeconds \:306f\:518d\:751f\:30fb\:97f3\:58f0\:5fdc\:7b54\:30fb\:30ab\:30e1\:30e9\:304c\:5168\:90e8\:6b62\:307e\:3063\:3066\:304b\:3089\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:3092\:9589\:3058\:308b\:307e\:3067\:306e\:79d2\:6570 (\:65e2\:5b9a 120)\:3002";
+$SlideRecordTick::usage = "$SlideRecordTick \:306f\:767a\:8868\:306e\:8a18\:9332\:304c\:30b9\:30e9\:30a4\:30c9\:756a\:53f7\:3068\:30ab\:30e1\:30e9\:753b\:50cf\:3092\:898b\:306b\:884c\:304f\:9593\:9694 (\:79d2\:3001\:65e2\:5b9a 2)\:3002";
+$SlideQACandidateSimilarity::usage = "$SlideQACandidateSimilarity \:306f\:8cea\:554f\:304c\:65e2\:5b58\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:554f\:3044\:306b\:4f3c\:3066\:3044\:308b\:3068\:898b\:306a\:3059\:95be\:5024 (\:6587\:5b57 bigram \:306e Dice\:3001\:65e2\:5b9a 0.6)\:3002\:4ee5\:4e0a\:306a\:3089\:300c\:898b\:76f4\:3057\:300d\:3001\:672a\:6e80\:306a\:3089\:300c\:8ffd\:52a0\:300d\:306e\:5019\:88dc\:3002";
+$SlideFFmpegPath::usage = "$SlideFFmpegPath \:306f\:30ab\:30e1\:30e9\:306b\:4f7f\:3046 ffmpeg.exe \:306e\:30d1\:30b9\:3002Automatic (\:65e2\:5b9a) \:306a\:3089 PresentationListener \:306e\:8a2d\:5b9a \[RightArrow] PATH \[RightArrow] WinGet \:306e\:9806\:306b\:63a2\:3059\:3002";
+SlideTalkSessions::usage = "SlideTalkSessions[] \:306f SourceVault \:306b\:8a18\:9332\:3057\:305f\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:4e00\:89a7 (Session, Deck, Title, Start, Seconds, Slides, Frames, Questions, Candidates) \:3092\:8fd4\:3059\:3002";
+SlideTalkSessionData::usage = "SlideTalkSessionData[sessionId] \:306f\:305d\:306e\:767a\:8868\:306e\:6642\:7cfb\:5217 (Elapsed = \:958b\:59cb\:304b\:3089\:306e\:79d2, At, Kind, Slide, Text, BlobRef, PrivacyLevel) \:3092 Dataset \:3067\:8fd4\:3059\:3002Kind \:306f SessionMarker / SlideChange / CameraFrame / UserQuestion / ResponseDraft / FAQCandidate\:3002";
+SlideTalkSessionFrame::usage = "SlideTalkSessionFrame[blobRef] \:306f\:8a18\:9332\:3057\:305f\:30ab\:30e1\:30e9\:753b\:50cf\:3092 Image \:3067\:8fd4\:3059\:3002";
+SlideQACandidates::usage = "SlideQACandidates[nb, \"Status\" -> \"Pending\" | \"Accepted\" | \"Rejected\" | All] \:306f\:767a\:8868\:4e2d\:306e\:8cea\:554f\:304b\:3089\:4f5c\:3063\:305f\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc (Type = Add | Revise\:3001Slide\:3001Question\:3001Answer\:3001MatchedQuestion) \:3092\:8fd4\:3059\:3002";
+SlideQACandidateView::usage = "SlideQACandidateView[nb] \:306f\:672a\:51e6\:7406\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc\:3092\:4e00\:89a7\:3057\:3001\:63a1\:7528 / \:5374\:4e0b\:3092\:62bc\:305b\:308b\:7a93\:3092\:958b\:304f (\:30d1\:30ec\:30c3\:30c8\:300c\:8cea\:554f\:5019\:88dc\:300d)\:3002";
+SlideQACandidateAccept::usage = "SlideQACandidateAccept[nb, candidateId] \:306f\:5019\:88dc\:3092\:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306e\:672b\:5c3e\:306b\:8db3\:3059 (Revise \:306f\:65e2\:5b58\:306e\:554f\:3044\:3092\:66f8\:304d\:63db\:3048\:305a\:306b # \:306e\:30b3\:30e1\:30f3\:30c8\:3067\:4e26\:3079\:308b)\:3002";
+SlideQACandidateReject::usage = "SlideQACandidateReject[candidateId] \:306f\:5019\:88dc\:3092\:5374\:4e0b\:3068\:3057\:3066\:8a18\:9332\:3059\:308b\:3002";
+SlideRendition::usage = "SlideRendition[nb | renditionId] \:306f\:30c7\:30c3\:30ad\:306e\:7248 (\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210\:3057\:305f\:30a4\:30f3\:30b9\:30bf\:30f3\:30b9) \:306e\:30de\:30cb\:30d5\:30a7\:30b9\:30c8\:3092\:8fd4\:3059: Id / Parent / DeckName / Graph / Spec (Audience, Slides, Minutes, Strategy) / PrivacyLevel / Revisions (\:751f\:6210\:30fb\:767a\:8868\:3054\:3068\:306e DeckRev\:30fbGraphRev\:30fb\:679a\:3054\:3068\:306e KG \:30ce\:30fc\:30c9)\:3002SourceVault \:306e slidetalk/renditions/<Id>.json\:3002\:8a00\:8a9e\:306f\:7248\:3092\:5206\:3051\:306a\:3044 (\:8a33\:306f\:540c\:3058 .nb)\:3002";
+SlideRenditions::usage = "SlideRenditions[] / SlideRenditions[graphId] \:306f\:7248\:306e\:4e00\:89a7 (Id, Parent, DeckName, Title, Graph, Audience, Slides, Revisions, Created, PrivacyLevel)\:3002\:5225\:540d\:3067\:4fdd\:5b58\:3057\:305f\:30b3\:30d4\:30fc\:3084\:3001\:751f\:6210\:6761\:4ef6\:3092\:5909\:3048\:305f\:751f\:6210\:306f\:89aa (Parent) \:3092\:6301\:3064\:65b0\:3057\:3044\:7248\:306b\:306a\:308b\:3002";
+SlideSetTalkLanguage::usage = "SlideSetTalkLanguage[nb, lang] \:306f\:8a71\:3059\:8a00\:8a9e (\:8aad\:307f\:4e0a\:3052\:3068\:8cea\:7591\:306e\:8a00\:8a9e) \:3092 lang (\"ja\" / \"jv\" / \"en\" \[Ellipsis]) \:306b\:3059\:308b (v1.36)\:3002\:6307\:793a\:30bb\:30eb\:306b Language: \:884c\:304c\:3042\:308c\:3070\:305d\:308c\:3092\:66f8\:304d\:63db\:3048\:3001\:7121\:3051\:308c\:3070\:30c7\:30c3\:30ad\:306e TaggingRules \:306b\:6301\:3064\:3002\:5143\:306e\:539f\:7a3f\:306f\:6d88\:3055\:305a\:3001\:4f5c\:696d\:753b\:9762\:3067\:306f lang \:306e\:539f\:7a3f\:3060\:3051\:3092\:958b\:3044\:3066\:307b\:304b\:306e\:8a00\:8a9e\:306e\:539f\:7a3f\:3092\:9589\:3058\:308b (\:8a33\:306e\:7121\:3044\:679a\:306f\:5143\:306e\:539f\:7a3f\:3092\:958b\:304f)\:3002\"View\" -> False \:3067\:958b\:9589\:3057\:306a\:3044\:3002";
+SlideCycleTalkLanguage::usage = "SlideCycleTalkLanguage[] \:306f\:8a71\:3059\:8a00\:8a9e\:3092\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e\:3068\:8a33\:306e\:3042\:308b\:8a00\:8a9e\:306e\:9593\:3067\:9806\:306b\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:8a71\:3059\:8a00\:8a9e\:300d)\:3002";
+$SlideSubtitles::usage = "$SlideSubtitles \:306f\:518d\:751f\:4e2d\:306b\:5143\:306e\:539f\:7a3f\:3092\:5b57\:5e55\:306b\:51fa\:3059\:304b (v1.36)\:3002Automatic (\:65e2\:5b9a) = \:8a71\:3059\:8a00\:8a9e\:304c\:5143\:306e\:539f\:7a3f\:3068\:9055\:3046\:3068\:304d (\:30b8\:30e3\:30ef\:8a9e\:3067\:8a71\:3057\:3066\:65e5\:672c\:8a9e\:306e\:5b57\:5e55\:306a\:3069)\:3001True = \:3044\:3064\:3082\:3001False = \:51fa\:3055\:306a\:3044\:3002\:5b57\:5e55\:306f\:753b\:9762\:4e0b\:306e\:524d\:9762\:306e\:7a93\:306b 1\:301c2 \:6587\:305a\:3064\:3001\:8aad\:307f\:4e0a\:3052\:306e\:7d4c\:904e\:6642\:9593\:306b\:5408\:308f\:305b\:3066\:9032\:3080 (\:8aad\:3080\:901f\:3055\:306f\:679a\:3054\:3068\:306e\:5b9f\:6e2c\:3067\:76f4\:3059)\:3002\:6587\:5b57\:306e\:5927\:304d\:3055\:306f $SlideSubtitleFontSize\:3002\:8cea\:7591\:306e\:53d7\:4ed8\:4e2d\:306f\:3001\:8cea\:554f (Q:) \:3068\:7b54\:3048 (A:) \:3092\:3001\:305d\:306e\:767a\:8a00\:306e\:8a00\:8a9e\:3067\:306f\:306a\:3044\:65b9\:306e\:8a00\:8a9e (\:65e5\:672c\:8a9e\:306e\:767a\:8a00\:306a\:3089\:8a71\:3059\:8a00\:8a9e\:3001\:305d\:308c\:4ee5\:5916\:306f\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e) \:306b LLM \:3067\:8a33\:3057\:3066\:5b57\:5e55\:306b\:51fa\:3059\:3002\:8cea\:554f\:306e\:5b57\:5e55\:306f\:30e2\:30c7\:30eb\:304c\:7b54\:3048\:59cb\:3081\:305f\:3068\:304d\:306b\:51fa\:3057\:3001\:7b54\:3048\:306f\:8a33\:304c\:3067\:304d\:6b21\:7b2c\:8db3\:3059\:3002\:8cea\:7591\:306e\:5b57\:5e55\:3092\:51fa\:3057\:7d42\:3048\:308b\:307e\:3067\:6b21\:306e\:679a\:3078\:306f\:9032\:307e\:306a\:3044\:3002\:5b57\:5e55\:3092\:51fa\:3057\:3066\:3044\:308b\:3068\:304d\:306f\:3001\:6700\:5f8c\:306e\:679a\:3092\:8aad\:307f\:7d42\:3048\:3066\:3082\:767a\:8868\:3092\:9589\:3058\:305a\:306b\:8cea\:7591\:5fdc\:7b54\:3092\:7d9a\:3051\:308b (\:505c\:6b62\:30dc\:30bf\:30f3\:304b $SlideFinalQAMinutes \:5206 (\:65e2\:5b9a 30) \:3067\:7d42\:308f\:308b)\:3002";
+SlideCycleSubtitles::usage = "SlideCycleSubtitles[] \:306f\:5b57\:5e55\:306e\:8a2d\:5b9a\:3092 \:8a33\:3067\:8a71\:3059\:3068\:304d \[RightArrow] \:3044\:3064\:3082 \[RightArrow] \:306a\:3057 \:306e\:9806\:306b\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:5b57\:5e55\:300d)\:3002";
+SlidePresentFullScreen::usage = "SlidePresentFullScreen[] / SlidePresentFullScreen[nb] \:306f\:30c7\:30c3\:30ad\:3092\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:8868\:793a\:306b\:3057\:3066\:3001\:30b5\:30d6\:753b\:9762 (\:30d7\:30ed\:30b8\:30a7\:30af\:30bf\:306a\:3069\:4e3b\:753b\:9762\:4ee5\:5916\:306e\:753b\:9762\:3002\:7121\:3051\:308c\:3070\:4eca\:306e\:753b\:9762) \:306b\:5168\:753b\:9762\:3067\:51fa\:3059\:3002\:5168\:753b\:9762\:306e\:3068\:304d\:306b\:547c\:3076\:3068\:5143\:306e\:7a93\:306b\:623b\:3059\:3002\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:300c\:30b5\:30d6\:753b\:9762\:306b\:5168\:753b\:9762\:300d\:3068\:540c\:3058\:3002\:51fa\:3059\:753b\:9762\:306f $SlidePresentScreen \:3067\:9078\:3079\:308b\:3002";
+$SlidePresentScreen::usage = "$SlidePresentScreen \:306f SlidePresentFullScreen \:304c\:5168\:753b\:9762\:306b\:3059\:308b\:753b\:9762\:3002Automatic (\:65e2\:5b9a) = \:4e3b\:753b\:9762\:4ee5\:5916\:3067\:4e00\:756a\:5e83\:3044\:753b\:9762 (\:7121\:3051\:308c\:3070\:4e3b\:753b\:9762)\:3001\:6574\:6570 n = SystemInformation[\"Devices\", \"ScreenInformation\"] \:306e n \:756a\:76ee\:3002";
+$SlideRealtimeQAChars::usage = "$SlideRealtimeQAChars \:306f\:97f3\:58f0\:5fdc\:7b54\:306e\:80cc\:666f\:306b\:5165\:308c\:308b\:60f3\:5b9a\:554f\:7b54 (\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb) \:306e\:4e0a\:9650\:306e\:6587\:5b57\:6570 (\:65e2\:5b9a 10000)\:3002\:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:306e\:4e0a\:9650 $SlideRealtimeContextChars \:3068\:306f\:5225\:67a0\:3002PL \:304c 0.5 \:3092\:8d85\:3048\:308b\:554f\:306f\:5165\:308c\:306a\:3044\:3002";
+$SlideTrace::usage = "$SlideTrace \:304c True (\:65e2\:5b9a) \:306e\:3068\:304d\:3001\:88cf\:3067\:56de\:308b\:51e6\:7406\:3068\:300c\:5fdc\:7b54on\:300d\:306e\:5404\:6bb5\:306e\:51fa\:5165\:308a\:3092 $TemporaryDirectory \:306e slideworkflow-trace.log \:306b\:8a18\:9332\:3059\:308b (FE \:304c\:6b62\:307e\:308b\:539f\:56e0\:306e\:8abf\:67fb\:7528)\:3002";
+$SlideSubtitleFontSize::usage = "$SlideSubtitleFontSize \:306f\:5b57\:5e55\:306e\:6587\:5b57\:306e\:5927\:304d\:3055\:3002Automatic (\:65e2\:5b9a) = \:767a\:8868\:306e\:7a93\:304c\:3042\:308b\:753b\:9762\:306e\:89e3\:50cf\:5ea6\:304b\:3089\:6c7a\:3081\:308b (\:753b\:9762\:306e\:9ad8\:3055\:306e 1/28\:3001\:5e45\:306e 1/48 \:307e\:3067)\:3002\:6570\:5024 = \:305d\:306e\:5927\:304d\:3055\:3092\:4e0a\:9650\:306b\:3059\:308b (\:72ed\:3044\:753b\:9762\:3067\:306f\:5c0f\:3055\:304f\:306a\:308b)\:3002\:5b57\:5e55\:306f\:767a\:8868\:306e\:7a93\:304c\:3042\:308b\:753b\:9762\:306e\:4e00\:756a\:4e0b (\:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc\:306e\:4e0a) \:306b\:753b\:9762\:306e\:5e45\:3044\:3063\:3071\:3044\:3067\:51fa\:3059\:3002";
+$SlideFinalQAMinutes::usage = "$SlideFinalQAMinutes \:306f\:6700\:5f8c\:306e\:679a\:306e\:5f8c\:306e\:8cea\:7591\:5fdc\:7b54\:3092\:7d9a\:3051\:308b\:4e0a\:9650\:306e\:5206 (\:65e2\:5b9a 30)\:3002\:5b57\:5e55\:3092\:51fa\:3057\:3066\:3044\:308b\:3068\:304d\:3060\:3051\:8cea\:7591\:5fdc\:7b54\:306b\:5165\:308b\:3002\:505c\:6b62\:30dc\:30bf\:30f3\:3067\:3044\:3064\:3067\:3082\:7d42\:308f\:308b\:3002";
+$SlideRealtimeContextChars::usage = "$SlideRealtimeContextChars \:306f\:97f3\:58f0\:4f1a\:8a71\:306e\:6307\:793a\:306b\:4ed8\:3051\:308b\:3053\:306e\:767a\:8868\:306e\:6587\:8108 (\:984c\:30fb\:8074\:304d\:624b\:30fb\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:984c\:3068\:5143\:306e\:539f\:7a3f\:30fb\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:9805\:76ee) \:306e\:4e0a\:9650\:5b57\:6570 (\:65e2\:5b9a 7000)\:3002\:8cea\:554f\:306f\:3053\:306e\:6587\:8108\:3067\:89e3\:91c8\:3055\:308c\:3001\:8a9e\:306f\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473\:304c\:512a\:5148\:3055\:308c\:308b\:3002";
 $SlideTalkPerSlide::usage = "$SlideTalkPerSlide \:304c True (\:65e2\:5b9a) \:306a\:3089\:3001\:5c55\:958b\:30d7\:30ed\:30f3\:30d7\:30c8\:304c\:5404\:30b9\:30e9\:30a4\:30c9\:672b\:5c3e\:306b talk: \:539f\:7a3f(\:3067\:3059\:30fb\:307e\:3059\:8abf 2\:301c6 \:6587)\:3092\:8981\:6c42\:3057\:3001\:30b9\:30e9\:30a4\:30c9\:672c\:6587\:306f\:56f3\:8868+\:4f53\:8a00\:6b62\:3081\:306b\:7d5e\:308b(\:30b9\:30e9\:30a4\:30c9\:3068\:30c8\:30fc\:30af\:3067\:89e3\:8aac\:304c\:5b8c\:6210\:3059\:308b\:5206\:696d)\:3002False \:3067\:5f93\:6765\:3069\:304a\:308a\:3002";
 
 SlidePDFImages::usage = "SlidePDFImages[src] \:306f PDF \:306b\:57cb\:3081\:8fbc\:307e\:308c\:305f\:30e9\:30b9\:30bf\:753b\:50cf(\:5199\:771f\:30fb\:30d3\:30c3\:30c8\:30de\:30c3\:30d7\:56f3)\:3092 Image \:306e\:30ea\:30b9\:30c8\:3067\:62bd\:51fa\:3059\:308b\:3002src \:306f SlidePDFFigure \:3068\:540c\:3058 locator (\:30d1\:30b9 / eagle:ID / sv://URI / URL / arxiv:ID / References \:306e key)\:3002\"MinSize\"->px (\:65e2\:5b9a 80) \:672a\:6e80\:306e\:5c0f\:753b\:50cf(\:30a2\:30a4\:30b3\:30f3\:7b49)\:306f\:9664\:5916\:3002\:30d9\:30af\:30bf\:306e\:307f\:306e PDF \:3067\:306f {} \:3092\:8fd4\:3059(\:305d\:306e\:5834\:5408\:306f SlidePDFFigure \:3067\:30da\:30fc\:30b8\:5207\:308a\:51fa\:3057)\:3002";
@@ -202,7 +245,7 @@ SlideDeckFigure::usage = "SlideDeckFigure[deck, n] \:306f\:65e2\:5b58\:30b9\:30e
 SlideNotebookOutline::usage = "SlideNotebookOutline[src] \:306f\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af(\:8ad6\:6587\:306e\:548c\:8a33 .nb \:306a\:3069\:3001\:30b9\:30e9\:30a4\:30c9\:30c7\:30c3\:30ad\:3067\:306a\:3044\:4e00\:822c\:306e .nb)\:306e\:898b\:51fa\:3057\:69cb\:6210\:3092\:8fd4\:3059\:3002\:5404\:8981\:7d20\:306f <|\"N\", \"Style\", \"Title\", \"Chars\"(\:305d\:306e\:7bc0\:306e\:672c\:6587\:6587\:5b57\:6570), \"Figures\"(\:305d\:306e\:7bc0\:306b\:3042\:308b\:56f3\:756a\:53f7)|>\:3002\:307e\:305a\:69cb\:6210\:3092\:898b\:3066\:3001\:5fc5\:8981\:306a\:7bc0\:3060\:3051\:3092 SlideNotebookText[src, \:898b\:51fa\:3057] \:3067\:8aad\:3080\:3068\:6587\:8108\:3092\:7bc0\:7d04\:3067\:304d\:308b\:3002src \:306f SlidePDFFigure \:3068\:540c\:3058 locator (\:30d1\:30b9 / eagle:ID / sv://URI / References \:306e key)\:3002";
 SlideNotebookText::usage = "SlideNotebookText[src] \:306f\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:672c\:6587\:3092 \"[Style] \:672c\:6587\" \:884c\:306e\:4e26\:3073\:3067\:8fd4\:3059(\:56f3\:306e\:4f4d\:7f6e\:306f \"[FIGn]\" \:884c)\:3002SlideNotebookText[src, \:898b\:51fa\:3057|\:898b\:51fa\:3057\:756a\:53f7] \:306f\:305d\:306e\:7bc0\:3060\:3051\:3092\:8fd4\:3059\:3002\:6570\:5f0f(DisplayFormula)\:3082\:542b\:3080\:3002\:30bb\:30eb\:304b\:3089\:753b\:50cf\:30dc\:30c3\:30af\:30b9\:3092\:5916\:3057\:3066\:304b\:3089\:6587\:5b57\:5217\:5316\:3059\:308b\:306e\:3067\:3001\:751f\:306e Import \:3068\:9055\:3063\:3066 Raster \:306e\:5727\:7e2e\:30c7\:30fc\:30bf\:304c\:672c\:6587\:306b\:6df7\:3056\:3089\:306a\:3044\:3002\:6570\:5f0f\:30bb\:30eb\:306e\:884c\:982d\:306b\:306f \"[EQn]\" \:304c\:4ed8\:304d\:3001\:672c\:6587\:306b\:306f\:5143\:306e LaTeX (\:5909\:63db\:30ce\:30fc\:30c8\:304c TaggingRules \:306b\:4fdd\:6301\:3057\:3066\:3044\:308c\:3070) \:3092\:51fa\:3059\:306e\:3067\:3001\:6570\:5f0f\:3092\:8aa4\:8aad\:3057\:306a\:3044\:3002\:305d\:306e\:307e\:307e\:30b9\:30e9\:30a4\:30c9\:3078\:5f15\:7528\:3059\:308b\:306b\:306f SlideNotebookFormula[src, n]\:3002opts: \"MaxCharacters\"(\:65e2\:5b9a 40000\:3001\:8d85\:904e\:5206\:306f\:5207\:308a\:8a70\:3081\:3066\:6ce8\:8a18) / \"Styles\"(\:65e2\:5b9a Automatic = \:672c\:6587\:7cfb\:30b9\:30bf\:30a4\:30eb)\:3002LLM \:751f\:6210\:30b3\:30fc\:30c9\:3067\:306f Import / Get \:304c\:6052\:4e45\:7981\:6b62 head \:306a\:306e\:3067\:3001\:7d20\:6750 .nb \:3092\:8aad\:3080\:3068\:304d\:306f\:3053\:308c\:3092\:4f7f\:3046\:3002";
 SlideNotebookFormula::usage = "SlideNotebookFormula[src, n] \:306f\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e n \:756a\:76ee\:306e\:6570\:5f0f(SlideNotebookText \:306e \"[EQn]\" \:306b\:5bfe\:5fdc)\:3092\:3001**\:539f\:30bb\:30eb\:306e\:7d44\:7248\:3092\:4fdd\:3063\:305f\:307e\:307e** Cell \:3067\:8fd4\:3059\:3002SlideApplyScenario \:306e \"Figures\"->{...} \:306b\:305d\:306e\:307e\:307e\:6e21\:305b\:3070\:3001\:30b9\:30e9\:30a4\:30c9\:306b\:7d44\:7248\:3055\:308c\:305f\:6570\:5f0f\:3068\:3057\:3066\:8f09\:308b(\:30d7\:30ec\:30fc\:30f3\:6587\:5b57\:5217\:3078\:6f70\:3057\:3066\:66f8\:304d\:76f4\:3055\:306a\:3044\:3053\:3068)\:3002opts: \"Style\"(\:65e2\:5b9a \"DisplayFormula\") / FontSize / FontColor\:3002";
-SlideNotebookFigure::usage = "SlideNotebookFigure[src, n] \:306f\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e n \:756a\:76ee\:306e\:56f3(SlideNotebookText \:306e \"[FIGn]\" \:306b\:5bfe\:5fdc)\:3092 Image \:3067\:8fd4\:3059\:3002\:539f\:56f3\:3092\:305d\:306e\:307e\:307e\:5f15\:7528\:3059\:308b\:305f\:3081\:306e\:5165\:53e3\:3067\:3001SlideApplyScenario \:306e \"Figures\"->{...} \:306b\:305d\:306e\:307e\:307e\:6e21\:305b\:308b(cite: \:3092\:5fc5\:305a\:4ed8\:3059)\:3002\:56f3\:306e\:7dcf\:6570\:3068\:6240\:5728\:306f SlideNotebookOutline / SlideNotebookText \:306e [FIGn] \:3067\:5206\:304b\:308b\:3002\:8fd4\:3059\:753b\:50cf\:306f\:9577\:8fba $SlideNotebookFigureMaxSize (\:65e2\:5b9a 1200px\:3001\"MaxSize\" \:3067\:5909\:66f4\:53ef) \:306b\:53ce\:3081\:308b \:2014 \:30c7\:30c3\:30ad\:306e\:30e9\:30b9\:30bf\:5316\:3067\:5b9f\:969b\:306b\:51fa\:308b\:306e\:306f\:9ad8\:3005 1120px \:306a\:306e\:3067\:3001\:305d\:308c\:4ee5\:4e0a\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:91cd\:304f\:3059\:308b\:3060\:3051\:306b\:306a\:308b\:3002";
+SlideNotebookFigure::usage = "SlideNotebookFigure[src, n] \:306f\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e n \:756a\:76ee\:306e\:56f3(SlideNotebookText \:306e \"[FIGn]\" \:306b\:5bfe\:5fdc)\:3092 Image \:3067\:8fd4\:3059\:3002\:539f\:56f3\:3092\:305d\:306e\:307e\:307e\:5f15\:7528\:3059\:308b\:305f\:3081\:306e\:5165\:53e3\:3067\:3001SlideApplyScenario \:306e \"Figures\"->{...} \:306b\:305d\:306e\:307e\:307e\:6e21\:305b\:308b(cite: \:3092\:5fc5\:305a\:4ed8\:3059)\:3002\:56f3\:306e\:7dcf\:6570\:3068\:6240\:5728\:306f SlideNotebookOutline / SlideNotebookText \:306e [FIGn] \:3067\:5206\:304b\:308b\:3002\:8fd4\:3059\:753b\:50cf\:306f\:9577\:8fba $SlideNotebookFigureMaxSize (\:65e2\:5b9a 1200px\:3001\"MaxSize\" \:3067\:5909\:66f4\:53ef) \:306b\:53ce\:3081\:308b \[LongDash] \:30c7\:30c3\:30ad\:306e\:30e9\:30b9\:30bf\:5316\:3067\:5b9f\:969b\:306b\:51fa\:308b\:306e\:306f\:9ad8\:3005 1120px \:306a\:306e\:3067\:3001\:305d\:308c\:4ee5\:4e0a\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:91cd\:304f\:3059\:308b\:3060\:3051\:306b\:306a\:308b\:3002";
 
 $SlideNotebookFigureMaxSize::usage = "$SlideNotebookFigureMaxSize \:306f SlideNotebookFigure \:304c\:8fd4\:3059\:56f3\:306e\:9577\:8fba\:4e0a\:9650 px (\:65e2\:5b9a 1200)\:3002\:30c7\:30c3\:30ad\:306f WindowWidth 960 \:3092 1920 \:3078 2 \:500d\:3067\:30e9\:30b9\:30bf\:5316\:3057\:3001\:56f3\:30bb\:30eb\:306f ImageSize -> 560 \:306a\:306e\:3067\:3001\:6700\:7d42\:753b\:50cf\:306b\:51fa\:308b\:306e\:306f\:9ad8\:3005 1120 px\:3002\:305d\:308c\:3092\:8d85\:3048\:308b\:753b\:7d20\:306f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:91cd\:304f\:3059\:308b\:3060\:3051\:306b\:306a\:308b\:3002";
 $SlideNotebookRasterizeSeconds::usage = "$SlideNotebookRasterizeSeconds \:306f SlideNotebookFigure \:304c\:30d9\:30af\:30bf\:56f3\:3092 Rasterize \:3059\:308b\:969b\:306e\:4e0a\:9650\:79d2 (\:65e2\:5b9a 30)\:3002Rasterize \:306f\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:3092\:8981\:6c42\:3059\:308b\:306e\:3067\:3001\:5fc5\:305a\:6642\:9593\:3067\:5207\:308b\:3002";
@@ -215,7 +258,7 @@ SlideDeckInsertScenario::usage = "SlideDeckInsertScenario[nb, afterN, md] \:306f
 
 SlideInsertStory::usage = "SlideInsertStory[] \:306f\:30b9\:30c8\:30fc\:30ea\:30fc/\:8074\:304d\:624b\:4ed5\:69d8\:30bb\:30eb (SlideStory \:30b9\:30bf\:30a4\:30eb) \:3092\:633f\:5165\:3059\:308b\:3002Key: value \:884c\:3067 Graph: / Audience: / Slides: / Minutes: / Language: / Strategy: / Story: \:3092\:66f8\:304f (Audience \:306f \"\:9ad8\:6821\:751f, \:96fb\:6c17\:5316\:5b66=0.3, \:9ad8\:6821\:6570\:5b66III\" \:306e\:3088\:3046\:306b\:30d7\:30ea\:30bb\:30c3\:30c8\:3068\:9818\:57df=\:7406\:89e3\:5ea6\:306e\:4f75\:8a18)\:3002Working \:3067\:53ef\:8996\:3001SlideShow \:3067\:306f\:975e\:8868\:793a\:3001\:66f8\:304d\:51fa\:3057\:30fb\:82f1\:8a33\:306e\:5bfe\:8c61\:5916\:3002";
 SlideGraphSpec::usage = "SlideGraphSpec[nb] \:306f SlideStory \:30bb\:30eb\:3068 Directive \:30bb\:30eb (Title: / Language:) \:304b\:3089\:77e5\:8b58\:30b0\:30e9\:30d5\:751f\:6210\:306e\:4ed5\:69d8\:9023\:60f3 <|\"Graph\", \"Audience\", \"Slides\", \"Minutes\", \"Seconds\", \"Language\", \"Strategy\", \"Story\", \"Title\", \"SecondsPerSlide\"|> \:3092\:8fd4\:3059\:3002nb \:306f NotebookObject / Notebook \:5f0f / \:4fdd\:5b58\:6e08\:307f\:30d1\:30b9\:3002";
-SlideGraphBuild::usage = "SlideGraphBuild[] / SlideGraphBuild[nb, \"Mode\" -> Automatic | \"Agent\" | \"Extract\"] \:306f References \:306e\:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304b\:3089 SlideGraphSeed \:3067\:7b2c\:4e00\:6b21 KG \:3092\:6c7a\:5b9a\:7684\:306b\:4f5c\:3063\:3066\:4fdd\:5b58\:3057\:3001\:7d9a\:3051\:3066\:7bc0\:3054\:3068\:306e\:63a8\:6572\:3092\:884c\:3046\:3002\:65e2\:5b9a\:306f SlideGraphRefine \:306e Direct \:9023\:9396 (LLM \:3092\:7bc0\:3054\:3068\:306b\:76f4\:63a5\:547c\:3076)\:3001\"Agent\" \:306f\:63a8\:6572\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8 (ClaudeEval) \:306b\:59d4\:8b72\:3001\"Extract\" \:306f\:548c\:8a33\:30ce\:30fc\:30c8\:7121\:3057\:3067 PDF \:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:8aad\:307e\:305b\:308b\:65e7\:7d4c\:8def\:3002\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:7121\:3051\:308c\:3070 Failure (NoSourceNotebook) \:3067 DocImportPaper \:3092\:6848\:5185\:3059\:308b\:3002v1.30: \:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:7121\:304f (\:307e\:305f\:306f Story \:306b Source: \:30b7\:30ca\:30ea\:30aa)\:3001\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306b\:7b4b\:66f8\:304d\:304c\:3042\:308c\:3070\:3001\:7b4b\:66f8\:304d\:304b\:3089 KG \:3092\:4f5c\:308b (SlideGraphSeedScenario \:2192 \:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc SlideGraphRelated (Story \:306e Survey: local | web | off) \:2192 \:7b4b\:66f8\:304d\:306e\:5c55\:958b)\:3002";
+SlideGraphBuild::usage = "SlideGraphBuild[] / SlideGraphBuild[nb, \"Mode\" -> Automatic | \"Agent\" | \"Extract\"] \:306f References \:306e\:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304b\:3089 SlideGraphSeed \:3067\:7b2c\:4e00\:6b21 KG \:3092\:6c7a\:5b9a\:7684\:306b\:4f5c\:3063\:3066\:4fdd\:5b58\:3057\:3001\:7d9a\:3051\:3066\:7bc0\:3054\:3068\:306e\:63a8\:6572\:3092\:884c\:3046\:3002\:65e2\:5b9a\:306f SlideGraphRefine \:306e Direct \:9023\:9396 (LLM \:3092\:7bc0\:3054\:3068\:306b\:76f4\:63a5\:547c\:3076)\:3001\"Agent\" \:306f\:63a8\:6572\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8 (ClaudeEval) \:306b\:59d4\:8b72\:3001\"Extract\" \:306f\:548c\:8a33\:30ce\:30fc\:30c8\:7121\:3057\:3067 PDF \:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:8aad\:307e\:305b\:308b\:65e7\:7d4c\:8def\:3002\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:7121\:3051\:308c\:3070 Failure (NoSourceNotebook) \:3067 DocImportPaper \:3092\:6848\:5185\:3059\:308b\:3002v1.30: \:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:7121\:304f (\:307e\:305f\:306f Story \:306b Source: \:30b7\:30ca\:30ea\:30aa)\:3001\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306b\:7b4b\:66f8\:304d\:304c\:3042\:308c\:3070\:3001\:7b4b\:66f8\:304d\:304b\:3089 KG \:3092\:4f5c\:308b (SlideGraphSeedScenario \[RightArrow] \:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc SlideGraphRelated (Story \:306e Survey: local | web | off) \[RightArrow] \:7b4b\:66f8\:304d\:306e\:5c55\:958b)\:3002";
 SlideGraphIngest::usage = "SlideGraphIngest[graphId, json, opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e JSON (\:6587\:5b57\:5217 / \:9023\:60f3) \:3092\:691c\:8a3c\:3057\:3066\:4fdd\:5b58\:3059\:308b\:552f\:4e00\:306e\:66f8\:304d\:8fbc\:307f\:53e3\:3002\"Merge\"->True \:3067\:4fdd\:5b58\:6e08\:307f KG \:3078\:306e\:5dee\:5206\:53d6\:308a\:8fbc\:307f\:3001\"Language\"->\"en\" \:3067\:7ffb\:8a33\:306e\:4f75\:8a18\:3001\"Link\"->True (\:65e2\:5b9a) \:3067\:5468\:8fba\:77e5\:8b58\:30ce\:30fc\:30c9\:3092\:5171\:6709 background \:5c64\:3078\:9023\:7d50\:3002Success[\"GraphIngested\", <|NodeCount, EdgeCount, Warnings, ..|>] \:307e\:305f\:306f Failure\:3002";
 SlideGraphBackground::usage = "SlideGraphBackground[] / SlideGraphBackground[nb] \:306f Story \:30bb\:30eb\:306e\:8074\:304d\:624b\:306b\:8db3\:308a\:306a\:3044\:5468\:8fba\:77e5\:8b58\:30ce\:30fc\:30c9 (\:524d\:63d0\:77e5\:8b58) \:306e\:8ffd\:52a0\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:59d4\:8b72\:3059\:308b\:3002\:53d6\:308a\:8fbc\:307f\:306f SlideGraphIngest[.., \"Merge\"->True] \:3067\:3001\:5171\:6709 background \:5c64\:3078\:306e\:9023\:7d50\:306f\:81ea\:52d5\:3002";
 SlideGraphTranslate::usage = "SlideGraphTranslate[nb, lang] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:30ce\:30fc\:30c9\:5358\:4f4d\:7ffb\:8a33\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:59d4\:8b72\:3059\:308b (SlideGraphIngest[.., \"Merge\"->True, \"Language\"->lang] \:3067\:4f75\:8a18)\:3002\:4ee5\:5f8c SlideGraphGenerate[.., \"Language\"->lang] \:3067\:305d\:306e\:8a00\:8a9e\:306e\:30b9\:30e9\:30a4\:30c9\:3092\:751f\:6210\:3067\:304d\:308b (\:30c7\:30c3\:30ad\:306e\:30bb\:30eb\:5358\:4f4d\:82f1\:8a33 SlideTranslate \:3068\:306f\:72ec\:7acb)\:3002";
@@ -224,19 +267,36 @@ SlideGraphPlanView::usage = "SlideGraphPlanView[nb | graphId, opts] \:306f\:8a08
 SlideGraphGenerate::usage = "SlideGraphGenerate[nb | graphId | kg, opts] \:306f\:8a08\:753b\:3092\:30b7\:30ca\:30ea\:30aa Markdown \:306b\:6295\:5f71\:3057\:3001\:56f3\:8cc7\:7523 (NotebookFigure / Formula / PDFFigure / DeckSlide) \:3092 SlideNotebookFigure / SlideNotebookFormula / SlidePDFFigure / SlideDeckFigure \:3067\:5b9f\:4f53\:5316\:3059\:308b\:3002<|\"Markdown\", \"Figures\", \"Plan\", \"Tree\", \"Outline\", \"Warnings\", \"SlideCount\"|>\:3002opts: SlideGraphPlan \:3068\:540c\:3058 + \"Language\" / \"Talks\" (\:679a\:3054\:3068\:306e\:539f\:7a3f\:306e\:5dee\:3057\:66ff\:3048) / \"Title\"\:3002";
 SlideGraphApply::usage = "SlideGraphApply[] / SlideGraphApply[nb, opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210\:3057\:305f\:30b9\:30e9\:30a4\:30c9\:7fa4\:3092\:30c7\:30c3\:30ad\:3078\:9069\:7528\:3059\:308b (10 \:679a\:305a\:3064 SlideDeckInsertScenario \:3092\:547c\:3076)\:3002\"Mode\" -> Automatic (v1.30) \:306f\:524d\:56de KG \:304b\:3089\:4f5c\:3063\:305f\:679a (\:984c\:76ee\:30bb\:30eb\:306e CellTags \"KGNode:<id>\") \:304c\:3042\:308c\:3070 \"Replace\" = \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:3092 KG \:306e\:30ce\:30fc\:30c9\:3078\:4fdd\:5b58\:3057\:3066\:304b\:3089\:524d\:56de\:306e\:679a\:3092\:6d88\:3057\:3001\:540c\:3058\:4f4d\:7f6e\:306b\:4f5c\:308a\:76f4\:3059 (\:554f\:7b54\:306f\:65b0\:3057\:3044\:679a\:3078\:623b\:308b)\:3002\:7121\:3051\:308c\:3070 \"Append\" = \:6700\:5f8c\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:5f8c (\"After\"->n \:3067\:4f4d\:7f6e\:6307\:5b9a)\:3002\"Polish\"->True \:306a\:3089 talk \:306e\:63a8\:6572\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:3078\:59d4\:8b72\:3057\:3001\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c SlideGraphApply[\"Talks\"->{..}] \:3067\:9069\:7528\:3059\:308b\:3002";
 SlideGraphAdjust::usage = "SlideGraphAdjust[] / SlideGraphAdjust[nb] \:306f\:3001\:751f\:6210\:306e\:3042\:3068\:3067\:76f4\:3057\:305f\:3044\:3053\:3068\:3092\:8abf\:6574\:30bb\:30eb (SlideAdjust) \:306b\:66f8\:3044\:3066\:77e5\:8b58\:30b0\:30e9\:30d5\:3078\:53cd\:6620\:3059\:308b (\:30d1\:30ec\:30c3\:30c8\:300c\:8abf\:6574\:300d)\:3002\:8abf\:6574\:30bb\:30eb\:304c\:7121\:3051\:308c\:3070\:5165\:308c\:308b\:3002SlideGraphAdjust[nb | graphId, \"\:6307\:793a\"] \:306f\:6307\:793a\:3092\:76f4\:63a5\:6e21\:3059\:3002LLM \:304c KG \:306e\:5dee\:5206 (\:30b9\:30e9\:30a4\:30c9\:306e\:8ffd\:52a0\:30fb\:6587\:306e\:4fee\:6b63\:30fb\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:5916\:3059\:30fb\:56f3\:306e\:6307\:5b9a) \:3092\:8fd4\:3057\:3001\:53cd\:6620\:5f8c\:306b\:300c\:751f\:6210\:300d\:3067\:4f5c\:308a\:76f4\:3059\:3002opts: \"PDF\" -> \:8ad6\:6587 PDF \:306e locator (\:65e2\:5b9a\:306f\:6587\:732e\:6b04\:304b\:3089)\:3001\"Then\" -> \:53cd\:6620\:5f8c\:306b\:547c\:3076\:95a2\:6570\:3001\"Refine\" -> False \:3067\:672a\:63a8\:6572\:306e\:7bc0\:3092\:5148\:306b\:63a8\:6572\:3057\:306a\:3044 (v1.29: \:63a8\:6572\:3055\:308c\:3066\:3044\:306a\:3044\:7bc0\:304c\:3042\:308c\:3070\:5148\:306b\:63a8\:6572\:3057\:3066\:304b\:3089\:53cd\:6620\:3059\:308b)\:3002\:6307\:793a\:306b\:30b9\:30e9\:30a4\:30c9\:756a\:53f7 (\:300c43 \:4ee5\:964d\:300d\:300c17 \:679a\:76ee\:300d) \:304c\:3042\:308c\:3070\:3001\:305d\:306e\:679a\:306e\:30ce\:30fc\:30c9\:306e\:5143\:306e\:672c\:6587\:3092 LLM \:306b\:6e21\:3059\:3002";
+SlideGraphPin::usage = "SlideGraphPin[nb | graphId, id | {ids}] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:30ce\:30fc\:30c9\:306b\:300c\:5fc5\:305a\:51fa\:3059\:300d\:5370 (Pinned) \:3092\:4ed8\:3051\:308b (v1.42)\:3002\:8a08\:753b\:306f\:305d\:306e\:679a\:306e\:67a0\:3092\:70b9\:6570\:30fb\:524d\:63d0\:77e5\:8b58\:306e\:5224\:5b9a\:306b\:3088\:3089\:305a\:5148\:306b\:53d6\:308b\:3002SlideGraphPin[.., ids, False] \:3067\:5916\:3059\:3002SlideGraphPin[nb | graphId] \:306f\:5370\:306e\:4ed8\:3044\:305f\:30ce\:30fc\:30c9 Id \:306e\:4e00\:89a7\:3002\:30b9\:30e9\:30a4\:30c9\:3078\:306e\:53cd\:6620\:306f\:300c\:751f\:6210\:300d\:3067\:3002\:300c\:8abf\:6574\:300d\:3067\:8db3\:3057\:305f\:679a\:306f\:81ea\:52d5\:3067\:5370\:304c\:4ed8\:304f\:3002";
+SlideGraphHierarchy::usage = "SlideGraphHierarchy[] / SlideGraphHierarchy[nb | graphId, opts] \:306f\:767a\:8868\:306e\:76ee\:6b21\:3092\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:3063\:3066 KG \:306b\:4fdd\:5b58\:3059\:308b (v1.46\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:968e\:5c64\:5316\:300d)\:3002\:7b2c 1 \:6bb5\:3067 KG \:306e\:9805\:76ee (\:5185\:5bb9\:306e\:6700\:5c0f\:5358\:4f4d) \:3092\:7bc0\:306b\:3001\:7b2c 2 \:6bb5\:304b\:3089\:7bc0\:3092\:7ae0\:306b\:307e\:3068\:3081\:3001\:6839\:306e\:5b50\:304c $SlideGraphMaxDegree \:500b\:4ee5\:4e0b\:306b\:306a\:308b\:307e\:3067 LLM \:306b\:6bb5\:3054\:3068\:306b\:554f\:3046\:3002\:4e26\:3076\:5b50\:306f\:7b87\:6761\:66f8\:304d\:306b\:3057\:305f\:3068\:304d\:540c\:3058\:30ec\:30d9\:30eb\:306e\:8a71\:3068\:3057\:3066\:4e26\:7acb\:3055\:305b (\:66f8\:7c4d\:306e\:76ee\:6b21)\:3001\:8cc7\:6599\:304c\:9055\:3063\:3066\:3082\:540c\:3058\:8a71\:984c\:306f\:307e\:3068\:3081\:3001\:5404\:6bb5\:306b\:984c\:76ee\:30fb\:4e00\:884c\:8981\:7d04 (Gist)\:30fb\:8981\:7d04\:30fb\:91cd\:8981\:5ea6\:30fb\:8981\:5426 (Must / Optional) \:3092\:4ed8\:3051\:3001\:8074\:304d\:624b\:306b\:8981\:3089\:306a\:3044\:9805\:76ee\:306f\:5916\:3059\:3002\:305d\:306e\:3042\:3068 SourceVaultKGSetToc \:304c\:5144\:5f1f\:306e\:9806\:3092\:5b9a\:7fa9\:30fb\:524d\:63d0 (Prerequisite / Derives) \:3067\:5165\:308c\:66ff\:3048\:308b\:3002LLM \:304c\:7121\:3051\:308c\:3070\:8cc7\:6599\:306e\:69cb\:9020\:304b\:3089\:6a5f\:68b0\:7684\:306b\:4f5c\:308b (SourceVaultKGMechanicalToc)\:3002\:8a08\:753b (SlideGraphPlan) \:306f\:76ee\:6b21\:304c\:3042\:308c\:3070 SourceVaultKGTocPlan \:3067\:679a\:6570\:306b\:5408\:308f\:305b\:3066\:76ee\:6b21\:306e\:4e0a\:304b\:3089\:958b\:304f (1 \:679a\:306a\:3089\:6839\:306b\:90e8\:306e\:4e00\:884c\:8981\:7d04\:3092\:4e26\:3079\:308b\:3060\:3051)\:3002opts: \"Then\" (\:7d42\:308f\:3063\:305f\:3089\:547c\:3076\:95a2\:6570)\:3001\"MaxDegree\"\:3001\"Strategy\" (\:6a5f\:68b0\:7684\:306b\:4f5c\:308b\:3068\:304d\:306e\:9806\:5e8f\:6728)\:3002\:623b\:308a\:5024\:306f\:554f\:3044\:5408\:308f\:305b\:4e2d\:306a\:3089 <|\"Status\" -> \"Submitted\"|>\:3001\:7d50\:679c\:306f SlideWorkflow`Private`$iSWHierarchyLast\:3002";
+SlideGraphNarrate::usage = "SlideGraphNarrate[] / SlideGraphNarrate[nb | graphId, opts] \:306f\:767a\:8868\:306e\:610f\:5473\:4ed8\:3051 (v1.48\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:610f\:5473\:4ed8\:3051\:300d)\:3002\:8a08\:753b\:3067\:6c7a\:307e\:3063\:305f\:679a\:306e\:4e26\:3073\:3092\:90e8\:3054\:3068\:306b LLM \:306b\:898b\:305b\:3001\:5404\:679a\:306e\:5f79\:5272 (Role: \:306a\:305c\:3053\:306e\:679a\:304c\:3053\:3053\:306b\:3042\:308b\:304b)\:30fb\:524d\:306e\:679a\:304b\:3089\:306e\:3064\:306a\:304e (Bridge\:3002\:540c\:3058\:89aa\:306e\:7d9a\:304d\:306a\:3089\:8a71\:984c\:8ee2\:63db\:306e\:8a9e\:3092\:4f7f\:308f\:306a\:3044)\:30fb\:521d\:3081\:3066\:51fa\:308b\:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e (Terms) \:3092\:66f8\:304b\:305b\:3066 KG \:306e\:30ce\:30fc\:30c9\:306b\:4fdd\:5b58\:3059\:308b\:3002\:751f\:6210\:3067\:306f\:5f79\:5272\:304c\:5c0e\:5165\:6587\:3001\:3064\:306a\:304e\:304c\:539f\:7a3f\:306e\:5192\:982d\:3001\:7528\:8a9e\:304c\:679a\:306e\:4e0b\:306e\:300c\:7528\:8a9e\:300d\:306e\:884c\:3068\:539f\:7a3f\:306e\:6700\:5f8c\:306e\:4e00\:8a00\:306b\:306a\:308b\:3002\:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:629c\:3051\:306f\:8abf\:6574\:30bb\:30eb\:306b\:63d0\:6848\:3068\:3057\:3066\:66f8\:304f\:3002kg[\"Narrative\"][\"Sequence\"] \:304c\:4eca\:306e\:4e26\:3073\:3068\:9055\:3048\:3070\:300c\:751f\:6210\:300d\:304c\:5148\:306b\:3053\:308c\:3092\:884c\:3046 ($SlideGraphNarrateAuto)\:3002opts: \"Then\"\:3001\"Chunk\" (1 \:56de\:306e\:554f\:3044\:5408\:308f\:305b\:306e\:679a\:6570\:3001\:65e2\:5b9a 24)\:3001\"Slides\"\:3001\"Audience\"\:3002\:7d50\:679c\:306f SlideWorkflow`Private`$iSWNarrateLast\:3002";
+$SlideGraphNarrateAuto::usage = "$SlideGraphNarrateAuto \:304c True (\:65e2\:5b9a) \:306a\:3089\:3001\:300c\:751f\:6210\:300d\:306f\:679a\:306e\:4e26\:3073\:304c\:610f\:5473\:4ed8\:3051\:3057\:305f\:3068\:304d\:3068\:9055\:3046\:3068\:304d\:5148\:306b SlideGraphNarrate \:3092\:884c\:3046 (LLM \:304c\:3042\:308b\:3068\:304d\:3060\:3051)\:3002False \:3067\:624b\:52d5 (\:30d1\:30ec\:30c3\:30c8\:300c\:610f\:5473\:4ed8\:3051\:300d) \:306e\:307f\:3002";
+SlideComputeBuild::usage = "SlideComputeBuild[] / SlideComputeBuild[nb] \:306f\:30d1\:30ec\:30c3\:30c8\:300c\:8a08\:7b97\:30ce\:30fc\:30c8\:300d(v1.47)\:3002\:30c7\:30c3\:30ad\:306e\:6587\:732e (\:8ad6\:6587\:30fb\:8cc7\:6599\:30fb\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30fbSourceVault \:306e\:6587\:66f8) \:3068 KG (\:3042\:308c\:3070) \:304b\:3089\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:4f5c\:308b\:4ed5\:4e8b\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8 (ClaudeEval) \:306b\:6e21\:3059\:3002\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306f SlideComputeNew \[RightArrow] \:5358\:4f4d\:3054\:3068\:306b SlideComputeAdd \[RightArrow] SlideComputeFinish \:306e\:9806\:306b\:66f8\:304f\:3002";
+SlideComputeNew::usage = "SlideComputeNew[title, opts] \:306f\:65b0\:3057\:3044\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:59cb\:3081\:308b (v1.47)\:3002SourceVault \:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:767b\:9332\:7c3f\:306e\:5834\:6240\:306b\:4f5c\:3063\:3066\:767b\:9332\:3057 (Id = cnb-<8 \:6841>\:3001URI = sv://computenb/<Id>\:3001PL \:306f\:7d20\:6750\:304b\:3089)\:3001\:4ee5\:5f8c\:306e SlideComputeAdd \:306e\:66f8\:304d\:5148\:306b\:3059\:308b\:3002opts: \"Notebook\" (\:6587\:732e\:3092\:8aad\:3080\:30c7\:30c3\:30ad\:3001\:65e2\:5b9a \:5bfe\:8c61\:30c7\:30c3\:30ad)\:3001\"Sources\" (\:65e2\:5b9a \:30c7\:30c3\:30ad\:306e\:6587\:732e)\:3001\"PrivacyLevel\"\:3001\"Language\"\:3001\"Path\"\:3001\"Intro\" (\:984c\:540d\:306e\:4e0b\:306e\:8aac\:660e)\:3002\:623b\:308a <|\"Id\", \"URI\", \"File\", \"PrivacyLevel\"|>\:3002";
+SlideComputeOpen::usage = "SlideComputeOpen[ref, opts] \:306f\:767b\:9332\:6e08\:307f\:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:958b\:3044\:3066\:7d9a\:304d\:3092\:66f8\:3051\:308b\:3088\:3046\:306b\:3059\:308b (ref = Id / sv://computenb/<Id> / \:30d5\:30a1\:30a4\:30eb / \:6587\:732e\:306e key)\:3002\"Replay\" -> True (\:65e2\:5b9a) \:3067\:65e2\:5b58\:306e\:30b3\:30fc\:30c9\:3092\:9694\:96e2\:6587\:8108\:3067\:8a55\:4fa1\:3057\:76f4\:3057\:3066\:5b9a\:7fa9\:3092\:623b\:3059\:3002";
+SlideComputeAdd::usage = "SlideComputeAdd[<|..|>] / SlideComputeAdd[ref, <|..|>] \:306f\:8a08\:7b97\:30ce\:30fc\:30c8\:306b 1 \:5358\:4f4d\:3092\:66f8\:304f\:552f\:4e00\:306e\:5165\:53e3 (v1.47)\:3002\:30ad\:30fc: \"Section\" / \"Subsection\" (\:898b\:51fa\:3057)\:3001\"Text\" (\:8aac\:660e\:3001$tex$ \:53ef)\:3001\"Formula\" (TeX)\:3001\"Code\" (Mathematica \:306e\:30b3\:30fc\:30c9\:306e\:6587\:5b57\:5217\:3002\:30ce\:30fc\:30c8\:3054\:3068\:306e\:9694\:96e2\:6587\:8108\:3067\:8a55\:4fa1\:3057 Input \:3068 Output \:306e\:30bb\:30eb\:306b\:3059\:308b\:3002\:30d5\:30a1\:30a4\:30eb\:30fb\:30d7\:30ed\:30bb\:30b9\:30fb\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:30fb\:30af\:30e9\:30a6\:30c9\:30fb\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:30fbPrint\:30fbLLM\:30fbToExpression \:306a\:3069\:306f\:62d2\:5426)\:3001\"Caption\" (\:56f3\:306e\:8aac\:660e\:3002\:56f3\:3092\:51fa\:3057\:305f\:3089\:300c\:56f3 n | \[Ellipsis]\:300d\:3068\:66f8\:304f)\:3001\"After\"\:3001\"Nodes\" (\:3053\:306e\:5358\:4f4d\:304c\:78ba\:304b\:3081\:308b\:30fb\:63cf\:304f KG \:30ce\:30fc\:30c9 Id\:3002\:5225\:306e KG \:306f \"<GraphId>#<Id>\")\:3001\"Refs\" (\:6587\:732e key)\:3001\"Packages\" ($SlideComputePackages \:306e\:540d\:524d)\:3001\"Replace\" (\:66f8\:304d\:76f4\:3059\:5358\:4f4d)\:3001\"TimeLimit\" (\:65e2\:5b9a 60 \:79d2)\:3001\"MemoryLimit\"\:3002\:30bb\:30eb\:306b\:306f CellTags \"CNU:<unit>\" \:304c\:4ed8\:304d\:3001seed \:3067 KG \:306e\:30ce\:30fc\:30c9 (Source \:306e Unit\:3001\:56f3\:306e\:30ce\:30fc\:30c9\:306b\:306f Code\:3001Links) \:306b\:306a\:308b\:3002\:623b\:308a <|\"Status\", \"Unit\", \"Figures\", \"Caption\", \"Result\", \"Messages\", \"Seconds\"|>\:3001\:8a55\:4fa1\:3067\:304d\:306a\:3051\:308c\:3070 Failure[\"ComputeFailed\"] (\:4f55\:3082\:66f8\:304b\:306a\:3044)\:3002";
+SlideComputeFinish::usage = "SlideComputeFinish[] / SlideComputeFinish[ref, opts] \:306f\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:66f8\:304d\:7d42\:3048\:308b: \:4fdd\:5b58\:3001SourceVault \:306e\:767b\:9332\:3092\:66f4\:65b0 (\:5358\:4f4d\:6570\:30fbPL)\:3001\:30ce\:30fc\:30c8\:306e KG \:3092\:4f5c\:308b (SlideComputeGraph)\:3001\:30c7\:30c3\:30ad\:306e\:6587\:732e\:306b [COMPUTE] sv://computenb/<Id> \:3092\:8ffd\:8a18\:3059\:308b\:3001\:30ce\:30fc\:30c8\:3092\:958b\:304f\:3002opts: \"Graph\" / \"Reference\" / \"Open\"\:3002";
+SlideComputeGraph::usage = "SlideComputeGraph[ref] \:306f\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:30bb\:30eb\:306e\:4e26\:3073\:3092 1 \:3064\:306e\:30b9\:30c8\:30fc\:30ea\:30fc\:3068\:3057\:3066 KG \:306b\:3059\:308b (GraphId = \:8a08\:7b97\:30ce\:30fc\:30c8\:306e Id\:3001Kind Notebook)\:3002\:30ce\:30fc\:30c9\:306e\:8cc7\:7523\:306e\:53c2\:7167\:306f URI \:306a\:306e\:3067\:3069\:306e KG \:304b\:3089\:3082\:89e3\:3051\:308b\:3002\:5358\:4f4d\:306f\:30ce\:30fc\:30c9\:306e Source \"Unit\"\:3001\:56f3\:3092\:4f5c\:3063\:305f\:30b3\:30fc\:30c9\:306f \"Code\"\:3001\:7d10\:3065\:3051\:305f KG \:30ce\:30fc\:30c9\:306f \"Links\"\:3002";
+SlideComputeRegister::usage = "SlideComputeRegister[path, opts] \:306f\:65e2\:306b\:3042\:308b\:8a08\:7b97\:30ce\:30fc\:30c8 (\:4f8b: \:30c7\:30c3\:30ad\:3068\:540c\:3058\:30d5\:30a9\:30eb\:30c0\:306b\:4f5c\:3063\:305f\:30ce\:30fc\:30c8) \:3092 SourceVault \:306b\:767b\:9332\:3057\:3001\:30ce\:30fc\:30c8\:306e KG \:3092\:4f5c\:308a\:3001\:30c7\:30c3\:30ad\:306e\:6587\:732e\:3067\:305d\:306e\:30d5\:30a1\:30a4\:30eb\:3092\:6307\:3057\:3066\:3044\:308b\:884c\:306e locator \:3092 sv://computenb/<Id> \:306b\:66ff\:3048\:308b (key \:306f\:5909\:3048\:306a\:3044\:306e\:3067\:65e2\:5b58\:306e KG \:306e\:56f3\:306e\:53c2\:7167\:3082\:305d\:306e\:307e\:307e)\:3002opts: \"Title\"\:3001\"Sources\"\:3001\"PrivacyLevel\"\:3001\"Copy\" (True \:3067\:767b\:9332\:7c3f\:306e\:5834\:6240\:3078\:5199\:3059)\:3001\"Notebook\"\:3001\"Graph\"\:3002";
+SlideComputeList::usage = "SlideComputeList[] \:306f SourceVault \:306b\:767b\:9332\:3055\:308c\:305f\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:4e00\:89a7 (Dataset)\:3002";
+SlideGraphReuse::usage = "SlideGraphReuse[target, source, ids | All, opts] \:306f\:5225\:306e KG (\:8a08\:7b97\:30ce\:30fc\:30c8\:306e KG \:306a\:3069\:3002source \:306f GraphId \:304b sv://computenb/<Id>) \:306e\:30ce\:30fc\:30c9\:3092 target \:306e KG \:306b\:53d6\:308a\:8fbc\:3093\:3067\:4fdd\:5b58\:3059\:308b (v1.47)\:3002ids \:3068\:305d\:306e\:5b50\:5b6b\:3092\:65b0\:3057\:3044 Id \:3067\:5199\:3057\:3001\:5143\:306f \"Origin\"\:3001\:56f3\:306e\:53c2\:7167\:306f\:305d\:306e\:307e\:307e\:3002\:7d10\:3065\:3051 (Links) \:304c target \:306e\:30ce\:30fc\:30c9\:3092\:6307\:3057\:3066\:3044\:308c\:3070 Supports \:306e\:8fba\:3002opts: \"Parent\" / \"After\" / \"Prefix\" / \"Subtree\" / \"Pin\"\:3002\:76ee\:6b21\:304c\:3042\:308b KG \:3067\:306f\:65b0\:3057\:3044\:30ce\:30fc\:30c9\:306f After / Parent \:306e\:6240\:306b\:5165\:308b\:3002";
+$SlideComputePackages::usage = "$SlideComputePackages \:306f\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:30b3\:30fc\:30c9 (SlideComputeAdd \:306e \"Packages\") \:3067\:8aad\:3093\:3067\:3088\:3044\:81ea\:4f5c\:30d1\:30c3\:30b1\:30fc\:30b8\:306e\:540d\:524d (\:65e2\:5b9a {\"Ambisonics\"})\:3002$packageDirectory \:306e <\:540d\:524d>.wl \:3092\:8aad\:307f\:3001\:305d\:306e\:6587\:8108\:3092\:9694\:96e2\:6587\:8108\:304b\:3089\:4f7f\:3048\:308b\:3088\:3046\:306b\:3059\:308b\:3002";
+$SlideGraphMaxDegree::usage = "$SlideGraphMaxDegree \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:9806\:5e8f\:6728\:3067 1 \:3064\:306e\:30ce\:30fc\:30c9\:306b\:8a31\:3059\:5b50\:306e\:6570\:306e\:4e0a\:9650 (\:65e2\:5b9a 5\:3002\:5c11\:306a\:3044\:306e\:306f\:3088\:3044)\:3002\:76ee\:6b21\:3084\:7bc0\:306e\:9053\:6a19\:306e\:679a\:304c 1 \:679a\:3067\:898b\:6e21\:305b\:308b\:6570 (\:5168\:4f53\:306e\:6d41\:308c\:306f 6 \:884c\:76ee\:304b\:3089\:300c\[Ellipsis]\:300d\:3067\:5207\:308c\:308b)\:3002\:300c\:968e\:5c64\:5316\:300d\:3068\:300c\:751f\:6210\:300d\:306e\:8a08\:753b\:304c\:5b88\:308b\:3002";
 SlideInsertAdjust::usage = "SlideInsertAdjust[] \:306f\:8abf\:6574\:30bb\:30eb (SlideAdjust) \:3092\:5165\:308c\:308b\:3002Working \:3067\:898b\:3048\:3001SlideShow \:3068\:66f8\:304d\:51fa\:3057\:3067\:306f\:96a0\:308c\:308b\:3002";
-SlideGraphVisualize::usage = "SlideGraphVisualize[nb | graphId | kg, opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:56f3\:3092\:8fd4\:3059 (v1.30\:3002SourceVaultKGVisualize \:3078\:306e\:3064\:306a\:304e)\:3002\:30c7\:30c3\:30ad\:3092\:6e21\:3059\:3068 Story \:30bb\:30eb\:306e\:8074\:304d\:624b\:30fb\:679a\:6570\:3067\:8a08\:753b\:3092\:7acb\:3066\:3066\:679a\:756a\:53f7 (#n) \:3092\:91cd\:306d\:308b (\"Plan\" -> Automatic | True | False | \:8a08\:753b)\:3002opts \:306f SourceVaultKGVisualize \:3068\:540c\:3058: \"View\" -> \"Story\" | \"Sections\" | \"Focus\" | \"Graph\"\:3001\"Focus\"\:3001\"Radius\"\:3001\"EdgeKinds\"\:3001\"Layers\"\:3001\"Labels\"\:3001\"Selected\"\:3001\"OnClick\"\:3001\"Legend\"\:3001\"Hidden\"\:3001\"Language\"\:3002";
-SlideGraphViewer::usage = "SlideGraphViewer[] / SlideGraphViewer[nb | graphId] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:898b\:308b\:7a93\:3092\:958b\:304f (v1.30\:3001\:30d1\:30ec\:30c3\:30c8\:300cKG\:56f3\:300d)\:3002\:8868\:793a (\:8a71\:306e\:6d41\:308c / \:7bc0 / \:5468\:8fba / \:8a08\:753b / \:4e00\:89a7)\:3001\:8fba\:3068\:5c64\:306e\:7d5e\:308a\:8fbc\:307f\:3001\:8a08\:753b\:306e\:91cd\:306d\:66f8\:304d\:3001\:540d\:524d\:306e\:91cf\:3001\:5468\:8fba\:306e\:534a\:5f84\:3092\:5207\:308a\:66ff\:3048\:3089\:308c\:3001\:56f3\:306e\:30ce\:30fc\:30c9\:3092\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:53f3\:306b\:4e2d\:8eab (\:5c0e\:5165\:6587\:30fb\:8981\:70b9\:30fb\:88dc\:8db3\:30fb\:539f\:7a3f\:30fb\:56f3\:30fb\:8cea\:7591\:5fdc\:7b54\:30fb\:51fa\:5178\:30fb\:672c\:6587\:30fb\:3064\:306a\:304c\:308a) \:304c\:51fa\:308b\:3002\:30dc\:30bf\:30f3: \:5468\:8fba\:3092\:898b\:308b / \:30b9\:30e9\:30a4\:30c9\:3078 (\:305d\:306e\:679a\:3001\:8a70\:3081\:8fbc\:307e\:308c\:3066\:3044\:308c\:3070\:8a70\:3081\:8fbc\:307f\:5148\:306e\:679a\:306e\:984c\:76ee\:3078\:79fb\:52d5) / \:8abf\:6574\:306b\:66f8\:304f (\:8abf\:6574\:30bb\:30eb\:306b\:300c\:984c\:76ee\:300d(Id): \:3092\:8db3\:3059)\:3002\:691c\:7d22\:6b04\:3067\:4e00\:89a7\:3092\:7d5e\:308c\:308b\:3002\:300c\:66f4\:65b0\:300d\:3067 KG \:3092\:8aad\:307f\:76f4\:3059\:3002";
+SlideGraphVisualize::usage = "SlideGraphVisualize[nb | graphId | kg, opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:56f3\:3092\:8fd4\:3059 (v1.30\:3002SourceVaultKGVisualize \:3078\:306e\:3064\:306a\:304e)\:3002\:30c7\:30c3\:30ad\:3092\:6e21\:3059\:3068 Story \:30bb\:30eb\:306e\:8074\:304d\:624b\:30fb\:679a\:6570\:3067\:8a08\:753b\:3092\:7acb\:3066\:3066\:679a\:756a\:53f7 (#n) \:3092\:91cd\:306d\:308b (\"Plan\" -> Automatic | True | False | \:8a08\:753b)\:3002opts \:306f SourceVaultKGVisualize \:3068\:540c\:3058: \"View\" -> \"Story\" | \"Sections\" | \"Focus\" | \"Graph\"\:3001\"Focus\"\:3001\"Radius\"\:3001\"EdgeKinds\"\:3001\"Layers\"\:3001\"Labels\"\:3001\"Selected\"\:3001\"OnClick\"\:3001\"Legend\"\:3001\"Hidden\"\:3001\"Language\"\:3002 v1.44: \"View\" -> \"Hierarchy\" = \:5b50\:306e\:6570\:306e\:4e0a\:9650 ($SlideGraphMaxDegree) \:3092\:5b88\:308b\:968e\:5c64 (\:9806\:5e8f\:6728) \:3092 1 \:30ce\:30fc\:30c9 1 \:884c\:3067\:63cf\:304f (\:307e\:3060\:968e\:5c64\:5316\:3057\:3066\:3044\:306a\:3051\:308c\:3070\:6a5f\:68b0\:7684\:306a\:307e\:3068\:3081\:3092\:70b9\:7dda\:3067\:4e0b\:898b)\:3002";
+SlideGraphViewer::usage = "SlideGraphViewer[] / SlideGraphViewer[nb | graphId] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:898b\:308b\:7a93\:3092\:958b\:304f (v1.30\:3001\:30d1\:30ec\:30c3\:30c8\:300cKG\:56f3\:300d)\:3002\:8868\:793a (\:8a71\:306e\:6d41\:308c / \:7bc0 / \:5468\:8fba / \:8a08\:753b / \:4e00\:89a7)\:3001\:8fba\:3068\:5c64\:306e\:7d5e\:308a\:8fbc\:307f\:3001\:8a08\:753b\:306e\:91cd\:306d\:66f8\:304d\:3001\:540d\:524d\:306e\:91cf\:3001\:5468\:8fba\:306e\:534a\:5f84\:3092\:5207\:308a\:66ff\:3048\:3089\:308c\:3001\:56f3\:306e\:30ce\:30fc\:30c9\:3092\:30af\:30ea\:30c3\:30af\:3059\:308b\:3068\:53f3\:306b\:4e2d\:8eab (\:5c0e\:5165\:6587\:30fb\:8981\:70b9\:30fb\:88dc\:8db3\:30fb\:539f\:7a3f\:30fb\:56f3\:30fb\:8cea\:7591\:5fdc\:7b54\:30fb\:51fa\:5178\:30fb\:672c\:6587\:30fb\:3064\:306a\:304c\:308a) \:304c\:51fa\:308b\:3002\:30dc\:30bf\:30f3: \:5468\:8fba\:3092\:898b\:308b / \:30b9\:30e9\:30a4\:30c9\:3078 (\:305d\:306e\:679a\:3001\:8a70\:3081\:8fbc\:307e\:308c\:3066\:3044\:308c\:3070\:8a70\:3081\:8fbc\:307f\:5148\:306e\:679a\:306e\:984c\:76ee\:3078\:79fb\:52d5) / \:8abf\:6574\:306b\:66f8\:304f (\:8abf\:6574\:30bb\:30eb\:306b\:300c\:984c\:76ee\:300d(Id): \:3092\:8db3\:3059)\:3002\:691c\:7d22\:6b04\:3067\:4e00\:89a7\:3092\:7d5e\:308c\:308b\:3002\:300c\:66f4\:65b0\:300d\:3067 KG \:3092\:8aad\:307f\:76f4\:3059\:3002 v1.44: \:8868\:793a\:306b\:300c\:968e\:5c64\:300d(\:9806\:5e8f\:6728\:3092\:5b57\:4e0b\:3052\:3067\:3002\:5404\:884c\:306b\:984c\:76ee\:30fb\:4e00\:884c\:8981\:7d04\:30fb\:5b50\:306e\:6570\:3001\:4e0a\:9650\:3092\:8d85\:3048\:308b\:30ce\:30fc\:30c9\:306f\:8d64\:3001\:307e\:3068\:307e\:308a\:306f\:67a0\:3002\:540d\:524d: \:3059\:3079\:3066 \:3067\:8449\:3082)\:3002";
 SlideGraphSeedScenario::usage = "SlideGraphSeedScenario[nb | {<|\"Title\"->..,\"Text\"->..|>..}, opts] \:306f\:6587\:66f8 (\:8ad6\:6587) \:306e\:7121\:3044\:767a\:8868\:306e\:305f\:3081\:306b\:3001\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb (SlidePrompt) \:306b\:66f8\:3044\:305f\:7b4b\:66f8\:304d (\:30b7\:30ca\:30ea\:30aa) \:304b\:3089\:7b2c\:4e00\:6b21 KG \:3092\:6c7a\:5b9a\:7684\:306b\:4f5c\:3063\:3066\:4fdd\:5b58\:3059\:308b (v1.30)\:3002\:30bb\:30eb\:306f\:898b\:51fa\:3057 (#) / \:884c\:982d\:306e\:756a\:53f7 / \:7a7a\:884c\:3067\:90e8\:306b\:5206\:3051\:3001\:90e8\:3054\:3068\:306b\:7bc0\:30ce\:30fc\:30c9 sc<i> \:3068\:7b4b\:66f8\:304d\:30ce\:30fc\:30c9 sc<i>_d (\:672c\:6587 = \:7b4b\:66f8\:304d\:3001\:8981\:70b9\:306a\:3057) \:3092\:7f6e\:304f\:3002KG \:306e Kind \:306f \"Scenario\"\:3002\:7d9a\:304f\:63a8\:6572 (SlideGraphRefine) \:304c\:7b4b\:66f8\:304d\:3092\:767a\:8868\:7528\:306e\:30ce\:30fc\:30c9 (sc<i>_1..\:3001\:95a2\:9023\:7814\:7a76 rw_<\:5019\:88dc\:756a\:53f7>\:3001\:524d\:63d0 bg_*) \:306b\:5c55\:958b\:3059\:308b\:3002opts: \"Graph\", \"Title\", \"Language\", \"Save\", \"Keep\" (\"Background\" = \:4f5c\:308a\:76f4\:3057\:3066\:3082\:5468\:8fba\:77e5\:8b58\:3092\:6b8b\:3059)\:3002";
 SlideGraphRelated::usage = "SlideGraphRelated[nb | graphId, opts] \:306f\:30b7\:30ca\:30ea\:30aa KG \:306e\:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc\:3092\:96c6\:3081\:3066 KG \:306e \"Related\" \:306b\:4fdd\:5b58\:3059\:308b (v1.30\:3001\:975e\:540c\:671f)\:3002LLM \:304c\:7b4b\:66f8\:304d\:304b\:3089\:691c\:7d22\:8a9e (\:77ed\:3044\:8a9e\:53e5 4\:301c8 \:500b) \:3092\:4f5c\:308a\:3001SourceVaultSummaries (\:53d6\:308a\:8fbc\:307f\:6e08\:307f\:306e\:8ad6\:6587\:30fbEagle) \:3067\:63a2\:3059\:3002\"Web\" -> True (Story \:306e Survey: web) \:306e\:3068\:304d\:3060\:3051 SourceVaultWebSearch \:3082\:4f7f\:3046 (\:691c\:7d22\:8a9e\:304c\:5916\:306b\:51fa\:308b\:305f\:3081)\:3002PrivacyLevel >= 0.5 \:306e\:5019\:88dc\:306f\:30c7\:30c3\:30ad\:306e PrivacyLevel \:304c\:305d\:308c\:4ee5\:4e0a\:306e\:3068\:304d\:3060\:3051\:6b8b\:3059\:3002opts: \"Web\", \"MaxCandidates\" (20), \"Then\" (\:7d42\:308f\:3063\:305f\:3089\:547c\:3076\:95a2\:6570), \"Audience\", \"Story\"\:3002\:7d50\:679c\:306f SlideWorkflow`Private`$iSWRelatedLast\:3002";
 SlideTalkFill::usage = "SlideTalkFill[] / SlideTalkFill[nb] \:306f\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:306e\:7121\:3044\:30b9\:30e9\:30a4\:30c9\:306b\:3060\:3051\:539f\:7a3f\:3092\:66f8\:304f (v1.30\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:767a\:8868\:306e\:6e96\:5099\:300d\:306e\:300c\:539f\:7a3f\:300d)\:3002LLM \:304c\:30c7\:30c3\:30ad\:5168\:4f53\:306e\:6d41\:308c\:3092\:898b\:3066 8 \:679a\:305a\:3064\:66f8\:304d\:3001\:5404\:30b9\:30e9\:30a4\:30c9\:306e\:30c8\:30fc\:30af\:30bb\:30eb\:306b\:5165\:308c\:308b (\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:304c\:3042\:308c\:3070\:305d\:306e\:524d)\:3002\:5168\:679a\:306b\:539f\:7a3f\:304c\:3042\:308c\:3070\:4f55\:3082\:3057\:306a\:3044 (\:539f\:7a3f\:3092 md \:306b\:66f8\:304d\:51fa\:3059\:306e\:306f SlideTalkBuild)\:3002";
+SlideGraphSync::usage = "SlideGraphSync[] / SlideGraphSync[nb, opts] \:306f\:624b\:3067\:76f4\:3057\:305f\:30b9\:30e9\:30a4\:30c9\:3092\:6b63\:672c\:3068\:3057\:3066\:3001\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:3068\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:5408\:308f\:305b\:308b (v1.35\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:767a\:8868\:306e\:6e96\:5099\:300d\:306e\:300c\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620\:300d)\:3002LLM \:304c\:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:306e\:98df\:3044\:9055\:3044\:30fb\:539f\:7a3f\:306e\:8aa4\:308a\:30fb\:9577\:3055\:3092\:898b\:3066\:3001\:5fc5\:8981\:306a\:679a\:3060\:3051\:539f\:7a3f\:3092\:6700\:5c0f\:9650\:306b\:76f4\:3057\:3001KG \:306e\:30ce\:30fc\:30c9 (\:984c\:76ee\:30fb\:8981\:70b9\:30fb\:5c0e\:5165\:6587\:30fb\:539f\:7a3f) \:3092\:30b9\:30e9\:30a4\:30c9\:306e\:6587\:8a00\:306b\:305d\:308d\:3048\:308b\:3002\:30b9\:30e9\:30a4\:30c9\:81ea\:4f53\:306f\:66f8\:304d\:63db\:3048\:305a\:3001\:6c17\:306b\:306a\:308b\:70b9\:306f\:30ce\:30fc\:30c8\:672b\:5c3e\:306e\:5831\:544a\:306b\:300c\:8981\:78ba\:8a8d\:300d\:3068\:3057\:3066\:66f8\:304f\:3002\:65e2\:5b9a\:306f\:524d\:56de\:306e\:53cd\:6620\:304b\:3089\:76f4\:3057\:305f\:679a\:3060\:3051 (\"Slides\" -> All \:3067\:5168\:90e8\:3001{n..} \:3067\:6307\:5b9a)\:3002\:5c55\:958b\:30fb\:624b\:4f5c\:308a\:306e\:679a\:306f\:984c\:76ee\:30bb\:30eb\:306b KGSync:<id> \:3092\:4ed8\:3051\:3066\:5bfe\:5fdc\:3092\:899a\:3048\:308b (\:300c\:751f\:6210\:300d\:306e\:7f6e\:304d\:63db\:3048\:5bfe\:8c61\:306b\:306f\:306a\:3089\:306a\:3044)\:3002\:524d\:56de\:3042\:3063\:305f\:679a\:3092\:6d88\:3057\:305f\:30ce\:30fc\:30c9\:306f KG \:3067\:96a0\:3059\:3002opts: \"KG\" -> False \:3067\:539f\:7a3f\:3060\:3051\:3001\"Talk\" -> False \:3067 KG \:3060\:3051\:3001\"Translate\" -> False \:3067\:8a33\:3092\:76f4\:3055\:306a\:3044 (\:65e2\:5b9a\:306f\:8a33\:306e\:3042\:308b\:679a\:306e\:539f\:7a3f\:3092\:76f4\:3057\:305f\:3089 SlideTalkFill \:3067\:306f\:306a\:304f SlideTalkTranslate \:3067\:8a33\:3082\:76f4\:3059)\:3001\"Then\" -> f\:3002\:975e\:540c\:671f\:3002";
+SlideGraphSyncUndo::usage = "SlideGraphSyncUndo[] / SlideGraphSyncUndo[nb] \:306f\:76f4\:524d\:306e SlideGraphSync \:3067\:76f4\:3057\:305f\:539f\:7a3f\:3092\:5143\:306b\:623b\:3059\:3002\:305d\:306e\:5f8c\:306b\:624b\:3067\:76f4\:3057\:305f\:679a\:306f\:89e6\:3089\:306a\:3044\:3002";
 SlideGraphBuildDeck::usage = "SlideGraphBuildDeck[graphId | kg, \"deck.nb\", opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:65b0\:3057\:3044\:30c7\:30c3\:30ad\:30d5\:30a1\:30a4\:30eb\:3092\:751f\:6210\:3059\:308b (headless \:53ef)\:3002opts: SlideGraphGenerate \:3068\:540c\:3058 + \"TitleSlide\" / \"Event\" / \"Author\" / \"Date\"\:3002<|\"File\", \"Slides\", \"Warnings\", \"Verify\", \"Plan\"|>\:3002";
 SlideGraphSurvey::usage = "SlideGraphSurvey[{graphId1, graphId2, ..}, \"deck.nb\", opts] \:306f\:8907\:6570\:306e\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:5408\:6210 (\:5171\:6709 background \:30ce\:30fc\:30c9\:3092\:7d71\:5408\:3001\:8ad6\:6587\:9593 RelatedTo \:3092\:4ed8\:4e0e) \:3057\:3066\:30b5\:30fc\:30d9\:30a4\:30c7\:30c3\:30ad\:3092\:751f\:6210\:3059\:308b\:3002opts: \"Title\" / \"Slides\" / \"Seconds\" / \"Audience\" / \"Language\" / \"Chronological\" / \"GraphId\" / \"Save\" (\:5408\:6210 KG \:3092\:4fdd\:5b58\:3001\:65e2\:5b9a True)\:3002";
 SlideGraphView::usage = "SlideGraphView[nb | graphId] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:30ce\:30fc\:30c9\:4e00\:89a7 Dataset\:3002SlideGraphView[src, \"Map\"] \:306f SlideGraphVisualize \:306e\:56f3 (v1.30)\:3001SlideGraphView[src, \"Graph\"] \:306f WL Graph\:3001\"Tree\" \:306f\:9806\:5e8f\:6728\:306e Dataset\:3001\"Plan\" \:306f\:8a08\:753b\:306e Dataset\:3002";
 SlideGraphShow::usage = "SlideGraphShow[\"Plan\" | \"Nodes\" | \"Graph\" | \"Tree\"] \:306f\:958b\:3044\:3066\:3044\:308b\:30c7\:30c3\:30ad\:306e Appendix (\:7d42\:7aef\:30de\:30fc\:30ab\:30fc\:4ee5\:964d) \:306b\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:8868\:793a\:3092\:66f8\:304d\:51fa\:3059 (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:8a08\:753b\:300d\:300cKG\:8868\:793a\:300d)\:3002";
 SlideGraphLoad::usage = "SlideGraphLoad[nb | graphId] \:306f\:4fdd\:5b58\:6e08\:307f\:306e\:77e5\:8b58\:30b0\:30e9\:30d5\:9023\:60f3\:3092\:8fd4\:3059 (nb \:306a\:3089 Story \:30bb\:30eb\:306e Graph: \:304b\:3089)\:3002";
 
-SlideGraphSeed::usage = "SlideGraphSeed[nb | key | path, opts] \:306f\:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af (DocImportPaper \:306e\:51fa\:529b\:306a\:3069) \:306e\:6bb5\:843d\:69cb\:9020\:304b\:3089**\:7b2c\:4e00\:6b21\:306e\:77e5\:8b58\:30b0\:30e9\:30d5**\:3092\:6c7a\:5b9a\:7684\:306b\:4f5c\:3063\:3066\:4fdd\:5b58\:3059\:308b\:3002\:898b\:51fa\:3057 \:2192 Section\:3001\:6bb5\:843d \:2192 Concept (\:672c\:6587\:306f \"Text\" \:306b\:4fdd\:6301)\:3001\:56f3 \:2192 Figure (NotebookFigure \:8cc7\:7523\:3001\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:300c\:56f31 |\:300d\:300cFigure 1:\:300d\:3092\:5408\:6d41)\:3001\:6570\:5f0f \:2192 Equation (Formula \:8cc7\:7523)\:3001Contains / Precedes / Supports \:8fba\:3002Title \:30bb\:30eb\:304c\:7121\:3051\:308c\:3070\:6700\:521d\:306e\:898b\:51fa\:3057 (\:8ad6\:6587\:984c\:540d) \:306f root \:306b\:7573\:307f\:3001\:8457\:8005\:884c\:306f\:843d\:3068\:3057\:3001root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d\:3092\:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9\:306b\:3059\:308b\:3002\:4ed8\:9332 (A. / Appendix / \:4ed8\:9332) \:306f Importance 0.3\:3001\:53c2\:8003\:6587\:732e\:30fb\:8b1d\:8f9e\:30fbAI Disclosure \:306a\:3069\:306f\:8aad\:307f\:98db\:3070\:3059\:3002LLM \:306f\:4f7f\:308f\:306a\:3044\:3002opts: \"Graph\" (GraphId\:3001\:65e2\:5b9a\:306f Story \:30bb\:30eb) / \"Title\" / \"Language\" / \"MinCharacters\" (40) / \"Save\" / \"Reconstruction\" (\:65e2\:5b9a False: DocImportPaper \:306e\:7b2c\:4e8c\:90e8\:300c\:8a08\:7b97\:306e\:518d\:69cb\:6210\:300d\:3092\:9664\:5916) / \"Keep\" (\:65e2\:5b9a \"Background\": \:518d seed \:3067\:3082\:4fdd\:5b58\:6e08\:307f KG \:306e Background / Shared \:5c64\:306e\:30ce\:30fc\:30c9\:3068\:8fba\:3092\:6b8b\:3059\:3002None \:3067\:6368\:3066\:308b)\:3002\:7d50\:679c <|\"Graph\", \"Title\", \"PaperTitle\", \"NodeCount\", \"EdgeCount\", \"Sections\", \"Paragraphs\", \"Figures\", \"Formulas\", \"Kept\", \"Skipped\", \"Warnings\", \"KG\"|>\:3002";
+SlideGraphSeed::usage = "SlideGraphSeed[nb | key | path, opts] \:306f\:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af (DocImportPaper \:306e\:51fa\:529b\:306a\:3069) \:306e\:6bb5\:843d\:69cb\:9020\:304b\:3089**\:7b2c\:4e00\:6b21\:306e\:77e5\:8b58\:30b0\:30e9\:30d5**\:3092\:6c7a\:5b9a\:7684\:306b\:4f5c\:3063\:3066\:4fdd\:5b58\:3059\:308b\:3002\:898b\:51fa\:3057 \[RightArrow] Section\:3001\:6bb5\:843d \[RightArrow] Concept (\:672c\:6587\:306f \"Text\" \:306b\:4fdd\:6301)\:3001\:56f3 \[RightArrow] Figure (NotebookFigure \:8cc7\:7523\:3001\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:300c\:56f31 |\:300d\:300cFigure 1:\:300d\:3092\:5408\:6d41)\:3001\:6570\:5f0f \[RightArrow] Equation (Formula \:8cc7\:7523)\:3001Contains / Precedes / Supports \:8fba\:3002Title \:30bb\:30eb\:304c\:7121\:3051\:308c\:3070\:6700\:521d\:306e\:898b\:51fa\:3057 (\:8ad6\:6587\:984c\:540d) \:306f root \:306b\:7573\:307f\:3001\:8457\:8005\:884c\:306f\:843d\:3068\:3057\:3001root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d\:3092\:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9\:306b\:3059\:308b\:3002\:4ed8\:9332 (A. / Appendix / \:4ed8\:9332) \:306f Importance 0.3\:3001\:53c2\:8003\:6587\:732e\:30fb\:8b1d\:8f9e\:30fbAI Disclosure \:306a\:3069\:306f\:8aad\:307f\:98db\:3070\:3059\:3002LLM \:306f\:4f7f\:308f\:306a\:3044\:3002opts: \"Graph\" (GraphId\:3001\:65e2\:5b9a\:306f Story \:30bb\:30eb) / \"Title\" / \"Language\" / \"MinCharacters\" (40) / \"Save\" / \"Reconstruction\" (\:65e2\:5b9a False: DocImportPaper \:306e\:7b2c\:4e8c\:90e8\:300c\:8a08\:7b97\:306e\:518d\:69cb\:6210\:300d\:3092\:9664\:5916) / \"Keep\" (\:65e2\:5b9a \"Background\": \:518d seed \:3067\:3082\:4fdd\:5b58\:6e08\:307f KG \:306e Background / Shared \:5c64\:306e\:30ce\:30fc\:30c9\:3068\:8fba\:3092\:6b8b\:3059\:3002None \:3067\:6368\:3066\:308b)\:3002\:7d50\:679c <|\"Graph\", \"Title\", \"PaperTitle\", \"NodeCount\", \"EdgeCount\", \"Sections\", \"Paragraphs\", \"Figures\", \"Formulas\", \"Kept\", \"Skipped\", \"Warnings\", \"KG\"|>\:3002 v1.41: \:6587\:732e\:306e Notebook \:304c\:8907\:6570\:3042\:308c\:3070\:5168\:90e8\:3092\:7d20\:6750\:306b\:3059\:308b (References \:306e\:9806\:30022 \:4ef6\:76ee\:4ee5\:964d\:306f root \:76f4\:4e0b\:306e\:90e8\:306b\:306a\:308a\:3001\:30ce\:30fc\:30c9 Id \:306b \"<key\:5c0f\:6587\:5b57>_\" \:304c\:4ed8\:304f\:3002\:7d50\:679c\:306e \"Sources\" \:306b\:7d20\:6750\:3054\:3068\:306e\:5185\:8a33)\:3002";
 SlideGraphSectionText::usage = "SlideGraphSectionText[graphId, sectionId, opts] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:7bc0 (Section \:30ce\:30fc\:30c9) \:306e**\:81ea\:8eab\:306e\:672c\:6587\:30ce\:30fc\:30c9** (\:76f4\:4e0b\:306e\:6bb5\:843d\:30fb\:56f3\:30fb\:5f0f\:3002\:5165\:308c\:5b50\:306e\:4e0b\:4f4d\:7bc0\:306f\:5225\:6271\:3044) \:3092 Id / Kind / Label / Text \:306e\:8aad\:307f\:3084\:3059\:3044\:30c6\:30ad\:30b9\:30c8\:3067\:8fd4\:3059 (\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c\:7bc0\:3054\:3068\:306b\:78e8\:304f\:305f\:3081\:306e\:8aad\:307f\:53e3\:3002\:623b\:308a\:5024\:306f\:8aad\:3080\:305f\:3081\:306e\:3082\:306e\:3067\:89e3\:6790\:306f\:4e0d\:8981)\:3002\:9577\:3044\:7bc0\:306f \"MaxCharacters\" (\:65e2\:5b9a 4000) \:3054\:3068\:306b\:30ce\:30fc\:30c9\:5883\:754c\:3067\:30da\:30fc\:30b8\:306b\:5206\:304b\:308c\:3001\"Page\" -> n \:3067\:7d9a\:304d\:3092\:8aad\:3080 (\:672b\:5c3e\:306b\:6b21\:30da\:30fc\:30b8\:306e\:5f0f\:3092\:793a\:3059)\:3002SlideGraphSectionText[graphId] \:306f\:7bc0\:306e\:4e00\:89a7 (Id / Label / \:672c\:6587\:30ce\:30fc\:30c9\:6570 / \:4e0b\:4f4d\:7bc0)\:3002\"Format\" -> \"JSON\" \:3067 JSON \:6587\:5b57\:5217 (<|\"Section\", \"Nodes\", \"Nested\", \"Edges\"|>\:3001\:30da\:30fc\:30b8\:7121\:3057)\:3002";
 SlideGraphRefine::usage = "SlideGraphRefine[] / SlideGraphRefine[nb, opts] / SlideGraphRefine[graphId, opts] \:306f\:7b2c\:4e00\:6b21 KG (SlideGraphSeed) \:3092\:7bc0\:3054\:3068\:306b\:78e8\:304f\:3002\:65e2\:5b9a (\"Mode\" -> \"Direct\") \:306f LLM \:3092\:7bc0\:3054\:3068\:306b\:76f4\:63a5\:547c\:3076\:9023\:9396: \:672a\:63a8\:6572 (\:7bc0\:4e00\:89a7\:3067\:300c\:6e08\:300d\:3067\:306a\:3044) \:306e\:7bc0\:3092\:4e00\:89a7\:306e\:9806\:306b\:3001\:672c\:6587\:30ce\:30fc\:30c9\:5408\:8a08 \"BatchNodes\" (8) \:4ee5\:4e0b\:306e\:96a3\:63a5\:7bc0\:3092\:307e\:3068\:3081\:3066 1 \:30ea\:30af\:30a8\:30b9\:30c8\:306b\:3057\:3001\:7bc0\:672c\:6587\:3092\:6307\:793a\:306b\:540c\:68b1\:3057\:3066\:5dee\:5206 JSON (Nodes (Label / Summary / Points / Talk) / Edges / Remove) \:3092\:53d7\:3051\:53d6\:308a SlideGraphIngest[.., \"Merge\"->True] \:3067\:53d6\:308a\:8fbc\:3080 (\:5f62\:5f0f\:9055\:53cd\:306f 1 \:56de\:518d\:554f\:5408\:305b\:3001Id \:306f\:672c\:6587\:306b\:51fa\:305f\:65e2\:5b58 Id \:3068 bg_* \:3060\:3051\:3092\:53d7\:7406\:3001\:7bc0\:3068 root \:306f Remove \:3057\:306a\:3044)\:3002Talk \:306f Points \:3068\:540c\:3058\:9806\:306e\:539f\:7a3f (\:30b9\:30e9\:30a4\:30c9\:306e\:7b87\:6761\:66f8\:304d\:3068\:539f\:7a3f\:3092\:5bfe\:5fdc\:3055\:305b\:308b)\:3002\:9014\:4e2d\:3067\:6b62\:3081\:3066\:3082\:300c\:6e08\:300d\:306e\:7bc0\:3092\:98db\:3070\:3057\:3066\:518d\:958b\:3067\:304d\:308b\:3002\"Mode\" -> \"Talk\" \:306f\:8981\:70b9\:306f\:3042\:308b\:304c Talk \:306e\:7121\:3044\:30ce\:30fc\:30c9\:306b\:539f\:7a3f\:3060\:3051\:3092\:8db3\:3059\:8efd\:3044\:56de (\:63a8\:6572\:6e08\:307f\:306e\:53e4\:3044 KG \:7528)\:3002\"Mode\" -> \"Agent\" \:306f\:5f93\:6765\:306e\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:59d4\:8b72\:3002\"Sections\" -> {\"s3\", ..} \:3067\:5bfe\:8c61\:3092\:7d5e\:308b\:3002graphId \:5f62\:5f0f\:3067\:306f \"Audience\" / \"Story\" \:3092\:6e21\:305b\:308b\:3002";
 
@@ -296,7 +356,7 @@ iEndMarkerNavQ[cell_Cell] := iNavBarCellQ[cell] && !FreeQ[cell, "SlideDeckEnd"];
 iEndMarkerCell[] := Cell["", "SlideShowNavigationBar",
   CellTags -> {"SlideShowHeader", "SlideDeckEnd"}];
 iEndMarkerLabelCell[] := Cell[TextData[StyleBox[
-  "\:2500\:2500 \:30b9\:30e9\:30a4\:30c9\:7d42\:7aef (\:4ee5\:964d\:306e\:30bb\:30eb\:306f\:30b9\:30e9\:30a4\:30c9\:30fb\:66f8\:304d\:51fa\:3057\:306b\:542b\:307e\:308c\:306a\:3044) \:2500\:2500",
+  "\[HorizontalLine]\[HorizontalLine] \:30b9\:30e9\:30a4\:30c9\:7d42\:7aef (\:4ee5\:964d\:306e\:30bb\:30eb\:306f\:30b9\:30e9\:30a4\:30c9\:30fb\:66f8\:304d\:51fa\:3057\:306b\:542b\:307e\:308c\:306a\:3044) \[HorizontalLine]\[HorizontalLine]",
   FontSize -> 10, FontColor -> GrayLevel[0.55]]], "Text"];
 
 (* documentation.wl \:4e92\:63db\:306e\:30e1\:30bf\:30bb\:30eb + \:30b9\:30e9\:30a4\:30c9\:7528\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306f\:8868\:793a\:304b\:3089\:9664\:5916\:3059\:308b *)
@@ -337,6 +397,38 @@ iFlattenVisibleCells[items_List] := Flatten[Replace[items,
     iFlattenVisibleCells[iGroupVisibleCells[g, {st}]], {1}]];
 
 iCellText[cell_Cell] := StringJoin @@ Cases[{First[cell]}, s_String :> s, {0, Infinity}];
+
+(* ---- v1.41: \:30e1\:30bf\:30bb\:30eb (Story / \:6307\:793a / \:6587\:732e / \:8f9e\:66f8) \:306e\:672c\:6587 ----
+   iCellText \:306f\:6587\:5b57\:5217\:306e\:8449\:3092\:5168\:90e8\:3064\:306a\:3050\:3060\:3051\:306a\:306e\:3067\:3001TextData \:306b\:57cb\:3081\:8fbc\:3093\:3060 Cell[BoxData[..], "Input"] \:3084
+   InlineMath \:306f ExpressionUUID \:3084\:30b9\:30bf\:30a4\:30eb\:540d\:306e\:6587\:5b57\:5217\:307e\:3067\:6df7\:3056\:308a\:3001\:5206\:6570\:30fb\:6839\:53f7\:306f\:6f70\:308c\:308b
+   (\:8a08\:7b97\:3068\:81ea\:713634 \:306e Story \:30bb\:30eb\:3067\:5b9f\:6e2c: "nInlineMathca3ac473-\[Ellipsis]")\:3002\:57cb\:3081\:8fbc\:307f\:30bb\:30eb\:306f Input/Code \:306a\:3089
+   InputForm \:306e\:5f0f\:306b\:3001\:305d\:308c\:4ee5\:5916\:306e\:7bb1\:306f iSWBoxText \:3067\:7dda\:5f62\:5316\:3059\:308b\:3002\:30b9\:30e9\:30a4\:30c9\:672c\:6587\:306e\:8aad\:307f\:51fa\:3057 (iCellText) \:306f\:5909\:3048\:306a\:3044 *)
+iSWMetaCellText[Cell[s_String, ___]] := s;
+iSWMetaCellText[Cell[TextData[s_String], ___]] := s;
+iSWMetaCellText[Cell[TextData[l_List], ___]] := StringJoin[iSWMetaPartText /@ l];
+iSWMetaCellText[Cell[BoxData[b_], st_String, ___]] := iSWMetaBoxText[b, st];
+iSWMetaCellText[c_Cell] := iCellText[c];
+iSWMetaCellText[_] := "";
+iSWMetaPartText[s_String] := s;
+iSWMetaPartText[l_List] := StringJoin[iSWMetaPartText /@ l];
+iSWMetaPartText[Cell[BoxData[b_], st_String, ___]] := iSWMetaBoxText[b, st];
+iSWMetaPartText[Cell[BoxData[b_], ___]] := iSWMetaBoxText[b, ""];
+iSWMetaPartText[Cell[TextData[t_], ___]] := iSWMetaPartText[t];
+iSWMetaPartText[Cell[s_String, ___]] := s;
+iSWMetaPartText[(StyleBox | ButtonBox | TagBox | InterpretationBox | TooltipBox | AdjustmentBox | PaneBox | FormBox)[a_, ___]] :=
+  iSWMetaPartText[a];
+iSWMetaPartText[b_ /; MatchQ[b, _RowBox | _FractionBox | _SqrtBox | _RadicalBox | _SubscriptBox | _SuperscriptBox |
+    _SubsuperscriptBox | _OverscriptBox | _UnderscriptBox | _UnderoverscriptBox | _GridBox | _TemplateBox]] := iSWBoxText[b];
+iSWMetaPartText[_] := "";
+iSWMetaBoxText[b_, st_String] := Module[{held},
+  If[MemberQ[{"Input", "Code", "Program", "InlineCode", "InlineInput"}, st],
+    held = Quiet @ Check[ToExpression[b, StandardForm, HoldComplete], $Failed];
+    If[MatchQ[held, HoldComplete[_]],
+      Return[held /. HoldComplete[e_] :> ToString[Unevaluated[e], InputForm]]]];
+  iSWBoxText[b]];
+
+(* v1.41: \:753b\:50cf\:30d5\:30a1\:30a4\:30eb\:3068\:3057\:3066\:76f4\:63a5\:5f15\:7528\:3067\:304d\:308b\:62e1\:5f35\:5b50 (HEIC/HEIF \:306f WL 15.0 \:3067 Import \:53ef\:3001iPhone \:306e\:5199\:771f) *)
+$iSWImageFileExtensions = {"png", "jpg", "jpeg", "gif", "webp", "bmp", "tif", "tiff", "heic", "heif"};
 
 iStringTrimLeft[s_String] := StringReplace[s, StartOfString ~~ WhitespaceCharacter .. -> "", 1];
 
@@ -446,6 +538,9 @@ SlideScenarioFromMarkdown[md_String] := Module[
       AppendTo[curContent, {"Cite", StringTrim[StringDrop[StringTrim[line], 5]]}],
       StringStartsQ[StringTrim[line], "crumb:"],
       AppendTo[curContent, {"Crumb", StringTrim[StringDrop[StringTrim[line], 6]]}],
+      (* v1.48: note: = \:521d\:3081\:3066\:51fa\:308b\:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e (\:679a\:306e\:4e0b\:306b\:5c0f\:3055\:304f) *)
+      StringStartsQ[StringTrim[line], "note:"],
+      AppendTo[curContent, {"Note", StringTrim[StringDrop[StringTrim[line], 5]]}],
       StringStartsQ[StringTrim[line], "|"],
       (* \:8868: | \:533a\:5207\:308a\:884c\:306e\:9023\:7d9a\:3002"| --- |" \:884c\:3067\:305d\:306e\:4e0a\:307e\:3067\:304c\:30d8\:30c3\:30c0 *)
       Module[{row = iSWParseTableRow[line]},
@@ -460,6 +555,10 @@ SlideScenarioFromMarkdown[md_String] := Module[
           True,
           AppendTo[curContent,
             {"Table", <|"Rows" -> {row}, "HeaderRows" -> 0|>}]]],
+      (* v1.42: 1 \:884c\:306b\:8907\:6570\:306e <<FIGn>> = \:56f3\:306e\:6a2a\:4e26\:3073 *)
+      StringMatchQ[StringTrim[line], "<<FIG" ~~ DigitCharacter .. ~~ ">>" ~~ (WhitespaceCharacter ... ~~ "<<FIG" ~~ DigitCharacter .. ~~ ">>") ..],
+      AppendTo[curContent, {"KeepRow",
+        ToExpression /@ StringCases[line, "<<FIG" ~~ d : DigitCharacter .. ~~ ">>" :> d]}],
       StringMatchQ[StringTrim[line], "<<FIG" ~~ DigitCharacter .. ~~ ">>"],
       AppendTo[curContent, {"Keep",
         ToExpression[First[StringCases[line, "<<FIG" ~~ d : DigitCharacter .. ~~ ">>" :> d]]]}],
@@ -508,6 +607,7 @@ SlideScenarioToMarkdown[scenario_Association] := Module[{out = {}, meta},
             "](" <> #["Path"] <> ")") & /@ item[[2]]],
           "Cite", "cite: " <> item[[2]],
           "Keep", "<<FIG" <> ToString[item[[2]]] <> ">>",
+          "KeepRow", StringRiffle[("<<FIG" <> ToString[#] <> ">>") & /@ item[[2]], " "],
           "Table", iSWTableToMd[item[[2]]],
           "Talk", StringRiffle[("talk: " <> #) & /@ StringSplit[item[[2]], "\n"], "\n"],
           "QA", StringRiffle[("qa: " <> #) & /@ StringSplit[item[[2]], "\n"], "\n"],
@@ -561,9 +661,9 @@ iContentCell[{"Images", specs_List}] :=
    "ShowInput" \:30bf\:30b0\:3067 IncludeInput \:8a2d\:5b9a\:306b\:3088\:3089\:305a\:66f8\:304d\:51fa\:3057\:306b\:6b8b\:308b *)
 iContentCell[{"Talk", text_String}] := Cell[iSWTalkSpeakText[text], "SlideTalk"];
 
-(* \:30d1\:30f3\:304f\:305a (v1.25): \:300c\:7b2ck\:90e8 \:2026 \:203a \:89aa\:300d\:3092\:984c\:76ee\:306e\:76f4\:4e0b\:306b\:5c0f\:3055\:304f\:51fa\:3057\:3001\:4eca\:306e\:8a71\:304c\:5168\:4f53\:306e\:3069\:3053\:304b\:3092\:793a\:3059\:3002KG \:751f\:6210\:304c crumb: \:884c\:3067\:51fa\:3059 *)
-iContentCell[{"Crumb", text_String}] := Cell[text, "SlideCrumb"];
-(* \:7b87\:6761\:66f8\:304d\:30fb\:5730\:306e\:6587\:306e $tex$ \:306f\:884c\:5185\:6570\:5f0f\:306b\:7d44\:3080 (\:5143 boxes \:8f9e\:66f8 \:2192 TeX \:8aad\:307f\:8fbc\:307f \:2192 \:6587\:5b57\:5217) *)
+(* \:30d1\:30f3\:304f\:305a (v1.25): \:300c\:7b2ck\:90e8 \[Ellipsis] \:203a \:89aa\:300d\:3092\:984c\:76ee\:306e\:76f4\:4e0b\:306b\:5c0f\:3055\:304f\:51fa\:3057\:3001\:4eca\:306e\:8a71\:304c\:5168\:4f53\:306e\:3069\:3053\:304b\:3092\:793a\:3059\:3002KG \:751f\:6210\:304c crumb: \:884c\:3067\:51fa\:3059 *)
+iContentCell[{"Crumb", text_String}] := Cell[iSWInlineTextData[text], "SlideCrumb"];
+(* \:7b87\:6761\:66f8\:304d\:30fb\:5730\:306e\:6587\:306e $tex$ \:306f\:884c\:5185\:6570\:5f0f\:306b\:7d44\:3080 (\:5143 boxes \:8f9e\:66f8 \[RightArrow] TeX \:8aad\:307f\:8fbc\:307f \[RightArrow] \:6587\:5b57\:5217) *)
 iContentCell[{style : "Item" | "Subitem" | "Subsubitem" | "ItemParagraph" | "SubitemParagraph" | "SubsubitemParagraph" | "Text", text_String}] :=
   Cell[iSWInlineTextData[text], style];
 
@@ -578,9 +678,24 @@ iContentCell[{"Table", spec_Association}] := Module[
     TaggingRules -> {"SWTableRows" -> rows, "SWTableHeaderRows" -> hdr}]];
 
 (* \:51fa\:5178\:30bb\:30eb: \:5c0f\:3055\:3044\:30d5\:30a9\:30f3\:30c8\:3067\:51fa\:5178(URL / (\:8457\:8005, \:5e74))\:3092\:660e\:8a18\:3059\:308b *)
-iContentCell[{"Cite", src_String}] := Cell[TextData[StyleBox[
-  If[StringStartsQ[src, "\:51fa\:5178" | "Source" | "\:51fa\:6240"], src, "\:51fa\:5178: " <> src],
-  FontSize -> 9, FontColor -> GrayLevel[0.45]]], "Text", CellTags -> "Citation"];
+iContentCell[{"Cite", src_String}] := Module[{t = If[StringStartsQ[src, "\:51fa\:5178" | "Source" | "\:51fa\:6240"], src, "\:51fa\:5178: " <> src], td,
+    sty = {FontSize -> 9, FontColor -> GrayLevel[0.45]}},
+  td = iSWInlineTextData[t];
+  (* v1.43: \:51fa\:5178\:306e $tex$ \:3082\:7d44\:3080 (\:6587\:5b57\:3082\:5f0f\:3082\:5c0f\:3055\:304f\:7070\:8272\:306b) *)
+  Cell[TextData[If[StringQ[td], StyleBox[td, Sequence @@ sty],
+      Map[Function[p, Which[StringQ[p], StyleBox[p, Sequence @@ sty], MatchQ[p, Cell[BoxData[_], ___]],
+        ReplacePart[p, 1 -> BoxData[StyleBox[p[[1, 1]], Sequence @@ sty]]], True, p]], Flatten[{First[td]}]]]],
+    "Text", CellTags -> "Citation"]];
+
+(* v1.48: \:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e\:306e\:884c (note:)\:3002\:51fa\:5178\:306e\:884c\:3068\:540c\:3058\:304f\:5c0f\:3055\:304f\:7070\:8272\:3067\:3001CellTags "SlideTermNote" \:3067\:898b\:5206\:3051\:308b *)
+iContentCell[{"Note", src_String}] := Module[{td = iSWInlineTextData[src], sty = {FontSize -> 10, FontColor -> GrayLevel[0.35]}},
+  Cell[TextData[Join[{StyleBox["\:7528\:8a9e ", FontWeight -> Bold, Sequence @@ sty]},
+      If[StringQ[td], {StyleBox[td, Sequence @@ sty]},
+        Map[Function[p, Which[StringQ[p], StyleBox[p, Sequence @@ sty], MatchQ[p, Cell[BoxData[_], ___]],
+          ReplacePart[p, 1 -> BoxData[StyleBox[p[[1, 1]], Sequence @@ sty]]], True, p]], Flatten[{First[td]}]]]]],
+    "Text", CellTags -> "SlideTermNote"]];
+iSWTermNoteCellQ[cellExpr_Cell] := MatchQ[cellExpr, Cell[___, CellTags -> t_ /; ! FreeQ[{t}, "SlideTermNote"], ___]];
+iSWTermNoteCellQ[_] := False;
 
 (* ---- \:8868 (2026-08-26): md \:306e | \:69cb\:6587 <-> \:30c6\:30fc\:30de\:914d\:8272 Grid ---- *)
 iSWParseTableRow[line_String] := Module[{t = StringTrim[line], inner, cells},
@@ -605,6 +720,7 @@ SlideTable[rows_List, OptionsPattern[]] := Module[
   {hdr = OptionValue["HeaderRows"], fs = OptionValue[FontSize], ncol, items},
   ncol = Max[Length /@ rows, 1];
   items = PadRight[#, ncol, ""] & /@ rows;
+  items = Map[iSWTableCellExpr, items, {2}];
   Style[Grid[items,
     Alignment -> {Left, Center},
     Frame -> All, FrameStyle -> SlideThemeColor["PanelBorder"],
@@ -684,8 +800,7 @@ SlidePDFFigure[src_String, page_Integer : 1, OptionsPattern[]] := Module[
     Return[Failure["NoFile",
       <|"MessageTemplate" -> "cannot resolve `1` to a local file",
         "MessageParameters" -> {src}|>]]];
-  If[MemberQ[{"png", "jpg", "jpeg", "gif", "webp", "bmp", "tif", "tiff"},
-      ToLowerCase[FileExtension[path]]],
+  If[MemberQ[$iSWImageFileExtensions, ToLowerCase[FileExtension[path]]],
     (* \:753b\:50cf\:30d5\:30a1\:30a4\:30eb\:306f\:305d\:306e\:307e\:307e\:300c\:30da\:30fc\:30b8\:300d\:3068\:3057\:3066\:6271\:3046 (Crop/Trim \:306f\:5171\:901a) *)
     img = Quiet[Check[Import[path], $Failed]],
     (* 15.0 \:5b9f\:6e2c: {"PDF","PageImages",n} \:306f\:5931\:6557\:3057 {"PageImages",n} \:304c\:6b63 *)
@@ -805,8 +920,7 @@ SlidePDFImages[src_String, OptionsPattern[]] := Module[{path, imgs, im, page = O
     Return[Failure["NoFile",
       <|"MessageTemplate" -> "cannot resolve `1` to a local file",
         "MessageParameters" -> {src}|>]]];
-  If[MemberQ[{"png", "jpg", "jpeg", "gif", "webp", "bmp", "tif", "tiff"},
-      ToLowerCase[FileExtension[path]]],
+  If[MemberQ[$iSWImageFileExtensions, ToLowerCase[FileExtension[path]]],
     im = Quiet[Check[Import[path], $Failed]];
     Return[If[ImageQ[im], {im}, {}]]];
   imgs = If[IntegerQ[page] && page >= 1,
@@ -836,7 +950,7 @@ SlideDeckFigure[src_String, n_Integer : 1] := Module[{path, imgs},
    \:5c55\:958b\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306e\:30b3\:30fc\:30c9\:306f NBAccess \:306e\:95a2\:6240\:3092\:901a\:308b LLM \:751f\:6210\:30b3\:30fc\:30c9\:3067\:3042\:308a\:3001Import /
    Get \:306f $NBDenyHeads \:306e\:6052\:4e45\:7981\:6b62 head (ForbiddenHead \:306f ClaudeRuntime \:306e fatal
    class \:306a\:306e\:3067\:30bf\:30fc\:30f3\:3054\:3068\:5373\:6b7b\:3059\:308b)\:3002\:7981\:6b62\:3059\:308b\:3060\:3051\:3067\:306f\:30e2\:30c7\:30eb\:306f\:5fc5\:305a Import \:3092\:9078\:3076\:306e\:3067\:3001
-   \:300c\:4ee3\:308f\:308a\:306b\:547c\:3079\:308b\:53d7\:3051\:76bf\:300d\:3092\:7528\:610f\:3059\:308b \:2014 PDF \:306b\:5bfe\:3059\:308b SlidePDFImages / SlidePDFFigure
+   \:300c\:4ee3\:308f\:308a\:306b\:547c\:3079\:308b\:53d7\:3051\:76bf\:300d\:3092\:7528\:610f\:3059\:308b \[LongDash] PDF \:306b\:5bfe\:3059\:308b SlidePDFImages / SlidePDFFigure
    \:3068\:540c\:3058\:7acb\:5834\:306e .nb \:7248\:3002SlideDeckSlides \:7cfb\:306f\:30b9\:30e9\:30a4\:30c9\:30c7\:30c3\:30ad\:5c02\:7528 (SlideShowNavigationBar
    \:304c\:8981\:308b) \:3067\:3001\:8ad6\:6587\:3092\:5909\:63db\:3057\:305f\:3060\:3051\:306e\:7d20\:6750 .nb \:306b\:306f\:4f7f\:3048\:305a\:3001\:3053\:3053\:304c\:7a7a\:767d\:3060\:3063\:305f\:3002
 
@@ -859,16 +973,25 @@ iSWHeadingLevel[st_] := With[{p = FirstPosition[$iSWSourceHeadingStyles, st, {0}
 
 (* SourceVault \:306b\:53d6\:308a\:8fbc\:307f\:6e08\:307f\:306e\:8ad6\:6587 (sv:// / src- / arxiv:) \:306b\:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c
    \:767b\:9332\:3055\:308c\:3066\:3044\:308c\:3070\:305d\:306e\:30d1\:30b9 (SourceVault_papernb.wl \:306e\:767b\:9332\:7c3f)\:3002\:7121\:3051\:308c\:3070 $Failed *)
+(* v1.47: \:8a08\:7b97\:30ce\:30fc\:30c8 (sv://computenb/<Id> / cnb-<Id>) \:306f SourceVault \:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:767b\:9332\:7c3f\:3067\:5f15\:304f *)
+iSWComputeRefQ[s_String] := StringStartsQ[s, "sv://computenb/"] || StringMatchQ[s, "cnb-" ~~ (LetterCharacter | DigitCharacter) ..];
+iSWComputeRefQ[_] := False;
+iSWRegisteredSourceNotebook[src_String] /; iSWComputeRefQ[src] := Module[{p},
+  If[Length[DownValues[SourceVault`SourceVaultComputeNotebook]] === 0, iSWComputeEnsure[]];
+  If[Length[DownValues[SourceVault`SourceVaultComputeNotebook]] === 0, Return[$Failed]];
+  p = Quiet[Check[SourceVault`SourceVaultComputeNotebook[src], $Failed]];
+  If[StringQ[p] && FileExistsQ[p], p, $Failed]];
 iSWRegisteredSourceNotebook[src_String] := Module[{p},
   If[Length[DownValues[SourceVault`SourceVaultPaperNotebook]] === 0, Return[$Failed]];
   p = Quiet[Check[SourceVault`SourceVaultPaperNotebook[src], $Failed]];
   If[StringQ[p] && FileExistsQ[p], p, $Failed]];
 
 (* \:7d20\:6750 .nb \:306e\:89e3\:6c7a: \:76f4\:63a5 .nb \:306a\:3089\:305d\:308c\:3001\:53d6\:308a\:8fbc\:307f\:6e08\:307f\:8ad6\:6587\:306a\:3089\:767b\:9332\:3055\:308c\:305f\:548c\:8a33\:30ce\:30fc\:30c8\:3092\:81ea\:52d5\:3067\:4f7f\:3046 *)
-(* KG \:306e Sources (Key \:2192 \:548c\:8a33\:30ce\:30fc\:30c8 / \:5143\:306e\:6587\:732e locator): \:751f\:6210\:6642\:306b Block \:3067\:675f\:7e1b\:3057\:3001\:30c7\:30c3\:30ad\:304c\:958b\:3044\:3066\:3044\:306a\:3044 (headless\:3001SlideGraphBuildDeck) \:3068\:304d\:3082\:8cc7\:7523\:306e key \:3092\:89e3\:3051\:308b *)
+(* KG \:306e Sources (Key \[RightArrow] \:548c\:8a33\:30ce\:30fc\:30c8 / \:5143\:306e\:6587\:732e locator): \:751f\:6210\:6642\:306b Block \:3067\:675f\:7e1b\:3057\:3001\:30c7\:30c3\:30ad\:304c\:958b\:3044\:3066\:3044\:306a\:3044 (headless\:3001SlideGraphBuildDeck) \:3068\:304d\:3082\:8cc7\:7523\:306e key \:3092\:89e3\:3051\:308b *)
 $iSWKGSources = {};
 iSWKGSourceOf[key_String] := SelectFirst[Replace[$iSWKGSources, Except[_List] -> {}],
   AssociationQ[#] && Lookup[#, "Key", None] === key &, None];
+iSWSourceNBPath[src_String] /; iSWComputeRefQ[src] := iSWRegisteredSourceNotebook[src];
 iSWSourceNBPath[src_String] := Module[{p = iSWResolveRefPath[src], reg, ks},
   If[StringQ[p] && FileExistsQ[p] && ToLowerCase[FileExtension[p]] === "nb", Return[p]];
   reg = iSWRegisteredSourceNotebook[src];
@@ -881,7 +1004,10 @@ iSWSourceNBPath[src_String] := Module[{p = iSWResolveRefPath[src], reg, ks},
     If[Head[nb] === NotebookObject,
       With[{hit = SelectFirst[Quiet[Check[iSWReferencesList[nb], {}]], #["Key"] === src &, None]},
         If[hit =!= None && StringQ[Lookup[hit, "Notebook", None]] && FileExistsQ[hit["Notebook"]],
-          Return[hit["Notebook"]]]]]];
+          Return[hit["Notebook"]]];
+        (* v1.41: locator \:304c .nb \:306e\:30d1\:30b9\:306a\:3089\:305d\:308c (\:8a08\:7b97\:30ce\:30fc\:30c8\:306a\:3069\:767b\:9332\:7c3f\:306b\:7121\:3044\:7d20\:6750) *)
+        If[hit =!= None && StringQ[Lookup[hit, "Locator", None]] && FileExistsQ[hit["Locator"]] &&
+            ToLowerCase[FileExtension[hit["Locator"]]] === "nb", Return[hit["Locator"]]]]]];
   $Failed];
 
 (* \:6587\:732e 1 \:4ef6\:304c\:300c\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3068\:3057\:3066\:8aad\:3081\:308b\:300d\:304b: .nb \:306e locator \:304b\:3001\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:767b\:9332\:6e08\:307f *)
@@ -929,8 +1055,8 @@ iSWBoxText[_] := "";
 
 (* ---- \:5f15\:7528\:756a\:53f7 (v1.29) ----
    \:548c\:8a33\:30ce\:30fc\:30c8\:306e\:5f15\:7528\:756a\:53f7\:306f\:571f\:53f0\:306e\:7a7a\:306a\:4e0a\:4ed8\:304d (SuperscriptBox["", "38"] / RowBox[{"23", "-", "25"}]) \:3067\:3001\:5f0f\:3068\:3057\:3066\:8aad\:3080\:3068
-   Null^38 \:2192 $\text{Null}^{38}$ \:306b\:306a\:3063\:3066\:3044\:305f (\:8a08\:7b97\:3068\:81ea\:713633: \:672c\:6587 16 \:6bb5\:843d\:3001\:300c,\:300d\:533a\:5207\:308a\:306f\:5f0f\:306b\:306a\:3089\:305a ^23,26)\:3002
-   \:5f0f\:306b\:305b\:305a [38] \:306e\:5f62\:306e\:6587\:5b57\:306b\:3059\:308b\:3002\:571f\:53f0\:304c\:7a7a\:767d\:3067\:4e0a\:4ed8\:304d\:304c \:2218 \:306e\:3082\:306e\:306f\:5ea6 (\:00b0) *)
+   Null^38 \[RightArrow] $\text{Null}^{38}$ \:306b\:306a\:3063\:3066\:3044\:305f (\:8a08\:7b97\:3068\:81ea\:713633: \:672c\:6587 16 \:6bb5\:843d\:3001\:300c,\:300d\:533a\:5207\:308a\:306f\:5f0f\:306b\:306a\:3089\:305a ^23,26)\:3002
+   \:5f0f\:306b\:305b\:305a [38] \:306e\:5f62\:306e\:6587\:5b57\:306b\:3059\:308b\:3002\:571f\:53f0\:304c\:7a7a\:767d\:3067\:4e0a\:4ed8\:304d\:304c \[SmallCircle] \:306e\:3082\:306e\:306f\:5ea6 (\[Degree]) *)
 iSWCitationText[s_String] := Module[{t = StringDelete[s, WhitespaceCharacter]},
   t = StringReplace[t, "\[Dash]" | "\[LongDash]" | "\:2012" | "\[Minus]" -> "-"];
   Which[
@@ -945,7 +1071,7 @@ iSWBoxText[SuperscriptBox[a_String, b_, ___]] /; StringTrim[a] === "" && StringQ
 
 (* ---- \:884c\:5185\:6570\:5f0f (v1.25) ----
    \:548c\:8a33\:30ce\:30fc\:30c8\:306e\:672c\:6587\:30bb\:30eb\:306b\:306f\:6570\:5f0f\:304c boxes \:3067\:7d44\:307e\:308c\:3066\:3044\:308b\:304c\:3001KG \:306e\:672c\:6587 (Text) \:306f\:7dda\:5f62\:6587\:5b57\:5217 (q_i) \:3060\:3063\:305f\:3002
-   seed \:3067\:884c\:5185\:6570\:5f0f\:3092 $tex$ (boxes \:2192 TeX) \:306b\:3057\:3001tex \:2192 boxes \:306e\:8f9e\:66f8\:3092\:30ce\:30fc\:30c9\:306b\:6b8b\:3059\:3002\:30b9\:30e9\:30a4\:30c9\:306e\:7b87\:6761\:66f8\:304d\:306f
+   seed \:3067\:884c\:5185\:6570\:5f0f\:3092 $tex$ (boxes \[RightArrow] TeX) \:306b\:3057\:3001tex \[RightArrow] boxes \:306e\:8f9e\:66f8\:3092\:30ce\:30fc\:30c9\:306b\:6b8b\:3059\:3002\:30b9\:30e9\:30a4\:30c9\:306e\:7b87\:6761\:66f8\:304d\:306f
    $tex$ \:3092\:8f9e\:66f8\:3067\:5143\:306e boxes \:306b\:623b\:3057 (\:5b8c\:5168\:4e00\:81f4)\:3001\:7121\:3051\:308c\:3070 TeX \:8aad\:307f\:8fbc\:307f\:3001\:305d\:308c\:3082\:99c4\:76ee\:306a\:3089\:6587\:5b57\:5217\:306e\:307e\:307e\:3002 *)
 $iSWInlineFormulaDict = <||>;
 iSWBoxTeX[b_] := Module[{e, tex},
@@ -984,10 +1110,10 @@ iSWKGCiteRepair[gid_String, kg_Association] := Module[{nodes = Map[iSWCiteRepair
   If[StringQ[Quiet @ SourceVault`SourceVaultKGSave[fixed]], fixed, kg]];
 iSWKGCiteRepair[_, kg_] := kg;
 
-(* $...$ \:3092\:542b\:3080\:6587\:5b57\:5217 \:2192 TextData (\:884c\:5185\:6570\:5f0f\:306f\:5143 boxes / TeX \:8aad\:307f\:8fbc\:307f / \:7d20\:306e\:6587\:5b57\:5217) *)
+(* $...$ \:3092\:542b\:3080\:6587\:5b57\:5217 \[RightArrow] TextData (\:884c\:5185\:6570\:5f0f\:306f\:5143 boxes / TeX \:8aad\:307f\:8fbc\:307f / \:7d20\:306e\:6587\:5b57\:5217) *)
 $iSWFormulaBoxes = <||>;
 (* TeX \:8aad\:307f\:8fbc\:307f\:304c\:6271\:3048\:308b\:30de\:30af\:30ed\:3060\:3051\:901a\:3059 (\:672a\:77e5\:306e\:30de\:30af\:30ed\:306f\:9ed9\:3063\:3066\:58ca\:308c\:305f\:6587\:5b57\:5217\:306b\:306a\:308b: 
-osuchmacro{x} \:2192 osuchmacrox) *)
+osuchmacro{x} \[RightArrow] osuchmacrox) *)
 $iSWTeXMacros = {"alpha", "beta", "gamma", "delta", "epsilon", "varepsilon", "zeta", "eta", "theta", "vartheta", "iota", "kappa",
   "lambda", "mu", "nu", "xi", "pi", "rho", "sigma", "tau", "upsilon", "phi", "varphi", "chi", "psi", "omega",
   "Gamma", "Delta", "Theta", "Lambda", "Xi", "Pi", "Sigma", "Upsilon", "Phi", "Psi", "Omega",
@@ -1015,12 +1141,41 @@ iSWInlineTextData[text_String] := Module[{parts, out},
   parts = StringSplit[text, "$" ~~ Shortest[tex : Except["$"] ..] ~~ "$" :> {"tex", tex}, All];
   out = Flatten[Map[Function[p, If[ListQ[p],
       With[{bx = iSWInlineFormulaBoxes[StringTrim[p[[2]]]]},
-        If[bx === None, StringTrim[p[[2]]], Cell[BoxData[If[MatchQ[bx, _FormBox], bx, FormBox[bx, TraditionalForm]]]]]],
+        If[bx === None, StringTrim[p[[2]]], Cell[BoxData[If[MatchQ[bx, _FormBox], bx, FormBox[bx, TraditionalForm]]],
+          TaggingRules -> {"SWTeX" -> StringTrim[p[[2]]]}]]],
       iSWInlineBold[p]]], Select[parts, # =!= "" &]]];
   If[AllTrue[out, StringQ], StringJoin[out], TextData[out]]];
 
+(* ---- v1.43: \:30b9\:30e9\:30a4\:30c9\:306e\:30bb\:30eb \[RightArrow] \:6587 (\:8aad\:307f\:623b\:3057\:7528) ----
+   iCellText \:306f\:6587\:5b57\:5217\:306e\:8449\:3092\:5168\:90e8\:3064\:306a\:3050\:306e\:3067\:3001\:7d44\:3093\:3060\:884c\:5185\:6570\:5f0f\:304c\:300cYlmreal\:300d\:306e\:3088\:3046\:306a\:6587\:5b57\:306e\:9023\:7d50\:306b\:306a\:308a\:3001
+   \:66f8\:5f0f\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:6587\:5b57\:5217 (FontFamily \:306a\:3069) \:307e\:3067\:6df7\:3056\:308b\:3002\:884c\:5185\:6570\:5f0f\:30bb\:30eb\:306f $tex$ \:306b\:623b\:3059: \:7d44\:3093\:3060\:3068\:304d\:306e TeX
+   (TaggingRules "SWTeX") \:304c\:3042\:308c\:3070\:305d\:308c\:3092\:3001\:7121\:3051\:308c\:3070 (\:624b\:3067\:5165\:308c\:305f\:5f0f\:30fb\:53e4\:3044\:30c7\:30c3\:30ad) TeXForm \:306b\:5909\:63db\:3001\:305d\:308c\:3082\:99c4\:76ee\:306a\:3089\:7dda\:5f62\:5316 *)
+iSWSlideCellText[Cell[s_String, ___]] := s;
+iSWSlideCellText[Cell[TextData[t_], ___]] := StringJoin[iSWSlidePartText /@ Flatten[{t}]];
+iSWSlideCellText[c_Cell] := iCellText[c];
+iSWSlideCellText[_] := "";
+iSWSlidePartText[s_String] := s;
+iSWSlidePartText[l_List] := StringJoin[iSWSlidePartText /@ l];
+iSWSlidePartText[c : Cell[BoxData[b_], ___]] := Module[{tr = FirstCase[List @@ Rest[c], (TaggingRules -> r_) :> r, None], tex},
+  tex = If[ListQ[tr] || AssociationQ[tr], Lookup[tr, "SWTeX", None], None];
+  If[! StringQ[tex], tex = iSWBoxTeX[b]];
+  If[StringQ[tex] && StringTrim[tex] =!= "" && ! StringContainsQ[tex, "$"], "$" <> StringTrim[tex] <> "$", iSWBoxText[b]]];
+iSWSlidePartText[Cell[TextData[t_], ___]] := iSWSlidePartText[Flatten[{t}]];
+iSWSlidePartText[Cell[s_String, ___]] := s;
+iSWSlidePartText[(StyleBox | ButtonBox | TagBox | AdjustmentBox | InterpretationBox)[x_, ___]] := iSWSlidePartText[x];
+iSWSlidePartText[b_] := iSWBoxText[b];
+
+(* \:8868\:306e\:30bb\:30eb: $tex$ \:3092\:884c\:5185\:6570\:5f0f\:306b (Grid \:306e\:4e2d\:306a\:306e\:3067 Row + RawBoxes)\:3002\:8868\:306e\:5143\:30c7\:30fc\:30bf (SWTableRows) \:306f\:6587\:5b57\:5217\:306e\:307e\:307e *)
+iSWTableCellExpr[s_String] := With[{td = iSWInlineTextData[s]},
+  If[StringQ[td], td, Row[iSWInlinePartExpr /@ Flatten[{First[td]}]]]];
+iSWTableCellExpr[x_] := x;
+iSWInlinePartExpr[s_String] := s;
+iSWInlinePartExpr[Cell[BoxData[b_], ___]] := RawBoxes[b];
+iSWInlinePartExpr[StyleBox[b_String, o___]] := Style[b, o];
+iSWInlinePartExpr[x_] := x;
+
 (* ---- \:8aad\:307f\:4e0a\:3052\:539f\:7a3f\:306e\:6570\:5f0f: \:30b9\:30e9\:30a4\:30c9\:306b\:5f0f\:304c\:51fa\:3066\:3044\:308b\:306e\:3060\:304b\:3089\:3001\:8907\:96d1\:306a\:5f0f\:306f\:8aad\:307f\:4e0a\:3052\:305a
-   \:300c\:3053\:306e\:5f0f\:300d\:3068\:6307\:3059\:3002\:8a18\:53f7 1 \:3064\:3084\:77ed\:3044\:548c\:5dee\:3060\:3051\:58f0\:306b\:51fa\:3059 ($u_e$ \:2192 u e)\:3002
+   \:300c\:3053\:306e\:5f0f\:300d\:3068\:6307\:3059\:3002\:8a18\:53f7 1 \:3064\:3084\:77ed\:3044\:548c\:5dee\:3060\:3051\:58f0\:306b\:51fa\:3059 ($u_e$ \[RightArrow] u e)\:3002
    TeX \:306e\:307e\:307e\:8aad\:3080\:3068 "frac" \:3068\:767a\:58f0\:3055\:308c\:3066\:4f55\:3092\:8a00\:3063\:3066\:3044\:308b\:304b\:5206\:304b\:3089\:306a\:3044 ---- *)
 $iSWSpeakGreek = <|"alpha" -> "\:30a2\:30eb\:30d5\:30a1", "beta" -> "\:30d9\:30fc\:30bf", "gamma" -> "\:30ac\:30f3\:30de", "delta" -> "\:30c7\:30eb\:30bf",
   "epsilon" -> "\:30a4\:30d7\:30b7\:30ed\:30f3", "varepsilon" -> "\:30a4\:30d7\:30b7\:30ed\:30f3", "zeta" -> "\:30bc\:30fc\:30bf", "eta" -> "\:30a4\:30fc\:30bf",
@@ -1045,10 +1200,10 @@ iSWTeXSpeak[texIn_String, ja_] := Module[{s = iSWTeXClean[texIn]},
     " " <> If[TrueQ[ja], Lookup[$iSWSpeakGreek, c, c], c] <> " "];
   s = StringReplace[s, {"_" -> " ", "{" -> " ", "}" -> " ", "\\" -> " "}];
   s = StringReplace[s, {"+" -> If[TrueQ[ja], " \:30d7\:30e9\:30b9 ", " plus "], "-" -> If[TrueQ[ja], " \:30de\:30a4\:30ca\:30b9 ", " minus "],
-    "\:00d7" -> If[TrueQ[ja], " \:304b\:3051\:308b ", " times "], "*" -> If[TrueQ[ja], " \:304b\:3051\:308b ", " times "]}];
+    "\[Times]" -> If[TrueQ[ja], " \:304b\:3051\:308b ", " times "], "*" -> If[TrueQ[ja], " \:304b\:3051\:308b ", " times "]}];
   StringTrim[StringReplace[s, Whitespace -> " "]]];
 iSWJaTextQ[t_String] := AnyTrue[ToCharacterCode[t], # >= 12288 &];
-(* \:539f\:7a3f\:3092\:58f0\:306b\:51fa\:305b\:308b\:5f62\:3078: $\:2026$ \:306e\:6570\:5f0f\:3092\:8a00\:8449\:306b\:3057\:3001**\:5f37\:8abf** \:306e\:5370\:3092\:5916\:3059\:3002
+(* \:539f\:7a3f\:3092\:58f0\:306b\:51fa\:305b\:308b\:5f62\:3078: $\[Ellipsis]$ \:306e\:6570\:5f0f\:3092\:8a00\:8449\:306b\:3057\:3001**\:5f37\:8abf** \:306e\:5370\:3092\:5916\:3059\:3002
    \:3059\:3067\:306b\:5e73\:6587\:306a\:3089\:4f55\:3082\:3057\:306a\:3044 (\:5e8f\:3067\:306a\:3044\:3053\:3068\:306f\:4f55\:5ea6\:9069\:7528\:3057\:3066\:3082\:540c\:3058) *)
 iSWTalkSpeakText[textIn_String] := Module[{s = textIn, ja},
   (* \:5f15\:7528\:756a\:53f7 [38] / [23-25] \:306f\:8aad\:307e\:306a\:3044 (\:82f1\:6570\:5b57\:306e\:76f4\:5f8c\:306e a[1] \:306e\:3088\:3046\:306a\:6dfb\:5b57\:306f\:6b8b\:3059) *)
@@ -1057,7 +1212,7 @@ iSWTalkSpeakText[textIn_String] := Module[{s = textIn, ja},
   If[! StringContainsQ[s, "$"] && ! StringContainsQ[s, "**"], Return[s]];
   ja = iSWJaTextQ[s];
   s = StringReplace[s, "**" -> ""];
-  (* $\:2026$ \:306e\:4e2d\:306b\:65e5\:672c\:8a9e\:304c\:3042\:308c\:3070\:6570\:5f0f\:3067\:306f\:7121\:3044 (\:300c$100 \:3068 $200\:300d\:306e\:3088\:3046\:306a\:8ab2\:91d1\:8868\:8a18) \:306e\:3067\:89e6\:3089\:306a\:3044 *)
+  (* $\[Ellipsis]$ \:306e\:4e2d\:306b\:65e5\:672c\:8a9e\:304c\:3042\:308c\:3070\:6570\:5f0f\:3067\:306f\:7121\:3044 (\:300c$100 \:3068 $200\:300d\:306e\:3088\:3046\:306a\:8ab2\:91d1\:8868\:8a18) \:306e\:3067\:89e6\:3089\:306a\:3044 *)
   s = StringReplace[s, whole : ("$" ~~ b : Shortest[Except["$"] ..] ~~ "$") :>
     If[iSWJaTextQ[b], whole, iSWTeXSpeak[b, ja]]];
   s = StringReplace[s, RegularExpression[" {2,}"] -> " "];
@@ -1094,13 +1249,14 @@ $iSWSourceFormulaStyles = {"DisplayFormula", "DisplayFormulaNumbered",
 $iSWSourceNBCache = None;
 
 iSWSourceNBParts[path_String] :=
-  Module[{stamp, nb, flat, items = {}, figs = {}, eqs = {}, k = 0, q = 0},
+  Module[{stamp, nb, flat, items = {}, figs = {}, eqs = {}, k = 0, q = 0, cmeta},
     stamp = {path, Quiet@Check[FileDate[path, "Modification"], None]};
     If[ListQ[$iSWSourceNBCache] && $iSWSourceNBCache[[1]] === stamp,
       Return[$iSWSourceNBCache[[2]]]];
     nb = iGetNotebook[path];
     If[Head[nb] =!= Notebook, Return[$Failed]];
     flat = iFlattenCells[First[nb]];
+    cmeta = iSWComputeMeta[nb];
     Do[
       Module[{c = flat[[i]], st, gb, t, mine = {}, eq = {}, tex, fdict},
         st = iSWSourceCellStyle[c];
@@ -1121,7 +1277,7 @@ iSWSourceNBParts[path_String] :=
         If[t =!= "" || mine =!= {} || eq =!= {},
           AppendTo[items, <|"Cell" -> i, "Style" -> st, "Text" -> t,
             "Figures" -> mine, "Formulas" -> eq,
-            "InlineFormulas" -> KeyValueMap[<|"Tex" -> #1, "Boxes" -> #2|> &, fdict]|>]]],
+            "InlineFormulas" -> KeyValueMap[<|"Tex" -> #1, "Boxes" -> #2|> &, fdict]|> ~Join~ iSWComputeItemInfo[flat, i, c, mine, cmeta]]]],
       {i, Length[flat]}];
     $iSWSourceNBCache = {stamp,
       <|"Path" -> path, "Items" -> items, "Figures" -> figs, "Formulas" -> eqs|>};
@@ -1297,6 +1453,35 @@ $iSlideKeepCells = {};
 iContentCell[{"Keep", n_Integer}] := If[1 <= n <= Length[$iSlideKeepCells],
   $iSlideKeepCells[[n]],
   Cell["<<FIG" <> ToString[n] <> ">>", "Text"]];
+(* v1.42: \:56f3\:306e\:6a2a\:4e26\:3073\:3002$iSlideKeepCells \:306e\:56f3\:30bb\:30eb\:3092\:9ad8\:3055\:3092\:305d\:308d\:3048\:3066 1 \:3064\:306e\:30bb\:30eb\:306b\:4e26\:3079\:308b (\:672c\:6587\:5e45 0.9*820pt\:3001\:9ad8\:3055\:306f 340pt \:307e\:3067)\:3002
+   \:56f3\:30bb\:30eb\:306e\:4e2d\:8eab\:304c\:753b\:50cf\:30fbGraphics \:306a\:3089\:305d\:306e\:5927\:304d\:3055\:3092\:4ed8\:3051\:76f4\:3057\:3001\:305d\:308c\:4ee5\:5916\:306f\:7bb1\:306e\:307e\:307e\:4e26\:3079\:308b *)
+iContentCell[{"KeepRow", ns_List}] := Module[{cells},
+  cells = Select[Map[If[IntegerQ[#] && 1 <= # <= Length[$iSlideKeepCells], $iSlideKeepCells[[#]], None] &, ns], Head[#] === Cell &];
+  Which[
+    cells === {}, Cell[StringRiffle[("<<FIG" <> ToString[#] <> ">>") & /@ ns, " "], "Text"],
+    Length[cells] === 1, First[cells],
+    True, iSWFigureRowCell[cells]]];
+
+iSWKeepCellExpr[Cell[BoxData[b_], ___]] := Module[{h = Quiet @ Check[ToExpression[b, StandardForm, HoldComplete], $Failed]},
+  If[MatchQ[h, HoldComplete[_Image | _Graphics | _Graphics3D]],
+    With[{e = ReleaseHold[h]}, If[ImageQ[e] || MatchQ[e, _Graphics | _Graphics3D], e, None]], None]];
+iSWKeepCellExpr[_] := None;
+iSWFigureAspect[e_] := Which[
+  ImageQ[e], With[{d = ImageDimensions[e]}, N[d[[1]]/Max[d[[2]], 1]]],
+  MatchQ[e, _Graphics | _Graphics3D], With[{a = Quiet[AspectRatio /. Options[e, AspectRatio]]}, If[NumericQ[a] && a > 0, N[1/a], 1.4]],
+  True, 1.4];
+iSWFigureAtHeight[e_, cell_, h_] := Which[
+  ImageQ[e], ToBoxes[Image[e, ImageSize -> {Automatic, Round[h]}]],
+  MatchQ[e, _Graphics | _Graphics3D], ToBoxes[Show[e, ImageSize -> {Automatic, Round[h]}]],
+  MatchQ[cell, Cell[BoxData[_], ___]], cell[[1, 1]],
+  True, ToBoxes[Style["(\:56f3)", GrayLevel[0.5]]]];
+iSWFigureRowCell[cells_List] := Module[{exprs, h, gap = 16., width = 0.9 * 820.},
+  exprs = iSWKeepCellExpr /@ cells;
+  h = Min[340., (width - gap (Length[cells] - 1)) / Total[iSWFigureAspect /@ exprs]];
+  Cell[BoxData[GridBox[{MapThread[iSWFigureAtHeight[#1, #2, h] &, {exprs, cells}]},
+      GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, GridBoxSpacings -> {"Columns" -> {{1.5}}}]],
+    "Input", TextAlignment -> Center, ShowStringCharacters -> False]];
+
 
 iSubsectionTags[slide_Association] := Join[
   If[KeyExistsQ[slide, "ExpectedSeconds"], {"Expected:" <> ToString[slide["ExpectedSeconds"]], "Top"}, {"Top"}],
@@ -1306,13 +1491,13 @@ iBuildSlideCells[slide_Association] := Module[{cells},
   If[KeyExistsQ[slide, "ImagePage"],
     (* \:5168\:9762\:753b\:50cf\:30da\:30fc\:30b8: Subsection \:306f\:9589\:3058\:305f\:30bb\:30eb\:3067\:4fdd\:6301(\:679a\:6570\:8a08\:6e2c\:7cfb\:3068\:306e\:4e92\:63db) *)
     Join[{iNavBarCell[],
-      Cell[iLookupString[slide, "Title"], "Subsection", CellOpen -> False, CellTags -> iSubsectionTags[slide]],
+      Cell[iSWInlineTextData[iLookupString[slide, "Title"]], "Subsection", CellOpen -> False, CellTags -> iSubsectionTags[slide]],
       Cell[BoxData[ToBoxes[iSizedSlideImage[<|"Path" -> slide["ImagePage"], "Width" -> Automatic|>, 900, 500]]],
         "Input", TextAlignment -> Center, CellMargins -> {{0, 0}, {0, 0}}, CellTags -> "ImagePage"]},
      iContentCell /@ Cases[Lookup[slide, "Content", {}], {"Talk" | "QA", _}]],
     cells = iContentCell /@ Lookup[slide, "Content", {}];
     Join[{iNavBarCell[],
-      Cell[iLookupString[slide, "Title"], "Subsection", CellTags -> iSubsectionTags[slide]]}, cells]]];
+      Cell[iSWInlineTextData[iLookupString[slide, "Title"]], "Subsection", CellTags -> iSubsectionTags[slide]]}, cells]]];
 
 iBuildTitleSlideCells[scenario_Association] := Module[
   {cells = {}, title = iLookupString[scenario, "Title"], event = iLookupString[scenario, "Event"],
@@ -1408,7 +1593,7 @@ iAsNotebook[nbo_NotebookObject] := NotebookGet[nbo];
 
 iSlideTitle[cells_List] := Module[{sub},
   sub = SelectFirst[cells, MatchQ[#, Cell[_, "Subsection", ___]] &, None];
-  If[sub === None, "", iCellText[sub]]];
+  If[sub === None, "", iSWSlideCellText[sub]]];
 
 SlideDeckOverview[source_ /; StringQ[source] || Head[source] === Notebook || Head[source] === NotebookObject] := Module[{data},
   data = SlideDeckSlides[source];
@@ -1678,9 +1863,26 @@ iSL[ja_String, en_String] := If[$Language === "Japanese", ja, en];
 If[!ValueQ[$SlideTranslationLanguage],
   $SlideTranslationLanguage = If[$Language === "English", "Japanese", "English"]];
 
+(* v1.34: \:8aad\:307f\:4e0a\:3052\:306e\:8a00\:8a9e\:306e\:65e2\:5b9a\:3002Automatic = $Language (\:6307\:793a\:30bb\:30eb\:306e Language: \:304c\:512a\:5148) *)
+If[!ValueQ[$SlideTalkLanguage], $SlideTalkLanguage = Automatic];
+
+(* v1.37: \:767a\:8868\:306e\:8a18\:9332 (\:30ab\:30e1\:30e9\:30fb\:9032\:884c\:30fb\:8cea\:554f) \:3068\:3001\:8cea\:554f\:304b\:3089\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc *)
+If[!ValueQ[$SlideCameraDevice], $SlideCameraDevice = Automatic];
+If[!ValueQ[$SlideCameraInterval], $SlideCameraInterval = 30];
+If[!ValueQ[$SlideCameraWidth], $SlideCameraWidth = 1280];
+If[!ValueQ[$SlideCameraPrivacyLevel], $SlideCameraPrivacyLevel = 0.6];
+If[!ValueQ[$SlideRecordPrivacyLevel], $SlideRecordPrivacyLevel = 0.6];
+If[!ValueQ[$SlideQuestionPrivacyLevel], $SlideQuestionPrivacyLevel = 0.7];
+If[!ValueQ[$SlideRecordIdleSeconds], $SlideRecordIdleSeconds = 120];
+If[!ValueQ[$SlideRecordTick], $SlideRecordTick = 2];
+If[!ValueQ[$SlideQACandidateSimilarity], $SlideQACandidateSimilarity = 0.6];
+If[!ValueQ[$SlideFFmpegPath], $SlideFFmpegPath = Automatic];
+$iSWDeckAskTimeoutSeconds = 35;
+
 (* ===================== \:5171\:901a\:30e6\:30fc\:30c6\:30a3\:30ea\:30c6\:30a3 (FE) ===================== *)
 
-iSWLLMReadyQ[] := TrueQ[Quiet[ValueQ[NBAccess`$NBLLMQueryFunc]]];
+(* v1.37: NBRegisterLLMQueryFunc[None] \:306e\:3042\:3068\:306f\:5024\:304c None \:3067\:3082 ValueQ \:306f True \:306a\:306e\:3067\:3001None \:3082\:300c\:7121\:3044\:300d\:3068\:307f\:306a\:3059 *)
+iSWLLMReadyQ[] := TrueQ[Quiet[ValueQ[NBAccess`$NBLLMQueryFunc]]] && NBAccess`$NBLLMQueryFunc =!= None;
 
 iSWRequireLLM[] := If[iSWLLMReadyQ[], True,
   MessageDialog[iSL[
@@ -1693,9 +1895,44 @@ iSWFallback[] := If[Length[DownValues[ClaudeCode`GetPaletteFallback]] > 0,
 iSWDocLoadedQ[sym_String] :=
   Length[Quiet[DownValues[Symbol["Documentation`" <> sym]]]] > 0;
 
+(* ---- \:8a3a\:65ad\:7528\:306e\:8a18\:9332 (2026-09-28 \:300c\:5fdc\:7b54on\:300d\:3067 FE \:3068\:30ab\:30fc\:30cd\:30eb\:304c\:5f85\:3061\:5408\:3063\:3066\:6b62\:307e\:308b\:4ef6) ----
+   \:88cf\:3067\:56de\:308b ScheduledTask \:3068\:300c\:5fdc\:7b54on\:300d\:306e\:5404\:6bb5\:306e\:51fa\:5165\:308a\:3092 $TemporaryDirectory/slideworkflow-trace.log \:3078\:3002
+   FE \:3092\:4f7f\:308f\:305a\:30d5\:30a1\:30a4\:30eb\:3060\:3051\:306b\:66f8\:304f\:306e\:3067\:3001\:6b62\:307e\:3063\:3066\:3082\:6700\:5f8c\:306e\:884c\:3067\:3069\:3053\:3067\:6b62\:307e\:3063\:305f\:304b\:5206\:304b\:308b\:3002
+   ">" = \:5165\:3063\:305f\:3001"<" = \:51fa\:305f\:3002\:539f\:56e0\:304c\:5206\:304b\:3063\:305f\:3089 $SlideTrace = False \:306b\:623b\:3059 *)
+If[! ValueQ[$SlideTrace], $SlideTrace = True];
+SourceVault`$SourceVaultRealtimeTrace := TrueQ[SlideWorkflow`$SlideTrace];
+$iSWTraceFile := FileNameJoin[{$TemporaryDirectory, "slideworkflow-trace.log"}];
+iSWTrace[tag_String] := If[TrueQ[$SlideTrace], Quiet @ Check[
+  Module[{f = $iSWTraceFile, strm},
+    If[FileExistsQ[f] && FileByteCount[f] > 20*^6, DeleteFile[f]];
+    strm = OpenAppend[f, CharacterEncoding -> "UTF-8"];
+    If[Head[strm] === OutputStream,
+      WriteString[strm, DateString[{"Hour", ":", "Minute", ":", "Second", ".", "Millisecond"}] <> " " <> tag <> "\n"];
+      Close[strm]]], Null]];
+SetAttributes[iSWTraced, HoldRest];
+iSWTraced[tag_String, expr_] := Module[{r},
+  iSWTrace[tag <> " >"]; r = expr; iSWTrace[tag <> " <"]; r];
+
+(* ---- \:30dc\:30bf\:30f3\:306e\:51e6\:7406\:4e2d\:306f\:88cf\:306e\:51e6\:7406\:304c FE \:306b\:89e6\:3089\:306a\:3044 ----
+   \:30dc\:30bf\:30f3 (Queued = \:30ab\:30fc\:30cd\:30eb\:306e\:672c\:51e6\:7406) \:304c FE \:3068\:3084\:308a\:53d6\:308a\:3057\:3066\:3044\:308b\:9593\:306b\:3001ScheduledTask (\:5272\:308a\:8fbc\:307f) \:304b\:3089\:3082
+   FE \:3092\:547c\:3076\:3068\:3001\:4e92\:3044\:306e\:8fd4\:4e8b\:3092\:5f85\:3061\:5408\:3063\:3066 FE \:3068\:30ab\:30fc\:30cd\:30eb\:304c\:6b62\:307e\:308b (\:5b9f\:6a5f 2026-09-28\:300c\:5fdc\:7b54on\:300d\:3067 2 \:56de\:3002
+   \:8a18\:9332: \:672c\:51e6\:7406\:306e RecEnsure \:3068\:540c\:6642\:306b\:72b6\:614b\:8868\:793a\:306e Notebooks[] \:304c 1 ms \[RightArrow] 0.77 s)\:3002\:30dc\:30bf\:30f3\:306e\:51e6\:7406\:4e2d\:306f
+   \:88cf\:306e\:51e6\:7406 (\:72b6\:614b\:8868\:793a\:30fb\:8a18\:9332\:30fb\:518d\:751f\:30fb\:30ea\:30e2\:30b3\:30f3) \:304c\:305d\:306e\:56de\:3092\:98db\:3070\:3057\:3001\:6b21\:306e\:56de\:306b\:3084\:308b\:3002
+   \:4e0a\:9650 600 \:79d2: \:4f55\:304b\:3067\:6570\:304c\:623b\:3089\:306a\:304f\:3066\:3082\:88cf\:306e\:51e6\:7406\:304c\:6c38\:4e45\:306b\:6b62\:307e\:3089\:306a\:3044\:3088\:3046\:306b *)
+$iSWFEHold = 0;
+$iSWFEHoldSince = 0.;
+SetAttributes[iSWHoldFE, HoldAll];
+iSWHoldFE[expr_] := WithCleanup[
+  If[$iSWFEHold <= 0, $iSWFEHold = 0; $iSWFEHoldSince = AbsoluteTime[]];
+  $iSWFEHold++,
+  expr,
+  $iSWFEHold = Max[0, $iSWFEHold - 1]];
+iSWFEHeldQ[] := $iSWFEHold > 0 && AbsoluteTime[] - $iSWFEHoldSince < 600.;
+SourceVault`$SourceVaultRealtimeHoldFE := SlideWorkflow`Private`iSWFEHeldQ[];
+
 iSWStatus[nb_, s_String] := Quiet[CurrentValue[nb, WindowStatusArea] = s];
 iSWStatusClearLater[nb_] := Quiet[SessionSubmit[ScheduledTask[
-  Quiet[CurrentValue[nb, WindowStatusArea] = ""], {4}]]];
+  If[! iSWFEHeldQ[], iSWTraced["StatusClear", Quiet[CurrentValue[nb, WindowStatusArea] = ""]]], {4}]]];
 
 iSWNotebook[] := Module[{nb = Quiet[InputNotebook[]]},
   If[Head[nb] === NotebookObject, nb,
@@ -1759,7 +1996,7 @@ iSWSkeletonSlideCells[] := {
 iSWCollectByStyle[nb_, style_String] := Module[
   {styles = iSWCellStyles[nb], cells = Cells[nb], idxs},
   idxs = Flatten[Position[styles, style]];
-  Select[StringTrim[SlideWorkflow`Private`iCellText[NotebookRead[cells[[#]]]]] & /@ idxs,
+  Select[StringTrim[iSWMetaCellText[NotebookRead[cells[[#]]]]] & /@ idxs,
     StringQ[#] && # =!= "" &]];
 
 iSWDirectivesBlock[nb_] := Module[{ds},
@@ -1775,7 +2012,7 @@ iSWDictionaryBlock[nb_] := Module[{ds = iSWCollectByStyle[nb, "Dictionary"]},
     "=== Dictionary (MUST use these term mappings) ===\n" <>
       StringRiffle[ds, "\n"] <> "\n=== End Dictionary ===\n\n"]];
 
-(* ===================== \:30b9\:30e9\:30a4\:30c9 \:2192 Markdown (+\:4fdd\:6301\:30bb\:30eb) ===================== *)
+(* ===================== \:30b9\:30e9\:30a4\:30c9 \[RightArrow] Markdown (+\:4fdd\:6301\:30bb\:30eb) ===================== *)
 
 $iSWTranslatableStyles = {"Subsection", "Item", "Subitem", "Subsubitem",
   "ItemParagraph", "SubitemParagraph", "SubsubitemParagraph", "Text", "Section",
@@ -1800,28 +2037,33 @@ iSWSlideToMarkdown[cellExprs_List] := Module[{lines = {}, keeps = {}, txt, exp},
         MatchQ[c, Cell[_, "SlidePrompt", ___]],
       Null,
       MatchQ[c, Cell[_, "Subsection", ___]],
-      txt = SlideWorkflow`Private`iCellText[c];
+      txt = iSWSlideCellText[c];
       exp = iSWExpectedOf[c];
       AppendTo[lines, "## " <> txt <>
         iSWHeadingAttrs[exp, iSWKGNodeOfTags[FirstCase[c, (CellTags -> tg_) :> tg, {}]]]],
       MatchQ[c, Cell[_, "Item", ___]],
-      AppendTo[lines, "- " <> SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, "- " <> iSWSlideCellText[c]],
       MatchQ[c, Cell[_, "Subitem", ___]],
-      AppendTo[lines, "  - " <> SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, "  - " <> iSWSlideCellText[c]],
       MatchQ[c, Cell[_, "Subsubitem", ___]],
-      AppendTo[lines, "    - " <> SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, "    - " <> iSWSlideCellText[c]],
       MatchQ[c, Cell[_, "ItemParagraph" | "SubitemParagraph" | "SubsubitemParagraph", ___]],
-      AppendTo[lines, "> " <> SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, "> " <> iSWSlideCellText[c]],
       MatchQ[c, Cell[_, "SlideCrumb", ___]],
-      AppendTo[lines, "crumb: " <> SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, "crumb: " <> iSWSlideCellText[c]],
+      iSWTermNoteCellQ[c],
+      AppendTo[lines, "note: " <> StringTrim[StringReplace[iSWSlideCellText[c], StartOfString ~~ "\:7528\:8a9e " -> "", 1]]],
       iSWCitationCellQ[c],
-      txt = SlideWorkflow`Private`iCellText[c];
+      txt = iSWSlideCellText[c];
       AppendTo[lines, "cite: " <> StringTrim[StringReplace[txt,
         StartOfString ~~ ("\:51fa\:5178:" | "\:51fa\:5178\:ff1a") -> "", 1]]],
       MatchQ[c, Cell[___, TaggingRules -> {___, "SWTableRows" -> _, ___}, ___]],
       Module[{tr = FirstCase[c, (TaggingRules -> r_List) :> r, {}, {1}]},
         AppendTo[lines, iSWTableToMd[<|"Rows" -> Lookup[tr, "SWTableRows", {}],
           "HeaderRows" -> Lookup[tr, "SWTableHeaderRows", 0]|>]]],
+      (* \:8a33\:306e\:30c8\:30fc\:30af\:30bb\:30eb (v1.34) \:306f md \:306b\:51fa\:3055\:306a\:3044 (\:5143\:306e\:539f\:7a3f\:304b\:3089\:4f5c\:308a\:76f4\:305b\:308b\:6d3e\:751f\:7269) *)
+      iSWTalkLangCellQ[c],
+      Null,
       MatchQ[c, Cell[_, "SlideTalk", ___]],
       AppendTo[lines, StringRiffle[("talk: " <> #) & /@
         StringSplit[SlideWorkflow`Private`iCellText[c], "\n"], "\n"]],
@@ -1830,7 +2072,7 @@ iSWSlideToMarkdown[cellExprs_List] := Module[{lines = {}, keeps = {}, txt, exp},
         StringSplit[SlideWorkflow`Private`iCellText[c], "\n"], "\n"]],
       MatchQ[c, Cell[_, "Text" | "ItemNumbered" | "SubitemNumbered", ___]] &&
         !SlideWorkflow`Private`iVisualCellQ[c],
-      AppendTo[lines, SlideWorkflow`Private`iCellText[c]],
+      AppendTo[lines, iSWSlideCellText[c]],
       True, (* \:56f3\:30fb\:30b3\:30fc\:30c9\:30fb\:305d\:306e\:4ed6\:306f\:4fdd\:6301\:30bb\:30eb\:3078 *)
       AppendTo[keeps, c];
       AppendTo[lines, "<<FIG" <> ToString[Length[keeps]] <> ">>"]
@@ -1920,6 +2162,36 @@ iSWFigureCell[g_] := Which[
   True, Cell[BoxData[ToBoxes[g]], "Input", TextAlignment -> Center,
     ShowStringCharacters -> False]];
 
+(* \:6e21\:3055\:308c\:305f\:65b0\:898f\:56f3\:306e\:691c\:67fb (2026-09-26): Failure / $Failed \:3092\:542b\:3080\:56f3\:3001\:30a8\:30e9\:30fc\:8868\:793a\:306e\:30bb\:30eb\:3001
+   \:753b\:50cf\:51e6\:7406\:95a2\:6570\:304c\:8a55\:4fa1\:3055\:308c\:305a\:306b\:6b8b\:3063\:305f\:5f0f (\:5f15\:6570\:304c\:753b\:50cf\:3067\:306a\:304b\:3063\:305f) \:306f\:3001\:4f55\:3082\:66f8\:304b\:305a\:306b Failure \:3067\:8fd4\:3059\:3002
+   \:4ee5\:524d\:306f ImageAssemble[{{..Failure["NoFile", ..]..}}] \:304c\:305d\:306e\:307e\:307e\:56f3\:30bb\:30eb\:306b\:306a\:308a\:3001\:30b9\:30e9\:30a4\:30c9\:306b\:30a8\:30e9\:30fc\:304c\:8f09\:3063\:305f\:3002 *)
+$iSWFigureOpHeads = {ImageAssemble, ImageResize, ImageCrop, ImageTake, ImagePad, ImageCompose,
+  ImageRotate, ImageReflect, ColorConvert, RemoveAlphaChannel, SetAlphaChannel,
+  SlidePDFFigure, SlidePDFImages, SlideDeckFigure, SlideNotebookFigure, SlideNotebookFormula};
+iSWFigureProblem[g_] := Which[
+  g === Null || g === None || MatchQ[g, _Missing], "empty",
+  ! FreeQ[g, _Failure | $Failed], "contains Failure/$Failed" <>
+    With[{m = Cases[g, f_Failure :> Quiet[Check[f["Message"], ""]], {0, Infinity}, 1]},
+      If[MatchQ[m, {_String}] && First[m] =!= "", ": " <> First[m], ""]],
+  MatchQ[g, _Cell] && ! FreeQ[g, TagBox["Failure", "SummaryHead"] | "$Failed"], "the cell shows an error",
+  MemberQ[$iSWFigureOpHeads, Head[g]],
+    "unevaluated " <> SymbolName[Head[g]] <> "[..] (an argument is not an image)",
+  True, None];
+(* \:554f\:984c\:306e\:3042\:308b\:56f3\:304c\:3042\:308c\:3070 Failure["BadFigures"] (<<FIGn>> \:306e\:756a\:53f7\:306f offset + \:4f4d\:7f6e)\:3001\:7121\:3051\:308c\:3070 None *)
+iSWBadFiguresFailure[nb_, figs_List, offset_Integer] := Module[{bad},
+  bad = Select[MapIndexed[{First[#2] + offset, iSWFigureProblem[#1]} &, figs], StringQ[#[[2]]] &];
+  If[bad === {}, Return[None]];
+  If[Head[nb] === NotebookObject,
+    Quiet[iSWStatus[nb, iSL["\:56f3\:3092\:66f8\:304d\:8fbc\:3081\:307e\:305b\:3093 (" <> StringRiffle[("<<FIG" <> ToString[#[[1]]] <> ">>") & /@ bad, ", "] <>
+      "): " <> StringRiffle[#[[2]] & /@ bad, "; "],
+      "Figures refused (" <> StringRiffle[("<<FIG" <> ToString[#[[1]]] <> ">>") & /@ bad, ", "] <>
+      "): " <> StringRiffle[#[[2]] & /@ bad, "; "]]]]];
+  Failure["BadFigures", <|
+    "MessageTemplate" -> "new figures `1` cannot be shown (`2`); nothing was written. Fix each figure (check the References locator or path, and that SlidePDFFigure etc. returned an Image before combining them) and call again.",
+    "MessageParameters" -> {StringRiffle[("<<FIG" <> ToString[#[[1]]] <> ">>") & /@ bad, ", "],
+      StringRiffle[#[[2]] & /@ bad, "; "]},
+    "BadFigures" -> Map[<|"Placeholder" -> "<<FIG" <> ToString[#[[1]]] <> ">>", "Problem" -> #[[2]]|> &, bad]|>]];
+
 (* ---- SlideApplyScenario: \:30b9\:30e9\:30a4\:30c9\:5dee\:3057\:66ff\:3048\:306e\:552f\:4e00\:306e\:6c7a\:5b9a\:7684\:66f8\:8fbc\:307f\:53e3 ---- *)
 Options[SlideApplyScenario] = {"Figures" -> {}};
 
@@ -1930,13 +2202,15 @@ SlideApplyScenario[slideNo_Integer, md_String, opts : OptionsPattern[]] :=
       SlideApplyScenario[nb, slideNo, md, opts]]];
 
 SlideApplyScenario[nb_NotebookObject, slideNo_Integer, md_String, OptionsPattern[]] := Module[
-  {ctx, figs, allKeeps, mdText, sc, slides, newCells, cells},
+  {ctx, figs, allKeeps, mdText, sc, slides, newCells, cells, bad},
   Quiet[SlideEnsureDeckStyles[nb]];
   ctx = iSWSlideContext[nb, slideNo];
   If[ctx === $Failed,
     Return[Failure["SlideOutOfRange",
       <|"MessageTemplate" -> "slide `1` not found (deck has fewer slides)",
         "MessageParameters" -> {slideNo}|>]]];
+  bad = iSWBadFiguresFailure[nb, Flatten[{OptionValue["Figures"]}], Length[ctx["Keeps"]]];
+  If[bad =!= None, Return[bad]];
   figs = iSWFigureCell /@ Flatten[{OptionValue["Figures"]}];
   allKeeps = Join[ctx["Keeps"], figs];
   mdText = iSWNormalizeScenarioResponse[md, ctx["Title"]];
@@ -1949,7 +2223,7 @@ SlideApplyScenario[nb_NotebookObject, slideNo_Integer, md_String, OptionsPattern
   If[StringQ[ctx["PromptText"]] && StringTrim[ctx["PromptText"]] =!= "",
     newCells[[1]] = Insert[newCells[[1]], iSWPromptCell[ctx["PromptText"]], 3]];
   cells = Cells[nb];
-  (* \:633f\:5165\:2192\:524a\:9664\:306e\:9806\:3067\:7f6e\:63db\:3057\:3001\:6700\:5f8c\:306b\:9078\:629e\:3092\:672b\:5c3e(Appendix)\:3078\:9000\:907f\:3059\:308b\:3002
+  (* \:633f\:5165\[RightArrow]\:524a\:9664\:306e\:9806\:3067\:7f6e\:63db\:3057\:3001\:6700\:5f8c\:306b\:9078\:629e\:3092\:672b\:5c3e(Appendix)\:3078\:9000\:907f\:3059\:308b\:3002
      \:524a\:9664\:5f8c\:306e\:30ad\:30e3\:30ec\:30c3\:30c8\:4f4d\:7f6e\:306b\:4f9d\:5b58\:3059\:308b\:3068\:3001runtime \:306e\:5f8c\:7d9a\:66f8\:304d\:8fbc\:307f(\:63d0\:6848\:30a8\:30b3\:30fc\:7b49)\:304c
      \:30b9\:30e9\:30a4\:30c9\:5185\:306e\:30bb\:30eb\:3078\:98df\:3044\:8fbc\:3080\:4e8b\:6545\:304c\:8d77\:304d\:308b(NB \:5b9f\:6a5f\:3067\:767a\:751f)\:3002 *)
   SelectionMove[cells[[ctx["Start"]]], Before, Cell];
@@ -1974,13 +2248,15 @@ SlideDeckInsertScenario[afterN_Integer, md_String, opts : OptionsPattern[]] :=
       SlideDeckInsertScenario[nb, afterN, md, opts]]];
 
 SlideDeckInsertScenario[nb_NotebookObject, afterN_Integer, md_String, OptionsPattern[]] :=
-  Module[{ranges, cells, figs, mdText, sc, slides, newCells},
+  Module[{ranges, cells, figs, mdText, sc, slides, newCells, bad},
   Quiet[SlideEnsureDeckStyles[nb]];
   ranges = iSWSlideRanges[nb];
   If[!(0 <= afterN <= Length[ranges]) || ranges === {},
     Return[Failure["SlideOutOfRange",
       <|"MessageTemplate" -> "cannot insert after slide `1` (deck has `2`)",
         "MessageParameters" -> {afterN, Length[ranges]}|>]]];
+  bad = iSWBadFiguresFailure[nb, Flatten[{OptionValue["Figures"]}], 0];
+  If[bad =!= None, Return[bad]];
   figs = iSWFigureCell /@ Flatten[{OptionValue["Figures"]}];
   mdText = iSWNormalizeScenarioResponse[md, ""];
   sc = Quiet[SlideScenarioFromMarkdown[mdText]];
@@ -2020,16 +2296,16 @@ iSWExpandAgentTask[slideNo_, promptText_, title_, md_, k_, metaBlocks_String : "
     "2b. \:6587\:732e\:30ea\:30b9\:30c8(References)\:306e [key] \:304c\:6307\:793a\:306b\:73fe\:308c\:305f\:3089\:3001\:4e0a\:306e\:53c2\:7167\:65b9\:6cd5\:3067\:8cc7\:6599\:3092\:53d6\:5f97\:3057\:3066\:5185\:5bb9\:3092\:78ba\:8a8d\:3057\:3001\:305d\:306e\:5185\:5bb9\:306b\:57fa\:3065\:3044\:3066\:8a18\:8ff0\:3059\:308b\:3002\:7531\:6765\:3059\:308b\:56f3\:30fb\:5f15\:7528\:30fb\:30c7\:30fc\:30bf\:306b\:306f cite: \:884c\:3067\:51fa\:5178\:3092\:660e\:8a18\:3059\:308b\:3002\n", ""] <>
   If[k > 0, "3. \:65e2\:5b58\:56f3 <<FIG1>>\:301c<<FIG" <> ToString[k] <> ">> \:306f\:524a\:9664\:306e\:6307\:793a\:304c\:306a\:3044\:9650\:308a\:9069\:5207\:306a\:4f4d\:7f6e\:306b\:6b8b\:3059\:3002\n", ""] <>
   If[TrueQ[$SlideVisualsPerSlide],
-    "3b. \:539f\:5247\:3068\:3057\:3066\:3059\:3079\:3066\:306e\:30b9\:30e9\:30a4\:30c9\:306b\:56f3\:304b\:8868\:3092 1 \:3064\:4ee5\:4e0a\:5165\:308c\:308b\:3002\:6bd4\:8f03\:30fb\:4ed5\:69d8\:30fb\:6570\:5024\:306e\:7f85\:5217\:306f | \:69cb\:6587\:306e\:8868\:306b\:3059\:308b\:3002\:56f3\:306e\:5165\:624b\:512a\:5148\:9806\:4f4d: (1) \:65e2\:5b58 <<FIGn>> \:306e\:518d\:914d\:7f6e (2) \:539f\:8cc7\:6599\:304b\:3089\:306e\:5f15\:7528 \:2014 \:8ad6\:6587\:30fb\:65e2\:5b58\:30b9\:30e9\:30a4\:30c9\:30fbweb \:306e\:56f3\:8868\:30fb\:5199\:771f\:30fb\:5b9f\:9a13\:30b0\:30e9\:30d5\:306f\:4f5c\:308a\:76f4\:3055\:305a\:539f\:56f3\:3092\:305d\:306e\:307e\:307e\:5207\:308a\:51fa\:3057\:3066\:4f7f\:3046(\:5f15\:7528\:304c\:6b63\:78ba\:6027\:3092\:4fdd\:3064): SlidePDFFigure[\"<key|\:30d1\:30b9|URL>\", \:30da\:30fc\:30b8, \"Crop\"->{{x1,x2},{y1,y2}} \:5de6\:4e0a\:539f\:70b9\:6bd4\:7387] (URL\:30fbarxiv:ID\:30fbGoogle Slides \:30d7\:30ec\:30bc\:30f3 URL \:306f\:81ea\:52d5\:3067 PDF \:5316\:3055\:308c\:308b) / SlidePDFImages[\"<key>\"] = PDF \:57cb\:3081\:8fbc\:307f\:306e\:5199\:771f\:30fb\:30e9\:30b9\:30bf\:56f3\:306e\:4e00\:89a7 / SlideDeckFigure[\"<\:904e\:53bb\:30c7\:30c3\:30ad.nb>\", n] = \:904e\:53bb\:30b9\:30e9\:30a4\:30c9 1 \:679a\:306e\:753b\:50cf\:5f15\:7528 / SlideNotebookFigure[\"<\:7d20\:6750.nb>\", n] = \:30c7\:30c3\:30ad\:3067\:306a\:3044\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af(\:8ad6\:6587\:306e\:548c\:8a33\:306a\:3069)\:306e n \:756a\:76ee\:306e\:56f3\:3002\:30da\:30fc\:30b8\:756a\:53f7\:3068\:9818\:57df\:306f ClaudeAttach[SlideSourceFile[\"<key|URL>\"]] (URL \:7cfb\:306f PDF \:5316\:6e08\:307f\:306e\:30ed\:30fc\:30ab\:30eb\:30d5\:30a1\:30a4\:30eb\:304c\:8fd4\:308b) \:3067\:8cc7\:6599\:3092\:6dfb\:4ed8\:30fb\:95b2\:89a7\:3057\:3066\:78ba\:304b\:3081\:3001\:5207\:308a\:51fa\:3057\:7d50\:679c\:306f ImageDimensions \:7b49\:3067\:691c\:8a3c\:3059\:308b\:3002\:5207\:308a\:51fa\:3057\:305f\:56f3\:306f \"Figures\" \:3067\:6e21\:3057 md \:3067\:306f <<FIGn>>\:3001\:76f4\:5f8c\:306b\:5fc5\:305a cite: (3) \:539f\:8cc7\:6599\:306b\:5b58\:5728\:3057\:306a\:3044\:6982\:5ff5\:56f3\:30fb\:307e\:3068\:3081\:56f3\:306e\:307f\:65b0\:898f\:4f5c\:56f3\:3002\n", ""] <>
+    "3b. \:539f\:5247\:3068\:3057\:3066\:3059\:3079\:3066\:306e\:30b9\:30e9\:30a4\:30c9\:306b\:56f3\:304b\:8868\:3092 1 \:3064\:4ee5\:4e0a\:5165\:308c\:308b\:3002\:6bd4\:8f03\:30fb\:4ed5\:69d8\:30fb\:6570\:5024\:306e\:7f85\:5217\:306f | \:69cb\:6587\:306e\:8868\:306b\:3059\:308b\:3002\:56f3\:306e\:5165\:624b\:512a\:5148\:9806\:4f4d: (1) \:65e2\:5b58 <<FIGn>> \:306e\:518d\:914d\:7f6e (2) \:539f\:8cc7\:6599\:304b\:3089\:306e\:5f15\:7528 \[LongDash] \:8ad6\:6587\:30fb\:65e2\:5b58\:30b9\:30e9\:30a4\:30c9\:30fbweb \:306e\:56f3\:8868\:30fb\:5199\:771f\:30fb\:5b9f\:9a13\:30b0\:30e9\:30d5\:306f\:4f5c\:308a\:76f4\:3055\:305a\:539f\:56f3\:3092\:305d\:306e\:307e\:307e\:5207\:308a\:51fa\:3057\:3066\:4f7f\:3046(\:5f15\:7528\:304c\:6b63\:78ba\:6027\:3092\:4fdd\:3064): SlidePDFFigure[\"<key|\:30d1\:30b9|URL>\", \:30da\:30fc\:30b8, \"Crop\"->{{x1,x2},{y1,y2}} \:5de6\:4e0a\:539f\:70b9\:6bd4\:7387] (URL\:30fbarxiv:ID\:30fbGoogle Slides \:30d7\:30ec\:30bc\:30f3 URL \:306f\:81ea\:52d5\:3067 PDF \:5316\:3055\:308c\:308b) / SlidePDFImages[\"<key>\"] = PDF \:57cb\:3081\:8fbc\:307f\:306e\:5199\:771f\:30fb\:30e9\:30b9\:30bf\:56f3\:306e\:4e00\:89a7 / SlideDeckFigure[\"<\:904e\:53bb\:30c7\:30c3\:30ad.nb>\", n] = \:904e\:53bb\:30b9\:30e9\:30a4\:30c9 1 \:679a\:306e\:753b\:50cf\:5f15\:7528 / SlideNotebookFigure[\"<\:7d20\:6750.nb>\", n] = \:30c7\:30c3\:30ad\:3067\:306a\:3044\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af(\:8ad6\:6587\:306e\:548c\:8a33\:306a\:3069)\:306e n \:756a\:76ee\:306e\:56f3\:3002\:30da\:30fc\:30b8\:756a\:53f7\:3068\:9818\:57df\:306f ClaudeAttach[SlideSourceFile[\"<key|URL>\"]] (URL \:7cfb\:306f PDF \:5316\:6e08\:307f\:306e\:30ed\:30fc\:30ab\:30eb\:30d5\:30a1\:30a4\:30eb\:304c\:8fd4\:308b) \:3067\:8cc7\:6599\:3092\:6dfb\:4ed8\:30fb\:95b2\:89a7\:3057\:3066\:78ba\:304b\:3081\:3001\:5207\:308a\:51fa\:3057\:7d50\:679c\:306f ImageDimensions \:7b49\:3067\:691c\:8a3c\:3059\:308b\:3002\:5207\:308a\:51fa\:3057\:305f\:56f3\:306f \"Figures\" \:3067\:6e21\:3057 md \:3067\:306f <<FIGn>>\:3001\:76f4\:5f8c\:306b\:5fc5\:305a cite: (3) \:539f\:8cc7\:6599\:306b\:5b58\:5728\:3057\:306a\:3044\:6982\:5ff5\:56f3\:30fb\:307e\:3068\:3081\:56f3\:306e\:307f\:65b0\:898f\:4f5c\:56f3\:3002\n", ""] <>
   If[TrueQ[$SlideTalkPerSlide],
-    "3c. \:5404\:30b9\:30e9\:30a4\:30c9\:306e\:6700\:5f8c\:306b talk: \:884c\:3067\:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:767a\:8868\:539f\:7a3f\:3092\:66f8\:304f(\:3067\:3059\:30fb\:307e\:3059\:8abf\:30012\:301c6 \:6587\:30011 \:679a 25 \:79d2\:524d\:5f8c\:3002\:5192\:982d\:306b\:524d\:306e\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:306e\:63a5\:7d9a\:3092\:4e00\:8a00\:3001\:6bce\:56de\:9055\:3046\:8a00\:3044\:56de\:3057\:3067)\:3002\:30b9\:30e9\:30a4\:30c9\:672c\:6587\:306f\:56f3\:8868+\:4f53\:8a00\:6b62\:3081\:306e\:77ed\:3044\:7b87\:6761\:66f8\:304d\:306b\:3068\:3069\:3081\:3001\:8aac\:660e\:306e\:6587\:7ae0\:306f talk \:5074\:304c\:62c5\:3046 \:2014 \:30b9\:30e9\:30a4\:30c9\:3068 talk \:3092\:5408\:308f\:305b\:3066\:89e3\:8aac\:304c\:5b8c\:6210\:3059\:308b\:3088\:3046\:306b\:66f8\:304d\:3001\:540c\:3058\:6587\:3092\:4e21\:65b9\:306b\:5165\:308c\:306a\:3044\:3002\:7b87\:6761\:66f8\:304d\:8a18\:53f7\:30fbURL\:30fb\:8a18\:53f7\:5217\:306e\:8aad\:307f\:4e0a\:3052\:3092 talk \:306b\:5165\:308c\:306a\:3044\:3002\:30b9\:30e9\:30a4\:30c9\:306b\:7121\:3044\:4e8b\:5b9f\:30fb\:6570\:5024\:3092 talk \:3067\:4f5c\:3089\:306a\:3044\:3002\n", ""] <>
+    "3c. \:5404\:30b9\:30e9\:30a4\:30c9\:306e\:6700\:5f8c\:306b talk: \:884c\:3067\:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:767a\:8868\:539f\:7a3f\:3092\:66f8\:304f(\:3067\:3059\:30fb\:307e\:3059\:8abf\:30012\:301c6 \:6587\:30011 \:679a 25 \:79d2\:524d\:5f8c\:3002\:5192\:982d\:306b\:524d\:306e\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:306e\:63a5\:7d9a\:3092\:4e00\:8a00\:3001\:6bce\:56de\:9055\:3046\:8a00\:3044\:56de\:3057\:3067)\:3002\:30b9\:30e9\:30a4\:30c9\:672c\:6587\:306f\:56f3\:8868+\:4f53\:8a00\:6b62\:3081\:306e\:77ed\:3044\:7b87\:6761\:66f8\:304d\:306b\:3068\:3069\:3081\:3001\:8aac\:660e\:306e\:6587\:7ae0\:306f talk \:5074\:304c\:62c5\:3046 \[LongDash] \:30b9\:30e9\:30a4\:30c9\:3068 talk \:3092\:5408\:308f\:305b\:3066\:89e3\:8aac\:304c\:5b8c\:6210\:3059\:308b\:3088\:3046\:306b\:66f8\:304d\:3001\:540c\:3058\:6587\:3092\:4e21\:65b9\:306b\:5165\:308c\:306a\:3044\:3002\:7b87\:6761\:66f8\:304d\:8a18\:53f7\:30fbURL\:30fb\:8a18\:53f7\:5217\:306e\:8aad\:307f\:4e0a\:3052\:3092 talk \:306b\:5165\:308c\:306a\:3044\:3002\:30b9\:30e9\:30a4\:30c9\:306b\:7121\:3044\:4e8b\:5b9f\:30fb\:6570\:5024\:3092 talk \:3067\:4f5c\:3089\:306a\:3044\:3002\n", ""] <>
   "3d. \:65e2\:5b58\:306e qa: \:884c (\:60f3\:5b9a\:554f\:7b54) \:306f\:3001\:524a\:9664\:30fb\:66f4\:65b0\:306e\:6307\:793a\:304c\:306a\:3044\:9650\:308a md \:306b\:305d\:306e\:307e\:307e\:6b8b\:3059\:3002\n" <>
   "3e. **\:6570\:5f0f\:306f\:66f8\:304d\:76f4\:3055\:306a\:3044**\:3002\:7d20\:6750\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:6570\:5f0f\:306f SlideNotebookText \:306e \"[EQn]\" \:884c\:3067\:4f4d\:7f6e\:304c\:5206\:304b\:308b\:306e\:3067\:3001SlideNotebookFormula[key, n] \:3067\:539f\:30bb\:30eb\:306e\:7d44\:7248\:3054\:3068 \"Figures\"->{...} \:3078\:6e21\:3057\:3066\:5f15\:7528\:3059\:308b (md \:3067\:306f <<FIGn>> \:3068\:540c\:3058\:30c8\:30fc\:30af\:30f3\:67a0\:3092\:4f7f\:3046)\:3002\:30d7\:30ec\:30fc\:30f3\:6587\:5b57\:5217\:306b\:6f70\:3059\:3068\:5206\:6570\:30fb\:6dfb\:5b57\:30fb\:7dcf\:548c\:304c\:58ca\:308c\:308b\:3002\:539f\:8cc7\:6599\:306b\:7121\:3044\:5f0f\:3092\:81ea\:5206\:3067\:66f8\:304f\:5834\:5408\:306f \:305d\:306e\:65e8\:3092 cite: \:884c\:306b\:660e\:8a18\:3059\:308b\:3002
 4. \:539f\:8cc7\:6599\:306b\:7121\:3044\:6982\:5ff5\:56f3\:30fb\:30d5\:30ed\:30fc\:56f3\:306e\:307f Wolfram \:8a00\:8a9e\:306e Graphics \:3067\:65b0\:898f\:4f5c\:56f3\:3059\:308b\:3002\:539f\:8cc7\:6599\:306b\:5b58\:5728\:3059\:308b\:56f3\:8868\:30fb\:5199\:771f\:30fb\:5b9f\:9a13\:30b0\:30e9\:30d5\:3092 Graphics \:3067\:4f5c\:308a\:76f4\:3057\:3066\:306f\:306a\:3089\:306a\:3044(3b \:306e\:5f15\:7528\:3092\:4f7f\:3046)\:3002\:4f5c\:56f3\:6642\:306e\:898f\:7d04(\:914d\:8272\:306f SlideThemeColor[\"Title\"|\"Bullet\"|\"SubBullet\"|\"Dim\"|\"Arrow\"|\"PanelBackground\"|\"PanelBorder\"]\:3001\:30d5\:30a9\:30f3\:30c8\:306f FontFamily->$SlideFontFamily\:3001\:88dc\:52a9\:5b9a\:7fa9\:306f\:5fc5\:305a Module \:5185)\:3002\:56f3\:306e\:751f\:6210\:306b\:8ab2\:91d1 API(LLMSynthesize / ImageSynthesize \:7b49)\:3092\:4f7f\:308f\:306a\:3044\:3053\:3068\:3002\:65b0\:898f\:56f3\:306f md \:4e2d\:3067 <<FIG" <> ToString[k + 1] <> ">> \:4ee5\:964d\:306e\:30c8\:30fc\:30af\:30f3\:3068\:3057\:3066\:53c2\:7167\:3059\:308b\:3002\n" <>
   "4b. \:30b3\:30fc\:30c9\:3092\:8a55\:4fa1\:3059\:308b\:3068\:304d\:306f **\:4ee3\:5165\:3092\:5fc5\:305a Module[{a, b}, ...] \:306e\:4e2d\:306b\:7f6e\:304f**\:3002\:30b0\:30ed\:30fc\:30d0\:30eb\:5909\:6570\:3078\:306e\:4ee3\:5165 (x = ...) \:306f GlobalSetRequiresApproval \:3067\:627f\:8a8d\:5f85\:3061\:306b\:306a\:308a\:3001\:30c4\:30fc\:30eb\:7d4c\:8def\:3067\:306f\:627f\:8a8d UI \:3092\:51fa\:305b\:306a\:3044\:306e\:3067\:305d\:3053\:3067\:6b62\:307e\:308b\:3002
 5. \:6700\:5f8c\:306b SlideApplyScenario[" <> ToString[slideNo] <> ", md] \:3092\:4e00\:5ea6\:3060\:3051\:8a55\:4fa1\:3057\:3066\:9069\:7528\:3059\:308b(\:65b0\:898f\:56f3\:304c\:3042\:308c\:3070 SlideApplyScenario[" <> ToString[slideNo] <> ", md, \"Figures\"->{g1, ...}] \:306e\:5f62\:3067\:3001md \:306e <<FIG" <> ToString[k + 1] <> ">> \:4ee5\:964d\:3068\:540c\:9806\:306b\:6e21\:3059)\:3002\:3053\:308c\:304c\:30b9\:30e9\:30a4\:30c9\:3078\:306e\:552f\:4e00\:306e\:66f8\:8fbc\:307f\:624b\:6bb5\:3067\:3042\:308a\:3001NotebookWrite \:7b49\:3067\:30b9\:30e9\:30a4\:30c9\:3092\:76f4\:63a5\:7de8\:96c6\:3057\:3066\:306f\:306a\:3089\:306a\:3044\:3002\n" <>
-  "5b. **35 \:679a\:306e\:3088\:3046\:306a\:5927\:304d\:306a\:5c55\:958b\:306f 1 \:56de\:306e\:8a55\:4fa1\:306b\:8a70\:3081\:8fbc\:307e\:306a\:3044**\:3002SlideDeckInsertScenario / SlideApplyScenario \:3092 10 \:679a\:7a0b\:5ea6\:305a\:3064\:306b\:5206\:3051\:3066\:547c\:3076\:3002\:307e\:305f\:3001\:30bb\:30eb\:306e\:623b\:308a\:5024\:306b\:753b\:50cf\:3084\:56f3\:306e\:30ea\:30b9\:30c8\:3092\:7f6e\:304b\:306a\:3044 (Length \:3084 Status \:306a\:3069\:77ed\:3044\:5024\:3092\:8fd4\:3059) \:2014 \:5927\:91cf\:306e\:753b\:50cf\:3092 1 \:56de\:3067\:66f8\:304d\:8fbc\:3080\:30fb\:8868\:793a\:3059\:308b\:3068 FE <-> \:30ab\:30fc\:30cd\:30eb\:306e\:8ee2\:9001\:3067\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:5fdc\:7b54\:3057\:306a\:304f\:306a\:308b\:3002
-6. \:623b\:308a\:5024\:304c Failure \:306a\:3089 md \:3092\:4fee\:6b63\:3057\:3066 SlideApplyScenario \:3092\:518d\:8a55\:4fa1\:3059\:308b\:3002Success[\"SlideApplied\", ...] \:304c\:8fd4\:308c\:3070\:5b8c\:4e86\:3002" <>
+  "5b. **35 \:679a\:306e\:3088\:3046\:306a\:5927\:304d\:306a\:5c55\:958b\:306f 1 \:56de\:306e\:8a55\:4fa1\:306b\:8a70\:3081\:8fbc\:307e\:306a\:3044**\:3002SlideDeckInsertScenario / SlideApplyScenario \:3092 10 \:679a\:7a0b\:5ea6\:305a\:3064\:306b\:5206\:3051\:3066\:547c\:3076\:3002\:307e\:305f\:3001\:30bb\:30eb\:306e\:623b\:308a\:5024\:306b\:753b\:50cf\:3084\:56f3\:306e\:30ea\:30b9\:30c8\:3092\:7f6e\:304b\:306a\:3044 (Length \:3084 Status \:306a\:3069\:77ed\:3044\:5024\:3092\:8fd4\:3059) \[LongDash] \:5927\:91cf\:306e\:753b\:50cf\:3092 1 \:56de\:3067\:66f8\:304d\:8fbc\:3080\:30fb\:8868\:793a\:3059\:308b\:3068 FE <-> \:30ab\:30fc\:30cd\:30eb\:306e\:8ee2\:9001\:3067\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:5fdc\:7b54\:3057\:306a\:304f\:306a\:308b\:3002
+6. \:623b\:308a\:5024\:304c Failure \:306a\:3089 md \:3092\:4fee\:6b63\:3057\:3066 SlideApplyScenario \:3092\:518d\:8a55\:4fa1\:3059\:308b\:3002Failure[\"BadFigures\", ..] \:306f\:6e21\:3057\:305f\:56f3\:304c\:8868\:793a\:3067\:304d\:306a\:3044 (\:4e2d\:306b Failure / $Failed \:304c\:5165\:3063\:3066\:3044\:308b\:3001\:753b\:50cf\:51e6\:7406\:95a2\:6570\:304c\:8a55\:4fa1\:3055\:308c\:305a\:306b\:6b8b\:3063\:3066\:3044\:308b) \:3068\:3044\:3046\:610f\:5473\:3067\:3001\:4f55\:3082\:66f8\:304d\:8fbc\:307e\:308c\:3066\:3044\:306a\:3044\:3002BadFigures \:306e Problem \:3092\:8aad\:307f\:3001\:305d\:306e\:56f3\:3092\:4f5c\:308a\:76f4\:3059 (References \:306e locator \:3084\:30d1\:30b9\:3092\:78ba\:304b\:3081\:3001SlidePDFFigure \:306a\:3069\:306e\:623b\:308a\:5024\:304c Image \:3067\:3042\:308b\:3053\:3068\:3092 ImageQ \:3067\:78ba\:304b\:3081\:3066\:304b\:3089\:7d44\:307f\:5408\:308f\:305b\:308b) \:304b\:3001\:305d\:306e <<FIGn>> \:3092\:5916\:3057\:3066\:304b\:3089\:518d\:8a55\:4fa1\:3059\:308b\:3002Success[\"SlideApplied\", ...] \:304c\:8fd4\:308c\:3070\:5b8c\:4e86\:3002" <>
   If[metaBlocks =!= "", "\n7. Directives / Dictionary / References \:3092\:53b3\:5b88\:3059\:308b\:3002", ""];
 
 (* \:7d42\:7aef\:30de\:30fc\:30ab\:30fc\:304c\:7121\:3051\:308c\:3070\:672b\:5c3e\:306b\:8ffd\:52a0\:3059\:308b (\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306e\:8ffd\:8de1\:30bb\:30eb\:3092 Appendix \:306b\:7f6e\:304f\:305f\:3081) *)
@@ -2128,7 +2404,7 @@ iSWTranslatePrompt[numbered_, lang_, metaBlocks_] :=
   "\:4ee5\:4e0b\:306e\:756a\:53f7\:4ed8\:304d\:5404\:30a8\:30f3\:30c8\:30ea\:3092 " <> lang <> " \:306b\:7ffb\:8a33\:3057\:3066\:304f\:3060\:3055\:3044\:3002\n" <>
   "- \:51fa\:529b\:306f\:5404\:30a8\:30f3\:30c8\:30ea\:306b\:3064\:304d 1 \:884c\:3001\"[n] \:8a33\:6587\" \:306e\:5f62\:5f0f\:3002\:756a\:53f7\:3092\:5909\:3048\:306a\:3044\:30fb\:5897\:6e1b\:3057\:306a\:3044\:3002\n" <>
   "- \:8a33\:6587\:5185\:306e\:6539\:884c\:306f \\n \:3068\:66f8\:304f\:3002\n" <>
-  "- \:8a18\:53f7\:30fb\:6570\:5f0f\:30fb\:30b3\:30fc\:30c9\:65ad\:7247\:30fb\:6570\:5024\:30fb\:56fa\:6709\:540d\:8a5e\:306e\:8868\:8a18\:306f\:4fdd\:6301\:3059\:308b\:3002\n" <>
+  "- \:8a18\:53f7\:30fb\:6570\:5f0f\:30fb\:30b3\:30fc\:30c9\:65ad\:7247\:30fb\:6570\:5024\:30fb\:56fa\:6709\:540d\:8a5e\:306e\:8868\:8a18\:306f\:4fdd\:6301\:3059\:308b\:3002$\[Ellipsis]$ \:3067\:56f2\:3093\:3060\:6570\:5f0f\:306f\:4e2d\:8eab\:3092\:5909\:3048\:305a\:306b $\[Ellipsis]$ \:306e\:307e\:307e\:6b8b\:3059\:3002\n" <>
   "- Dictionary \:306e\:7528\:8a9e\:5bfe\:5fdc\:3092\:53b3\:5b88\:3059\:308b\:3002\n" <>
   "- \:7ffb\:8a33\:4ee5\:5916\:306e\:8aac\:660e\:30fb\:524d\:7f6e\:304d\:3092\:51fa\:529b\:3057\:306a\:3044\:3002\n\n" <>
   numbered;
@@ -2145,99 +2421,340 @@ iSWParseNumbered[resp_String] := Module[{parts, assoc = <||>, i},
     {k, i, Length[parts]}];
   assoc];
 
+(* ---- v1.36: \:82f1\:8a33\:306f\:539f\:6587\:3092\:6b8b\:3057\:3066\:5207\:308a\:66ff\:3048\:308b (documentation.wl \:3068\:540c\:3058\:4fdd\:5b58\:5f62\:5f0f) ----
+   \:8a33\:3057\:305f\:30bb\:30eb\:306e TaggingRules \:306b documentation.wl \:3068\:540c\:3058\:30ad\:30fc\:3067\:6301\:3064:
+     "documentation" -> {"mode" -> "translated", "translationSrc" -> \:539f\:6587, "translation" -> \:8a33,
+                         "showTranslation" -> True|False, "cleanText" -> \:3044\:307e\:8868\:793a\:3057\:3066\:3044\:308b\:6587}
+   \:306a\:306e\:3067 documentation.wl \:306e DocToggleView (\:30bb\:30eb\:5358\:4f4d\:306e\:5207\:66ff) \:3082\:305d\:306e\:307e\:307e\:52b9\:304f\:3002\:30b9\:30e9\:30a4\:30c9\:306f 1 \:679a\:305a\:3064\:307e\:3068\:3081\:3066 LLM \:306b
+   \:6e21\:3059 (\:30bb\:30eb\:3054\:3068\:306b\:554f\:3044\:5408\:308f\:305b\:306a\:3044\:3002\:7528\:8a9e\:3082\:305d\:308d\:3046)\:3002\:539f\:6587\:306e\:66f8\:5f0f (\:592a\:5b57\:30fb\:5f0f\:306a\:3069) \:306f "SWOrigContent" (Compress) \:306b
+   \:6b8b\:3057\:3001\:539f\:6587\:3078\:623b\:3059\:3068\:304d\:306b\:66f8\:5f0f\:3054\:3068\:623b\:3059\:3002\:67a0\:7dda (documentation.wl \:306e\:9752\:3044\:5e2f) \:306f\:30b9\:30e9\:30a4\:30c9\:306e\:753b\:9762\:306b\:5199\:308b\:306e\:3067\:4ed8\:3051\:306a\:3044\:3002
+   \:539f\:7a3f (SlideTalk) \:306f\:8a33\:3055\:306a\:3044: \:539f\:7a3f\:306e\:591a\:8a00\:8a9e\:5316\:306f SlideTalkTranslate (\:5225\:30bb\:30eb) \:304c\:53d7\:3051\:6301\:3064\:3002
+   \:65e7\:7248 (v1.35 \:307e\:3067) \:306e "SWOrigText" \:3067\:7f6e\:304d\:63db\:3048\:305f\:30bb\:30eb\:306f\:3001\:89e6\:3063\:305f\:3068\:304d\:306b\:3053\:306e\:5f62\:5f0f\:3078\:79fb\:3059\:3002 *)
+$iSWTransTag = "documentation";
+$iSWSlideTransStyles := DeleteCases[$iSWTranslatableStyles, "SlideTalk"];
+
+iSWTRGet[co_CellObject, key_String] := Quiet[CurrentValue[co, {TaggingRules, $iSWTransTag, key}]];
+iSWTRString[co_CellObject, key_String] := With[{v = iSWTRGet[co, key]}, If[StringQ[v], v, None]];
+
+(* TaggingRules (\:898f\:5247\:306e\:30ea\:30b9\:30c8 / \:9023\:60f3) \:306e "documentation" \:4e0b\:3092\:66f8\:304d\:63db\:3048\:308b\:3002rules \:306e\:5024 Inherited \:306f\:6d88\:3059 *)
+iSWTRMerge[tr_, docRules_List, topRules_List : {}] := Module[{t, sub},
+  t = Replace[tr, {a_Association :> Normal[a], l_List :> l, _ -> {}}];
+  sub = Replace[Lookup[t, $iSWTransTag, {}], {a_Association :> Normal[a], l_List :> l, _ -> {}}];
+  Do[sub = DeleteCases[sub, r[[1]] -> _]; If[r[[2]] =!= Inherited, AppendTo[sub, r]], {r, docRules}];
+  t = DeleteCases[t, $iSWTransTag -> _];
+  Do[t = DeleteCases[t, r[[1]] -> _]; If[r[[2]] =!= Inherited, AppendTo[t, r]], {r, topRules}];
+  If[sub =!= {}, AppendTo[t, $iSWTransTag -> sub]];
+  t];
+
+(* \:30bb\:30eb\:306e\:4e2d\:8eab\:3092 content \:306b\:3001TaggingRules \:3092\:5408\:6210\:3057\:3066\:66f8\:304d\:76f4\:3059 (\:30bb\:30eb\:306e\:307b\:304b\:306e\:30aa\:30d7\:30b7\:30e7\:30f3\:306f\:305d\:306e\:307e\:307e) *)
+iSWTRWrite[co_CellObject, content_, docRules_List, topRules_List : {}] := Module[{c = Quiet[NotebookRead[co]], opts, tr},
+  If[Head[c] =!= Cell || Length[c] < 2, Return[$Failed]];
+  opts = List @@ Drop[c, 2];
+  tr = FirstCase[opts, (TaggingRules -> v_) :> v, {}];
+  opts = Append[DeleteCases[opts, TaggingRules -> _], TaggingRules -> iSWTRMerge[tr, docRules, topRules]];
+  NotebookWrite[co, Cell[content, c[[2]], Sequence @@ opts]];
+  True];
+
+(* \:66f8\:5f0f\:306e\:6307\:5b9a (FontWeight -> "Bold" \:306a\:3069) \:3092\:9664\:3044\:305f\:6587 (iCellText \:306f\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:6587\:5b57\:5217\:307e\:3067\:62fe\:3046) *)
+iSWTRPlain[content_] := Module[{x = content},
+  (* v1.43: \:884c\:5185\:6570\:5f0f\:306f $tex$ \:306b\:623b\:3057\:3066 LLM \:306b\:6e21\:3059 (\:4ee5\:524d\:306f\:300cYlmreal\:300d\:306e\:3088\:3046\:306a\:6587\:5b57\:306e\:9023\:7d50\:306b\:306a\:3063\:305f) *)
+  x = x /. c : Cell[BoxData[_], ___] :> iSWSlidePartText[c];
+  x = x //. {StyleBox[a_, ___] :> a, ButtonBox[a_, ___] :> a, TagBox[a_, ___] :> a, AdjustmentBox[a_, ___] :> a,
+    FormBox[a_, ___] :> a, InterpretationBox[a_, ___] :> a};
+  x = DeleteCases[x, _Rule | _RuleDelayed, {1, Infinity}];
+  StringTrim[StringJoin[Cases[{x}, s_String :> s, {0, Infinity}]]]];
+iSWTRText[co_CellObject] := With[{c = Quiet[NotebookRead[co]]}, If[Head[c] === Cell, iSWTRPlain[First[c]], ""]];
+
+(* \:65e7\:7248\:306e\:7f6e\:304d\:63db\:3048 (SWOrigText) \:3092\:65b0\:3057\:3044\:5f62\:5f0f\:3078: \:3044\:307e\:51fa\:3066\:3044\:308b\:306e\:306f\:8a33 *)
+iSWTRMigrate[co_CellObject] := Module[{o = Quiet[CurrentValue[co, {TaggingRules, "SWOrigText"}]], cur},
+  If[! StringQ[o] || o === "" || StringQ[iSWTRString[co, "translationSrc"]], Return[False]];
+  cur = iSWTRText[co];
+  iSWTRWrite[co, First[NotebookRead[co]],
+    {"mode" -> "translated", "translationSrc" -> o, "translation" -> cur, "showTranslation" -> True, "cleanText" -> cur},
+    {"SWOrigText" -> Inherited}];
+  True];
+
+(* \:30bb\:30eb\:306e\:72b6\:614b: "Translation" (\:8a33\:3092\:8868\:793a\:4e2d) / "Original" (\:539f\:6587\:3092\:8868\:793a\:3001\:8a33\:3042\:308a) / "Stale" (\:539f\:6587\:3092\:76f4\:3057\:305f\:5f8c) / "None" (\:8a33\:306a\:3057) *)
+iSWTRState[co_CellObject] := Module[{show = TrueQ[iSWTRGet[co, "showTranslation"]], src = iSWTRString[co, "translationSrc"],
+    tr = iSWTRString[co, "translation"]},
+  Which[
+    ! StringQ[tr] || StringTrim[tr] === "", "None",
+    show, "Translation",
+    StringQ[src] && StringTrim[src] === iSWTRText[co], "Original",
+    True, "Stale"]];
+
+(* \:8a33\:3092\:51fa\:3059: \:3044\:307e\:306e\:539f\:6587 (\:66f8\:5f0f\:3054\:3068) \:3092\:6b8b\:3057\:3066\:8a33\:3092\:66f8\:304f *)
+iSWTRShowTranslation[co_CellObject, trIn_ : Automatic] := Module[{c = Quiet[NotebookRead[co]], orig, tr},
+  If[Head[c] =!= Cell, Return[$Failed]];
+  If[TrueQ[iSWTRGet[co, "showTranslation"]] && trIn === Automatic, Return[True]];
+  tr = If[StringQ[trIn], trIn, iSWTRString[co, "translation"]];
+  If[! StringQ[tr] || StringTrim[tr] === "", Return[$Failed]];
+  orig = iSWTRPlain[First[c]];
+  iSWTRWrite[co, iSWInlineTextData[tr],
+    {"mode" -> "translated", "translationSrc" -> orig, "translation" -> tr, "showTranslation" -> True, "cleanText" -> tr},
+    {"SWOrigContent" -> Compress[First[c]]}]];
+
+(* \:539f\:6587\:3078\:623b\:3059: \:8a33\:3092\:624b\:3067\:76f4\:3057\:3066\:3044\:308c\:3070\:305d\:306e\:76f4\:3057\:3092\:8a33\:3068\:3057\:3066\:6b8b\:3059\:3002\:66f8\:5f0f\:3064\:304d\:306e\:539f\:6587\:304c\:3042\:308c\:3070\:305d\:308c\:3067\:623b\:3059 *)
+iSWTRShowOriginal[co_CellObject] := Module[{c = Quiet[NotebookRead[co]], src, cur, oc, content},
+  If[Head[c] =!= Cell, Return[$Failed]];
+  If[! TrueQ[iSWTRGet[co, "showTranslation"]], Return[True]];
+  src = iSWTRString[co, "translationSrc"];
+  If[! StringQ[src], Return[$Failed]];
+  cur = iSWTRPlain[First[c]];
+  oc = Quiet[Uncompress[Replace[CurrentValue[co, {TaggingRules, "SWOrigContent"}], Except[_String] -> ""]]];
+  content = If[oc =!= $Failed && oc =!= Null && iSWTRPlain[oc] === StringTrim[src], oc, iSWInlineTextData[src]];
+  iSWTRWrite[co, content,
+    {"translation" -> If[cur =!= "", cur, Inherited], "showTranslation" -> False, "cleanText" -> src}]];
+
+(* \:679a n \:306e\:8a33\:3059\:5bfe\:8c61\:306e\:30bb\:30eb (\:898b\:51fa\:3057\:30fb\:7b87\:6761\:66f8\:304d\:30fb\:672c\:6587\:3002\:51fa\:5178\:3068\:539f\:7a3f\:306f\:9664\:304f) *)
+iSWTRSlideCells[nb_NotebookObject, n_Integer] := Module[{ranges = iSWSlideRanges[nb], styles, cells},
+  If[! (1 <= n <= Length[ranges]), Return[{}]];
+  styles = iSWCellStyles[nb]; cells = Cells[nb];
+  cells[[Select[Range[ranges[[n, 1]], Min[ranges[[n, 2]], Length[styles]]],
+    MemberQ[$iSWSlideTransStyles, styles[[#]]] && FreeQ[{iSWCellTags[cells[[#]]]}, "Citation"] &]]]];
+
 SlideTranslate[] := With[{nb = iSWNotebook[]},
   If[nb === $Failed, $Failed, SlideTranslate[nb]]];
 
 SlideTranslate[nb_NotebookObject] := Module[{sn = iSWCurrentSlideNo[nb]},
-  If[!iSWRequireLLM[], Return[$Failed]];
   If[sn === $Failed, iSWNoSlideDialog[]; Return[$Failed]];
   iSWTranslateSlideNo[nb, sn, None]];
 
-iSWTranslateSlideNo[nb_, slideNo_, cont_] := Module[
-  {ranges, start, end, styles, cells, idxs, texts, nonEmpty, numbered, meta, prompt},
-  ranges = iSWSlideRanges[nb];
-  If[slideNo > Length[ranges], If[cont =!= None, cont[]]; Return[$Failed]];
-  {start, end} = ranges[[slideNo]];
-  styles = iSWCellStyles[nb];
-  cells = Cells[nb];
-  Quiet[NBAccess`NBInvalidateCellsCache[nb]];
-  idxs = Select[Range[start, end],
-    MemberQ[$iSWTranslatableStyles, styles[[#]]] &&
-      FreeQ[{iSWCellTags[cells[[#]]]}, "Citation"] &];
-  texts = Quiet[NBAccess`NBCellGetText[nb, #]] & /@ idxs;
-  nonEmpty = Select[Range[Length[idxs]],
-    StringQ[texts[[#]]] && StringTrim[texts[[#]]] =!= "" &];
-  If[nonEmpty === {},
-    If[cont =!= None, cont[], iSWStatus[nb, iSL["\:7ffb\:8a33\:5bfe\:8c61\:304c\:3042\:308a\:307e\:305b\:3093", "Nothing to translate"]];
+(* \:679a slideNo \:3092\:8a33\:306e\:8868\:793a\:306b\:3059\:308b\:3002\:8a33\:306e\:7121\:3044\:30bb\:30eb\:30fb\:539f\:6587\:3092\:76f4\:3057\:305f\:30bb\:30eb\:3060\:3051 LLM \:306b\:6e21\:3057\:3001\:8a33\:306e\:3042\:308b\:30bb\:30eb\:306f\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:308b\:3060\:3051 *)
+(* v1.40: \:6587\:3092\:8a33\:3057\:305f\:3042\:3068\:3001\:540c\:3058\:679a\:306e\:56f3\:3082\:8a33\:3059 (\:56f3\:306e\:65b9\:304c\:6700\:5f8c\:306b\:72b6\:614b\:3092\:51fa\:3059) *)
+iSWTranslateSlideNo[nb_, slideNo_, cont_] :=
+  iSWTranslateSlideTextNo[nb, slideNo, Function[iSWFigTranslateSlideNo[nb, slideNo, cont]]];
+
+iSWTranslateSlideTextNo[nb_, slideNo_, cont_] := Module[{cos, todo, ready, numbered, meta, prompt},
+  If[slideNo > Length[iSWSlideRanges[nb]], If[cont =!= None, cont[]]; Return[$Failed]];
+  cos = iSWTRSlideCells[nb, slideNo];
+  Scan[iSWTRMigrate, cos];
+  cos = iSWTRSlideCells[nb, slideNo];
+  cos = Select[cos, iSWTRText[#] =!= "" &];
+  ready = Select[cos, iSWTRState[#] === "Original" &];
+  todo = Select[cos, MemberQ[{"None", "Stale"}, iSWTRState[#]] &];
+  Scan[iSWTRShowTranslation, ready];
+  If[todo === {},
+    If[cont =!= None, cont[],
+      iSWStatus[nb, If[cos === {}, iSL["\:7ffb\:8a33\:5bfe\:8c61\:304c\:3042\:308a\:307e\:305b\:3093", "Nothing to translate"],
+        iSL["\:8a33\:3092\:8868\:793a\:3057\:307e\:3057\:305f (\:539f\:6587\:3078\:306f\:300c\:539f\:6587\:300d)", "Showing the translation (\"Original\" switches back)"]]];
       iSWStatusClearLater[nb]];
     Return[Null]];
-  numbered = StringRiffle[
-    MapIndexed["[" <> ToString[First[#2]] <> "] " <>
-      StringReplace[texts[[#1]], "\n" -> "\\n"] &, nonEmpty], "\n"];
+  If[! iSWRequireLLM[], Return[$Failed]];
+  numbered = StringRiffle[MapIndexed["[" <> ToString[First[#2]] <> "] " <> StringReplace[iSWTRText[#1], "\n" -> "\\n"] &, todo], "\n"];
   meta = iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb];
   prompt = iSWTranslatePrompt[numbered, $SlideTranslationLanguage, meta];
-  iSWStatus[nb, iSL["\:7ffb\:8a33\:4e2d: \:30b9\:30e9\:30a4\:30c9 " <> ToString[slideNo],
-    "Translating slide " <> ToString[slideNo]]];
-  With[{nb2 = nb, tidxs = idxs[[nonEmpty]], torigs = texts[[nonEmpty]], c = cont},
+  iSWStatus[nb, iSL["\:7ffb\:8a33\:4e2d: \:30b9\:30e9\:30a4\:30c9 " <> ToString[slideNo], "Translating slide " <> ToString[slideNo]]];
+  With[{nb2 = nb, tcos = todo, torigs = iSWTRText /@ todo, c = cont},
     NBAccess`$NBLLMQueryFunc[prompt,
-      Function[resp, iSWApplyTranslate[nb2, tidxs, torigs, resp, c]],
-      nb2, Fallback -> iSWFallback[]]];
-];
+      Function[resp, iSWApplyTranslate[nb2, tcos, torigs, resp, c]],
+      nb2, Fallback -> iSWFallback[]]]];
 
-iSWApplyTranslate[nb_, idxs_, origs_, resp_, cont_] := Module[{assoc, old},
-  If[!StringQ[resp] || StringStartsQ[resp, "Error"] || StringStartsQ[resp, "[ERROR]"],
+(* \:5fdc\:7b54\:3092\:66f8\:304f\:3002\:5f85\:3064\:9593\:306b\:6d88\:3055\:308c\:305f\:30fb\:76f4\:3055\:308c\:305f\:30bb\:30eb\:306f\:66f8\:304b\:306a\:3044 *)
+iSWApplyTranslate[nb_, cos_List, origs_List, resp_, cont_] := Module[{assoc, n = 0},
+  If[! StringQ[resp] || StringStartsQ[resp, "Error"] || StringStartsQ[resp, "[ERROR]"],
     iSWStatus[nb, iSL["\:7ffb\:8a33\:30a8\:30e9\:30fc", "Translate error"]]; iSWStatusClearLater[nb];
+    If[cont =!= None, cont[]];
     Return[$Failed]];
   assoc = iSWParseNumbered[resp];
-  Quiet[NBAccess`NBInvalidateCellsCache[nb]];
   Do[
-    If[KeyExistsQ[assoc, k] && StringTrim[assoc[k]] =!= "",
-      old = Quiet[NBAccess`NBCellGetTaggingRule[nb, idxs[[k]], "SWOrigText"]];
-      If[!StringQ[old] || old === "",
-        Quiet[NBAccess`NBCellSetTaggingRule[nb, idxs[[k]], "SWOrigText", origs[[k]]]]];
-      Quiet[NBAccess`NBCellWriteText[nb, idxs[[k]], assoc[k]]];
-      Pause[0.03]],
-    {k, Length[idxs]}];
+    If[KeyExistsQ[assoc, k] && StringTrim[assoc[k]] =!= "" && iSWTRText[cos[[k]]] === origs[[k]],
+      If[TrueQ[iSWTRShowTranslation[cos[[k]], StringTrim[assoc[k]]]], n++]],
+    {k, Length[cos]}];
+  Quiet[NBAccess`NBInvalidateCellsCache[nb]];
   If[cont =!= None, cont[],
-    iSWStatus[nb, iSL["\:7ffb\:8a33\:5b8c\:4e86", "Translation complete"]]; iSWStatusClearLater[nb]];
-];
+    iSWStatus[nb, iSL["\:7ffb\:8a33\:5b8c\:4e86 (" <> ToString[n] <> " \:30bb\:30eb\:3002\:539f\:6587\:306f\:6b8b\:3063\:3066\:3044\:307e\:3059)", "Translation complete (" <> ToString[n] <> " cells; the original is kept)"]];
+    iSWStatusClearLater[nb]]];
 
+(* \:539f\:6587\:3078\:623b\:3059 (\:8a33\:306f\:6b8b\:308b\:306e\:3067\:3001\:3082\:3046\:4e00\:5ea6\:300c\:82f1\:8a33\:300d\:3092\:62bc\:305b\:3070 LLM \:3092\:547c\:3070\:305a\:306b\:8a33\:3078\:623b\:308b) *)
 SlideTranslateRevert[] := With[{nb = iSWNotebook[]},
   If[nb === $Failed, $Failed, SlideTranslateRevert[nb]]];
-
-SlideTranslateRevert[nb_NotebookObject] := Module[{sn, ranges, start, end, o},
-  sn = iSWCurrentSlideNo[nb];
+SlideTranslateRevert[nb_NotebookObject] := Module[{sn = iSWCurrentSlideNo[nb], cos},
   If[sn === $Failed, iSWNoSlideDialog[]; Return[$Failed]];
-  ranges = iSWSlideRanges[nb];
-  {start, end} = ranges[[sn]];
-  Quiet[NBAccess`NBInvalidateCellsCache[nb]];
-  Do[
-    o = Quiet[NBAccess`NBCellGetTaggingRule[nb, i, "SWOrigText"]];
-    If[StringQ[o] && o =!= "",
-      Quiet[NBAccess`NBCellWriteText[nb, i, o]];
-      Quiet[NBAccess`NBCellSetTaggingRule[nb, i, "SWOrigText", ""]];
-      Pause[0.03]],
-    {i, start, end}];
-  iSWStatus[nb, iSL["\:539f\:6587\:306b\:623b\:3057\:307e\:3057\:305f", "Reverted to original"]];
-  iSWStatusClearLater[nb];
-];
+  cos = iSWTRSlideCells[nb, sn];
+  Scan[iSWTRMigrate, cos];
+  Scan[iSWTRShowOriginal, iSWTRSlideCells[nb, sn]];
+  (* v1.40: \:56f3\:3082\:539f\:6587\:3078 *)
+  Scan[iSWFigShowOriginal, iSWFigSlideCells[nb, sn]];
+  iSWStatus[nb, iSL["\:539f\:6587\:306b\:623b\:3057\:307e\:3057\:305f (\:8a33\:306f\:6b8b\:3063\:3066\:3044\:307e\:3059)", "Reverted to the original (the translation is kept)"]];
+  iSWStatusClearLater[nb]];
 
 SlideTranslateDeck[] := With[{nb = iSWNotebook[]},
   If[nb === $Failed, $Failed, SlideTranslateDeck[nb]]];
-
 SlideTranslateDeck[nb_NotebookObject] := Module[{n},
-  If[!iSWRequireLLM[], Return[$Failed]];
   n = Length[iSWSlideRanges[nb]];
   If[n === 0, iSWNoSlideDialog[]; Return[$Failed]];
   iSWTranslateChain[nb, 1, n]];
 
 iSWTranslateChain[nb_, k_, n_] :=
   If[k > n,
-    iSWStatus[nb, iSL["\:5168 " <> ToString[n] <> " \:30b9\:30e9\:30a4\:30c9\:3092\:7ffb\:8a33\:3057\:307e\:3057\:305f",
-      "Translated all " <> ToString[n] <> " slides"]];
+    Quiet[CurrentValue[nb, {TaggingRules, "SWSlideView"}] = "Translation"];
+    iSWStatus[nb, iSL["\:5168 " <> ToString[n] <> " \:30b9\:30e9\:30a4\:30c9\:3092\:8a33\:306e\:8868\:793a\:306b\:3057\:307e\:3057\:305f (\:539f\:6587\:306f\:6b8b\:3063\:3066\:3044\:307e\:3059)",
+      "All " <> ToString[n] <> " slides show the translation (the original is kept)"]];
     iSWStatusClearLater[nb],
-    iSWTranslateSlideNo[nb, k,
-      Function[iSWTranslateChain[nb, k + 1, n]]]];
+    iSWTranslateSlideNo[nb, k, Function[iSWTranslateChain[nb, k + 1, n]]]];
+
+(* \:30c7\:30c3\:30ad\:5168\:4f53\:306e\:8868\:793a\:8a00\:8a9e\:3092\:5207\:308a\:66ff\:3048\:308b (LLM \:306f\:547c\:3070\:306a\:3044)\:3002\:8a33\:306e\:7121\:3044\:30bb\:30eb\:306f\:539f\:6587\:306e\:307e\:307e\:3002
+   view: "Original" | "Translation" | "Toggle" (\:8a33\:3092\:8868\:793a\:4e2d\:306e\:679a\:304c 1 \:3064\:3067\:3082\:3042\:308c\:3070\:539f\:6587\:3078\:3001\:7121\:3051\:308c\:3070\:8a33\:3078) *)
+SlideShowLanguage[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideShowLanguage[nb, "Toggle"]]];
+SlideShowLanguage[view_String] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideShowLanguage[nb, view]]];
+SlideShowLanguage[nb_NotebookObject] := SlideShowLanguage[nb, "Toggle"];
+SlideShowLanguage[nb_NotebookObject, viewIn_String] := Module[{n = Length[iSWSlideRanges[nb]], all, figs, view, done = 0, stale = 0, none = 0},
+  all = Flatten[Table[iSWTRSlideCells[nb, i], {i, n}]];
+  Scan[iSWTRMigrate, all];
+  all = Flatten[Table[iSWTRSlideCells[nb, i], {i, n}]];
+  (* v1.40: \:56f3\:306e\:30bb\:30eb\:3082\:540c\:3058\:3088\:3046\:306b\:5207\:308a\:66ff\:3048\:308b *)
+  figs = Flatten[Table[iSWFigSlideCells[nb, i], {i, n}]];
+  view = Switch[viewIn,
+    "Toggle", If[AnyTrue[Join[all, figs], TrueQ[iSWTRGet[#, "showTranslation"]] &], "Original", "Translation"],
+    "Original" | "Translation", viewIn,
+    _, Return[Failure["BadView", <|"MessageTemplate" -> "view must be \"Original\", \"Translation\" or \"Toggle\""|>]]];
+  Do[With[{st = iSWTRState[co]},
+      Which[
+        view === "Original" && st === "Translation", If[TrueQ[iSWTRShowOriginal[co]], done++],
+        view === "Translation" && st === "Original", If[TrueQ[iSWTRShowTranslation[co]], done++],
+        view === "Translation" && st === "Stale", stale++,
+        view === "Translation" && st === "None" && iSWTRText[co] =!= "", none++,
+        True, Null]],
+    {co, all}];
+  Do[With[{st = iSWFigState[co]},
+      Which[
+        view === "Original" && st === "Translation", If[TrueQ[iSWFigShowOriginal[co]], done++],
+        view === "Translation" && st === "Original", If[TrueQ[iSWFigShowTranslation[co]], done++],
+        view === "Translation" && MemberQ[{"Stale", "None"}, st], If[st === "Stale", stale++, none++],
+        True, Null]],
+    {co, figs}];
+  Quiet[CurrentValue[nb, {TaggingRules, "SWSlideView"}] = view];
+  iSWStatus[nb, If[view === "Original",
+    iSL["\:539f\:6587\:306e\:8868\:793a\:306b\:3057\:307e\:3057\:305f", "Showing the original"],
+    iSL["\:8a33\:306e\:8868\:793a\:306b\:3057\:307e\:3057\:305f" <> If[stale + none > 0,
+        " (\:8a33\:304c\:7121\:3044\:30fb\:539f\:6587\:3092\:76f4\:3057\:305f\:30bb\:30eb" <> ToString[stale + none] <> " \:306f\:539f\:6587\:306e\:307e\:307e\:3002\:300c\:5168\:30b9\:30e9\:30a4\:30c9\:82f1\:8a33\:300d\:3067\:8a33\:3057\:307e\:3059)", ""],
+      "Showing the translation" <> If[stale + none > 0, " (" <> ToString[stale + none] <> " cells without an up-to-date translation stay in the original; Translate All fixes them)", ""]]]];
+  iSWStatusClearLater[nb];
+  <|"View" -> view, "Switched" -> done, "Stale" -> stale, "Untranslated" -> none|>];
+
+(* \:8a33\:3092\:8868\:793a\:4e2d\:306e\:30bb\:30eb\:304c\:3042\:308b\:304b (\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620\:306a\:3069\:306f\:539f\:6587\:3067\:884c\:3046) *)
+iSWSlidesShowTranslationQ[nb_NotebookObject] := With[{n = Length[iSWSlideRanges[nb]]},
+  AnyTrue[Flatten[Table[iSWTRSlideCells[nb, i], {i, n}]],
+    TrueQ[iSWTRGet[#, "showTranslation"]] || StringQ[Quiet[CurrentValue[#, {TaggingRules, "SWOrigText"}]]] &&
+      Quiet[CurrentValue[#, {TaggingRules, "SWOrigText"}]] =!= "" &] ||
+  (* v1.40: \:8a33\:306e\:56f3\:3092\:8868\:793a\:4e2d *)
+  AnyTrue[Flatten[Table[iSWFigSlideCells[nb, i], {i, n}]], TrueQ[iSWTRGet[#, "showTranslation"]] &]];
+
+(* ---- v1.40: \:56f3 (Output / Print / Graphics \:30bb\:30eb = Mathematica \:3067\:63cf\:3044\:305f\:56f3\:3084\:8868) \:306e\:4e2d\:306e\:65e5\:672c\:8a9e\:3082\:8a33\:3057\:3066\:5207\:308a\:66ff\:3048\:308b ----
+   \:56f3\:306e\:4e2d\:306e\:65e5\:672c\:8a9e\:306e\:6587\:5b57\:5217 (\:30e9\:30d9\:30eb\:30fb\:8868\:306e\:6587\:5b57\:3002\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:5024 = \:30d5\:30a9\:30f3\:30c8\:540d\:306a\:3069\:306f\:9664\:304f) \:3092 1 \:679a\:3076\:3093\:307e\:3068\:3081\:3066 LLM \:306b\:8a33\:3055\:305b\:3001
+   \:7bb1\:306e\:69cb\:9020\:306f\:305d\:306e\:307e\:307e\:6587\:5b57\:5217\:3060\:3051\:3092\:5dee\:3057\:66ff\:3048\:308b\:3002\:539f\:6587\:306e\:56f3\:306f "SWOrigContent"\:3001\:8a33\:306e\:56f3\:306f "SWTransContent" (\:3069\:3061\:3089\:3082 Compress) \:306b
+   \:6301\:3061\:3001\:72b6\:614b\:306f\:6587\:3068\:540c\:3058 "documentation" -> {translationSrc (\:56f3\:306e\:4e2d\:306e\:539f\:6587\:306e\:6587\:5b57\:5217), translation, showTranslation}\:3002
+   \:306a\:306e\:3067\:300c\:82f1\:8a33\:300d\:300c\:5168\:30b9\:30e9\:30a4\:30c9\:82f1\:8a33\:300d\:300c\:539f\:6587\:300d\:300c\:539f\:6587\[RightArrowLeftArrow]\:82f1\:8a33\:300d\:304c\:305d\:306e\:307e\:307e\:56f3\:306b\:3082\:52b9\:304f (\:5207\:308a\:66ff\:3048\:306f LLM \:3092\:547c\:3070\:306a\:3044)\:3002
+   \:5165\:529b\:30bb\:30eb\:3092\:8a55\:4fa1\:3057\:76f4\:3059\:3068\:56f3\:306f\:539f\:6587\:3067\:63cf\:304d\:76f4\:3055\:308c\:308b (\:305d\:306e\:3068\:304d\:306f\:300c\:82f1\:8a33\:300d\:3067\:8a33\:3057\:76f4\:3059)\:3002\:753b\:50cf (\:30e9\:30b9\:30bf) \:306e\:4e2d\:306e\:6587\:5b57\:306f\:8a33\:305b\:306a\:3044\:3002 *)
+$iSWFigTransStyles = {"Output", "Print", "Graphics", "Picture"};
+$iSWFigTransMaxBytes = 8 10^6;
+(* v1.40.1: Canvas (\:66f8\:3044\:305f\:56f3) \:306f Input \:30bb\:30eb\:306b\:5165\:308b\:3002Input / Code \:30bb\:30eb\:306f\:63cf\:753b (GraphicsBox) \:3092\:6301\:3064\:3068\:304d\:3060\:3051\:56f3\:3068\:3057\:3001\:63cf\:753b\:306e\:4e2d\:306e\:6587\:5b57\:5217\:3060\:3051\:8a33\:3059 (\:30b3\:30fc\:30c9\:306e\:6587\:5b57\:5217\:306b\:306f\:89e6\:3089\:306a\:3044) *)
+$iSWFigCodeStyles = {"Input", "Code"};
+iSWFigCodeCellQ[c_Cell] := Length[c] >= 2 && MemberQ[$iSWFigCodeStyles, c[[2]]];
+iSWFigTargets[c_Cell] := If[iSWFigCodeCellQ[c], Cases[First[c], _GraphicsBox | _Graphics3DBox, {0, Infinity}], First[c]];
+iSWFigCellStrings[c_Cell] := iSWFigStrings[iSWFigTargets[c]];
+iSWFigCellSig[c_Cell] := StringRiffle[iSWFigUnquote /@ iSWFigCellStrings[c], "\n"];
+
+(* \:56f3\:306e\:4e2d\:306e\:8a33\:3059\:6587\:5b57\:5217\:3002\:30aa\:30d7\:30b7\:30e7\:30f3\:306e\:5024 (FontFamily -> "\:6e38\:30b4\:30b7\:30c3\:30af" \:306a\:3069) \:306f\:8a33\:3055\:306a\:3044 *)
+iSWFigStrings[content_] := Module[{opts},
+  opts = Cases[content, (_ -> s_String) | (_ :> s_String) :> s, {0, Infinity}];
+  DeleteDuplicates[Select[Cases[content, s_String /; iSWJaTextQ[s], {0, Infinity}], ! MemberQ[opts, #] &]]];
+
+(* \:7bb1\:306e\:4e2d\:306e\:6587\:5b57\:5217\:306f "\"...\"" (\:5f15\:7528\:7b26\:3068\:30a8\:30b9\:30b1\:30fc\:30d7\:3064\:304d) \:306e\:3053\:3068\:304c\:3042\:308b *)
+iSWFigQuotedQ[s_String] := StringLength[s] >= 2 && StringStartsQ[s, "\""] && StringEndsQ[s, "\""];
+iSWFigUnquote[s_String] := If[iSWFigQuotedQ[s],
+  StringReplace[StringTake[s, {2, -2}], {"\\n" -> "\n", "\\\"" -> "\"", "\\\\" -> "\\"}], s];
+iSWFigRequote[orig_String, t_String] := If[iSWFigQuotedQ[orig],
+  "\"" <> StringReplace[t, {"\\" -> "\\\\", "\"" -> "\\\"", "\n" -> "\\n"}] <> "\"", t];
+
+iSWFigSig[content_] := StringRiffle[iSWFigUnquote /@ iSWFigStrings[content], "\n"];
+
+iSWFigTRContent[co_CellObject, key_String] := With[{v = Quiet[CurrentValue[co, {TaggingRules, key}]]},
+  If[StringQ[v] && v =!= "", Replace[Quiet[Uncompress[v]], $Failed -> None], None]];
+
+(* \:72b6\:614b: "Translation" (\:8a33\:306e\:56f3\:3092\:8868\:793a\:4e2d) / "Original" (\:539f\:6587\:3092\:8868\:793a\:3001\:8a33\:3042\:308a) / "Stale" (\:56f3\:304c\:63cf\:304d\:76f4\:3055\:308c\:305f) / "None" *)
+iSWFigState[co_CellObject] := Module[{c = Quiet[NotebookRead[co]]},
+  If[Head[c] =!= Cell, Return["None"]];
+  Which[
+    ! StringQ[Quiet[CurrentValue[co, {TaggingRules, "SWTransContent"}]]], "None",
+    TrueQ[iSWTRGet[co, "showTranslation"]], "Translation",
+    iSWFigCellSig[c] === iSWTRString[co, "translationSrc"], "Original",
+    True, "Stale"]];
+
+iSWFigShowTranslation[co_CellObject] := Module[{c = Quiet[NotebookRead[co]], tr},
+  If[Head[c] =!= Cell, Return[$Failed]];
+  If[TrueQ[iSWTRGet[co, "showTranslation"]], Return[True]];
+  tr = iSWFigTRContent[co, "SWTransContent"];
+  If[tr === None, Return[$Failed]];
+  iSWTRWrite[co, tr, {"showTranslation" -> True}, {"SWOrigContent" -> Compress[First[c]]}]];
+
+(* \:539f\:6587\:3078\:623b\:3059\:3002\:8a33\:306e\:56f3\:3092\:624b\:3067\:76f4\:3057\:3066\:3044\:308c\:3070\:3001\:305d\:306e\:76f4\:3057\:3092\:8a33\:3068\:3057\:3066\:6b8b\:3059 *)
+iSWFigShowOriginal[co_CellObject] := Module[{c = Quiet[NotebookRead[co]], oc},
+  If[Head[c] =!= Cell, Return[$Failed]];
+  If[! TrueQ[iSWTRGet[co, "showTranslation"]], Return[True]];
+  oc = iSWFigTRContent[co, "SWOrigContent"];
+  If[oc === None, Return[$Failed]];
+  iSWTRWrite[co, oc, {"showTranslation" -> False}, {"SWTransContent" -> Compress[First[c]]}]];
+
+(* \:8a33\:3092\:5f53\:3066\:3066\:8a33\:306e\:56f3\:3092\:4f5c\:308a\:3001\:8868\:793a\:3059\:308b\:3002map: \:539f\:6587\:306e\:6587\:5b57\:5217 (\:5f15\:7528\:7b26\:306a\:3057) -> \:8a33 *)
+iSWFigApply[co_CellObject, map_Association] := Module[{c = Quiet[NotebookRead[co]], orig, strs, rules, trans},
+  If[Head[c] =!= Cell, Return[$Failed]];
+  orig = First[c];
+  strs = Select[iSWFigCellStrings[c], KeyExistsQ[map, iSWFigUnquote[#]] &];
+  If[strs === {}, Return[$Failed]];
+  rules = Dispatch[(# -> iSWFigRequote[#, map[iSWFigUnquote[#]]]) & /@ strs];
+  trans = If[iSWFigCodeCellQ[c], orig /. g : (_GraphicsBox | _Graphics3DBox) :> (g /. rules), orig /. rules];
+  iSWTRWrite[co, trans,
+    {"mode" -> "translated", "translationSrc" -> iSWFigCellSig[c],
+      "translation" -> StringRiffle[map[iSWFigUnquote[#]] & /@ strs, "\n"], "showTranslation" -> True},
+    {"SWOrigContent" -> Compress[orig], "SWTransContent" -> Compress[trans], "SWFigure" -> True}]];
+
+(* \:679a n \:306e\:56f3\:306e\:30bb\:30eb (\:65e5\:672c\:8a9e\:306e\:6587\:5b57\:3092\:542b\:3080\:304b\:3001\:8a33\:3092\:6301\:3063\:3066\:3044\:308b\:3082\:306e) *)
+iSWFigSlideCells[nb_NotebookObject, n_Integer] := Module[{ranges = iSWSlideRanges[nb], styles, cells},
+  If[! (1 <= n <= Length[ranges]), Return[{}]];
+  styles = iSWCellStyles[nb]; cells = Cells[nb];
+  Select[cells[[Select[Range[ranges[[n, 1]], Min[ranges[[n, 2]], Length[styles]]],
+      MemberQ[Join[$iSWFigTransStyles, $iSWFigCodeStyles], styles[[#]]] && FreeQ[{iSWCellTags[cells[[#]]]}, "Citation"] &]]],
+    Function[co, StringQ[Quiet[CurrentValue[co, {TaggingRules, "SWTransContent"}]]] ||
+      With[{c = Quiet[NotebookRead[co]]},
+        Head[c] === Cell && ByteCount[c] < $iSWFigTransMaxBytes && iSWFigCellStrings[c] =!= {}]]]];
+
+iSWFigTranslatePrompt[numbered_String, lang_, meta_String] :=
+  iSWTranslatePrompt[numbered, lang, meta] <>
+  "\n\n(\:3053\:308c\:3089\:306f\:56f3\:3084\:8868\:306e\:4e2d\:306e\:30e9\:30d9\:30eb\:3067\:3059\:3002\:77ed\:304f\:7c21\:6f54\:306b\:8a33\:3057\:30011 \:884c\:304c\:9577\:304f\:306a\:308a\:3059\:304e\:308b\:3068\:304d\:306f \\n \:3067\:6298\:308a\:8fd4\:3057\:3066\:304f\:3060\:3055\:3044\:3002)";
+
+(* \:679a slideNo \:306e\:56f3\:3092\:8a33\:306e\:8868\:793a\:306b\:3059\:308b (\:8a33\:306e\:3042\:308b\:56f3\:306f\:5207\:308a\:66ff\:3048\:308b\:3060\:3051\:3002\:8a33\:306e\:7121\:3044\:56f3\:30fb\:63cf\:304d\:76f4\:3055\:308c\:305f\:56f3\:3060\:3051 LLM \:306b\:6e21\:3059) *)
+iSWFigTranslateSlideNo[nb_, slideNo_, cont_] := Module[{figs, ready, todo, strs, numbered, meta},
+  figs = iSWFigSlideCells[nb, slideNo];
+  ready = Select[figs, iSWFigState[#] === "Original" &];
+  todo = Select[figs, MemberQ[{"None", "Stale"}, iSWFigState[#]] &];
+  Scan[iSWFigShowTranslation, ready];
+  strs = DeleteDuplicates[Flatten[(iSWFigUnquote /@ iSWFigCellStrings[NotebookRead[#]]) & /@ todo]];
+  If[todo === {} || strs === {} || ! iSWLLMReadyQ[],
+    If[cont =!= None, cont[], iSWFigTranslateDone[nb, Length[ready], 0]];
+    Return[Null]];
+  numbered = StringRiffle[MapIndexed["[" <> ToString[First[#2]] <> "] " <> StringReplace[#1, "\n" -> "\\n"] &, strs], "\n"];
+  meta = iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb];
+  iSWStatus[nb, iSL["\:56f3\:3092\:7ffb\:8a33\:4e2d: \:30b9\:30e9\:30a4\:30c9 " <> ToString[slideNo], "Translating figures on slide " <> ToString[slideNo]]];
+  With[{nb2 = nb, tcos = todo, tstrs = strs, c = cont, nready = Length[ready]},
+    NBAccess`$NBLLMQueryFunc[iSWFigTranslatePrompt[numbered, $SlideTranslationLanguage, meta],
+      Function[resp, iSWFigApplyResponse[nb2, tcos, tstrs, resp, c, nready]],
+      nb2, Fallback -> iSWFallback[]]]];
+
+iSWFigApplyResponse[nb_, cos_List, strs_List, resp_, cont_, nready_] := Module[{assoc, map, n = 0},
+  If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"],
+    assoc = iSWParseNumbered[resp];
+    map = Association[Table[If[KeyExistsQ[assoc, k] && StringTrim[assoc[k]] =!= "",
+      strs[[k]] -> StringTrim[assoc[k]], Nothing], {k, Length[strs]}]];
+    Do[If[TrueQ[iSWFigApply[co, map]], n++], {co, cos}]];
+  Quiet[NBAccess`NBInvalidateCellsCache[nb]];
+  If[cont =!= None, cont[], iSWFigTranslateDone[nb, nready, n]]];
+
+iSWFigTranslateDone[nb_, nready_, n_] := (
+  iSWStatus[nb, iSL["\:8a33\:3092\:8868\:793a\:3057\:307e\:3057\:305f" <> If[nready + n > 0, " (\:56f3 " <> ToString[nready + n] <> ")", ""] <> "\:3002\:539f\:6587\:306f\:6b8b\:3063\:3066\:3044\:307e\:3059",
+    "Showing the translation" <> If[nready + n > 0, " (" <> ToString[nready + n] <> " figures)", ""] <> "; the original is kept"]];
+  iSWStatusClearLater[nb]);
 
 (* ===================== \:633f\:5165\:30b3\:30de\:30f3\:30c9 ===================== *)
 
@@ -2347,7 +2864,7 @@ SlideEnsureDeckStyles[nb_NotebookObject] := Module[{sd},
     SetOptions[nb, StyleDefinitions -> iSWWrapStyleDefinitions[sd]];
     "StylesApplied"]];
 
-(* ---- \:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883 (Working \:21c4 SlideShow) ---- *)
+(* ---- \:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883 (Working \[RightArrowLeftArrow] SlideShow) ---- *)
 $iSWEnvLabel = "View: Working";
 $iSWEnvColor = RGBColor[0.3, 0.5, 0.4];
 
@@ -2441,6 +2958,7 @@ iSWParseReferenceLine[l_String] := Module[
 
 iSWRefKind[loc_String] := Which[
   StringStartsQ[loc, "eagle:", IgnoreCase -> True], "Eagle",
+  iSWComputeRefQ[loc], "Compute",
   StringStartsQ[loc, "sv://"] || StringStartsQ[loc, "src-"], "SourceVault",
   StringStartsQ[loc, "arxiv:", IgnoreCase -> True] ||
     StringContainsQ[loc, "arxiv.org"], "arXiv",
@@ -2455,7 +2973,7 @@ iSWParseReferences[text_String] := Module[{items, n = 0},
   Map[Function[r, n++;
     Module[{kind = iSWRefKind[r["Locator"]], reg},
       (* \:53d6\:308a\:8fbc\:307f\:6e08\:307f\:8ad6\:6587\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:3042\:308c\:3070 "Notebook" \:30ad\:30fc\:3067\:6301\:3064 (Seed / \:672c\:6587\:8aad\:307f\:306f\:305d\:3061\:3089\:3092\:4f7f\:3046) *)
-      reg = If[MemberQ[{"SourceVault", "arXiv", "Eagle"}, kind], iSWRegisteredSourceNotebook[r["Locator"]], $Failed];
+      reg = If[MemberQ[{"SourceVault", "arXiv", "Eagle", "Compute"}, kind], iSWRegisteredSourceNotebook[r["Locator"]], $Failed];
       Join[r, <|"Key" -> If[StringQ[r["Key"]] && r["Key"] =!= "", r["Key"],
           "ref" <> ToString[n]],
         "Kind" -> kind|>,
@@ -2465,13 +2983,15 @@ iSWReferencesList[nb_] :=
   iSWParseReferences[StringRiffle[iSWStyleTexts[nb, "References"], "\n"]];
 
 iSWReferenceGuide[] :=
-  "\:53c2\:7167\:65b9\:6cd5: eagle:<id> \:306f SourceVaultEagleItemPath[SourceVaultEagleItem[\"<id>\"]] \:3067\:539f\:672c\:30d1\:30b9\:3092\:53d6\:5f97\:3057\:3001PDF \:306f ClaudeAttach[\:30d1\:30b9] \:3067\:6dfb\:4ed8\:3057\:3066\:8aad\:3080\:3002sv://.. / src-.. \:306f SourceVaultResolveReference (\:307e\:305f\:306f ClaudeAttach[\"sv://..\"])\:3002arxiv:<id> \:306f https://arxiv.org/abs/<id>\:3002URL \:306f ClaudeAttach[url] \:304b web \:691c\:7d22/\:53d6\:5f97\:3002.nb \:306f 2 \:7a2e\:985e\:3092\:898b\:5206\:3051\:308b: (i) \:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30c7\:30c3\:30ad\:306f SlideDeckOverview / SlideDeckSlides \:3067\:69cb\:6210\:30fb\:4f53\:88c1\:3092\:53c2\:7167\:3057\:3001\:56f3\:306e\:5f15\:7528\:306f SlideDeckFigure\:3002(ii) \:8ad6\:6587\:306e\:548c\:8a33\:306a\:3069\:30c7\:30c3\:30ad\:3067\:306a\:3044\:7d20\:6750 .nb \:306f SlideNotebookOutline[key] (\:898b\:51fa\:3057\:69cb\:6210\:3068\:5404\:7bc0\:306e\:56f3\:756a\:53f7) \:2192 SlideNotebookText[key, \:898b\:51fa\:3057] (\:305d\:306e\:7bc0\:306e\:672c\:6587\:30fb\:6570\:5f0f\:3002\:56f3\:306e\:4f4d\:7f6e\:306f [FIGn] \:884c) \:2192 SlideNotebookFigure[key, n] ([FIGn] \:306e\:539f\:56f3\:3092 Image \:3067) \:3067\:8aad\:3080\:3002\:30d5\:30a1\:30a4\:30eb\:3092\:8aad\:3080\:306e\:306b Import / Get \:3092\:4f7f\:3063\:3066\:306f\:306a\:3089\:306a\:3044 (NBAccess \:306e\:6052\:4e45\:7981\:6b62 head \:3067\:3001\:4f7f\:3046\:3068 ForbiddenHead \:3067\:30bf\:30fc\:30f3\:3054\:3068\:5373\:6b7b\:3059\:308b)\:3002\:4e0a\:8a18\:306e\:5c02\:7528\:95a2\:6570\:3067\:53d6\:308c\:306a\:3044\:5f62\:5f0f\:306e\:30d5\:30a1\:30a4\:30eb\:3092\:3069\:3046\:3057\:3066\:3082\:8aad\:3080\:3068\:304d\:3060\:3051 NBImport[path] / NBImport[path, \"Text\"] (NBAccess \:4ef2\:4ecb Import\:3002\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c NBSetAccessibleDirs \:3067\:5ba3\:8a00\:3057\:305f\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:5185\:306e\:307f\:3002\:7bc4\:56f2\:5916\:306f $Failed)\:3002\:56f3\:8868\:30fb\:5199\:771f\:306e\:5f15\:7528\:5207\:308a\:51fa\:3057\:306f SlidePDFFigure(\:30da\:30fc\:30b8/\:9818\:57df) / SlidePDFImages(\:57cb\:3081\:8fbc\:307f\:753b\:50cf) / SlideDeckFigure(\:904e\:53bb\:30b9\:30e9\:30a4\:30c9 1 \:679a) \:2014 locator \:3092\:305d\:306e\:307e\:307e\:6e21\:305b\:308b\:3002SlideSourceFile[locator] \:306f\:89e3\:6c7a\:6e08\:307f\:30ed\:30fc\:30ab\:30eb\:30d5\:30a1\:30a4\:30eb\:30d1\:30b9(ClaudeAttach \:3067\:306e\:95b2\:89a7\:7528)\:3002";
+  "\:53c2\:7167\:65b9\:6cd5: eagle:<id> \:306f SourceVaultEagleItemPath[SourceVaultEagleItem[\"<id>\"]] \:3067\:539f\:672c\:30d1\:30b9\:3092\:53d6\:5f97\:3057\:3001PDF \:306f ClaudeAttach[\:30d1\:30b9] \:3067\:6dfb\:4ed8\:3057\:3066\:8aad\:3080\:3002sv://.. / src-.. \:306f SourceVaultResolveReference (\:307e\:305f\:306f ClaudeAttach[\"sv://..\"])\:3002arxiv:<id> \:306f https://arxiv.org/abs/<id>\:3002URL \:306f ClaudeAttach[url] \:304b web \:691c\:7d22/\:53d6\:5f97\:3002.nb \:306f 2 \:7a2e\:985e\:3092\:898b\:5206\:3051\:308b: (i) \:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30c7\:30c3\:30ad\:306f SlideDeckOverview / SlideDeckSlides \:3067\:69cb\:6210\:30fb\:4f53\:88c1\:3092\:53c2\:7167\:3057\:3001\:56f3\:306e\:5f15\:7528\:306f SlideDeckFigure\:3002(ii) \:8ad6\:6587\:306e\:548c\:8a33\:306a\:3069\:30c7\:30c3\:30ad\:3067\:306a\:3044\:7d20\:6750 .nb \:306f SlideNotebookOutline[key] (\:898b\:51fa\:3057\:69cb\:6210\:3068\:5404\:7bc0\:306e\:56f3\:756a\:53f7) \[RightArrow] SlideNotebookText[key, \:898b\:51fa\:3057] (\:305d\:306e\:7bc0\:306e\:672c\:6587\:30fb\:6570\:5f0f\:3002\:56f3\:306e\:4f4d\:7f6e\:306f [FIGn] \:884c) \[RightArrow] SlideNotebookFigure[key, n] ([FIGn] \:306e\:539f\:56f3\:3092 Image \:3067) \:3067\:8aad\:3080\:3002\:30d5\:30a1\:30a4\:30eb\:3092\:8aad\:3080\:306e\:306b Import / Get \:3092\:4f7f\:3063\:3066\:306f\:306a\:3089\:306a\:3044 (NBAccess \:306e\:6052\:4e45\:7981\:6b62 head \:3067\:3001\:4f7f\:3046\:3068 ForbiddenHead \:3067\:30bf\:30fc\:30f3\:3054\:3068\:5373\:6b7b\:3059\:308b)\:3002\:4e0a\:8a18\:306e\:5c02\:7528\:95a2\:6570\:3067\:53d6\:308c\:306a\:3044\:5f62\:5f0f\:306e\:30d5\:30a1\:30a4\:30eb\:3092\:3069\:3046\:3057\:3066\:3082\:8aad\:3080\:3068\:304d\:3060\:3051 NBImport[path] / NBImport[path, \"Text\"] (NBAccess \:4ef2\:4ecb Import\:3002\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c NBSetAccessibleDirs \:3067\:5ba3\:8a00\:3057\:305f\:30c7\:30a3\:30ec\:30af\:30c8\:30ea\:5185\:306e\:307f\:3002\:7bc4\:56f2\:5916\:306f $Failed)\:3002\:56f3\:8868\:30fb\:5199\:771f\:306e\:5f15\:7528\:5207\:308a\:51fa\:3057\:306f SlidePDFFigure(\:30da\:30fc\:30b8/\:9818\:57df) / SlidePDFImages(\:57cb\:3081\:8fbc\:307f\:753b\:50cf) / SlideDeckFigure(\:904e\:53bb\:30b9\:30e9\:30a4\:30c9 1 \:679a) \[LongDash] locator \:3092\:305d\:306e\:307e\:307e\:6e21\:305b\:308b\:3002SlideSourceFile[locator] \:306f\:89e3\:6c7a\:6e08\:307f\:30ed\:30fc\:30ab\:30eb\:30d5\:30a1\:30a4\:30eb\:30d1\:30b9(ClaudeAttach \:3067\:306e\:95b2\:89a7\:7528)\:3002";
 
 iSWReferencesBlockFromList[refs_List] := If[refs === {}, "",
   "=== References (\:6587\:732e\:30ea\:30b9\:30c8: \:6307\:793a\:4e2d\:306e [key] \:306f\:3053\:308c\:3092\:6307\:3059) ===\n" <>
   StringRiffle[Map[Function[r,
     "[" <> r["Key"] <> "] (" <> r["Kind"] <> ") " <> r["Locator"] <>
-      If[StringQ[Lookup[r, "Notebook", None]], " [\:548c\:8a33\:30ce\:30fc\:30c8\:767b\:9332\:6e08\:307f: SlideNotebookOutline/Text/Figure/Formula \:3067\:8aad\:3081\:308b]", ""] <>
+      If[StringQ[Lookup[r, "Notebook", None]], If[r["Kind"] === "Compute",
+        " [\:8a08\:7b97\:30ce\:30fc\:30c8 (SourceVault \:7ba1\:7406): SlideNotebookOutline/Text/Figure \:3067\:8aad\:3081\:308b\:3002\:5358\:4f4d\:3092\:8db3\:3059\:306a\:3089 SlideComputeOpen[\"" <> r["Key"] <> "\"]]",
+" [\:548c\:8a33\:30ce\:30fc\:30c8\:767b\:9332\:6e08\:307f: SlideNotebookOutline/Text/Figure/Formula \:3067\:8aad\:3081\:308b]"], ""] <>
       If[r["Note"] =!= "", " -- " <> r["Note"], ""]], refs], "\n"] <>
   "\n" <> iSWReferenceGuide[] <>
   "\n=== End References ===\n\n"];
@@ -2590,12 +3110,47 @@ iSWDeckBaseName[nb_] := Module[{fn = Quiet[NotebookFileName[nb]]},
    \:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:5168\:4f53\:3092 FE \[RightArrow] \:30ab\:30fc\:30cd\:30eb\:3078 MathLink \:8ee2\:9001\:3059\:308b\:300299MB \:306e\:30c7\:30c3\:30ad\:3067\:306f
    \:3053\:306e\:8ee2\:9001\:3060\:3051\:3067 FE \:304c\:9577\:6642\:9593\:5fdc\:7b54\:4e0d\:80fd\:306b\:306a\:308b\:3002\:4fdd\:5b58\:6e08\:307f\:306a\:3089\:30d5\:30a1\:30a4\:30eb\:30d1\:30b9\:3092
    \:8fd4\:3057\:3001\:30ab\:30fc\:30cd\:30eb\:5074\:306e Get \:3067\:8aad\:307e\:305b\:308b (FE \:3092\:4ecb\:3055\:306a\:3044)\:3002 *)
-iSWDeckSource[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]], modified},
-  modified = TrueQ[Quiet[CurrentValue[nb, "DocumentModified"]]];
-  If[StringQ[fn] && FileExistsQ[fn] && !modified, fn, NotebookGet[nb]]];
+(* \:4fdd\:5b58\:3057\:3066\:3044\:306a\:3044\:5909\:66f4\:304c\:3042\:308b\:304b\:3002CurrentValue[nb, "DocumentModified"] \:306f\:5e38\:306b $Failed \:3092\:8fd4\:3059 (\:5b9f\:6e2c 15.0) \:306e\:3067\:3001
+   v1.36 \:307e\:3067\:300c\:4fdd\:5b58\:6e08\:307f\:300d\:3068\:8aa4\:5224\:5b9a\:3057\:3001\:539f\:7a3f\:8a33\:30fb\:518d\:751f\:30fb\:66f8\:304d\:51fa\:3057\:304c\:6700\:5f8c\:306b\:4fdd\:5b58\:3057\:305f\:30d5\:30a1\:30a4\:30eb\:3092\:8aad\:3093\:3067\:3044\:305f
+   (\:4fdd\:5b58\:5f8c\:306b\:8db3\:3057\:305f\:679a\:3084\:539f\:7a3f\:306e\:8a33\:304c\:898b\:3048\:305a\:3001\:679a\:756a\:53f7\:3082\:305a\:308c\:305f)\:3002NotebookInformation \:306e "ModifiedInMemory" \:3067\:898b\:308b\:3002
+   \:5206\:304b\:3089\:306a\:3044\:3068\:304d\:306f\:300c\:5909\:66f4\:3042\:308a\:300d(\:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:8aad\:3080) \:306b\:5012\:3059 *)
+iSWModifiedQ[nb_NotebookObject] := Module[{info = Quiet[NotebookInformation[nb]]},
+  If[ListQ[info] && MemberQ[info, "ModifiedInMemory" -> _], TrueQ["ModifiedInMemory" /. info], True]];
+
+iSWDeckSource[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
+  If[StringQ[fn] && FileExistsQ[fn] && ! iSWModifiedQ[nb], fn, NotebookGet[nb]]];
 
 iSWUnsavedQ[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
-  !StringQ[fn] || !FileExistsQ[fn] || TrueQ[Quiet[CurrentValue[nb, "DocumentModified"]]]];
+  !StringQ[fn] || !FileExistsQ[fn] || iSWModifiedQ[nb]];
+
+(* \:539f\:7a3f\:30fb\:8a33\:30fb\:8a71\:3059\:8a00\:8a9e\:30fb\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620\:306a\:3069\:3001\:6587\:5b57\:3060\:3051\:3092\:8aad\:3080\:51e6\:7406\:306e\:305f\:3081\:306e\:30c7\:30c3\:30ad\:3002\:4fdd\:5b58\:5f8c\:306b\:5909\:66f4\:304c\:7121\:3051\:308c\:3070\:30d5\:30a1\:30a4\:30eb\:3001
+   \:3042\:308c\:3070 FE \:304b\:3089\:6587\:5b57\:306e\:30bb\:30eb\:3060\:3051\:3092 1 \:56de\:306e NotebookRead \:3067\:53d6\:308a\:3001\:56f3\:30fb\:5165\:529b\:30bb\:30eb\:306f\:4e2d\:8eab\:306e\:7121\:3044\:56f3 (\:30b9\:30bf\:30a4\:30eb\:3068\:30bf\:30b0\:306f\:6b8b\:3059) \:306b\:7f6e\:304d\:63db\:3048\:308b\:3002
+   NotebookGet \:306f\:753b\:50cf\:3054\:3068\:8ee2\:9001\:3059\:308b\:306e\:3067 36 MB \:306e\:30c7\:30c3\:30ad\:3067 4.5 s (headless \:5b9f\:6e2c\:3002\:753b\:9762\:306e\:3042\:308b FE \:3067\:306f\:3055\:3089\:306b\:9577\:3044) \:304b\:304b\:308a\:3001
+   \:8a71\:3059\:8a00\:8a9e\:30dc\:30bf\:30f3\:3067 2 \:56de\:8d70\:3063\:3066\:56fa\:307e\:3063\:305f\:3002md \:3067\:306f\:56f3\:306f <<FIGn>> \:306b\:306a\:308b\:306e\:3067\:3001\:56f3\:306e\:4e2d\:8eab\:304c\:7121\:304f\:3066\:3082 md \:3068\:539f\:7a3f\:306f\:540c\:3058\:306b\:306a\:308b *)
+$iSWTextOnlyStyles = {"Title", "Subtitle", "Chapter", "Section", "Subsection", "Subsubsection",
+  "Item", "Subitem", "Subsubitem", "ItemParagraph", "SubitemParagraph", "SubsubitemParagraph", "ItemNumbered", "SubitemNumbered",
+  "Text", "SlideTalk", "SlideQA", "SlideShowNavigationBar", "Directive", "SlideStory", "References", "SlidePrompt",
+  "Dictionary", "Note", "SlideNote", "SlideAdjust", "Bibliography", "SlideDirective"};
+iSWDeckTextNotebook[nb_NotebookObject] := Module[{cells = Cells[nb], styles, light, read, out},
+  styles = iSWCellStyles[nb];
+  If[! ListQ[styles] || Length[styles] =!= Length[cells], Return[NotebookGet[nb]]];
+  light = Table[With[{st = Flatten[{styles[[i]]}]},
+      Intersection[st, $iSWTextOnlyStyles] =!= {} ||
+        ! FreeQ[{iSWCellTags[cells[[i]]]}, "SlideTable"]],
+    {i, Length[cells]}];
+  read = Flatten[{Quiet[NotebookRead[Pick[cells, light]]]}];
+  If[Length[read] =!= Count[light, True], Return[NotebookGet[nb]]];
+  out = Table[
+    If[light[[i]], Null,
+      With[{tags = iSWCellTags[cells[[i]]]},
+        Cell[BoxData[GraphicsBox[{}]], First[Flatten[{styles[[i]], "Input"}]],
+          Sequence @@ If[MatchQ[tags, _String | {__String}], {CellTags -> tags}, {}]]]],
+    {i, Length[cells]}];
+  (* \:6587\:5b57\:306e\:30bb\:30eb\:3092\:5143\:306e\:4f4d\:7f6e\:3078\:623b\:3059 *)
+  out = ReplacePart[out, Thread[Flatten[Position[light, True]] -> read]];
+  Notebook[out]];
+iSWDeckTextSource[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
+  If[StringQ[fn] && FileExistsQ[fn] && ! iSWModifiedQ[nb], fn, iSWDeckTextNotebook[nb]]];
 
 (* ---- \:5916\:90e8\:30d7\:30ed\:30bb\:30b9\:66f8\:304d\:51fa\:3057 ----
    Rasterize \:306f\:5229\:7528\:8005\:306e FE \:3092\:9577\:6642\:9593\:5360\:6709\:3059\:308b (\:5b9f\:6e2c: 13 \:679a\:306e\:30c7\:30c3\:30ad\:3067 30s+\:3002
@@ -2868,16 +3423,18 @@ SlideTalkToMarkdown[talk_Association] := Module[{out = {}, push, aliases},
 (* \:8a71\:901f (\:6587\:5b57/\:79d2)\:3002\:30c8\:30fc\:30af\:30bb\:30eb\:304b\:3089\:79d2\:6570\:3092\:898b\:7a4d\:3082\:308b\:306e\:306b\:4f7f\:3046 *)
 iSWTalkCharRate[] := Quiet[Check[Lookup[$SlideSpeechRate, "Local", 6.95], 6.95]];
 
-iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, qas, visuals},
+iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, talkLangs, qas, visuals},
   data = SlideDeckSlides[source];
   If[!AssociationQ[data], Return[$Failed]];
   slides = Lookup[data, "Slides", {}];
   If[slides === {}, Return[$Failed]];
   titles = SlideWorkflow`Private`iSlideTitle /@ slides;
   (* \:30b9\:30e9\:30a4\:30c9\:5185\:30c8\:30fc\:30af\:30bb\:30eb (SlideTalk) \:3092\:53ce\:7a6b\:3059\:308b *)
+  (* \:5143\:306e\:539f\:7a3f = \:8a00\:8a9e\:30bf\:30b0\:306e\:7121\:3044\:30c8\:30fc\:30af\:30bb\:30eb\:3002\:8a33\:30bb\:30eb (v1.34) \:306f TalkLangs \:3078\:5206\:3051\:308b *)
   talks = StringTrim[StringRiffle[
-    Cases[#, c : Cell[_, "SlideTalk", ___] :>
+    Cases[#, c : Cell[_, "SlideTalk", ___] /; iSWTalkCellLang[c] === None :>
       SlideWorkflow`Private`iCellText[c], {1}], "\n"]] & /@ slides;
+  talkLangs = iSWTalkLangCellsOf /@ slides;
   (* \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb (SlideQA) \:3082\:53ce\:7a6b\:3059\:308b\:3002\:539f\:7a3f\:3068\:306f\:5225\:306e\:5c64 *)
   qas = StringTrim[StringRiffle[
     Cases[#, c : Cell[_, "SlideQA", ___] :>
@@ -2892,7 +3449,7 @@ iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, qas, visu
   (* \:56f3\:30fb\:5199\:771f\:30fb\:30b0\:30e9\:30d5\:3092\:542b\:3080\:679a\:3002QA \:751f\:6210\:3067\:63cf\:753b\:753b\:50cf\:3092\:898b\:305b\:308b\:304b\:306e\:5224\:65ad\:306b\:4f7f\:3046 *)
   visuals = AnyTrue[#, SlideWorkflow`Private`iVisualCellQ] & /@ slides;
   <|"Count" -> Length[slides], "Titles" -> titles, "Markdown" -> mds,
-    "Talks" -> talks, "QAs" -> qas, "Visuals" -> visuals,
+    "Talks" -> talks, "TalkLangs" -> talkLangs, "QAs" -> qas, "Visuals" -> visuals,
     "Prelude" -> Lookup[data, "Prelude", {}]|>];
 
 Options[SlideTalkSkeleton] = {
@@ -2957,9 +3514,9 @@ SlideTalkPrompt[source_, OptionsPattern[]] := Module[
   "\:3042\:306a\:305f\:306f\:7814\:7a76\:767a\:8868\:306e\:539f\:7a3f\:30e9\:30a4\:30bf\:30fc\:3067\:3059\:3002\:4ee5\:4e0b\:306e\:30b9\:30e9\:30a4\:30c9\:30c7\:30c3\:30ad\:5168\:4f53\:3092\:8aad\:307f\:3001" <>
   "1 \:3064\:306e\:767a\:8868\:3068\:3057\:3066\:6d41\:308c\:306e\:3042\:308b\:767a\:8a71\:539f\:7a3f\:3092\:66f8\:3044\:3066\:304f\:3060\:3055\:3044\:3002\n\n" <>
   "\:91cd\:8981\:306a\:8981\:4ef6:\n" <>
-  "- 1 \:679a\:305a\:3064\:72ec\:7acb\:3057\:305f\:8aac\:660e\:306e\:5bc4\:305b\:96c6\:3081\:306b\:3057\:306a\:3044\:3002\:5168\:4f53\:3092\:901a\:3057\:305f\:7b4b\:66f8\:304d (\:554f\:984c\:2192\:65b9\:6cd5\:2192\:7d50\:679c\:2192\:610f\:5473) \:3092\:4f5c\:308a\:3001" <>
+  "- 1 \:679a\:305a\:3064\:72ec\:7acb\:3057\:305f\:8aac\:660e\:306e\:5bc4\:305b\:96c6\:3081\:306b\:3057\:306a\:3044\:3002\:5168\:4f53\:3092\:901a\:3057\:305f\:7b4b\:66f8\:304d (\:554f\:984c\[RightArrow]\:65b9\:6cd5\[RightArrow]\:7d50\:679c\[RightArrow]\:610f\:5473) \:3092\:4f5c\:308a\:3001" <>
   "\:5404\:30b9\:30e9\:30a4\:30c9\:306e\:539f\:7a3f\:304c\:305d\:306e\:7b4b\:66f8\:304d\:306e\:4e2d\:306e\:3069\:3053\:304b\:304c\:5206\:304b\:308b\:3088\:3046\:306b\:3059\:308b\:3002\n" <>
-  "- \:5404\:30b9\:30e9\:30a4\:30c9\:306e\:5192\:982d\:3067\:524d\:306e\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:306e\:63a5\:7d9a\:3092\:4e00\:8a00\:5165\:308c\:308b (\:300c\:3053\:3053\:307e\:3067\:304c\:2026\:3001\:6b21\:306f\:2026\:300d)\:3002" <>
+  "- \:5404\:30b9\:30e9\:30a4\:30c9\:306e\:5192\:982d\:3067\:524d\:306e\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:306e\:63a5\:7d9a\:3092\:4e00\:8a00\:5165\:308c\:308b (\:300c\:3053\:3053\:307e\:3067\:304c\[Ellipsis]\:3001\:6b21\:306f\[Ellipsis]\:300d)\:3002" <>
   "\:305f\:3060\:3057\:6bce\:56de\:540c\:3058\:8a00\:3044\:56de\:3057\:306b\:3057\:306a\:3044\:3002\n" <>
   "- \:30b9\:30e9\:30a4\:30c9\:306b\:66f8\:304b\:308c\:3066\:3044\:306a\:3044\:4e8b\:5b9f\:30fb\:6570\:5024\:30fb\:5f15\:7528\:3092\:4f5c\:3089\:306a\:3044\:3002\:8aad\:307f\:4e0a\:3052\:3067\:306f\:306a\:304f\:8a71\:3057\:8a00\:8449\:306b\:3059\:308b\:3002\n" <>
   "- \:8074\:8846\:306f\:53e3\:982d\:3067\:3057\:304b\:805e\:304b\:306a\:3044\:3002\:7b87\:6761\:66f8\:304d\:8a18\:53f7\:30fb\:8a18\:53f7\:5217\:30fbURL \:306e\:8aad\:307f\:4e0a\:3052\:3092\:539f\:7a3f\:306b\:5165\:308c\:306a\:3044\:3002\n" <>
@@ -3039,7 +3596,7 @@ SlideTalkBuild[source_, opts : OptionsPattern[]] := Module[
   If[skeleton === $Failed,
     Return[Failure["SlideTalkNoDeck",
       <|"MessageTemplate" -> "\:30b9\:30e9\:30a4\:30c9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093 (navbar \:533a\:5207\:308a\:304c\:7121\:3044?)\:3002"|>]]];
-  (* \:5168\:30b9\:30e9\:30a4\:30c9\:306b\:30c8\:30fc\:30af\:30bb\:30eb\:304c\:3042\:308c\:3070 LLM \:4e0d\:8981 \:2014 \:30bb\:30eb\:306e\:539f\:7a3f\:3092\:305d\:306e\:307e\:307e\:675f\:306d\:308b *)
+  (* \:5168\:30b9\:30e9\:30a4\:30c9\:306b\:30c8\:30fc\:30af\:30bb\:30eb\:304c\:3042\:308c\:3070 LLM \:4e0d\:8981 \[LongDash] \:30bb\:30eb\:306e\:539f\:7a3f\:3092\:305d\:306e\:307e\:307e\:675f\:306d\:308b *)
   If[Lookup[outline, "Talks", {}] =!= {} &&
       AllTrue[outline["Talks"], StringQ[#] && StringTrim[#] =!= "" &],
     iTalkWriteFile[out, skeleton];
@@ -3382,7 +3939,7 @@ SlideQAStateView[source_] := Module[{data},
       iSL["\:72b6\:614b", "State"] -> Style[iSWQAStateText[s["State"]],
         FontFamily -> $SlideFontFamily],
       "Q" -> Length[s["Entries"]],
-      iSL["\:56f3\:8868", "Visual"] -> If[TrueQ[s["Visual"]], "\:25cf", ""]|>],
+      iSL["\:56f3\:8868", "Visual"] -> If[TrueQ[s["Visual"]], "\[FilledCircle]", ""]|>],
     data["Slides"]]]];
 
 (* ---- \:30d1\:30c3\:30af\:5316 (gpt-realtime \:304b\:3089\:5f15\:3051\:308b\:5f62\:3078) ---- *)
@@ -3893,7 +4450,7 @@ iSWDigestCell[c_Cell] := DeleteCases[c,
   Rule[Alternatives @@ $iSWDigestDropOptions, _], {1}];
 iSWDigestCell[c_] := c;
 
-(* \:30b9\:30e9\:30a4\:30c9\:3068\:3057\:3066\:63cf\:304b\:308c\:308b\:30bb\:30eb\:304b\:3002\:30e1\:30bf\:30bb\:30eb (\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:30c8\:30fc\:30af\:30fb\:8cea\:7591\:5fdc\:7b54\:2026) \:3068
+(* \:30b9\:30e9\:30a4\:30c9\:3068\:3057\:3066\:63cf\:304b\:308c\:308b\:30bb\:30eb\:304b\:3002\:30e1\:30bf\:30bb\:30eb (\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:30c8\:30fc\:30af\:30fb\:8cea\:7591\:5fdc\:7b54\[Ellipsis]) \:3068
    \:97f3\:58f0\:30bb\:30eb\:306f SlideShow \:3067\:6d88\:3048\:308b\:306e\:3067\:3001\:5909\:308f\:3063\:3066\:3082 mp4 \:306f\:5909\:308f\:3089\:306a\:3044 *)
 iSWRenderedCellQ[c_Cell] := !iMetaStyleCellQ[c] && !iAudioCellQ[c];
 iSWRenderedCellQ[_] := True;
@@ -4353,7 +4910,7 @@ SlideDeckUpload[src : Except[_Rule | _RuleDelayed], opts : OptionsPattern[]] := 
     was = If[FileExistsQ[local], Quiet[AbsoluteTime[FileDate[local]]], None];
     Quiet[Check[
       Which[
-        (* \:30d1\:30ec\:30c3\:30c8\:306e mp4 \:30dc\:30bf\:30f3\:3068\:540c\:3058\:7d4c\:8def (\:5225\:30d7\:30ed\:30bb\:30b9\:2192FE \:5185\:3001\:72b6\:614b\:884c\:8868\:793a) *)
+        (* \:30d1\:30ec\:30c3\:30c8\:306e mp4 \:30dc\:30bf\:30f3\:3068\:540c\:3058\:7d4c\:8def (\:5225\:30d7\:30ed\:30bb\:30b9\[RightArrow]FE \:5185\:3001\:72b6\:614b\:884c\:8868\:793a) *)
         Head[src] === NotebookObject, iSWExportVideoAction[src],
         StringQ[deckPath], SlideDeckExportVideo[deckPath, local]],
       Null]];
@@ -4450,6 +5007,7 @@ If[!ValueQ[$SlideVoiceTick], $SlideVoiceTick = 0.3];
 If[!ValueQ[$SlideRealtimeVoices], $SlideRealtimeVoices = {"marin", "cedar"}];
 If[!ValueQ[$SlideVoiceProvider], $SlideVoiceProvider = Automatic];
 If[!ValueQ[$SlideVoiceModel], $SlideVoiceModel = Automatic];
+If[!ValueQ[$SlideVoiceDefaultModel], $SlideVoiceDefaultModel = "gpt-live-1"];
 If[!ValueQ[$SlideQuestionMode], $SlideQuestionMode = "QuestionTime"];
 If[!ValueQ[$SlideInterruptWords], $SlideInterruptWords = Automatic];
 If[!ValueQ[$SlideQuestionSeconds], $SlideQuestionSeconds = 3.];
@@ -4508,7 +5066,7 @@ SlideVoices[] := Module[{local, def},
   (* \:65e2\:5b9a\:306e\:58f0 (voice_config.json) \:306f AivisSpeech \:30a8\:30f3\:30b8\:30f3\:672a\:8d77\:52d5\:3060\:3068
      SourceVaultVoices \:306b\:51fa\:306a\:3044\:304c\:3001\:5408\:6210\:6642\:306b\:81ea\:52d5\:8d77\:52d5\:3057\:3066\:89e3\:6c7a\:3059\:308b\:306e\:3067\:9078\:3079\:308b\:3002
      \:4e00\:89a7\:304b\:3089\:843d\:3068\:3059\:3068\:3001\:58f0\:30c8\:30b0\:30eb\:3067\:4e00\:5ea6\:5207\:308a\:66ff\:3048\:305f\:3089\:4e8c\:5ea6\:3068\:623b\:308c\:306a\:304f\:306a\:308b
-     (\:5b9f\:6e2c 2026-08-26: \:30a8\:30f3\:30b8\:30f3\:505c\:6b62\:4e2d\:306b\:5207\:66ff \:2192 \:307b\:306e\:304b\:6d88\:5931)\:3002\:5148\:982d\:306b\:8db3\:3059 *)
+     (\:5b9f\:6e2c 2026-08-26: \:30a8\:30f3\:30b8\:30f3\:505c\:6b62\:4e2d\:306b\:5207\:66ff \[RightArrow] \:307b\:306e\:304b\:6d88\:5931)\:3002\:5148\:982d\:306b\:8db3\:3059 *)
   def = If[iSWVoiceLayerQ[],
     Quiet @ Check[SourceVault`SourceVaultVoiceDefaultName[], None], None];
   If[StringQ[def] && def =!= "" && !iSWVoiceRealtimeQ[def] && !MemberQ[local, def],
@@ -4553,6 +5111,9 @@ iSWVoiceModel[] := Module[{models, m = $SlideVoiceModel, def},
   (* \:660e\:793a\:306e\:6307\:5b9a\:306f\:305d\:306e\:307e\:307e\:4f7f\:3046 (\:767b\:9332\:7c3f\:306b\:7121\:3044\:65b0\:3057\:3044\:30e2\:30c7\:30eb\:3082\:8a66\:305b\:308b) *)
   If[StringQ[m] && StringTrim[m] =!= "", Return[m]];
   models = Lookup[SlideVoiceModels[], iSWVoiceProvider[], {}];
+  (* v1.36: \:767a\:8868\:306e\:65e2\:5b9a\:306f gpt-live-1 ($SlideVoiceDefaultModel)\:3002\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:4e00\:89a7\:306b\:7121\:3051\:308c\:3070\:5f93\:6765\:3069\:304a\:308a *)
+  If[StringQ[$SlideVoiceDefaultModel] && (models === {} || MemberQ[models, $SlideVoiceDefaultModel]),
+    Return[$SlideVoiceDefaultModel]];
   def = If[iSWRealtimeLayerQ[], SourceVault`$SourceVaultRealtimeModel, None];
   Which[
     StringQ[def] && (models === {} || MemberQ[models, def]), def,
@@ -4656,7 +5217,7 @@ iSWVoiceModelNotice[] := Module[{st = iSWRealtimeStatus[], running, nb},
   nb = iSWResolveTargetNb[];
   If[Head[nb] === NotebookObject,
     iSWStatus[nb, iSL["\:97f3\:58f0\:30e2\:30c7\:30eb\:3092 " <> iSWVoiceModel[] <> " \:306b\:3057\:307e\:3057\:305f\:3002\:3044\:307e\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306f " <>
-        running <> " \:306e\:307e\:307e\:3067\:3059 (\:5fdc\:7b54 off \:2192 on \:3067\:5207\:308a\:66ff\:308f\:308a\:307e\:3059)\:3002",
+        running <> " \:306e\:307e\:307e\:3067\:3059 (\:5fdc\:7b54 off \[RightArrow] on \:3067\:5207\:308a\:66ff\:308f\:308a\:307e\:3059)\:3002",
       "Voice model set to " <> iSWVoiceModel[] <> ". The running session stays on " <>
         running <> " until answering is restarted (off -> on)."]];
     iSWStatusClearLater[nb]];
@@ -4700,9 +5261,11 @@ SlideSetVoiceModel[m_String] := Module[{owner},
 
 (* \:3044\:307e\:958b\:3044\:3066\:3044\:308b\:30da\:30fc\:30b8\:3092\:8cc7\:6599\:5c64\:3078\:4f1d\:3048\:308b\:3002\:8cea\:554f\:304c\:6765\:305f\:3068\:304d\:306b\:3001\:305d\:306e\:30da\:30fc\:30b8\:306e
    \:5468\:8fba\:304b\:3089\:5148\:306b\:63a2\:305b\:308b\:3088\:3046\:306b\:3059\:308b\:305f\:3081 (SourceVault_talkqa) *)
-iSWNoteSlide[n_Integer] := If[
-  Length[DownValues[SourceVault`SourceVaultTalkQASetSlide]] > 0,
-  Quiet[SourceVault`SourceVaultTalkQASetSlide[n]]];
+iSWNoteSlide[n_Integer] := (
+  If[Length[DownValues[SourceVault`SourceVaultTalkQASetSlide]] > 0,
+    Quiet[SourceVault`SourceVaultTalkQASetSlide[n]]];
+  (* v1.37: \:767a\:8868\:306e\:8a18\:9332 (\:8aad\:307f\:4e0a\:3052\:3067\:9032\:3081\:305f\:679a) *)
+  Quiet[iSWTalkRecSlide[n, "Play"]]);
 iSWNoteSlide[_] := Null;
 
 (* \:3053\:306e\:30c7\:30c3\:30ad\:306e QA \:30d1\:30c3\:30af\:3092\:9078\:3076\:3002\:767a\:8868\:3054\:3068\:306b\:8cc7\:6599\:304c\:9055\:3046\:306e\:3067\:3001\:65e2\:5b9a\:30d1\:30c3\:30af\:304c
@@ -4764,13 +5327,92 @@ iSWRealtimeSessionInstructions["Live"] := StringReplace[
 iSWRealtimeSessionInstructions[_] := iSWRealtimeSessionInstructions["Realtime"];
 
 iSWRealtimeSessionInstructions["Realtime"] := iSL[
-  "\:3042\:306a\:305f\:306f\:767a\:8868\:306e\:9032\:884c\:5f79\:3067\:3059\:3002\:51fa\:529b\:306f\:5fc5\:305a\:65e5\:672c\:8a9e\:3067\:3059\:3002\:76f8\:624b\:304c\:82f1\:8a9e\:306a\:3069\:4ed6\:306e\:8a00\:8a9e\:3067\:8a71\:3057\:3066\:3082\:3001\:65e5\:672c\:8a9e\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002
+  "\:3042\:306a\:305f\:306f\:767a\:8868\:306e\:9032\:884c\:5f79\:3067\:3059\:3002\:539f\:7a3f\:306f\:66f8\:304b\:308c\:3066\:3044\:308b\:8a00\:8a9e\:306e\:307e\:307e\:8a71\:3057\:3001\:8a33\:3057\:307e\:305b\:3093\:3002\:8cea\:554f\:306b\:306f\:3001\:8cea\:554f\:3057\:305f\:4eba\:304c\:4f7f\:3063\:305f\:8a00\:8a9e\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002
 \:539f\:7a3f\:3092\:6e21\:3055\:308c\:305f\:3068\:304d\:306f\:3001\:305d\:306e\:539f\:7a3f\:306e\:5185\:5bb9\:3060\:3051\:3092\:81ea\:7136\:306a\:767a\:8868\:53e3\:8abf\:3067\:8a71\:3057\:307e\:3059\:3002\:539f\:7a3f\:306b\:7121\:3044\:4e8b\:5b9f\:306f\:8db3\:3057\:307e\:305b\:3093\:3002
-\:8cea\:554f\:3055\:308c\:305f\:3068\:304d\:306f\:539f\:7a3f\:306b\:7e1b\:3089\:308c\:307e\:305b\:3093\:3002\:30b9\:30e9\:30a4\:30c9\:306e\:5185\:5bb9\:3084\:3042\:306a\:305f\:306e\:77e5\:8b58\:3092\:3082\:3068\:306b\:3001\:77ed\:304f\:5206\:304b\:308a\:3084\:3059\:304f\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002\:300c\:539f\:7a3f\:304c\:7121\:3044\:306e\:3067\:7b54\:3048\:3089\:308c\:307e\:305b\:3093\:300d\:3068\:306f\:8a00\:308f\:306a\:3044\:3053\:3068\:3002\:5206\:304b\:3089\:306a\:3044\:3053\:3068\:306f\:6b63\:76f4\:306b\:5206\:304b\:3089\:306a\:3044\:3068\:8a00\:3063\:3066\:304f\:3060\:3055\:3044\:3002
+\:8cea\:554f\:306f\:307b\:307c\:5fc5\:305a\:3053\:306e\:767a\:8868\:306b\:3064\:3044\:3066\:306e\:3082\:306e\:3067\:3059\:3002\:539f\:7a3f\:306b\:7e1b\:3089\:308c\:305a\:3001\:767a\:8868\:3067\:8ff0\:3079\:305f\:5185\:5bb9\:3092\:4e2d\:5fc3\:306b\:3001\:767a\:8868\:306e\:6587\:8108\:306b\:7d50\:3073\:4ed8\:3051\:3066\:77ed\:304f\:5206\:304b\:308a\:3084\:3059\:304f\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002\:300c\:539f\:7a3f\:304c\:7121\:3044\:306e\:3067\:7b54\:3048\:3089\:308c\:307e\:305b\:3093\:300d\:3068\:306f\:8a00\:308f\:306a\:3044\:3053\:3068\:3002\:5206\:304b\:3089\:306a\:3044\:3053\:3068\:306f\:6b63\:76f4\:306b\:5206\:304b\:3089\:306a\:3044\:3068\:8a00\:3063\:3066\:304f\:3060\:3055\:3044\:3002
 \:76f8\:624b\:304c\:8a71\:3057\:7d42\:3048\:308b\:307e\:3067\:5f85\:3061\:307e\:3059\:3002\:8a00\:8449\:304c\:5c11\:3057\:9014\:5207\:308c\:305f\:3060\:3051\:3067\:5272\:308a\:8fbc\:307e\:306a\:3044\:3067\:304f\:3060\:3055\:3044\:3002\:805e\:304d\:53d6\:308c\:306a\:304b\:3063\:305f\:3068\:304d\:306f\:63a8\:6e2c\:3067\:7b54\:3048\:305a\:3001\:300c\:3059\:307f\:307e\:305b\:3093\:3001\:3082\:3046\:4e00\:5ea6\:304a\:9858\:3044\:3057\:307e\:3059\:300d\:3068\:77ed\:304f\:805e\:304d\:8fd4\:3057\:3066\:304f\:3060\:3055\:3044\:3002
 \:8a71\:3057\:65b9\:3084\:9032\:3081\:65b9\:306b\:3064\:3044\:3066\:306e\:6307\:793a\:306f\:58f0\:306b\:51fa\:3057\:307e\:305b\:3093\:3002
 \:30b9\:30e9\:30a4\:30c9\:306e\:8868\:793a\:306b\:3064\:3044\:3066\:306e\:4f9d\:983c (\:6b21/\:524d/\:6700\:521d/\:6700\:5f8c/\:4f55\:679a\:76ee/\:7279\:5b9a\:306e\:5185\:5bb9\:306e\:30b9\:30e9\:30a4\:30c9) \:306b\:306f\:3001\:7b54\:3048\:308b\:524d\:306b\:5fc5\:305a show_slide \:3092\:547c\:3093\:3067\:304f\:3060\:3055\:3044\:3002\:547c\:3070\:305a\:306b\:300c\:623b\:3057\:307e\:3059\:300d\:3068\:3060\:3051\:8a00\:3063\:3066\:306f\:3044\:3051\:307e\:305b\:3093\:3002",
-  "You host a slide talk.\nWhen you are given a script, speak only what that script says, in a natural presenting voice, and add no facts of your own.\nWhen you are asked a question, you are not limited to the script: answer briefly from the slides and from what you know. Never say you cannot answer because there is no script. Say plainly when you do not know.\nWait until the person has finished speaking; do not cut in on a short pause. If you did not catch it, ask them to repeat instead of guessing.\nNever say the directions about how to speak out loud.\nWhen asked to change which slide is shown (next / previous / first / last / a number / one about something), call show_slide before answering."];
+  "You host a slide talk.\nSpeak a script in the language it is written in; do not translate it. Answer a question in the language the person asking used.\nWhen you are given a script, speak only what that script says, in a natural presenting voice, and add no facts of your own.\nQuestions are almost always about this talk: not limited to the script, answer briefly, centred on what the talk said and tied to its context. Never say you cannot answer because there is no script. Say plainly when you do not know.\nWait until the person has finished speaking; do not cut in on a short pause. If you did not catch it, ask them to repeat instead of guessing.\nNever say the directions about how to speak out loud.\nWhen asked to change which slide is shown (next / previous / first / last / a number / one about something), call show_slide before answering."];
+
+(* ---- v1.36: \:97f3\:58f0\:4f1a\:8a71\:306b\:3053\:306e\:767a\:8868\:306e\:6587\:8108\:3092\:6e21\:3059 ----
+   \:539f\:7a3f\:306f 1 \:679a\:305a\:3064\:6e21\:3059\:306e\:3067\:3001\:9014\:4e2d\:306e\:679a\:304b\:3089\:518d\:751f\:3059\:308b\:3068\:3001\:30e2\:30c7\:30eb\:306f\:524d\:306e\:679a\:306e\:8a71 (\:305f\:3068\:3048\:3070\:300ccluster \:306f VR SNS \:306e\:540d\:524d\:300d) \:3092\:77e5\:3089\:306a\:3044\:3002
+   \:8cea\:554f\:3092\:3053\:306e\:767a\:8868\:306e\:6587\:8108\:3067\:89e3\:91c8\:3055\:305b\:308b\:305f\:3081\:3001\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:6307\:793a\:306b\:300c\:984c\:30fb\:8074\:304d\:624b\:30fb\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:984c\:3068\:5143\:306e\:539f\:7a3f\:30fb\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:9805\:76ee\:300d\:3092
+   \:4ed8\:3051\:308b (\:4e0a\:9650 $SlideRealtimeContextChars \:5b57)\:3002\:7528\:8a9e\:306f\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473\:3092\:512a\:5148\:3055\:305b\:308b\:3002 *)
+If[! ValueQ[$SlideRealtimeContextChars], $SlideRealtimeContextChars = 7000];
+(* \:60f3\:5b9a\:554f\:7b54\:3082\:80cc\:666f\:306b\:5165\:308c\:308b (2026-09-28: \:6700\:5f8c\:306e\:679a\:306e Q&A \:306b\:66f8\:3044\:305f\:8ab2\:984c\:300cAPI \:8ab2\:91d1\:300d\:304c\:7b54\:3048\:306b\:51fa\:306a\:304b\:3063\:305f\:3002
+   \:30e2\:30c7\:30eb\:306f\:591a\:304f\:306e\:8cea\:554f\:3092\:59d4\:8b72\:305b\:305a\:306b\:80cc\:666f\:3060\:3051\:3067\:7b54\:3048\:308b\:306e\:3067\:3001\:60f3\:5b9a\:554f\:7b54\:304c\:80cc\:666f\:306b\:7121\:3044\:3068\:4f7f\:308f\:308c\:306a\:3044)\:3002
+   OpenAI \:3078\:9001\:308b\:306e\:3067 PL \:304c 0.5 \:3092\:8d85\:3048\:308b\:554f\:306f\:5165\:308c\:306a\:3044 (\:97f3\:58f0\:5fdc\:7b54\:306e\:8d77\:52d5\:3068\:540c\:3058\:57fa\:6e96)\:3002\:4e0a\:9650\:306f\:5225\:67a0 *)
+If[! ValueQ[$SlideRealtimeQAChars], $SlideRealtimeQAChars = 10000];
+$iSWRealtimeQAMaxPL = 0.5;
+
+iSWDeckQAContext[outline_Association, limit_Integer] := Module[{blocks},
+  blocks = Table[
+    With[{title = iSWQAOneLine[outline["Titles"][[i]]],
+        es = Select[iSWQAParse[outline["QAs"][[i]]],
+          StringTrim[ToString[Lookup[#, "Answer", ""]]] =!= "" &&
+            ! (NumericQ[Lookup[#, "PrivacyLevel", None]] && Lookup[#, "PrivacyLevel", 0.] > $iSWRealtimeQAMaxPL) &]},
+      If[es === {}, Nothing,
+        "\:30b9\:30e9\:30a4\:30c9" <> ToString[i] <> If[title =!= "", " (" <> title <> ")", ""] <> ":\n" <>
+          StringRiffle[Map[Function[e,
+            "Q: " <> StringTrim[StringReplace[ToString[Lookup[e, "Question", ""]], "\n" -> " "]] <> "\nA: " <>
+              StringTake[StringTrim[StringReplace[ToString[Lookup[e, "Answer", ""]], "\n" -> " "]], UpTo[400]]], es], "\n"]]],
+    {i, Min[outline["Count"], Length[Lookup[outline, "QAs", {}]]]}];
+  StringTake[StringRiffle[blocks, "\n\n"], UpTo[limit]]];
+iSWDeckQAContext[___] := "";
+
+
+iSWDeckContextBlock[nb_NotebookObject] := Module[{outline, title, spec, aud, slides, kg, kgTxt = "", body, limit, qaTxt},
+  limit = Replace[$SlideRealtimeContextChars, Except[_Integer?Positive] -> 7000];
+  outline = Quiet[iTalkDeckOutline[iSWDeckTextSource[nb]]];
+  If[! AssociationQ[outline], Return[""]];
+  title = With[{t = Quiet[Lookup[SlideTalkMeta[nb], "Title", ""]]}, If[StringQ[t] && StringTrim[t] =!= "", t, Last[iSWDeckBaseName[nb]]]];
+  spec = Quiet[SlideGraphSpec[nb]];
+  aud = If[AssociationQ[spec] && StringQ[Lookup[spec, "Audience", None]], spec["Audience"], ""];
+  slides = StringRiffle[Table[
+      ToString[i] <> ". " <> iSWQAOneLine[outline["Titles"][[i]]] <>
+        With[{t = StringTrim[StringReplace[ToString[outline["Talks"][[i]]], "\n" -> " "]]},
+          If[t === "", "", "\n   " <> StringTake[t, UpTo[260]]]],
+      {i, outline["Count"]}], "\n"];
+  kg = If[AssociationQ[spec] && StringQ[Lookup[spec, "Graph", None]], Quiet[iSWKGResolve[spec["Graph"]]], None];
+  If[AssociationQ[kg],
+    kgTxt = StringRiffle[Map[Function[n, With[{lab = SourceVault`SourceVaultKGText[n, "Label"],
+          pts = SourceVault`SourceVaultKGText[n, "Points"], sum = SourceVault`SourceVaultKGText[n, "Summary"]},
+        "- " <> lab <> Which[
+          MatchQ[pts, {__String}], ": " <> StringRiffle[Take[pts, UpTo[4]], " / "],
+          StringQ[sum] && sum =!= "", ": " <> StringTake[sum, UpTo[100]],
+          True, ""]]],
+      Select[SortBy[kg["Nodes"], Replace[Lookup[#, "Order", None], Except[_?NumericQ] -> 10^6] &],
+        ! TrueQ[Lookup[#, "Hidden", False]] && StringQ[SourceVault`SourceVaultKGText[#, "Label"]] &]], "\n"]];
+  qaTxt = Quiet[iSWDeckQAContext[outline, Replace[$SlideRealtimeQAChars, Except[_Integer?Positive] -> 10000]]];
+  If[! StringQ[qaTxt], qaTxt = ""];
+  body = "=== \:3053\:306e\:767a\:8868\:306e\:6587\:8108 (\:8cea\:554f\:306b\:7b54\:3048\:308b\:3068\:304d\:306e\:524d\:63d0\:3002\:58f0\:306b\:51fa\:3057\:3066\:8aad\:307f\:4e0a\:3052\:306a\:3044) ===\n" <>
+    "\:984c: " <> title <> If[aud =!= "", "\n\:8074\:304d\:624b: " <> aud, ""] <> "\n\n" <>
+    "\:30b9\:30e9\:30a4\:30c9\:3068\:5143\:306e\:539f\:7a3f:\n" <> slides <>
+    If[kgTxt === "", "", "\n\n\:77e5\:8b58\:30b0\:30e9\:30d5 (\:3053\:306e\:767a\:8868\:306e\:8a71\:984c\:3068\:8981\:70b9):\n" <> kgTxt];
+  (* \:60f3\:5b9a\:554f\:7b54\:306f\:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:306e\:6253\:3061\:5207\:308a\:306b\:5dfb\:304d\:8fbc\:307e\:308c\:306a\:3044\:3088\:3046\:3001\:5225\:67a0\:3067\:6587\:8108\:306e\:6700\:521d\:306e\:307b\:3046\:306b\:7f6e\:304f *)
+  "=== \:3053\:306e\:767a\:8868\:306e\:6587\:8108 (\:8cea\:554f\:306b\:7b54\:3048\:308b\:3068\:304d\:306e\:524d\:63d0\:3002\:58f0\:306b\:51fa\:3057\:3066\:8aad\:307f\:4e0a\:3052\:306a\:3044) ===\n" <>
+    If[qaTxt === "", "",
+      "\:60f3\:5b9a\:554f\:7b54 (\:767a\:8868\:8005\:304c\:7528\:610f\:3057\:305f\:7b54\:3048\:3002\:805e\:304b\:308c\:305f\:5185\:5bb9\:306b\:5f53\:305f\:308b\:554f\:304c\:3042\:308c\:3070\:3001\:305d\:306e\:7b54\:3048\:306e\:5185\:5bb9\:3092\:5fc5\:305a\:542b\:3081\:3066\:7b54\:3048\:308b\:3002\:8ab2\:984c\:30fb\:4eca\:5f8c\:30fb\:8cbb\:7528\:306a\:3069\:3092\:805e\:304b\:308c\:305f\:3068\:304d\:3082\:3001\:307e\:305a\:3053\:3053\:3092\:898b\:308b):\n" <> qaTxt <> "\n\n"] <>
+    StringTake[StringDrop[body, StringLength["=== \:3053\:306e\:767a\:8868\:306e\:6587\:8108 (\:8cea\:554f\:306b\:7b54\:3048\:308b\:3068\:304d\:306e\:524d\:63d0\:3002\:58f0\:306b\:51fa\:3057\:3066\:8aad\:307f\:4e0a\:3052\:306a\:3044) ===\n"]], UpTo[limit]] <>
+    "\n=== \:6587\:8108\:3053\:3053\:307e\:3067 ===\n" <>
+    "\:8cea\:554f\:306f\:3059\:3079\:3066\:3053\:306e\:767a\:8868\:306e\:6587\:8108\:3067\:89e3\:91c8\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:8cea\:554f\:306b\:51fa\:3066\:304f\:308b\:8a9e\:304c\:4e00\:822c\:7684\:306a\:610f\:5473\:3068\:3053\:306e\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473 (\:30b5\:30fc\:30d3\:30b9\:540d\:30fb\:88fd\:54c1\:540d\:30fb\:6388\:696d\:306e\:540d\:524d\:306a\:3069) \:306e" <>
+    "\:3069\:3061\:3089\:306b\:3082\:53d6\:308c\:308b\:3068\:304d\:306f\:3001\:3053\:306e\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002\:767a\:8868\:3068\:95a2\:4fc2\:306e\:7121\:3044\:4e00\:822c\:7684\:306a\:8cea\:554f\:3060\:3051\:3001\:4e00\:822c\:7684\:306a\:77e5\:8b58\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002"];
+iSWDeckContextBlock[_] := "";
+
+(* \:5fdc\:7b54\:3092\:59cb\:3081\:305f\:3068\:304d\:306e\:6587\:8108 (\:30c7\:30c3\:30ad\:3068\:539f\:7a3f)\:3002\:5909\:308f\:3063\:3066\:3044\:308c\:3070\:518d\:751f\:306e\:3068\:304d\:306b\:97f3\:58f0\:4f1a\:8a71\:3092\:5165\:308c\:76f4\:3059 *)
+$iSWRealtimeContextKey = None;
+iSWRealtimeContextKey[nb_] := Hash[{nb, Quiet[iSWDeckContextBlock[nb]]}, "SHA256", "HexString"];
+(* \:958b\:59cb\:6642\:306e\:6307\:793a\:306b\:306f 1 \:884c\:3060\:3051 (\:9577\:3044\:80cc\:666f\:3092 session.start \:306b\:5165\:308c\:308b\:3068 GPT-Live \:306e\:6700\:521d\:306e\:8aad\:307f\:4e0a\:3052\:304c\:6b62\:307e\:3063\:305f)\:3002
+   \:767a\:8868\:5168\:4f53\:306e\:80cc\:666f\:306f\:8aad\:307f\:4e0a\:3052\:306e\:7121\:3044\:3068\:304d (\:6700\:5f8c\:306e\:679a\:306e\:5f8c\:306e\:8cea\:7591\:5fdc\:7b54\:30fb\:5fdc\:7b54 on) \:306b SourceVaultRealtimeAddContext \:3067\:6e21\:3059 *)
+iSWDeckContextRule[nb_NotebookObject] := With[{t = Quiet[Lookup[SlideTalkMeta[nb], "Title", ""]]},
+  "\n\:8cea\:554f\:306f\:3059\:3079\:3066\:3053\:306e\:767a\:8868" <> If[StringQ[t] && StringTrim[t] =!= "", "\:300c" <> t <> "\:300d", ""] <>
+    "\:306e\:6587\:8108\:3067\:89e3\:91c8\:3057\:3001\:8a9e\:304c\:4e00\:822c\:7684\:306a\:610f\:5473\:3068\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473 (\:30b5\:30fc\:30d3\:30b9\:540d\:30fb\:88fd\:54c1\:540d\:306a\:3069) \:306e\:3069\:3061\:3089\:306b\:3082\:53d6\:308c\:308b\:3068\:304d\:306f\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473\:3067\:7b54\:3048\:3066\:304f\:3060\:3055\:3044\:3002"];
+iSWDeckContextRule[_] := "";
+iSWSendDeckContext[nb_] := If[Length[DownValues[SourceVault`SourceVaultRealtimeAddContext]] > 0 && iSWRealtimeRunningQ[],
+  With[{ctx = Quiet[iSWDeckContextBlock[nb]]},
+    If[StringQ[ctx] && ctx =!= "", Quiet[SourceVault`SourceVaultRealtimeAddContext[ctx]]; True, False]], False];
+iSWRealtimeSessionInstructionsFor[nb_, api_] := iSWRealtimeSessionInstructions[api] <> Quiet[iSWDeckContextRule[nb]];
 
 (* \:9078\:3093\:3060\:58f0\:306e\:30a8\:30f3\:30b8\:30f3\:304c\:4f7f\:3048\:308b\:72b6\:614b\:304b *)
 iSWEngineReadyQ[voice_] := If[iSWVoiceRealtimeQ[voice],
@@ -4896,7 +5538,9 @@ $iSWDirectiveMetaKeyMap = <|
 $iSWDirectiveHostPlaceholder = "sftp://...@.../dir/";
 
 iSWDirectiveTemplateText[] := StringJoin[
-  "Title: \n", "SlideURL: \n", "Host: ", $iSWDirectiveHostPlaceholder, "\n\n",
+  "Title: \n", "SlideURL: \n", "Host: ", $iSWDirectiveHostPlaceholder, "\n",
+  (* v1.34: \:8aad\:307f\:4e0a\:3052\:306e\:8a00\:8a9e\:3002\:7a7a\:306a\:3089 $SlideTalkLanguage (Automatic = $Language) *)
+  "Language: \n\n",
   iSL["\:3053\:3053\:306b LLM \:3078\:306e\:6307\:793a\:3092\:8a18\:8f09...", "Write LLM directives here..."]];
 
 (* \:96db\:5f62\:306e\:307e\:307e (\:7a7a / "..." \:3092\:542b\:3080 URL) \:306f\:300c\:66f8\:3044\:3066\:3044\:306a\:3044\:300d\:3068\:540c\:3058\:6271\:3044\:3002
@@ -4939,11 +5583,11 @@ iSWStripMetaLines[_] := "";
    (\:5168\:30bb\:30eb\:306e\:30b9\:30bf\:30a4\:30eb\:7167\:4f1a\:3092\:907f\:3051\:308b)\:3001Notebook \:5f0f / \:4fdd\:5b58\:6e08\:307f path \:306f\:30ab\:30fc\:30cd\:30eb\:5074\:3067 *)
 iSWDirectiveTexts[nb_NotebookObject] := Select[
   With[{c = Quiet[NotebookRead[#]]},
-      If[Head[c] === Cell, StringTrim[iCellText[c]], ""]] & /@
+      If[Head[c] === Cell, StringTrim[iSWMetaCellText[c]], ""]] & /@
     Replace[Quiet[Cells[nb, CellStyle -> "Directive"]], Except[_List] -> {}],
   StringQ[#] && # =!= "" &];
 iSWDirectiveTexts[nbExpr_Notebook] := Select[
-  StringTrim[iCellText[#]] & /@ Cases[nbExpr, Cell[_, "Directive", ___], Infinity],
+  StringTrim[iSWMetaCellText[#]] & /@ Cases[nbExpr, Cell[_, "Directive", ___], Infinity],
   StringQ[#] && # =!= "" &];
 iSWDirectiveTexts[path_String] := With[
   {e = If[FileExistsQ[path], Quiet[iGetNotebook[path]], $Failed]},
@@ -4990,14 +5634,21 @@ SlideTalkMeta[nb_NotebookObject, rules__Rule] := Module[{stored},
 (* \:30c7\:30c3\:30ad (path | Notebook \:5f0f) \:3068\:30e1\:30bf\:304b\:3089\:30c8\:30fc\:30af\:9023\:60f3\:3092\:7d44\:307f\:7acb\:3066\:308b\:7d14\:95a2\:6570\:3002
    \:30c8\:30fc\:30af\:30bb\:30eb\:304c 1 \:3064\:3082\:7121\:3051\:308c\:3070 $Failed (\:547c\:3073\:51fa\:3057\:5074\:304c _talk.md \:3078\:843d\:3068\:3059)\:3002 *)
 iSWTalkFromCellsCore[src_, meta_Association, deckFile_String, fallbackTitle_String] :=
-  Module[{outline, talks, opening, slides, rate},
+  Module[{outline, talks, opening, slides, rate, translations},
     outline = iTalkDeckOutline[src];
     If[outline === $Failed, Return[$Failed]];
     talks = Lookup[outline, "Talks", {}];
     If[!AnyTrue[talks, StringQ[#] && StringTrim[#] =!= "" &], Return[$Failed]];
     opening = StringTrim[StringRiffle[
       Cases[Lookup[outline, "Prelude", {}],
-        c : Cell[_, "SlideTalk", ___] :> iCellText[c], {1}], "\n"]];
+        c : Cell[_, "SlideTalk", ___] /; iSWTalkCellLang[c] === None :> iCellText[c], {1}], "\n"]];
+    (* \:8a33 (v1.34): <|lang -> <|slide -> <|"Text", "Src"|>|>|>\:30020 = \:524d\:7f6e\:304d\:3002\:767b\:9332\:7c3f\:3078\:306f\:6e21\:3055\:306a\:3044 *)
+    translations = Merge[
+      Flatten[Join[
+        {KeyValueMap[#1 -> <|0 -> #2|> &, iSWTalkLangCellsOf[Lookup[outline, "Prelude", {}]]]},
+        MapIndexed[Function[{langs, pos}, KeyValueMap[#1 -> <|First[pos] -> #2|> &, langs]],
+          Lookup[outline, "TalkLangs", {}]]]],
+      Apply[Join]];
     rate = iSWTalkCharRate[];
     slides = MapThread[
       Function[{i, title, talk},
@@ -5015,13 +5666,14 @@ iSWTalkFromCellsCore[src_, meta_Association, deckFile_String, fallbackTitle_Stri
       "Date" -> Lookup[meta, "Date", ""],
       "SlideURL" -> Lookup[meta, "SlideURL", ""],
       "Deck" -> deckFile,
-      "Language" -> Lookup[meta, "Language", "Japanese"],
+      "Language" -> Lookup[meta, "Language", $Language],
       "NarrationInstructions" -> Lookup[meta, "NarrationInstructions", ""],
       "SecondsPerSlide" -> Lookup[meta, "SecondsPerSlide", $SlideTalkSecondsPerSlide],
       "PrivacyLevel" -> Lookup[meta, "PrivacyLevel", 0.],
       "UploadURL" -> Lookup[meta, "UploadURL", ""],
       "Opening" -> opening, "Closing" -> "",
       "Slides" -> slides,
+      "Translations" -> translations,
       "TalkSource" -> "Cells"|>];
 
 (* \:4fdd\:5b58\:6e08\:307f path \:306f\:30d5\:30a1\:30a4\:30eb\:65e5\:4ed8+\:30e1\:30bf\:3067\:30ad\:30e3\:30c3\:30b7\:30e5 (\:518d\:751f\:30fb\:898b\:7a4d\:30fb\:60c5\:5831\:304c\:7e70\:308a\:8fd4\:3057
@@ -5040,7 +5692,7 @@ iSWTalkFromCellsCached[path_String, meta_Association, deckFile_String, fallbackT
     talk];
 
 iSWTalkFromCells[nb_NotebookObject] := Module[{src, meta, fn, deckFile, base},
-  src = iSWDeckSource[nb];
+  src = iSWDeckTextSource[nb];
   meta = SlideTalkMeta[nb];
   fn = Quiet[NotebookFileName[nb]];
   deckFile = If[StringQ[fn], fn, ""];
@@ -5068,7 +5720,8 @@ iSWTalkResolve[nb_NotebookObject] := Module[{talk, path},
   talk = Quiet[SlideTalkFromMarkdown[File[path]]];
   If[AssociationQ[talk], Append[talk, "TalkSource" -> "File"], $Failed]];
 
-iSWVoiceTexts[nb_NotebookObject] := iSWVoiceTextsFromTalk[iSWTalkResolve[nb]];
+(* v1.34: \:8a71\:3059\:8a00\:8a9e (SlideTalkLanguage) \:306e\:8a33\:304c\:3042\:308c\:3070\:8a33\:3092\:3001\:7121\:3051\:308c\:3070\:5143\:306e\:539f\:7a3f\:3092\:8aad\:3080 *)
+iSWVoiceTexts[nb_NotebookObject] := iSWTalkLangPlanOf[nb]["Texts"];
 
 iSWVoiceTextsFromFile[path_] := Module[{talk},
   If[!StringQ[path] || !FileExistsQ[path], Return[$Failed]];
@@ -5301,7 +5954,8 @@ iSWInfoRows[nb_] := Module[{est, count, talkPath, talk, voice, engine, rt, src},
             FileNameTake[talkPath] <> " (" <>
               ToString[Length[Select[Lookup[talk, "Slides", {}], AssociationQ]]] <>
               iSL[" \:679a\:5206)", " slides)"],
-          True, iSL["\:306a\:3057", "none"]]}},
+          True, iSL["\:306a\:3057", "none"]]},
+     {iSL["\:8a71\:3059\:8a00\:8a9e", "Speaking language"], iSWTalkLangInfoText[nb]}},
     If[AssociationQ[est],
       {{iSL["\:898b\:7a4d\:6642\:9593 (\:8cea\:554f\:306a\:3057)", "Estimated (no questions)"], est["Formatted"]},
        {iSL["  \:5185\:8a33", "  breakdown"],
@@ -5521,7 +6175,7 @@ iSWSlideTitles[nb_NotebookObject] := Module[{styles, cells, ranges, key, hit},
           styles[[#]]] &, None];
       If[idx === None, "",
         With[{c = Quiet[NotebookRead[cells[[idx]]]]},
-          If[Head[c] === Cell, iCellText[c], ""]]]],
+          If[Head[c] === Cell, iSWSlideCellText[c], ""]]]],
     {r, ranges}];
   $iSWTitleCache = <|Key[key] -> hit|>;
   hit];
@@ -5648,7 +6302,7 @@ iSWPlayStopTask[] := Module[{t = $iSWPlayState["Task"]},
 
 iSWPlayStartTask[] := (iSWPlayStopTask[];
   $iSWPlayState["Task"] =
-    Quiet[SessionSubmit[ScheduledTask[iSWPlayTick[], $SlideVoiceTick]]]);
+    Quiet[SessionSubmit[ScheduledTask[If[! iSWFEHeldQ[], iSWTraced["PlayTick", iSWPlayTick[]]], $SlideVoiceTick]]]);
 
 iSWPlaySetLabel[s_String] := ($iSWPlayLabel = s);
 
@@ -5679,17 +6333,28 @@ SlideToggleRealtime[nb_NotebookObject] := Module[{res, voice},
     iSWRefreshTalkLabel[];
     iSWRefreshMicLabel[];
     Return[res]];
+  iSWTrace["RT:on begin"];
   voice = With[{v = iSWVoiceName[]},
     If[iSWVoiceRealtimeQ[v], iSWRealtimeVoiceOf[v], Automatic]];
+  $iSWRealtimeContextKey = iSWTraced["RT:ContextKey", iSWRealtimeContextKey[nb]];
+  (* v1.37: \:53d7\:3051\:53e3\:306f\:8d77\:52d5\:306e\:524d\:306b\:5165\:308c\:308b\:3002\:30ef\:30fc\:30ab\:30fc\:306f\:8d77\:52d5\:6642\:306b\:53d7\:3051\:53e3\:304c\:3042\:308b\:3068\:304d\:3060\:3051 ask \:30c4\:30fc\:30eb\:3092\:6301\:3064
+     (TalkQA \:304c\:7121\:3044\:74b0\:5883\:3067\:8d77\:52d5\:5f8c\:306b\:5165\:308c\:308b\:3068\:3001\:8cea\:554f\:304c\:8cc7\:6599\:3078\:5c4a\:304b\:306a\:304b\:3063\:305f) *)
+  iSWTraced["RT:AskHandler", Quiet[iSWInstallAskHandler[]]];
+  iSWTrace["RT:Start >"];
   res = Quiet[SourceVault`SourceVaultRealtimeStart[
     "Notebook" -> nb, "Voice" -> voice, "StartMuted" -> False,
     "Model" -> iSWVoiceModel[],
     "SlideControl" -> True, "InputLevelGate" -> iSWInputGate[],
-    "Instructions" -> iSWRealtimeSessionInstructions[iSWVoiceModelAPI[iSWVoiceModel[]]]]];
-  iSWRefreshTalkLabel[];
+    "Instructions" -> iSWRealtimeSessionInstructionsFor[nb, iSWVoiceModelAPI[iSWVoiceModel[]]]]];
+  iSWTrace["RT:Start < " <> ToString[Head[res]]];
+  iSWTraced["RT:TalkLabel", iSWRefreshTalkLabel[]];
+  If[! FailureQ[res] && res =!= $Failed,
+    iSWTraced["RT:DeckContext", Quiet[iSWSendDeckContext[nb]]];
+    iSWTraced["RT:RecEnsure", Quiet[iSWTalkRecEnsure[nb]]]];
   (* \:624b\:5143\:30ea\:30e2\:30b3\:30f3 (Relacon \:306e\:518d\:751f/\:4e00\:6642\:505c\:6b62) \:3092\:97f3\:58f0\:5fdc\:7b54\:3068\:9023\:52d5\:3055\:305b\:308b *)
-  iSWRemoteAutoStart[];
-  iSWRefreshMicLabel[];
+  iSWTraced["RT:RemoteAutoStart", iSWRemoteAutoStart[]];
+  iSWTraced["RT:MicLabel", iSWRefreshMicLabel[]];
+  iSWTrace["RT:on end"];
   If[FailureQ[res] || res === $Failed,
     MessageDialog[iSL["\:97f3\:58f0\:5fdc\:7b54\:3092\:958b\:59cb\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f:\n",
       "Could not start voice answering:\n"] <> iSWFailureText[res]]];
@@ -5729,6 +6394,7 @@ iSWPlayReleaseRealtime[] := If[iSWPlayRealtimeQ[] && iSWRealtimeLayerQ[],
   iSWRefreshMicLabel[]];
 
 iSWPlayHalt[] := (
+  Quiet[iSWSubtitleClose[]];
   iSWPlayReleaseStream[];
   iSWPlayReleaseRealtime[];
   iSWPlayStopTask[];
@@ -5765,6 +6431,7 @@ iSWPlaySlide[nIn_Integer] := Module[{nb, n, text, now},
   $iSWPlayState["NarrationId"] = None;
   iSWPlayReleaseStream[];
   text = Lookup[$iSWPlayState["Texts"], n, ""];
+  Quiet[iSWSubtitleSlide[n]];
   now = AbsoluteTime[];
   If[!StringQ[text] || StringTrim[text] === "",
     (* \:539f\:7a3f\:306e\:7121\:3044\:30b9\:30e9\:30a4\:30c9: \:5c11\:3057\:898b\:305b\:3066\:304b\:3089\:6b21\:3078 *)
@@ -5803,7 +6470,7 @@ iSWPlaySlideLocal[nb_, n_Integer, text_String] :=
   $iSWPlayState["Deadline"] = now + dur + $SlideVoiceGap;
   $iSWPlayState["LastPos"] = 0.;
   $iSWPlayState["LastPosAt"] = now;
-  (* \:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc\:306f\:30da\:30fc\:30b8\:60c5\:5831\:3060\:3051 (\:58f0\:306e\:540d\:524d\:306f\:51fa\:3055\:306a\:3044 \:2014 \:9577\:3044\:6b63\:5f0f\:540d\:304c\:90aa\:9b54) *)
+  (* \:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc\:306f\:30da\:30fc\:30b8\:60c5\:5831\:3060\:3051 (\:58f0\:306e\:540d\:524d\:306f\:51fa\:3055\:306a\:3044 \[LongDash] \:9577\:3044\:6b63\:5f0f\:540d\:304c\:90aa\:9b54) *)
   iSWPlayNote["\[FilledRightTriangle] " <> ToString[n] <> "/" <>
     ToString[$iSWPlayState["Count"]]];
   (* \:6b21\:30b9\:30e9\:30a4\:30c9\:306e\:5148\:8aad\:307f\:5408\:6210 (\:3053\:306e\:9593\:3082 FE \:5074\:306e\:518d\:751f\:306f\:7d9a\:304f) *)
@@ -5850,11 +6517,27 @@ iSWVoicePrefetch[nb_, n_Integer] :=
     With[{t = Lookup[$iSWPlayState["Texts"], n, ""]},
       If[StringQ[t] && StringTrim[t] =!= "", Quiet[iSWVoiceFileFor[nb, n, t]]]]];
 
+(* \:6700\:5f8c\:306e\:679a\:3092\:8aad\:307f\:7d42\:3048\:305f\:3089 (\:5b57\:5e55\:3092\:51fa\:3057\:3066\:3044\:308b\:3068\:304d) \:767a\:8868\:3092\:9589\:3058\:305a\:306b\:8cea\:7591\:5fdc\:7b54\:3092\:7d9a\:3051\:308b\:3002\:8cea\:554f\:306e\:5b57\:5e55\:3082\:51fa\:308b\:3002
+   \:505c\:6b62\:30dc\:30bf\:30f3\:304b $SlideFinalQAMinutes \:5206\:3067\:7d42\:308f\:308b *)
+If[! ValueQ[$SlideFinalQAMinutes], $SlideFinalQAMinutes = 30];
+iSWPlayEnterFinalQA[] := Module[{now = AbsoluteTime[]},
+  $iSWPlayState["FinalQA"] = True;
+  $iSWPlayState["FinalQAUntil"] = now + 60. Max[1, N[$SlideFinalQAMinutes]];
+  $iSWPlayState["Deadline"] = $iSWPlayState["FinalQAUntil"];
+  $iSWPlayState["AudioEnd"] = now;
+  If[TrueQ[Lookup[$iSWPlayState, "AutoMuted", False]], Quiet[iSWRealtimeMic[True]]; $iSWPlayState["AutoMuted"] = False];
+  Quiet[iSWSendDeckContext[$iSWPlayState["Notebook"]]];
+  iSWPlayNote[iSL["\:8cea\:7591\:5fdc\:7b54 (\:505c\:6b62\:30dc\:30bf\:30f3\:3067\:7d42\:4e86)", "Q&A (press Stop to end)"]];
+  Null];
+
 iSWPlayAdvance[] := Module[{nb, cur, feBefore, feN, next},
   nb = $iSWPlayState["Notebook"];
   cur = $iSWPlayState["Slide"];
   iSWPlayReleaseStream[];
-  If[cur >= $iSWPlayState["Count"], iSWPlayFinish[]; Return[Null]];
+  If[cur >= $iSWPlayState["Count"],
+    If[AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] && iSWPlayRealtimeQ[] && ! TrueQ[Lookup[$iSWPlayState, "FinalQA", False]],
+      iSWPlayEnterFinalQA[], iSWPlayFinish[]];
+    Return[Null]];
   feBefore = If[TrueQ[$iSWPlayState["UseFECounter"]], iSWSlideNumberFE[nb], None];
   iSWSlideGoNext[nb];
   Pause[0.25];
@@ -5879,6 +6562,10 @@ iSWPlayAdvance[] := Module[{nb, cur, feBefore, feN, next},
   (* \:30ab\:30a6\:30f3\:30bf\:304c\:52d5\:3044\:3066\:3044\:306a\:3044\:3068\:304d\:306b\:305d\:308c\:3092\:4fe1\:3058\:308b\:3068\:540c\:3058\:679a\:3092\:8aad\:307f\:76f4\:3057\:7d9a\:3051\:308b\:3002
      \:73fe\:5728\:5024\:3068\:540c\:3058\:306a\:3089\:300c\:307e\:3060\:66f4\:65b0\:3055\:308c\:3066\:3044\:306a\:3044\:300d\:3068\:307f\:306a\:3057\:3066\:5185\:90e8\:306e\:6570\:3048\:4e0a\:3052\:306b\:843d\:3068\:3059 *)
   next = If[IntegerQ[feN] && feN >= 1 && feN =!= cur, feN, cur + 1];
+  (* \:7d42\:7aef\:3088\:308a\:5f8c\:308d\:3078\:98db\:3093\:3060 (\:9078\:629e\:304c\:7d42\:7aef\:306e\:5f8c\:308d\:3078\:52d5\:3044\:305f\:306a\:3069) \:306e\:306f\:767a\:8868\:8005\:306e\:64cd\:4f5c\:3067\:306f\:306a\:3044: \:6b21\:306e\:679a\:3078\:623b\:3059 *)
+  If[IntegerQ[feN] && feN > $iSWPlayState["Count"] && cur < $iSWPlayState["Count"],
+    next = cur + 1;
+    Quiet[iSWSlideGoTo[nb, next]]];
   If[next > $iSWPlayState["Count"], iSWPlayFinish[]; Return[Null]];
   (* \:6b21\:30b9\:30e9\:30a4\:30c9\:306e\:63cf\:753b\:304c\:843d\:3061\:7740\:3044\:3066\:304b\:3089\:8aad\:307f\:59cb\:3081\:308b\:3002\:518d\:751f\:306f FE \:5074\:306e AudioStream
      \:306a\:306e\:3067\:3001\:91cd\:3044\:30b9\:30e9\:30a4\:30c9 (\:5927\:304d\:306a\:753b\:50cf) \:306e\:63cf\:753b\:4e2d\:306b\:9cf4\:3089\:3057\:59cb\:3081\:308b\:3068 FE \:304c\:585e\:304c\:3063\:3066
@@ -5891,6 +6578,524 @@ iSWPlayAdvance[] := Module[{nb, cur, feBefore, feN, next},
 iSWFESettle[nb_] := (
   Quiet[CurrentValue[nb, WindowTitle]];
   With[{s = $SlideRenderSettle}, If[NumericQ[s] && s > 0., Pause[N[s]]]]);
+
+(* ===================== v1.36: \:5b57\:5e55 (\:8a33\:306e\:539f\:7a3f\:3067\:8a71\:3057\:3066\:3044\:308b\:9593\:3001\:5143\:306e\:539f\:7a3f\:3092\:5b57\:5e55\:306b\:51fa\:3059) =====================
+   \:518d\:751f\:4e2d\:306f\:753b\:9762\:306e\:4e0b\:306b\:524d\:9762\:306e\:5c0f\:3055\:306a\:7a93\:3092\:51fa\:3057\:3001\:3044\:307e\:8aad\:3093\:3067\:3044\:308b\:679a\:306e\:5143\:306e\:539f\:7a3f (\:65e5\:672c\:8a9e) \:3092 1\:301c2 \:6587\:305a\:3064\:898b\:305b\:308b\:3002
+   \:8a71\:3059\:4f4d\:7f6e\:306f\:5206\:304b\:3089\:306a\:3044\:306e\:3067\:6642\:9593\:3067\:9032\:3081\:308b: \:58f0\:304c\:51fa\:59cb\:3081\:3066\:304b\:3089\:306e\:7d4c\:904e\:79d2 \[Times] \:8aad\:3080\:901f\:3055 (\:5b57/\:79d2) \[Divide] \:305d\:306e\:679a\:306e\:8a33\:306e\:5b57\:6570 \:3092
+   \:9032\:307f\:5177\:5408\:3068\:3057\:3001\:5143\:306e\:539f\:7a3f\:306e\:533a\:5207\:308a\:306e\:5b57\:6570\:306e\:5272\:5408\:3067\:5bfe\:5fdc\:3055\:305b\:308b\:3002\:8aad\:3080\:901f\:3055\:306f\:898b\:8fbc\:307f\:304b\:3089\:59cb\:3081\:3066\:3001\:679a\:3054\:3068\:306b
+   (\:8a33\:306e\:5b57\:6570 \[Divide] \:5b9f\:969b\:306b\:304b\:304b\:3063\:305f\:79d2) \:3067\:76f4\:3059\:3002\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:518d\:751f\:4f4d\:7f6e\:306e\:5272\:5408\:3092\:305d\:306e\:307e\:307e\:4f7f\:3046\:3002
+   $SlideSubtitles: Automatic (\:65e2\:5b9a) = \:8a71\:3059\:8a00\:8a9e\:304c\:5143\:306e\:539f\:7a3f\:3068\:9055\:3046\:3068\:304d\:3060\:3051 / True = \:3044\:3064\:3082 / False = \:51fa\:3055\:306a\:3044 *)
+$SlideSubtitles = Automatic;
+$SlideSubtitleFontSize = Automatic;
+$iSWSubtitle = "";
+$iSWSubtitleWindow = None;
+$iSWSubtitleRate = 12.;
+$iSWSubtitleLabel = "";
+
+(* \:6587\:3067\:533a\:5207\:308a\:3001\:77ed\:3044\:6587\:306f\:3064\:306a\:3044\:3067 1 \:533a\:5207\:308a 60 \:5b57\:307b\:3069\:306b *)
+iSWSubtitleSegments[text_String] := Module[{sents, segs = {}, cur = ""},
+  sents = Select[StringTrim /@ StringCases[StringReplace[text, "\r\n" -> "\n"],
+    RegularExpression["[^\:3002\:ff01\:ff1f!?\\n]+[\:3002\:ff01\:ff1f!?\:300d\:300f\:ff09)]*"]], # =!= "" &];
+  Do[If[cur =!= "" && StringLength[cur] + StringLength[s] > 60, AppendTo[segs, cur]; cur = s, cur = cur <> s], {s, sents}];
+  If[cur =!= "", AppendTo[segs, cur]];
+  segs];
+iSWSubtitleSegments[_] := {};
+
+iSWSubtitleOnQ[plan_Association] := Switch[$SlideSubtitles,
+  True, True,
+  False, False,
+  _, Lookup[plan, "Language", None] =!= Lookup[plan, "Base", None]];
+iSWSubtitleOnQ[_] := TrueQ[$SlideSubtitles];
+
+iSWSubtitleSet[s_] := If[s =!= $iSWSubtitle, $iSWSubtitle = s];
+
+iSWSubtitleClose[] := (
+  If[Head[$iSWSubtitleWindow] === NotebookObject, Quiet[NotebookClose[$iSWSubtitleWindow]]];
+  If[Head[$iSWSubtitleLLMNotebook] === NotebookObject, Quiet[NotebookClose[$iSWSubtitleLLMNotebook]]];
+  $iSWSubtitleLLMNotebook = None;
+  $iSWSubtitleWindow = None;
+  $iSWSubtitle = "");
+
+(* ---- \:5b57\:5e55\:7a93\:306e\:7f6e\:304d\:5834\:6240: \:767a\:8868\:306e\:7a93\:304c\:3042\:308b\:753b\:9762\:306e\:4e00\:756a\:4e0b (\:30bf\:30b9\:30af\:30d0\:30fc\:306e\:4e0a)\:3001\:753b\:9762\:306e\:5e45\:3044\:3063\:3071\:3044 ----
+   \:62e1\:5f35\:753b\:9762\:3067\:767a\:8868\:3059\:308b\:3068\:304d\:3001\:4e3b\:753b\:9762\:306e\:4e0b\:306b\:5e45 1200 \:56fa\:5b9a\:3067\:51fa\:3059\:3068\:3001\:4e3b\:753b\:9762\:304c\:72ed\:3044 (\:9ad8 DPI \:3067 960 \:306a\:3069) \:3068\:304d\:306b\:5207\:308c\:308b\:3002
+   \:5ea7\:6a19\:306f FE \:306e\:8ad6\:7406\:5ea7\:6a19 (\:5b9f\:6e2c 2026-09-28): ScreenArea \:306f\:753b\:9762\:3054\:3068\:306b {{x0, x1}, {y0, y1}} (y \:306f\:4e0a\:304b\:3089)\:3001
+   WindowMargins \:306e left/top \:306f\:305d\:306e\:307e\:307e\:5168\:4f53\:5ea7\:6a19\:3002bottom \:306f\:4e3b\:753b\:9762\:57fa\:6e96\:3067 FE \:306b\:3088\:3063\:3066\:305a\:308c\:308b (\:5b9f\:6a5f\:3067 23 \:4e0b\:306b\:305a\:308c\:305f) \:306e\:3067\:4f7f\:308f\:306a\:3044\:3002
+   \:7a93\:306f\:67a0\:306a\:3057 (\:30bf\:30a4\:30c8\:30eb\:30d0\:30fc\:5206\:306e\:30b9\:30e9\:30a4\:30c9\:3092\:5c11\:3057\:3067\:3082\:6b8b\:3059\:3001\:67a0\:306e\:539a\:307f\:3092\:63a8\:6e2c\:3057\:306a\:3044\:3067\:4e0b\:7aef\:306b\:5408\:308f\:305b\:308b)\:3002
+   \:767a\:8868\:306e\:7a93\:304c\:30bf\:30b9\:30af\:30d0\:30fc\:306e\:57df\:307e\:3067\:4f7f\:3063\:3066\:3044\:308c\:3070 (\:5168\:753b\:9762) \:753b\:9762\:306e\:7269\:7406\:7684\:306a\:4e0b\:7aef\:3001\:305d\:3046\:3067\:306a\:3051\:308c\:3070\:30bf\:30b9\:30af\:30d0\:30fc\:306e\:4e0a\:7aef\:3092\:57fa\:6e96\:306b\:3001
+   \:767a\:8868\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc 1 \:672c\:5206\:3060\:3051\:4e0a\:306b\:7f6e\:304f (\:30b9\:30e9\:30a4\:30c9\:756a\:53f7\:3084\:300c\:8cea\:554f\:3092\:3069\:3046\:305e\:300d\:3092\:898b\:305b\:308b)\:3002 *)
+$iSWSubtitleGap = 0;
+(* \:767a\:8868\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:30b9\:30c6\:30fc\:30bf\:30b9\:30d0\:30fc (\:30b9\:30e9\:30a4\:30c9\:756a\:53f7\:30fb\:300c\:8cea\:554f\:3092\:3069\:3046\:305e\:300d) \:306f\:9694\:3055\:306a\:3044: \:5b9f\:6e2c\:3067\:9ad8\:3055 19 *)
+$iSWSubtitleStatusBar = 20;
+$iSWSubtitleFS = 26;
+$iSWSubtitleBox = {1200, 73};
+$iSWSubtitlePlaced = None;
+
+iSWSubtitleFS[] := If[NumericQ[$iSWSubtitleFS] && $iSWSubtitleFS > 0, $iSWSubtitleFS, iSWSubtitleFSFallback[]];
+iSWSubtitleFSFallback[] := If[NumericQ[$SlideSubtitleFontSize] && $SlideSubtitleFontSize > 0, $SlideSubtitleFontSize, 26];
+
+(* \:753b\:9762\:306e\:4e00\:89a7 {<|"Area" -> {{x0,x1},{y0,y1}}, "Full" -> ..|>..} *)
+iSWScreens[] := Module[{si = Quiet[SystemInformation["Devices", "ScreenInformation"]]},
+  If[! ListQ[si], Return[{}]];
+  Cases[si, s_List :> With[{a = Lookup[s, "ScreenArea", None], f = Lookup[s, "FullScreenArea", None]},
+      <|"Area" -> a, "Full" -> If[MatrixQ[f, NumericQ], f, a]|> /; MatrixQ[a, NumericQ] && Dimensions[a] === {2, 2}]]];
+
+(* \:7a93 (\:5de6\:4e0a {x, y}\:3001\:5927\:304d\:3055 {w, h}) \:306e\:4e2d\:5fc3\:3092\:542b\:3080\:753b\:9762\:3002\:542b\:307e\:306a\:3051\:308c\:3070\:4e2d\:5fc3\:304c\:4e00\:756a\:8fd1\:3044\:753b\:9762 *)
+iSWScreenOf[{x_?NumericQ, y_?NumericQ}, {w_?NumericQ, h_?NumericQ}, screens_List] := Module[{c = {x + w/2., y + h/2.}, in},
+  If[screens === {}, Return[None]];
+  in = Select[screens, #["Full"][[1, 1]] <= c[[1]] <= #["Full"][[1, 2]] && #["Full"][[2, 1]] <= c[[2]] <= #["Full"][[2, 2]] &];
+  If[in =!= {}, First[in], First[MinimalBy[screens, EuclideanDistance[c, Mean /@ #["Full"]] &]]]];
+iSWScreenOf[___] := None;
+
+(* \:4e3b\:753b\:9762 = \:539f\:70b9\:3092\:542b\:3080\:753b\:9762 *)
+iSWPrimaryScreen[screens_List] := With[{p = Select[screens, #["Full"][[1, 1]] <= 0 <= #["Full"][[1, 2]] && #["Full"][[2, 1]] <= 0 <= #["Full"][[2, 2]] &]},
+  Which[p =!= {}, First[p], screens =!= {}, First[screens], True, None]];
+
+(* \:767a\:8868\:3092\:51fa\:3059\:753b\:9762: \:6307\:5b9a\:304c\:3042\:308c\:3070\:305d\:308c\:3001\:7121\:3051\:308c\:3070\:4e3b\:753b\:9762\:4ee5\:5916\:3067\:4e00\:756a\:5e83\:3044\:753b\:9762 (\:30d7\:30ed\:30b8\:30a7\:30af\:30bf\:306f\:62e1\:5f35\:3067\:4ed8\:304f)\:3001\:4e00\:3064\:3057\:304b\:7121\:3051\:308c\:3070\:4e3b\:753b\:9762 *)
+iSWPresentTargetScreen[screens_List, pick_] := Module[{prim = iSWPrimaryScreen[screens], others},
+  Which[
+    screens === {}, None,
+    IntegerQ[pick] && 1 <= pick <= Length[screens], screens[[pick]],
+    True,
+      others = DeleteCases[screens, prim];
+      If[others === {}, prim,
+        First[MaximalBy[others, (#["Full"][[1, 2]] - #["Full"][[1, 1]]) (#["Full"][[2, 2]] - #["Full"][[2, 1]]) &]]]]];
+
+iSWFullScreenQ[nb_] := MemberQ[{Full, {Full}, {Full, Full}}, Quiet[CurrentValue[nb, WindowSize]]];
+
+(* \:753b\:9762\:306b\:5408\:308f\:305b\:305f\:5b57\:5e55\:7a93: \:6587\:5b57\:306f $SlideSubtitleFontSize \:3092\:4e0a\:9650\:306b\:3001\:753b\:9762\:306e\:5e45 1/48\:30fb\:9ad8\:3055 1/30 \:307e\:3067\:306b\:6291\:3048\:308b *)
+(* full = True: \:767a\:8868\:306e\:7a93\:304c\:5168\:753b\:9762 (\:753b\:9762\:306e\:7269\:7406\:7684\:306a\:4e0b\:7aef\:307e\:3067\:4f7f\:3046) *)
+iSWSubtitleGeometry[screen_Association, maxFS_, full_ : False] := Module[{a = screen["Area"], f, w, h, fs, gap = $iSWSubtitleGap, paneW, paneH, bottom},
+  f = Lookup[screen, "Full", a];
+  w = a[[1, 2]] - a[[1, 1]]; h = a[[2, 2]] - a[[2, 1]];
+  (* Automatic: \:89e3\:50cf\:5ea6\:306b\:6bd4\:4f8b (720 \[RightArrow] 26\:30011080 \[RightArrow] 39\:30012160 \[RightArrow] 77)\:3002\:6570\:5024: \:305d\:308c\:3092\:4e0a\:9650\:306b\:72ed\:3044\:753b\:9762\:3067\:306f\:5c0f\:3055\:304f *)
+  fs = Max[12, Round[If[NumericQ[maxFS] && maxFS > 0, Min[maxFS, w/48., h/30.], Min[w/48., h/28.]]]];
+  paneW = Max[200, Round[w - 2 gap - 20]];
+  paneH = Round[2.8 fs];
+  bottom = If[TrueQ[full], f[[2, 2]], a[[2, 2]]] - gap - $iSWSubtitleStatusBar;
+  <|"FontSize" -> fs, "Box" -> {paneW, paneH}, "WindowSize" -> {paneW + 20, paneH + 20},
+    "WindowMargins" -> {{Round[a[[1, 1]] + gap], Automatic}, {Automatic, Round[bottom - (paneH + 20)]}}|>];
+iSWSubtitleGeometry[___] := None;
+
+(* \:767a\:8868\:306e\:7a93\:304c\:3044\:307e\:3042\:308b\:753b\:9762\:3067\:306e\:5b57\:5e55\:7a93\:3002\:5206\:304b\:3089\:306a\:3051\:308c\:3070 None (\:65e7\:6765\:306e\:4e3b\:753b\:9762\:4e0b) *)
+iSWSubtitleTarget[nb_] := Module[{wm, ws, screens, scr},
+  If[Head[nb] =!= NotebookObject, Return[None]];
+  (* \:5168\:753b\:9762: \:3053\:3061\:3089\:3067\:51fa\:3057\:305f\:753b\:9762\:3092\:899a\:3048\:3066\:3044\:308c\:3070\:305d\:308c\:3001\:7121\:3051\:308c\:3070\:7a93\:306e\:3044\:308b\:753b\:9762\:3002\:4e0b\:7aef\:306f\:753b\:9762\:306e\:7269\:7406\:7684\:306a\:4e0b\:7aef *)
+  If[iSWFullScreenQ[nb],
+    scr = If[AssociationQ[$iSWPresentScreen], $iSWPresentScreen, None];
+    If[! AssociationQ[scr],
+      wm = Quiet[AbsoluteCurrentValue[nb, WindowMargins]]; ws = Quiet[AbsoluteCurrentValue[nb, WindowSize]];
+      scr = If[MatchQ[wm, {{_?NumericQ, _}, {_, _?NumericQ}}] && MatchQ[ws, {_?NumericQ, _?NumericQ}],
+        iSWScreenOf[{wm[[1, 1]], wm[[2, 2]]}, ws, iSWScreens[]], None]];
+    Return[If[AssociationQ[scr], iSWSubtitleGeometry[scr, $SlideSubtitleFontSize, True], None]]];
+  wm = Quiet[AbsoluteCurrentValue[nb, WindowMargins]]; ws = Quiet[AbsoluteCurrentValue[nb, WindowSize]];
+  If[! (MatchQ[wm, {{_?NumericQ, _}, {_, _?NumericQ}}] && MatchQ[ws, {_?NumericQ, _?NumericQ}]), Return[None]];
+  screens = iSWScreens[];
+  scr = iSWScreenOf[{wm[[1, 1]], wm[[2, 2]]}, ws, screens];
+  If[! AssociationQ[scr], Return[None]];
+  (* \:767a\:8868\:306e\:7a93\:306e\:4e0b\:7aef (\:672c\:4f53+\:67a0\:5c11\:3057) \:304c\:30bf\:30b9\:30af\:30d0\:30fc\:306e\:57df\:306b\:5165\:3063\:3066\:3044\:308c\:3070\:5168\:753b\:9762 *)
+  iSWSubtitleGeometry[scr, $SlideSubtitleFontSize, wm[[2, 2]] + ws[[2]] + 8 > scr["Area"][[2, 2]] + 2]];
+
+(* FE \:3078\:306e\:554f\:3044\:5408\:308f\:305b (SystemInformation / AbsoluteCurrentValue) \:306f\:5b57\:5e55\:7a93\:3092\:958b\:304f\:3068\:304d 1 \:56de\:3060\:3051\:3002
+   \:679a\:66ff\:3048 (ScheduledTask \:304b\:3089\:3082\:8d70\:308b) \:3067\:554f\:3044\:5408\:308f\:305b\:305f\:308a\:3001\:7a93\:306e\:5927\:304d\:3055\:3092 Dynamic \:306b\:3057\:305f\:308a\:3059\:308b\:3068\:3001
+   FE \:306f\:540c\:671f Dynamic \:306e\:8fd4\:4e8b\:3092\:3001\:30ab\:30fc\:30cd\:30eb\:306f FE \:306e\:8fd4\:4e8b\:3092\:5f85\:3063\:3066\:6b62\:307e\:308b (\:5b9f\:6a5f 2026-09-28: \:518d\:751f\:958b\:59cb\:3067 FE \:5fdc\:7b54\:306a\:3057)\:3002 *)
+iSWSubtitleOpen[] := (iSWSubtitleClose[]; iSWSubtitleCreate[]);
+
+(* \:5168\:753b\:9762\:306b\:3057\:305f\:30fb\:623b\:3057\:305f\:3068\:304d\:306b\:5b57\:5e55\:7a93\:3060\:3051\:4f5c\:308a\:76f4\:3059 (\:5b57\:5e55\:306e\:6587\:3068\:8a33\:306e\:4f5c\:696d\:7528\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306f\:305d\:306e\:307e\:307e)\:3002
+   \:30dc\:30bf\:30f3\:306e\:672c\:51e6\:7406\:304b\:3089\:3060\:3051\:547c\:3076 (FE \:3078\:306e\:554f\:3044\:5408\:308f\:305b\:3092\:542b\:3080) *)
+iSWSubtitleRebuild[] := If[Head[$iSWSubtitleWindow] === NotebookObject,
+  Quiet[NotebookClose[$iSWSubtitleWindow]];
+  $iSWSubtitleWindow = None;
+  iSWSubtitleCreate[]];
+
+iSWSubtitleCreate[] := Module[{fam = Quiet[$SlideFontFamily], g},
+  g = Quiet[iSWSubtitleTarget[Lookup[$iSWPlayState, "Notebook", None]]];
+  If[AssociationQ[g],
+    $iSWSubtitleFS = g["FontSize"]; $iSWSubtitleBox = g["Box"],
+    $iSWSubtitleFS = iSWSubtitleFSFallback[]; $iSWSubtitleBox = {1200, Round[2.8 $iSWSubtitleFS]}];
+  $iSWSubtitlePlaced = g;
+  $iSWSubtitleWindow = Quiet[CreatePalette[
+    Pane[
+      Dynamic[Style[$iSWSubtitle, $iSWSubtitleFS, GrayLevel[0.97],
+          FontFamily -> If[StringQ[fam], fam, Inherited], LineSpacing -> {1.1, 0}],
+        TrackedSymbols :> {$iSWSubtitle}, SynchronousUpdating -> False],
+      ImageSize -> $iSWSubtitleBox, ImageSizeAction -> "ShrinkToFit",
+      Alignment -> {Center, Center}, ImageMargins -> 10],
+    WindowTitle -> iSL["\:5b57\:5e55", "Subtitles"], Background -> GrayLevel[0.12], WindowFloating -> True,
+    WindowFrame -> "Frameless", WindowElements -> {}, WindowFrameElements -> {},
+    Sequence @@ If[AssociationQ[g], {WindowSize -> g["WindowSize"], WindowMargins -> g["WindowMargins"]},
+      {WindowMargins -> {{Automatic, Automatic}, {40, Automatic}}}],
+    Saveable -> False]];
+  $iSWSubtitleWindow];
+
+(* ---- \:30b5\:30d6\:753b\:9762\:306b\:5168\:753b\:9762 (\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:300c\:30b5\:30d6\:753b\:9762\:306b\:5168\:753b\:9762\:300d) ----
+   \:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:8868\:793a\:306b\:3057\:3066\:3001\:7a93\:3092\:30b5\:30d6\:753b\:9762\:3078\:79fb\:3057\:3066\:304b\:3089\:5168\:753b\:9762\:306b\:3059\:308b (\:5168\:753b\:9762\:306f\:7a93\:306e\:3044\:308b\:753b\:9762\:3067\:306a\:308b)\:3002
+   \:5168\:753b\:9762\:306e\:51fa\:5165\:308a\:306f FE \:306e\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:30d1\:30ec\:30c3\:30c8\:3068\:540c\:3058: \:5165\:308b = WindowSize -> Full\:3001
+   \:51fa\:308b = FEPrivate`NotebookToggleFullScreen[nb]\:3002\:5b57\:5e55\:7a93\:304c\:958b\:3044\:3066\:3044\:308c\:3070\:305d\:306e\:753b\:9762\:306b\:5408\:308f\:305b\:3066\:4f5c\:308a\:76f4\:3059 *)
+If[! ValueQ[$SlidePresentScreen], $SlidePresentScreen = Automatic];
+$iSWPresentScreen = None;
+$iSWPresentRestore = <||>;
+$iSWPresentLabel = "";
+$iSWPresentColor = GrayLevel[0.5];
+iSWSetPresentLabel[full_] := If[TrueQ[full],
+  $iSWPresentLabel = "\[FilledSquare] " <> iSL["\:5168\:753b\:9762\:3092\:623b\:3059", "Exit full screen"];
+  $iSWPresentColor = RGBColor[0.55, 0.35, 0.3],
+  $iSWPresentLabel = "\[EmptySquare] " <> iSL["\:30b5\:30d6\:753b\:9762\:306b\:5168\:753b\:9762", "Full screen on 2nd display"];
+  $iSWPresentColor = RGBColor[0.3, 0.45, 0.6]];
+iSWRefreshPresentLabel[] := Module[{nb = Quiet[InputNotebook[]]},
+  iSWSetPresentLabel[Head[nb] === NotebookObject && iSWFullScreenQ[nb]]];
+
+SlidePresentFullScreen[] := With[{nb = iSWNotebook[]},
+  If[Head[nb] === NotebookObject, SlidePresentFullScreen[nb], $Failed]];
+
+SlidePresentFullScreen[nb_NotebookObject] := Module[{screens, scr, a, r},
+  If[iSWFullScreenQ[nb],
+    Quiet[FrontEndExecute[FrontEnd`Value[FEPrivate`NotebookToggleFullScreen[nb]]]];
+    r = Lookup[$iSWPresentRestore, nb, None];
+    If[AssociationQ[r], Quiet[SetOptions[nb, WindowMargins -> r["WindowMargins"], WindowSize -> r["WindowSize"]]]];
+    $iSWPresentScreen = None;
+    iSWSetPresentLabel[False];
+    Quiet[iSWSubtitleRebuild[]];
+    SetSelectedNotebook[nb];
+    Return["Windowed"]];
+  screens = iSWScreens[];
+  scr = iSWPresentTargetScreen[screens, $SlidePresentScreen];
+  $iSWPresentRestore[nb] = <|"WindowMargins" -> Quiet[CurrentValue[nb, WindowMargins]],
+    "WindowSize" -> Quiet[CurrentValue[nb, WindowSize]]|>;
+  If[Quiet[CurrentValue[nb, ScreenStyleEnvironment]] =!= "SlideShow", SlideToggleScreenEnvironment[nb]];
+  If[AssociationQ[scr],
+    a = scr["Area"];
+    SetOptions[nb, WindowMargins -> {{Round[a[[1, 1]] + 40], Automatic}, {Automatic, Round[a[[2, 1]] + 40]}},
+      WindowSize -> {Max[400, Round[a[[1, 2]] - a[[1, 1]] - 120]], Max[300, Round[a[[2, 2]] - a[[2, 1]] - 120]]}]];
+  CurrentValue[nb, WindowSize] = Full;
+  SetSelectedNotebook[nb];
+  $iSWPresentScreen = scr;
+  iSWSetPresentLabel[True];
+  Quiet[iSWSubtitleRebuild[]];
+  "FullScreen"];
+
+(* \:679a\:304c\:5909\:308f\:3063\:305f\:3068\:304d: \:305d\:306e\:679a\:306e\:533a\:5207\:308a\:3092\:7528\:610f\:3057\:3066\:6700\:521d\:306e\:533a\:5207\:308a\:3092\:51fa\:3059 *)
+iSWSubtitleSlide[n_Integer] := Module[{subs = Lookup[$iSWPlayState, "Subtitles", None], segs},
+  If[! AssociationQ[subs], Return[Null]];
+  segs = iSWSubtitleSegments[Lookup[subs, n, ""]];
+  $iSWPlayState["SubGen"] = Lookup[$iSWPlayState, "SubGen", 0] + 1;
+  $iSWPlayState["SubQA"] = None; $iSWPlayState["SubQAQ"] = None; $iSWPlayState["SubQAInFlight"] = None;
+  $iSWPlayState["SubSegs"] = segs;
+  $iSWPlayState["SubT0"] = None;
+  $iSWPlayState["SubLen"] = StringLength[ToString[Lookup[$iSWPlayState["Texts"], n, ""]]];
+  iSWSubtitleSet[If[segs === {}, "", First[segs]]]];
+
+(* \:9032\:307f\:5177\:5408 p (0..1) -> \:5143\:306e\:539f\:7a3f\:306e\:533a\:5207\:308a *)
+iSWSubtitleShow[p_?NumericQ] := Module[{segs = Lookup[$iSWPlayState, "SubSegs", {}], cum},
+  If[! MatchQ[segs, {__String}], Return[Null]];
+  cum = Accumulate[StringLength /@ segs] / N[Max[1, Total[StringLength /@ segs]]];
+  iSWSubtitleSet[segs[[Min[Length[segs], 1 + Count[cum, c_ /; c <= p]]]]]];
+
+iSWSubtitleTickRealtime[rt_Association, now_] := Module[{t0},
+  If[! AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] || ! StringQ[$iSWPlayState["NarrationId"]], Return[Null]];
+  t0 = Lookup[$iSWPlayState, "SubT0", None];
+  If[iSWSubtitleQAActiveQ[now], Return[Null]];
+  If[! NumericQ[t0],
+    If[TrueQ[Lookup[rt, "Speaking", False]], $iSWPlayState["SubT0"] = now];
+    Return[Null]];
+  iSWSubtitleShow[Clip[(now - t0) $iSWSubtitleRate / Max[1, Lookup[$iSWPlayState, "SubLen", 1]], {0., 0.999}]]];
+
+(* \:8aad\:307f\:7d42\:308f\:308a: \:8aad\:3080\:901f\:3055\:3092\:5b9f\:6e2c\:3067\:76f4\:3057\:3001\:6700\:5f8c\:306e\:533a\:5207\:308a\:3092\:51fa\:3057\:3066\:304a\:304f *)
+iSWSubtitleDone[now_] := Module[{t0 = Lookup[$iSWPlayState, "SubT0", None], len = Lookup[$iSWPlayState, "SubLen", 0]},
+  If[! AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]], Return[Null]];
+  If[NumericQ[t0] && now - t0 > 5. && len > 30,
+    $iSWSubtitleRate = Clip[0.5 $iSWSubtitleRate + 0.5 len / (now - t0), {4., 40.}]];
+  If[! iSWSubtitleQAActiveQ[now], iSWSubtitleShow[0.9999]]];
+
+iSWSubtitleTickLocal[now_] := With[{d = Lookup[$iSWPlayState, "Duration", 0], t = Lookup[$iSWPlayState, "StartedAt", now]},
+  If[AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] && NumericQ[d] && d > 0,
+    iSWSubtitleShow[Clip[(now - t) / d, {0., 0.999}]]]];
+
+(* \:30d1\:30ec\:30c3\:30c8: \:5b57\:5e55 \:81ea\:52d5 \[RightArrow] \:3044\:3064\:3082 \[RightArrow] \:306a\:3057 *)
+iSWRefreshSubtitleLabel[] := ($iSWSubtitleLabel = iSL["\:5b57\:5e55: ", "Subtitles: "] <> Switch[$SlideSubtitles,
+  True, iSL["\:3044\:3064\:3082", "always"], False, iSL["\:306a\:3057", "off"], _, iSL["\:8a33\:3067\:8a71\:3059\:3068\:304d", "when translated"]]);
+SlideCycleSubtitles[] := (
+  $SlideSubtitles = Switch[$SlideSubtitles, Automatic, True, True, False, _, Automatic];
+  iSWRefreshSubtitleLabel[];
+  $SlideSubtitles);
+
+(* ---- v1.36: \:8cea\:7591\:306e\:5b57\:5e55 ----
+   \:8cea\:554f (\:97f3\:58f0\:306e\:66f8\:304d\:8d77\:3053\:3057) \:3068\:7b54\:3048\:3092\:3001\:305d\:306e\:767a\:8a00\:306e\:8a00\:8a9e\:3067\:306f\:306a\:3044\:65b9\:306e\:8a00\:8a9e\:3067\:5b57\:5e55\:306b\:51fa\:3059\:3002\:8a00\:8a9e\:306e\:7d44\:306f
+   {\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e, \:8a71\:3059\:8a00\:8a9e} (\:4f8b {ja, jv}): \:65e5\:672c\:8a9e\:306e\:767a\:8a00 \[RightArrow] \:8a71\:3059\:8a00\:8a9e\:3078\:3001\:305d\:308c\:4ee5\:5916\:306e\:767a\:8a00 \[RightArrow] \:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e (\:65e5\:672c\:8a9e) \:3078\:3002
+   \:767a\:8a00\:306f SourceVaultRealtimeMessages \:306e user / assistant \:884c (\:7b54\:3048\:306f\:8a00\:3044\:7d42\:3048\:305f\:3068\:304d\:306b 1 \:884c\:306b\:306a\:308b)\:3002\:8a33\:306f LLM \:3067\:975e\:540c\:671f\:3002
+   \:8cea\:7591\:306e\:5b57\:5e55\:3092\:51fa\:3057\:3066\:3044\:308b\:9593\:306f\:539f\:7a3f\:306e\:5b57\:5e55\:3092\:6b62\:3081\:3001\:6b21\:306e\:679a\:306b\:9032\:3093\:3060\:3089\:539f\:7a3f\:306e\:5b57\:5e55\:306b\:623b\:308b\:3002 *)
+$iSWSubtitleQAHold = 8.;       (* \:7b54\:3048\:306e\:6700\:5f8c\:306e\:533a\:5207\:308a\:3092\:898b\:305b\:3066\:304a\:304f\:79d2 *)
+$iSWSubtitleQASegSeconds = 5.; (* \:7b54\:3048\:306e\:533a\:5207\:308a\:3092\:5207\:308a\:66ff\:3048\:308b\:9593\:9694 *)
+
+iSWSubtitleQAActiveQ[now_] := With[{qa = Lookup[$iSWPlayState, "SubQA", None]},
+  AssociationQ[qa] && now < Lookup[qa, "Until", 0]];
+
+iSWSubtitleQATarget[text_String] := Module[{langs = Lookup[$iSWPlayState, "SubLangs", {"ja", "ja"}], lang = iSWTextLang[text], base, speak},
+  {base, speak} = langs;
+  Which[
+    lang === base && speak =!= base, speak,
+    lang =!= base, base,
+    True, None]];
+
+iSWSubtitleQARender[now_] := Module[{qa = $iSWPlayState["SubQA"], q, a, k, fs = iSWSubtitleFS[]},
+  q = Lookup[qa, "Q", ""]; a = Lookup[qa, "A", {}];
+  k = If[a === {}, 0, Min[Length[a], 1 + Floor[(now - Lookup[qa, "AStart", now]) / $iSWSubtitleQASegSeconds]]];
+  iSWSubtitleSet[Column[DeleteCases[{
+      If[q =!= "", Style["Q: " <> iSWSubtitleQTrim[q], Round[0.72 fs], GrayLevel[0.8]], Nothing],
+      If[k > 0, Style["A: " <> a[[k]], Round[0.85 fs]], Nothing]}, Nothing],
+    Alignment -> Center, Spacings -> 0.3]]];
+
+(* \:8a33\:304c\:3067\:304d\:305f\:3089\:51fa\:3059\:3002\:8cea\:554f\:304c\:6765\:305f\:3089\:65b0\:3057\:3044\:7d44\:3001\:7b54\:3048\:304c\:6765\:305f\:3089\:305d\:306e\:7d44\:306b\:8db3\:3059 *)
+(* \:8cea\:554f\:306e\:5b57\:5e55\:306f\:30e2\:30c7\:30eb\:304c\:7b54\:3048\:59cb\:3081\:305f\:3089\:51fa\:3059 (\:96d1\:97f3\:306b\:306f\:7b54\:3048\:306a\:3044\:306e\:3067\:51fa\:306a\:3044)\:3002\:7b54\:3048\:306f\:8a33\:304c\:3067\:304d\:6b21\:7b2c\:8db3\:3059\:3002
+   \:8a33\:306f\:983c\:3093\:3060\:3068\:304d\:306e\:679a (SubGen) \:3092\:899a\:3048\:3066\:304a\:304d\:3001\:6b21\:306e\:679a\:306b\:9032\:3093\:3067\:304b\:3089\:5c4a\:3044\:305f\:3082\:306e\:306f\:6368\:3066\:308b (\:6b21\:306e\:8aac\:660e\:306b\:5272\:308a\:8fbc\:307e\:306a\:3044) *)
+iSWSubtitleQADisplayQ[now_] := Module[{h = Lookup[$iSWPlayState, "SubQAQ", None], qa = Lookup[$iSWPlayState, "SubQA", None]},
+  If[! AssociationQ[h] || (AssociationQ[qa] && Lookup[qa, "Q", ""] === h["Text"]), Return[Null]];
+  $iSWPlayState["SubQA"] = <|"Q" -> h["Text"], "A" -> {}, "Until" -> now + 45.|>;
+  iSWSubtitleQARender[now]];
+
+iSWSubtitleQAShow[kind_String, text_String, gen_ : Automatic] := Module[{now = AbsoluteTime[], segs, q, qa},
+  If[gen =!= Automatic && gen =!= Lookup[$iSWPlayState, "SubGen", 0], Return[Null]];
+  If[kind === "user",
+    If[NumericQ[Lookup[$iSWPlayState, "SubQACancelledAt", None]] && now - $iSWPlayState["SubQACancelledAt"] < 15., Return[Null]];
+    $iSWPlayState["SubQAQ"] = <|"Text" -> StringTake[text, UpTo[90]], "At" -> now|>;
+    If[TrueQ[Lookup[$iSWPlayState, "SubQAAnswering", False]], iSWSubtitleQADisplayQ[now]];
+    Return[Null]];
+  $iSWPlayState["SubQAInFlight"] = None;
+  qa = Lookup[$iSWPlayState, "SubQA", None];
+  q = Which[
+    AssociationQ[qa] && StringQ[Lookup[qa, "Q", None]] && qa["Q"] =!= "", qa["Q"],
+    AssociationQ[Lookup[$iSWPlayState, "SubQAQ", None]], $iSWPlayState["SubQAQ"]["Text"],
+    True, ""];
+  $iSWPlayState["SubQAQ"] = None;
+  segs = iSWSubtitleLineSegments[text, iSWSubtitleLineCap[text, "A"]];
+  If[segs === {}, segs = {text}];
+  $iSWPlayState["SubQA"] = <|"Q" -> q, "A" -> segs, "AStart" -> now,
+    "Until" -> now + Length[segs] $iSWSubtitleQASegSeconds + $iSWSubtitleQAHold|>;
+  iSWSubtitleQARender[now]];
+
+(* \:8cea\:7591\:306e\:5b57\:5e55\:3092\:51fa\:3057\:7d42\:3048\:308b\:307e\:3067 (\:7b54\:3048\:3092\:8a33\:3057\:3066\:3044\:308b\:9593\:3082) \:6b21\:306e\:679a\:3078\:9032\:307e\:306a\:3044 *)
+iSWSubtitleQAHoldQ[now_] := AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] && Or[
+  iSWSubtitleQAActiveQ[now],
+  AnyTrue[Values[$iSWAskBusy], now - # < 45. &],
+  NumericQ[Lookup[$iSWPlayState, "SubQAInFlight", None]] && now - $iSWPlayState["SubQAInFlight"] < 20.,
+  TrueQ[Lookup[$iSWPlayState, "SubQAAnswering", False]] && NumericQ[Lookup[$iSWPlayState, "SubQAPending", None]] &&
+    now - $iSWPlayState["SubQAPending"] < 60.];
+
+(* \:5b57\:5e55\:306e\:8a33\:306f\:975e\:8868\:793a\:306e\:4f5c\:696d\:7528\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3067\:554f\:3044\:5408\:308f\:305b\:308b\:3002\:30c7\:30c3\:30ad\:3092\:6e21\:3059\:3068 LLM \:547c\:3073\:51fa\:3057 (ClaudeQueryAsync) \:304c
+   \:30c7\:30c3\:30ad\:306e\:672b\:5c3e\:306b\:4f5c\:696d\:30bb\:30eb\:3092\:66f8\:3044\:3066\:9078\:629e\:3092\:79fb\:3057\:3001\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:306f\:9078\:629e\:306e\:3042\:308b\:30da\:30fc\:30b8\:3092\:51fa\:3059\:306e\:3067\:3001\:6b21\:306e\:9001\:308a\:3067
+   \:7d42\:7aef\:306e\:5f8c\:308d\:306e\:30da\:30fc\:30b8\:3078\:98db\:3093\:3060 (\:5b9f\:6e2c: 1 \:679a\:76ee\:306e\:8cea\:554f\:53d7\:4ed8\:3067\:96d1\:97f3\:3092\:8a33\:3057\:305f\:76f4\:5f8c) *)
+$iSWSubtitleLLMNotebook = None;
+iSWSubtitleLLMNotebook[] := If[Head[$iSWSubtitleLLMNotebook] === NotebookObject &&
+    TrueQ[Quiet[MemberQ[Notebooks[], $iSWSubtitleLLMNotebook]]],
+  $iSWSubtitleLLMNotebook,
+  $iSWSubtitleLLMNotebook = Quiet[CreateDocument[{}, Visible -> False, Saveable -> False,
+    WindowTitle -> "SlideWorkflow subtitles (work)"]]];
+iSWSubtitleQATranslate[kind_String, text_String] := Module[{target = iSWSubtitleQATarget[text], nb = iSWSubtitleLLMNotebook[], prompt},
+  If[! StringQ[target], iSWSubtitleQAShow[kind, text, Lookup[$iSWPlayState, "SubGen", 0]]; Return[Null]];
+  If[! iSWLLMReadyQ[] || Head[nb] =!= NotebookObject, Return[Null]];
+  prompt = "Translate the following spoken " <> If[kind === "user", "question", "answer"] <> " into " <> iSWTalkLangNameEn[target] <>
+    ". Output only the translation, with no quotes or notes.\n\n" <> text;
+  With[{k = kind, g = Lookup[$iSWPlayState, "SubGen", 0]},
+    NBAccess`$NBLLMQueryFunc[prompt,
+      Function[resp, If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"] && StringTrim[resp] =!= "",
+        Quiet[iSWSubtitleQAShow[k, StringTrim[StringTrim[resp], "\"" | "\:300c" | "\:300d"], g]]]],
+      nb, Fallback -> iSWFallback[]]]];
+
+(* \:96d1\:97f3\:30fb\:805e\:304d\:8fd4\:3057\:306e\:898b\:5206\:3051 (\:8cea\:7591\:306e\:5b57\:5e55\:306b\:51fa\:3055\:306a\:3044)\:3002
+   gpt-live-1 \:306f\:8aad\:307f\:4e0a\:3052\:305f\:539f\:7a3f\:3082 assistant \:306e\:884c\:3068\:3057\:3066\:6b8b\:3059\:306e\:3067\:3001\:7b54\:3048\:306f\:300c\:76f4\:524d\:306b\:53d7\:3051\:4ed8\:3051\:305f\:8cea\:554f\:3078\:306e\:8fd4\:4e8b\:300d\:3060\:3051\:306b\:3059\:308b *)
+$iSWSubtitleQAFillers = {"hmm", "hm", "um", "uh", "ah", "oh", "\:3048\:30fc", "\:3048\:3063\:3068", "\:3042\:308c", "\:3042\:306e", "\:3046\:30fc\:3093", "\:306a\:3093\:304b", "\:306f\:3044", "ok", "okay"};
+iSWSubtitleQANoiseQ[text_String] := Module[{t = ToLowerCase[StringTrim[text]], letters},
+  letters = StringLength[StringDelete[t, Except[LetterCharacter]]];
+  Or[
+    letters < If[iSWTextLang[t] === "en", 8, 5],
+    MemberQ[$iSWSubtitleQAFillers, StringTrim[StringDelete[t, PunctuationCharacter | "\:3001" | "\:3002" | "\:ff1f" | "?"]]]]];
+iSWSubtitleQARepeatQ[text_String] := StringLength[text] < 80 && StringContainsQ[text,
+  "\:3082\:3046\:4e00\:5ea6" | "\:3082\:3046\:3044\:3061\:3069" | "\:805e\:304d\:53d6\:308c" | "\:805e\:3053\:3048" | "repeat" | "pardon" | "didn't catch" | "did not catch" | "sorry, could you" |
+    "sekali lagi" | "mboten mireng" | "ulangi", IgnoreCase -> True];
+(* \:8aad\:307f\:4e0a\:3052\:305f\:539f\:7a3f (\:306e\:8a33) \:3068\:540c\:3058\:66f8\:304d\:51fa\:3057\:306e assistant \:884c\:306f\:7b54\:3048\:3067\:306f\:306a\:3044 *)
+iSWSubtitleQANarrationQ[text_String] := Module[{head = StringTake[StringDelete[text, WhitespaceCharacter | "Hmm." | "Hmm"], UpTo[24]]},
+  StringLength[head] >= 12 && AnyTrue[Values[Replace[Lookup[$iSWPlayState, "Texts", <||>], Except[_Association] -> <||>]],
+    StringQ[#] && StringContainsQ[StringDelete[#, WhitespaceCharacter], head] &]];
+
+(* \:6bce\:56de: \:65b0\:3057\:3044\:767a\:8a00\:3092\:62fe\:3063\:3066\:8a33\:306b\:56de\:3057\:3001\:8cea\:7591\:306e\:5b57\:5e55\:3092\:51fa\:3057\:3066\:3044\:308b\:9593\:306f\:533a\:5207\:308a\:3092\:9032\:3081\:308b *)
+iSWSubtitleQATick[rt_Association, now_] := Module[{msgs, last = Lookup[$iSWPlayState, "SubMsgSeq", 0], new},
+  If[! AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]], Return[Null]];
+  msgs = Quiet[SourceVault`SourceVaultRealtimeMessages[12]];
+  If[ListQ[msgs],
+    new = Select[msgs, AssociationQ[#] && IntegerQ[#["Sequence"]] && #["Sequence"] > last &&
+      MemberQ[{"user", "assistant"}, #["Kind"]] && StringQ[#["Text"]] &];
+    If[new =!= {}, $iSWPlayState["SubMsgSeq"] = Max[Lookup[new, "Sequence"]]];
+    (* \:59d4\:8b72\:3055\:308c\:305f\:8cea\:554f\:306f\:3053\:306e\:30c7\:30c3\:30ad\:304c\:7b54\:3048\:3001\:5b57\:5e55\:3082\:7d44\:3067\:51fa\:3059: \:305d\:306e\:9593\:306f\:66f8\:304d\:8d77\:3053\:3057\:304b\:3089\:7d44\:3092\:4f5c\:3089\:306a\:3044 *)
+    If[Length[$iSWAskBusy] > 0 || now < Lookup[$iSWPlayState, "SubQADeckUntil", 0], new = {}];
+    Scan[Function[m, With[{text = StringTrim[m["Text"]]},
+      Which[
+        (* \:8cea\:554f: \:8aad\:307f\:4e0a\:3052\:3066\:3044\:306a\:3044\:3068\:304d (\:8cea\:7591\:306e\:53d7\:4ed8) \:304b\:8cea\:7591\:4e2d\:3067\:3001\:96d1\:97f3\:3067\:306a\:3044\:3082\:306e *)
+        m["Kind"] === "user",
+          If[(TrueQ[Lookup[rt, "QAOpen", False]] || ! StringQ[$iSWPlayState["NarrationId"]]) && ! iSWSubtitleQANoiseQ[text],
+            $iSWPlayState["SubQAPending"] = now;
+            $iSWPlayState["SubQAAnswering"] = False;
+            iSWSubtitleQATranslate["user", text]],
+        (* \:7b54\:3048: \:53d7\:3051\:4ed8\:3051\:305f\:8cea\:554f\:304b\:3089 90 \:79d2\:4ee5\:5185\:3067\:3001\:539f\:7a3f\:306e\:8aad\:307f\:4e0a\:3052\:3067\:306a\:3044\:3082\:306e\:3002\:805e\:304d\:8fd4\:3057\:306a\:3089\:305d\:306e\:8cea\:554f\:3054\:3068\:6d88\:3059 *)
+        NumericQ[Lookup[$iSWPlayState, "SubQAPending", None]] && now - $iSWPlayState["SubQAPending"] < 90. &&
+          ! iSWSubtitleQANarrationQ[text],
+          $iSWPlayState["SubQAPending"] = None;
+          $iSWPlayState["SubQAAnswering"] = False;
+          If[iSWSubtitleQARepeatQ[text],
+            iSWSubtitleQACancel[],
+            $iSWPlayState["SubQAInFlight"] = now;
+            iSWSubtitleQATranslate["assistant", text]],
+        True, Null]]], new]];
+  (* \:30e2\:30c7\:30eb\:304c\:7b54\:3048\:59cb\:3081\:305f (\:8cea\:554f\:306e\:53d7\:4ed8\:4e2d\:306b\:58f0\:304c\:51fa\:3066\:3044\:308b) = \:8cea\:554f\:306f\:672c\:7269\:3002\:8a33\:304c\:3067\:304d\:3066\:3044\:308c\:3070 Q \:3092\:51fa\:3059 *)
+  If[NumericQ[Lookup[$iSWPlayState, "SubQAPending", None]] && TrueQ[Lookup[rt, "Speaking", False]] &&
+      (TrueQ[Lookup[rt, "QAOpen", False]] || ! StringQ[$iSWPlayState["NarrationId"]]),
+    $iSWPlayState["SubQAAnswering"] = True;
+    iSWSubtitleQADisplayQ[now]];
+  If[iSWSubtitleQAActiveQ[now], iSWSubtitleQARender[now]]];
+
+(* \:805e\:304d\:8fd4\:3057: \:8cea\:554f\:306e\:5b57\:5e55\:3092\:6d88\:3057\:3066\:539f\:7a3f\:306e\:5b57\:5e55\:3078\:623b\:3059 (\:8a33\:304c\:5f8c\:304b\:3089\:5c4a\:3044\:3066\:3082\:51fa\:3055\:306a\:3044) *)
+iSWSubtitleQACancel[] := ($iSWPlayState["SubQA"] = None; $iSWPlayState["SubQAQ"] = None; $iSWPlayState["SubQAAnswering"] = False;
+  $iSWPlayState["SubQACancelledAt"] = AbsoluteTime[];
+  iSWSubtitleShow[0.9999]);
+
+iSWSubtitleQAStart[] := ($iSWPlayState["SubQA"] = None; $iSWPlayState["SubQAPending"] = None; $iSWPlayState["SubQACancelledAt"] = None;
+  $iSWPlayState["SubQAQ"] = None; $iSWPlayState["SubQAAnswering"] = False; $iSWPlayState["SubQAInFlight"] = None;
+  $iSWPlayState["SubMsgSeq"] = With[{m = Quiet[SourceVault`SourceVaultRealtimeMessages[1]]},
+    If[MatchQ[m, {_Association}] && IntegerQ[m[[1, "Sequence"]]], m[[1, "Sequence"]], 0]]);
+
+(* ---- v1.36: \:767a\:8868\:4e2d\:306e\:8cea\:554f\:306f\:3001\:3053\:306e\:767a\:8868\:306e\:8cc7\:6599\:3067\:7b54\:3048\:308b (\:59d4\:8b72\:306e\:53d7\:3051\:53e3) ----
+   GPT-Live \:306f\:767a\:8868\:306e\:5185\:5bb9\:306b\:3064\:3044\:3066\:306e\:8cea\:554f\:3092\:30d0\:30c3\:30af\:30a8\:30f3\:30c9\:3078\:59d4\:8b72\:3059\:308b\:3002\:65e2\:5b9a\:306e\:53d7\:3051\:53e3 (SourceVault_talkqa \:306e\:60f3\:5b9a\:554f\:7b54) \:306f
+   \:3053\:306e\:30c7\:30c3\:30ad\:3092\:767b\:9332\:3057\:3066\:3044\:306a\:3044\:3068\:4e00\:822c\:8ad6\:3092\:8fd4\:3057\:305f\:308a\:6642\:9593\:5207\:308c\:306b\:306a\:3063\:305f\:308a\:3057\:305f\:3002\:518d\:751f\:4e2d\:30fb\:5fdc\:7b54 on \:306e\:9593\:306f SlideWorkflow \:304c\:53d7\:3051\:53e3\:306b\:306a\:308a\:3001
+   \:5168\:30b9\:30e9\:30a4\:30c9\:306e\:984c\:3068\:5143\:306e\:539f\:7a3f\:30fb\:77e5\:8b58\:30b0\:30e9\:30d5\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:6dfb\:3048\:3066 LLM \:306b\:300c\:3053\:306e\:767a\:8868\:306b\:7d50\:3073\:4ed8\:3051\:3066\:300d\:7b54\:3048\:3092\:4f5c\:3089\:305b\:308b\:3002
+   \:540c\:3058\:554f\:3044\:5408\:308f\:305b\:3067\:5b57\:5e55\:7528\:306e\:8a33 (\:8cea\:554f\:3068\:7b54\:3048\:3092\:3001\:767a\:8a00\:306e\:8a00\:8a9e\:3067\:306f\:306a\:3044\:65b9\:306e\:8a00\:8a9e\:3078) \:3082\:4f5c\:308a\:3001Q \:3068 A \:3092\:7d44\:306b\:3057\:3066 1 \:5ea6\:306b\:51fa\:3059\:3002
+   LLM \:306f\:975e\:540c\:671f\:306a\:306e\:3067\:53d7\:3051\:53e3\:306f "Deferred" \:3092\:8fd4\:3057\:3001\:7b54\:3048\:306f SourceVaultRealtimeAskResult \:3067\:5f8c\:304b\:3089\:8fd4\:3059\:3002
+   \:4f7f\:3048\:306a\:3044\:3068\:304d (\:30c7\:30c3\:30ad\:304c\:7121\:3044 / LLM \:304c\:7121\:3044 / \:5931\:6557) \:306f\:5143\:306e\:53d7\:3051\:53e3\:3078\:56de\:3059\:3002 *)
+$iSWPrevAskHandler = None;
+$iSWAskBusy = <||>;   (* id -> \:53d7\:3051\:305f\:6642\:523b *)
+
+iSWInstallAskHandler[] := With[{cur = Quiet[SourceVault`$SourceVaultRealtimeAskHandler]},
+  If[cur =!= iSWDeckAskHandler,
+    $iSWPrevAskHandler = cur;
+    SourceVault`$SourceVaultRealtimeAskHandler = iSWDeckAskHandler]];
+
+iSWAskFallback[req_] := With[{h = $iSWPrevAskHandler},
+  If[h =!= None && h =!= iSWDeckAskHandler, Quiet[h[req]], <|"status" -> "notfound"|>]];
+
+iSWAskNotebook[] := With[{nb = Lookup[$iSWPlayState, "Notebook", None]},
+  Which[Head[nb] === NotebookObject && TrueQ[Quiet[MemberQ[Notebooks[], nb]]], nb,
+    Head[$iSWSlideControlNotebook] === NotebookObject, $iSWSlideControlNotebook,
+    True, None]];
+
+iSWAskPrompt[nb_, q_String, target_] := Module[{ctx, qas, outline},
+  ctx = Block[{$SlideRealtimeContextChars = 14000}, Quiet[iSWDeckContextBlock[nb]]];
+  outline = Quiet[iTalkDeckOutline[iSWDeckTextSource[nb]]];
+  qas = If[AssociationQ[outline], StringTake[StringRiffle[Select[StringTrim /@ outline["QAs"], # =!= "" &], "\n"], UpTo[16000]], ""];
+  "\:3042\:306a\:305f\:306f\:3053\:306e\:767a\:8868\:306e\:767a\:8868\:8005\:306e\:4ee3\:308f\:308a\:306b\:3001\:805e\:304d\:624b\:306e\:8cea\:554f\:306b\:7b54\:3048\:307e\:3059\:3002\:805e\:304d\:624b\:306e\:8cea\:554f\:306f\:307b\:307c\:5fc5\:305a\:3053\:306e\:767a\:8868\:306b\:3064\:3044\:3066\:306e\:8cea\:554f\:3067\:3059\:3002\n" <>
+  "- \:8cea\:554f\:3092\:5fc5\:305a\:3053\:306e\:767a\:8868\:306e\:6587\:8108\:3067\:89e3\:91c8\:3059\:308b\:3002\:8a9e\:304c\:4e00\:822c\:7684\:306a\:610f\:5473\:3068\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473 (\:30b5\:30fc\:30d3\:30b9\:540d\:30fb\:88fd\:54c1\:540d\:30fb\:6388\:696d\:3084\:624b\:6cd5\:306e\:540d\:524d\:306a\:3069) \:306e" <>
+    "\:3069\:3061\:3089\:306b\:3082\:53d6\:308c\:308b\:3068\:304d\:306f\:3001\:767a\:8868\:306e\:4e2d\:3067\:306e\:610f\:5473\:3067\:7b54\:3048\:308b\:3002\n" <>
+  "- \:307e\:305a\:767a\:8868\:3067\:8ff0\:3079\:305f\:5185\:5bb9 (\:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:77e5\:8b58\:30b0\:30e9\:30d5\:30fb\:60f3\:5b9a\:554f\:7b54) \:306b\:57fa\:3065\:304d\:3001\:767a\:8868\:306e\:4e2d\:3067\:306e\:4f4d\:7f6e\:3065\:3051\:30fb\:4f7f\:3044\:65b9\:3092\:4e2d\:5fc3\:306b\:7b54\:3048\:308b\:3002" <>
+    "\:8db3\:308a\:306a\:3044\:3068\:3053\:308d\:3060\:3051\:4e00\:822c\:7684\:306a\:77e5\:8b58\:3067\:88dc\:3044\:3001\:305d\:308c\:3082\:767a\:8868\:306e\:8a71\:306b\:7d50\:3073\:4ed8\:3051\:308b\:3002\:4e00\:822c\:8ad6\:3060\:3051\:3067\:7b54\:3048\:306a\:3044\:3002\n" <>
+  "- \:58f0\:3067\:7b54\:3048\:308b\:306e\:3067 2\:301c4 \:6587\:3002\:8cea\:554f\:3068\:540c\:3058\:8a00\:8a9e\:3067\:7b54\:3048\:308b\:3002\:8a18\:53f7\:30fbURL\:30fb\:7b87\:6761\:66f8\:304d\:306f\:4f7f\:308f\:306a\:3044\:3002\n\n" <>
+  ctx <> If[qas =!= "", "\n\n\:60f3\:5b9a\:554f\:7b54:\n" <> qas, ""] <>
+  "\n\n\:8cea\:554f: " <> q <> "\n\n" <>
+  "\:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057:\n" <>
+  "{\"answer\": \"\:8cea\:554f\:3068\:540c\:3058\:8a00\:8a9e\:306e\:7b54\:3048\"" <>
+  If[StringQ[target],
+    ", \"question_subtitle\": \"\:8cea\:554f\:3092 " <> iSWTalkLangNameEn[target] <> " \:306b\:8a33\:3057\:305f\:3082\:306e\", \"answer_subtitle\": \"\:7b54\:3048\:3092 " <>
+      iSWTalkLangNameEn[target] <> " \:306b\:8a33\:3057\:305f\:3082\:306e\"", ""] <> "}"];
+
+iSWDeckAskHandlerCore[req_Association] := Module[{nb = iSWAskNotebook[], q, id, target, work, prompt, subsOn},
+  q = StringTrim[ToString[Lookup[req, "query", ""]]];
+  id = ToString[Lookup[req, "id", ""]];
+  If[Head[nb] =!= NotebookObject || q === "" || id === "" || ! iSWLLMReadyQ[] ||
+      TrueQ[Lookup[req, "allowWeb", False]],
+    Return[iSWAskFallback[req]]];
+  work = iSWSubtitleLLMNotebook[];
+  If[Head[work] =!= NotebookObject, Return[iSWAskFallback[req]]];
+  subsOn = AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]];
+  target = If[subsOn, iSWSubtitleQATarget[q], None];
+  prompt = iSWAskPrompt[nb, q, target];
+  $iSWAskBusy[id] = AbsoluteTime[];
+  With[{rid = id, rq = req, g = Lookup[$iSWPlayState, "SubGen", 0], so = subsOn},
+    NBAccess`$NBLLMQueryFunc[prompt,
+      Function[resp, Quiet[iSWDeckAskDone[rid, rq, resp, g, so]]],
+      work, Fallback -> iSWFallback[]];
+    (* v1.37: LLM \:306e\:8fd4\:4e8b\:304c\:6765\:306a\:3044\:307e\:307e "Deferred" \:3067\:653e\:7f6e\:3057\:306a\:3044 (\:30ef\:30fc\:30ab\:30fc\:306f 45 \:79d2\:3067\:8ae6\:3081\:3001$iSWAskBusy \:304c\:6b8b\:308b\:3068
+       \:8cea\:7591\:306e\:5b57\:5e55\:304c\:6b62\:307e\:308b)\:3002\:6642\:9593\:5185\:306b\:6765\:306a\:3051\:308c\:3070\:5143\:306e\:53d7\:3051\:53e3\:306e\:7b54\:3048\:3092\:8fd4\:3059 *)
+    Quiet[SessionSubmit[ScheduledTask[iSWDeckAskTimeout[rid, rq], {$iSWDeckAskTimeoutSeconds}]]]];
+  "Deferred"];
+
+(* v1.37: \:53d7\:3051\:305f\:8cea\:554f\:3068\:7b54\:3048\:3092\:767a\:8868\:306e\:8a18\:9332 (SourceVault) \:306b\:6b8b\:3059\:3002\:7b54\:3048\:306f\:540c\:671f (\:5143\:306e\:53d7\:3051\:53e3) \:306a\:3089
+   \:3053\:3053\:3067\:3001LLM (Deferred) \:306a\:3089 iSWDeckAskDone / iSWDeckAskTimeout \:3067\:8a18\:9332\:3059\:308b *)
+iSWDeckAskHandler[req_Association] := Module[{r},
+  Quiet[iSWRecQuestion[req]];
+  r = iSWDeckAskHandlerCore[req];
+  If[r =!= "Deferred", Quiet[iSWRecAnswer[ToString[Lookup[req, "id", ""]], r]]];
+  r];
+
+iSWDeckAskTimeout[id_String, req_] := If[KeyExistsQ[$iSWAskBusy, id],
+  $iSWAskBusy = KeyDrop[$iSWAskBusy, id];
+  With[{r = Replace[iSWAskFallback[req], Except[_Association] -> <|"status" -> "notfound"|>]},
+    Quiet[SourceVault`SourceVaultRealtimeAskResult[id, r]];
+    Quiet[iSWRecAnswer[id, r]]]];
+
+iSWDeckAskDone[id_String, req_, resp_, gen_, subsOn_] := Module[{json, d, ans, qs, as, now = AbsoluteTime[]},
+  (* \:6253\:3061\:5207\:308a (iSWDeckAskTimeout) \:306e\:3042\:3068\:306b\:5c4a\:3044\:305f\:8fd4\:4e8b\:306f\:6368\:3066\:308b: \:7b54\:3048\:306f\:3082\:3046\:8fd4\:3057\:3066\:3042\:308b *)
+  If[! KeyExistsQ[$iSWAskBusy, id], Return[Null]];
+  $iSWAskBusy = KeyDrop[$iSWAskBusy, id];
+  json = If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"], iSWRefineExtractJSON[resp], $Failed];
+  d = If[StringQ[json], Quiet @ Check[Developer`ReadRawJSONString[json], $Failed], $Failed];
+  ans = If[AssociationQ[d], StringTrim[ToString[Lookup[d, "answer", ""]]], ""];
+  If[ans === "",
+    (* \:4f5c\:308c\:306a\:304b\:3063\:305f: \:5143\:306e\:53d7\:3051\:53e3\:306e\:7b54\:3048\:3092\:8fd4\:3059 *)
+    With[{r = Replace[iSWAskFallback[req], Except[_Association] -> <|"status" -> "notfound"|>]},
+      SourceVault`SourceVaultRealtimeAskResult[id, r];
+      Quiet[iSWRecAnswer[id, r]]];
+    Return[Null]];
+  (* v1.37: matchedQuestion \:306f\:4ed8\:3051\:306a\:3044\:3002\:4ed8\:3051\:308b\:3068\:30ef\:30fc\:30ab\:30fc\:304c\:300c\:60f3\:5b9a\:554f\:7b54\:300e(\:805e\:304b\:308c\:305f\:554f\:3044\:305d\:306e\:3082\:306e)\:300f\:306e\:7b54\:3048\:300d\:3068
+     \:30e2\:30c7\:30eb\:306b\:4f1d\:3048\:3001LLM \:304c\:4f5c\:3063\:305f\:7b54\:3048\:3092\:7528\:610f\:3057\:305f\:554f\:7b54\:306e\:3088\:3046\:306b\:6271\:308f\:305b\:3066\:3057\:307e\:3046 *)
+  SourceVault`SourceVaultRealtimeAskResult[id, <|"status" -> "ok", "answer" -> ans, "route" -> "deck"|>];
+  Quiet[iSWRecAnswer[id, <|"status" -> "ok", "answer" -> ans, "route" -> "deck"|>]];
+  (* \:5b57\:5e55: \:540c\:3058\:554f\:3044\:5408\:308f\:305b\:306e Q \:3068 A \:3092\:7d44\:3067\:51fa\:3059 (\:679a\:304c\:5909\:308f\:3063\:3066\:3044\:308c\:3070\:51fa\:3055\:306a\:3044) *)
+  If[TrueQ[subsOn] && AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] && gen === Lookup[$iSWPlayState, "SubGen", 0],
+    qs = StringTrim[ToString[Lookup[d, "question_subtitle", ""]]];
+    as = StringTrim[ToString[Lookup[d, "answer_subtitle", ""]]];
+    If[qs === "", qs = ToString[Lookup[req, "query", ""]]];
+    If[as === "", as = ans];
+    $iSWPlayState["SubQADeckUntil"] = now + 90.;
+    iSWSubtitleQASetPair[qs, as, now]]];
+
+(* Q \:3068 A \:306e\:7d44\:3092\:5b57\:5e55\:306b\:51fa\:3059 (2 \:884c: Q 1 \:884c\:3001A \:306f 1 \:884c\:305a\:3064\:9001\:308b) *)
+iSWSubtitleQASetPair[q_String, a_String, now_] := Module[{segs = iSWSubtitleLineSegments[a, iSWSubtitleLineCap[a, "A"]]},
+  If[segs === {}, segs = {a}];
+  $iSWPlayState["SubQAQ"] = None;
+  $iSWPlayState["SubQA"] = <|"Q" -> q, "A" -> segs, "AStart" -> now,
+    "Until" -> now + Length[segs] $iSWSubtitleQASegSeconds + $iSWSubtitleQAHold|>;
+  iSWSubtitleQARender[now]];
+
+(* 1 \:884c\:306b\:5165\:308b\:5b57\:6570\:306e\:76ee\:5b89 (\:5b57\:5e55\:7a93\:306e\:5e45\:3001Q \:306f 0.72 \:500d\:30fbA \:306f 0.85 \:500d\:306e\:6587\:5b57\:306e\:5927\:304d\:3055) *)
+iSWSubtitleLineCap[text_String, kind_] := Module[{fs = iSWSubtitleFS[] * If[kind === "Q", 0.72, 0.85], wide,
+    w = If[MatchQ[$iSWSubtitleBox, {_?NumericQ, _}], First[$iSWSubtitleBox], 1200]},
+  wide = iSWTextLang[text] =!= "en";
+  Max[10, Floor[(w - 50.) / (fs * If[wide, 1.36, 0.62])]]];
+
+iSWSubtitleLineSegments[text_String, cap_Integer] := Module[{sents, segs = {}, cur = ""},
+  sents = Select[StringTrim /@ StringCases[StringReplace[text, "\n" -> " "],
+    RegularExpression["[^\:3002\:ff01\:ff1f!?.]+[\:3002\:ff01\:ff1f!?.]*"]], # =!= "" &];
+  Do[
+    Module[{rest = s},
+      While[StringLength[rest] > cap,
+        Module[{cut = StringPosition[StringTake[rest, cap], " " | "\:3001" | "," | "\:ff0c"]},
+          cut = If[cut === {} || cut[[-1, 1]] < cap/3, cap, cut[[-1, 1]]];
+          If[cur =!= "", AppendTo[segs, cur]; cur = ""];
+          AppendTo[segs, StringTrim[StringTake[rest, cut]]];
+          rest = StringTrim[StringDrop[rest, cut]]]];
+      If[cur =!= "" && StringLength[cur] + 1 + StringLength[rest] > cap, AppendTo[segs, cur]; cur = rest,
+        cur = StringTrim[cur <> If[cur === "" || iSWTextLang[cur] =!= "en", "", " "] <> rest]]],
+    {s, sents}];
+  If[cur =!= "", AppendTo[segs, cur]];
+  Select[segs, # =!= "" &]];
+
+iSWSubtitleQTrim[q_String] := With[{cap = iSWSubtitleLineCap[q, "Q"]},
+  If[StringLength[q] + 3 > cap, StringTake[q, cap - 4] <> "\[Ellipsis]", q]];
 
 iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
   If[$iSWPlayState["Status"] =!= "Playing", Return[Null]];
@@ -5909,8 +7114,11 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
       iSWPlayFailReason[iSL["\:97f3\:58f0\:4f1a\:8a71\:304c\:6b62\:307e\:308a\:307e\:3057\:305f (SourceVaultRealtimeStatus[] \:3092\:78ba\:8a8d)",
         "The realtime bridge stopped (see SourceVaultRealtimeStatus[])"]];
       Return[Null]];
+    Quiet[iSWSubtitleQATick[rt, now]];
     If[StringQ[$iSWPlayState["NarrationId"]],
+      Quiet[iSWSubtitleTickRealtime[rt, now]];
       If[Lookup[rt, "NarrationDone", None] === $iSWPlayState["NarrationId"],
+        Quiet[iSWSubtitleDone[now]];
         $iSWPlayState["NarrationId"] = None;
         $iSWPlayState["AudioEnd"] = now;
         (* \:8aad\:307f\:7d42\:308f\:308a\:3002\:8cea\:554f\:30bf\:30a4\:30e0\:306a\:3089\:3053\:3053\:3067\:30de\:30a4\:30af\:3092\:958b\:3051\:3066\:8cea\:554f\:3092\:5f85\:3064\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 /
@@ -5974,6 +7182,12 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
           (* \:4f4d\:7f6e\:304c 2 \:79d2\:9032\:3093\:3067\:3044\:306a\:3044: \:9cf4\:308a\:7d42\:308f\:308a (\:307e\:305f\:306f\:6b7b\:3093\:3060\:30b9\:30c8\:30ea\:30fc\:30e0) \:6271\:3044 *)
           $iSWPlayState["AudioEnd"] = now;
           $iSWPlayState["Deadline"] = now + $SlideVoiceGap]]]];
+  If[! iSWPlayRealtimeQ[], Quiet[iSWSubtitleTickLocal[now]]];
+  (* \:8cea\:7591\:306e\:5b57\:5e55\:3092\:51fa\:3057\:7d42\:3048\:308b\:307e\:3067\:6b21\:3078\:9032\:307e\:306a\:3044 / \:6700\:5f8c\:306e\:679a\:306e\:5f8c\:306e\:8cea\:7591\:5fdc\:7b54\:306f\:505c\:6b62\:30dc\:30bf\:30f3\:304b\:4e0a\:9650\:307e\:3067\:7d9a\:3051\:308b *)
+  If[iSWPlayRealtimeQ[] && ! StringQ[$iSWPlayState["NarrationId"]] && TrueQ[Quiet[iSWSubtitleQAHoldQ[now]]],
+    $iSWPlayState["Deadline"] = Max[$iSWPlayState["Deadline"], now + 1.5]];
+  If[TrueQ[Lookup[$iSWPlayState, "FinalQA", False]] && now < Lookup[$iSWPlayState, "FinalQAUntil", 0],
+    $iSWPlayState["Deadline"] = $iSWPlayState["FinalQAUntil"]];
   If[now >= $iSWPlayState["Deadline"], iSWPlayAdvance[]];
   Null];
 
@@ -6000,7 +7214,8 @@ iSWEnsureRealtimeBridge[nb_, voiceName_String] := Module[{st, res},
     If[Lookup[st, "Voice", ""] === voiceName &&
         Lookup[st, "Model", ""] === iSWVoiceModel[] &&
         Lookup[st, "WorkerVersion", None] ===
-          SourceVault`$SourceVaultRealtimeWorkerVersion,
+          SourceVault`$SourceVaultRealtimeWorkerVersion &&
+        $iSWRealtimeContextKey === iSWRealtimeContextKey[nb],
       Return[<|"Status" -> "Reused", "Voice" -> voiceName|>]];
     Quiet[SourceVault`SourceVaultRealtimeStop[]];
     $iSWPlayState["StartedBridge"] = False];
@@ -6010,8 +7225,9 @@ iSWEnsureRealtimeBridge[nb_, voiceName_String] := Module[{st, res},
     "Notebook" -> nb, "Voice" -> voiceName, "StartMuted" -> False,
     "Model" -> iSWVoiceModel[],
     "SlideControl" -> True, "InputLevelGate" -> iSWInputGate[],
-    "Instructions" -> iSWRealtimeSessionInstructions[iSWVoiceModelAPI[iSWVoiceModel[]]]]];
+    "Instructions" -> iSWRealtimeSessionInstructionsFor[nb, iSWVoiceModelAPI[iSWVoiceModel[]]]]];
   If[FailureQ[res] || res === $Failed, Return[res]];
+  $iSWRealtimeContextKey = iSWRealtimeContextKey[nb];
   $iSWPlayState["StartedBridge"] = True;
   iSWRefreshTalkLabel[];
   res];
@@ -6022,7 +7238,20 @@ iSWTalkNarrationInstructions[nb_] := Module[{talk},
   talk = iSWTalkResolve[nb];
   If[!AssociationQ[talk], Return[""]];
   With[{s = Lookup[talk, "NarrationInstructions", ""]},
-    If[StringQ[s], s, ""]]];
+    StringTrim[If[StringQ[s], s, ""] <> "\n" <> $iSWNarrationLanguageRule]]];
+
+(* v1.34: \:539f\:7a3f\:306f\:8a71\:3059\:8a00\:8a9e\:3067\:6e21\:3059\:306e\:3067\:3001\:30e2\:30c7\:30eb\:306b\:8a33\:3055\:305b\:306a\:3044 (\:30bb\:30c3\:30b7\:30e7\:30f3\:6307\:793a\:306e\:8a00\:8a9e\:306b\:5f15\:304d\:305a\:3089\:308c\:306a\:3044\:3088\:3046\:306b) *)
+(* \:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:304c\:305d\:306e\:8a00\:8a9e\:3092\:8aad\:3081\:308b\:304b\:3002\:58f0\:306e\:60c5\:5831\:304c\:53d6\:308c\:306a\:3051\:308c\:3070\:8aad\:3081\:308b\:3082\:306e\:3068\:3059\:308b *)
+iSWVoiceInfo[voice_] := If[StringQ[voice] && ! iSWVoiceRealtimeQ[voice] && iSWVoiceLayerQ[],
+  With[{v = Quiet @ Check[SourceVault`SourceVaultVoice[voice], $Failed]}, If[AssociationQ[v], v, <||>]], <||>];
+iSWVoiceSpeaksQ[voice_, lang_] := Module[{v = iSWVoiceInfo[voice], vl},
+  If[iSWVoiceRealtimeQ[voice] || v === <||>, Return[True]];
+  vl = iSWTalkLangCode[Lookup[v, "Language", ""]];
+  ! StringQ[vl] || TrueQ[Lookup[v, "Multilingual", False]] || vl === lang];
+iSWVoiceLangName[voice_] := With[{vl = iSWTalkLangCode[Lookup[iSWVoiceInfo[voice], "Language", ""]]},
+  If[StringQ[vl], iSWTalkLangName[vl], "?"]];
+
+$iSWNarrationLanguageRule ="\:539f\:7a3f\:306b\:66f8\:304b\:308c\:3066\:3044\:308b\:8a00\:8a9e\:306e\:307e\:307e\:8a71\:3057\:3001\:5225\:306e\:8a00\:8a9e\:306b\:8a33\:3055\:306a\:3044\:3067\:304f\:3060\:3055\:3044\:3002";
 
 SlidePlayStatus[] := <|
   "Status" -> $iSWPlayState["Status"],
@@ -6045,8 +7274,10 @@ SlidePlay[] := With[{nb = iSWResolveTargetNb[]},
   If[Head[nb] === NotebookObject, SlidePlay[nb],
     MessageDialog[iSL["\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093\:3002", "No notebook found."]]; $Failed]];
 
-SlidePlay[nb_NotebookObject] := Module[
-  {voice, engine, texts, count, feCount, feN, start, bridge},
+Options[SlidePlay] = {"Translate" -> Automatic};
+
+SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
+  {voice, engine, texts, count, feCount, feN, start, bridge, plan, lack, choice},
   If[$iSWPlayState["Status"] === "Playing", Return[SlidePlayStatus[]]];
   If[$iSWPlayState["Status"] === "Paused" && $iSWPlayState["Notebook"] === nb,
     Return[iSWPlayResume[]]];
@@ -6068,7 +7299,33 @@ SlidePlay[nb_NotebookObject] := Module[
       "\:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883\:304c SlideShow \:3067\:306f\:3042\:308a\:307e\:305b\:3093\:3002\:66f8\:5f0f > \:30b9\:30af\:30ea\:30fc\:30f3\:74b0\:5883 > SlideShow \:306b\:3057\:3066\:304b\:3089\:518d\:751f\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
       "The screen environment is not SlideShow. Switch to Format > Screen Environment > SlideShow first."]];
     Return[$Failed]];
-  texts = iSWVoiceTexts[nb];
+  plan = iSWTalkLangPlanOf[nb];
+  texts = plan["Texts"];
+  (* \:8a71\:3059\:8a00\:8a9e\:306e\:8a33\:304c\:6b20\:3051\:3066\:3044\:308b / \:53e4\:3044\:3068\:304d\:306f\:3001\:8a33\:3057\:3066\:304b\:3089\:8aad\:3080\:304b\:3001\:305d\:306e\:307e\:307e\:8aad\:3080\:304b\:3092\:805e\:304f *)
+  lack = Union[plan["Missing"], plan["Stale"]];
+  If[texts =!= $Failed && lack =!= {} && OptionValue["Translate"] =!= False,
+    choice = If[OptionValue["Translate"] === True, "Translate",
+      ChoiceDialog[
+        iSL["\:8a71\:3059\:8a00\:8a9e\:306f" <> iSWTalkLangName[plan["Language"]] <> "\:3067\:3059\:304c\:3001" <>
+            If[plan["Missing"] =!= {}, ToString[Length[plan["Missing"]]] <> " \:679a\:306b\:8a33\:304c\:3042\:308a\:307e\:305b\:3093", ""] <>
+            If[plan["Missing"] =!= {} && plan["Stale"] =!= {}, "\:3001", ""] <>
+            If[plan["Stale"] =!= {}, ToString[Length[plan["Stale"]]] <> " \:679a\:306e\:8a33\:304c\:539f\:7a3f\:3088\:308a\:53e4\:304f\:306a\:3063\:3066\:3044\:307e\:3059", ""] <>
+            "\:3002\n\:8a33\:306e\:7121\:3044\:679a\:306f\:5143\:306e\:539f\:7a3f (" <> iSWTalkLangName[plan["Base"]] <> ") \:306e\:307e\:307e\:8aad\:307f\:307e\:3059\:3002",
+          "The speaking language is " <> iSWTalkLangName[plan["Language"]] <> ", but " <>
+            If[plan["Missing"] =!= {}, ToString[Length[plan["Missing"]]] <> " slide(s) have no translation", ""] <>
+            If[plan["Missing"] =!= {} && plan["Stale"] =!= {}, " and ", ""] <>
+            If[plan["Stale"] =!= {}, ToString[Length[plan["Stale"]]] <> " translation(s) are older than the script", ""] <>
+            ".\nUntranslated slides are read in the original (" <> iSWTalkLangName[plan["Base"]] <> ")."],
+        {iSL["\:8a33\:3057\:3066\:304b\:3089\:518d\:751f", "Translate, then play"] -> "Translate",
+         iSL["\:3053\:306e\:307e\:307e\:518d\:751f", "Play as is"] -> "Play",
+         iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}]];
+    Switch[choice,
+      "Translate",
+        Return[With[{n2 = nb},
+          SlideTalkTranslate[nb, plan["Language"],
+            "Then" -> Function[SlidePlay[n2, "Translate" -> False]]]]],
+      "Play", Null,
+      _, Return[$Failed]]];
   If[texts === $Failed,
     MessageDialog[iSL[
       "\:767a\:8868\:306e\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093\:3002\:30b9\:30e9\:30a4\:30c9\:306b\:30c8\:30fc\:30af\:30bb\:30eb\:3092\:4f5c\:308b\:304b (\:633f\:5165 > \:30c8\:30fc\:30af\:3001\:307e\:305f\:306f\:5c55\:958b)\:3001\:300c\:30b7\:30ca\:30ea\:30aa\:300d\:3067 " <>
@@ -6082,12 +7339,29 @@ SlidePlay[nb_NotebookObject] := Module[
   feN = iSWSlideNumberFE[nb];
   start = If[IntegerQ[feN] && 1 <= feN <= count, feN, 1];
   engine = If[iSWVoiceRealtimeQ[voice], "Realtime", "Local"];
+  (* \:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:5358\:8a00\:8a9e\:304c\:591a\:3044 (Piper / AivisSpeech \:306f\:65e5\:672c\:8a9e)\:3002\:8a71\:3059\:8a00\:8a9e\:3092\:8aad\:3081\:306a\:3044\:58f0\:306a\:3089\:5148\:306b\:77e5\:3089\:305b\:308b *)
+  With[{effLang = If[Complement[Keys[texts], plan["Missing"]] === {}, plan["Base"], plan["Language"]]},
+    If[engine === "Local" && ! iSWVoiceSpeaksQ[voice, effLang] &&
+        ! TrueQ[ChoiceDialog[
+          iSL["\:58f0\:300c" <> iSWVoiceShortName[voice] <> "\:300d\:306f" <> iSWVoiceLangName[voice] <> "\:306e\:58f0\:3067\:3059\:3002" <>
+              iSWTalkLangName[effLang] <> "\:306e\:539f\:7a3f\:3092\:8aad\:3080\:306b\:306f\:3001\:8a2d\:5b9a\:306e\:300c\:767a\:8868\:30dc\:30a4\:30b9\:300d\:3067 realtime: \:306e\:58f0\:3092\:9078\:3093\:3067\:304f\:3060\:3055\:3044\:3002",
+            "The voice \"" <> iSWVoiceShortName[voice] <> "\" speaks " <> iSWVoiceLangName[voice] <> ". To read " <>
+              iSWTalkLangName[effLang] <> " talks, choose a realtime: voice under \"Voice\" in the settings."],
+          {iSL["\:3053\:306e\:307e\:307e\:518d\:751f", "Play anyway"] -> True, iSL["\:3084\:3081\:308b", "Cancel"] -> False}]],
+      Return[$Failed]]];
   $iSWSlideControlNotebook = nb;
   $iSWPlayState["Notebook"] = nb;
   $iSWPlayState["Texts"] = texts;
   $iSWPlayState["Count"] = count;
   $iSWPlayState["Voice"] = voice;
   $iSWPlayState["Engine"] = engine;
+  (* \:5b57\:5e55: \:8a71\:3059\:8a00\:8a9e\:304c\:5143\:306e\:539f\:7a3f\:3068\:9055\:3048\:3070\:3001\:5143\:306e\:539f\:7a3f\:3092\:5b57\:5e55\:306b *)
+  $iSWPlayState["Subtitles"] = If[iSWSubtitleOnQ[plan],
+    With[{st = Quiet[iSWTalkLangPlan[iSWTalkResolve[nb], plan["Base"]]["Texts"]]}, If[AssociationQ[st], st, None]], None];
+  $iSWPlayState["SubLangs"] = {plan["Base"], plan["Language"]};
+  $iSWPlayState["FinalQA"] = False; $iSWPlayState["SubGen"] = 0; $iSWPlayState["SubQADeckUntil"] = 0;
+  Quiet[iSWInstallAskHandler[]];
+  If[AssociationQ[$iSWPlayState["Subtitles"]], iSWSubtitleOpen[]; Quiet[iSWSubtitleQAStart[]], iSWSubtitleClose[]];
   (* \:518d\:751f\:4e2d\:306b\:5408\:6210\:3057\:306a\:3044: \:672a\:5408\:6210\:306e\:30b9\:30e9\:30a4\:30c9\:3092\:5148\:306b\:307e\:3068\:3081\:3066\:7528\:610f\:3059\:308b\:3002\:5408\:6210\:4e2d\:306f
      \:518d\:751f\:304c\:9014\:5207\:308c\:308b (\:5b9f\:6e2c 2026-08-26: \:518d\:751f\:76f4\:5f8c\:306e\:5148\:8aad\:307f\:5408\:6210\:3067\:6570\:79d2\:7121\:97f3)\:3002
      \:30ad\:30e3\:30c3\:30b7\:30e5\:6e08\:307f\:306e\:679a\:306f\:5373\:5ea7\:306b\:8fd4\:308b\:306e\:3067\:30012 \:56de\:76ee\:4ee5\:964d\:306e\:518d\:751f\:306f\:5f85\:305f\:306a\:3044 *)
@@ -6113,6 +7387,8 @@ SlidePlay[nb_NotebookObject] := Module[
   iSWPlayLabelPause[];
   iSWRemoteAutoStart[];
   Quiet[SetSelectedNotebook[nb]];
+  (* v1.37: \:767a\:8868\:306e\:8a18\:9332 (\:9032\:884c\:30fb\:8cea\:554f\:30fb\:30ab\:30e1\:30e9) \:3092\:59cb\:3081\:308b\:3002\:65e2\:306b\:59cb\:307e\:3063\:3066\:3044\:308c\:3070\:305d\:306e\:307e\:307e\:7d9a\:3051\:308b *)
+  Quiet[iSWTalkRecEnsure[nb]];
   iSWPlaySlide[start];
   If[$iSWPlayState["Status"] === "Playing", iSWPlayStartTask[]];
   SlidePlayStatus[]];
@@ -6585,7 +7861,7 @@ SlideRemoteStart[OptionsPattern[]] := Module[{map, tick, now},
   Scan[iSWRemotePressedQ, Keys[map]];   (* \:6e9c\:307e\:3063\:3066\:3044\:305f\:62bc\:4e0b\:3092\:6368\:3066\:3066\:304b\:3089\:898b\:5f35\:308b *)
   $iSWRemoteLastFire = Association[# -> now & /@ Keys[map]];
   $iSWRemoteLastSync = now;
-  $iSWRemoteTask = Quiet[SessionSubmit[ScheduledTask[iSWRemoteTick[], tick]]];
+  $iSWRemoteTask = Quiet[SessionSubmit[ScheduledTask[If[! iSWFEHeldQ[], iSWTraced["RemoteTick", iSWRemoteTick[]]], tick]]];
   If[Head[$iSWRemoteTask] =!= TaskObject,
     $iSWRemoteTask = None;
     Return[Failure["SlideRemoteTaskFailed",
@@ -6621,7 +7897,7 @@ iSWRemoteTick[] := Module[{now = AbsoluteTime[]},
     $iSWRemoteMap];
   If[now - $iSWRemoteLastSync > 1.5,
     $iSWRemoteLastSync = now;
-    iSWRemoteSyncLabels[]];
+    iSWTraced["RemoteSyncLabels", iSWRemoteSyncLabels[]]];
   Null];
 
 iSWRemoteSyncLabels[] := Module[{st = iSWRealtimeStatus[]},
@@ -6747,7 +8023,7 @@ SlideToggleMic[OptionsPattern[]] := iSWToggleMic[TrueQ[OptionValue["Quiet"]]];
 SetAttributes[iSWButton, HoldRest];
 iSWButton[label_String, color_, action_] :=
   Button[Style[label, Bold, 10, White],
-    CompoundExpression[action,
+    iSWHoldFE[action;
       With[{inb = InputNotebook[]},
         If[Head[inb] === NotebookObject, SetSelectedNotebook[inb]]]],
     Appearance -> "Frameless", Background -> color,
@@ -6757,7 +8033,7 @@ iSWButton[label_String, color_, action_] :=
 SetAttributes[iSWButton2, HoldRest];
 iSWButton2[label_String, color_, action_] :=
   Button[Style[label, Bold, 8, White],
-    CompoundExpression[action,
+    iSWHoldFE[action;
       With[{inb = InputNotebook[]},
         If[Head[inb] === NotebookObject, SetSelectedNotebook[inb]]]],
     Appearance -> "Frameless", Background -> color,
@@ -6777,7 +8053,7 @@ iSWDynButton[labelSym_, colorSym_, action_] :=
   Button[
     Dynamic[Style[labelSym, Bold, 10, White],
       TrackedSymbols :> {labelSym}, SynchronousUpdating -> False],
-    action,
+    iSWHoldFE[action],
     Appearance -> "Frameless",
     Background -> Dynamic[colorSym, TrackedSymbols :> {colorSym}, SynchronousUpdating -> False],
     ImageSize -> {110, 18}, FrameMargins -> {{4, 4}, {1, 1}},
@@ -6788,7 +8064,7 @@ iSWDynButton2[labelSym_, colorSym_, action_] :=
   Button[
     Dynamic[Style[labelSym, Bold, 8, White],
       TrackedSymbols :> {labelSym}, SynchronousUpdating -> False],
-    action,
+    iSWHoldFE[action],
     Appearance -> "Frameless",
     Background -> Dynamic[colorSym, TrackedSymbols :> {colorSym}, SynchronousUpdating -> False],
     ImageSize -> {54, 18}, FrameMargins -> {{1, 1}, {1, 1}},
@@ -6813,32 +8089,59 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.33";
+$SlideWorkflowInteractiveVersion = "1.49";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
-ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]},
-  If[$iSWPalette =!= None, Quiet[NotebookClose[$iSWPalette]]];
+(* v1.39: \:30d1\:30ec\:30c3\:30c8\:3092\:300c\:4f5c\:6210\:300d\:3068\:300c\:767a\:8868\:300d\:306b\:5206\:3051\:308b\:3002\:4f5c\:6210 = \:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5 / 1 \:679a\:305a\:3064 /
+   \:633f\:5165 / \:539f\:7a3f\:3068\:60f3\:5b9a\:554f\:7b54 / \:7ffb\:8a33 / \:78ba\:8a8d\:30fb\:66f8\:304d\:51fa\:3057)\:3002\:767a\:8868 = \:5b9f\:969b\:306b\:767a\:8868\:3059\:308b\:3068\:304d (Slideshow / \:518d\:751f / \:97f3\:58f0\:5fdc\:7b54 / \:8a18\:9332 /
+   \:58f0\:30fb\:8a00\:8a9e\:30fb\:5b57\:5e55\:30fb\:8cea\:554f\:306e\:53d7\:3051\:65b9)\:3002\:4e92\:3044\:306e\:30d1\:30ec\:30c3\:30c8\:3092\:958b\:304f\:30dc\:30bf\:30f3\:3092\:4e0a\:306b\:7f6e\:304f *)
+iSWRefreshPaletteLabels[] := (
   iSWRefreshVoiceLabel[];
   iSWRefreshVoiceModelLabels[];
   iSWRefreshQuestionModeLabel[];
   iSWRefreshTalkLabel[];
+  Quiet[iSWRefreshTalkLangLabel[]];
+  iSWRefreshSubtitleLabel[];
   iSWRefreshMicLabel[];
   iSWRefreshEnvLabel[];
+  Quiet[iSWRefreshPresentLabel[]];
   iSWRefreshTalkGenLabel[];
-  iSWPlayRefreshProgress[];
+  Quiet[iSWRefreshCameraLabel[]];
+  iSWPlayRefreshProgress[]);
+
+iSWPaletteTitle[sub_String] := Row[{Style["SlideWorkflow", Bold, 11, RGBColor[0.878, 0.486, 0.078]], " ",
+  Style[sub, Bold, 9, GrayLevel[0.35]], " ",
+  Style[SlideWorkflow`$SlideWorkflowInteractiveVersion, 8, GrayLevel[0.5]]}];
+
+(* \:8a2d\:5b9a\:6b04\:306e 1 \:884c (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078)\:3002\:30e9\:30d9\:30eb\:306f kernel \:306e\:6587\:5b57\:5217\:5909\:6570\:3092\:8ffd\:3046\:3060\:3051 *)
+SetAttributes[iSWSettingButton, HoldAll];
+iSWSettingButton[labelSym_, action_, tip_] := iSWTip[Button[
+    Dynamic[Style[labelSym, 9, Bold, GrayLevel[0.2]], TrackedSymbols :> {labelSym}, SynchronousUpdating -> False],
+    action, Appearance -> "Frameless", Method -> "Queued"], tip];
+
+$iSWTalkPalette = None;
+
+ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]},
+  If[$iSWPalette =!= None, Quiet[NotebookClose[$iSWPalette]]];
+  iSWRefreshPaletteLabels[];
   $iSWPalette = Quiet[CreatePalette[
     Column[{
-      Row[{Style["SlideWorkflow", Bold, 11, RGBColor[0.878, 0.486, 0.078]], " ",
-        Style[SlideWorkflow`$SlideWorkflowInteractiveVersion, 8, GrayLevel[0.5]]}],
+      iSWPaletteTitle[iSL["\:4f5c\:6210", "Build"]],
+      iSWTip[iSWButton[iSL["\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:3092\:958b\:304f \[RightGuillemet]", "Open talk palette \[RightGuillemet]"], RGBColor[0.3, 0.45, 0.55],
+          ShowSlideTalkPalette[]],
+        iSL["Slideshow\:30fb\:518d\:751f\:30fb\:97f3\:58f0\:5fdc\:7b54\:30fb\:30ab\:30e1\:30e9\:30fb\:58f0\:3084\:8a00\:8a9e\:306e\:8a2d\:5b9a\:306f\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:306b\:3042\:308b",
+          "Slideshow, playback, voice answering, camera and voice/language settings are in the talk palette"]],
 
-      (* v1.30: \:4e0a\:304b\:3089\:300c\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5)\:300d\:300c1 \:679a\:305a\:3064 (\:5f93\:6765\:306e\:5c55\:958b)\:300d\:300c\:633f\:5165\:300d\:300c\:8868\:793a\:30fb\:66f8\:304d\:51fa\:3057\:300d\:300c\:767a\:8868\:306e\:6e96\:5099\:300d\:300c\:767a\:8868\:300d\:300c\:8a2d\:5b9a\:300d\:3002
-         \:4f5c\:308b\:7bc0\:306f\:5de5\:7a0b\:306e\:9806 (\:5de6\:304b\:3089\:53f3\:3001\:4e0a\:304b\:3089\:4e0b)\:3002KG\:69cb\:7bc9\:306f\:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:3042\:308c\:3070\:8ad6\:6587\:304b\:3089\:3001\:7121\:3051\:308c\:3070\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306e\:30b7\:30ca\:30ea\:30aa\:304b\:3089 *)
-      iSWSectionLabel[" \:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5)", " Build (knowledge graph)"],
+      (* 1. \:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:4f5c\:308b (\:5de5\:7a0b\:306e\:9806: \:5de6\:304b\:3089\:53f3\:3001\:4e0a\:304b\:3089\:4e0b) *)
+      iSWSectionLabel[" \:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:4f5c\:308b", " From a knowledge graph"],
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:30b9\:30c8\:30fc\:30ea\:30fc", "Story"], RGBColor[0.7, 0.55, 0.3], SlideInsertStory[]],
           iSL["\:8074\:304d\:624b\:30fb\:679a\:6570\:30fb\:8a71\:306e\:9806\:306a\:3069\:3092\:66f8\:304f (\:6700\:521d\:306b\:66f8\:304f)", "Audience, length and order of the talk (write first)"]],
         iSWTip[iSWButton2[iSL["\:6587\:732e", "Refs"], RGBColor[0.3, 0.55, 0.5], SlideInsertReferences[]],
           iSL["\:8ad6\:6587\:306e\:548c\:8a33\:30ce\:30fc\:30c8\:3084\:5f15\:7528\:3059\:308b\:8cc7\:6599 ([key] locator | \:30e1\:30e2)", "Translated paper notebook and sources ([key] locator | note)"]]],
+      iSWTip[iSWButton[iSL["\:8a08\:7b97\:30ce\:30fc\:30c8", "Compute notebook"], RGBColor[0.55, 0.45, 0.65], SlideComputeBuild[]],
+        iSL["\:6587\:732e (\:8ad6\:6587\:30fb\:8cc7\:6599\:30fb\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30fbSourceVault \:306e\:6587\:66f8) \:3068 KG \:304b\:3089\:3001Mathematica \:306e\:8a08\:7b97\:3068\:7d50\:679c\:3092\:307e\:3068\:3081\:305f\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c\:4f5c\:308b\:3002SourceVault \:306b\:767b\:9332\:3055\:308c (sv://computenb/\[Ellipsis])\:3001\:6587\:732e\:306b\:8ffd\:8a18\:3055\:308c\:3066 KG \:306e\:7d20\:6750\:306b\:306a\:308b\:3002\:30bb\:30eb\:306e\:5358\:4f4d\:306f\:30ce\:30fc\:30c9\:3068\:3057\:3066\:4ed6\:306e KG \:3067\:3082\:518d\:5229\:7528\:3067\:304d\:308b (SlideGraphReuse)",
+          "The agent builds a compute notebook (Mathematica computations and results) from the sources and the KG; it is registered in SourceVault (sv://computenb/...), added to References as KG material, and its units can be reused as nodes in other KGs"]],
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["KG\:69cb\:7bc9", "Build KG"], RGBColor[0.5, 0.6, 0.25], SlideGraphBuild[]],
           iSL["\:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:3042\:308c\:3070\:8ad6\:6587\:304b\:3089\:3001\:7121\:3051\:308c\:3070\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306e\:7b4b\:66f8\:304d (\:30b7\:30ca\:30ea\:30aa) \:304b\:3089\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:4f5c\:308b (\:95a2\:9023\:7814\:7a76\:3082\:63a2\:3059)",
@@ -6851,6 +8154,13 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
         iSWTip[iSWButton2[iSL["\:56f3\:89e3", "Visuals"], RGBColor[0.3, 0.5, 0.7], SlideGraphRefine["Mode" -> "Visual"]],
           iSL["\:56f3\:306e\:7121\:3044\:679a\:306b\:8868\:304b\:6982\:5ff5\:56f3\:3092\:4ed8\:3051\:308b", "Add a table or concept figure to slides without one"]]],
       iSWButtonRow[
+        iSWTip[iSWButton2[iSL["\:968e\:5c64\:5316", "Hierarchy"], RGBColor[0.45, 0.52, 0.3], SlideGraphHierarchy[]],
+        iSL["KG \:306e\:9805\:76ee\:304b\:3089\:767a\:8868\:306e\:76ee\:6b21 (\:7ae0\:30fb\:7bc0\:7acb\:3066) \:3092\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:308a\:76f4\:3059\:3002\:4e26\:3076\:5b50\:306f\:540c\:3058\:30ec\:30d9\:30eb\:306e\:8a71\:3068\:3057\:3066\:4e26\:7acb\:3057\:3001\:5b50\:306f $SlideGraphMaxDegree (\:65e2\:5b9a 5) \:500b\:4ee5\:4e0b\:3001\:5404\:6bb5\:306b\:4e00\:884c\:8981\:7d04\:3002\:5b9a\:7fa9\:30fb\:524d\:63d0\:304c\:5148\:306b\:6765\:308b\:3088\:3046\:4e26\:3079\:66ff\:3048\:308b\:3002\:300c\:751f\:6210\:300d\:306f\:76ee\:6b21\:304c\:7121\:3051\:308c\:3070\:5148\:306b\:3053\:308c\:3092\:884c\:3044\:3001\:679a\:6570\:306b\:5408\:308f\:305b\:3066\:76ee\:6b21\:306e\:4e0a\:304b\:3089\:958b\:304f",
+          "Rebuild the talk's table of contents bottom-up from the KG items: siblings stand in parallel, at most $SlideGraphMaxDegree (default 5) children, a one-line summary at each level, definitions and prerequisites first. Generate runs this first when there is none and opens the contents from the top as far as the slide count allows"]],
+        iSWTip[iSWButton2[iSL["\:610f\:5473\:4ed8\:3051", "Narrative"], RGBColor[0.6, 0.5, 0.3], SlideGraphNarrate[]],
+          iSL["\:6c7a\:307e\:3063\:305f\:679a\:306e\:4e26\:3073\:3092 LLM \:306b\:898b\:305b\:3001\:5404\:679a\:306e\:5f79\:5272 (\:306a\:305c\:3053\:3053\:306b\:3042\:308b\:304b)\:30fb\:524d\:306e\:679a\:304b\:3089\:306e\:3064\:306a\:304e\:30fb\:521d\:3081\:3066\:51fa\:308b\:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e\:3092\:66f8\:304b\:305b\:308b\:3002\:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:6240\:306f\:8abf\:6574\:30bb\:30eb\:306b\:63d0\:6848\:3059\:308b (\:300c\:751f\:6210\:300d\:3082\:4e26\:3073\:304c\:5909\:308f\:3063\:3066\:3044\:308c\:3070\:5148\:306b\:3053\:308c\:3092\:884c\:3046)",
+            "Show the slide sequence to the LLM to write each slide's role, the bridge from the previous slide and one-line notes for new terms; gaps go to the adjust cell as suggestions (Generate runs this first when the sequence changed)"]]],
+      iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:8abf\:6574", "Adjust"], RGBColor[0.3, 0.45, 0.75], SlideGraphAdjust[]],
           iSL["\:8abf\:6574\:30bb\:30eb\:306b\:76f4\:3057\:305f\:3044\:3053\:3068\:3092\:66f8\:3044\:3066\:62bc\:3059", "Write what to change in the adjustment cell, then press"]],
         iSWTip[iSWButton2[iSL["KG\:56f3", "KG map"], RGBColor[0.45, 0.45, 0.55],
@@ -6859,10 +8169,15 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
             "Open the knowledge-graph map (story, sections, neighborhood, plan, nodes; click a node to see it, jump to its slide, or add it to Adjust)"]]],
       iSWTip[iSWButton[iSL["\:751f\:6210", "Generate"], RGBColor[0.878, 0.486, 0.078],
           With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWGraphApplyAction[nb]]]],
-        iSL["\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:4f5c\:308b (\:524d\:56de\:306e\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:306f\:7f6e\:304d\:63db\:3048\:3089\:308c\:308b\:3002\:8cea\:7591\:5fdc\:7b54\:306f\:5f15\:304d\:7d99\:3050)",
-          "Generate the slides (replaces the previous generation; the Q&A is carried over)"]],
+        iSL["\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:4f5c\:308b (\:524d\:56de\:306e\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:306f\:7f6e\:304d\:63db\:3048\:3089\:308c\:308b\:3002\:8cea\:7591\:5fdc\:7b54\:306f\:5f15\:304d\:7d99\:3050\:3002\:6761\:4ef6\:3092\:5909\:3048\:305f\:3068\:304d\:306f\:5225\:306e\:7248\:306b\:3067\:304d\:308b)",
+          "Generate the slides (replaces the previous generation; the Q&A is carried over; a changed setup can become a new version)"]],
+      iSWTip[iSWButton[iSL["\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620", "Sync from slides"], RGBColor[0.5, 0.4, 0.62],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWSyncAction[nb]]]],
+        iSL["\:624b\:3067\:76f4\:3057\:305f\:30b9\:30e9\:30a4\:30c9\:306b\:5408\:308f\:305b\:3066\:3001\:539f\:7a3f\:306e\:98df\:3044\:9055\:3044\:30fb\:8aa4\:308a\:3092\:76f4\:3057\:3001\:77e5\:8b58\:30b0\:30e9\:30d5\:3082\:66f4\:65b0\:3059\:308b (\:30b9\:30e9\:30a4\:30c9\:306f\:5909\:3048\:306a\:3044\:3002\:524d\:56de\:304b\:3089\:76f4\:3057\:305f\:679a\:3060\:3051\:3002\:623b\:3059\:306e\:306f SlideGraphSyncUndo[])",
+          "Match the talks and the knowledge graph to the edited slides (slides are not changed; only slides edited since the last sync)"]],
 
-      iSWSectionLabel[" 1 \:679a\:305a\:3064", " One slide"],
+      (* 2. 1 \:679a\:305a\:3064\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:4f7f\:308f\:306a\:3044\:5f93\:6765\:306e\:5c55\:958b) *)
+      iSWSectionLabel[" 1 \:679a\:305a\:3064\:4f5c\:308b", " One slide at a time"],
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:30d7\:30ed\:30f3\:30d7\:30c8", "Prompt"], RGBColor[0.878, 0.486, 0.078], SlideInsertPrompt[]],
           iSL["\:3053\:306e\:679a\:3067\:4f1d\:3048\:305f\:3044\:3053\:3068\:3092\:66f8\:304f\:30bb\:30eb (KG\:69cb\:7bc9\:306e\:30b7\:30ca\:30ea\:30aa\:306b\:3082\:306a\:308b)", "Prompt cell for this slide (also the scenario for Build KG)"]],
@@ -6871,11 +8186,8 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
       iSWButtonRow[
         iSWButton2[iSL["\:ff0b\:30b9\:30e9\:30a4\:30c9", "+Slide"], RGBColor[0.2, 0.55, 0.35], SlideAddSlide[]],
         iSWButton2[iSL["\:51fa\:5178", "Cite"], RGBColor[0.45, 0.45, 0.55], SlideInsertCitation[]]],
-      iSWButtonRow[
-        iSWButton2[iSL["\:82f1\:8a33", "Translate"], RGBColor[0.3, 0.4, 0.65], SlideTranslate[]],
-        iSWButton2[iSL["\:00d7\:82f1\:8a33", "\[Times]Tr"], RGBColor[0.6, 0.35, 0.35], SlideTranslateRevert[]]],
-      iSWButton[iSL["\:5168\:30b9\:30e9\:30a4\:30c9\:82f1\:8a33", "Translate All"], RGBColor[0.3, 0.4, 0.65], SlideTranslateDeck[]],
 
+      (* 3. \:633f\:5165 *)
       iSWSectionLabel[" \:633f\:5165", " Insert"],
       iSWButtonRow[
         iSWButton2[iSL["\:30e1\:30e2", "Note"], RGBColor[0.7, 0.63, 0.35], SlideInsertNote[]],
@@ -6887,29 +8199,8 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
         iSWButton2[iSL["\:8cea\:7591", "QA"], RGBColor[0.8, 0.45, 0.15], SlideInsertQA[]],
         iSWButton2[iSL["\:7d42\:7aef", "End"], RGBColor[0.5, 0.45, 0.35], SlideInsertEndMarker[]]],
 
-      (* \:8868\:793a: \:74b0\:5883\:5207\:66ff (Working/Slideshow) \:3068\:30d7\:30ed\:30f3\:30d7\:30c8\:8868\:793a\:3001\:66f8\:304d\:51fa\:3057 *)
-      iSWSectionLabel[" \:8868\:793a\:30fb\:66f8\:304d\:51fa\:3057", " View / Export"],
-      (* v1.31: \:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:7a93 (SlideGraphViewer) \:3092\:5206\:304b\:308b\:540d\:524d\:3067\:3002\:300c\:4f5c\:308b\:300d\:6b04\:306e\:300cKG\:56f3\:300d\:3068\:540c\:3058 *)
-      iSWTip[iSWButton[iSL["\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:898b\:308b", "Knowledge graph"], RGBColor[0.4, 0.45, 0.62],
-          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWGraphViewerAction[nb]]]],
-        iSL["\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:7a93\:3092\:958b\:304f (\:8a71\:306e\:6d41\:308c\:30fb\:7bc0\:30fb\:5468\:8fba\:30fb\:8a08\:753b\:30fb\:4e00\:89a7\:3002\:30ce\:30fc\:30c9\:3092\:30af\:30ea\:30c3\:30af\:3067\:4e2d\:8eab\:3001\:30b9\:30e9\:30a4\:30c9\:3078\:79fb\:52d5\:3001\:8abf\:6574\:306b\:66f8\:304f)",
-          "Open the knowledge-graph window (story, sections, neighborhood, plan, nodes)"]],
-      iSWButtonRow[
-        iSWDynButton2[$iSWEnvLabel, $iSWEnvColor,
-          With[{nb = iSWNotebook[]},
-            If[nb =!= $Failed, SlideToggleScreenEnvironment[nb]; SetSelectedNotebook[nb]]]],
-        iSWButton2[iSL["\[LeftRightArrow]\:30d7\:30ed\:30f3\:30d7\:30c8", "\[LeftRightArrow]Prompts"],
-          RGBColor[0.35, 0.45, 0.65], SlideTogglePrompts[]]],
-      iSWButton[iSL["\:4e00\:89a7", "Overview"], RGBColor[0.4, 0.5, 0.55],
-        With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWOverviewAction[nb]]]],
-      iSWButtonRow[
-        iSWButton2[iSL["\:753b\:50cf", "Images"], RGBColor[0.3, 0.5, 0.55],
-          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWExportImagesAction[nb]]]],
-        iSWButton2[iSL["mp4", "mp4"], RGBColor[0.4, 0.4, 0.55],
-          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWExportVideoAction[nb]]]]],
-
-      (* \:767a\:8868\:306e\:6e96\:5099: \:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:3068\:60f3\:5b9a\:554f\:7b54\:3092\:6574\:3048\:3066\:767b\:9332\:3059\:308b\:3002\:3069\:308c\:3082\:30b9\:30e9\:30a4\:30c9\:306e\:4f5c\:308a\:65b9 (KG / \:5c55\:958b) \:306b\:3088\:3089\:306a\:3044 *)
-      iSWSectionLabel[" \:767a\:8868\:306e\:6e96\:5099", " Prepare the talk"],
+      (* 4. \:539f\:7a3f\:3068\:60f3\:5b9a\:554f\:7b54 (\:3069\:308c\:3082\:30b9\:30e9\:30a4\:30c9\:306e\:4f5c\:308a\:65b9\:306b\:3088\:3089\:306a\:3044) *)
+      iSWSectionLabel[" \:539f\:7a3f\:3068\:60f3\:5b9a\:554f\:7b54", " Talks and Q&A"],
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:539f\:7a3f", "Talk"], RGBColor[0.72, 0.4, 0.2],
             With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWTalkFillAction[nb]]]],
@@ -6922,72 +8213,143 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
         iSWTip[iSWButton2[iSL["QA\:4e00\:89a7", "QA list"], RGBColor[0.6, 0.45, 0.3],
             With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWQAOverviewAction[nb]]]],
           iSL["\:8cea\:7591\:5fdc\:7b54\:306e\:70b9\:691c", "Review the Q&A"]],
-        iSWTip[iSWButton2[iSL["\:767b\:9332", "Register"], RGBColor[0.35, 0.55, 0.4],
-            With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWTalkRegisterAction[nb]]]],
-          iSL["\:767b\:9332\:7c3f\:30fbQA\:30fbmp4 \:3092\:66f4\:65b0 (\:5909\:308f\:3063\:305f\:5206\:3060\:3051)", "Update the registry, Q&A and mp4 (only what changed)"]]],
+        iSWTip[iSWButton2[iSL["\:8cea\:554f\:5019\:88dc", "Q cands"], RGBColor[0.6, 0.45, 0.25],
+            With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWQACandidateAction[nb]]]],
+          iSL["\:767a\:8868\:4e2d\:306b\:53d7\:3051\:305f\:8cea\:554f\:304b\:3089\:4f5c\:3063\:305f\:3001\:60f3\:5b9a\:554f\:7b54\:3092\:8ffd\:52a0\:30fb\:898b\:76f4\:3057\:3059\:308b\:5019\:88dc (\:63a1\:7528\:3059\:308b\:3068\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:3068\:77e5\:8b58\:30b0\:30e9\:30d5\:3078)",
+            "Candidates for adding or revising Q&A, made from questions asked during talks (accepting writes to the Q&A cell and the knowledge graph)"]]],
 
-      (* \:767a\:8868: \:300c\:60c5\:5831\:300d\:306e\:6a2a\:306b\:30de\:30a4\:30af\:306e mute/unmute (\:624b\:5143\:30ea\:30e2\:30b3\:30f3\:306e\:518d\:751f/\:4e00\:6642\:505c\:6b62\:3068\:540c\:3058\:52d5\:4f5c) *)
-      iSWSectionLabel[" \:767a\:8868", " Present"],
+      (* 5. \:7ffb\:8a33 (\:540c\:3058\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:4e2d\:306b\:8a33\:3092\:6301\:3064\:3002\:767a\:8868\:306e\:8a00\:8a9e\:306f\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:3067\:9078\:3076) *)
+      iSWSectionLabel[" \:7ffb\:8a33", " Translation"],
       iSWButtonRow[
-        iSWButton2[iSL["\:60c5\:5831", "Info"], RGBColor[0.45, 0.5, 0.6],
-          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWInfoAction[nb]]]],
-        iSWDynButton2[$iSWMicLabel, $iSWMicColor,
-          (SlideToggleMic[];
-           With[{inb = InputNotebook[]},
-             If[Head[inb] === NotebookObject, SetSelectedNotebook[inb]]])]],
+        iSWTip[iSWButton2[iSL["\:3053\:306e\:679a\:3092\:82f1\:8a33", "Translate"], RGBColor[0.3, 0.4, 0.65], SlideTranslate[]],
+          iSL["\:9078\:3093\:3067\:3044\:308b\:679a\:306e\:30b9\:30e9\:30a4\:30c9\:3092\:8a33\:306e\:8868\:793a\:306b\:3059\:308b (\:539f\:6587\:306f\:6b8b\:308b)", "Show the current slide translated (the original is kept)"]],
+        iSWTip[iSWButton2[iSL["\:3053\:306e\:679a\:3092\:539f\:6587", "Original"], RGBColor[0.6, 0.35, 0.35], SlideTranslateRevert[]],
+          iSL["\:3053\:306e\:679a\:3092\:539f\:6587\:306e\:8868\:793a\:306b\:623b\:3059 (\:8a33\:306f\:6b8b\:308b)", "Show this slide in the original (the translation is kept)"]]],
       iSWButtonRow[
-        iSWDynButton2[$iSWPlayLabel, $iSWPlayColor,
-          With[{nb = iSWNotebook[]},
-            If[nb =!= $Failed, iSWPlayToggleAction[nb]; SetSelectedNotebook[nb]]]],
-        iSWButton2["\[FilledSquare] " <> iSL["\:505c\:6b62", "Stop"], RGBColor[0.6, 0.35, 0.35], SlideStop[]]],
-      (* \:5fdc\:7b54 on/off \:306f 1 \:884c\:3067\:3002\:30dc\:30a4\:30b9\:5207\:66ff\:306f\:5e45\:304c\:8db3\:308a\:306a\:3044 (\:300cV: \:307b\:306e\:304b\:300d\:304c\:8a70\:307e\:308b) \:306e\:3067\:8a2d\:5b9a\:6b04\:3078 *)
-      iSWDynButton[$iSWTalkLabel, $iSWTalkColor,
-        With[{nb = iSWNotebook[]},
-          If[nb =!= $Failed, SlideToggleRealtime[nb]; SetSelectedNotebook[nb]]]],
-      Dynamic[Style[$iSWPlayProgress, 8, GrayLevel[0.45]],
-        TrackedSymbols :> {$iSWPlayProgress}, SynchronousUpdating -> False],
+        iSWTip[iSWButton2[iSL["\:5168\:30b9\:30e9\:30a4\:30c9\:82f1\:8a33", "Translate All"], RGBColor[0.3, 0.4, 0.65], SlideTranslateDeck[]],
+          iSL["\:5168\:30b9\:30e9\:30a4\:30c9\:3092\:8a33\:306e\:8868\:793a\:306b (\:8a33\:306e\:7121\:3044\:30bb\:30eb\:3060\:3051 LLM)\:3002\:539f\:6587\:306f\:6b8b\:308b", "Show all slides translated (LLM only for cells without one); the original is kept"]],
+        iSWTip[iSWButton2[iSL["\:539f\:6587\[RightArrowLeftArrow]\:82f1\:8a33", "Orig\[LeftRightArrow]Tr"], RGBColor[0.35, 0.45, 0.65], SlideShowLanguage[]],
+          iSL["\:30c7\:30c3\:30ad\:5168\:4f53\:306e\:8868\:793a\:3092\:539f\:6587\:3068\:8a33\:3067\:5207\:308a\:66ff\:3048\:308b (LLM \:306f\:547c\:3070\:306a\:3044)", "Switch the whole deck between the original and the translation (no LLM)"]]],
+      iSWTip[iSWButton[iSL["\:539f\:7a3f\:3092\:8a33\:3059", "Translate talks"], RGBColor[0.25, 0.55, 0.55],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWTalkTranslateAction[nb]]]],
+        iSL["\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:3092\:8a71\:3059\:8a00\:8a9e (\:6307\:793a\:30bb\:30eb\:306e Language:\:3001\:7121\:3051\:308c\:3070 $Language) \:306b\:8a33\:3057\:3001\:8a33\:306e\:30c8\:30fc\:30af\:30bb\:30eb\:3092\:4e26\:3079\:308b (\:8a33\:306e\:7121\:3044\:679a\:3068\:539f\:7a3f\:3092\:76f4\:3057\:305f\:679a\:3060\:3051)",
+          "Translate the talks into the speaking language (Language: in the Directive cell, else $Language) as extra talk cells (only missing or outdated ones)"]],
 
-      (* \:8a2d\:5b9a: \:5c55\:958b\:6642\:306e\:30c8\:30fc\:30af\:751f\:6210 on/off \:3068\:767a\:8868\:30dc\:30a4\:30b9\:3002P:/M: \:306f Claude Code \:30d1\:30ec\:30c3\:30c8\:3067\:8a2d\:5b9a\:3059\:308b (v1.21 \:3067\:64a4\:53bb) *)
-      iSWSectionLabel[" \:8a2d\:5b9a", " Settings"],
+      (* 6. \:78ba\:8a8d\:30fb\:66f8\:304d\:51fa\:3057 *)
+      iSWSectionLabel[" \:78ba\:8a8d\:30fb\:66f8\:304d\:51fa\:3057", " Review / Export"],
+      iSWButtonRow[
+        iSWButton2[iSL["\:4e00\:89a7", "Overview"], RGBColor[0.4, 0.5, 0.55],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWOverviewAction[nb]]]],
+        iSWTip[iSWButton2[iSL["\[LeftRightArrow]\:30d7\:30ed\:30f3\:30d7\:30c8", "\[LeftRightArrow]Prompts"],
+            RGBColor[0.35, 0.45, 0.65], SlideTogglePrompts[]],
+          iSL["\:30d7\:30ed\:30f3\:30d7\:30c8\:306a\:3069\:306e\:30e1\:30bf\:30bb\:30eb\:306e\:8868\:793a\:30fb\:975e\:8868\:793a", "Show or hide the prompt and other meta cells"]]],
+      iSWButtonRow[
+        iSWButton2[iSL["\:753b\:50cf", "Images"], RGBColor[0.3, 0.5, 0.55],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWExportImagesAction[nb]]]],
+        iSWButton2[iSL["mp4", "mp4"], RGBColor[0.4, 0.4, 0.55],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWExportVideoAction[nb]]]]],
+      iSWTip[iSWButton[iSL["\:767b\:9332", "Register"], RGBColor[0.35, 0.55, 0.4],
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWTalkRegisterAction[nb]]]],
+        iSL["\:767b\:9332\:7c3f\:30fbQA\:30fbmp4 \:3092\:66f4\:65b0 (\:5909\:308f\:3063\:305f\:5206\:3060\:3051)", "Update the registry, Q&A and mp4 (only what changed)"]],
+
+      (* 7. \:4f5c\:6210\:306e\:8a2d\:5b9a *)
+      iSWSectionLabel[" \:4f5c\:6210\:306e\:8a2d\:5b9a", " Build settings"],
       Button[
         Dynamic[Style[$iSWTalkGenLabel, 9, Bold, GrayLevel[0.2]],
           TrackedSymbols :> {$iSWTalkGenLabel}, SynchronousUpdating -> False],
         ($SlideTalkPerSlide = !TrueQ[$SlideTalkPerSlide];
          iSWRefreshTalkGenLabel[]),
-        Appearance -> "Frameless", Method -> "Queued"],
-      (* \:767a\:8868\:306e\:8aad\:307f\:4e0a\:3052\:30dc\:30a4\:30b9: \:62bc\:3059\:305f\:3073\:306b\:6b21\:306e\:30dc\:30a4\:30b9\:3078 *)
-      Button[
-        Dynamic[Style[$iSWVoiceLabel, 9, Bold, GrayLevel[0.2]],
-          TrackedSymbols :> {$iSWVoiceLabel}, SynchronousUpdating -> False],
-        SlideCycleVoice[],
-        Appearance -> "Frameless", Method -> "Queued"],
-      (* v1.32: \:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3068\:30e2\:30c7\:30eb\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078\:3002
-         \:30e9\:30d9\:30eb\:306f kernel \:5074\:306e\:6587\:5b57\:5217\:5909\:6570\:3092\:8ffd\:3046\:3060\:3051 (\:63cf\:753b\:6642\:306b kernel \:3092\:547c\:3070\:306a\:3044) *)
-      iSWTip[Button[
-        Dynamic[Style[$iSWVoiceProviderLabel, 9, Bold, GrayLevel[0.2]],
-          TrackedSymbols :> {$iSWVoiceProviderLabel}, SynchronousUpdating -> False],
-        SlideCycleVoiceProvider[],
-        Appearance -> "Frameless", Method -> "Queued"],
-        iSL["\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078",
-          "Provider for voice answering (answer on / realtime: voices). Click to cycle"]],
-      iSWTip[Button[
-        Dynamic[Style[$iSWVoiceModelLabel, 9, Bold, GrayLevel[0.2]],
-          TrackedSymbols :> {$iSWVoiceModelLabel}, SynchronousUpdating -> False],
-        SlideCycleVoiceModel[],
-        Appearance -> "Frameless", Method -> "Queued"],
-        iSL["\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078 (gpt-realtime-2.1 / gpt-realtime-2.1-mini / gpt-live-1)\:3002gpt-live-1 \:306f\:5168\:4e8c\:91cd\:3067\:3001\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f SourceVault\:30fb\:30a6\:30a7\:30d6\:3078\:59d4\:8b72\:3057\:3066\:7b54\:3048\:308b\:3002\:5fdc\:7b54 off \:2192 on \:3067\:53cd\:6620",
-          "Voice answering model; click to cycle (gpt-realtime-2.1 / -mini / gpt-live-1). gpt-live-1 is full duplex and answers by delegating to slide control, SourceVault and the web. Takes effect when answering restarts"]],
-      (* v1.33: \:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9\:3002\:62bc\:3059\:305f\:3073\:306b \:8cea\:554f\:30bf\:30a4\:30e0 \:2192 \:7279\:5b9a\:30ef\:30fc\:30c9 \:2192 \:4e8c\:6bb5\:69cb\:3048 *)
-      iSWTip[Button[
-        Dynamic[Style[$iSWQuestionModeLabel, 9, Bold, GrayLevel[0.2]],
-          TrackedSymbols :> {$iSWQuestionModeLabel}, SynchronousUpdating -> False],
-        SlideCycleQuestionMode[],
-        Appearance -> "Frameless", Method -> "Queued"],
-        iSL["\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078)\:3002\:8cea\:554f\:30bf\:30a4\:30e0 = 1 \:679a\:3054\:3068\:306b\:8cea\:554f\:6642\:9593 (\:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:5207)\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 = \:8aad\:307f\:4e0a\:3052\:4e2d\:306b\:300c\:8cea\:554f\:300d\:300c\:30b9\:30e9\:30a4\:30c9\:300d\:306a\:3069\:304c\:805e\:3053\:3048\:305f\:3089\:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591\:3002\:4e8c\:6bb5\:69cb\:3048 = \:805e\:304d\:624b\:306e\:58f0\:3067\:6b62\:3081\:3001\:8cea\:554f\:304b\:306f gpt-live \:304c\:5224\:65ad\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051 (* \:306f\:4eca\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0)",
-          "How questions are taken during a talk (click to cycle). Question time = a window after each slide (mic off while reading). Keywords = stop the talk when a listener says an allowed word. Two-stage = stop on a listener's voice; gpt-live judges if it was a question. Keywords / two-stage need gpt-live-1 (* = question time with the current model)"]]
+        Appearance -> "Frameless", Method -> "Queued"]
     }, Alignment -> Center, Spacings -> 0],
     WindowTitle -> "Slides", WindowMargins -> {{Automatic, 60}, {Automatic, 60}}]];
   $iSWPalette];
+
+(* \:767a\:8868\:30d1\:30ec\:30c3\:30c8: \:5b9f\:969b\:306b\:767a\:8868\:3059\:308b\:3068\:304d\:306e\:64cd\:4f5c\:3068\:8a2d\:5b9a\:3060\:3051 *)
+ShowSlideTalkPalette[] := (
+  If[$iSWTalkPalette =!= None, Quiet[NotebookClose[$iSWTalkPalette]]];
+  iSWRefreshPaletteLabels[];
+  $iSWTalkPalette = Quiet[CreatePalette[
+    Column[{
+      iSWPaletteTitle[iSL["\:767a\:8868", "Talk"]],
+      iSWTip[iSWButton[iSL["\[LeftGuillemet] \:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:3092\:958b\:304f", "\[LeftGuillemet] Open build palette"], RGBColor[0.55, 0.45, 0.3],
+          ShowSlidePalette[]],
+        iSL["\:30b9\:30e9\:30a4\:30c9\:30fb\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:30fb\:7ffb\:8a33\:30fb\:66f8\:304d\:51fa\:3057\:306f\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:306b\:3042\:308b", "Slides, talks, Q&A, translation and export are in the build palette"]],
+
+      (* 1. \:753b\:9762\:3068\:60c5\:5831 *)
+      iSWSectionLabel[" \:753b\:9762\:3068\:60c5\:5831", " Screen and info"],
+      iSWButtonRow[
+        iSWTip[iSWDynButton2[$iSWEnvLabel, $iSWEnvColor,
+            With[{nb = iSWNotebook[]},
+              If[nb =!= $Failed, SlideToggleScreenEnvironment[nb]; SetSelectedNotebook[nb]]]],
+          iSL["Working (\:7de8\:96c6) \:3068 Slideshow (\:767a\:8868) \:306e\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:308b", "Switch between Working (editing) and Slideshow (presenting)"]],
+        iSWTip[iSWButton2[iSL["\:60c5\:5831", "Info"], RGBColor[0.45, 0.5, 0.6],
+            With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWInfoAction[nb]]]],
+          iSL["\:679a\:6570\:30fb\:539f\:7a3f\:30fb\:898b\:7a4d\:6642\:9593\:30fb\:8a71\:3059\:8a00\:8a9e\:30fb\:58f0\:30fb\:97f3\:58f0\:4f1a\:8a71\:306e\:72b6\:614b\:3068\:3001\:30b9\:30e9\:30a4\:30c9\:7d22\:5f15", "Slides, talks, estimated time, speaking language, voice, voice-session state, and the slide index"]]],
+      iSWTip[iSWDynButton[$iSWPresentLabel, $iSWPresentColor,
+          With[{nb = iSWNotebook[]}, If[nb =!= $Failed, SlidePresentFullScreen[nb]]]],
+        iSL["\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:8868\:793a\:3067\:3001\:30b5\:30d6\:753b\:9762 (\:30d7\:30ed\:30b8\:30a7\:30af\:30bf\:306a\:3069) \:306b\:5168\:753b\:9762\:3067\:51fa\:3059\:3002\:3082\:3046\:4e00\:5ea6\:62bc\:3059\:3068\:5143\:306e\:7a93\:306b\:623b\:308b\:3002\:5b57\:5e55\:306f\:305d\:306e\:753b\:9762\:306e\:89e3\:50cf\:5ea6\:306b\:5408\:308f\:305b\:308b",
+          "Show the deck as a slideshow, full screen on the second display (projector). Press again to restore the window. Subtitles follow that display's resolution"]],
+
+      (* 2. \:9032\:884c (\:8aad\:307f\:4e0a\:3052\:3068\:81ea\:52d5\:9001\:308a) *)
+      iSWSectionLabel[" \:9032\:884c", " Playback"],
+      iSWButtonRow[
+        iSWDynButton2[$iSWPlayLabel, $iSWPlayColor,
+          With[{nb = iSWNotebook[]},
+            If[nb =!= $Failed, iSWPlayToggleAction[nb]; SetSelectedNotebook[nb]]]],
+        iSWButton2["\[FilledSquare] " <> iSL["\:505c\:6b62", "Stop"], RGBColor[0.6, 0.35, 0.35], SlideStop[]]],
+      Dynamic[Style[$iSWPlayProgress, 8, GrayLevel[0.45]],
+        TrackedSymbols :> {$iSWPlayProgress}, SynchronousUpdating -> False],
+
+      (* 3. \:97f3\:58f0\:5fdc\:7b54 (\:8cea\:7591) *)
+      iSWSectionLabel[" \:97f3\:58f0\:5fdc\:7b54", " Voice answering"],
+      iSWDynButton[$iSWTalkLabel, $iSWTalkColor,
+        With[{nb = iSWNotebook[]},
+          If[nb =!= $Failed, SlideToggleRealtime[nb]; SetSelectedNotebook[nb]]]],
+      iSWButtonRow[
+        iSWTip[iSWDynButton2[$iSWMicLabel, $iSWMicColor,
+            (SlideToggleMic[];
+             With[{inb = InputNotebook[]},
+               If[Head[inb] === NotebookObject, SetSelectedNotebook[inb]]])],
+          iSL["\:97f3\:58f0\:5fdc\:7b54\:306e\:30de\:30a4\:30af\:3092\:5207\:308b / \:5165\:308c\:308b (\:624b\:5143\:30ea\:30e2\:30b3\:30f3\:306e\:524d\:306e\:66f2\:3068\:540c\:3058)", "Mute / unmute the voice-answering microphone (same as the remote's previous-track key)"]],
+        iSWTip[iSWButton2[iSL["\:8cea\:554f\:5019\:88dc", "Q cands"], RGBColor[0.6, 0.45, 0.25],
+            With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWQACandidateAction[nb]]]],
+          iSL["\:3053\:306e\:767a\:8868\:306a\:3069\:3067\:53d7\:3051\:305f\:8cea\:554f\:304b\:3089\:4f5c\:3063\:305f\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc", "Q&A candidates made from questions asked in talks"]]],
+
+      (* 4. \:8a18\:9332 (\:30ab\:30e1\:30e9\:3002\:9032\:884c\:3068\:8cea\:554f\:306f\:81ea\:52d5\:3067\:8a18\:9332\:3055\:308c\:308b) *)
+      iSWSectionLabel[" \:8a18\:9332", " Recording"],
+      iSWButtonRow[
+        iSWTip[iSWDynButton2[$iSWCameraLabel, $iSWCameraColor,
+            (SlideCameraToggle[];
+             With[{inb = InputNotebook[]},
+               If[Head[inb] === NotebookObject, SetSelectedNotebook[inb]]])],
+          iSL["\:4e00\:5b9a\:9593\:9694\:3067\:30ab\:30e1\:30e9\:3092\:64ae\:3063\:3066\:767a\:8868\:306e\:8a18\:9332\:3068\:3057\:3066 SourceVault \:306b\:4fdd\:5b58\:3059\:308b (PL 0.6\:3001LLM \:306b\:306f\:6e21\:3055\:306a\:3044)",
+            "Capture the camera at intervals into the talk record in SourceVault (PL 0.6; never sent to an LLM)"]],
+        iSWTip[iSWButton2[iSL["\:30ab\:30e1\:30e9\:8a2d\:5b9a", "Camera"], RGBColor[0.45, 0.45, 0.55], SlideCameraSelect[]],
+          iSL["\:4f7f\:3046\:30ab\:30e1\:30e9\:3068\:64ae\:5f71\:306e\:9593\:9694 (\:79d2)", "Camera and capture interval (s)"]]],
+
+      (* 5. \:767a\:8868\:306e\:8a2d\:5b9a (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078) *)
+      iSWSectionLabel[" \:767a\:8868\:306e\:8a2d\:5b9a", " Talk settings"],
+      iSWSettingButton[$iSWTalkLangLabel, SlideCycleTalkLanguage[],
+        iSL["\:8a71\:3059\:8a00\:8a9e (\:8aad\:307f\:4e0a\:3052\:3068\:8cea\:7591)\:3002\:62bc\:3059\:305f\:3073\:306b\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e\:3068\:8a33\:306e\:3042\:308b\:8a00\:8a9e\:3092\:9806\:306b\:5207\:308a\:66ff\:3048\:3001\:4f5c\:696d\:753b\:9762\:3067\:306f\:305d\:306e\:8a00\:8a9e\:306e\:539f\:7a3f\:3060\:3051\:3092\:958b\:304f (\:5143\:306e\:539f\:7a3f\:306f\:6d88\:3048\:306a\:3044)",
+          "Speaking language (narration and Q&A). Click to cycle between the original and translated talks; only that language's talk cells stay open (nothing is deleted)"]],
+      iSWSettingButton[$iSWSubtitleLabel, SlideCycleSubtitles[],
+        iSL["\:518d\:751f\:4e2d\:306b\:5143\:306e\:539f\:7a3f\:3092\:5b57\:5e55\:306b\:51fa\:3059\:304b (\:62bc\:3059\:305f\:3073\:306b \:8a33\:3067\:8a71\:3059\:3068\:304d \[RightArrow] \:3044\:3064\:3082 \[RightArrow] \:306a\:3057)\:3002\:5b57\:5e55\:306f\:753b\:9762\:4e0b\:306e\:524d\:9762\:306e\:7a93",
+          "Show the original script as subtitles while playing (cycles: when translated / always / off). Subtitles appear in a floating window at the bottom"]],
+      iSWSettingButton[$iSWVoiceLabel, SlideCycleVoice[],
+        iSL["\:8aad\:307f\:4e0a\:3052\:306e\:58f0\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078 (\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:65e5\:672c\:8a9e\:3060\:3051\:3002\:4ed6\:306e\:8a00\:8a9e\:306f realtime: \:306e\:58f0)",
+          "Narration voice; click to cycle (local voices are Japanese only; use a realtime: voice for other languages)"]],
+      iSWSettingButton[$iSWVoiceProviderLabel, SlideCycleVoiceProvider[],
+        iSL["\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078",
+          "Provider for voice answering (answer on / realtime: voices). Click to cycle"]],
+      iSWSettingButton[$iSWVoiceModelLabel, SlideCycleVoiceModel[],
+        iSL["\:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb\:3002\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078 (gpt-realtime-2.1 / gpt-realtime-2.1-mini / gpt-live-1)\:3002gpt-live-1 \:306f\:5168\:4e8c\:91cd\:3067\:3001\:30b9\:30e9\:30a4\:30c9\:64cd\:4f5c\:3068\:8cea\:554f\:306f SourceVault\:30fb\:30a6\:30a7\:30d6\:3078\:59d4\:8b72\:3057\:3066\:7b54\:3048\:308b\:3002\:5fdc\:7b54 off \[RightArrow] on \:3067\:53cd\:6620",
+          "Voice answering model; click to cycle (gpt-realtime-2.1 / -mini / gpt-live-1). gpt-live-1 is full duplex and answers by delegating to slide control, SourceVault and the web. Takes effect when answering restarts"]],
+      iSWSettingButton[$iSWQuestionModeLabel, SlideCycleQuestionMode[],
+        iSL["\:767a\:8868\:4e2d\:306e\:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078)\:3002\:8cea\:554f\:30bf\:30a4\:30e0 = 1 \:679a\:3054\:3068\:306b\:8cea\:554f\:6642\:9593 (\:8aad\:307f\:4e0a\:3052\:4e2d\:306f\:30de\:30a4\:30af\:5207)\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 = \:8aad\:307f\:4e0a\:3052\:4e2d\:306b\:300c\:8cea\:554f\:300d\:300c\:30b9\:30e9\:30a4\:30c9\:300d\:306a\:3069\:304c\:805e\:3053\:3048\:305f\:3089\:767a\:8868\:3092\:6b62\:3081\:3066\:8cea\:7591\:3002\:4e8c\:6bb5\:69cb\:3048 = \:805e\:304d\:624b\:306e\:58f0\:3067\:6b62\:3081\:3001\:8cea\:554f\:304b\:306f gpt-live \:304c\:5224\:65ad\:3002\:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:306f gpt-live-1 \:306e\:3068\:304d\:3060\:3051 (* \:306f\:4eca\:306e\:30e2\:30c7\:30eb\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0)",
+          "How questions are taken during a talk (click to cycle). Question time = a window after each slide (mic off while reading). Keywords = stop the talk when a listener says an allowed word. Two-stage = stop on a listener's voice; gpt-live judges if it was a question. Keywords / two-stage need gpt-live-1 (* = question time with the current model)"]]
+    }, Alignment -> Center, Spacings -> 0],
+    WindowTitle -> iSL["\:767a\:8868", "Talk"], WindowMargins -> {{Automatic, 190}, {Automatic, 60}}]];
+  $iSWTalkPalette);
 
 (* ===================== \:77e5\:8b58\:30b0\:30e9\:30d5\:99c6\:52d5\:751f\:6210 (v1.20) =====================
    \:4ed5\:69d8: SlideWorkflow_info/design/slide_knowledge_graph_spec_v0_1.md
@@ -7052,7 +8414,7 @@ iSWParseStoryText[text_String] := Module[{spec = <||>, kv, story = {}},
 
 iSWStyleTexts[nb_NotebookObject, style_String] := iSWCollectByStyle[nb, style];
 iSWStyleTexts[nbExpr_Notebook, style_String] := Select[
-  StringTrim[iCellText[#]] & /@ Cases[nbExpr, Cell[_, style, ___], Infinity], StringQ[#] && # =!= "" &];
+  StringTrim[iSWMetaCellText[#]] & /@ Cases[nbExpr, Cell[_, style, ___], Infinity], StringQ[#] && # =!= "" &];
 iSWStyleTexts[path_String, style_String] := With[
   {e = If[FileExistsQ[path], Quiet[iGetNotebook[path]], $Failed]},
   If[Head[e] === Notebook, iSWStyleTexts[e, style], {}]];
@@ -7175,8 +8537,8 @@ iSWStoryTemplateText[nb_] := Module[{src, secs = {}, concl = "", order, head, la
   (* \:96db\:5f62\:306e\:8a00\:8a9e\:306f\:539f\:7a3f\:306b\:5408\:308f\:305b\:308b: \:548c\:8a33\:30ce\:30fc\:30c8\:304b\:3089\:62fe\:3048\:305f\:6587\:5b57\:5217\:304c\:65e5\:672c\:8a9e\:306a\:3089 UI \:304c\:82f1\:8a9e\:3067\:3082\:65e5\:672c\:8a9e *)
   If[$Language === "Japanese" || iSWJaTextQ[concl <> StringJoin[secs]],
     head = "Graph: \nAudience: \:5927\:5b66\:7406\:7cfb\:5b66\:90e8\:5352\nSlides: 20\nMinutes: \nLanguage: ja\nStrategy: Source\n";
-    order = If[secs === {}, "\:7d50\:8ad6 \:2192 \:306a\:305c\:305d\:3046\:8a00\:3048\:308b\:304b \:2192 \:65b9\:6cd5 \:2192 \:7d50\:679c \:2192 \:9650\:754c\:3068\:5c55\:671b",
-      "\:7d50\:8ad6 \:2192 " <> StringRiffle[secs, " \:2192 "] <> " \:2192 \:9650\:754c\:3068\:5c55\:671b"];
+    order = If[secs === {}, "\:7d50\:8ad6 \[RightArrow] \:306a\:305c\:305d\:3046\:8a00\:3048\:308b\:304b \[RightArrow] \:65b9\:6cd5 \[RightArrow] \:7d50\:679c \[RightArrow] \:9650\:754c\:3068\:5c55\:671b",
+      "\:7d50\:8ad6 \[RightArrow] " <> StringRiffle[secs, " \[RightArrow] "] <> " \[RightArrow] \:9650\:754c\:3068\:5c55\:671b"];
     head <> "Story: \:7d50\:8ad6\:30d5\:30a1\:30fc\:30b9\:30c8\:3002\:6700\:521d\:306e 1 \:679a\:3067" <>
       If[concl === "", "\:7d50\:8ad6\:3068\:65b0\:898f\:6027", "\:300c" <> concl <> "\:300d\:3068\:3044\:3046\:7d50\:8ad6"] <> "\:3092\:793a\:3059\:3002\n" <>
       "\:9806\:5e8f: " <> order <> "\:3002\n" <>
@@ -7396,12 +8758,25 @@ SlideGraphPlan[src_?iSWNotOptionQ, OptionsPattern[]] := Module[
   sps = Replace[OptionValue["SecondsPerSlide"], Automatic -> spec["SecondsPerSlide"]];
   If[! NumericQ[sps], sps = N[$SlideTalkSecondsPerSlide]];
   lang = iSWKGLangCode[Replace[OptionValue["Language"], Automatic -> Lookup[spec, "Language", kg["Language"]]]];
-  tree = SourceVault`SourceVaultKGOrderedTree[kg, "Strategy" -> strategy];
+  (* v1.46: \:76ee\:6b21\:304c\:3042\:308c\:3070\:76ee\:6b21\:306e\:6728\:3092\:679a\:6570\:306b\:5408\:308f\:305b\:3066\:4e0a\:304b\:3089\:958b\:304f (\:300cStrategy\:300d\:3092\:660e\:793a\:3057\:305f\:3068\:304d\:3060\:3051\:8cc7\:6599\:306e\:9806\:5e8f\:6728) *)
+  If[SourceVault`SourceVaultKGTocQ[kg] && MatchQ[OptionValue["Strategy"], Automatic | "Toc"],
+    strategy = "Toc";
+    tree = SourceVault`SourceVaultKGTocTree[kg],
+    (* v1.44: \:5b50\:304c $SlideGraphMaxDegree \:3092\:8d85\:3048\:308b\:30ce\:30fc\:30c9\:304c\:3042\:308c\:3070\:3001\:4fdd\:5b58\:305b\:305a\:306b\:307e\:3068\:307e\:308a\:3092\:8db3\:3057\:3066\:304b\:3089\:8a08\:753b\:3059\:308b
+       (\:300c\:751f\:6210\:300d\:306f\:5148\:306b\:300c\:968e\:5c64\:5316\:300d\:3067\:4fdd\:5b58\:3059\:308b\:306e\:3067\:3001\:3053\:3053\:306f headless \:306e\:751f\:6210\:3084\:8abf\:6574\:306e\:4e0b\:898b\:306e\:305f\:3081) *)
+    With[{b = Quiet @ Check[SourceVault`SourceVaultKGBalance[kg, "MaxDegree" -> iSWMaxDegree[], "Strategy" -> strategy], $Failed]},
+      If[AssociationQ[b] && Lookup[b, "Added", {}] =!= {}, kg = b["KG"]]];
+    tree = SourceVault`SourceVaultKGOrderedTree[kg, "Strategy" -> strategy];];
   If[! AssociationQ[tree], Return[tree]];
-  plan = SourceVault`SourceVaultKGPlan[kg, tree,
-    "Slides" -> If[IntegerQ[slides] && slides > 0, slides, Automatic],
-    "Seconds" -> If[NumericQ[seconds] && seconds > 0, seconds, Automatic],
-    "SecondsPerSlide" -> sps, "Audience" -> aud];
+  plan = If[strategy === "Toc",
+    SourceVault`SourceVaultKGTocPlan[kg, tree,
+      "Slides" -> If[IntegerQ[slides] && slides > 0, slides, Automatic],
+      "Seconds" -> If[NumericQ[seconds] && seconds > 0, seconds, Automatic],
+      "SecondsPerSlide" -> sps, "Audience" -> aud],
+    SourceVault`SourceVaultKGPlan[kg, tree,
+      "Slides" -> If[IntegerQ[slides] && slides > 0, slides, Automatic],
+      "Seconds" -> If[NumericQ[seconds] && seconds > 0, seconds, Automatic],
+      "SecondsPerSlide" -> sps, "Audience" -> aud]];
   <|"Graph" -> kg, "Tree" -> tree, "Plan" -> plan,
     "Verify" -> <|"Tree" -> SourceVault`SourceVaultKGVerify[kg, tree],
       "Plan" -> SourceVault`SourceVaultKGVerifyPlan[kg, plan]|>,
@@ -7511,7 +8886,7 @@ iSWKGRenumberFigures[md_String, results_List] := Module[{k = 0, dropRules, rules
     (k++; "<<FIG" <> ToString[First[#2]] <> ">>" -> "<<FIG" <> ToString[k] <> ">>")] &, results];
   StringReplace[If[dropRules === {}, md, StringReplace[md, dropRules]], rules]];
 
-(* KG \:306e\:30ce\:30fc\:30c9\:306b\:6b8b\:3057\:305f\:884c\:5185\:6570\:5f0f\:8f9e\:66f8 (tex \:2192 boxes) \:3092\:96c6\:3081\:308b *)
+(* KG \:306e\:30ce\:30fc\:30c9\:306b\:6b8b\:3057\:305f\:884c\:5185\:6570\:5f0f\:8f9e\:66f8 (tex \[RightArrow] boxes) \:3092\:96c6\:3081\:308b *)
 iSWKGFormulaDict[kg_Association] := Association[Flatten[Map[Function[n,
   Map[Function[fm, If[AssociationQ[fm] && StringQ[Lookup[fm, "Tex", None]] && StringQ[Lookup[fm, "Boxes", None]],
       fm["Tex"] -> fm["Boxes"], Nothing]], Replace[Lookup[n, "Formulas", {}], Except[_List] -> {}]]],
@@ -7531,7 +8906,7 @@ iSWKGRealizeMarkdown[outline_Association, slides_List, nb_, kg_ : None] := Modul
     MapIndexed[Function[{a, i},
       If[ListQ[$iSWRealizeProgress] && Length[$iSWRealizeProgress] === 3,
         iSWGenProgress[$iSWRealizeProgress[[1]],
-          $iSWRealizeProgress[[2]] <> "\:56f3\:3092\:6e96\:5099\:4e2d (" <> ToString[First[i]] <> "/" <> ToString[nA] <> ")\:2026",
+          $iSWRealizeProgress[[2]] <> "\:56f3\:3092\:6e96\:5099\:4e2d (" <> ToString[First[i]] <> "/" <> ToString[nA] <> ")\[Ellipsis]",
           $iSWRealizeProgress[[3]] <> "preparing figure " <> ToString[First[i]] <> "/" <> ToString[nA] <> "..."]];
       iSWKGRealizeAsset[a]], mdA["Assets"]]];
   figs = DeleteCases[results, $Failed];
@@ -7549,11 +8924,11 @@ SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
   {p, outline, lang, talks, nb, r, warnings = {},
    olOpts = FilterRules[Replace[OptionValue["Outline"], Except[_List] -> {}], Options[SourceVault`SourceVaultKGOutline]],
    pnb = If[Head[src] === NotebookObject, src, OptionValue["Notebook"]]},
-  iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:8a08\:753b\:3092\:4f5c\:6210\:4e2d\:2026", "Generating from the KG: planning..."];
+  iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:8a08\:753b\:3092\:4f5c\:6210\:4e2d\[Ellipsis]", "Generating from the KG: planning..."];
   p = SlideGraphPlan[src, Sequence @@ FilterRules[{opts}, Options[SlideGraphPlan]]];
   If[! AssociationQ[p], Return[p]];
   lang = p["Spec"]["Language"];
-  iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:30b9\:30e9\:30a4\:30c9\:69cb\:6210\:3092\:4f5c\:6210\:4e2d\:2026", "Generating from the KG: building the outline..."];
+  iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:30b9\:30e9\:30a4\:30c9\:69cb\:6210\:3092\:4f5c\:6210\:4e2d\[Ellipsis]", "Generating from the KG: building the outline..."];
   outline = SourceVault`SourceVaultKGOutline[p["Graph"], p["Plan"], "Language" -> lang, Sequence @@ olOpts];
   (* \:76ee\:6b21 (\:5168\:4f53\:306e\:6d41\:308c) \:304c\:5165\:308b\:3068\:304d\:306f\:6307\:5b9a\:679a\:6570\:306b\:53ce\:307e\:308b\:3088\:3046 1 \:679a\:5c11\:306a\:304f\:8a08\:753b\:3057\:76f4\:3059 *)
   (* \:76ee\:6b21\:3084 (\:7d9a\:304d) \:306e\:679a\:3067\:6307\:5b9a\:679a\:6570\:3092\:8d85\:3048\:308b\:3068\:304d\:306f\:3001\:305d\:306e\:5206\:3060\:3051\:5c11\:306a\:304f\:8a08\:753b\:3057\:76f4\:3059 (\:6700\:5927 2 \:56de) *)
@@ -7563,7 +8938,7 @@ SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
       While[(extra = Length[outline["Slides"]] - want) =!= 0 && want - extra >= 3 && tries < 3 &&
           (extra > 0 || Length[Lookup[p["Plan"], "Pruned", {}]] > 0),
         tries++;
-        iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: " <> ToString[want] <> " \:679a\:306b\:5408\:308f\:305b\:3066\:8a08\:753b\:3057\:76f4\:3057\:4e2d (" <> ToString[tries] <> " \:56de\:76ee)\:2026",
+        iSWGenProgress[pnb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: " <> ToString[want] <> " \:679a\:306b\:5408\:308f\:305b\:3066\:8a08\:753b\:3057\:76f4\:3057\:4e2d (" <> ToString[tries] <> " \:56de\:76ee)\[Ellipsis]",
           "Generating from the KG: re-planning for " <> ToString[want] <> " slides (" <> ToString[tries] <> ")..."];
         p2 = SlideGraphPlan[src, "Slides" -> want - extra, Sequence @@ FilterRules[FilterRules[{opts}, Options[SlideGraphPlan]], Except["Slides"]]];
         If[! AssociationQ[p2], Break[]];
@@ -7573,7 +8948,13 @@ SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
   With[{tv = Lookup[Lookup[p, "Verify", <||>], "Tree", <||>], want = Lookup[p["Spec"], "Slides", None]},
     If[Lookup[tv, "Orphans", {}] =!= {},
       AppendTo[warnings, "BrokenTree: " <> ToString[Length[tv["Orphans"]]] <>
-        " \:30ce\:30fc\:30c9\:304c\:9806\:5e8f\:6728\:306b\:5165\:3089\:305a\:751f\:6210\:304b\:3089\:5916\:308c\:307e\:3057\:305f (" <> StringRiffle[Take[tv["Orphans"], UpTo[6]], ", "] <> " \:2026)"]];
+        " \:30ce\:30fc\:30c9\:304c\:9806\:5e8f\:6728\:306b\:5165\:3089\:305a\:751f\:6210\:304b\:3089\:5916\:308c\:307e\:3057\:305f (" <> StringRiffle[Take[tv["Orphans"], UpTo[6]], ", "] <> " \[Ellipsis])"]];
+    (* v1.49: \:56f3\:306e\:3042\:308b\:679a\:3092\:6982\:8981\:306b\:7573\:3093\:3060\:3089\:77e5\:3089\:305b\:308b (\:679a\:6570\:3092\:5897\:3084\:3059\:304b\:5fc5\:305a\:51fa\:3059\:5370\:3067\:623b\:305b\:308b) *)
+    With[{ff = Replace[Lookup[p["Plan"], "FoldedFigures", {}], Except[_List] -> {}]},
+      If[ff =!= {},
+        AppendTo[warnings, "FoldedFigures: \:56f3\:306e\:3042\:308b\:679a " <> ToString[Length[ff]] <> " \:679a\:3092\:6982\:8981\:306e\:679a\:306b\:307e\:3068\:3081\:307e\:3057\:305f (" <>
+          StringRiffle[Map[SourceVault`SourceVaultKGText[Replace[SourceVault`SourceVaultKGNode[p["Graph"], #], Except[_Association] -> <||>], "Label"] &,
+            Take[ff, UpTo[4]]], "\:3001"] <> If[Length[ff] > 4, " \:2026", ""] <> ")\:3002\:679a\:6570\:3092\:5897\:3084\:3059\:304b\:3001\:305d\:306e\:679a\:306b\:300c\:5fc5\:305a\:51fa\:3059\:300d\:3092\:4ed8\:3051\:308b\:3068\:51fa\:307e\:3059"]]];
     If[IntegerQ[want] && Length[outline["Slides"]] < want - 3,
       AppendTo[warnings, "Shortfall: \:6307\:5b9a " <> ToString[want] <> " \:679a\:306b\:5bfe\:3057\:3066 " <> ToString[Length[outline["Slides"]]] <>
         " \:679a (\:524d\:63d0\:3068\:3057\:3066\:7701\:3044\:305f " <> ToString[Length[Lookup[p["Plan"], "Assumed", {}]]] <> " \:30ce\:30fc\:30c9\:3001\:843d\:3068\:3057\:305f " <>
@@ -7582,7 +8963,7 @@ SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
     If[un =!= {},
       PrependTo[warnings, "Unrefined: " <> iSL[
         "\:63a8\:6572\:304c\:6e08\:3093\:3067\:3044\:306a\:3044\:7bc0\:304c " <> ToString[Length[un]] <> " \:3042\:308a\:307e\:3059 (" <> iSWUnrefinedNote[p["Graph"], un] <>
-          ")\:3002\:305d\:306e\:679a\:306e\:7b87\:6761\:66f8\:304d\:306f\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057\:306e\:307e\:307e (\:300c\:2026\:300d\:3067\:5207\:308c\:308b) \:3067\:3059\:3002\:300c\:63a8\:6572\:300d\:304b\:300c\:56f3\:89e3\:300d\:3092\:62bc\:3059\:3068\:3001\:305d\:306e\:7bc0\:304b\:3089\:63a8\:6572\:3057\:307e\:3059",
+          ")\:3002\:305d\:306e\:679a\:306e\:7b87\:6761\:66f8\:304d\:306f\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057\:306e\:307e\:307e (\:300c\[Ellipsis]\:300d\:3067\:5207\:308c\:308b) \:3067\:3059\:3002\:300c\:63a8\:6572\:300d\:304b\:300c\:56f3\:89e3\:300d\:3092\:62bc\:3059\:3068\:3001\:305d\:306e\:7bc0\:304b\:3089\:63a8\:6572\:3057\:307e\:3059",
         ToString[Length[un]] <> " sections are not refined (" <> iSWUnrefinedNote[p["Graph"], un] <>
           "); their bullets are raw paragraph openings. Press Refine (or Visuals) to refine them"]]]];
   If[Lookup[outline, "MissingLanguage", {}] =!= {},
@@ -7616,7 +8997,7 @@ iSWGraphPolishTask[gen_Association, gid_String, metaBlocks_String] :=
   "2. SlideGraphApply[\"Talks\"->{talk1, talk2, ...}] \:3092\:4e00\:5ea6\:3060\:3051\:8a55\:4fa1\:3059\:308b (Slide \:756a\:53f7\:9806\:306e\:6587\:5b57\:5217\:30ea\:30b9\:30c8\:3002\:3053\:308c\:304c\:30c7\:30c3\:30ad\:3078\:306e\:552f\:4e00\:306e\:66f8\:304d\:8fbc\:307f\:3067\:3001\:56f3\:306e\:5b9f\:4f53\:5316\:3068\:633f\:5165\:306f\:95a2\:6570\:5074\:304c\:884c\:3046)\:3002Failure \:306a\:3089\:76f4\:3057\:3066\:518d\:8a55\:4fa1\:30023. \:4ee3\:5165\:306f Module \:5185\:3002";
 
 Options[SlideGraphApply] = Join[Options[SlideGraphGenerate],
-  {"Mode" -> Automatic, "After" -> Automatic, "Polish" -> False, "ChunkSize" -> 10}];
+  {"Mode" -> Automatic, "After" -> Automatic, "Polish" -> False, "ChunkSize" -> 10, "Hierarchy" -> Automatic, "Narrate" -> Automatic}];
 SlideGraphApply[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
   If[Head[nb] =!= NotebookObject,
     Failure["NoNotebook", <|"MessageTemplate" -> "target notebook not found"|>],
@@ -7625,8 +9006,18 @@ SlideGraphApply[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
    \:7f6e\:304d\:63db\:3048\:3067\:306f\:3001\:6d88\:3059\:524d\:306b\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:3092 KG \:306e\:30ce\:30fc\:30c9\:3078\:56de\:53ce\:3057\:3001\:65b0\:3057\:3044\:679a\:306f\:524d\:56de\:306e\:6700\:521d\:306e\:679a\:306e\:4f4d\:7f6e\:306b\:5165\:308c\:308b *)
 SlideGraphApply[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   {gen, ranges, after, outline, chunks, inserted = 0, warnings, r, res, rows, oldIdx, mode, gid0, harvest = None,
-   removed = 0, legacyQ},
-  iSWGenProgress[nb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210\:3092\:958b\:59cb\:2026", "Starting generation from the KG..."];
+   removed = 0, legacyQ, hier},
+  (* v1.44: \:5b50\:304c\:4e0a\:9650\:3092\:8d85\:3048\:308b\:30ce\:30fc\:30c9\:304c\:3042\:308b\:3001\:307e\:305f\:306f\:90e8\:306b\:4e00\:884c\:8981\:7d04\:304c\:7121\:3044\:3068\:304d\:306f\:3001\:5148\:306b\:968e\:5c64\:5316\:3057\:3066\:4fdd\:5b58\:3057\:3066\:304b\:3089\:751f\:6210\:3059\:308b *)
+  hier = If[OptionValue["Hierarchy"] =!= False, TrueQ[Quiet @ Check[iSWHierarchyDue[nb], False]], False];
+  If[hier, Return[SlideGraphHierarchy[nb, "Then" -> Function[SlideGraphApply[nb, "Hierarchy" -> False, opts]]]]];
+  (* v1.48: \:679a\:306e\:4e26\:3073\:304c\:610f\:5473\:4ed8\:3051\:3057\:305f\:3068\:304d\:3068\:9055\:3048\:3070\:3001\:5148\:306b\:610f\:5473\:4ed8\:3051\:3057\:3066\:304b\:3089\:751f\:6210\:3059\:308b *)
+  If[OptionValue["Narrate"] =!= False && TrueQ[$SlideGraphNarrateAuto] && iSWLLMReadyQ[],
+    With[{g0 = Quiet @ Check[SlideGraphGenerate[nb, "Realize" -> False, Sequence @@ FilterRules[{opts}, Options[SlideGraphPlan]]], $Failed]},
+      If[AssociationQ[g0] && AssociationQ[Lookup[g0, "Graph", None]] &&
+          iSWNarrateDueQ[g0["Graph"], iSWNarrateSeq[g0["Outline"]["Slides"], g0["Graph"]]],
+        Return[SlideGraphNarrate[nb, "Outline" -> g0,
+          "Then" -> Function[SlideGraphApply[nb, "Hierarchy" -> False, "Narrate" -> False, opts]]]]]]];
+  iSWGenProgress[nb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210\:3092\:958b\:59cb\[Ellipsis]", "Starting generation from the KG..."];
   rows = Quiet @ Check[iSWKGDeckSlideNodes[nb], {}];
   If[! ListQ[rows], rows = {}];
   oldIdx = Lookup[Select[rows, StringQ[#["Node"]] &], "Slide", {}];
@@ -7635,7 +9026,7 @@ SlideGraphApply[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   If[mode === "Replace" && oldIdx =!= {},
     gid0 = Quiet @ Check[SlideGraphSpec[nb]["Graph"], None];
     If[StringQ[gid0],
-      iSWGenProgress[nb, "\:524d\:56de\:306e\:679a\:306e\:8cea\:7591\:5fdc\:7b54\:3092\:77e5\:8b58\:30b0\:30e9\:30d5\:3078\:4fdd\:5b58\:4e2d\:2026", "Saving the Q&A of the previous slides to the KG..."];
+      iSWGenProgress[nb, "\:524d\:56de\:306e\:679a\:306e\:8cea\:7591\:5fdc\:7b54\:3092\:77e5\:8b58\:30b0\:30e9\:30d5\:3078\:4fdd\:5b58\:4e2d\[Ellipsis]", "Saving the Q&A of the previous slides to the KG..."];
       harvest = iSWKGHarvestQA[nb, gid0]]];
   gen = SlideGraphGenerate[nb, "Realize" -> False,
     Sequence @@ FilterRules[FilterRules[{opts}, Options[SlideGraphGenerate]], Except["Realize"]]];
@@ -7660,10 +9051,10 @@ SlideGraphApply[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   Do[
     Module[{a0 = inserted + 1, b0 = inserted + Length[chunk], nAll = Length[outline["Slides"]]},
       r = Block[{$iSWRealizeProgress = {nb,
-          "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210 (" <> ToString[a0] <> "\:2013" <> ToString[b0] <> " / " <> ToString[nAll] <> " \:679a): ",
+          "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210 (" <> ToString[a0] <> "\[Dash]" <> ToString[b0] <> " / " <> ToString[nAll] <> " \:679a): ",
           "Generating from the KG (" <> ToString[a0] <> "-" <> ToString[b0] <> " / " <> ToString[nAll] <> "): "}},
         iSWKGRealizeMarkdown[outline, chunk, nb, gen["Graph"]]];
-      iSWGenProgress[nb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:30b9\:30e9\:30a4\:30c9\:3092\:633f\:5165\:4e2d (" <> ToString[a0] <> "\:2013" <> ToString[b0] <> " / " <> ToString[nAll] <> " \:679a)\:2026",
+      iSWGenProgress[nb, "\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210: \:30b9\:30e9\:30a4\:30c9\:3092\:633f\:5165\:4e2d (" <> ToString[a0] <> "\[Dash]" <> ToString[b0] <> " / " <> ToString[nAll] <> " \:679a)\[Ellipsis]",
         "Generating from the KG: inserting slides " <> ToString[a0] <> "-" <> ToString[b0] <> " / " <> ToString[nAll] <> "..."]];
     res = Block[{$iSWFormulaBoxes = iSWKGFormulaDict[gen["Graph"]]},
       SlideDeckInsertScenario[nb, after + inserted, r["Markdown"], "Figures" -> r["Figures"]]];
@@ -7679,7 +9070,7 @@ SlideGraphApply[nb_NotebookObject, opts : OptionsPattern[]] := Module[
     {chunk, chunks}];
   (* \:524d\:56de\:306e\:679a\:3092\:6d88\:3059: \:65b0\:3057\:3044\:679a\:3092\:305d\:306e\:524d\:306b\:5165\:308c\:305f\:306e\:3067\:3001\:5f8c\:308d\:306b\:3042\:308b\:756a\:53f7\:306f inserted \:3060\:3051\:305a\:308c\:308b *)
   If[mode === "Replace" && oldIdx =!= {},
-    iSWGenProgress[nb, "\:524d\:56de\:306e " <> ToString[Length[oldIdx]] <> " \:679a\:3092\:524a\:9664\:4e2d\:2026", "Removing the " <> ToString[Length[oldIdx]] <> " previous slides..."];
+    iSWGenProgress[nb, "\:524d\:56de\:306e " <> ToString[Length[oldIdx]] <> " \:679a\:3092\:524a\:9664\:4e2d\[Ellipsis]", "Removing the " <> ToString[Length[oldIdx]] <> " previous slides..."];
     removed = iSWDeleteSlides[nb, If[# > after, # + inserted, #] & /@ oldIdx]];
   iSWGraphApplyNote[nb, iSL["\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089 " <> ToString[inserted] <> " \:679a\:3092\:751f\:6210", "Generated " <> ToString[inserted] <> " slides from the KG"] <>
     If[IntegerQ[Lookup[gen["Spec"], "Slides", None]], iSL[" (\:6307\:5b9a ", " (requested "] <> ToString[gen["Spec"]["Slides"]] <> ")", ""] <>
@@ -7690,7 +9081,9 @@ SlideGraphApply[nb_NotebookObject, opts : OptionsPattern[]] := Module[
       ". Slides generated by an older version have no marker and were kept (delete them by hand)"], ""] <>
     If[warnings === {}, "", iSL["\:3002\:8b66\:544a: ", ". Warnings: "] <> StringRiffle[DeleteDuplicates[warnings], " / "]]];
   Success["GraphApplied", <|"After" -> after, "Slides" -> inserted, "Mode" -> mode, "Replaced" -> removed,
-    "QA" -> harvest, "Warnings" -> DeleteDuplicates[warnings], "Verify" -> gen["Verify"]|>]];
+    "QA" -> harvest, "Warnings" -> DeleteDuplicates[warnings], "Verify" -> gen["Verify"],
+    (* v1.38: \:751f\:6210\:3057\:305f\:7248\:3092\:8a18\:9332\:3059\:308b (\:6761\:4ef6\:304c\:524d\:56de\:3068\:9055\:3048\:3070\:89aa\:4ed8\:304d\:306e\:65b0\:3057\:3044\:7248) *)
+    "Rendition" -> Lookup[Replace[Quiet[iSWRenditionNote[nb, "Generated"]], Except[_Association] -> <||>], "Id", None]|>]];
 
 (* \:751f\:6210\:306e\:7d50\:679c\:3092\:72b6\:614b\:6b04\:3068\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:672b\:5c3e (\:7d42\:7aef\:30de\:30fc\:30ab\:30fc\:306e\:5f8c) \:306e Text \:30bb\:30eb\:306b\:6b8b\:3059\:3002
    \:8b66\:544a\:306f\:72b6\:614b\:6b04\:306e\:81ea\:52d5\:6d88\:53bb\:3067\:6d88\:3048\:308b\:306e\:3067\:3001\:30bb\:30eb\:306b\:3082\:66f8\:304f *)
@@ -7762,9 +9155,9 @@ SlideGraphShow[nb_NotebookObject, what_String : "Plan"] := Module[{v},
 
 (* ---- \:7b2c\:4e00\:6b21 KG (seed): \:548c\:8a33\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306e\:6bb5\:843d\:69cb\:9020\:304b\:3089\:6c7a\:5b9a\:7684\:306b\:4f5c\:308b (v1.22) ----
    v1.23 \:3067\:8db3\:3057\:305f\:898f\:5247 (WikiSkill \:306e\:548c\:8a33\:30ce\:30fc\:30c8\:3067\:5b9f\:6e2c\:3057\:305f\:554f\:984c):
-   - Title \:30bb\:30eb\:304c\:7121\:304f\:8ad6\:6587\:984c\:540d\:304c\:6700\:521d\:306e\:898b\:51fa\:3057 (DocImportPaper \:51fa\:529b) \:2192 \:7bc0\:306b\:305b\:305a root \:306b\:7573\:3080
-   - \:984c\:540d\:76f4\:5f8c\:306e\:8457\:8005\:30fb\:6240\:5c5e\:884c (^{1} / \:2020 / \:5927\:5b66\:540d) \:2192 \:30ce\:30fc\:30c9\:306b\:3057\:306a\:3044
-   - root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d (Abstract \:76f8\:5f53) \:2192 \:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9 (Importance 0.8) + root \:306e\:8981\:7d04
+   - Title \:30bb\:30eb\:304c\:7121\:304f\:8ad6\:6587\:984c\:540d\:304c\:6700\:521d\:306e\:898b\:51fa\:3057 (DocImportPaper \:51fa\:529b) \[RightArrow] \:7bc0\:306b\:305b\:305a root \:306b\:7573\:3080
+   - \:984c\:540d\:76f4\:5f8c\:306e\:8457\:8005\:30fb\:6240\:5c5e\:884c (^{1} / \[Dagger] / \:5927\:5b66\:540d) \[RightArrow] \:30ce\:30fc\:30c9\:306b\:3057\:306a\:3044
+   - root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d (Abstract \:76f8\:5f53) \[RightArrow] \:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9 (Importance 0.8) + root \:306e\:8981\:7d04
    - \:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:300c\:56f31 |\:300d\:300cFigure 1:\:300d\:300cFig. 1.\:300d\:3082\:56f3\:30ce\:30fc\:30c9\:306b\:5408\:6d41 (\:56f3\:306e\:524d\:5f8c\:3069\:3061\:3089\:3067\:3082)
    - \:4ed8\:9332 (A. / A.1. / Appendix / \:4ed8\:9332) \:306e\:7bc0\:30fb\:6bb5\:843d\:30fb\:56f3\:30fb\:5f0f\:306f Importance \:3092\:4e0b\:3052\:308b (\:7bc0 0.3\:3001PackRatio 0.35 \:672a\:6e80\:306a\:306e\:3067\:672b\:5c3e\:306e\:679a\:306b\:8a70\:307e\:308c\:306a\:3044)
    - AI Disclosure / Ethics / Reproducibility statement \:306a\:3069\:3092\:8aad\:307f\:98db\:3070\:3059
@@ -7790,7 +9183,7 @@ iSWSeedAppendixHeadingQ[t_String] := With[{k = StringTrim[t]},
   StringMatchQ[k, RegularExpression["^[A-Z]\\.\\s+\\S.*"]]];
 (* \:8457\:8005\:30fb\:6240\:5c5e\:884c (\:984c\:540d\:76f4\:5f8c\:306e\:6700\:521d\:306e\:6bb5\:843d\:3060\:3051\:306b\:9069\:7528\:3059\:308b) *)
 iSWSeedAuthorLineQ[t_String] := StringLength[t] < 800 && ! StringContainsQ[t, "\:3002"] &&
-  (StringContainsQ[t, RegularExpression["\\^\\{?[0-9a-z*]|[\:2020\:2021\:2217]"]] ||
+  (StringContainsQ[t, RegularExpression["\\^\\{?[0-9a-z*]|[\[Dagger]\[DoubleDagger]\:2217]"]] ||
    (StringCount[t, ","] >= 2 &&
     StringContainsQ[t, RegularExpression["(?i)\\b(university|universit|institute|laborator|inc\\.|research|google|microsoft|deepmind|openai|anthropic)\\b|\:5927\:5b66|\:7814\:7a76\:6240|@"]]));
 (* \:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:756a\:53f7: "\:56f3 1." / "\:56f31 |" / "Figure 1:" / "Fig. 1." ("\:56f3 1 \:306e\:7d50\:679c\:306f" \:306f\:9055\:3046) *)
@@ -7805,7 +9198,7 @@ iSWSeedCaptionBody[t_String] := StringTrim[StringReplace[StringTrim[t],
 iSWSeedFirstSentence[t_String, max_Integer] := Module[{s},
   s = First[StringSplit[StringTrim[t], {"\:3002", ". ", "\n"}], ""];
   s = StringTrim[s];
-  If[StringLength[s] > max, StringTake[s, max] <> "\:2026", s]];
+  If[StringLength[s] > max, StringTake[s, max] <> "\[Ellipsis]", s]];
 
 iSWSeedLabel[t_String] := Module[{s = iSWSeedFirstSentence[t, 40]},
   (* \:30e9\:30d9\:30eb\:306f\:984c\:76ee\:306a\:306e\:3067 $...$ \:306e\:9014\:4e2d\:3067\:5207\:308c\:306a\:3044\:3088\:3046\:3001\:6570\:5f0f\:306f\:7d20\:306e TeX \:306b\:843d\:3068\:3059 *)
@@ -7829,194 +9222,126 @@ iSWSeedHeadingImportance[t_String] := With[{k = ToLowerCase[t]},
 
 Options[SlideGraphSeed] = {"Graph" -> Automatic, "Title" -> Automatic, "Language" -> "ja",
   "MinCharacters" -> 40, "Save" -> True, "Notebook" -> Automatic, "Reconstruction" -> False, "Keep" -> "Background"};
+(* ---- v1.41: \:8907\:6570\:7d20\:6750\:306e seed ----
+   \:6587\:732e\:306e Notebook \:3092\:5168\:90e8\:7d20\:6750\:306b\:3059\:308b (References \:306b\:66f8\:3044\:305f\:9806)\:3002\:6700\:521d\:306e 1 \:4ef6\:304c root (Claim) \:3067\:5f93\:6765\:3069\:304a\:308a\:3001
+   2 \:4ef6\:76ee\:4ee5\:964d\:306f root \:76f4\:4e0b\:306e\:90e8 (Section\:3001Id "<key\:5c0f\:6587\:5b57>_root") \:306b\:306a\:308a\:3001\:305d\:306e\:30ce\:30fc\:30c9 Id \:306b\:306f "<key\:5c0f\:6587\:5b57>_" \:3092
+   \:524d\:7f6e\:3057\:3001Order \:306f\:524d\:306e\:7d20\:6750\:306e\:672b\:5c3e\:304b\:3089\:7d9a\:3051\:308b\:3002\:56f3\:30fb\:5f0f\:306e\:8cc7\:7523\:306f Ref -> key \:306a\:306e\:3067\:5b9f\:4f53\:5316\:306f\:7d20\:6750\:3054\:3068\:306b\:89e3\:3051\:308b\:3002
+   \:8a08\:7b97\:3068\:81ea\:713634: \:30ec\:30dd\:30fc\:30c8\:306e\:548c\:8a33 NB + Mathematica \:306e\:8a08\:7b97\:30ce\:30fc\:30c8 (\:56f3 16\:30fb\:5f0f 6) \:3092 1 \:3064\:306e KG \:306b\:3059\:308b\:305f\:3081 *)
+iSWSeedIdPrefix[key_, si_Integer] := With[
+  {k = StringJoin[Select[Characters[ToLowerCase[ToString[key]]], StringMatchQ[#, LetterCharacter | DigitCharacter] &]]},
+  If[k === "", "src" <> ToString[si], k] <> "_"];
+
+(* \:7d20\:6750\:306e\:4e00\:89a7: \:660e\:793a\:306e key / \:30d1\:30b9\:306a\:3089 1 \:4ef6\:3001\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306a\:3089 References \:306e Notebook \:5168\:90e8\:3002
+   Path \:306f \:767b\:9332\:6e08\:307f\:548c\:8a33\:30ce\:30fc\:30c8 ("Notebook") > locator \:306e\:9806\:3067\:89e3\:304d\:3001\:89e3\:3051\:306a\:3051\:308c\:3070 $Failed *)
+iSWSeedSourceList[src_, nb_] := Module[{refs, rows},
+  rows = Which[
+    StringQ[src], {<|"Key" -> src, "Locator" -> src, "Note" -> "", "Path" -> $Failed|>},
+    Head[src] === NotebookObject || Head[src] === Notebook,
+      refs = Select[iSWReferencesList[src], iSWRefNotebookQ];
+      Map[<|"Key" -> #["Key"], "Locator" -> #["Locator"], "Note" -> Lookup[#, "Note", ""],
+        "Path" -> If[StringQ[Lookup[#, "Notebook", None]] && FileExistsQ[#["Notebook"]], #["Notebook"], #["Locator"]]|> &, refs],
+    True, {}];
+  Map[Function[r, Module[{p = r["Path"]},
+    If[! (StringQ[p] && FileExistsQ[p] && ToLowerCase[FileExtension[p]] === "nb"),
+      p = Block[{$SlideTargetNotebook = If[Head[nb] === NotebookObject, nb, $SlideTargetNotebook]},
+        iSWSourceNBPath[If[StringQ[p], p, r["Key"]]]]];
+    Append[r, "Path" -> p]]], rows]];
+
+(* ---- v1.47: \:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:5358\:4f4d (CellTags "CNU:<unit>") \:3092 seed \:306e\:9805\:76ee\:3068\:30ce\:30fc\:30c9\:3078 ----
+   \:30ce\:30fc\:30c8\:306e TaggingRules "SWCompute" \:306f JSON \:6587\:5b57\:5217 <|"Id", "URI", "Title", "Units" -> <|unit -> <|"Links", "Refs", "Figure"|>|>|>\:3002
+   \:56f3\:306e\:76f4\:524d\:306e Input \:30bb\:30eb\:306e TaggingRules "SWCode" \:306f\:305d\:306e\:56f3\:3092\:4f5c\:3063\:305f\:30b3\:30fc\:30c9 (\:30ce\:30fc\:30c9\:306e "Code") *)
+iSWRulesAssoc[x_] := Which[AssociationQ[x], x, ListQ[x], Association[Select[Flatten[x], MatchQ[#, _Rule | _RuleDelayed] &]], True, <||>];
+iSWCellOpt[c_Cell, opt_] := With[{o = Cases[{c}, Cell[___, opt -> v_, ___] :> v, {1}]}, If[o === {}, None, First[o]]];
+iSWCellOpt[_, _] := None;
+iSWCellUnitTag[c_] := With[{t = Select[Flatten[{Replace[iSWCellOpt[c, CellTags], None -> {}]}], StringQ[#] && StringStartsQ[#, "CNU:"] &]},
+  If[t === {}, None, StringDrop[First[t], 4]]];
+iSWComputeMeta[nb_Notebook] := Module[{tr, j, a},
+  tr = iSWRulesAssoc[Lookup[iSWRulesAssoc[List @@ Rest[nb]], TaggingRules, {}]];
+  j = Lookup[tr, "SWCompute", None];
+  a = If[StringQ[j], Quiet @ Check[Developer`ReadRawJSONString[j], $Failed], $Failed];
+  If[AssociationQ[a] && AssociationQ[Lookup[a, "Units", None]], a["Units"], <||>]];
+iSWComputeMeta[_] := <||>;
+iSWComputeList[x_] := Which[ListQ[x], x, x === None || x === Null || MissingQ[x], {}, True, {x}];
+iSWComputeItemInfo[flat_List, i_Integer, c_, mine_List, cmeta_] := Module[{u = iSWCellUnitTag[c], m, info, code = None},
+  If[u === None, Return[<||>]];
+  m = Replace[Lookup[Replace[cmeta, Except[_Association] -> <||>], u, <||>], Except[_Association] -> <||>];
+  info = <|"Unit" -> u, "Links" -> Select[iSWComputeList[Lookup[m, "Links", {}]], StringQ],
+    "MainFigure" -> Replace[Lookup[m, "Figure", None], Except[_Integer] -> None]|>;
+  If[mine =!= {},
+    Do[If[iSWSourceCellStyle[flat[[j]]] === "Input" && iSWCellUnitTag[flat[[j]]] === u,
+        code = Lookup[iSWRulesAssoc[iSWCellOpt[flat[[j]], TaggingRules]], "SWCode", None]; Break[]],
+      {j, i - 1, Max[1, i - 4], -1}]];
+  If[StringQ[code], info["Code"] = code];
+  info];
+iSWSeedUnitTag[ns_List, it_Association] := Module[{u = Lookup[it, "Unit", None], links = Lookup[it, "Links", {}],
+    code = Lookup[it, "Code", None], mf = Lookup[it, "MainFigure", None]},
+  If[! StringQ[u], Return[ns]];
+  Map[Function[n, Module[{m = n},
+    m["Source"] = Append[Lookup[m, "Source", <||>], "Unit" -> u];
+    If[links =!= {}, m["Links"] = links];
+    If[Lookup[m, "Kind", ""] === "Figure" && StringQ[code], m["Code"] = code];
+    (* 1 \:5358\:4f4d\:306e\:51fa\:529b\:306b\:5165\:308c\:5b50\:306e\:56f3 (GraphicsRow \:306a\:3069) \:304c\:3042\:308b\:3068\:56f3\:756a\:53f7\:304c\:8907\:6570\:4ed8\:304f\:3002\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:306e\:56f3\:4ee5\:5916\:306f\:96a0\:3059 *)
+    If[Lookup[m, "Kind", ""] === "Figure" && IntegerQ[mf] && Lookup[Lookup[m, "Source", <||>], "Figure", mf] =!= mf, m["Hidden"] = True];
+    m]], ns]];
+iSWSeedUnitTag[ns_, _] := ns;
+iSWSeedLinkEdges[nodes_List, gid_String] := With[{ids = Lookup[nodes, "Id", {}]},
+  Flatten[Map[Function[n, Map[Function[l, With[{p = StringSplit[l, "#", 2]},
+      If[Length[p] === 2 && p[[1]] === gid && MemberQ[ids, p[[2]]] && p[[2]] =!= n["Id"],
+        <|"From" -> n["Id"], "To" -> p[[2]], "EdgeKind" -> "Supports", "Weight" -> 0.6|>, Nothing]]],
+    Select[iSWComputeList[Lookup[n, "Links", {}]], StringQ]]], nodes]]];
+iSWSeedLinkEdges[___] := {};
+
 SlideGraphSeed[src_, OptionsPattern[]] := Module[
-  {nb, spec, key, path, parts, items, nodes = {}, edges = {}, stack, gid, title, root, lang,
-   minc = OptionValue["MinCharacters"], prevContent = <||>, k = 0, kg, sections = 0, paras = 0,
-   captionOf = <||>, lastPara = None, res, pendingFigs = {}, recon = TrueQ[OptionValue["Reconstruction"]],
-   titleIdx = 0, paperTitle = None, authors = None, abstractDone = False, skipped = <||>,
-   prev, keepNodes, keepEdges, kept = 0, bgIds, newIndex, prevIndex, sameQ, refLocator = None},
+  {nb, spec, sources, gid, title = None, paperTitle = None, lang, nodes = {}, edges = {}, kg, res, prev,
+   keepNodes, keepEdges, kept = 0, bgIds, newIndex, prevIndex, sameQ,
+   minc = OptionValue["MinCharacters"], recon = TrueQ[OptionValue["Reconstruction"]],
+   ordOff = 0, perSource = {}, srcRows = {}, skipped = <||>, authors = None,
+   sections = 0, paras = 0, figs = 0, forms = 0, parts1},
   If[! iSWKGEnsure[], Return[iSWKGFail[]]];
   nb = Replace[OptionValue["Notebook"], Automatic -> If[Head[src] === NotebookObject, src, iSWResolveTargetNb[]]];
   spec = Which[Head[src] === Notebook, SlideGraphSpec[src],
     Head[nb] === NotebookObject, SlideGraphSpec[nb], True, $iSWStoryDefaults];
-  (* \:7d20\:6750\:306e\:6c7a\:5b9a: \:660e\:793a\:306e key / \:30d1\:30b9\:3001\:7121\:3051\:308c\:3070 References \:306e\:6700\:521d\:306e Notebook *)
-  (* \:6587\:732e\:884c\:304b\:3089: key \:306f\:8cc7\:7523\:306e Ref \:306b\:3001\:30d1\:30b9\:306f\:767b\:9332\:6e08\:307f\:548c\:8a33\:30ce\:30fc\:30c8 ("Notebook") > locator \:306e\:9806\:3067\:89e3\:304f *)
-  {key, path} = Which[
-    StringQ[src], {src, $Failed},
-    Head[src] === NotebookObject || Head[src] === Notebook,
-      With[{refs = Select[iSWReferencesList[src], iSWRefNotebookQ]},
-        If[refs === {}, {None, $Failed},
-          refLocator = refs[[1, "Locator"]];
-          {refs[[1, "Key"]],
-           If[StringQ[Lookup[refs[[1]], "Notebook", None]] && FileExistsQ[refs[[1, "Notebook"]]],
-             refs[[1, "Notebook"]], refs[[1, "Locator"]]]}]],
-    True, {None, $Failed}];
-  If[key === None,
+  sources = iSWSeedSourceList[src, nb];
+  If[sources === {},
     Return[Failure["NoSourceNotebook", <|"MessageTemplate" ->
       "no source notebook: add \"[key] paper.nb | ...\" to References (make it with DocImportPaper first)"|>]]];
-  If[! (StringQ[path] && FileExistsQ[path] && ToLowerCase[FileExtension[path]] === "nb"),
-    path = Block[{$SlideTargetNotebook = If[Head[nb] === NotebookObject, nb, $SlideTargetNotebook]},
-      iSWSourceNBPath[If[StringQ[path], path, key]]]];
-  If[path === $Failed, Return[iSWSourceNoNB[key]]];
-  parts = iSWSourceNBParts[path];
-  If[! AssociationQ[parts], Return[iSWSourceNoNB[key]]];
-  items = parts["Items"];
-  (* \:6bb5\:843d\:3054\:3068\:306e\:884c\:5185\:6570\:5f0f\:8f9e\:66f8 (tex \:2192 boxes) \:3092\:30ce\:30fc\:30c9\:306b\:6b8b\:3059\:3002\:30b9\:30e9\:30a4\:30c9\:751f\:6210\:6642\:306b $tex$ \:3092\:5143\:306e\:7d44\:7248\:3078\:623b\:3059 *)
-  $iSWSeedItemFormulas = Association[Map[#["Cell"] -> Lookup[#, "InlineFormulas", {}] &, items]];
+  If[sources[[1, "Path"]] === $Failed, Return[iSWSourceNoNB[sources[[1, "Key"]]]]];
+  parts1 = iSWSourceNBParts[sources[[1, "Path"]]];
+  If[! AssociationQ[parts1], Return[iSWSourceNoNB[sources[[1, "Key"]]]]];
   lang = iSWKGLangCode[OptionValue["Language"]];
   gid = Replace[OptionValue["Graph"], Automatic -> Lookup[spec, "Graph", None]];
-  If[! StringQ[gid] || gid === "", gid = iSWKGDefaultGraphId[FileBaseName[path]]];
-  (* Title \:30bb\:30eb\:304c\:7121\:3044\:3068\:304d\:3001\:6700\:521d\:306e\:898b\:51fa\:3057\:3088\:308a\:6df1\:3044\:898b\:51fa\:3057\:304c\:5f8c\:306b\:3042\:308c\:3070\:3001\:305d\:306e\:6700\:521d\:306e\:898b\:51fa\:3057\:306f\:8ad6\:6587\:984c\:540d *)
-  If[! AnyTrue[items, Lookup[#, "Style", ""] === "Title" &],
-    With[{hs = Select[Range[Length[items]], iSWHeadingLevel[Lookup[items[[#]], "Style", ""]] < 99 &]},
-      If[hs =!= {} && AnyTrue[Rest[hs],
-          iSWHeadingLevel[Lookup[items[[#]], "Style", ""]] > iSWHeadingLevel[Lookup[items[[First[hs]]], "Style", ""]] &],
-        titleIdx = First[hs]; paperTitle = StringTrim[Lookup[items[[titleIdx]], "Text", ""]]]]];
-  title = Replace[OptionValue["Title"], Automatic ->
-    With[{t = SelectFirst[items, Lookup[#, "Style", ""] === "Title" &, None]},
-      Which[AssociationQ[t], StringTrim[t["Text"]],
-        StringQ[Lookup[spec, "Title", None]] && StringTrim[spec["Title"]] =!= "", spec["Title"],
-        StringQ[paperTitle] && paperTitle =!= "", paperTitle,
-        True, FileBaseName[path]]]];
-  If[! StringQ[title] || title === "", title = FileBaseName[path]];
-  If[! StringQ[paperTitle] || paperTitle === "", paperTitle = title];
-  root = "root";
-  AppendTo[nodes, <|"Id" -> root, "Kind" -> "Claim", "Label" -> title, "Summary" -> "", "Points" -> {},
-    "Importance" -> 1., "Difficulty" -> 0.3, "Order" -> 0, "Layer" -> "Paper",
-    "Source" -> <|"Ref" -> key|>|>];
-  (* \:898b\:51fa\:3057\:306e\:968e\:5c64\:30b9\:30bf\:30c3\:30af: {id, level, skippingQ, appendixQ} *)
-  stack = {{root, 0, False, False}};
-  Do[
-    Module[{it = items[[i]], st, txt, lv, id, parent, skipping, appx},
-      st = Lookup[it, "Style", ""]; txt = StringTrim[Lookup[it, "Text", ""]];
-      lv = iSWHeadingLevel[st];
-      skipping = Length[stack] > 1 && TrueQ[Last[stack][[3]]];
-      appx = TrueQ[Last[stack][[4]]];
-      Which[
-        (* \:8ad6\:6587\:984c\:540d\:306e\:898b\:51fa\:3057: root \:306b\:7573\:3080 (\:4ee5\:5f8c\:306e\:898b\:51fa\:3057\:306f root \:306e\:76f4\:4e0b) *)
-        i === titleIdx,
-          stack = {{root, 0, False, False}, {root, lv, False, False}},
-        (* \:898b\:51fa\:3057 *)
-        lv < 99 && st =!= "Title" && st =!= "Subtitle",
-          While[Length[stack] > 1 && Last[stack][[2]] >= lv, stack = Most[stack]];
-          skipping = Length[stack] > 1 && TrueQ[Last[stack][[3]]];
-          appx = TrueQ[Last[stack][[4]]] || iSWSeedAppendixHeadingQ[txt];
-          Which[
-            (* \:8aad\:307f\:98db\:3070\:3057\:4e2d\:306e\:90e8\:306e\:4e0b\:4f4d\:898b\:51fa\:3057\:3082\:8aad\:307f\:98db\:3070\:3059 *)
-            skipping, AppendTo[stack, {None, lv, True, appx}],
-            iSWSeedSkipHeadingQ[txt],
-              skipped["Headings"] = Append[Lookup[skipped, "Headings", {}], txt];
-              AppendTo[stack, {None, lv, True, appx}],
-            ! recon && iSWSeedReconstructionHeadingQ[txt],
-              skipped["Reconstruction"] = txt;
-              AppendTo[stack, {None, lv, True, appx}],
-            True,
-              k++; sections++; id = "s" <> ToString[k];
-              parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
-              AppendTo[nodes, <|"Id" -> id, "Kind" -> "Section", "Label" -> txt, "Summary" -> "", "Points" -> {},
-                "Importance" -> If[appx, 0.3, iSWSeedHeadingImportance[txt]], "Difficulty" -> 0.4, "Order" -> i,
-                "Layer" -> "Paper", "Source" -> <|"Ref" -> key, "Section" -> txt|>|>];
-              AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 1.|>];
-              AppendTo[stack, {id, lv, False, appx}];
-              prevContent[id] = None; lastPara = None; pendingFigs = {}],
-        skipping, Null,
-        (* \:56f3: \:76f4\:5f8c\:306e\:6bb5\:843d (\:56f3 n. / Figure n) \:3092\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:306b *)
-        Lookup[it, "Figures", {}] =!= {},
-          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
-          Do[id = "fig" <> ToString[fn];
-            AppendTo[nodes, <|"Id" -> id, "Kind" -> "Figure", "Label" -> "\:56f3 " <> ToString[fn], "Summary" -> "",
-              "Points" -> {}, "Importance" -> If[appx, 0.3, 0.6], "Difficulty" -> 0.4, "Order" -> i + 0.1, "Layer" -> "Paper",
-              "Assets" -> {<|"Type" -> "NotebookFigure", "Ref" -> key, "N" -> fn|>},
-              "Cite" -> "(" <> key <> ") Figure " <> ToString[fn],
-              "Source" -> <|"Ref" -> key, "Figure" -> fn|>|>];
-            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.8|>];
-            If[StringQ[lastPara],
-              AppendTo[edges, <|"From" -> id, "To" -> lastPara, "EdgeKind" -> "Supports", "Weight" -> 0.5|>],
-              AppendTo[pendingFigs, id]];
-            captionOf[fn] = id,
-            {fn, Lookup[it, "Figures", {}]}];
-          (* \:56f3\:30bb\:30eb\:306b\:672c\:6587\:304c\:4ed8\:3044\:3066\:3044\:308c\:3070\:6bb5\:843d\:3068\:3057\:3066\:7d9a\:3051\:308b *)
-          If[txt =!= "" && StringLength[txt] >= minc && Lookup[it, "Formulas", {}] === {},
-            paras++; id = "p" <> ToString[i];
-            AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
-            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
-            If[StringQ[prevContent[parent]], AppendTo[edges, <|"From" -> prevContent[parent], "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.4|>]];
-            prevContent[parent] = id; lastPara = id],
-        (* \:6570\:5f0f *)
-        Lookup[it, "Formulas", {}] =!= {},
-          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
-          Do[id = "eq" <> ToString[en];
-            AppendTo[nodes, <|"Id" -> id, "Kind" -> "Equation", "Label" -> "\:5f0f " <> ToString[en],
-              "Summary" -> "", "Points" -> {}, "Text" -> txt, "Importance" -> If[appx, 0.3, 0.55], "Difficulty" -> 0.6,
-              "Order" -> i + 0.1, "Layer" -> "Paper",
-              "Assets" -> {<|"Type" -> "Formula", "Ref" -> key, "N" -> en|>},
-              "Cite" -> "(" <> key <> ") Equation " <> ToString[en],
-              "Source" -> <|"Ref" -> key, "Equation" -> en|>|>];
-            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.8|>];
-            If[StringQ[lastPara], AppendTo[edges, <|"From" -> lastPara, "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.5|>]];
-            prevContent[parent] = id,
-            {en, Lookup[it, "Formulas", {}]}],
-        (* Abstract \:30bb\:30eb: root (Claim) \:306e\:8981\:7d04\:3068\:672c\:6587\:306b\:3059\:308b (\:5225\:30ce\:30fc\:30c9\:306b\:306f\:3057\:306a\:3044) *)
-        st === "Abstract" && txt =!= "",
-          nodes[[1, "Summary"]] = iSWSeedSummary[txt];
-          nodes[[1, "Text"]] = txt;
-          abstractDone = True,
-        MemberQ[{"Text", "Item", "ItemNumbered", "Subitem", "SubitemNumbered", "Caption"}, st] &&
-          StringLength[txt] >= minc,
-          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
-          Which[
-            (* \:984c\:540d\:76f4\:5f8c\:306e\:8457\:8005\:30fb\:6240\:5c5e\:884c *)
-            parent === root && authors === None && ! abstractDone && ! StringQ[prevContent[root]] && iSWSeedAuthorLineQ[txt],
-              authors = txt,
-            (* \:30ad\:30e3\:30d7\:30b7\:30e7\:30f3: \:76f4\:524d\:306e\:56f3\:30ce\:30fc\:30c9\:306e\:30e9\:30d9\:30eb\:306b\:3059\:308b (\:56f3\:304c\:307e\:3060\:7121\:3051\:308c\:3070\:6bb5\:843d\:306b\:3057\:3066\:5f8c\:3067\:5408\:6d41) *)
-            st === "Caption" || iSWSeedCaptionNumber[txt] =!= None,
-              With[{n = iSWSeedCaptionNumber[txt]},
-                If[n =!= None && KeyExistsQ[captionOf, n],
-                  nodes = Replace[nodes, x_Association /; x["Id"] === captionOf[n] :>
-                    Join[x, <|"Label" -> iSWSeedFirstSentence[iSWSeedCaptionBody[txt], 50],
-                      "Summary" -> iSWSeedSummary[iSWSeedCaptionBody[txt]], "Text" -> txt,
-                      "Source" -> Append[Lookup[x, "Source", <||>], "Caption" -> n],
-                      "Cite" -> "(" <> key <> ") Figure " <> ToString[n]|>], {1}],
-                  paras++; id = "p" <> ToString[i];
-                  AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
-                  AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
-                  lastPara = id]],
-            True,
-              paras++; id = "p" <> ToString[i];
-              AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
-              AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
-              If[StringQ[prevContent[parent]], AppendTo[edges, <|"From" -> prevContent[parent], "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.4|>]];
-              prevContent[parent] = id; lastPara = id;
-              Do[AppendTo[edges, <|"From" -> f, "To" -> id, "EdgeKind" -> "Supports", "Weight" -> 0.5|>], {f, pendingFigs}];
-              pendingFigs = {};
-              (* root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d = Abstract \:76f8\:5f53: \:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9\:306b\:3057 root \:306e\:8981\:7d04\:306b\:3082\:3059\:308b *)
-              If[parent === root && ! abstractDone && StringLength[txt] >= 200,
-                abstractDone = True;
-                nodes[[-1, "Label"]] = If[lang === "ja", "\:6982\:8981", "Abstract"];
-                nodes[[-1, "Importance"]] = 0.8;
-                nodes[[1, "Summary"]] = iSWSeedSummary[txt]; nodes[[1, "Text"]] = txt];
-              If[parent === root && nodes[[1, "Summary"]] === "", nodes[[1, "Summary"]] = iSWSeedSummary[txt]]],
-        True, Null]],
-    {i, Length[items]}];
-  (* \:56f3\:3088\:308a\:524d\:306b\:7f6e\:304b\:308c\:305f\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:6bb5\:843d\:3092\:56f3\:30ce\:30fc\:30c9\:3078\:5408\:6d41\:3059\:308b *)
-  Do[Module[{fid = captionOf[n], fpos, cpos, cap, cid},
-      fpos = FirstPosition[nodes, x_Association /; x["Id"] === fid, {0}, {1}][[1]];
-      If[fpos > 0 && nodes[[fpos, "Label"]] === "\:56f3 " <> ToString[n],
-        cpos = FirstPosition[nodes, x_Association /; x["Kind"] === "Concept" && iSWSeedCaptionNumber[Lookup[x, "Text", ""]] === n, {0}, {1}][[1]];
-        If[cpos > 0,
-          cap = nodes[[cpos, "Text"]]; cid = nodes[[cpos, "Id"]];
-          nodes[[fpos, "Label"]] = iSWSeedFirstSentence[iSWSeedCaptionBody[cap], 50];
-          nodes[[fpos, "Summary"]] = iSWSeedSummary[iSWSeedCaptionBody[cap]];
-          nodes[[fpos, "Text"]] = cap;
-          nodes[[fpos, "Source"]] = Append[Lookup[nodes[[fpos]], "Source", <||>], "Caption" -> n];
-          nodes[[fpos, "Cite"]] = "(" <> key <> ") Figure " <> ToString[n];
-          edges = Select[edges, #["From"] =!= cid && #["To"] =!= cid &];
-          nodes = Delete[nodes, cpos]; paras--]]],
-    {n, Keys[captionOf]}];
+  If[! StringQ[gid] || gid === "", gid = iSWKGDefaultGraphId[FileBaseName[sources[[1, "Path"]]]]];
+  (* \:7d20\:6750\:3054\:3068\:306b\:90e8\:5206\:30b0\:30e9\:30d5\:3092\:4f5c\:3063\:3066\:7e4b\:3050\:3002\:89e3\:3051\:306a\:3044 2 \:4ef6\:76ee\:4ee5\:964d\:306f Skipped["Sources"] \:306b\:8a18\:9332\:3057\:3066\:98db\:3070\:3059
+     (Return \:306f\:6700\:5185 Module \:304b\:3089\:629c\:3051\:308b\:3060\:3051\:306a\:306e\:3067\:3001\:3053\:3053\:3067\:306f\:4f7f\:308f\:306a\:3044) *)
+  Do[Module[{s = sources[[si]], parts, one, idp, ok = True},
+      parts = If[si === 1, parts1, If[s["Path"] === $Failed, $Failed, iSWSourceNBParts[s["Path"]]]];
+      If[! AssociationQ[parts],
+        skipped["Sources"] = Append[Lookup[skipped, "Sources", {}], s["Key"]]; ok = False];
+      If[ok,
+        idp = If[si === 1, "", iSWSeedIdPrefix[s["Key"], si]];
+        one = iSWSeedOneNotebook[parts["Items"], s["Path"], s["Key"], idp, ordOff, lang, minc, recon, si === 1,
+          If[si === 1, OptionValue["Title"], Automatic],
+          If[si === 1, spec,
+            <|"Title" -> If[StringQ[s["Note"]] && StringTrim[s["Note"]] =!= "", StringTrim[s["Note"]], None]|>]];
+        If[si === 1,
+          title = one["Title"]; paperTitle = one["PaperTitle"]; authors = one["Authors"];
+          skipped = Join[skipped, one["Skipped"]],
+          AppendTo[edges, <|"From" -> "root", "To" -> idp <> "root", "EdgeKind" -> "Contains", "Weight" -> 1.|>];
+          KeyValueMap[(skipped[#1] = Flatten[{Lookup[skipped, #1, {}], #2}]) &, one["Skipped"]]];
+        nodes = Join[nodes, one["Nodes"]]; edges = Join[edges, one["Edges"]];
+        sections += one["Sections"]; paras += one["Paragraphs"];
+        figs += Length[parts["Figures"]]; forms += Length[parts["Formulas"]];
+        ordOff = ordOff + Length[parts["Items"]] + 1;
+        AppendTo[perSource, <|"Key" -> s["Key"], "Path" -> s["Path"], "Prefix" -> idp, "Title" -> one["Title"],
+          "Sections" -> one["Sections"], "Paragraphs" -> one["Paragraphs"],
+          "Figures" -> Length[parts["Figures"]], "Formulas" -> Length[parts["Formulas"]]|>];
+        AppendTo[srcRows, <|"Key" -> s["Key"], "Locator" -> s["Path"], "Kind" -> "Notebook",
+          "Reference" -> If[StringQ[s["Locator"]], s["Locator"], ""]|>]]],
+    {si, Length[sources]}];
+  (* v1.47: \:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:5358\:4f4d\:304c KG \:306e\:30ce\:30fc\:30c9\:306b\:7d10\:3065\:3044\:3066\:3044\:308c\:3070 (Links "<GraphId>#<Id>")\:3001\:540c\:3058 KG \:306e\:305d\:306e\:30ce\:30fc\:30c9\:3092\:652f\:3048\:308b\:8fba\:306b\:3059\:308b *)
+  edges = Join[edges, iSWSeedLinkEdges[nodes, gid]];
   kg = SourceVault`SourceVaultKGFromJSON[<|"GraphId" -> gid, "Title" -> title, "Language" -> lang, "Kind" -> "Paper",
-    "Root" -> root, "Sources" -> {<|"Key" -> key, "Locator" -> path, "Kind" -> "Notebook",
-      "Reference" -> If[StringQ[refLocator], refLocator, ""]|>},
-    "Nodes" -> nodes, "Edges" -> edges|>];
+    "Root" -> "root", "Sources" -> srcRows, "Nodes" -> nodes, "Edges" -> edges|>];
   If[! AssociationQ[kg], Return[kg]];
   kg["Seed"] = True;
   (* \:518d seed: \:4fdd\:5b58\:6e08\:307f KG \:306e Background / Shared \:5c64 (\:5468\:8fba\:77e5\:8b58) \:3068\:305d\:306e\:8fba\:3092\:6b8b\:3059\:3002\:6bb5\:843d Id \:306f
@@ -8044,9 +9369,173 @@ SlideGraphSeed[src_, OptionsPattern[]] := Module[
     res = SourceVault`SourceVaultKGSave[kg];
     If[! StringQ[res], Return[Failure["SaveFailed", <|"MessageTemplate" -> "could not save `1`", "MessageParameters" -> {gid}|>]]]];
   <|"Graph" -> gid, "Title" -> title, "PaperTitle" -> paperTitle, "NodeCount" -> Length[kg["Nodes"]], "EdgeCount" -> Length[kg["Edges"]],
-    "Sections" -> sections, "Paragraphs" -> paras, "Figures" -> Length[parts["Figures"]],
-    "Formulas" -> Length[parts["Formulas"]], "Kept" -> kept, "Authors" -> authors, "Skipped" -> skipped,
-    "Warnings" -> kg["Warnings"], "KG" -> kg|>];
+    "Sections" -> sections, "Paragraphs" -> paras, "Figures" -> figs, "Formulas" -> forms, "Kept" -> kept, "Authors" -> authors,
+    "Skipped" -> skipped, "Sources" -> perSource, "Warnings" -> kg["Warnings"], "KG" -> kg|>];
+
+(* \:7d20\:6750 1 \:518a\:5206\:306e\:90e8\:5206\:30b0\:30e9\:30d5\:3002firstQ \:306a\:3089\:6700\:521d\:306e\:30ce\:30fc\:30c9\:306f root (Claim)\:3001\:305d\:3046\:3067\:306a\:3051\:308c\:3070\:90e8 (Section\:3001Id idp<>"root")\:3002
+   \:898b\:51fa\:3057\:30fb\:6bb5\:843d\:30fb\:56f3\:30fb\:5f0f\:306e\:30ce\:30fc\:30c9\:5316\:3068\:300c\:56f3 n |\:300d\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:306e\:5408\:6d41\:306f v1.22 \:304b\:3089\:306e\:3082\:306e\:3092\:305d\:306e\:307e\:307e\:4f7f\:3046 *)
+iSWSeedOneNotebook[items_List, path_String, key_String, idp_String, ordOff_, lang_String, minc_, recon_, firstQ_, titleOpt_, spec_] := Module[
+  {nodes = {}, edges = {}, stack, root, title, paperTitle = None, titleIdx = 0, authors = None, abstractDone = False,
+   skipped = <||>, k = 0, sections = 0, paras = 0, prevContent = <||>, captionOf = <||>, lastPara = None, pendingFigs = {}},
+  (* \:6bb5\:843d\:3054\:3068\:306e\:884c\:5185\:6570\:5f0f\:8f9e\:66f8 (tex \[RightArrow] boxes) \:3092\:30ce\:30fc\:30c9\:306b\:6b8b\:3059\:3002\:30b9\:30e9\:30a4\:30c9\:751f\:6210\:6642\:306b $tex$ \:3092\:5143\:306e\:7d44\:7248\:3078\:623b\:3059 *)
+  $iSWSeedItemFormulas = Association[Map[#["Cell"] -> Lookup[#, "InlineFormulas", {}] &, items]];
+  (* Title \:30bb\:30eb\:304c\:7121\:3044\:3068\:304d\:3001\:6700\:521d\:306e\:898b\:51fa\:3057\:3088\:308a\:6df1\:3044\:898b\:51fa\:3057\:304c\:5f8c\:306b\:3042\:308c\:3070\:3001\:305d\:306e\:6700\:521d\:306e\:898b\:51fa\:3057\:306f\:8ad6\:6587\:984c\:540d *)
+  If[! AnyTrue[items, Lookup[#, "Style", ""] === "Title" &],
+    With[{hs = Select[Range[Length[items]], iSWHeadingLevel[Lookup[items[[#]], "Style", ""]] < 99 &]},
+      If[hs =!= {} && AnyTrue[Rest[hs],
+          iSWHeadingLevel[Lookup[items[[#]], "Style", ""]] > iSWHeadingLevel[Lookup[items[[First[hs]]], "Style", ""]] &],
+        titleIdx = First[hs]; paperTitle = StringTrim[Lookup[items[[titleIdx]], "Text", ""]]]]];
+  title = Replace[titleOpt, Automatic ->
+    With[{t = SelectFirst[items, Lookup[#, "Style", ""] === "Title" &, None]},
+      Which[AssociationQ[t], StringTrim[t["Text"]],
+        StringQ[Lookup[spec, "Title", None]] && StringTrim[spec["Title"]] =!= "", spec["Title"],
+        StringQ[paperTitle] && paperTitle =!= "", paperTitle,
+        True, FileBaseName[path]]]];
+  If[! StringQ[title] || title === "", title = FileBaseName[path]];
+  If[! StringQ[paperTitle] || paperTitle === "", paperTitle = title];
+  root = idp <> "root";
+  AppendTo[nodes, If[firstQ,
+    <|"Id" -> root, "Kind" -> "Claim", "Label" -> title, "Summary" -> "", "Points" -> {},
+      "Importance" -> 1., "Difficulty" -> 0.3, "Order" -> 0, "Layer" -> "Paper", "Source" -> <|"Ref" -> key|>|>,
+    <|"Id" -> root, "Kind" -> "Section", "Label" -> title, "Summary" -> "", "Points" -> {},
+      "Importance" -> 0.8, "Difficulty" -> 0.4, "Order" -> 0, "Layer" -> "Paper",
+      "Source" -> <|"Ref" -> key, "Section" -> title|>|>]];
+  (* \:898b\:51fa\:3057\:306e\:968e\:5c64\:30b9\:30bf\:30c3\:30af: {id, level, skippingQ, appendixQ} *)
+  stack = {{root, 0, False, False}};
+  Do[
+    Module[{it = items[[i]], st, txt, lv, id, parent, skipping, appx, nb0 = Length[nodes]},
+      st = Lookup[it, "Style", ""]; txt = StringTrim[Lookup[it, "Text", ""]];
+      lv = iSWHeadingLevel[st];
+      skipping = Length[stack] > 1 && TrueQ[Last[stack][[3]]];
+      appx = TrueQ[Last[stack][[4]]];
+      Which[
+        (* \:8ad6\:6587\:984c\:540d\:306e\:898b\:51fa\:3057: root \:306b\:7573\:3080 (\:4ee5\:5f8c\:306e\:898b\:51fa\:3057\:306f root \:306e\:76f4\:4e0b) *)
+        i === titleIdx,
+          stack = {{root, 0, False, False}, {root, lv, False, False}},
+        (* \:898b\:51fa\:3057 *)
+        lv < 99 && st =!= "Title" && st =!= "Subtitle",
+          While[Length[stack] > 1 && Last[stack][[2]] >= lv, stack = Most[stack]];
+          skipping = Length[stack] > 1 && TrueQ[Last[stack][[3]]];
+          appx = TrueQ[Last[stack][[4]]] || iSWSeedAppendixHeadingQ[txt];
+          Which[
+            (* \:8aad\:307f\:98db\:3070\:3057\:4e2d\:306e\:90e8\:306e\:4e0b\:4f4d\:898b\:51fa\:3057\:3082\:8aad\:307f\:98db\:3070\:3059 *)
+            skipping, AppendTo[stack, {None, lv, True, appx}],
+            iSWSeedSkipHeadingQ[txt],
+              skipped["Headings"] = Append[Lookup[skipped, "Headings", {}], txt];
+              AppendTo[stack, {None, lv, True, appx}],
+            ! recon && iSWSeedReconstructionHeadingQ[txt],
+              skipped["Reconstruction"] = txt;
+              AppendTo[stack, {None, lv, True, appx}],
+            True,
+              k++; sections++; id = idp <> "s" <> ToString[k];
+              parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
+              AppendTo[nodes, <|"Id" -> id, "Kind" -> "Section", "Label" -> txt, "Summary" -> "", "Points" -> {},
+                "Importance" -> If[appx, 0.3, iSWSeedHeadingImportance[txt]], "Difficulty" -> 0.4, "Order" -> i,
+                "Layer" -> "Paper", "Source" -> <|"Ref" -> key, "Section" -> txt|>|>];
+              AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 1.|>];
+              AppendTo[stack, {id, lv, False, appx}];
+              prevContent[id] = None; lastPara = None; pendingFigs = {}],
+        skipping, Null,
+        (* \:56f3: \:76f4\:5f8c\:306e\:6bb5\:843d (\:56f3 n. / Figure n) \:3092\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:306b *)
+        Lookup[it, "Figures", {}] =!= {},
+          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
+          Do[id = idp <> "fig" <> ToString[fn];
+            AppendTo[nodes, <|"Id" -> id, "Kind" -> "Figure", "Label" -> "\:56f3 " <> ToString[fn], "Summary" -> "",
+              "Points" -> {}, "Importance" -> If[appx, 0.3, 0.6], "Difficulty" -> 0.4, "Order" -> i + 0.1, "Layer" -> "Paper",
+              "Assets" -> {<|"Type" -> "NotebookFigure", "Ref" -> key, "N" -> fn|>},
+              "Cite" -> "(" <> key <> ") Figure " <> ToString[fn],
+              "Source" -> <|"Ref" -> key, "Figure" -> fn|>|>];
+            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.8|>];
+            If[StringQ[lastPara],
+              AppendTo[edges, <|"From" -> id, "To" -> lastPara, "EdgeKind" -> "Supports", "Weight" -> 0.5|>],
+              AppendTo[pendingFigs, id]];
+            captionOf[fn] = id,
+            {fn, Lookup[it, "Figures", {}]}];
+          (* \:56f3\:30bb\:30eb\:306b\:672c\:6587\:304c\:4ed8\:3044\:3066\:3044\:308c\:3070\:6bb5\:843d\:3068\:3057\:3066\:7d9a\:3051\:308b *)
+          If[txt =!= "" && StringLength[txt] >= minc && Lookup[it, "Formulas", {}] === {},
+            paras++; id = idp <> "p" <> ToString[i];
+            AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
+            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
+            If[StringQ[prevContent[parent]], AppendTo[edges, <|"From" -> prevContent[parent], "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.4|>]];
+            prevContent[parent] = id; lastPara = id],
+        (* \:6570\:5f0f *)
+        Lookup[it, "Formulas", {}] =!= {},
+          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
+          Do[id = idp <> "eq" <> ToString[en];
+            AppendTo[nodes, <|"Id" -> id, "Kind" -> "Equation", "Label" -> "\:5f0f " <> ToString[en],
+              "Summary" -> "", "Points" -> {}, "Text" -> txt, "Importance" -> If[appx, 0.3, 0.55], "Difficulty" -> 0.6,
+              "Order" -> i + 0.1, "Layer" -> "Paper",
+              "Assets" -> {<|"Type" -> "Formula", "Ref" -> key, "N" -> en|>},
+              "Cite" -> "(" <> key <> ") Equation " <> ToString[en],
+              "Source" -> <|"Ref" -> key, "Equation" -> en|>|>];
+            AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.8|>];
+            If[StringQ[lastPara], AppendTo[edges, <|"From" -> lastPara, "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.5|>]];
+            prevContent[parent] = id,
+            {en, Lookup[it, "Formulas", {}]}],
+        (* Abstract \:30bb\:30eb: root (Claim) \:306e\:8981\:7d04\:3068\:672c\:6587\:306b\:3059\:308b (\:5225\:30ce\:30fc\:30c9\:306b\:306f\:3057\:306a\:3044) *)
+        st === "Abstract" && txt =!= "",
+          nodes[[1, "Summary"]] = iSWSeedSummary[txt];
+          nodes[[1, "Text"]] = txt;
+          abstractDone = True,
+        (* v1.41: \:300c\:56f3 n |\:300d\:306e\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:306f\:77ed\:304f\:3066\:3082\:8aad\:3080 (40 \:5b57\:672a\:6e80\:3060\:3068\:56f3\:306b\:5408\:6d41\:3057\:306a\:304b\:3063\:305f) *)
+        MemberQ[{"Text", "Item", "ItemNumbered", "Subitem", "SubitemNumbered", "Caption"}, st] &&
+          (StringLength[txt] >= minc || st === "Caption" || iSWSeedCaptionNumber[txt] =!= None),
+          parent = SelectFirst[Reverse[stack], #[[1]] =!= None &][[1]];
+          Which[
+            (* \:984c\:540d\:76f4\:5f8c\:306e\:8457\:8005\:30fb\:6240\:5c5e\:884c *)
+            parent === root && authors === None && ! abstractDone && ! StringQ[prevContent[root]] && iSWSeedAuthorLineQ[txt],
+              authors = txt,
+            (* \:30ad\:30e3\:30d7\:30b7\:30e7\:30f3: \:76f4\:524d\:306e\:56f3\:30ce\:30fc\:30c9\:306e\:30e9\:30d9\:30eb\:306b\:3059\:308b (\:56f3\:304c\:307e\:3060\:7121\:3051\:308c\:3070\:6bb5\:843d\:306b\:3057\:3066\:5f8c\:3067\:5408\:6d41) *)
+            st === "Caption" || iSWSeedCaptionNumber[txt] =!= None,
+              With[{n = iSWSeedCaptionNumber[txt]},
+                If[n =!= None && KeyExistsQ[captionOf, n],
+                  nodes = Replace[nodes, x_Association /; x["Id"] === captionOf[n] :>
+                    Join[x, <|"Label" -> iSWSeedFirstSentence[iSWSeedCaptionBody[txt], 50],
+                      "Summary" -> iSWSeedSummary[iSWSeedCaptionBody[txt]], "Text" -> txt,
+                      "Source" -> Append[Lookup[x, "Source", <||>], "Caption" -> n],
+                      "Cite" -> "(" <> key <> ") Figure " <> ToString[n]|>], {1}],
+                  paras++; id = idp <> "p" <> ToString[i];
+                  AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
+                  AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
+                  lastPara = id]],
+            True,
+              paras++; id = idp <> "p" <> ToString[i];
+              AppendTo[nodes, iSWSeedParagraphNode[id, txt, i, key, parent, lastPara, root, If[appx, 0.3, Automatic]]];
+              AppendTo[edges, <|"From" -> parent, "To" -> id, "EdgeKind" -> "Contains", "Weight" -> 0.9|>];
+              If[StringQ[prevContent[parent]], AppendTo[edges, <|"From" -> prevContent[parent], "To" -> id, "EdgeKind" -> "Precedes", "Weight" -> 0.4|>]];
+              prevContent[parent] = id; lastPara = id;
+              Do[AppendTo[edges, <|"From" -> f, "To" -> id, "EdgeKind" -> "Supports", "Weight" -> 0.5|>], {f, pendingFigs}];
+              pendingFigs = {};
+              (* root \:76f4\:4e0b\:306e\:6700\:521d\:306e\:9577\:3044\:6bb5\:843d = Abstract \:76f8\:5f53: \:300c\:6982\:8981\:300d\:30ce\:30fc\:30c9\:306b\:3057 root \:306e\:8981\:7d04\:306b\:3082\:3059\:308b *)
+              If[parent === root && ! abstractDone && StringLength[txt] >= 200,
+                abstractDone = True;
+                nodes[[-1, "Label"]] = If[lang === "ja", "\:6982\:8981", "Abstract"];
+                nodes[[-1, "Importance"]] = 0.8;
+                nodes[[1, "Summary"]] = iSWSeedSummary[txt]; nodes[[1, "Text"]] = txt];
+              If[parent === root && nodes[[1, "Summary"]] === "", nodes[[1, "Summary"]] = iSWSeedSummary[txt]]],
+        True, Null];
+      If[nb0 < Length[nodes], nodes[[nb0 + 1 ;;]] = iSWSeedUnitTag[nodes[[nb0 + 1 ;;]], it]]],
+    {i, Length[items]}];
+  (* \:56f3\:3088\:308a\:524d\:306b\:7f6e\:304b\:308c\:305f\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:6bb5\:843d\:3092\:56f3\:30ce\:30fc\:30c9\:3078\:5408\:6d41\:3059\:308b *)
+  Do[Module[{fid = captionOf[n], fpos, cpos, cap, cid},
+      fpos = FirstPosition[nodes, x_Association /; x["Id"] === fid, {0}, {1}][[1]];
+      If[fpos > 0 && nodes[[fpos, "Label"]] === "\:56f3 " <> ToString[n],
+        cpos = FirstPosition[nodes, x_Association /; x["Kind"] === "Concept" && iSWSeedCaptionNumber[Lookup[x, "Text", ""]] === n, {0}, {1}][[1]];
+        If[cpos > 0,
+          cap = nodes[[cpos, "Text"]]; cid = nodes[[cpos, "Id"]];
+          nodes[[fpos, "Label"]] = iSWSeedFirstSentence[iSWSeedCaptionBody[cap], 50];
+          nodes[[fpos, "Summary"]] = iSWSeedSummary[iSWSeedCaptionBody[cap]];
+          nodes[[fpos, "Text"]] = cap;
+          nodes[[fpos, "Source"]] = Append[Lookup[nodes[[fpos]], "Source", <||>], "Caption" -> n];
+          nodes[[fpos, "Cite"]] = "(" <> key <> ") Figure " <> ToString[n];
+          edges = Select[edges, #["From"] =!= cid && #["To"] =!= cid &];
+          nodes = Delete[nodes, cpos]; paras--]]],
+    {n, Keys[captionOf]}];
+  (* Order \:306f\:7d20\:6750\:306e\:4e26\:3073\:9806\:306b\:7d9a\:3051\:308b (\:524d\:306e\:7d20\:6750\:306e\:672b\:5c3e + 1 \:304b\:3089) *)
+  nodes = Map[Append[#, "Order" -> Lookup[#, "Order", 0] + ordOff] &, nodes];
+  <|"Nodes" -> nodes, "Edges" -> edges, "Sections" -> sections, "Paragraphs" -> paras, "Skipped" -> skipped,
+    "Authors" -> authors, "Title" -> title, "PaperTitle" -> paperTitle|>];
+
 
 iSWSeedParagraphNode[id_, txt_, i_, key_, parent_, lastPara_, root_, imp_: Automatic] :=
   <|"Id" -> id, "Kind" -> "Concept", "Label" -> iSWSeedLabel[txt], "Summary" -> iSWSeedSummary[txt],
@@ -8089,7 +9578,7 @@ SlideGraphSectionText[graphId_String, sectionId_String] := SlideGraphSectionText
    \:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:623b\:308b\:8a55\:4fa1\:7d50\:679c\:306f NBAccess \:306e RedactedResult \:4e0a\:9650 ($NBRedactedResultMaxLength\:3001\:65e2\:5b9a 6000 \:5b57) \:3067
    \:5207\:3089\:308c\:308b\:306e\:3067\:30011 \:30da\:30fc\:30b8\:306f\:305d\:308c\:3088\:308a\:5c0f\:3055\:304f\:3059\:308b (\:65e2\:5b9a 4000)\:3002 *)
 iSWPageBlocks[blocks_List, budget_Integer, page_Integer] := Module[{cut, pages = {}, cur = {}, len = 0, np, pg},
-  cut[b_String] := If[StringLength[b] > budget, StringTake[b, Max[1, budget - 12]] <> " \:2026(\:5207\:308a\:8a70\:3081)", b];
+  cut[b_String] := If[StringLength[b] > budget, StringTake[b, Max[1, budget - 12]] <> " \[Ellipsis](\:5207\:308a\:8a70\:3081)", b];
   Do[With[{b = cut[b0]},
       If[cur =!= {} && len + StringLength[b] + 1 > budget, AppendTo[pages, cur]; cur = {}; len = 0];
       AppendTo[cur, b]; len += StringLength[b] + 1],
@@ -8182,7 +9671,7 @@ $iSWRefineBusyMaxSeconds = 1200.;
 iSWRefineBusyQ[] := TrueQ[$iSWRefineBusy] && (AbsoluteTime[] - $iSWRefineBusySince) < $iSWRefineBusyMaxSeconds;
 iSWStatusIf[nb_, s_String] := If[Head[nb] === NotebookObject, iSWStatus[nb, s]];
 
-(* \:7bc0\:306e\:884c (Id / Label / \:672c\:6587\:30ce\:30fc\:30c9 / \:4e0b\:4f4d\:7bc0 / \:6e08) \:2014 \:4e00\:89a7 (SlideGraphSectionText) \:3068\:9023\:9396\:3067\:5171\:7528\:3002
+(* \:7bc0\:306e\:884c (Id / Label / \:672c\:6587\:30ce\:30fc\:30c9 / \:4e0b\:4f4d\:7bc0 / \:6e08) \[LongDash] \:4e00\:89a7 (SlideGraphSectionText) \:3068\:9023\:9396\:3067\:5171\:7528\:3002
    \:6e08 = \:7bc0\:306b Summary \:304c\:4ed8\:3044\:305f\:3001\:307e\:305f\:306f\:672c\:6587\:30ce\:30fc\:30c9\:5168\:90e8\:306b\:8981\:70b9\:304c\:4ed8\:3044\:305f (\:9014\:4e2d\:3067\:6b62\:3081\:3066\:518d\:958b\:3059\:308b\:3068\:304d\:306e\:76ee\:5370) *)
 iSWKGSectionRows[kg_Association] := Module[{index, secs, root, rootOwn, doneQ, rows},
   index = Association[(#["Id"] -> #) & /@ kg["Nodes"]];
@@ -8247,7 +9736,7 @@ iSWRefineRulesText[] :=
   "- \:672c\:6587\:306e $...$ (LaTeX \:306e\:884c\:5185\:6570\:5f0f) \:306f Label / Points / Details \:3067\:305d\:306e\:307e\:307e $...$ \:3067\:4f7f\:3044\:3001\:66f8\:304d\:63db\:3048\:306a\:3044 (\:30b9\:30e9\:30a4\:30c9\:3067\:306f\:5143\:306e\:7d44\:7248\:306b\:623b\:308b)\:3002\n" <>
   "- Talk (\:8aad\:307f\:4e0a\:3052\:539f\:7a3f) \:306b\:306f $...$ \:3092\:66f8\:304b\:306a\:3044\:3002\:5f0f\:306f\:30b9\:30e9\:30a4\:30c9\:306b\:51fa\:3066\:3044\:308b\:306e\:3067\:300c\:3053\:306e\:5f0f\:306f\:301c\:3092\:8868\:3057\:307e\:3059\:300d\:300c\:5de6\:8fba\:306e J \:306f\:301c\:300d\:306e\:3088\:3046\:306b\:753b\:9762\:306e\:5f0f\:3092\:6307\:3057\:3066\:610f\:5473\:3092\:8a9e\:308b (TeX \:3092\:305d\:306e\:307e\:307e\:8aad\:307f\:4e0a\:3052\:308b\:3068 frac \:3068\:767a\:58f0\:3055\:308c\:3066\:4f1d\:308f\:3089\:306a\:3044)\:3002\n" <>
   "- \:5f0f\:304c\:51fa\:308b\:30ce\:30fc\:30c9\:3067\:306f\:3001\:5f0f\:306b\:73fe\:308c\:308b\:8a18\:53f7\:306e\:610f\:5473\:3092 Points \:304b Details \:306b\:5fc5\:305a\:66f8\:304f (\:300c$u$ \:306f\:81ea\:7531\:30a8\:30cd\:30eb\:30ae\:30fc\:300d\:300c$x$ \:306f\:4f4d\:7f6e\:300d\:306e\:3088\:3046\:306b\:521d\:51fa\:3067\:4e00\:8a00)\:3002\:8a18\:53f7\:306e\:8aac\:660e\:304c\:7121\:3044\:307e\:307e\:5f0f\:3060\:3051\:8f09\:308b\:30b9\:30e9\:30a4\:30c9\:3092\:4f5c\:3089\:306a\:3044\:3002\n" <>
-  "- \:30b9\:30e9\:30a4\:30c9\:306f\:305d\:308c\:3060\:3051\:898b\:3066\:3082\:5185\:5bb9\:304c\:5206\:304b\:308b\:3088\:3046\:306b: Lead (\:5c0e\:5165\:6587) + Points (\:4e3b\:5f35) + Details (\:5404 Point \:306e\:6839\:62e0\:30fb\:88dc\:8db3)\:3002\:56f3\:8868\:756a\:53f7 (\:56f32, Table 1 \:306a\:3069) \:306f Points / Details / Talk \:306b\:66f8\:304b\:306a\:3044 (\:305d\:306e\:679a\:306b\:56f3\:304c\:7121\:3044\:3068\:8aad\:3081\:306a\:3044\:3002\:56f3\:3092\:6839\:62e0\:306b\:3059\:308b\:8a71\:306f fig* \:30ce\:30fc\:30c9\:306e Points \:306b\:66f8\:304f)\:3002\:5f37\:8abf\:3057\:305f\:3044\:8a9e\:53e5\:306f **\:2026** \:3067\:56f2\:3080 (1 \:30ce\:30fc\:30c9 1\:301c2 \:304b\:6240\:307e\:3067)\:3002";
+  "- \:30b9\:30e9\:30a4\:30c9\:306f\:305d\:308c\:3060\:3051\:898b\:3066\:3082\:5185\:5bb9\:304c\:5206\:304b\:308b\:3088\:3046\:306b: Lead (\:5c0e\:5165\:6587) + Points (\:4e3b\:5f35) + Details (\:5404 Point \:306e\:6839\:62e0\:30fb\:88dc\:8db3)\:3002\:56f3\:8868\:756a\:53f7 (\:56f32, Table 1 \:306a\:3069) \:306f Points / Details / Talk \:306b\:66f8\:304b\:306a\:3044 (\:305d\:306e\:679a\:306b\:56f3\:304c\:7121\:3044\:3068\:8aad\:3081\:306a\:3044\:3002\:56f3\:3092\:6839\:62e0\:306b\:3059\:308b\:8a71\:306f fig* \:30ce\:30fc\:30c9\:306e Points \:306b\:66f8\:304f)\:3002\:5f37\:8abf\:3057\:305f\:3044\:8a9e\:53e5\:306f **\[Ellipsis]** \:3067\:56f2\:3080 (1 \:30ce\:30fc\:30c9 1\:301c2 \:304b\:6240\:307e\:3067)\:3002";
 
 (* \:7bc0\:672c\:6587 (\:5168\:30da\:30fc\:30b8\:3001\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:5411\:3051\:306e\:672b\:5c3e\:6ce8\:8a18\:306f\:5916\:3059) *)
 iSWRefineSectionBody[gid_String, sid_String] := Module[{t = SlideGraphSectionText[gid, sid, "MaxCharacters" -> 200000]},
@@ -8267,7 +9756,7 @@ iSWRefineTalkPrompt[spec_Association, gid_String, sectionIds_List, metaBlocks_St
   metaBlocks <>
   "SlideWorkflow \:306e\:30b9\:30e9\:30a4\:30c9\:4ed5\:4e0a\:3052\:3002\:4ee5\:4e0b\:306e\:5404\:30ce\:30fc\:30c9 (\:30b9\:30e9\:30a4\:30c9 1 \:679a = Label \:304c\:984c\:76ee\:3001Points \:304c\:7b87\:6761\:66f8\:304d\:3001Text \:304c\:5143\:306e\:672c\:6587) \:306b Lead (\:5c0e\:5165\:6587) / Details (\:5404 Point \:306e\:88dc\:8db3) / Talk (\:539f\:7a3f) \:3092\:4ed8\:3051\:308b\:3002\:30b9\:30e9\:30a4\:30c9\:3060\:3051\:898b\:3066\:3082\:5185\:5bb9\:304c\:5206\:304b\:308b\:3088\:3046\:306b\:3059\:308b\:3002\n" <>
   "\:8074\:304d\:624b: " <> ToString[spec["Audience"]] <> If[StringQ[spec["Story"]] && spec["Story"] =!= "", "\n\:30b9\:30c8\:30fc\:30ea\:30fc\:6307\:793a: " <> spec["Story"], ""] <> "\n\n" <>
-  "\:898f\:5247 (\:53b3\:5b88): Lead \:306f 1 \:6587 40 \:5b57\:4ee5\:5185 (\:3053\:306e\:679a\:3067\:8a00\:3044\:305f\:3044\:3053\:3068)\:3002Details \:306f Points \:3068\:540c\:3058\:9577\:3055\:306e\:914d\:5217\:3067\:3001\:5404 Point \:306e\:6839\:62e0\:30fb\:88dc\:8db3\:3092 1 \:884c 40 \:5b57\:4ee5\:5185 (\:4e0d\:8981\:306a\:3089 \"\")\:3002Talk \:306f Points \:3068\:540c\:3058\:9806\:306b 1 \:8981\:70b9\:306b\:3064\:304d 1\:301c2 \:6587\:306e\:3067\:3059\:30fb\:307e\:3059\:8abf\:3067\:3001\:8981\:70b9\:306b\:7121\:3044\:8a71\:984c\:304b\:3089\:59cb\:3081\:306a\:3044 (\:5192\:982d\:306e\:6982\:8981\:8aac\:660e\:304c\:7b87\:6761\:66f8\:304d\:3068\:98df\:3044\:9055\:3046\:3068\:8074\:304d\:624b\:304c\:8ff7\:3046)\:3002Talk \:306f\:8aad\:307f\:4e0a\:3052\:539f\:7a3f\:306a\:306e\:3067 $...$ \:306e\:6570\:5f0f\:3092\:66f8\:304b\:305a\:3001\:5f0f\:306f\:300c\:3053\:306e\:5f0f\:300d\:300c\:5de6\:8fba\:300d\:306e\:3088\:3046\:306b\:753b\:9762\:3092\:6307\:3057\:3066\:8a9e\:308b\:3002\:5f0f\:306b\:51fa\:308b\:8a18\:53f7\:306e\:610f\:5473\:306f Lead \:304b Details \:3067\:8aac\:660e\:3059\:308b\:3002\:56f3\:8868\:756a\:53f7 (\:56f32, Table 1 \:306a\:3069) \:306f\:66f8\:304b\:306a\:3044\:3002\:5f37\:8abf\:306f **\:2026** (1\:301c2 \:304b\:6240)\:3002$...$ \:306e\:6570\:5f0f\:306f\:305d\:306e\:307e\:307e\:3002Text \:306b\:7121\:3044\:4e8b\:5b9f\:3092\:4f5c\:3089\:306a\:3044\:3002\n" <>
+  "\:898f\:5247 (\:53b3\:5b88): Lead \:306f 1 \:6587 40 \:5b57\:4ee5\:5185 (\:3053\:306e\:679a\:3067\:8a00\:3044\:305f\:3044\:3053\:3068)\:3002Details \:306f Points \:3068\:540c\:3058\:9577\:3055\:306e\:914d\:5217\:3067\:3001\:5404 Point \:306e\:6839\:62e0\:30fb\:88dc\:8db3\:3092 1 \:884c 40 \:5b57\:4ee5\:5185 (\:4e0d\:8981\:306a\:3089 \"\")\:3002Talk \:306f Points \:3068\:540c\:3058\:9806\:306b 1 \:8981\:70b9\:306b\:3064\:304d 1\:301c2 \:6587\:306e\:3067\:3059\:30fb\:307e\:3059\:8abf\:3067\:3001\:8981\:70b9\:306b\:7121\:3044\:8a71\:984c\:304b\:3089\:59cb\:3081\:306a\:3044 (\:5192\:982d\:306e\:6982\:8981\:8aac\:660e\:304c\:7b87\:6761\:66f8\:304d\:3068\:98df\:3044\:9055\:3046\:3068\:8074\:304d\:624b\:304c\:8ff7\:3046)\:3002Talk \:306f\:8aad\:307f\:4e0a\:3052\:539f\:7a3f\:306a\:306e\:3067 $...$ \:306e\:6570\:5f0f\:3092\:66f8\:304b\:305a\:3001\:5f0f\:306f\:300c\:3053\:306e\:5f0f\:300d\:300c\:5de6\:8fba\:300d\:306e\:3088\:3046\:306b\:753b\:9762\:3092\:6307\:3057\:3066\:8a9e\:308b\:3002\:5f0f\:306b\:51fa\:308b\:8a18\:53f7\:306e\:610f\:5473\:306f Lead \:304b Details \:3067\:8aac\:660e\:3059\:308b\:3002\:56f3\:8868\:756a\:53f7 (\:56f32, Table 1 \:306a\:3069) \:306f\:66f8\:304b\:306a\:3044\:3002\:5f37\:8abf\:306f **\[Ellipsis]** (1\:301c2 \:304b\:6240)\:3002$...$ \:306e\:6570\:5f0f\:306f\:305d\:306e\:307e\:307e\:3002Text \:306b\:7121\:3044\:4e8b\:5b9f\:3092\:4f5c\:3089\:306a\:3044\:3002\n" <>
   "\:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057:\n{\"Nodes\": [{\"Id\": \"<Id>\", \"Lead\": \"...\", \"Details\": [\"...\"], \"Talk\": \"...\"}]}\n\n=== \:30ce\:30fc\:30c9 ===\n" <>
   SourceVault`SourceVaultKGToJSON[<|"Nodes" -> items|>]];
 
@@ -8304,9 +9793,9 @@ iSWRefineVisualPrompt[spec_Association, gid_String, sectionIds_List, metaBlocks_
   "\:30b9\:30e9\:30a4\:30c9\:3092\:898b\:305f\:3060\:3051\:3067\:5206\:304b\:308a\:3084\:3059\:304f\:306a\:308b\:56f3\:304b\:8868\:3092 1 \:3064\:4ed8\:3051\:308b\:3002\:56f3\:3084\:5199\:771f\:304c\:4e3b\:5f79\:3067\:3001\:7b87\:6761\:66f8\:304d\:304c\:305d\:308c\:3092\:8aac\:660e\:3059\:308b\:767a\:8868\:3092\:76ee\:6307\:3059\:3002\n" <>
   "\:8074\:304d\:624b: " <> ToString[spec["Audience"]] <> If[StringQ[spec["Story"]] && spec["Story"] =!= "", "\n\:30b9\:30c8\:30fc\:30ea\:30fc\:6307\:793a: " <> spec["Story"], ""] <> "\n\n" <>
   "\:9078\:3073\:65b9:\n" <>
-  "- \:6bd4\:8f03\:30fb\:4e00\:89a7\:30fb\:7528\:8a9e\:30fb\:6761\:4ef6\:30fb\:624b\:9806\:306e\:4e26\:3073 \:2192 \"Table\" (1 \:884c\:76ee\:304c\:898b\:51fa\:3057\:3001\:7d9a\:3051\:3066 2\:301c6 \:884c\:30012\:301c4 \:5217\:30011 \:30bb\:30eb 25 \:5b57\:4ee5\:5185)\:3002\n" <>
-  "- \:4ed5\:7d44\:307f\:30fb\:6d41\:308c\:30fb\:9589\:30eb\:30fc\:30d7\:30fb\:69cb\:9020\:30fb\:5b9a\:6027\:7684\:306a\:5909\:5316 \:2192 \"Code\" (Wolfram Language \:3067\:6982\:5ff5\:56f3\:30fb\:6a21\:5f0f\:56f3\:3092\:63cf\:304f)\:3002\n" <>
-  "- PaperFigures (\:305d\:306e\:30ce\:30fc\:30c9\:306b\:7d50\:3070\:308c\:305f\:8ad6\:6587\:306e\:56f3) \:3067\:8db3\:308a\:308b\:3068\:304d\:3001\:56f3\:306b\:3057\:3066\:3082\:5206\:304b\:308a\:3084\:3059\:304f\:306a\:3089\:306a\:3044\:3068\:304d \:2192 \"None\"\:3002\n" <>
+  "- \:6bd4\:8f03\:30fb\:4e00\:89a7\:30fb\:7528\:8a9e\:30fb\:6761\:4ef6\:30fb\:624b\:9806\:306e\:4e26\:3073 \[RightArrow] \"Table\" (1 \:884c\:76ee\:304c\:898b\:51fa\:3057\:3001\:7d9a\:3051\:3066 2\:301c6 \:884c\:30012\:301c4 \:5217\:30011 \:30bb\:30eb 25 \:5b57\:4ee5\:5185)\:3002\n" <>
+  "- \:4ed5\:7d44\:307f\:30fb\:6d41\:308c\:30fb\:9589\:30eb\:30fc\:30d7\:30fb\:69cb\:9020\:30fb\:5b9a\:6027\:7684\:306a\:5909\:5316 \[RightArrow] \"Code\" (Wolfram Language \:3067\:6982\:5ff5\:56f3\:30fb\:6a21\:5f0f\:56f3\:3092\:63cf\:304f)\:3002\n" <>
+  "- PaperFigures (\:305d\:306e\:30ce\:30fc\:30c9\:306b\:7d50\:3070\:308c\:305f\:8ad6\:6587\:306e\:56f3) \:3067\:8db3\:308a\:308b\:3068\:304d\:3001\:56f3\:306b\:3057\:3066\:3082\:5206\:304b\:308a\:3084\:3059\:304f\:306a\:3089\:306a\:3044\:3068\:304d \[RightArrow] \"None\"\:3002\n" <>
   "- \:8ad6\:6587\:306e\:5b9f\:6e2c\:30c7\:30fc\:30bf\:3092\:4f5c\:56f3\:3057\:76f4\:3055\:306a\:3044 (\:6570\:5024\:306e\:634f\:9020\:306b\:306a\:308b)\:3002Code \:306f\:6a21\:5f0f\:56f3\:3068\:5b9a\:6027\:7684\:306a\:66f2\:7dda\:3060\:3051\:306b\:3057\:3001\:5b9a\:6027\:7684\:306a\:66f2\:7dda\:306e\:8ef8\:306b\:6570\:5024\:3092\:4ed8\:3051\:306a\:3044\:3002\n\n" <>
   "Code \:306e\:898f\:5247 (\:53b3\:5b88):\n" <>
   "- \:5168\:4f53\:304c 1 \:3064\:306e\:5f0f\:3067\:3001Graphics / Plot \:7cfb / GraphicsRow / Graph \:306e\:3069\:308c\:304b\:3092\:8fd4\:3059\:3002\:88dc\:52a9\:306e\:5024\:306f Module / With \:306e\:4e2d\:306b\:7f6e\:304f (\:5927\:57df\:5909\:6570\:306b\:4ee3\:5165\:3057\:306a\:3044)\:3002\n" <>
@@ -8315,10 +9804,10 @@ iSWRefineVisualPrompt[spec_Association, gid_String, sectionIds_List, metaBlocks_
   "Import / Export / \:30d5\:30a1\:30a4\:30eb / \:30cd\:30c3\:30c8\:30ef\:30fc\:30af / Symbol / ToExpression \:306f\:4f7f\:308f\:306a\:3044\:3002\n" <>
   "- \:8272: \:6a59 RGBColor[0.878, 0.486, 0.078]\:3001\:81d9\:8102 RGBColor[0.616, 0.11, 0.11]\:3001\:7070 GrayLevel[0.35]\:3001\:9762 RGBColor[0.98, 0.965, 0.94]\:3001\:67a0 RGBColor[0.9, 0.85, 0.77]\:3002\n" <>
   "- \:6587\:5b57\:306f\:65e5\:672c\:8a9e\:3067\:77ed\:304f (1 \:30e9\:30d9\:30eb 12 \:5b57\:7a0b\:5ea6)\:3002ImageSize \:3068 FontFamily \:306f\:4ed8\:3051\:306a\:3044 (\:3053\:3061\:3089\:3067\:63c3\:3048\:308b)\:300240 \:884c\:4ee5\:5185\:3002\n" <>
-  "- Caption \:306f\:56f3\:306e\:4e0b\:306b\:51fa\:3059\:4e00\:8a00 (20 \:5b57\:4ee5\:5185\:3001\:300c\:6982\:5ff5\:56f3: \:2026\:300d\:306e\:3088\:3046\:306b)\:3002\n\n" <>
+  "- Caption \:306f\:56f3\:306e\:4e0b\:306b\:51fa\:3059\:4e00\:8a00 (20 \:5b57\:4ee5\:5185\:3001\:300c\:6982\:5ff5\:56f3: \[Ellipsis]\:300d\:306e\:3088\:3046\:306b)\:3002\n\n" <>
   "\:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:5168\:30ce\:30fc\:30c9\:306b 1 \:3064\:305a\:3064\:8fd4\:3059\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057:\n" <>
-  "{\"Nodes\": [{\"Id\": \"<Id>\", \"Visual\": {\"Type\": \"Table\", \"Rows\": [[\"\:898b\:51fa\:3057\", \"\:898b\:51fa\:3057\"], [\"\:2026\", \"\:2026\"]]}}, " <>
-  "{\"Id\": \"<Id>\", \"Visual\": {\"Type\": \"Code\", \"Code\": \"Graphics[{...}]\", \"Caption\": \"\:6982\:5ff5\:56f3: \:2026\"}}, " <>
+  "{\"Nodes\": [{\"Id\": \"<Id>\", \"Visual\": {\"Type\": \"Table\", \"Rows\": [[\"\:898b\:51fa\:3057\", \"\:898b\:51fa\:3057\"], [\"\[Ellipsis]\", \"\[Ellipsis]\"]]}}, " <>
+  "{\"Id\": \"<Id>\", \"Visual\": {\"Type\": \"Code\", \"Code\": \"Graphics[{...}]\", \"Caption\": \"\:6982\:5ff5\:56f3: \[Ellipsis]\"}}, " <>
   "{\"Id\": \"<Id>\", \"Visual\": {\"Type\": \"None\"}}]}\n\n=== \:30ce\:30fc\:30c9 ===\n" <>
   SourceVault`SourceVaultKGToJSON[<|"Nodes" -> items|>]];
 
@@ -8326,7 +9815,7 @@ iSWRefineVisualPrompt[spec_Association, gid_String, sectionIds_List, metaBlocks_
 iSWCleanRows[rows_] := Module[{rs, w},
   rs = Select[Replace[rows, Except[_List] -> {}], ListQ];
   rs = Map[Function[r, Map[Function[c, With[{s = StringTrim[Which[StringQ[c], c, NumericQ[c], ToString[c], True, ""]]},
-    If[StringLength[s] > 40, StringTake[s, 39] <> "\:2026", s]]], r]], rs];
+    If[StringLength[s] > 40, StringTake[s, 39] <> "\[Ellipsis]", s]]], r]], rs];
   If[Length[rs] < 2, Return[$Failed]];
   w = Length[First[rs]];
   If[w < 2 || w > 4, Return[$Failed]];
@@ -8400,7 +9889,7 @@ iSWRefineResetFlags[] := ($iSWRefineTalkOnly = False; $iSWRefineVisual = False; 
   $iSWRefineScenario = False;);
 
 (* \:672a\:63a8\:6572\:306e\:7bc0: \:672c\:6587\:30ce\:30fc\:30c9\:304c\:3042\:308b\:306e\:306b\:63a8\:6572\:304c\:6e08\:3093\:3067\:3044\:306a\:3044\:7bc0 (\:63a8\:6572\:304c\:9014\:4e2d\:3067\:6b62\:307e\:3063\:305f\:3001\:305d\:306e\:7bc0\:306e\:554f\:3044\:5408\:308f\:305b\:304c\:843d\:3061\:305f)\:3002
-   \:305d\:306e\:7bc0\:306e\:7b87\:6761\:66f8\:304d\:306f\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057 (\:300c\:2026\:300d\:3067\:5207\:308c\:305f\:4eee\:306e\:984c\:76ee) \:306e\:307e\:307e\:306b\:306a\:308b\:3002\:56f3\:89e3\:30fb\:4ed5\:4e0a\:3052\:30fb\:8abf\:6574\:306f\:5148\:306b\:3053\:306e\:7bc0\:3092\:63a8\:6572\:3057\:3001\:751f\:6210\:306f\:8b66\:544a\:3059\:308b *)
+   \:305d\:306e\:7bc0\:306e\:7b87\:6761\:66f8\:304d\:306f\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057 (\:300c\[Ellipsis]\:300d\:3067\:5207\:308c\:305f\:4eee\:306e\:984c\:76ee) \:306e\:307e\:307e\:306b\:306a\:308b\:3002\:56f3\:89e3\:30fb\:4ed5\:4e0a\:3052\:30fb\:8abf\:6574\:306f\:5148\:306b\:3053\:306e\:7bc0\:3092\:63a8\:6572\:3057\:3001\:751f\:6210\:306f\:8b66\:544a\:3059\:308b *)
 iSWUnrefinedSections[kg_Association] := Module[{index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], rawQ},
   (* seed \:306e\:307e\:307e\:306e\:6bb5\:843d = \:672c\:6587 (Text) \:304c\:3042\:308b\:306e\:306b\:8981\:70b9\:304c\:7121\:3044 (\:624b\:3067\:4f5c\:3063\:305f KG \:306e\:672c\:6587\:306e\:7121\:3044\:30ce\:30fc\:30c9\:306f\:6570\:3048\:306a\:3044) *)
   rawQ[id_] := With[{n = Lookup[index, id, <||>]},
@@ -8411,11 +9900,11 @@ iSWUnrefinedSections[kg_Association] := Module[{index = Association[(#["Id"] -> 
 iSWUnrefinedSections[_] := {};
 iSWUnrefinedNote[kg_Association, ids_List] := With[{index = Association[(#["Id"] -> #) & /@ kg["Nodes"]]},
   StringRiffle[Map[# <> If[KeyExistsQ[index, #], " " <> StringTake[SourceVault`SourceVaultKGText[index[#], "Label"], UpTo[24]], ""] &,
-    Take[ids, UpTo[4]]], ", "] <> If[Length[ids] > 4, " \:2026", ""]];
+    Take[ids, UpTo[4]]], ", "] <> If[Length[ids] > 4, " \[Ellipsis]", ""]];
 
 (* \:672a\:63a8\:6572\:306e\:7bc0\:3092\:5148\:306b\:63a8\:6572\:3057\:3001\:7d42\:308f\:3063\:305f\:3089 then \:3092\:547c\:3076 *)
 iSWRefineFirst[nb_, spec_Association, kg_Association, ids_List, maxNodes_, then_, note_List] := Module[{r},
-  iSWStatusIf[nb, iSL["\:63a8\:6572\:304c\:6e08\:3093\:3067\:3044\:306a\:3044\:7bc0\:304c\:3042\:308a\:307e\:3059 (" <> iSWUnrefinedNote[kg, ids] <> ")\:3002\:5148\:306b\:63a8\:6572\:3057\:307e\:3059\:2026",
+  iSWStatusIf[nb, iSL["\:63a8\:6572\:304c\:6e08\:3093\:3067\:3044\:306a\:3044\:7bc0\:304c\:3042\:308a\:307e\:3059 (" <> iSWUnrefinedNote[kg, ids] <> ")\:3002\:5148\:306b\:63a8\:6572\:3057\:307e\:3059\[Ellipsis]",
     "Some sections are not refined yet (" <> iSWUnrefinedNote[kg, ids] <> "); refining them first..."]];
   iSWRefineResetFlags[];
   r = iSWRefineStart[nb, spec, kg, If[IntegerQ[maxNodes] && maxNodes > 0, maxNodes, 8], ids, then, note];
@@ -8610,7 +10099,7 @@ iSWAdjustMarkApplied[co_CellObject, summary_String] := Quiet[
     CellDingbat -> StyleBox["\[Checkmark]", FontColor -> GrayLevel[0.5]]]];
 iSWAdjustMarkApplied[___] := Null;
 
-(* \:8ad6\:6587 PDF \:306e locator: \:6587\:732e\:6b04 \:2192 KG \:306e\:51fa\:5178 \:306e\:9806\:306b\:3001PDF \:306b\:89e3\:6c7a\:3067\:304d\:308b\:3082\:306e *)
+(* \:8ad6\:6587 PDF \:306e locator: \:6587\:732e\:6b04 \[RightArrow] KG \:306e\:51fa\:5178 \:306e\:9806\:306b\:3001PDF \:306b\:89e3\:6c7a\:3067\:304d\:308b\:3082\:306e *)
 iSWAdjustPDFRef[nb_, kg_, opt_ : Automatic] := Module[{cands = {}},
   If[StringQ[opt], Return[opt]];
   If[Head[nb] === NotebookObject,
@@ -8658,7 +10147,7 @@ iSWAdjustSlideRefs[instruction_String, n_Integer] := Module[{s, d = DigitCharact
   refs = Join[
     StringCases[s, a : d ~~ ws ~~ Repeated["\:679a\:76ee" | "\:756a\:76ee" | "\:30da\:30fc\:30b8\:76ee", {0, 1}] ~~ ws ~~ ("\:4ee5\:964d" | "\:4ee5\:5f8c" | "\:304b\:3089\:6700\:5f8c" | "\:304b\:3089\:5f8c") :>
       Range[FromDigits[a], n]],
-    StringCases[s, a : d ~~ ws ~~ Repeated["\:679a\:76ee" | "\:756a\:76ee", {0, 1}] ~~ ws ~~ ("\:301c" | "\:ff5e" | "~" | "-" | "\:2013" | "\:304b\:3089") ~~ ws ~~ b : d :>
+    StringCases[s, a : d ~~ ws ~~ Repeated["\:679a\:76ee" | "\:756a\:76ee", {0, 1}] ~~ ws ~~ ("\:301c" | "\:ff5e" | "~" | "-" | "\[Dash]" | "\:304b\:3089") ~~ ws ~~ b : d :>
       If[FromDigits[a] <= FromDigits[b] <= FromDigits[a] + 40, Range[FromDigits[a], FromDigits[b]], {}]],
     StringCases[s, ("\:30b9\:30e9\:30a4\:30c9" | "Slide" | "slide" | "#") ~~ ws ~~ a : d :> {FromDigits[a]}],
     StringCases[s, a : d ~~ ws ~~ ("\:679a\:76ee" | "\:756a\:76ee") :> {FromDigits[a]}]];
@@ -8718,7 +10207,8 @@ iSWAdjustPrompt[spec_Association, kg_Association, slides_List, instruction_Strin
     slideTxt <> "\n\n" <> detailTxt <>
   "=== KG \:306e\:30ce\:30fc\:30c9 (\:51fa\:73fe\:9806\:3002Id | \:984c\:76ee | \:7bc0\:306e\:8981\:7d04 | \:56f3) ===\n" <> nodeTxt <> "\n\n" <>
   "=== \:4f7f\:3048\:308b\:56f3 ===\n" <>
-  "- \:8ad6\:6587\:306e\:56f3\:306e\:30ce\:30fc\:30c9: " <> figTxt <> "\n" <> pdfInfo <> "\n" <>
+  "- \:56f3\:306e\:30ce\:30fc\:30c9 (\:8ad6\:6587\:306e\:56f3\:3082\:3001\:8a08\:7b97\:30ce\:30fc\:30c8\:306a\:3069\:7d20\:6750\:30ce\:30fc\:30c8\:306e\:56f3\:3082\:540c\:3058\:3002{" <> $iSWQ <> "Type" <> $iSWQ <> ": " <> $iSWQ <> "Figure" <> $iSWQ <> ", " <>
+    $iSWQ <> "Of" <> $iSWQ <> ": " <> $iSWQ <> "<\:56f3\:30ce\:30fc\:30c9 Id>" <> $iSWQ <> "} \:3067\:6307\:3059): " <> figTxt <> "\n" <> pdfInfo <> "\n" <>
   "- \:8868: {" <> $iSWQ <> "Type" <> $iSWQ <> ": " <> $iSWQ <> "Table" <> $iSWQ <> ", " <> $iSWQ <> "Rows" <> $iSWQ <> ": [[" <> $iSWQ <> "\:898b\:51fa\:3057" <> $iSWQ <> ", " <> $iSWQ <> "\:898b\:51fa\:3057" <> $iSWQ <> "], [..]]}\n" <>
   "- \:6982\:5ff5\:56f3 (Wolfram Language \:306e\:4f5c\:56f3\:30b3\:30fc\:30c9\:3002\:4f5c\:56f3\:3068\:6570\:5b66\:306e\:7d44\:8fbc\:307f\:95a2\:6570\:3060\:3051\:3002Import \:3084\:30d5\:30a1\:30a4\:30eb\:64cd\:4f5c\:306f\:4e0d\:53ef): {" <>
     $iSWQ <> "Type" <> $iSWQ <> ": " <> $iSWQ <> "Code" <> $iSWQ <> ", " <> $iSWQ <> "Code" <> $iSWQ <> ": " <> $iSWQ <> "Graphics[...]" <> $iSWQ <> ", " <>
@@ -8730,15 +10220,20 @@ iSWAdjustPrompt[spec_Association, kg_Association, slides_List, instruction_Strin
     $iSWQ <> "Label" <> $iSWQ <> ": " <> $iSWQ <> "\:984c\:76ee" <> $iSWQ <> ", " <> $iSWQ <> "Lead" <> $iSWQ <> ": " <> $iSWQ <> "\:5c0e\:5165\:6587" <> $iSWQ <> ", " <>
     $iSWQ <> "Points" <> $iSWQ <> ": [" <> $iSWQ <> "\:8981\:70b9" <> $iSWQ <> "], " <> $iSWQ <> "Details" <> $iSWQ <> ": [" <> $iSWQ <> "\:88dc\:8db3" <> $iSWQ <> "], " <>
     $iSWQ <> "Talk" <> $iSWQ <> ": " <> $iSWQ <> "\:539f\:7a3f" <> $iSWQ <> ", " <> $iSWQ <> "Importance" <> $iSWQ <> ": 0.9, " <>
+    $iSWQ <> "Pinned" <> $iSWQ <> ": true, " <>
     $iSWQ <> "Assets" <> $iSWQ <> ": [..]}], " <> $iSWQ <> "Hide" <> $iSWQ <> ": [" <> $iSWQ <> "<\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:5916\:3059\:30ce\:30fc\:30c9 Id>" <> $iSWQ <> "]}\n\n" <>
   "\:898f\:5247:\n" <>
   "- \:65b0\:3057\:3044\:30b9\:30e9\:30a4\:30c9\:306f\:65b0\:3057\:3044\:30ce\:30fc\:30c9\:306b\:3059\:308b (Id \:306f adj_ \:3067\:59cb\:3081\:308b)\:3002After \:3067\:4f4d\:7f6e\:3092\:6c7a\:3081\:3001Label \:3068 Points \:306f\:5fc5\:305a\:66f8\:304f\:3002\n" <>
   "- \:65e2\:5b58\:306e\:30b9\:30e9\:30a4\:30c9\:3092\:76f4\:3059\:3068\:304d\:306f\:3001\:305d\:306e Id \:306b\:5909\:3048\:305f\:3044\:30ad\:30fc\:3060\:3051\:3092\:66f8\:304f (Label / Lead / Points / Details / Talk / Importance / Assets / After)\:3002\n" <>
   "- \:30b9\:30e9\:30a4\:30c9\:304b\:3089\:5916\:3059\:3068\:304d\:306f Hide \:306b Id \:3092\:5165\:308c\:308b (KG \:304b\:3089\:306f\:6d88\:3055\:306a\:3044)\:3002\:623b\:3059\:3068\:304d\:306f {" <> $iSWQ <> "Id" <> $iSWQ <> ": .., " <> $iSWQ <> "Hidden" <> $iSWQ <> ": false}\:3002\n" <>
-  "- Importance \:306f\:30b9\:30e9\:30a4\:30c9\:306b\:9078\:3070\:308c\:308b\:5f37\:3055 (0\:301c1)\:3002\:5fc5\:305a\:51fa\:3057\:305f\:3044\:679a\:306f 0.9 \:4ee5\:4e0a\:3002\n" <>
+  "- Importance \:306f\:30b9\:30e9\:30a4\:30c9\:306b\:9078\:3070\:308c\:308b\:5f37\:3055 (0\:301c1)\:3002\n" <>
+  "- \:65b0\:3057\:304f\:8db3\:3059\:679a\:3068\:3001\:5229\:7528\:8005\:304c\:300c\:5fc5\:305a\:300d\:300c\:542b\:3081\:3066\:300d\:300c\:5165\:308c\:3066\:300d\:300c\:8ffd\:52a0\:3057\:3066\:300d\:3068\:66f8\:3044\:305f\:65e2\:5b58\:306e\:679a\:306b\:306f " <> $iSWQ <> "Pinned" <> $iSWQ <>
+    ": true \:3092\:4ed8\:3051\:308b (\:8a08\:753b\:3067\:5fc5\:305a 1 \:679a\:306b\:306a\:308a\:3001\:70b9\:6570\:306e\:7af6\:4e89\:3067\:843d\:3061\:306a\:3044)\:3002\:5370\:3092\:5916\:3059\:3068\:304d\:306f false\:3002\n" <>
+  "- \:56f3\:3092\:6a2a\:306b\:4e26\:3079\:308b\:6307\:793a (\:300c\:6a2a\:306b\:4e26\:3079\:3066\:300d\:300c\:4e26\:3079\:3066 1 \:679a\:3067\:300d) \:306f\:3001\:305d\:306e\:679a\:306e\:30ce\:30fc\:30c9\:306b " <> $iSWQ <> "FigureLayout" <> $iSWQ <> ": " <>
+    $iSWQ <> "Row" <> $iSWQ <> " \:3092\:4ed8\:3051\:3001\:4e26\:3079\:308b\:56f3\:3092 Assets \:306b\:5de6\:304b\:3089\:9806\:306b\:5165\:308c\:308b (4 \:3064\:307e\:3067)\:3002\n" <>
   "- \:6587: Lead \:306f 1 \:6587 40 \:5b57\:4ee5\:5185\:3001Points \:306f\:4f53\:8a00\:6b62\:3081 2\:301c5 \:500b\:3001Details \:306f Points \:3068\:540c\:3058\:9577\:3055 (\:4e0d\:8981\:306a\:3089 " <> $iSWQ <> $iSWQ <> ")\:3002" <>
   "Talk \:306f\:8aad\:307f\:4e0a\:3052\:539f\:7a3f\:306a\:306e\:3067 $...$ \:3092\:66f8\:304b\:305a\:3001\:753b\:9762\:306e\:56f3\:3084\:5f0f\:3092\:6307\:3057\:3066\:8a9e\:308b\:3002\:56f3\:8868\:756a\:53f7 (\:56f32 \:306a\:3069) \:306f\:305d\:306e\:679a\:306b\:3042\:308b\:56f3\:3060\:3051\:3002KG \:306b\:7121\:3044\:4e8b\:5b9f\:3092\:4f5c\:3089\:306a\:3044\:3002\n" <>
-  "- \:65e2\:5b58\:306e\:679a\:306e\:7b87\:6761\:66f8\:304d\:3092\:76f4\:3059\:3068\:304d\:306f\:3001\:305d\:306e\:30ce\:30fc\:30c9\:306e\:5143\:306e\:672c\:6587\:304b\:3089\:8981\:70b9 (Points) \:3068\:5c0e\:5165\:6587 (Lead) \:3092\:4f5c\:308a\:76f4\:3059\:3002\:300c\:2026\:300d\:3067\:5207\:308c\:305f\:7b87\:6761\:66f8\:304d\:306f\:63a8\:6572\:3055\:308c\:3066\:3044\:306a\:3044\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057\:3002\n" <>
+  "- \:65e2\:5b58\:306e\:679a\:306e\:7b87\:6761\:66f8\:304d\:3092\:76f4\:3059\:3068\:304d\:306f\:3001\:305d\:306e\:30ce\:30fc\:30c9\:306e\:5143\:306e\:672c\:6587\:304b\:3089\:8981\:70b9 (Points) \:3068\:5c0e\:5165\:6587 (Lead) \:3092\:4f5c\:308a\:76f4\:3059\:3002\:300c\[Ellipsis]\:300d\:3067\:5207\:308c\:305f\:7b87\:6761\:66f8\:304d\:306f\:63a8\:6572\:3055\:308c\:3066\:3044\:306a\:3044\:6bb5\:843d\:306e\:66f8\:304d\:51fa\:3057\:3002\n" <>
   "- \:6307\:793a\:306b\:95a2\:4fc2\:3057\:306a\:3044\:30ce\:30fc\:30c9\:306f\:8fd4\:3055\:306a\:3044\:3002"];
 
 (* \:65b0\:3057\:3044\:30ce\:30fc\:30c9\:306e Order: After \:306e\:76f4\:5f8c (\:6b21\:306e\:30ce\:30fc\:30c9\:3068\:306e\:4e2d\:70b9) *)
@@ -8779,6 +10274,10 @@ iSWAdjustDelta[kg_Association, raw_Association, pdfRef_, key_String] := Module[
       Do[If[MatchQ[Lookup[n, k, None], {___String}], m[k] = n[k]], {k, {"Points", "Details"}}];
       If[NumericQ[Lookup[n, "Importance", None]], m["Importance"] = Clip[N[n["Importance"]], {0., 1.}]];
       If[BooleanQ[Lookup[n, "Hidden", None]], m["Hidden"] = n["Hidden"]];
+      (* v1.42: \:5fc5\:305a\:51fa\:3059\:5370\:3068\:56f3\:306e\:4e26\:3079\:65b9 *)
+      If[BooleanQ[Lookup[n, "Pinned", None]], m["Pinned"] = n["Pinned"]];
+      With[{fl = Lookup[n, "FigureLayout", None]},
+        If[StringQ[fl], m["FigureLayout"] = If[StringContainsQ[ToLowerCase[fl], "row" | "\:6a2a"], "Row", "Column"]]];
       specs = Replace[Lookup[n, "Assets", {}], Except[_List] -> {}];
       assets = Map[iSWAdjustAsset[#, index, pdfRef] &, specs];
       If[MemberQ[assets, $Failed], AppendTo[warn, id <> ": \:4f7f\:3048\:306a\:3044\:56f3\:306e\:6307\:5b9a\:3092\:843d\:3068\:3057\:305f"]];
@@ -8807,7 +10306,8 @@ iSWAdjustDelta[kg_Association, raw_Association, pdfRef_, key_String] := Module[
           With[{kids = Select[Keys[Select[parent, # === par &]], NumericQ[Lookup[orders, #, None]] &]},
             m["Order"] = If[kids === {}, Replace[Lookup[orders, par, 0], Except[_?NumericQ] -> 0] + 0.1,
               Max[Lookup[orders, kids]] + 0.1]; orders[id] = m["Order"]]];
-        m = Join[<|"Id" -> id, "Kind" -> "Concept", "Layer" -> "Paper", "Importance" -> 0.9, "VisualDone" -> True,
+        (* v1.42: \:8abf\:6574\:3067\:8db3\:3059\:679a\:306f\:5229\:7528\:8005\:304c\:6c42\:3081\:305f\:679a\:306a\:306e\:3067\:3001\:65e2\:5b9a\:3067\:5fc5\:305a\:51fa\:3059 (Pinned) *)
+        m = Join[<|"Id" -> id, "Kind" -> "Concept", "Layer" -> "Paper", "Importance" -> 0.9, "VisualDone" -> True, "Pinned" -> True,
           "Source" -> <|"Ref" -> key, "Kind" -> "Adjust"|>|>, m];
         parent[id] = par;
         AppendTo[edges, <|"From" -> par, "To" -> id, "EdgeKind" -> "Contains"|>];
@@ -8819,7 +10319,8 @@ iSWAdjustDelta[kg_Association, raw_Association, pdfRef_, key_String] := Module[
       AppendTo[nodes, <|"Id" -> h, "Hidden" -> True|>]; AppendTo[hidden, h]],
     {h, Replace[Lookup[raw, "Hide", {}], Except[_List] -> {}]}];
   <|"Delta" -> <|"Nodes" -> nodes, "Edges" -> edges|>, "Added" -> added, "Changed" -> DeleteDuplicates[changed],
-    "Hidden" -> hidden, "Warnings" -> warn|>];
+    "Hidden" -> hidden, "Pinned" -> DeleteDuplicates[Lookup[Select[nodes, TrueQ[Lookup[#, "Pinned", False]] &], "Id", {}]],
+    "Warnings" -> warn|>];
 
 $iSWAdjustLast = None;
 iSWAdjustApply[nb_, gid_String, co_, pdfRef_, key_String, then_, resp_] := Module[{kg, json, raw, d, res, msg, st},
@@ -8840,10 +10341,14 @@ iSWAdjustApply[nb_, gid_String, co_, pdfRef_, key_String, then_, resp_] := Modul
         If[MatchQ[res, _Success],
           st = "Applied";
           msg = iSL["\:8abf\:6574\:3092\:53cd\:6620\:3057\:307e\:3057\:305f: \:8ffd\:52a0 " <> ToString[Length[d["Added"]]] <> " / \:5909\:66f4 " <> ToString[Length[d["Changed"]]] <>
-              " / \:96a0\:3059 " <> ToString[Length[d["Hidden"]]] <> "\:3002\:53e4\:3044\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:3092\:6d88\:3057\:3066\:304b\:3089\:300c\:751f\:6210\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044",
+              " / \:96a0\:3059 " <> ToString[Length[d["Hidden"]]] <> " / \:5fc5\:305a\:51fa\:3059 " <> ToString[Length[Lookup[d, "Pinned", {}]]] <>
+              "\:3002\:300c\:751f\:6210\:300d\:3092\:62bc\:3059\:3068\:30b9\:30e9\:30a4\:30c9\:306b\:53cd\:6620\:3055\:308c\:307e\:3059 (\:524d\:56de\:306e\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:306f\:7f6e\:304d\:63db\:308f\:308b)",
             "Adjusted: added " <> ToString[Length[d["Added"]]] <> ", changed " <> ToString[Length[d["Changed"]]] <>
-              ", hidden " <> ToString[Length[d["Hidden"]]] <> ". Delete the old generated slides, then press Generate"];
-          iSWAdjustMarkApplied[co, msg],
+              ", hidden " <> ToString[Length[d["Hidden"]]] <> ", pinned " <> ToString[Length[Lookup[d, "Pinned", {}]]] <>
+              ". Press Generate to update the slides (the previous generated slides are replaced)"];
+          iSWAdjustMarkApplied[co, msg];
+          (* v1.46: \:65e2\:5b58\:306e\:679a\:3092 After \:3067\:52d5\:304b\:3057\:305f\:3089\:76ee\:6b21\:306e\:4e2d\:3067\:3082\:52d5\:304b\:3059 (\:65b0\:3057\:3044\:679a\:306f\:76ee\:6b21\:306e\:6728\:304c After \:306e\:5f8c\:308d\:306b\:7f6e\:304f) *)
+          iSWTocApplyMoves[gid, Select[d["Delta"]["Edges"], #["EdgeKind"] === "Precedes" && MemberQ[d["Changed"], #["To"]] &]],
           st = "Failed";
           msg = iSL["\:8abf\:6574\:3092\:53cd\:6620\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f: ", "Adjustment failed: "] <> StringTake[ToString[res], UpTo[200]]]]];
   If[d["Warnings"] =!= {}, msg = msg <> iSL[" (\:6ce8\:610f: ", " (note: "] <> StringRiffle[d["Warnings"], " / "] <> ")"];
@@ -8876,7 +10381,7 @@ SlideGraphAdjust[nb_NotebookObject, instruction_String, opts : OptionsPattern[]]
   spec = SlideGraphSpec[nb];
   kg = iSWKGResolve[spec["Graph"]];
   If[! AssociationQ[kg], iSWStatus[nb, iSL["KG \:304c\:7121\:3044 (\:5148\:306b KG\:69cb\:7bc9)", "No KG yet (build it first)"]]; Return[kg]];
-  (* \:63a8\:6572\:304c\:9014\:4e2d\:3067\:6b62\:307e\:3063\:305f\:7bc0 (\:7b87\:6761\:66f8\:304d\:304c\:300c\:2026\:300d\:3067\:5207\:308c\:305f\:679a) \:306f\:3001\:5148\:306b\:63a8\:6572\:3057\:3066\:304b\:3089\:6307\:793a\:3092\:53cd\:6620\:3059\:308b *)
+  (* \:63a8\:6572\:304c\:9014\:4e2d\:3067\:6b62\:307e\:3063\:305f\:7bc0 (\:7b87\:6761\:66f8\:304d\:304c\:300c\[Ellipsis]\:300d\:3067\:5207\:308c\:305f\:679a) \:306f\:3001\:5148\:306b\:63a8\:6572\:3057\:3066\:304b\:3089\:6307\:793a\:3092\:53cd\:6620\:3059\:308b *)
   If[OptionValue["Refine"] =!= False && (un = iSWUnrefinedSections[kg]) =!= {},
     If[iSWRefineBusyQ[], iSWStatus[nb, iSL["KG \:306e\:63a8\:6572\:30fb\:56f3\:89e3\:30fb\:8abf\:6574\:3092\:5b9f\:884c\:4e2d\:3067\:3059", "A KG run is in progress"]]; Return[<|"Status" -> "Busy"|>]];
     Return[With[{o = FilterRules[{opts}, Except["Refine"]]},
@@ -8897,12 +10402,868 @@ SlideGraphAdjust[graphId_String, instruction_String, opts : OptionsPattern[]] :=
         Function[SlideGraphAdjust[graphId, instruction, "Refine" -> False, Sequence @@ o]], $iSWThenAdjustNote]]]];
   iSWAdjustRun[None, spec, kg, instruction, None, OptionValue["PDF"], OptionValue["Then"], ""]];
 
+(* v1.42: \:300c\:5fc5\:305a\:51fa\:3059\:300d\:5370\:3092 LLM \:3092\:4f7f\:308f\:305a\:306b\:4ed8\:3051\:5916\:3057\:3059\:308b *)
+iSWPinGraphId[nb_NotebookObject] := SlideGraphSpec[nb]["Graph"];
+iSWPinGraphId[g_String] := g;
+iSWPinGraphId[_] := $Failed;
+SlideGraphPin[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphPin[nb]]];
+SlideGraphPin[src : (_NotebookObject | _String)] := Module[{kg = iSWKGResolve[iSWPinGraphId[src]]},
+  If[! AssociationQ[kg], Return[kg]];
+  Lookup[Select[kg["Nodes"], TrueQ[Lookup[#, "Pinned", False]] &], "Id", {}]];
+SlideGraphPin[src : (_NotebookObject | _String), ids : (_String | {__String}), pin : (True | False) : True] := Module[
+  {gid = iSWPinGraphId[src], kg, list = Flatten[{ids}], bad, res},
+  kg = iSWKGResolve[gid];
+  If[! AssociationQ[kg], Return[kg]];
+  bad = Complement[list, Lookup[kg["Nodes"], "Id", {}]];
+  If[bad =!= {}, Return[Failure["NoNode", <|"MessageTemplate" -> "no node `1` in graph `2`",
+    "MessageParameters" -> {StringRiffle[bad, ", "], gid}|>]]];
+  res = SlideGraphIngest[gid, <|"Nodes" -> Map[<|"Id" -> #, "Pinned" -> pin|> &, list]|>, "Merge" -> True];
+  If[Head[src] === NotebookObject && MatchQ[res, _Success],
+    iSWStatus[src, iSL[If[pin, "\:5fc5\:305a\:51fa\:3059\:5370\:3092\:4ed8\:3051\:307e\:3057\:305f: ", "\:5fc5\:305a\:51fa\:3059\:5370\:3092\:5916\:3057\:307e\:3057\:305f: "] <> StringRiffle[list, ", "] <> "\:3002\:300c\:751f\:6210\:300d\:3067\:53cd\:6620",
+      If[pin, "Pinned: ", "Unpinned: "] <> StringRiffle[list, ", "] <> ". Press Generate"]]];
+  res];
+
+(* ---- v1.46: \:76ee\:6b21 (\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306e\:7ae0\:30fb\:7bc0\:7acb\:3066) ----
+   \:30b9\:30e9\:30a4\:30c9\:306f\:76ee\:6b21\:306e\:6728\:3092\:305f\:3069\:3063\:3066\:4f5c\:308b\:3002\:76ee\:6b21\:306f KG \:306e\:9805\:76ee (\:5185\:5bb9\:306e\:6700\:5c0f\:5358\:4f4d) \:304b\:3089 LLM \:304c\:6bb5\:3054\:3068\:306b\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:308b:
+   \:7b2c 1 \:6bb5\:3067\:9805\:76ee\:3092\:7bc0\:306b\:307e\:3068\:3081\:3001\:7b2c 2 \:6bb5\:304b\:3089\:306f\:7bc0\:3092\:7ae0\:306b\:307e\:3068\:3081\:3001\:6839\:306e\:5b50\:304c $SlideGraphMaxDegree \:500b\:4ee5\:4e0b\:306b\:306a\:308b\:307e\:3067\:7e70\:308a\:8fd4\:3059\:3002
+   \:5404\:6bb5\:306e\:5144\:5f1f\:306f\:7b87\:6761\:66f8\:304d\:306b\:4e26\:3079\:305f\:3068\:304d\:540c\:3058\:30ec\:30d9\:30eb\:306e\:8b70\:8ad6\:3068\:3057\:3066\:4e26\:7acb\:3059\:308b (\:66f8\:7c4d\:306e\:76ee\:6b21)\:3002\:305d\:306e\:3042\:3068 KG \:5c64 (SourceVaultKGSetToc) \:304c
+   \:5144\:5f1f\:306e\:9806\:3092\:5b9a\:7fa9\:30fb\:524d\:63d0 (Prerequisite / Derives) \:3067\:5165\:308c\:66ff\:3048\:308b\:3002\:3069\:3053\:307e\:3067\:7d30\:304b\:304f\:679a\:306b\:3059\:308b\:304b\:306f\:8a08\:753b (SourceVaultKGTocPlan) \:304c\:679a\:6570\:3067\:6c7a\:3081\:308b *)
+If[! ValueQ[$SlideGraphMaxDegree], $SlideGraphMaxDegree = 5];
+iSWMaxDegree[] := If[IntegerQ[$SlideGraphMaxDegree] && $SlideGraphMaxDegree >= 2, $SlideGraphMaxDegree, 5];
+$iSWHierarchyLast = None;
+
+iSWTocVisibleQ[n_Association] := ! TrueQ[Lookup[n, "Hidden", False]] &&
+  Replace[Lookup[n, "PrivacyLevel", 0.], Except[_?NumericQ] -> 0.] <= 0.5;
+iSWTocVisibleQ[_] := False;
+(* \:76ee\:6b21\:306e\:8449 = \:5185\:5bb9\:306e\:30ce\:30fc\:30c9 (\:6839\:30fb\:8cc7\:6599\:306e\:7bc0 (Contains \:306e\:89aa)\:30fb\:76ee\:6b21\:306e\:7bc0\:30fb\:307e\:3068\:307e\:308a\:3092\:9664\:304f)\:3002\:51fa\:73fe\:9806 *)
+iSWTocLeaves[kg_Association] := Module[{root = Lookup[kg, "Root", "root"], containers},
+  containers = DeleteDuplicates[Lookup[Select[kg["Edges"], #["EdgeKind"] === "Contains" &], "From", {}]];
+  Lookup[SortBy[Select[kg["Nodes"], #["Id"] =!= root && ! MemberQ[containers, #["Id"]] && ! TrueQ[Lookup[#, "Toc", False]] &&
+      ! TrueQ[Lookup[#, "Cluster", False]] && iSWTocVisibleQ[#] &],
+    {Replace[Lookup[#, "Order", None], Except[_?NumericQ] -> 10.^6] &, #["Id"] &}], "Id", {}]];
+(* \:8cc7\:6599\:306e\:65e2\:5b58\:306e\:7bc0 (\:76ee\:6b21\:306e\:7bc0\:3068\:3057\:3066\:4f7f\:3063\:3066\:3088\:3044) *)
+iSWTocSections[kg_Association] := Module[{root = Lookup[kg, "Root", "root"], index = Association[(#["Id"] -> #) & /@ kg["Nodes"]]},
+  Select[DeleteDuplicates[Lookup[Select[kg["Edges"], #["EdgeKind"] === "Contains" &], "From", {}]],
+    # =!= root && KeyExistsQ[index, #] && ! TrueQ[Lookup[index[#], "Cluster", False]] && ! TrueQ[Lookup[index[#], "Toc", False]] &]];
+iSWTocOne[s_String, k_Integer] := With[{t = StringTrim[StringReplace[s, {"\r\n" -> " ", "\n" -> " ", "|" -> "/"}]]},
+  If[StringLength[t] > k, StringTake[t, k] <> "\[Ellipsis]", t]];
+iSWTocOne[_, _] := "";
+iSWTocStr[x_] := If[StringQ[x], StringTrim[x], ""];
+(* \:4e00\:8a00: \:4e00\:884c\:8981\:7d04 \[RightArrow] \:5c0e\:5165\:6587 \[RightArrow] \:8981\:7d04 \[RightArrow] \:6700\:521d\:306e\:8981\:70b9 *)
+iSWTocGist[n_Association] := Module[{g = SourceVault`SourceVaultKGText[n, "Gist"]},
+  If[g === "", g = SourceVault`SourceVaultKGText[n, "Lead"]];
+  If[g === "", g = SourceVault`SourceVaultKGText[n, "Summary"]];
+  If[g === "", g = With[{p = SourceVault`SourceVaultKGText[n, "Points"]}, If[MatchQ[p, {__String}], First[p], ""]]];
+  If[StringQ[g], g, ""]];
+iSWTocGist[_] := "";
+
+iSWTocRules[d_Integer] :=
+  "\:76ee\:6b21\:306e\:539f\:5247 (\:66f8\:7c4d\:306e\:7ae0\:30fb\:7bc0\:30fb\:5c0f\:7bc0\:306e\:7acb\:3066\:65b9\:3068\:540c\:3058):\n" <>
+  "- \:540c\:3058\:89aa\:306e\:4e0b\:306b\:4e26\:3076\:5b50\:306f\:3001\:7b87\:6761\:66f8\:304d\:306b\:4e26\:3079\:305f\:3068\:304d\:540c\:3058\:30ec\:30d9\:30eb\:306e\:8b70\:8ad6\:3068\:3057\:3066\:4e26\:7acb\:3059\:308b\:3053\:3068\:3002\:7a2e\:985e\:306e\:9055\:3046\:8a71\:30fb\:7c92\:5ea6\:306e\:9055\:3046\:8a71\:3092\:540c\:3058\:6bb5\:306b\:4e26\:3079\:306a\:3044\:3002\n" <>
+  "  \:60aa\:3044\:4f8b (\:7403\:9762\:8abf\:548c\:95a2\:6570\:306e\:767a\:8868): \:300c\:91cf\:5b50\:529b\:5b66\:306e\:7403\:9762\:8abf\:548c\:95a2\:6570\:300d\:300c\:97f3\:5834\:306e\:7403\:9762\:8abf\:548c\:95a2\:6570\:300d\:300cA-format \:3068 B-format\:300d\:300c\:4e21\:8005\:306e\:5bfe\:5fdc\:300d\:3092\:540c\:3058\:6bb5\:306b\:4e26\:3079\:308b\:3002" <>
+  "\:524d\:306e 2 \:3064\:3068\:300c\:4e21\:8005\:306e\:5bfe\:5fdc\:300d\:306f\:7403\:9762\:8abf\:548c\:95a2\:6570\:3068\:3044\:3046\:540c\:3058\:8a71\:306e\:4e0b\:4f4d\:306e\:4e26\:3073\:3001\:300cA-format \:3068 B-format\:300d\:306f\:30a2\:30f3\:30d3\:30bd\:30cb\:30c3\:30af\:306e\:9332\:97f3\:5f62\:5f0f\:306e\:8a71\:306a\:306e\:3067\:97f3\:5834\:306e\:7ae0\:306e\:4e2d\:306b\:5165\:308c\:308b\:3002\n" <>
+  "- 1 \:3064\:306e\:89aa\:306e\:5b50\:306f 2\:301c" <> ToString[d] <> " \:500b (\:5c11\:306a\:3044\:306e\:306f\:3088\:3044)\:3002\:8cc7\:6599\:304c\:9055\:3063\:3066\:3082\:540c\:3058\:8a71\:984c\:306f\:540c\:3058\:3068\:3053\:308d\:306b\:307e\:3068\:3081\:308b\:3002\n" <>
+  "- \:7528\:8a9e\:306e\:5b9a\:7fa9\:3084\:524d\:63d0\:306b\:306a\:308b\:9805\:76ee\:306f\:3001\:305d\:308c\:3092\:4f7f\:3046\:9805\:76ee\:3088\:308a\:524d\:306b\:7f6e\:304f (Groups \:3082 Members \:3082\:8aac\:660e\:3059\:308b\:9806\:306b\:4e26\:3079\:308b)\:3002\n";
+iSWTocTextRules[lang_String] :=
+  "- Label \:306f\:984c\:76ee (\:4f53\:8a00\:6b62\:3081 20 \:5b57\:4ee5\:5185)\:3002Gist \:306f\:4e2d\:8eab\:5168\:4f53\:3092\:4e00\:884c\:3067\:8a00\:3046\:540d\:8a5e\:53e5\:3067\:300c\:301c\:3092\:6271\:3044\:307e\:3059\:300d\:306b\:7d9a\:304f\:5f62 (30 \:5b57\:4ee5\:5185\:3002\:300c\:5168\:4f53\:306e\:6d41\:308c\:300d\:3084\:9053\:6a19\:306e\:679a\:306b\:7b87\:6761\:66f8\:304d\:3067\:4e26\:3076)\:3002" <>
+  "Summary \:306f\:4e2d\:8eab\:306e\:8981\:7d04 2\:301c3 \:6587\:3002\n" <>
+  "- Importance \:306f\:8074\:304d\:624b\:306b\:3068\:3063\:3066\:306e\:91cd\:8981\:5ea6 (0\:301c1)\:3002\:679a\:6570\:304c\:9650\:3089\:308c\:308b\:3068\:304d\:3001\:91cd\:8981\:5ea6\:306e\:9ad8\:3044\:3082\:306e\:304b\:3089\:8a73\:3057\:304f (\:5b50\:3092\:305d\:308c\:305e\:308c\:679a\:306b) \:3059\:308b\:3002" <>
+  "Include \:306f \"Optional\" \:304c\:57fa\:672c\:3002\:6b20\:304b\:3059\:3068\:8a71\:304c\:6210\:308a\:7acb\:305f\:306a\:3044\:3082\:306e\:3060\:3051 \"Must\" (\:8a73\:3057\:304f\:3059\:308b\:9806\:3092\:4e0a\:3052\:308b\:3002\:5404\:6bb5\:3067\:591a\:304f\:3066\:3082\:534a\:5206)\:3002\n" <>
+  "- \:9805\:76ee\:306b\:7121\:3044\:4e8b\:5b9f\:3092\:4f5c\:3089\:306a\:3044\:3002\:767a\:8868\:306e\:8a00\:8a9e (" <> lang <> ") \:3067\:66f8\:304f\:3002";
+iSWTocHead[spec_Association] :=
+  "\:8074\:304d\:624b: " <> ToString[Lookup[spec, "Audience", ""]] <>
+  If[StringQ[Lookup[spec, "Story", None]] && StringTrim[spec["Story"]] =!= "", "\n\:30b9\:30c8\:30fc\:30ea\:30fc\:6307\:793a: " <> spec["Story"], ""] <> "\n\n";
+
+(* \:7b2c 1 \:6bb5: \:9805\:76ee\:3092\:7bc0\:306b\:307e\:3068\:3081\:308b *)
+iSWTocPromptLeaves[spec_Association, kg_Association, items_List, d_Integer] := Module[
+  {index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], root = Lookup[kg, "Root", "root"], cpar, top, lines, secs, secLines, pre,
+   lang = Replace[Lookup[spec, "Language", "ja"], Except[_String] -> "ja"], lab},
+  cpar = Association[Map[#["To"] -> #["From"] &, Reverse[Select[kg["Edges"], #["EdgeKind"] === "Contains" &]]]];
+  top[x_] := Module[{c = x, k = 0}, While[KeyExistsQ[cpar, c] && cpar[c] =!= root && k < 30, c = cpar[c]; k++]; c];
+  lab[x_] := SourceVault`SourceVaultKGText[Lookup[index, x, <||>], "Label"];
+  pre = GroupBy[Select[kg["Edges"], MemberQ[{"Prerequisite", "Derives"}, #["EdgeKind"]] &], (#["To"] &) -> (#["From"] &)];
+  lines = Map[Function[id, Module[{n = index[id], p = Lookup[cpar, id, None], t = top[id], ps},
+      ps = Select[Lookup[pre, id, {}], MemberQ[items, #] &];
+      StringRiffle[{id, iSWTocOne[lab[id], 40], iSWTocOne[iSWTocGist[n], 60], Lookup[n, "Kind", ""] <> "/" <> Lookup[n, "Layer", ""],
+        If[StringQ[p] && p =!= root, iSWTocOne[lab[t], 20] <> If[p =!= t, " > " <> iSWTocOne[lab[p], 24], ""], "-"],
+        If[ps === {}, "-", "\:524d\:63d0: " <> StringRiffle[Take[ps, UpTo[4]], ", "]],
+        If[Replace[Lookup[n, "Assets", {}], Except[_List] -> {}] =!= {}, "\:56f3", "-"],
+        If[TrueQ[Lookup[n, "Pinned", False]], "\:5fc5\:305a", "-"]}, " | "]]], items];
+  secs = iSWTocSections[kg];
+  secLines = Select[Map[Function[s, With[{mem = Select[Lookup[Select[kg["Edges"], #["EdgeKind"] === "Contains" && #["From"] === s &], "To", {}],
+        MemberQ[items, #] &]},
+      If[mem === {}, Nothing, s <> " | " <> iSWTocOne[lab[s], 30] <> " | " <> StringRiffle[Take[mem, UpTo[8]], ", "] <>
+        If[Length[mem] > 8, " \[Ellipsis]", ""]]]], secs], StringQ];
+  "SlideWorkflow \:306e\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:767a\:8868\:306e\:76ee\:6b21\:3092\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:308b\:3002\:7b2c 1 \:6bb5: \:4e0b\:306e\:9805\:76ee (\:5185\:5bb9\:306e\:6700\:5c0f\:5358\:4f4d\:30021 \:9805\:76ee\:304c\:30b9\:30e9\:30a4\:30c9 1 \:679a\:306b\:306a\:308a\:3046\:308b) \:3092\:7bc0\:306b\:307e\:3068\:3081\:308b\:3002" <>
+  "\:6b21\:306e\:6bb5\:3067\:7bc0\:3092\:7ae0\:306b\:307e\:3068\:3081\:3001\:6700\:4e0a\:6bb5 (" <> ToString[d] <> " \:500b\:4ee5\:4e0b) \:304c\:300c\:5168\:4f53\:306e\:6d41\:308c\:300d\:306e 1 \:679a\:306b\:4e26\:3076\:3002\n" <>
+  iSWTocHead[spec] <> iSWTocRules[d] <> "\n" <>
+  "=== \:9805\:76ee (\:8cc7\:6599\:306e\:9806\:3002Id | \:984c\:76ee | \:4e00\:8a00 | \:7a2e\:985e/\:5c64 | \:8cc7\:6599 > \:4eca\:306e\:7bc0 | \:524d\:63d0 (\:5148\:306b\:8981\:308b\:9805\:76ee) | \:56f3 | \:5fc5\:305a\:51fa\:3059) ===\n" <>
+  StringRiffle[lines, "\n"] <> "\n\n" <>
+  If[secLines =!= {}, "=== \:8cc7\:6599\:306e\:65e2\:5b58\:306e\:7bc0 (Id | \:984c\:76ee | \:542b\:3080\:9805\:76ee)\:3002\:305d\:306e\:7bc0\:304c\:305d\:306e\:307e\:307e\:76ee\:6b21\:306e\:7bc0\:3068\:3057\:3066\:4e26\:7acb\:3059\:308b\:306a\:3089\:3001\:305d\:306e Id \:3092 Node \:306b\:66f8\:3044\:3066\:4f7f\:3063\:3066\:3088\:3044 ===\n" <>
+    StringRiffle[secLines, "\n"] <> "\n\n", ""] <>
+  "=== \:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057 ===\n" <>
+  "{\"Groups\": [{\"Node\": \"<\:65e2\:5b58\:306e\:7bc0\:306e Id \:304b\:7a7a>\", \"Label\": \"\:7bc0\:306e\:984c\:76ee\", \"Gist\": \"\:4e00\:884c\:8981\:7d04\", \"Summary\": \"\:8981\:7d04\", \"Importance\": 0.8, " <>
+  "\"Include\": \"Must \:304b Optional\", \"Members\": [\"<\:9805\:76ee\:306e Id>\"]}], \"Omit\": [\"<\:51fa\:3055\:306a\:3044\:9805\:76ee\:306e Id>\"]}\n\n" <>
+  "\:898f\:5247:\n" <>
+  "- \:9805\:76ee\:306f\:3059\:3079\:3066\:3001\:3061\:3087\:3046\:3069 1 \:56de\:305a\:3064\:3001\:3069\:308c\:304b\:306e Members \:304b Omit \:306b\:5165\:308c\:308b\:3002Omit \:306f\:8074\:304d\:624b\:3068\:30b9\:30c8\:30fc\:30ea\:30fc\:306b\:660e\:3089\:304b\:306b\:8981\:3089\:306a\:3044\:9805\:76ee (\:91cd\:8907\:30fb\:8107\:9053) \:3060\:3051\:3002\:300c\:5fc5\:305a\:300d\:306e\:9805\:76ee\:306f Omit \:306b\:3057\:306a\:3044\:3002\n" <>
+  "- Members \:306f 2\:301c" <> ToString[d] <> " \:500b\:3002\:5408\:3046\:76f8\:624b\:304c\:3069\:3046\:3057\:3066\:3082\:7121\:3044\:9805\:76ee\:3060\:3051 1 \:500b\:3067\:53ef (\:305d\:306e\:307e\:307e\:6b21\:306e\:6bb5\:3078\:4e0a\:304c\:308b)\:3002\n" <>
+  iSWTocTextRules[lang]];
+
+(* \:7b2c 2 \:6bb5\:304b\:3089: \:524d\:306e\:6bb5\:306e\:307e\:3068\:307e\:308a\:3092\:4e00\:3064\:4e0a\:306e\:6bb5\:306b\:307e\:3068\:3081\:308b *)
+iSWTocPromptGroups[spec_Association, kg_Association, st_Association] := Module[
+  {index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], items = st["Items"], d = st["D"], r = st["Round"], n, lines, lab, gst, must, lo, hi,
+   lang = Replace[Lookup[spec, "Language", "ja"], Except[_String] -> "ja"]},
+  n = Length[items];
+  lab[x_] := If[KeyExistsQ[st["Info"], x], st["Info"][x]["Label"], SourceVault`SourceVaultKGText[Lookup[index, x, <||>], "Label"]];
+  gst[x_] := If[KeyExistsQ[st["Info"], x], st["Info"][x]["Gist"], iSWTocGist[Lookup[index, x, <||>]]];
+  must[x_] := MemberQ[Lookup[Select[st["Groups"], Lookup[#, "Include", ""] === "Must" &], "Id", {}], x] ||
+    TrueQ[Lookup[Lookup[index, x, <||>], "Pinned", False]];
+  lines = Map[Function[x, StringRiffle[{x, iSWTocOne[lab[x], 30], iSWTocOne[gst[x], 50],
+      If[KeyExistsQ[st["Children"], x], "\:4e2d\:8eab: " <> StringRiffle[Map[iSWTocOne[lab[#], 16] &, Take[st["Children"][x], UpTo[5]]], " / "] <>
+        If[Length[st["Children"][x]] > 5, " \[Ellipsis]", ""], "(\:9805\:76ee)"],
+      If[must[x], "\:5fc5\:305a", "-"]}, " | "]], items];
+  lo = Max[2, Ceiling[n / d]]; hi = Max[lo, Min[d, n - 1]];
+  "SlideWorkflow \:306e\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:767a\:8868\:306e\:76ee\:6b21\:3092\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:308b\:3002\:7b2c " <> ToString[r] <> " \:6bb5: \:4e0b\:306e " <> ToString[n] <>
+  " \:500b (\:524d\:306e\:6bb5\:3067\:4f5c\:3063\:305f\:7bc0\:30fb\:7ae0) \:3092\:4e00\:3064\:4e0a\:306e\:6bb5\:306b\:307e\:3068\:3081\:308b\:3002\:6700\:4e0a\:6bb5 (" <> ToString[d] <> " \:500b\:4ee5\:4e0b) \:304c\:300c\:5168\:4f53\:306e\:6d41\:308c\:300d\:306e 1 \:679a\:306b\:4e26\:3076\:3002" <>
+  "\:307e\:3068\:307e\:308a\:306e\:6570\:306f " <> ToString[lo] <> "\:301c" <> ToString[hi] <> " \:500b (\:5c11\:306a\:3044\:307b\:3046\:304c\:3088\:3044)\:3002\n" <>
+  iSWTocHead[spec] <> iSWTocRules[d] <> "\n" <>
+  "=== \:3053\:306e\:6bb5\:306e\:9805\:76ee (\:8aac\:660e\:306e\:9806\:3002Id | \:984c\:76ee | \:4e00\:884c\:8981\:7d04 | \:4e2d\:8eab | \:5fc5\:305a\:51fa\:3059) ===\n" <>
+  StringRiffle[lines, "\n"] <> "\n\n" <>
+  "=== \:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057 ===\n" <>
+  "{\"Groups\": [{\"Label\": \"\:984c\:76ee\", \"Gist\": \"\:4e00\:884c\:8981\:7d04\", \"Summary\": \"\:8981\:7d04\", \"Importance\": 0.8, \"Include\": \"Must \:304b Optional\", " <>
+  "\"Members\": [\"<\:3053\:306e\:6bb5\:306e Id>\"]}]}\n\n" <>
+  "\:898f\:5247:\n" <>
+  "- \:3053\:306e\:6bb5\:306e Id \:306f\:3059\:3079\:3066\:3001\:3061\:3087\:3046\:3069 1 \:56de\:305a\:3064\:3001\:3069\:308c\:304b\:306e Members \:306b\:5165\:308c\:308b (\:3053\:306e\:6bb5\:3067\:306f\:7701\:304b\:306a\:3044)\:3002\n" <>
+  "- Members \:306f 2\:301c" <> ToString[d] <> " \:500b\:3002\:305d\:308c\:3060\:3051\:3067\:4e00\:3064\:4e0a\:306e\:6bb5\:306b\:4e26\:3076\:3079\:304d\:5927\:304d\:306a\:307e\:3068\:307e\:308a\:306f Members 1 \:500b (\:305d\:306e\:307e\:307e\:4e0a\:306e\:6bb5\:3078\:4e0a\:304c\:308b)\:3002\n" <>
+  "- \:307e\:3068\:3081\:305f\:984c\:76ee\:3069\:3046\:3057\:3082\:4e26\:7acb\:3059\:308b\:3053\:3068 (\:4e0a\:306e\:60aa\:3044\:4f8b\:3092\:907f\:3051\:308b)\:3002\n" <>
+  iSWTocTextRules[lang]];
+
+(* LLM \:306e 1 \:6bb5\:5206\:306e\:7b54\:3048\:3092\:72b6\:614b\:306b\:53cd\:6620\:3059\:308b\:3002\:629c\:3051\:305f\:9805\:76ee\:306f\:8cc7\:6599\:306e\:9806\:3067\:76f4\:524d\:306e\:9805\:76ee\:3068\:540c\:3058\:307e\:3068\:307e\:308a\:3078\:30021 \:500b\:306e\:307e\:3068\:307e\:308a\:306f\:305d\:306e\:307e\:307e\:4e0a\:306e\:6bb5\:3078 *)
+iSWTocApplyRound[st_Association, raw_, kg_Association] := Module[
+  {items = st["Items"], r = st["Round"], index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], seen = <||>, groups = {}, omit = {},
+   missing, next = {}, ch = st["Children"], defs = st["Groups"], info = st["Info"], used = st["Used"], secs, k = 0, pinnedQ, labOf},
+  If[! AssociationQ[raw], Return[$Failed]];
+  secs = iSWTocSections[kg];
+  pinnedQ[x_] := TrueQ[Lookup[Lookup[index, x, <||>], "Pinned", False]];
+  labOf[x_] := If[KeyExistsQ[info, x], info[x]["Label"], SourceVault`SourceVaultKGText[Lookup[index, x, <||>], "Label"]];
+  Do[With[{mem = Select[DeleteDuplicates[Map[ToString, Replace[Lookup[g, "Members", {}], Except[_List] -> {}]]],
+        MemberQ[items, #] && ! KeyExistsQ[seen, #] &]},
+      Scan[(seen[#] = True) &, mem];
+      If[mem =!= {}, AppendTo[groups, Append[g, "Members" -> mem]]]],
+    {g, Select[Replace[Lookup[raw, "Groups", {}], Except[_List] -> {}], AssociationQ]}];
+  If[groups === {}, Return[$Failed]];
+  If[r === 1,
+    omit = Select[DeleteDuplicates[Map[ToString, Replace[Lookup[raw, "Omit", {}], Except[_List] -> {}]]],
+      MemberQ[items, #] && ! KeyExistsQ[seen, #] && ! pinnedQ[#] &];
+    Scan[(seen[#] = True) &, omit]];
+  missing = Select[items, ! KeyExistsQ[seen, #] &];
+  Do[Module[{i = First[FirstPosition[items, x]], prev, gi},
+      prev = SelectFirst[Reverse[Take[items, i - 1]], KeyExistsQ[seen, #] && ! MemberQ[omit, #] &, None];
+      gi = If[prev === None, 1, First[FirstPosition[groups, gg_ /; MemberQ[gg["Members"], prev], {1}, {1}]]];
+      groups[[gi, "Members"]] = If[prev === None, Prepend[groups[[gi, "Members"]], x],
+        Insert[groups[[gi, "Members"]], x, First[FirstPosition[groups[[gi, "Members"]], prev]] + 1]];
+      seen[x] = True],
+    {x, missing}];
+  Do[With[{mem = g["Members"]},
+      If[Length[mem] === 1, AppendTo[next, First[mem]],
+        Module[{node = iSWTocStr[Lookup[g, "Node", ""]], id, lab = iSWTocStr[Lookup[g, "Label", ""]], gist = iSWTocStr[Lookup[g, "Gist", ""]],
+            imp = Lookup[g, "Importance", None], inc = iSWTocStr[Lookup[g, "Include", ""]]},
+          id = If[MemberQ[secs, node] && ! MemberQ[used, node] && ! MemberQ[items, node] && ! KeyExistsQ[ch, node],
+            AppendTo[used, node]; node,
+            k++; While[KeyExistsQ[index, "toc" <> ToString[r] <> "_" <> ToString[k]] &&
+                ! TrueQ[Lookup[index["toc" <> ToString[r] <> "_" <> ToString[k]], "Toc", False]], k++];
+            "toc" <> ToString[r] <> "_" <> ToString[k]];
+          If[lab === "", lab = If[id === node, SourceVault`SourceVaultKGText[index[node], "Label"],
+            iSWTocOne[labOf[First[mem]], 12] <> " \:301c " <> iSWTocOne[labOf[Last[mem]], 12]]];
+          ch[id] = mem;
+          AppendTo[defs, <|"Id" -> id, "Label" -> lab, "Gist" -> gist, "Summary" -> iSWTocStr[Lookup[g, "Summary", ""]],
+            "Importance" -> If[NumericQ[imp], Clip[N[imp], {0., 1.}], 0.6],
+            "Include" -> If[StringContainsQ[ToLowerCase[inc], "must"], "Must", "Optional"]|>];
+          info[id] = <|"Label" -> lab, "Gist" -> gist|>;
+          AppendTo[next, id]]]],
+    {g, groups}];
+  Join[st, <|"Round" -> r + 1, "Items" -> next, "Children" -> ch, "Groups" -> defs, "Info" -> info, "Used" -> used,
+    "Omitted" -> Join[st["Omitted"], omit]|>]];
+
+(* \:6b21\:306e\:6bb5: \:6839\:306e\:5b50\:304c\:4e0a\:9650\:4ee5\:4e0b\:306b\:306a\:3063\:305f\:3089\:76ee\:6b21\:3092\:66f8\:304f\:3002LLM \:304c\:7121\:3051\:308c\:3070\:6b8b\:308a\:306f KG \:5c64\:304c\:9023\:7d9a\:3057\:305f\:584a\:306b\:5206\:3051\:308b *)
+iSWTocStep[st_Association] := Module[{kg, prompt},
+  If[Length[st["Items"]] <= st["D"] || st["Round"] > 8 || ! iSWLLMReadyQ[], Return[iSWTocFinish[st, ""]]];
+  kg = iSWKGResolve[st["Graph"]];
+  If[! AssociationQ[kg], Return[iSWTocFinish[st, ""]]];
+  prompt = If[st["Round"] === 1, iSWTocPromptLeaves[st["Spec"], kg, st["Items"], st["D"]], iSWTocPromptGroups[st["Spec"], kg, st]];
+  $iSWRefineBusy = True; $iSWRefineBusySince = AbsoluteTime[];
+  If[Head[st["NB"]] === NotebookObject,
+    iSWGenProgress[st["NB"], "\:76ee\:6b21: \:7b2c " <> ToString[st["Round"]] <> " \:6bb5 (" <> ToString[Length[st["Items"]]] <> " \:500b\:3092\:307e\:3068\:3081\:308b) \:3092 LLM \:306b\:554f\:3044\:5408\:308f\:305b\:4e2d\[Ellipsis]",
+      "Table of contents: asking the LLM for level " <> ToString[st["Round"]] <> " (" <> ToString[Length[st["Items"]]] <> " items)..."]];
+  With[{s = st},
+    NBAccess`$NBLLMQueryFunc[prompt, Function[resp, iSWTocReceive[s, resp]], s["NB"], Fallback -> iSWFallback[], PrivacyLevel -> s["PL"]]];
+  <|"Status" -> "Submitted", "Graph" -> st["Graph"], "Round" -> st["Round"], "Items" -> Length[st["Items"]], "PrivacyLevel" -> st["PL"]|>];
+
+iSWTocReceive[st_Association, resp_] := Module[{kg, json, raw, st2},
+  $iSWRefineBusy = False;
+  kg = iSWKGResolve[st["Graph"]];
+  json = If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"], iSWRefineExtractJSON[resp], $Failed];
+  raw = If[StringQ[json], Quiet @ Check[Developer`ReadRawJSONString[json], $Failed], $Failed];
+  st2 = If[AssociationQ[kg] && AssociationQ[raw], iSWTocApplyRound[st, raw, kg], $Failed];
+  Which[
+    AssociationQ[st2] && Length[st2["Items"]] < Length[st["Items"]], iSWTocStep[st2],
+    AssociationQ[st2], iSWTocFinish[st2, iSL["\:7b2c " <> ToString[st["Round"]] <> " \:6bb5\:3067\:6570\:304c\:6e1b\:3089\:305a\:3001\:6b8b\:308a\:306f\:6a5f\:68b0\:7684\:306b\:307e\:3068\:3081\:305f",
+      "level " <> ToString[st["Round"]] <> " did not reduce; the rest was grouped mechanically"]],
+    st["Round"] === 1, iSWTocMechanical[st, iSL["LLM \:306e\:5fdc\:7b54\:304c\:8aad\:3081\:305a\:3001\:8cc7\:6599\:306e\:69cb\:9020\:304b\:3089\:6a5f\:68b0\:7684\:306b\:4f5c\:3063\:305f", "no readable LLM reply; built from the sources' structure"]],
+    True, iSWTocFinish[st, iSL["\:7b2c " <> ToString[st["Round"]] <> " \:6bb5\:306e\:5fdc\:7b54\:304c\:8aad\:3081\:305a\:3001\:6b8b\:308a\:306f\:6a5f\:68b0\:7684\:306b\:307e\:3068\:3081\:305f",
+      "no readable reply at level " <> ToString[st["Round"]] <> "; the rest was grouped mechanically"]]]];
+
+iSWTocDone[st_Association, kg2_, method_String, note_String, extra_Association] := Module[{saved, msg, root, parts},
+  If[! AssociationQ[kg2],
+    msg = iSL["\:76ee\:6b21\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f: ", "Could not build the table of contents: "] <> ToString[kg2];
+    iSWStatusIf[st["NB"], msg];
+    $iSWHierarchyLast = <|"Status" -> "Failed", "Graph" -> st["Graph"], "Message" -> msg|>;
+    If[st["Then"] =!= None, Quiet[st["Then"][]]]; Return[$iSWHierarchyLast]];
+  saved = SourceVault`SourceVaultKGSave[kg2];
+  root = Lookup[kg2, "Root", "root"];
+  parts = Lookup[kg2["Toc"]["Children"], root, {}];
+  msg = iSL["\:76ee\:6b21\:3092\:4f5c\:308a\:307e\:3057\:305f (" <> If[method === "LLM", "LLM \:304c\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b " <> ToString[st["Round"] - 1] <> " \:6bb5", "\:8cc7\:6599\:306e\:69cb\:9020\:304b\:3089\:6a5f\:68b0\:7684\:306b"] <>
+      "): \:6839\:306e\:4e0b\:306b " <> ToString[Length[parts]] <> " \:90e8 (\:5b50\:306f " <> ToString[st["D"]] <> " \:500b\:4ee5\:4e0b)" <>
+      If[st["Omitted"] =!= {}, "\:3001\:51fa\:3055\:306a\:3044\:9805\:76ee " <> ToString[Length[st["Omitted"]]] <> " \:500b", ""] <>
+      If[Lookup[extra, "Violations", {}] =!= {}, "\:3001\:524d\:63d0\:304c\:5faa\:74b0\:3057\:3066\:4e26\:3079\:66ff\:3048\:3089\:308c\:306a\:3044\:6240 " <> ToString[Length[extra["Violations"]]], ""] <>
+      "\:3002KG\:56f3\:306e\:300c\:968e\:5c64\:300d\:3067\:898b\:3089\:308c\:307e\:3059\:3002\:300c\:751f\:6210\:300d\:306f\:679a\:6570\:306b\:5408\:308f\:305b\:3066\:76ee\:6b21\:306e\:4e0a\:304b\:3089\:958b\:3044\:3066\:679a\:306b\:3057\:307e\:3059",
+    "Table of contents built (" <> If[method === "LLM", ToString[st["Round"] - 1] <> " levels by the LLM, bottom-up", "mechanically from the sources"] <>
+      "): " <> ToString[Length[parts]] <> " parts under the root (at most " <> ToString[st["D"]] <> " children each)" <>
+      If[st["Omitted"] =!= {}, ", " <> ToString[Length[st["Omitted"]]] <> " items left out", ""] <>
+      ". See the KG view \"Hierarchy\"; Generate opens the contents from the top as far as the slide count allows"] <>
+    If[note =!= "", " (" <> note <> ")", ""] <>
+    If[! StringQ[saved], iSL["\:3002\:4fdd\:5b58\:306b\:5931\:6557\:3057\:307e\:3057\:305f", ". Saving failed"], ""];
+  If[Head[st["NB"]] === NotebookObject, iSWGraphApplyNote[st["NB"], msg]];
+  $iSWHierarchyLast = Join[<|"Status" -> "Toc", "Method" -> method, "Graph" -> st["Graph"], "Rounds" -> st["Round"] - 1,
+    "Parts" -> parts, "Omitted" -> st["Omitted"], "Message" -> msg|>, extra];
+  If[st["Then"] =!= None, Quiet[st["Then"][]]];
+  $iSWHierarchyLast];
+
+iSWTocFinish[st_Association, note_String] := Module[{kg = iSWKGResolve[st["Graph"]], res},
+  If[! AssociationQ[kg], Return[iSWTocDone[st, kg, "LLM", note, <||>]]];
+  res = SourceVault`SourceVaultKGSetToc[kg, Append[st["Children"], Lookup[kg, "Root", "root"] -> st["Items"]],
+    "MaxDegree" -> st["D"], "Groups" -> st["Groups"], "Omitted" -> st["Omitted"], "Method" -> "LLM"];
+  If[! AssociationQ[res], Return[iSWTocDone[st, res, "LLM", note, <||>]]];
+  iSWTocDone[st, res["KG"], "LLM", note, <|"Added" -> res["Added"], "Split" -> res["Split"], "Violations" -> res["Violations"]|>]];
+
+iSWTocMechanical[st_Association, note_String] := Module[{kg = iSWKGResolve[st["Graph"]], res},
+  If[! AssociationQ[kg], Return[iSWTocDone[Append[st, "Round" -> 1], kg, "Mechanical", note, <||>]]];
+  res = SourceVault`SourceVaultKGMechanicalToc[kg, "MaxDegree" -> st["D"], "Strategy" -> st["Strategy"]];
+  If[! AssociationQ[res], Return[iSWTocDone[Append[st, "Round" -> 1], res, "Mechanical", note, <||>]]];
+  iSWTocDone[Join[st, <|"Round" -> 1, "Omitted" -> {}|>], res["KG"], "Mechanical",
+    If[note === "", iSL["LLM \:304c\:7121\:3044\:306e\:3067\:8cc7\:6599\:306e\:69cb\:9020\:304b\:3089\:6a5f\:68b0\:7684\:306b\:4f5c\:3063\:305f\:3002LLM \:304c\:4f7f\:3048\:308b\:3068\:304d\:306b\:300c\:968e\:5c64\:5316\:300d\:3067\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306e\:76ee\:6b21\:306b\:4f5c\:308a\:76f4\:305b\:307e\:3059",
+      "no LLM: built from the sources' structure; press Hierarchy with an LLM to rebuild it bottom-up"], note],
+    <|"Added" -> Join[res["Preview"], res["Added"]], "Violations" -> res["Violations"]|>]];
+
+(* \:300c\:751f\:6210\:300d\:306e\:524d\:306b\:76ee\:6b21\:3092\:4f5c\:308b\:304b: \:76ee\:6b21\:304c\:7121\:3044\:3001\:6a5f\:68b0\:7684\:306b\:4f5c\:3063\:305f\:76ee\:6b21\:3067\:4eca\:306f LLM \:304c\:3042\:308b\:3001\:76ee\:6b21\:3092\:4f5c\:3063\:305f\:3042\:3068\:306b\:8db3\:3055\:308c\:305f\:30ce\:30fc\:30c9\:304c\:591a\:3044 *)
+iSWTocDueQ[kg_Association] := Module[{t, known},
+  If[! SourceVault`SourceVaultKGTocQ[kg], Return[True]];
+  If[Lookup[kg["Toc"], "Method", ""] === "Mechanical" && iSWLLMReadyQ[], Return[True]];
+  t = Quiet @ Check[SourceVault`SourceVaultKGTocTree[kg], $Failed];
+  known = Length[Replace[Lookup[kg["Toc"], "Known", {}], Except[_List] -> {}]];
+  AssociationQ[t] && Length[Select[Lookup[t["Diagnostics"], "Inserted", {}], ! StringStartsQ[#, "adj_"] &]] > Max[8, 0.25 known]];
+iSWTocDueQ[_] := False;
+iSWHierarchyDue[nb_NotebookObject] := With[{kg = Quiet @ Check[iSWKGResolve[nb], $Failed]}, AssociationQ[kg] && iSWTocDueQ[kg]];
+
+(* \:8abf\:6574\:3067\:65e2\:5b58\:306e\:679a\:3092\:52d5\:304b\:3057\:305f\:3089 (After)\:3001\:76ee\:6b21\:306e\:4e2d\:3067\:3082\:52d5\:304b\:3059 *)
+iSWTocApplyMoves[gid_String, moves_List] := Module[{kg = iSWKGResolve[gid]},
+  If[! AssociationQ[kg] || ! SourceVault`SourceVaultKGTocQ[kg] || moves === {}, Return[Null]];
+  Do[kg = SourceVault`SourceVaultKGTocMove[kg, e["To"], e["From"]], {e, moves}];
+  SourceVault`SourceVaultKGSave[kg]];
+
+(* ---- v1.47: \:8a08\:7b97\:30ce\:30fc\:30c8 ----
+   \:7d20\:6750 (\:8ad6\:6587\:30fb\:8cc7\:6599\:30fb\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30fbSourceVault \:306e\:6587\:66f8\:30fbKG \:306e\:30ce\:30fc\:30c9) \:304b\:3089\:3001Mathematica \:306e\:8a08\:7b97\:3068\:305d\:306e\:7d50\:679c\:3092\:307e\:3068\:3081\:305f\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:4f5c\:308b\:3002
+   1 \:672c\:306e\:8ad6\:6587\:306a\:3089\:4e00\:672c\:9053\:306b\:306a\:308b\:304c\:3001\:8907\:6570\:306e\:7d20\:6750\:306a\:3089\:8a71\:984c\:3054\:3068\:306b\:307e\:3068\:307e\:308b\:3002\:30ce\:30fc\:30c8\:306f SourceVault \:304c\:7ba1\:7406\:3057 (sv://computenb/<Id>\:3001PL \:306f\:7d20\:6750\:304b\:3089)\:3001
+   \:6587\:732e\:306b\:8ffd\:8a18\:3055\:308c\:3066 KG \:306e\:7d20\:6750\:306b\:306a\:308b\:3002\:30bb\:30eb\:306e\:5358\:4f4d (CellTags "CNU:<unit>") \:306f KG \:306e\:30ce\:30fc\:30c9\:306b\:306a\:308a\:3001\:30ce\:30fc\:30c8\:306e\:30bb\:30eb\:306e\:4e26\:3073\:306f 1 \:3064\:306e
+   \:30b9\:30c8\:30fc\:30ea\:30fc\:3068\:3057\:3066\:81ea\:5206\:306e KG (GraphId = Id\:3001Kind Notebook) \:3092\:6301\:3064\:306e\:3067\:3001\:5358\:4f4d\:3092\:4ed6\:306e KG \:3067\:518d\:5229\:7528\:3067\:304d\:308b (SlideGraphReuse)\:3002
+   \:66f8\:304d\:8fbc\:307f\:306e\:5165\:53e3\:306f SlideComputeAdd \:3060\:3051\:3002\:30b3\:30fc\:30c9\:306f\:6587\:5b57\:5217\:3067\:53d7\:3051\:53d6\:308a\:3001\:30ce\:30fc\:30c8\:3054\:3068\:306e\:9694\:96e2\:6587\:8108\:3067\:8a55\:4fa1\:3059\:308b
+   (\:30d5\:30a1\:30a4\:30eb\:30fb\:30d7\:30ed\:30bb\:30b9\:30fb\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:30fb\:30af\:30e9\:30a6\:30c9\:30fb\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:30fbLLM\:30fb\:30b3\:30fc\:30c9\:306e\:7d44\:307f\:7acb\:3066\:306f\:62d2\:5426) *)
+If[! ValueQ[$SlideComputePackages], $SlideComputePackages = {"Ambisonics"}];
+If[! AssociationQ[$iSWCompute], $iSWCompute = <||>];
+If[! ValueQ[$iSWComputeCurrent], $iSWComputeCurrent = None];
+$iSWComputeLast = None;
+
+iSWComputeEnsure[] := Module[{dir, f},
+  If[Length[DownValues[SourceVault`SourceVaultRegisterComputeNotebook]] > 0, Return[True]];
+  dir = Which[
+    StringQ[Global`$packageDirectory] && DirectoryQ[Global`$packageDirectory], Global`$packageDirectory,
+    $iSWPackageDirectory =!= "", $iSWPackageDirectory, True, ""];
+  f = FileNameJoin[{dir, "SourceVault_papernb.wl"}];
+  If[dir =!= "" && FileExistsQ[f], Quiet @ Check[Block[{$CharacterEncoding = "UTF-8"}, Get[f]], Null]];
+  Length[DownValues[SourceVault`SourceVaultRegisterComputeNotebook]] > 0];
+iSWComputeFail[] := Failure["NoComputeRegistry", <|"MessageTemplate" ->
+  "SourceVault_papernb.wl (compute notebook registry) is not loaded"|>];
+
+(* \:9694\:96e2\:6587\:8108\:3067\:4f7f\:3048\:306a\:3044\:540d\:524d *)
+$iSWComputeDenyNames = {
+  "Import", "Export", "ImportString", "ImportByteArray", "Get", "Put", "PutAppend", "Save", "DumpSave", "DumpGet", "Needs",
+  "DeclarePackage", "BeginPackage", "EndPackage", "Begin", "End", "Install", "Uninstall", "OpenRead", "OpenWrite", "OpenAppend",
+  "Close", "Read", "ReadList", "ReadLine", "ReadString", "ReadByteArray", "BinaryRead", "BinaryReadList", "BinaryWrite", "Write",
+  "WriteString", "WriteLine", "Find", "FindList", "Skip", "StringToStream", "CreateFile", "CreateDirectory", "CreateTemporary",
+  "DeleteFile", "DeleteDirectory", "RenameFile", "RenameDirectory", "CopyFile", "CopyDirectory", "CopyToClipboard",
+  "FileNames", "FileExistsQ", "DirectoryQ", "FileDate", "SetFileDate", "FileInformation", "FileHash", "FileByteCount",
+  "SetDirectory", "ResetDirectory", "Directory", "NotebookDirectory", "FileSystemMap", "FileSystemScan", "Splice", "Encode",
+  "LocalObject", "LocalCache", "LocalSymbol", "PersistentSymbol", "PersistentValue", "PersistentObject", "InitializationValue",
+  "ResourceFunction", "ResourceObject", "ResourceData", "ResourceSearch", "ResourceSubmit", "ResourceRegister",
+  "PacletInstall", "PacletUninstall", "PacletUpdate", "PacletDataRebuild", "PacletSiteUpdate",
+  "Run", "RunProcess", "StartProcess", "KillProcess", "ProcessConnection", "ProcessInformation", "SystemProcesses",
+  "SystemProcessData", "ExternalEvaluate", "StartExternalSession", "ExternalSessions", "ExternalFunction", "ExternalObject",
+  "LibraryFunctionLoad", "LibraryLoad", "LibraryFunctionUnload", "LibraryUnload", "LinkLaunch", "LinkCreate", "LinkConnect",
+  "LinkWrite", "LinkRead", "LinkClose", "LinkActivate", "SystemOpen", "Environment", "SetEnvironment", "SystemCredential",
+  "Speak", "Beep", "EmitSound", "AudioPlay", "AudioCapture", "CurrentImage", "ImageCapture", "DeviceOpen", "DeviceRead",
+  "DeviceWrite", "DeviceExecute", "FindDevices",
+  "URLRead", "URLExecute", "URLFetch", "URLFetchAsynchronous", "URLSave", "URLSaveAsynchronous", "URLDownload",
+  "URLDownloadSubmit", "URLSubmit", "URLShorten", "HTTPRequest", "SendMail", "ServiceExecute", "ServiceConnect",
+  "ServiceSubmit", "ServiceDisconnect", "CloudDeploy", "CloudPut", "CloudGet", "CloudSave", "CloudExport", "CloudImport",
+  "CloudEvaluate", "CloudSubmit", "CloudObject", "CloudPublish", "CloudShare", "CloudConnect", "CloudDisconnect",
+  "CloudExpression", "CloudSymbol", "Databin", "DatabinAdd", "DatabinUpload", "CreateDatabin", "SocketConnect", "SocketOpen",
+  "SocketListen", "SocketReadMessage", "WebExecute", "StartWebSession", "WebSearch", "WebImageSearch", "WolframAlpha",
+  "Interpreter", "SemanticImport", "SemanticImportString", "SemanticInterpretation",
+  "LLMSynthesize", "LLMFunction", "LLMExampleFunction", "ChatEvaluate", "ChatSubmit", "ChatObject", "ImageSynthesize",
+  "RemoteEvaluate", "RemoteRun", "RemoteRunProcess", "RemoteConnect", "RemoteFile", "RemoteBatchSubmit",
+  "LaunchKernels", "CloseKernels", "ParallelEvaluate", "ParallelSubmit", "DistributeDefinitions", "LocalSubmit",
+  "SessionSubmit", "CreateScheduledTask", "RunScheduledTask", "ScheduledTask", "TaskExecute",
+  "FrontEndExecute", "FrontEndTokenExecute", "NotebookWrite", "NotebookPut", "NotebookGet", "NotebookOpen", "NotebookClose",
+  "NotebookSave", "NotebookRead", "NotebookFind", "NotebookApply", "NotebookDelete", "NotebookEvaluate", "NotebookImport",
+  "NotebookCreate", "CreateDocument", "CreateWindow", "CreatePalette", "CreateDialog", "DocumentNotebook", "PaletteNotebook",
+  "DialogNotebook", "Notebooks", "InputNotebook", "EvaluationNotebook", "SelectedNotebook", "EvaluationCell", "Cells",
+  "NextCell", "PreviousCell", "ParentCell", "SelectionMove", "SelectionEvaluate", "SelectionCreateCell", "SetSelectedNotebook",
+  "SetOptions", "CurrentValue", "MessageDialog", "ChoiceDialog", "DialogInput", "SystemDialogInput", "Input", "InputString",
+  "Print", "CellPrint", "Echo", "EchoFunction", "EchoLabel", "EchoTiming",
+  "ToExpression", "Symbol", "MakeExpression", "ToHeldExpression", "Uncompress", "BinaryDeserialize", "Deserialize",
+  "StringTemplate", "TemplateApply", "FileTemplate", "FileTemplateApply", "XMLTemplate", "TemplateObject",
+  "Unprotect", "ClearAttributes", "Quit", "Exit", "Abort", "Interrupt", "CompilationTarget"};
+$iSWComputeAllowedDollar = {"$MachinePrecision", "$MachineEpsilon", "$MaxMachineNumber", "$MinMachineNumber", "$Assumptions",
+  "$MaxExtraPrecision", "$MinPrecision", "$MaxPrecision", "$IterationLimit", "$RecursionLimit", "$Failed", "$Aborted"};
+
+iSWComputeContext[id_String] := "SWCompute" <> StringReplace[id, Except[LetterCharacter | DigitCharacter] -> ""] <> "`";
+iSWComputePkgContexts[pk_List] := Map[# <> "`" &, Select[pk, MemberQ[$SlideComputePackages, #] &]];
+iSWComputePath[st_Association] := Join[{"System`"}, iSWComputePkgContexts[st["Packages"]], {st["Context"]}];
+iSWComputeHeld[st_Association, code_String] := Block[{$Context = st["Context"], $ContextPath = iSWComputePath[st]},
+  (* \:8907\:6570\:884c\:306e\:30b3\:30fc\:30c9\:306f HoldComplete[e1, e2, ..] \:306b\:306a\:308b\:306e\:3067 1 \:3064\:306e CompoundExpression \:306b\:307e\:3068\:3081\:308b *)
+  (* Check \:306f\:4f7f\:308f\:306a\:3044: \:540c\:540d\:306e\:8a18\:53f7\:304c Global` \:306b\:3042\:308b\:3068 General::shdw \:304c\:51fa\:3066\:3001\:6b63\:3057\:3044\:30b3\:30fc\:30c9\:307e\:3067\:69cb\:6587\:30a8\:30e9\:30fc\:6271\:3044\:306b\:306a\:308b *)
+  Replace[If[SyntaxQ[code], Quiet[ToExpression[code, InputForm, HoldComplete]], $Failed],
+    HoldComplete[a_, b__] :> HoldComplete[CompoundExpression[a, b]]]];
+(* \:4f7f\:3048\:306a\:3044\:540d\:524d\:306e\:4e00\:89a7 ({} \:306a\:3089\:8a55\:4fa1\:3057\:3066\:3088\:3044) *)
+iSWComputeForbidden[st_Association, held_HoldComplete] := Module[{ctxs = iSWComputePkgContexts[st["Packages"]], syms, bad},
+  syms = DeleteDuplicates[Cases[held, s_Symbol :> {Context[s], SymbolName[Unevaluated[s]]}, {0, Infinity}, Heads -> True]];
+  bad = Select[syms, Function[cs, Which[
+    cs[[1]] === st["Context"], False,
+    MemberQ[ctxs, cs[[1]]], False,
+    cs[[1]] === "System`", MemberQ[$iSWComputeDenyNames, cs[[2]]] ||
+      (StringStartsQ[cs[[2]], "$"] && ! MemberQ[$iSWComputeAllowedDollar, cs[[2]]]),
+    True, True]]];
+  bad = Map[If[#[[1]] === "System`" || #[[1]] === st["Context"], #[[2]], #[[1]] <> #[[2]]] &, bad];
+  (* \:540d\:524d\:3092\:6587\:5b57\:5217\:3067\:6e21\:3057\:3066\:6d88\:3059 (ClearAll["Global`*"] \:306a\:3069) \:306e\:306f\:6587\:8108\:306e\:5916\:306b\:5c4a\:304f\:306e\:3067\:62d2\:5426 *)
+  If[! FreeQ[held, (Clear | ClearAll | Remove)[___, _String, ___]], AppendTo[bad, "Clear/ClearAll/Remove with a string"]];
+  bad];
+
+iSWComputeLoadPackages[st_Association, pk_List] := Module[{dir, out = st["Packages"], newCells = {}},
+  dir = Which[StringQ[Global`$packageDirectory] && DirectoryQ[Global`$packageDirectory], Global`$packageDirectory,
+    $iSWPackageDirectory =!= "", $iSWPackageDirectory, True, ""];
+  Do[If[MemberQ[$SlideComputePackages, p] && ! MemberQ[out, p],
+      With[{f = FileNameJoin[{dir, p <> ".wl"}]},
+        If[! MemberQ[$Packages, p <> "`"] && FileExistsQ[f],
+          Quiet @ Check[Block[{$CharacterEncoding = "UTF-8"}, Get[f]], Null]];
+        If[MemberQ[$Packages, p <> "`"] || Names[p <> "`*"] =!= {},
+          AppendTo[out, p];
+          AppendTo[newCells, Cell["Get[FileNameJoin[{$packageDirectory, \"" <> p <> ".wl\"}]]", "Input"]]]]],
+    {p, Select[iSWComputeList[pk], StringQ]}];
+  {out, newCells}];
+
+(* \:30b3\:30fc\:30c9\:3092\:8a55\:4fa1\:3059\:308b: <|"Status" -> "OK" | "Syntax" | "Forbidden" | "Timeout" | "Memory", "Value", "Names", "Messages", "Seconds"|> *)
+iSWComputeEval[st_Association, code_String, tlim_, mlim_] := Module[{held, bad, r, t0 = AbsoluteTime[], msgs = {}},
+  held = iSWComputeHeld[st, code];
+  If[Head[held] =!= HoldComplete, Return[<|"Status" -> "Syntax", "Names" -> {}|>]];
+  bad = iSWComputeForbidden[st, held];
+  If[bad =!= {}, Return[<|"Status" -> "Forbidden", "Names" -> bad|>]];
+  Block[{$Context = st["Context"], $ContextPath = iSWComputePath[st], $MessageList = {}},
+    r = TimeConstrained[MemoryConstrained[ReleaseHold[held], mlim, $iSWComputeOOM], tlim, $iSWComputeTimeout];
+    msgs = Map[ToString[#, InputForm] &, $MessageList]];
+  Which[
+    r === $iSWComputeTimeout, <|"Status" -> "Timeout", "Seconds" -> tlim, "Messages" -> msgs|>,
+    r === $iSWComputeOOM, <|"Status" -> "Memory", "Messages" -> msgs|>,
+    True, <|"Status" -> "OK", "Value" -> r, "Messages" -> msgs, "Seconds" -> Round[AbsoluteTime[] - t0, 0.01]|>]];
+
+iSWComputeGraphicsCount[c_] := Length[Cases[c, _GraphicsBox | _Graphics3DBox, Infinity]];
+iSWComputeShort[st_Association, v_] := Block[{$Context = st["Context"], $ContextPath = iSWComputePath[st]},
+  Which[
+    MatchQ[v, _Graphics | _Graphics3D | _Legended | _Graph], ToString[Head[v]],
+    ImageQ[v], "Image " <> ToString[ImageDimensions[v]],
+    True, With[{t = ToString[v, InputForm, PageWidth -> Infinity]}, If[StringLength[t] > 500, StringTake[t, 500] <> " ...", t]]]];
+iSWComputeTag[cells_List, u_String] := Map[iSWComputeTagCell[#, u] &, cells];
+iSWComputeTagCell[Cell[CellGroupData[cs_List, o___]], u_] := Cell[CellGroupData[iSWComputeTag[cs, u], o]];
+iSWComputeTagCell[Cell[a___], u_] := Cell[a, CellTags -> {"CNU:" <> u}];
+iSWComputeTagCell[x_, _] := x;
+iSWComputeFormulaCell[tex_String] := With[{bx = iSWInlineFormulaBoxes[StringTrim[tex]]},
+  If[bx === None, Cell[tex, "DisplayFormula"],
+    Cell[BoxData[If[MatchQ[bx, _FormBox], bx, FormBox[bx, TraditionalForm]]], "DisplayFormula", TaggingRules -> {"SWTeX" -> StringTrim[tex]}]]];
+(* \:4fdd\:5b58\:3057\:3066\:8aad\:307f\:76f4\:3059\:3068 CellTags -> {"CNU:u"} \:306f CellTags -> "CNU:u" \:306b\:306a\:308b\:3002\:3069\:3061\:3089\:3067\:3082\:63a2\:3059 *)
+iSWComputeUnitPos[cells_List, u_String] := Flatten[Position[cells,
+  c_ /; MemberQ[Flatten[Cases[{c}, (CellTags -> t_) :> t, Infinity]], "CNU:" <> u], {1}, Heads -> False]];
+
+iSWComputeNotebook[st_Association] := Notebook[st["Cells"], TaggingRules -> {"SWCompute" -> ExportString[
+    <|"Id" -> st["Id"], "URI" -> st["URI"], "Title" -> st["Title"], "Units" -> st["Units"], "Graph" -> st["DeckGraph"]|>, "RawJSON", "Compact" -> True]},
+  StyleDefinitions -> "Default.nb"];
+iSWComputeSave[st_Association] := Quiet @ Check[Export[st["File"], iSWComputeNotebook[st], "NB"], $Failed];
+
+iSWComputeState[ref_] := Module[{id = Which[ref === Automatic || ref === None, $iSWComputeCurrent,
+    StringQ[ref] && StringStartsQ[ref, "sv://computenb/"], StringDrop[ref, StringLength["sv://computenb/"]], True, ref]},
+  If[StringQ[id] && KeyExistsQ[$iSWCompute, id], $iSWCompute[id], None]];
+iSWComputeNoState[ref_] := Failure["NoComputeNotebook", <|"MessageTemplate" ->
+  "no compute notebook `1` is open: start with SlideComputeNew[title] or SlideComputeOpen[ref]", "MessageParameters" -> {ref}|>];
+iSWComputeDeck[opt_] := Replace[opt, Automatic :> With[{n = Quiet @ Check[iSWResolveTargetNb[], $Failed]},
+  If[Head[n] === NotebookObject, n, None]]];
+
+Options[SlideComputeNew] = {"Notebook" -> Automatic, "Sources" -> Automatic, "PrivacyLevel" -> Automatic, "Language" -> Automatic,
+  "Path" -> Automatic, "Intro" -> None};
+SlideComputeNew[title_String, OptionsPattern[]] := Module[{deck, spec, refs, srcs, id, path, st, lang, reg, k = 0},
+  If[! iSWComputeEnsure[], Return[iSWComputeFail[]]];
+  deck = iSWComputeDeck[OptionValue["Notebook"]];
+  spec = If[Head[deck] === NotebookObject, Quiet @ Check[SlideGraphSpec[deck], $iSWStoryDefaults], $iSWStoryDefaults];
+  refs = If[Head[deck] === NotebookObject, Quiet @ Check[iSWReferencesList[deck], {}], {}];
+  srcs = Replace[OptionValue["Sources"], Automatic :> Map[<|"Key" -> #["Key"], "Ref" -> #["Locator"]|> &,
+    Select[Replace[refs, Except[_List] -> {}], AssociationQ[#] && Lookup[#, "Kind", ""] =!= "Compute" &]]];
+  id = "cnb-" <> StringTake[IntegerString[Hash[title <> DateString["ISODateTime"] <> ToString[$SessionID], "SHA256"], 16, 64], 8];
+  While[AssociationQ[SourceVault`SourceVaultComputeNotebookEntry[id]] && k < 20,
+    k++; id = "cnb-" <> StringTake[IntegerString[Hash[title <> ToString[k] <> DateString["ISODateTime"], "SHA256"], 16, 64], 8]];
+  path = Replace[OptionValue["Path"], Automatic :> SourceVault`SourceVaultComputeNotebookPath[title, id]];
+  lang = iSWKGLangCode[Replace[OptionValue["Language"], Automatic :> Lookup[spec, "Language", "ja"]]];
+  st = <|"Id" -> id, "URI" -> "sv://computenb/" <> id, "File" -> path, "Title" -> title,
+    "Cells" -> Join[{Cell[title, "Title"]}, If[StringQ[OptionValue["Intro"]], {Cell[iSWInlineTextData[OptionValue["Intro"]], "Text"]}, {}]],
+    "Units" -> <||>, "Counter" -> 0, "Context" -> iSWComputeContext[id], "Packages" -> {}, "Deck" -> deck,
+    "DeckGraph" -> Replace[Lookup[spec, "Graph", None], Except[_String] -> ""], "Sources" -> srcs, "Language" -> lang,
+    "PrivacyLevel" -> OptionValue["PrivacyLevel"]|>;
+  If[! StringQ[iSWComputeSave[st]], Return[Failure["SaveFailed", <|"MessageTemplate" -> "could not write `1`", "MessageParameters" -> {path}|>]]];
+  reg = SourceVault`SourceVaultRegisterComputeNotebook[path, "Id" -> id, "Title" -> title, "Sources" -> srcs, "Language" -> lang,
+    "PrivacyLevel" -> OptionValue["PrivacyLevel"], "Status" -> "Building", "Units" -> 0];
+  If[! AssociationQ[reg], Return[reg]];
+  $iSWCompute[id] = st; $iSWComputeCurrent = id;
+  <|"Id" -> id, "URI" -> st["URI"], "File" -> path, "PrivacyLevel" -> reg["PrivacyLevel"]|>];
+
+(* \:65e2\:5b58\:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:958b\:3044\:3066\:7d9a\:304d\:3092\:66f8\:304f\:3002ref = Id / sv://computenb/<Id> / \:30d5\:30a1\:30a4\:30eb / \:6587\:732e\:306e key\:3002"Replay" -> True \:3067\:65e2\:5b58\:306e\:30b3\:30fc\:30c9\:3092
+   \:8a55\:4fa1\:3057\:76f4\:3057\:3066\:5b9a\:7fa9\:3092\:623b\:3059 *)
+Options[SlideComputeOpen] = {"Replay" -> True, "Notebook" -> Automatic};
+SlideComputeOpen[ref_String, OptionsPattern[]] := Module[{deck, r = ref, e, path, nb, meta, j, st, units, cnt, replayed = 0, failed = {}},
+  If[! iSWComputeEnsure[], Return[iSWComputeFail[]]];
+  deck = iSWComputeDeck[OptionValue["Notebook"]];
+  If[Head[deck] === NotebookObject && ! iSWComputeRefQ[r] && ! StringEndsQ[r, ".nb", IgnoreCase -> True],
+    With[{hit = SelectFirst[Quiet @ Check[iSWReferencesList[deck], {}], #["Key"] === r &, None]}, If[AssociationQ[hit], r = hit["Locator"]]]];
+  e = SourceVault`SourceVaultComputeNotebookEntry[r];
+  If[! AssociationQ[e], Return[Failure["NotRegistered", <|"MessageTemplate" -> "`1` is not a registered compute notebook (SlideComputeRegister)",
+    "MessageParameters" -> {ref}|>]]];
+  path = e["Notebook"];
+  nb = If[StringQ[path] && FileExistsQ[path], iGetNotebook[path], $Failed];
+  If[Head[nb] =!= Notebook, Return[Failure["NoFile", <|"MessageTemplate" -> "cannot read `1`", "MessageParameters" -> {path}|>]]];
+  meta = With[{tr = iSWRulesAssoc[Lookup[iSWRulesAssoc[List @@ Rest[nb]], TaggingRules, {}]]},
+    j = Lookup[tr, "SWCompute", None]; If[StringQ[j], Quiet @ Check[Developer`ReadRawJSONString[j], <||>], <||>]];
+  If[! AssociationQ[meta], meta = <||>];
+  units = Replace[Lookup[meta, "Units", <||>], Except[_Association] -> <||>];
+  cnt = Max[Prepend[Select[Map[Quiet @ Check[ToExpression[StringDrop[#, 1]], 0] &, Select[Keys[units], StringMatchQ[#, "u" ~~ DigitCharacter ..] &]], IntegerQ], 0]];
+  st = <|"Id" -> e["Id"], "URI" -> e["URI"], "File" -> path, "Title" -> Lookup[e, "Title", FileBaseName[path]],
+    "Cells" -> First[nb], "Units" -> units, "Counter" -> cnt, "Context" -> iSWComputeContext[e["Id"]], "Packages" -> {},
+    "Deck" -> deck, "DeckGraph" -> Replace[Lookup[meta, "Graph", ""], Except[_String] -> ""],
+    "Sources" -> Replace[Lookup[e, "Sources", {}], Except[_List] -> {}], "Language" -> Lookup[e, "Language", "ja"],
+    "PrivacyLevel" -> Lookup[e, "PrivacyLevel", Automatic]|>;
+  (* \:4f7f\:3063\:3066\:3044\:305f\:30d1\:30c3\:30b1\:30fc\:30b8\:3092\:8aad\:307f\:3001\:65e2\:5b58\:306e\:30b3\:30fc\:30c9\:3092\:9806\:306b\:8a55\:4fa1\:3057\:76f4\:3059 *)
+  st["Packages"] = First[iSWComputeLoadPackages[st, Select[$SlideComputePackages,
+    Function[p, ! FreeQ[First[nb], s_String /; StringContainsQ[s, p <> ".wl"]]]]]];
+  If[TrueQ[OptionValue["Replay"]],
+    Do[With[{code = Lookup[iSWRulesAssoc[iSWCellOpt[c, TaggingRules]], "SWCode", None]},
+        If[StringQ[code], With[{ev = iSWComputeEval[st, code, 120, 4*^9]},
+          If[ev["Status"] === "OK", replayed++, AppendTo[failed, iSWCellUnitTag[c]]]]]],
+      {c, Select[iFlattenCells[First[nb]], iSWSourceCellStyle[#] === "Input" &]}]];
+  $iSWCompute[st["Id"]] = st; $iSWComputeCurrent = st["Id"];
+  <|"Id" -> st["Id"], "URI" -> st["URI"], "File" -> path, "Units" -> Keys[units], "Replayed" -> replayed, "ReplayFailed" -> failed|>];
+
+(* 1 \:5358\:4f4d\:3092\:66f8\:304f: <|"Section" | "Subsection" -> \:898b\:51fa\:3057, "Text" -> \:8aac\:660e (\:6587\:5b57\:5217\:304b\:5217\:3002$tex$ \:53ef), "Formula" -> TeX (\:6587\:5b57\:5217\:304b\:5217),
+   "Code" -> Mathematica \:306e\:30b3\:30fc\:30c9 (\:6587\:5b57\:5217), "Caption" -> \:56f3\:306e\:8aac\:660e, "After" -> \:7d50\:679c\:306e\:5f8c\:306e\:8aac\:660e, "Nodes" -> {KG \:30ce\:30fc\:30c9 Id}, "Refs" -> {\:6587\:732e key},
+   "Packages" -> {$SlideComputePackages \:306e\:540d\:524d}, "Replace" -> \:66f8\:304d\:76f4\:3059\:5358\:4f4d, "TimeLimit" -> \:79d2 (\:65e2\:5b9a 60), "MemoryLimit" -> \:30d0\:30a4\:30c8|> *)
+SlideComputeAdd[spec_Association] := SlideComputeAdd[Automatic, spec];
+SlideComputeAdd[ref_, spec0_Association] := Module[{st = iSWComputeState[ref], spec = KeyMap[ToString, spec0], u, ev = None, cells = {},
+    pkCells = {}, fig0, figs = {}, capN = None, out, code, links, refs, pos, info, res},
+  If[! AssociationQ[st], Return[iSWComputeNoState[ref]]];
+  u = With[{rp = Lookup[spec, "Replace", None]}, If[StringQ[rp] && KeyExistsQ[st["Units"], rp], rp, None]];
+  If[Lookup[spec, "Packages", {}] =!= {},
+    With[{lp = iSWComputeLoadPackages[st, iSWComputeList[spec["Packages"]]]}, st["Packages"] = lp[[1]]; pkCells = lp[[2]]]];
+  code = Lookup[spec, "Code", None];
+  If[StringQ[code] && StringTrim[code] =!= "",
+    ev = iSWComputeEval[st, code, Replace[Lookup[spec, "TimeLimit", 60], Except[_?Positive] -> 60],
+      Replace[Lookup[spec, "MemoryLimit", 4*^9], Except[_?Positive] -> 4*^9]];
+    If[ev["Status"] =!= "OK",
+      Return[Failure["ComputeFailed", <|"MessageTemplate" -> "the code was not run: `1` `2`",
+        "MessageParameters" -> {ev["Status"], StringRiffle[ToString /@ Lookup[ev, "Names", {}], ", "]},
+        "Reason" -> ev["Status"], "Names" -> Lookup[ev, "Names", {}], "Messages" -> Lookup[ev, "Messages", {}]|>]]]];
+  If[u === None, st["Counter"] = st["Counter"] + 1; u = "u" <> IntegerString[st["Counter"], 10, 3]];
+  If[StringQ[Lookup[spec, "Section", None]], AppendTo[cells, Cell[spec["Section"], "Section"]]];
+  If[StringQ[Lookup[spec, "Subsection", None]], AppendTo[cells, Cell[spec["Subsection"], "Subsection"]]];
+  cells = Join[cells, pkCells];
+  Do[AppendTo[cells, Cell[iSWInlineTextData[t], "Text"]], {t, Select[iSWComputeList[Lookup[spec, "Text", {}]], StringQ[#] && StringTrim[#] =!= "" &]}];
+  Do[AppendTo[cells, iSWComputeFormulaCell[t]], {t, Select[iSWComputeList[Lookup[spec, "Formula", {}]], StringQ[#] && StringTrim[#] =!= "" &]}];
+  (* \:56f3\:756a\:53f7\:306f seed \:3068\:540c\:3058\:6570\:3048\:65b9 (\:30ce\:30fc\:30c8\:306e GraphicsBox \:306e\:901a\:3057\:756a\:53f7)\:3002\:66f8\:304d\:76f4\:3059\:3068\:304d\:306f\:305d\:306e\:5358\:4f4d\:3088\:308a\:524d\:306e\:6570 *)
+  pos = iSWComputeUnitPos[st["Cells"], u];
+  fig0 = iSWComputeGraphicsCount[If[pos === {}, st["Cells"], Take[st["Cells"], First[pos] - 1]]] + iSWComputeGraphicsCount[cells];
+  If[AssociationQ[ev],
+    out = If[ev["Value"] === Null, None,
+      Block[{$Context = st["Context"], $ContextPath = iSWComputePath[st]},
+        If[! MatchQ[ev["Value"], _Graphics | _Graphics3D | _Legended | _Graph | _Image] && LeafCount[ev["Value"]] > 20000,
+          ToBoxes[Short[ev["Value"], 12], StandardForm], ToBoxes[ev["Value"], StandardForm]]]];
+    AppendTo[cells, Cell[CellGroupData[Join[{Cell[code, "Input", TaggingRules -> {"SWCode" -> code}]},
+      If[out === None, {}, {Cell[BoxData[out], "Output"]}]], Open]]];
+    With[{n = If[out === None, 0, iSWComputeGraphicsCount[Cell[BoxData[out], "Output"]]]},
+      If[n > 0, figs = Range[fig0 + 1, fig0 + n]; capN = fig0 + n]]];
+  If[StringQ[Lookup[spec, "Caption", None]] && StringTrim[spec["Caption"]] =!= "",
+    AppendTo[cells, Cell[If[IntegerQ[capN], "\:56f3 " <> ToString[capN] <> " | " <> spec["Caption"], spec["Caption"]], "Text"]]];
+  Do[AppendTo[cells, Cell[iSWInlineTextData[t], "Text"]], {t, Select[iSWComputeList[Lookup[spec, "After", {}]], StringQ[#] && StringTrim[#] =!= "" &]}];
+  If[cells === {}, Return[Failure["EmptyUnit", <|"MessageTemplate" -> "nothing to write (give Text, Formula, Code or a heading)"|>]]];
+  cells = iSWComputeTag[cells, u];
+  links = Map[If[StringContainsQ[#, "#"] || st["DeckGraph"] === "", #, st["DeckGraph"] <> "#" <> #] &,
+    Select[iSWComputeList[Lookup[spec, "Nodes", {}]], StringQ]];
+  refs = Select[iSWComputeList[Lookup[spec, "Refs", {}]], StringQ];
+  info = <|"Links" -> links, "Refs" -> refs, "Figure" -> Replace[capN, Except[_Integer] -> Null]|>;
+  st["Cells"] = If[pos === {}, Join[st["Cells"], cells],
+    Join[Take[st["Cells"], First[pos] - 1], cells, Delete[Drop[st["Cells"], First[pos] - 1], List /@ (pos - First[pos] + 1)]]];
+  st["Units"] = If[KeyExistsQ[st["Units"], u], ReplacePart[st["Units"], Key[u] -> info], Append[st["Units"], u -> info]];
+  $iSWCompute[st["Id"]] = st;
+  res = iSWComputeSave[st];
+  <|"Status" -> If[StringQ[res], "OK", "SaveFailed"], "Unit" -> u, "Figures" -> figs, "Caption" -> capN,
+    "Result" -> If[AssociationQ[ev], iSWComputeShort[st, ev["Value"]], None],
+    "Messages" -> If[AssociationQ[ev], ev["Messages"], {}], "Seconds" -> If[AssociationQ[ev], ev["Seconds"], 0]|>];
+
+(* \:6587\:732e\:306b\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:8db3\:3059 (\:540c\:3058 URI \:304c\:3042\:308c\:3070\:4f55\:3082\:3057\:306a\:3044)\:3002\:65e2\:5b58\:306e\:884c\:306e locator \:304c\:540c\:3058\:30d5\:30a1\:30a4\:30eb\:306a\:3089\:305d\:306e locator \:3092 URI \:306b\:7f6e\:304d\:63db\:3048\:308b *)
+iSWComputeReferenceLine[deck_NotebookObject, uri_String, title_String, file_String] := Module[{cells, c, old, txt, refs, key, line, newTxt},
+  cells = Quiet @ Check[Cells[deck, CellStyle -> "References"], {}];
+  If[cells === {}, Return["NoReferencesCell"]];
+  c = Last[cells]; old = NotebookRead[c];
+  txt = Which[MatchQ[old, Cell[_String, ___]], old[[1]], MatchQ[old, Cell[_TextData, ___]], iCellText[old], True, None];
+  If[! StringQ[txt], Return["Unreadable"]];
+  refs = Quiet @ Check[iSWReferencesList[deck], {}];
+  If[AnyTrue[refs, #["Locator"] === uri &], Return["Exists"]];
+  newTxt = Which[
+    StringContainsQ[txt, file], StringReplace[txt, file -> uri],
+    True,
+      key = SelectFirst[Join[{"COMPUTE"}, Table["COMPUTE" <> ToString[k], {k, 2, 20}]], ! MemberQ[Lookup[refs, "Key", {}], #] &, "COMPUTE"];
+      line = "[" <> key <> "] " <> uri <> " | " <> "\:8a08\:7b97\:30ce\:30fc\:30c8: " <> title;
+      StringTrim[txt, "\n"] <> "\n" <> line];
+  NotebookWrite[c, Cell[newTxt, Sequence @@ Rest[old]]];
+  If[StringContainsQ[txt, file], "Replaced", "Added"]];
+
+(* \:30ce\:30fc\:30c8\:306e KG (\:30bb\:30eb\:306e\:4e26\:3073 = 1 \:3064\:306e\:30b9\:30c8\:30fc\:30ea\:30fc)\:3002GraphId = Id\:3001Kind Notebook\:3001\:30ce\:30fc\:30c9\:306e\:8cc7\:7523\:306e\:53c2\:7167\:306f URI \:306a\:306e\:3067\:3069\:306e KG \:304b\:3089\:3082\:89e3\:3051\:308b *)
+SlideComputeGraph[ref_String] := Module[{e, seed, kg, saved},
+  If[! iSWComputeEnsure[], Return[iSWComputeFail[]]];
+  If[! iSWKGEnsure[], Return[iSWKGFail[]]];
+  e = SourceVault`SourceVaultComputeNotebookEntry[ref];
+  If[! AssociationQ[e], Return[Failure["NotRegistered", <|"MessageTemplate" -> "`1` is not a registered compute notebook", "MessageParameters" -> {ref}|>]]];
+  seed = SlideGraphSeed[e["URI"], "Graph" -> e["Id"], "Notebook" -> None, "Save" -> False, "Keep" -> None, "Title" -> Lookup[e, "Title", Automatic]];
+  If[! AssociationQ[seed], Return[seed]];
+  kg = seed["KG"]; kg["Kind"] = "Notebook"; kg["Compute"] = <|"Id" -> e["Id"], "URI" -> e["URI"]|>;
+  saved = SourceVault`SourceVaultKGSave[kg];
+  <|"Graph" -> e["Id"], "NodeCount" -> Length[kg["Nodes"]], "Units" -> DeleteDuplicates[Cases[Lookup[Lookup[kg["Nodes"], "Source", <||>], "Unit", None], _String]],
+    "Saved" -> StringQ[saved]|>];
+
+(* \:66f8\:304d\:7d42\:3048\:308b: \:4fdd\:5b58\:3001SourceVault \:306e\:767b\:9332\:3092\:66f4\:65b0\:3001\:30ce\:30fc\:30c8\:306e KG\:3001\:6587\:732e\:3078\:306e\:8ffd\:8a18\:3001\:30ce\:30fc\:30c8\:3092\:958b\:304f *)
+Options[SlideComputeFinish] = {"Graph" -> True, "Reference" -> True, "Open" -> Automatic};
+SlideComputeFinish[opts : OptionsPattern[]] := SlideComputeFinish[Automatic, opts];
+SlideComputeFinish[ref_, OptionsPattern[]] := Module[{st = iSWComputeState[ref], reg, g = None, refRes = None},
+  If[! AssociationQ[st], Return[iSWComputeNoState[ref]]];
+  If[! StringQ[iSWComputeSave[st]], Return[Failure["SaveFailed", <|"MessageTemplate" -> "could not write `1`", "MessageParameters" -> {st["File"]}|>]]];
+  reg = SourceVault`SourceVaultRegisterComputeNotebook[st["File"], "Id" -> st["Id"], "Title" -> st["Title"], "Sources" -> st["Sources"],
+    "Language" -> st["Language"], "PrivacyLevel" -> st["PrivacyLevel"], "Units" -> Length[st["Units"]], "Status" -> "OK"];
+  If[TrueQ[OptionValue["Graph"]], g = SlideComputeGraph[st["Id"]]];
+  If[TrueQ[OptionValue["Reference"]] && Head[st["Deck"]] === NotebookObject,
+    refRes = Quiet @ Check[iSWComputeReferenceLine[st["Deck"], st["URI"], st["Title"], st["File"]], "Failed"]];
+  If[OptionValue["Open"] =!= False && $FrontEnd =!= Null && TrueQ[Quiet[$Notebooks]],
+    Quiet @ Check[Scan[If[Quiet[NotebookFileName[#]] === st["File"], NotebookClose[#, Interactive -> False]] &, Notebooks[]];
+      NotebookOpen[st["File"]], Null]];
+  $iSWComputeLast = <|"Id" -> st["Id"], "URI" -> st["URI"], "File" -> st["File"], "Units" -> Keys[st["Units"]],
+    "PrivacyLevel" -> If[AssociationQ[reg], reg["PrivacyLevel"], None], "Graph" -> g, "Reference" -> refRes|>;
+  If[Head[st["Deck"]] === NotebookObject,
+    iSWStatus[st["Deck"], iSL["\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:4fdd\:5b58\:3057\:307e\:3057\:305f: \:5358\:4f4d " <> ToString[Length[st["Units"]]] <> " \:500b\:3001" <> st["URI"] <> " (\:6587\:732e\:306b\:8ffd\:8a18)\:3002KG\:69cb\:7bc9\:3067\:7d20\:6750\:306b\:306a\:308a\:307e\:3059",
+      "Compute notebook saved: " <> ToString[Length[st["Units"]]] <> " units, " <> st["URI"] <> " (added to References)"]]];
+  $iSWComputeLast];
+
+(* \:65e2\:306b\:3042\:308b\:8a08\:7b97\:30ce\:30fc\:30c8 (\:4f8b: \:30c7\:30c3\:30ad\:3068\:540c\:3058\:30d5\:30a9\:30eb\:30c0\:306e\:30ce\:30fc\:30c8) \:3092 SourceVault \:306b\:767b\:9332\:3057\:3001\:30ce\:30fc\:30c8\:306e KG \:3092\:4f5c\:308a\:3001\:6587\:732e\:306e\:884c\:3092\:30d5\:30a1\:30a4\:30eb\:304b\:3089 URI \:306b\:66ff\:3048\:308b *)
+Options[SlideComputeRegister] = {"Title" -> Automatic, "Sources" -> Automatic, "PrivacyLevel" -> Automatic, "Copy" -> False,
+  "Notebook" -> Automatic, "Graph" -> True};
+SlideComputeRegister[path_String, OptionsPattern[]] := Module[{deck, refs, srcs, abs, title, reg, g = None, refRes = None},
+  If[! iSWComputeEnsure[], Return[iSWComputeFail[]]];
+  abs = With[{a = Quiet @ AbsoluteFileName[path]}, If[StringQ[a], a, path]];
+  If[! FileExistsQ[abs], Return[Failure["NoFile", <|"MessageTemplate" -> "`1` does not exist", "MessageParameters" -> {path}|>]]];
+  deck = iSWComputeDeck[OptionValue["Notebook"]];
+  refs = If[Head[deck] === NotebookObject, Quiet @ Check[iSWReferencesList[deck], {}], {}];
+  srcs = Replace[OptionValue["Sources"], Automatic :> Map[<|"Key" -> #["Key"], "Ref" -> #["Locator"]|> &,
+    Select[Replace[refs, Except[_List] -> {}], AssociationQ[#] && ! MemberQ[{"Compute", "Notebook"}, Lookup[#, "Kind", ""]] &]]];
+  title = Replace[OptionValue["Title"], Automatic :> With[{nb = iGetNotebook[abs]},
+    With[{t = If[Head[nb] === Notebook, FirstCase[First[nb], Cell[s_String, "Title", ___] :> s, None, Infinity], None]},
+      If[StringQ[t], t, FileBaseName[abs]]]]];
+  reg = SourceVault`SourceVaultRegisterComputeNotebook[abs, "Title" -> title, "Sources" -> srcs,
+    "PrivacyLevel" -> OptionValue["PrivacyLevel"], "Copy" -> OptionValue["Copy"]];
+  If[! AssociationQ[reg], Return[reg]];
+  If[TrueQ[OptionValue["Graph"]], g = SlideComputeGraph[reg["Id"]]];
+  If[Head[deck] === NotebookObject, refRes = Quiet @ Check[iSWComputeReferenceLine[deck, reg["URI"], title, abs], "Failed"]];
+  Join[KeyTake[reg, {"Id", "URI", "Notebook", "PrivacyLevel", "CloudPublishable"}], <|"Graph" -> g, "Reference" -> refRes|>]];
+
+SlideComputeList[] := If[iSWComputeEnsure[], SourceVault`SourceVaultComputeNotebooksView[], iSWComputeFail[]];
+
+(* \:4ed6\:306e KG \:306e\:30ce\:30fc\:30c9 (\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:5358\:4f4d\:306a\:3069) \:3092 KG \:306b\:53d6\:308a\:8fbc\:3080\:3002source \:306f GraphId \:304b\:8a08\:7b97\:30ce\:30fc\:30c8\:306e ref *)
+Options[SlideGraphReuse] = {"Parent" -> Automatic, "After" -> None, "Prefix" -> Automatic, "Subtree" -> True, "Pin" -> False};
+SlideGraphReuse[target_, source_String, ids_, opts : OptionsPattern[]] := Module[{tk, sk, sgid = source, r, saved},
+  If[! iSWKGEnsure[], Return[iSWKGFail[]]];
+  tk = iSWKGResolve[target];
+  If[! AssociationQ[tk], Return[tk]];
+  If[iSWComputeRefQ[source] && iSWComputeEnsure[],
+    With[{e = SourceVault`SourceVaultComputeNotebookEntry[source]}, If[AssociationQ[e], sgid = Lookup[e, "Graph", e["Id"]]]]];
+  sk = iSWKGResolve[sgid];
+  If[! AssociationQ[sk] && iSWComputeRefQ[source], With[{g = SlideComputeGraph[source]}, If[AssociationQ[g], sk = iSWKGResolve[g["Graph"]]]]];
+  If[! AssociationQ[sk], Return[sk]];
+  r = SourceVault`SourceVaultKGImportNodes[tk, sk, ids, Sequence @@ FilterRules[{opts}, Options[SourceVault`SourceVaultKGImportNodes]]];
+  If[! AssociationQ[r] || ! AssociationQ[r["KG"]], Return[r]];
+  saved = SourceVault`SourceVaultKGSave[r["KG"]];
+  <|"Graph" -> r["KG"]["GraphId"], "Added" -> r["Added"], "Map" -> r["Map"], "Linked" -> r["Linked"], "Saved" -> StringQ[saved]|>];
+
+(* \:30d1\:30ec\:30c3\:30c8\:300c\:8a08\:7b97\:30ce\:30fc\:30c8\:300d: \:7d20\:6750\:3068 KG \:3092\:8aad\:3093\:3067\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:4f5c\:308b\:4ed5\:4e8b\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:6e21\:3059 *)
+iSWComputeKGLines[kg_Association] := Module[{root = Lookup[kg, "Root", "root"], containers, ns},
+  containers = DeleteDuplicates[Lookup[Select[kg["Edges"], #["EdgeKind"] === "Contains" &], "From", {}]];
+  ns = Select[kg["Nodes"], #["Id"] =!= root && ! MemberQ[containers, #["Id"]] && ! TrueQ[Lookup[#, "Hidden", False]] &&
+    Replace[Lookup[#, "PrivacyLevel", 0.], Except[_?NumericQ] -> 0.] <= 0.5 &&
+    MemberQ[{"Concept", "Definition", "Equation", "Claim", "Method", "Result", "Figure", "Conclusion", "Background", "Example"}, Lookup[#, "Kind", ""]] &];
+  Map[#["Id"] <> " | " <> Lookup[#, "Kind", ""] <> " | " <> StringTake[SourceVault`SourceVaultKGText[#, "Label"], UpTo[50]] &,
+    Take[SortBy[ns, Replace[Lookup[#, "Order", None], Except[_?NumericQ] -> 10.^6] &], UpTo[160]]]];
+iSWComputeTask[spec_Association, refs_List, kg_, metaBlocks_String] := Module[{lang = Replace[Lookup[spec, "Language", "ja"], Except[_String] -> "ja"],
+    computeRefs, kgLines = {}, gid = Replace[Lookup[spec, "Graph", ""], Except[_String] -> ""]},
+  computeRefs = Select[refs, Lookup[#, "Kind", ""] === "Compute" &];
+  If[AssociationQ[kg], kgLines = iSWComputeKGLines[kg]];
+  metaBlocks <>
+  "SlideWorkflow \:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:4f5c\:6210\:30bf\:30b9\:30af\:3002\:3053\:306e\:30c7\:30c3\:30ad\:306e\:7d20\:6750 (References) \:3068 KG \:304b\:3089\:3001Mathematica \:306e\:8a08\:7b97\:3068\:305d\:306e\:7d50\:679c\:3092\:307e\:3068\:3081\:305f\:300c\:8a08\:7b97\:30ce\:30fc\:30c8\:300d\:3092\:4f5c\:308a\:3001SourceVault \:306b\:767b\:9332\:3059\:308b\:3002\:8a08\:7b97\:30ce\:30fc\:30c8\:306f KG \:306e\:7d20\:6750\:306b\:306a\:308a (\:78ba\:304b\:3081\:305f\:8a08\:7b97\:30fb\:5f0f\:30fb\:56f3\:304c\:679a\:306b\:306a\:308b)\:3001\:30bb\:30eb\:306e\:5358\:4f4d\:3054\:3068\:306b KG \:306e\:30ce\:30fc\:30c9\:3068\:3057\:3066\:4ed6\:306e KG \:3067\:3082\:518d\:5229\:7528\:3055\:308c\:308b\:3002\n\:767a\:8868: " <> If[StringQ[Lookup[spec, "Title", None]], spec["Title"], ""] <> "\n" <>
+  "\:8074\:304d\:624b: " <> ToString[Lookup[spec, "Audience", ""]] <> "\n" <>
+  If[StringQ[Lookup[spec, "Story", None]] && StringTrim[spec["Story"]] =!= "", "\:30b9\:30c8\:30fc\:30ea\:30fc\:6307\:793a: " <> spec["Story"] <> "\n", ""] <> "\n" <>
+  iSWReferencesBlockFromList[Select[refs, Lookup[#, "Kind", ""] =!= "Compute" &]] <>
+  If[computeRefs =!= {}, "=== \:65e2\:306b\:3042\:308b\:8a08\:7b97\:30ce\:30fc\:30c8 ===\n" <> StringRiffle[Map["[" <> #["Key"] <> "] " <> #["Locator"] &, computeRefs], ", "] <> "\n\:65b0\:3057\:304f\:4f5c\:3089\:305a SlideComputeOpen[\"<key>\"] \:3067\:958b\:3044\:3066\:3001\:8db3\:308a\:306a\:3044\:5358\:4f4d\:3092\:8db3\:3059 (\:65e2\:5b58\:306e\:5358\:4f4d\:3092\:76f4\:3059\:3068\:304d\:306f \"Replace\" -> \"<\:5358\:4f4d>\")\:3002\n\n", ""] <>
+  If[kgLines =!= {}, "=== \:65e2\:5b58\:306e KG (GraphId \"" <> gid <> "\"\:3002Id | \:7a2e\:985e | \:984c\:76ee)\:3002\:5358\:4f4d\:304c\:78ba\:304b\:3081\:308b\:30fb\:63cf\:304f\:30ce\:30fc\:30c9\:306e Id \:3092 Nodes \:306b\:66f8\:304f ===\n" <> StringRiffle[kgLines, "\n"] <> "\n\n", "(KG \:306f\:307e\:3060\:7121\:3044\:3002\:5358\:4f4d\:306f Refs \:306b\:6587\:732e\:306e key \:3068\:7bc0\:3092\:66f8\:3044\:3066\:7d20\:6750\:306b\:7d50\:3073\:4ed8\:3051\:308b)\n\n"] <>
+  "\:624b\:9806(\:53b3\:5b88):\n1. \:7d20\:6750\:3092\:8aad\:3080 (References \:306e\:8aad\:307f\:65b9\:306b\:5f93\:3046\:3002KG \:304c\:3042\:308c\:3070\:30ce\:30fc\:30c9\:3082\:53c2\:7167)\:3002\n2. \:8a08\:7b97\:306e\:5358\:4f4d\:3092\:6c7a\:3081\:308b: \:7d20\:6750\:306e\:6982\:5ff5\:30fb\:5f0f\:30fb\:4e3b\:5f35\:30fb\:56f3\:3054\:3068\:306b\:3001Mathematica \:306e\:7d44\:8fbc\:307f\:95a2\:6570\:3067\:53b3\:5bc6\:306b\:78ba\:304b\:3081\:308b (\:8a18\:53f7\:8a08\:7b97\:3067\:306e\:691c\:7b97: \:898f\:683c\:5316\:30fb\:76f4\:4ea4\:6027\:30fb\:56fa\:6709\:5024\:30fb\:6975\:9650\:306a\:3069)\:30fb\:63cf\:304f\:30fb\:6570\:5024\:3067\:793a\:3059\:5358\:4f4d\:3092\:4f5c\:308b\:30021 \:672c\:306e\:8ad6\:6587\:306a\:3089\:8ad6\:6587\:306e\:9806\:3067\:3088\:3044\:3002\:8907\:6570\:306e\:7d20\:6750\:306a\:3089\:8a71\:984c\:3054\:3068\:306b\:7bc0\:3092\:7acb\:3066 (\:66f8\:7c4d\:306e\:76ee\:6b21\:306e\:3088\:3046\:306b\:4e26\:3076\:7bc0\:304c\:4e26\:7acb\:3059\:308b)\:3001\:8cc7\:6599\:3092\:307e\:305f\:3044\:3067\:540c\:3058\:8a71\:984c\:306f 1 \:3064\:306e\:5358\:4f4d\:306b\:307e\:3068\:3081\:308b\:3002\:5b9a\:7fa9\:30fb\:524d\:63d0\:3092\:5148\:306b\:7f6e\:304f\:3002\n3. \:6700\:521d\:306b SlideComputeNew[\"<\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:984c\:540d>\"] \:3092 1 \:56de\:8a55\:4fa1\:3059\:308b (\:65e2\:306b\:3042\:308b\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:7d9a\:3051\:308b\:306a\:3089 SlideComputeOpen)\:3002\n4. \:5358\:4f4d\:3054\:3068\:306b\:3001\:307e\:305a\:666e\:901a\:306e\:8a55\:4fa1\:3067\:30b3\:30fc\:30c9\:3092\:8a66\:3057\:3066\:7d50\:679c\:304c\:6b63\:3057\:3044\:3053\:3068\:3092\:78ba\:304b\:3081\:3001\:305d\:308c\:304b\:3089 SlideComputeAdd[<|\"Section\" -> \"\:7bc0\:306e\:898b\:51fa\:3057 (\:7bc0\:306e\:6700\:521d\:306e\:5358\:4f4d\:3060\:3051)\", \"Text\" -> {\"\:8aac\:660e (40 \:5b57\:4ee5\:4e0a\:3002\:6570\:5f0f\:306f $..$)\"}, \"Formula\" -> \"TeX (\:8981\:308b\:3068\:304d\:3060\:3051)\", \"Code\" -> \"Mathematica \:306e\:30b3\:30fc\:30c9 (\:6587\:5b57\:5217)\", \"Caption\" -> \"\:56f3\:306e\:8aac\:660e (\:56f3\:3092\:51fa\:3059\:5358\:4f4d\:3060\:3051)\", \"Nodes\" -> {\"<KG \:30ce\:30fc\:30c9 Id>\"}, \"Refs\" -> {\"<\:6587\:732e key>\"}|>] \:3067\:66f8\:304f\:3002\:623b\:308a\:5024\:306e Status / Result / Figures / Messages \:3092\:78ba\:304b\:3081\:3001\:76f4\:3059\:3068\:304d\:306f \"Replace\" -> \"<Unit>\"\:3002\n5. \:5168\:90e8\:66f8\:3044\:305f\:3089 SlideComputeFinish[] \:3092\:8a55\:4fa1\:3059\:308b (\:4fdd\:5b58\:30fbSourceVault \:767b\:9332\:30fb\:30ce\:30fc\:30c8\:306e KG \:5316\:30fb\:6587\:732e\:3078\:306e\:8ffd\:8a18\:30fb\:30ce\:30fc\:30c8\:3092\:958b\:304f)\:3002\n" <> "\:898f\:5247:\n- Code \:306f\:6587\:5b57\:5217\:3002\:30ce\:30fc\:30c8\:3054\:3068\:306e\:9694\:96e2\:3057\:305f\:6587\:8108\:3067\:8a55\:4fa1\:3055\:308c\:3001\:524d\:306e\:5358\:4f4d\:306e\:5b9a\:7fa9\:306f\:305d\:306e\:30ce\:30fc\:30c8\:306e\:4e2d\:3067\:4f7f\:3048\:308b\:3002\:30d5\:30a1\:30a4\:30eb\:30fb\:30cd\:30c3\:30c8\:30ef\:30fc\:30af\:30fb\:5916\:90e8\:30d7\:30ed\:30bb\:30b9\:30fb\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:64cd\:4f5c\:30fbPrint\:30fbLLM\:30fbToExpression \:306a\:3069\:306f\:62d2\:5426\:3055\:308c\:308b (Status Forbidden)\:3002\:81ea\:4f5c\:30d1\:30c3\:30b1\:30fc\:30b8\:306f \"Packages\" -> {\"Ambisonics\"} \:306e\:3088\:3046\:306b $SlideComputePackages \:306e\:540d\:524d\:3067\:8aad\:3080\:3002\n- 1 \:5358\:4f4d\:306e\:8a55\:4fa1\:306f 60 \:79d2\:4ee5\:5185 (\"TimeLimit\" \:3067\:5ef6\:9577\:53ef)\:3002\:5de8\:5927\:306a\:5f0f\:306f N\:30fbShort\:30fbSimplify \:3067\:898b\:305b\:308b\:5f62\:306b\:3059\:308b\:3002\n- \:56f3\:306f 1 \:5358\:4f4d 1 \:679a\:3092\:57fa\:672c\:306b\:3001\:5fc5\:305a Caption \:3092\:4ed8\:3051\:308b (\:30ce\:30fc\:30c8\:306b\:306f\:300c\:56f3 n | Caption\:300d\:3068\:66f8\:304b\:308c\:3001seed \:304c\:30ad\:30e3\:30d7\:30b7\:30e7\:30f3\:3068\:3057\:3066\:8aad\:3080)\:3002PlotLegends \:306f\:4f7f\:308f\:306a\:3044 (PlotLabels \:306f\:53ef)\:3002\n- Text \:306f\:7d20\:6750\:306e\:8a00\:3044\:63db\:3048\:3067\:306f\:306a\:304f\:3001\:305d\:306e\:8a08\:7b97\:304c\:4f55\:3092\:78ba\:304b\:3081\:4f55\:3092\:793a\:3059\:304b\:3092\:66f8\:304f\:3002\:7d20\:6750\:306b\:7121\:3044\:4e3b\:5f35\:3092\:4f5c\:3089\:306a\:3044\:3002\n- Nodes \:306b\:306f KG \:306e Id \:3092\:305d\:306e\:307e\:307e\:66f8\:304f (\:5225\:306e KG \:306e\:30ce\:30fc\:30c9\:306a\:3089 \"<GraphId>#<Id>\")\:3002\n- \:4ee3\:5165\:306f Module \:5185\:306b\:9650\:3089\:306a\:304f\:3066\:3088\:3044 (\:9694\:96e2\:6587\:8108\:306e\:4e2d)\:3002\:767a\:8868\:306e\:8a00\:8a9e ("<> lang <>") \:3067\:66f8\:304f\:3002"];
+
+SlideComputeBuild[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideComputeBuild[nb]]];
+SlideComputeBuild[nb_NotebookObject] := Module[{spec, refs, kg},
+  If[Length[DownValues[ClaudeCode`ClaudeEval]] === 0, Return[iSWNoAgentFailure[]]];
+  If[! iSWComputeEnsure[], iSWStatus[nb, iSL["\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:767b\:9332\:7c3f (SourceVault_papernb.wl) \:304c\:8aad\:307f\:8fbc\:307e\:308c\:3066\:3044\:307e\:305b\:3093", "The compute notebook registry (SourceVault_papernb.wl) is not loaded"]]; Return[iSWComputeFail[]]];
+  spec = SlideGraphSpec[nb];
+  refs = Quiet @ Check[iSWReferencesList[nb], {}];
+  kg = If[iSWKGEnsure[], Quiet @ Check[iSWKGResolve[nb], $Failed], $Failed];
+  If[refs === {} && ! AssociationQ[kg],
+    iSWStatus[nb, iSL["\:5148\:306b\:6587\:732e (References) \:3092\:66f8\:304f\:304b KG \:3092\:4f5c\:3063\:3066\:304f\:3060\:3055\:3044", "Write the sources in References (or build the KG) first"]];
+    Return[Failure["NoSources", <|"MessageTemplate" -> "no References and no knowledge graph"|>]]];
+  iSWGraphDelegate[nb, iSWComputeTask[spec, refs, kg, iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb]],
+    "\:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:4f5c\:6210\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:59d4\:8b72\:3057\:307e\:3057\:305f\:3002\:7d42\:308f\:308b\:3068\:6587\:732e\:306b\:8ffd\:8a18\:3055\:308c\:307e\:3059", "Delegated the compute notebook to the agent"];
+  Success["Delegated", <|"References" -> Length[refs], "Graph" -> If[AssociationQ[kg], kg["GraphId"], None]|>]];
+
+(* ---- v1.48: \:610f\:5473\:4ed8\:3051 (SlideGraphNarrate) ----
+   \:8a08\:753b\:3067\:679a\:306e\:4e26\:3073\:304c\:6c7a\:307e\:3063\:305f\:3042\:3068\:3001\:90e8\:3054\:3068\:306b LLM \:306b\:4e26\:3073\:3092\:6e21\:3057\:3001\:5404\:679a\:306e\:5f79\:5272 (Role: \:306a\:305c\:3053\:306e\:679a\:304c\:3053\:3053\:306b\:3042\:308b\:304b)\:30fb\:3064\:306a\:304e (Bridge: \:524d\:306e\:679a\:304b\:3089\:306e
+   \:6a4b\:6e21\:3057\:3002\:540c\:3058\:89aa\:306e\:7d9a\:304d\:306a\:3089\:8a71\:984c\:8ee2\:63db\:306e\:8a9e\:3092\:4f7f\:308f\:306a\:3044)\:30fb\:521d\:3081\:3066\:51fa\:308b\:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e (Terms) \:3092\:66f8\:304b\:305b\:3066 KG \:306e\:30ce\:30fc\:30c9\:306b\:4fdd\:5b58\:3059\:308b\:3002\:8074\:304d\:624b\:304c
+   \:3064\:307e\:305a\:304d\:305d\:3046\:306a\:629c\:3051 (Gaps) \:306f\:8abf\:6574\:30bb\:30eb\:306b\:63d0\:6848\:3068\:3057\:3066\:66f8\:304f (\:81ea\:52d5\:3067\:306f\:8db3\:3055\:306a\:3044)\:3002kg["Narrative"]["Sequence"] \:304c\:4eca\:306e\:4e26\:3073\:3068\:9055\:3048\:3070\:3001
+   \:300c\:751f\:6210\:300d\:304c\:5148\:306b\:3053\:308c\:3092\:884c\:3046 ($SlideGraphNarrateAuto) *)
+If[! ValueQ[$SlideGraphNarrateAuto], $SlideGraphNarrateAuto = True];
+$iSWNarrateLast = None;
+
+iSWNarrateSlides[outlineSlides_List, kg_Association] := With[{ids = Lookup[Lookup[kg, "Nodes", {}], "Id", {}]},
+  Select[outlineSlides, AssociationQ[#] && ! TrueQ[Lookup[#, "Continuation", False]] &&
+    ! MemberQ[{"Agenda", "Glossary"}, Lookup[#, "Kind", ""]] && MemberQ[ids, Lookup[#, "NodeId", None]] &]];
+iSWNarrateSeq[outlineSlides_List, kg_Association] := Lookup[iSWNarrateSlides[outlineSlides, kg], "NodeId", {}];
+iSWNarrateDueQ[kg_Association, seq_List] := seq =!= {} &&
+  ! (AssociationQ[Lookup[kg, "Narrative", None]] && Lookup[kg["Narrative"], "Sequence", None] === seq);
+iSWNarrateDueQ[___] := False;
+
+(* \:90e8\:306e\:5165\:53e3\:3067\:533a\:5207\:308a\:3001\:9577\:3044\:90e8\:306f\:3055\:3089\:306b\:533a\:5207\:308b *)
+iSWNarrateChunks[slides_List, size_Integer] := Module[{groups = {}, cur = {}},
+  Do[If[Lookup[s, "Transition", ""] === "Part" && cur =!= {} && ! AllTrue[cur, Lookup[#, "Transition", ""] === "None" &],
+      AppendTo[groups, cur]; cur = {}]; AppendTo[cur, s], {s, slides}];
+  If[cur =!= {}, AppendTo[groups, cur]];
+  Flatten[Map[Partition[#, UpTo[Max[4, size]]] &, groups], 1]];
+
+iSWNarrateKind[s_Association, kg_Association] := With[{id = Lookup[s, "NodeId", ""],
+    ch = If[SourceVault`SourceVaultKGTocQ[kg], kg["Toc"]["Children"], <||>]},
+  Which[
+    id === Lookup[kg, "Root", "root"], "\:5168\:4f53\:306e\:6d41\:308c",
+    MemberQ[Replace[Lookup[s, "Flags", {}], Except[_List] -> {}], "Summary"], "\:6982\:8981 (\:7bc0\:3092 1 \:679a\:306b)",
+    Lookup[ch, id, {}] =!= {}, "\:9053\:6a19",
+    True, "\:5185\:5bb9"]];
+iSWNarrateTransition[s_Association, index_Association] := Switch[Lookup[s, "Transition", ""],
+  "Continue", "\:7d9a\:304d (\:524d\:306e\:679a\:3068\:540c\:3058\:89aa)",
+  "Shift", "\:8a71\:984c\:8ee2\:63db: \:65b0\:3057\:3044\:898b\:51fa\:3057\:300c" <> With[{h = Lookup[s, "NewHead", None]},
+    If[StringQ[h], SourceVault`SourceVaultKGText[Lookup[index, h, <||>], "Label"], ""]] <> "\:300d\:306b\:5165\:308b",
+  "Return", "\:8a71\:984c\:8ee2\:63db: \:4e00\:3064\:4e0a\:306e\:6bb5\:306e\:6b21\:306e\:8a71\:3078",
+  "Part", "\:90e8\:306e\:5165\:53e3 (\:6a4b\:6e21\:3057\:306e\:4e00\:6587\:306f\:5225\:306b\:5165\:308b)",
+  _, "\:6700\:521d\:306e\:679a"];
+
+iSWNarratePrompt[st_Association, kg_Association, chunk_List] := Module[
+  {index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], spec = st["Spec"], lang, k0, lines, skel = {}, srcs, prev, total = Length[st["Seq"]]},
+  lang = Replace[Lookup[spec, "Language", "ja"], Except[_String] -> "ja"];
+  k0 = With[{p = FirstPosition[st["Seq"], First[chunk]["NodeId"]]}, If[MissingQ[p], 1, First[p]]];
+  lines = MapIndexed[Function[{s, i}, StringJoin[
+      ToString[k0 + First[i] - 1], ". [", s["NodeId"], "] ", iSWTocOne[Lookup[s, "Title", ""], 60], "\n",
+      "   \:7a2e\:985e: ", iSWNarrateKind[s, kg], " / \:9077\:79fb: ", iSWNarrateTransition[s, index], "\n",
+      If[StringQ[Lookup[s, "Crumb", None]] && s["Crumb"] =!= "", "   \:4f4d\:7f6e: " <> iSWTocOne[s["Crumb"], 80] <> "\n", ""],
+      "   \:7b87\:6761\:66f8\:304d: ", StringRiffle[Map[iSWTocOne[#, 40] &, Take[Select[Replace[Lookup[s, "Points", {}], Except[_List] -> {}], StringQ], UpTo[4]]], " / "], "\n",
+      "   \:539f\:7a3f\:306e\:4e0b\:66f8\:304d: ", iSWTocOne[Replace[Lookup[s, "Talk", ""], Except[_String] -> ""], 100]]], chunk];
+  If[SourceVault`SourceVaultKGTocQ[kg],
+    With[{ch = kg["Toc"]["Children"], root = Lookup[kg, "Root", "root"]},
+      Do[AppendTo[skel, "- " <> SourceVault`SourceVaultKGText[Lookup[index, p, <||>], "Label"] <> " \:2014 " <> iSWTocGist[Lookup[index, p, <||>]]];
+        Do[AppendTo[skel, "  - " <> SourceVault`SourceVaultKGText[Lookup[index, c, <||>], "Label"] <> " \:2014 " <> iSWTocOne[iSWTocGist[Lookup[index, c, <||>]], 50]],
+          {c, Lookup[ch, p, {}]}],
+        {p, Lookup[ch, root, {}]}]]];
+  srcs = Map[#["Id"] <> " | " <> iSWTocOne[SourceVault`SourceVaultKGText[#, "Label"], 30] <> " | " <>
+      iSWTocOne[SourceVault`SourceVaultKGText[#, "Summary"], 80] &,
+    Take[Select[kg["Nodes"], (Lookup[#, "Layer", "Paper"] =!= "Paper" || Lookup[#, "Kind", ""] === "Definition") &&
+      SourceVault`SourceVaultKGText[#, "Summary"] =!= "" && iSWTocVisibleQ[#] &], UpTo[90]]];
+  prev = If[k0 > 1, With[{pid = st["Seq"][[k0 - 1]]}, "[" <> pid <> "] " <> SourceVault`SourceVaultKGText[Lookup[index, pid, <||>], "Label"]], None];
+  "SlideWorkflow \:306e\:767a\:8868\:306e\:610f\:5473\:4ed8\:3051\:3002\:4e0b\:306f\:767a\:8868\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:4e26\:3073 (\:78ba\:5b9a\:3002\:9806\:5e8f\:30fb\:984c\:76ee\:30fb\:7b87\:6761\:66f8\:304d\:306f\:5909\:3048\:306a\:3044) \:306e\:3046\:3061 " <> ToString[k0] <> "\:301c" <>
+  ToString[k0 + Length[chunk] - 1] <> " \:679a\:76ee (\:5168 " <> ToString[total] <> " \:679a)\:3002\:3044\:307e\:306e\:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:306f\:9805\:76ee\:3092\:4e26\:3079\:3066\:3044\:308b\:3060\:3051\:306a\:306e\:3067\:3001" <>
+  "\:5404\:679a\:304c\:8a71\:306e\:4e2d\:3067\:6301\:3064\:610f\:5473\:3092\:88dc\:3046\:3002\n" <> iSWTocHead[spec] <>
+  If[skel =!= {}, "=== \:767a\:8868\:306e\:9aa8\:7d44\:307f (\:90e8\:30fb\:7ae0\:3068\:4e00\:884c\:8981\:7d04) ===\n" <> StringRiffle[skel, "\n"] <> "\n\n", ""] <>
+  If[StringQ[prev], "\:76f4\:524d\:306e\:679a: " <> prev <> "\n\n", ""] <>
+  "=== \:30b9\:30e9\:30a4\:30c9 ===\n" <> StringRiffle[lines, "\n"] <> "\n\n" <>
+  If[srcs =!= {}, "=== \:7528\:8a9e\:306e\:51fa\:5178 (\:5468\:8fba\:77e5\:8b58\:30fb\:5b9a\:7fa9\:306e\:30ce\:30fc\:30c9\:3002Id | \:984c\:76ee | \:8981\:7d04) ===\n" <> StringRiffle[srcs, "\n"] <> "\n\n", ""] <>
+  If[st["Explained"] =!= {}, "\:65e2\:306b\:8aac\:660e\:3057\:305f\:7528\:8a9e (\:7e70\:308a\:8fd4\:3055\:306a\:3044): " <> StringRiffle[st["Explained"], ", "] <> "\n\n", ""] <>
+  "=== \:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057 ===\n" <>
+  "{\"Slides\": [{\"Id\": \"<\:679a\:306e Id>\", \"Role\": \"\:5f79\:5272\", \"Bridge\": \"\:3064\:306a\:304e\", \"Terms\": [{\"Term\": \"\:7528\:8a9e\", \"Def\": \"\:4e00\:884c\:306e\:8aac\:660e\"}]}], " <>
+  "\"Gaps\": [{\"After\": \"<\:3053\:306e\:679a\:306e Id \:306e\:5f8c\:306b>\", \"Title\": \"\:8db3\:3059\:679a\:306e\:984c\:76ee\", \"Why\": \"\:306a\:305c\:8981\:308b\:304b\", \"Points\": [\"\:8981\:70b9\"]}]}\n\n" <>
+  "\:898f\:5247:\n" <>
+  "- \:4e0a\:306e\:3059\:3079\:3066\:306e\:679a\:306b\:3064\:3044\:3066 1 \:3064\:305a\:3064\:66f8\:304f\:3002\n" <>
+  "- Role: \:3053\:306e\:679a\:304c\:306a\:305c\:3053\:3053\:306b\:3042\:308b\:304b\:3002\:4f55\:306e\:554f\:3044\:306b\:7b54\:3048\:3001\:8a71\:5168\:4f53 (\:30b9\:30c8\:30fc\:30ea\:30fc\:6307\:793a) \:306e\:4e2d\:3067\:4f55\:3092\:6e96\:5099\:3057\:4f55\:3092\:793a\:3059\:304b\:3092 1 \:6587 (40 \:5b57\:524d\:5f8c\:3001\:3067\:3059\:30fb\:307e\:3059\:8abf)\:3002" <>
+  "\:7b87\:6761\:66f8\:304d\:306e\:8a00\:3044\:63db\:3048\:3084\:8981\:7d04\:306b\:3057\:306a\:3044\:3002\:5168\:4f53\:306e\:6d41\:308c\:306e\:679a\:306f\:767a\:8868\:5168\:4f53\:306e\:72d9\:3044\:3001\:9053\:6a19\:30fb\:6982\:8981\:306e\:679a\:306f\:305d\:306e\:90e8\:30fb\:7bc0\:304c\:8a71\:306e\:4e2d\:3067\:679c\:305f\:3059\:5f79\:5272\:3002\n" <>
+  "- Bridge: \:539f\:7a3f\:306e\:5192\:982d\:306b\:7f6e\:304f\:4e00\:8a00 (\:3067\:3059\:30fb\:307e\:3059\:8abf)\:3002\:9077\:79fb\:304c\:300c\:7d9a\:304d\:300d\:306a\:3089\:524d\:306e\:679a\:306e\:5185\:5bb9\:3092\:53d7\:3051\:3066\:3064\:306a\:3050 (\:300c\:3053\:3053\:3067\:306f\:300d\:300c\:3055\:3066\:300d\:306a\:3069\:306e\:8a71\:984c\:8ee2\:63db\:306e\:8a9e\:306f\:4f7f\:308f\:306a\:3044\:3002" <>
+  "\:81ea\:7136\:306b\:3064\:306a\:304c\:308b\:306a\:3089\:7a7a\:3067\:3088\:3044)\:3002\:300c\:8a71\:984c\:8ee2\:63db\:300d\:306a\:3089\:3001\:4f55\:306b\:79fb\:308b\:304b\:3068\:306a\:305c\:4eca\:305d\:308c\:3092\:6271\:3046\:306e\:304b\:3092 1 \:6587\:3067\:3002\:300c\:90e8\:306e\:5165\:53e3\:300d\:3068\:6700\:521d\:306e\:679a\:306f\:7a7a\:3002\n" <>
+  "- Terms: \:305d\:306e\:679a\:306e\:984c\:76ee\:30fb\:7b87\:6761\:66f8\:304d\:306b\:521d\:3081\:3066\:51fa\:308b\:5c02\:9580\:7528\:8a9e\:306e\:3046\:3061\:3001\:8074\:304d\:624b\:304c\:77e5\:3089\:306a\:3044\:304b\:3082\:3057\:308c\:306a\:3044\:3082\:306e\:3092 0\:301c2 \:500b (\:65e2\:306b\:8aac\:660e\:3057\:305f\:7528\:8a9e\:3068\:524d\:306e\:679a\:3067\:51fa\:305f\:7528\:8a9e\:306f\:9664\:304f)\:3002" <>
+  "Def \:306f\:300c<\:7528\:8a9e> \:306f\:3001\:300d\:306b\:7d9a\:304f 1 \:6587 (30\:301c60 \:5b57) \:3067\:3001\:7528\:8a9e\:306e\:51fa\:5178\:306e\:8981\:7d04\:306b\:57fa\:3065\:304f\:3002\:51fa\:5178\:306b\:7121\:3051\:308c\:3070\:6559\:79d1\:66f8\:7684\:306a\:5b9a\:7fa9\:3092\:7c21\:6f54\:306b\:3002\n" <>
+  "- Gaps: \:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:306e\:306b\:3001\:3069\:306e\:679a\:306b\:3082\:8aac\:660e\:304c\:7121\:3044\:3053\:3068 (\:524d\:63d0\:3068\:306a\:308b\:6982\:5ff5\:30fb\:7528\:8a9e\:306e\:80cc\:666f\:30fb\:306a\:305c\:305d\:3046\:306a\:308b\:304b) \:3092 0\:301c3 \:500b\:3002\:8db3\:3059\:679a\:306e\:63d0\:6848\:3068\:3057\:3066\:66f8\:304f\:3002\n" <>
+  "- \:30b9\:30e9\:30a4\:30c9\:3084\:7528\:8a9e\:306e\:51fa\:5178\:306b\:7121\:3044\:4e3b\:5f35\:30fb\:6570\:5024\:3092\:4f5c\:3089\:306a\:3044\:3002\:767a\:8868\:306e\:8a00\:8a9e (" <> lang <> ") \:3067\:66f8\:304f\:3002"];
+
+iSWNarrateStep[st_Association] := Module[{kg, prompt},
+  If[st["K"] > Length[st["Chunks"]], Return[iSWNarrateFinish[st, ""]]];
+  kg = iSWKGResolve[st["Graph"]];
+  If[! AssociationQ[kg], Return[iSWNarrateFinish[st, ""]]];
+  prompt = iSWNarratePrompt[st, kg, st["Chunks"][[st["K"]]]];
+  $iSWRefineBusy = True; $iSWRefineBusySince = AbsoluteTime[];
+  If[Head[st["NB"]] === NotebookObject,
+    iSWGenProgress[st["NB"], "\:610f\:5473\:4ed8\:3051: " <> ToString[st["K"]] <> " / " <> ToString[Length[st["Chunks"]]] <> " \:533a\:5207\:308a\:3092 LLM \:306b\:554f\:3044\:5408\:308f\:305b\:4e2d\:2026",
+      "Narrative: asking the LLM (" <> ToString[st["K"]] <> " / " <> ToString[Length[st["Chunks"]]] <> ")..."]];
+  With[{s = st},
+    NBAccess`$NBLLMQueryFunc[prompt, Function[resp, iSWNarrateReceive[s, resp]], s["NB"], Fallback -> iSWFallback[], PrivacyLevel -> s["PL"]]];
+  <|"Status" -> "Submitted", "Graph" -> st["Graph"], "Chunk" -> st["K"], "Chunks" -> Length[st["Chunks"]], "Slides" -> Length[st["Seq"]]|>];
+
+iSWNarrateReceive[st_Association, resp_] := Module[{json, raw, chunk = st["Chunks"][[st["K"]]], ids, upd = st["Updates"],
+    explained = st["Explained"], gaps = st["Gaps"], failed = st["Failed"], seq = st["Seq"]},
+  $iSWRefineBusy = False;
+  json = If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"], iSWRefineExtractJSON[resp], $Failed];
+  raw = If[StringQ[json], Quiet @ Check[Developer`ReadRawJSONString[json], $Failed], $Failed];
+  ids = Lookup[chunk, "NodeId", {}];
+  If[AssociationQ[raw],
+    Do[With[{id = ToString[Lookup[e, "Id", ""]]},
+        If[MemberQ[ids, id],
+          upd[id] = <|"Id" -> id, "Role" -> iSWTocStr[Lookup[e, "Role", ""]], "Bridge" -> iSWTocStr[Lookup[e, "Bridge", ""]],
+            "BridgeAfter" -> With[{p = FirstPosition[seq, id]}, If[! MissingQ[p] && First[p] > 1, seq[[First[p] - 1]], Null]],
+            "Terms" -> Select[Map[<|"Term" -> iSWTocStr[Lookup[#, "Term", ""]], "Def" -> iSWTocStr[Lookup[#, "Def", ""]]|> &,
+              Select[iSWComputeList[Lookup[e, "Terms", {}]], AssociationQ]], #["Term"] =!= "" && #["Def"] =!= "" &]|>;
+          explained = Join[explained, Lookup[upd[id]["Terms"], "Term", {}]]]],
+      {e, Select[iSWComputeList[Lookup[raw, "Slides", {}]], AssociationQ]}];
+    gaps = Join[gaps, Select[iSWComputeList[Lookup[raw, "Gaps", {}]], AssociationQ[#] && StringQ[Lookup[#, "Title", None]] &]],
+    AppendTo[failed, st["K"]]];
+  iSWNarrateStep[Join[st, <|"K" -> st["K"] + 1, "Updates" -> upd, "Explained" -> DeleteDuplicates[explained],
+    "Gaps" -> gaps, "Failed" -> failed|>]]];
+
+(* \:629c\:3051\:306e\:63d0\:6848\:3092\:8abf\:6574\:30bb\:30eb\:3078 (\:672a\:53cd\:6620\:306e\:8abf\:6574\:30bb\:30eb\:304c\:3042\:308c\:3070\:8db3\:3059) *)
+iSWNarrateGapsText[gaps_List, index_Association] := "\:610f\:5473\:4ed8\:3051\:306e\:63d0\:6848 (\:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:6240\:3002\:8981\:308b\:3082\:306e\:3060\:3051\:6b8b\:3057\:3066\:300c\:8abf\:6574\:300d\:3092\:62bc\:3059\:3068\:679a\:304c\:8db3\:3055\:308c\:307e\:3059):\n" <>
+  StringRiffle[Map[Function[g, With[{a = ToString[Lookup[g, "After", ""]]},
+      "- " <> If[KeyExistsQ[index, a], "\:300c" <> SourceVault`SourceVaultKGText[index[a], "Label"] <> "\:300d(" <> a <> ") \:306e\:5f8c\:306b", "\:9069\:5f53\:306a\:4f4d\:7f6e\:306b"] <>
+      "\:65b0\:3057\:3044\:679a\:300c" <> iSWTocStr[Lookup[g, "Title", ""]] <> "\:300d: " <> iSWTocStr[Lookup[g, "Why", ""]] <>
+      With[{ps = Select[iSWComputeList[Lookup[g, "Points", {}]], StringQ]}, If[ps === {}, "", " \:8981\:70b9: " <> StringRiffle[ps, " / "]]]]], gaps], "\n"];
+iSWAdjustAppendText[nb_NotebookObject, text_String] := Module[{co, cur},
+  Quiet[SlideEnsureDeckStyles[nb]];
+  co = iSWAdjustPendingCell[nb];
+  If[co === None,
+    With[{story = Quiet[Cells[nb, CellStyle -> "SlideStory"]]},
+      If[ListQ[story] && story =!= {}, SelectionMove[Last[story], After, Cell], SelectionMove[nb, Before, Notebook]]];
+    NotebookWrite[nb, Cell[text, "SlideAdjust"]],
+    cur = iCellText[NotebookRead[co]];
+    SelectionMove[co, All, Cell];
+    NotebookWrite[nb, Cell[If[StringTrim[iSWAdjustText[cur]] === "", text, cur <> "\n" <> text], "SlideAdjust"], All]]];
+
+iSWNarrateFinish[st_Association, note_String] := Module[{kg = iSWKGResolve[st["Graph"]], m, saved, msg, index, nUpd = Length[st["Updates"]]},
+  If[! AssociationQ[kg],
+    $iSWNarrateLast = <|"Status" -> "Failed", "Graph" -> st["Graph"], "Message" -> "no KG"|>;
+    If[st["Then"] =!= None, Quiet[st["Then"][]]]; Return[$iSWNarrateLast]];
+  m = If[nUpd === 0, kg, SourceVault`SourceVaultKGMerge[kg, <|"Nodes" -> Values[st["Updates"]]|>]];
+  If[! AssociationQ[m] || ! KeyExistsQ[m, "Nodes"], m = kg];
+  m["Narrative"] = <|"Sequence" -> st["Seq"], "BuiltAtUTC" -> DateString[TimeZoneConvert[Now, 0], "ISODateTime"] <> "Z",
+    "Method" -> "LLM", "Slides" -> nUpd, "Terms" -> st["Explained"], "Gaps" -> st["Gaps"], "Failed" -> st["Failed"]|>;
+  saved = SourceVault`SourceVaultKGSave[m];
+  index = Association[(#["Id"] -> #) & /@ m["Nodes"]];
+  If[Head[st["NB"]] === NotebookObject && st["Gaps"] =!= {},
+    Quiet @ Check[iSWAdjustAppendText[st["NB"], iSWNarrateGapsText[st["Gaps"], index]], Null]];
+  msg = iSL["\:610f\:5473\:4ed8\:3051\:3057\:307e\:3057\:305f: " <> ToString[nUpd] <> " / " <> ToString[Length[st["Seq"]]] <> " \:679a\:306b\:5f79\:5272\:3068\:3064\:306a\:304e\:3001\:7528\:8a9e\:306e\:8aac\:660e " <>
+      ToString[Length[st["Explained"]]] <> " \:500b" <>
+      If[st["Gaps"] =!= {}, "\:3002\:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:6240\:306e\:63d0\:6848 " <> ToString[Length[st["Gaps"]]] <> " \:4ef6\:3092\:8abf\:6574\:30bb\:30eb\:306b\:66f8\:304d\:307e\:3057\:305f", ""] <>
+      If[st["Failed"] =!= {}, "\:3002\:5fdc\:7b54\:304c\:8aad\:3081\:306a\:304b\:3063\:305f\:533a\:5207\:308a: " <> StringRiffle[ToString /@ st["Failed"], ", "], ""],
+    "Narrative: roles and bridges for " <> ToString[nUpd] <> " of " <> ToString[Length[st["Seq"]]] <> " slides, " <>
+      ToString[Length[st["Explained"]]] <> " term notes" <>
+      If[st["Gaps"] =!= {}, "; " <> ToString[Length[st["Gaps"]]] <> " suggestions written to the adjust cell", ""]] <>
+    If[note =!= "", " (" <> note <> ")", ""] <> If[! StringQ[saved], iSL["\:3002\:4fdd\:5b58\:306b\:5931\:6557\:3057\:307e\:3057\:305f", ". Saving failed"], ""];
+  If[Head[st["NB"]] === NotebookObject, iSWGraphApplyNote[st["NB"], msg]];
+  $iSWNarrateLast = <|"Status" -> "Narrated", "Graph" -> st["Graph"], "Slides" -> nUpd, "Sequence" -> st["Seq"],
+    "Terms" -> st["Explained"], "Gaps" -> st["Gaps"], "Failed" -> st["Failed"], "Message" -> msg|>;
+  If[st["Then"] =!= None, Quiet[st["Then"][]]];
+  $iSWNarrateLast];
+
+Options[SlideGraphNarrate] = {"Then" -> None, "Chunk" -> 24, "Outline" -> Automatic, "Slides" -> Automatic, "Audience" -> Automatic};
+SlideGraphNarrate[opts : OptionsPattern[]] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphNarrate[nb, opts]]];
+SlideGraphNarrate[src : (_NotebookObject | _String), OptionsPattern[]] := Module[
+  {nb = If[Head[src] === NotebookObject, src, None], spec, gid, kg, gen, slides, seq, st, then = OptionValue["Then"]},
+  spec = If[nb =!= None, SlideGraphSpec[nb], Join[$iSWStoryDefaults, <|"Graph" -> src|>]];
+  gid = spec["Graph"];
+  kg = iSWKGResolve[gid];
+  If[! AssociationQ[kg], iSWStatusIf[nb, iSL["KG \:304c\:7121\:3044 (\:5148\:306b KG\:69cb\:7bc9)", "No KG yet (build it first)"]]; Return[kg]];
+  If[iSWRefineBusyQ[],
+    iSWStatusIf[nb, iSL["KG \:306e\:63a8\:6572\:30fb\:56f3\:89e3\:30fb\:8abf\:6574\:30fb\:968e\:5c64\:5316\:30fb\:610f\:5473\:4ed8\:3051\:3092\:5b9f\:884c\:4e2d\:3067\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "A KG run is in progress"]];
+    Return[<|"Status" -> "Busy", "Graph" -> gid|>]];
+  gen = Replace[OptionValue["Outline"], Automatic :> SlideGraphGenerate[src, "Realize" -> False,
+    Sequence @@ Select[{"Slides" -> OptionValue["Slides"], "Audience" -> OptionValue["Audience"]}, #[[2]] =!= Automatic &]]];
+  If[! AssociationQ[gen] || ! AssociationQ[Lookup[gen, "Outline", None]],
+    iSWStatusIf[nb, iSL["\:610f\:5473\:4ed8\:3051: \:679a\:306e\:4e26\:3073\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f", "Narrative: could not build the slide sequence"]]; Return[gen]];
+  slides = iSWNarrateSlides[gen["Outline"]["Slides"], kg];
+  seq = Lookup[slides, "NodeId", {}];
+  If[! iSWLLMReadyQ[],
+    iSWStatusIf[nb, iSL["LLM \:304c\:7121\:3044\:306e\:3067\:610f\:5473\:4ed8\:3051\:306f\:7701\:304d\:307e\:3057\:305f (\:3064\:306a\:304e\:306e\:6a5f\:68b0\:7684\:306a\:4fee\:6b63\:306f\:751f\:6210\:3067\:52b9\:304d\:307e\:3059)", "No LLM: narrative skipped"]];
+    $iSWNarrateLast = <|"Status" -> "NoLLM", "Graph" -> gid, "Sequence" -> seq|>;
+    If[then =!= None, Quiet[then[]]];
+    Return[$iSWNarrateLast]];
+  st = <|"NB" -> nb, "Graph" -> gid, "Spec" -> spec, "Seq" -> seq, "Chunks" -> iSWNarrateChunks[slides, Replace[OptionValue["Chunk"], Except[_Integer] -> 24]],
+    "K" -> 1, "Updates" -> <||>, "Explained" -> {}, "Gaps" -> {}, "Failed" -> {}, "Then" -> then, "PL" -> iSWRefinePrivacy[nb, kg]|>;
+  iSWNarrateStep[st]];
+
+Options[SlideGraphHierarchy] = {"Then" -> None, "MaxDegree" -> Automatic, "Strategy" -> Automatic};
+SlideGraphHierarchy[opts : OptionsPattern[]] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphHierarchy[nb, opts]]];
+SlideGraphHierarchy[src : (_NotebookObject | _String), opts : OptionsPattern[]] := Module[
+  {nb = If[Head[src] === NotebookObject, src, None], spec, gid, kg, d, strategy, st, then = OptionValue["Then"]},
+  spec = If[nb =!= None, SlideGraphSpec[nb], Join[$iSWStoryDefaults, <|"Graph" -> src|>]];
+  gid = spec["Graph"];
+  kg = iSWKGResolve[gid];
+  If[! AssociationQ[kg], iSWStatusIf[nb, iSL["KG \:304c\:7121\:3044 (\:5148\:306b KG\:69cb\:7bc9)", "No KG yet (build it first)"]]; Return[kg]];
+  If[iSWRefineBusyQ[],
+    iSWStatusIf[nb, iSL["KG \:306e\:63a8\:6572\:30fb\:56f3\:89e3\:30fb\:8abf\:6574\:30fb\:968e\:5c64\:5316\:3092\:5b9f\:884c\:4e2d\:3067\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "A KG run is in progress"]];
+    Return[<|"Status" -> "Busy", "Graph" -> gid|>]];
+  d = Replace[OptionValue["MaxDegree"], Except[_Integer?(# >= 2 &)] :> iSWMaxDegree[]];
+  strategy = Replace[OptionValue["Strategy"], Automatic :> Replace[Lookup[spec, "Strategy", "Source"], Except[_String] -> "Source"]];
+  st = <|"NB" -> nb, "Graph" -> gid, "Spec" -> spec, "D" -> d, "Strategy" -> strategy, "Round" -> 1, "Items" -> iSWTocLeaves[kg],
+    "Children" -> <||>, "Groups" -> {}, "Info" -> <||>, "Used" -> {}, "Omitted" -> {}, "Then" -> then, "PL" -> 0.|>;
+  If[! iSWLLMReadyQ[], Return[iSWTocMechanical[st, ""]]];
+  st["PL"] = iSWRefinePrivacy[nb, kg];
+  iSWTocStep[st]];
+
 iSWAdjustRun[nb_, spec_Association, kg0_Association, instruction_String, co_, pdfOpt_, then_, metaBlocks_String] := Module[
   {gid = spec["Graph"], gen, pdfRef, key, prompt, pl, kg},
   If[! iSWLLMReadyQ[], Return[Failure["NoLLM", <|"MessageTemplate" -> "LLM query function is not registered (load NBAccess/claudecode)"|>]]];
   If[iSWRefineBusyQ[], iSWStatusIf[nb, iSL["KG \:306e\:63a8\:6572\:30fb\:56f3\:89e3\:30fb\:8abf\:6574\:3092\:5b9f\:884c\:4e2d\:3067\:3059", "A KG run is in progress"]]; Return[<|"Status" -> "Busy"|>]];
   kg = iSWKGCiteRepair[gid, kg0];
-  iSWGenProgress[nb, "\:8abf\:6574: \:3044\:307e\:306e\:30b9\:30e9\:30a4\:30c9\:69cb\:6210\:3092\:78ba\:8a8d\:4e2d\:2026", "Adjust: reading the current slide plan..."];
+  iSWGenProgress[nb, "\:8abf\:6574: \:3044\:307e\:306e\:30b9\:30e9\:30a4\:30c9\:69cb\:6210\:3092\:78ba\:8a8d\:4e2d\[Ellipsis]", "Adjust: reading the current slide plan..."];
   gen = If[Head[nb] === NotebookObject, SlideGraphGenerate[nb, "Realize" -> False],
     SlideGraphGenerate[gid, "Realize" -> False, "Audience" -> spec["Audience"]]];
   pdfRef = iSWAdjustPDFRef[nb, kg, pdfOpt];
@@ -8912,7 +11273,7 @@ iSWAdjustRun[nb_, spec_Association, kg0_Association, instruction_String, co_, pd
       If[Head[nb] === NotebookObject, iSWAdjustDeckOffset[nb, slides], 0]]];
   pl = iSWRefinePrivacy[nb, kg];
   $iSWRefineBusy = True; $iSWRefineBusySince = AbsoluteTime[];
-  iSWGenProgress[nb, "\:8abf\:6574: LLM \:306b\:554f\:3044\:5408\:308f\:305b\:4e2d\:2026", "Adjust: asking the LLM..."];
+  iSWGenProgress[nb, "\:8abf\:6574: LLM \:306b\:554f\:3044\:5408\:308f\:305b\:4e2d\[Ellipsis]", "Adjust: asking the LLM..."];
   With[{n2 = nb, g = gid, c = co, r = pdfRef, k = key, th = then},
     NBAccess`$NBLLMQueryFunc[prompt,
       Function[resp, iSWAdjustApply[n2, g, c, r, k, th, resp]],
@@ -9026,9 +11387,30 @@ iSWDeleteSlides[nb_NotebookObject, idxs_List] := Module[{ranges = iSWSlideRanges
   n];
 
 (* \:30d1\:30ec\:30c3\:30c8\:306e\:300c\:751f\:6210\:300d: \:524d\:56de\:306e\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:304c\:3042\:308c\:3070\:7f6e\:304d\:63db\:3048\:308b\:304b\:805e\:304f *)
-iSWGraphApplyAction[nb_NotebookObject] := Module[{rows, old, choice},
+iSWGraphApplyAction[nb_NotebookObject] := Module[{rows, old, choice, fork},
   rows = Quiet @ Check[iSWKGDeckSlideNodes[nb], {}];
   old = If[ListQ[rows], Count[rows, r_Association /; StringQ[r["Node"]]], 0];
+  (* v1.38: \:8074\:304d\:624b\:30fb\:679a\:6570\:30fb\:6642\:9593\:30fb\:65b9\:91dd\:3092\:524d\:56de\:306e\:751f\:6210\:304b\:3089\:5909\:3048\:305f\:3068\:304d\:306f\:3001\:5225\:306e\:7248\:3068\:3057\:3066\:65b0\:3057\:3044\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:4f5c\:308c\:308b
+     (\:8a00\:8a9e\:3092\:5909\:3048\:305f\:3060\:3051\:306a\:3089\:540c\:3058\:7248) *)
+  If[old > 0 && TrueQ[Quiet[iSWRenditionForkQ[nb]]],
+    fork = ChoiceDialog[iSL[
+        "\:751f\:6210\:306e\:6761\:4ef6 (\:8074\:304d\:624b\:30fb\:679a\:6570\:30fb\:6642\:9593\:30fb\:65b9\:91dd) \:304c\:524d\:56de\:306e\:7248\:3068\:9055\:3044\:307e\:3059\:3002\n\n" <>
+          "\:65b0\:3057\:3044\:7248: \:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:6b8b\:3057\:305f\:307e\:307e <\:540d\:524d>_v2.nb \:306a\:3069\:306b\:5199\:3057\:3066\:3001\:305d\:3061\:3089\:306b\:751f\:6210\:3057\:307e\:3059 (\:524d\:56de\:306e\:7248\:3068\:305d\:306e\:767a\:8868\:306e\:8a18\:9332\:306f\:305d\:306e\:307e\:307e)\:3002\n" <>
+          "\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3067: \:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:65b0\:3057\:3044\:7248\:306b\:3057\:3066\:4f5c\:308a\:76f4\:3057\:307e\:3059\:3002",
+        "The generation settings (audience, slides, minutes, strategy) differ from the previous version.\n\n" <>
+          "New version: keep this notebook, copy it to <name>_v2.nb etc. and generate there (the previous version and its talk records stay).\n" <>
+          "In this notebook: make this notebook the new version and regenerate it."],
+      {iSL["\:65b0\:3057\:3044\:7248", "New version"] -> "Fork", iSL["\:3053\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3067", "In this notebook"] -> "Here",
+       iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}];
+    Switch[fork,
+      "Fork", With[{new = iSWRenditionForkNotebook[nb]},
+        If[Head[new] =!= NotebookObject,
+          MessageDialog[iSL["\:65b0\:3057\:3044\:7248\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not create the notebook for the new version."]];
+          Return[<|"Status" -> "ForkFailed"|>]];
+        $SlideTargetNotebook = new;
+        Return[SlideGraphApply[new, "Mode" -> "Replace"]]],
+      "Here", Null,
+      _, Return[<|"Status" -> "Cancelled"|>]]];
   choice = If[old > 0,
     ChoiceDialog[iSL[
       "\:524d\:56de\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:751f\:6210\:3057\:305f " <> ToString[old] <> " \:679a\:304c\:3042\:308a\:307e\:3059\:3002\n\n" <>
@@ -9081,7 +11463,8 @@ iSWTalkWriteCell[nb_NotebookObject, n_Integer, text_String] := Module[{ranges, c
   cells = Cells[nb]; styles = iSWCellStyles[nb];
   span = Range[ranges[[n, 1]], Min[ranges[[n, 2]], Length[styles]]];
   cell = iContentCell[{"Talk", text}];
-  tIdx = SelectFirst[span, MemberQ[Flatten[{styles[[#]]}], "SlideTalk"] &, None];
+  tIdx = SelectFirst[span, MemberQ[Flatten[{styles[[#]]}], "SlideTalk"] &&
+    iSWTalkCellLangFE[cells[[#]]] === None &, None];
   qIdx = SelectFirst[span, MemberQ[Flatten[{styles[[#]]}], "SlideQA"] &, None];
   Which[
     IntegerQ[tIdx], SelectionMove[cells[[tIdx]], All, Cell]; NotebookWrite[nb, cell, All],
@@ -9096,7 +11479,7 @@ SlideTalkFill[nb_NotebookObject] := Module[{outline, n, slides, missing, title, 
     iSWStatus[nb, iSL["\:539f\:7a3f\:3092\:66f8\:3044\:3066\:3044\:307e\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "Writing talks; wait until it finishes"]];
     Return[<|"Status" -> "Busy"|>]];
   (* \:4fdd\:5b58\:6e08\:307f\:3067\:76f4\:3057\:304c\:7121\:3051\:308c\:3070\:30d5\:30a1\:30a4\:30eb\:304b\:3089\:3001\:305d\:3046\:3067\:306a\:3051\:308c\:3070\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304b\:3089\:8aad\:3080 (\:756a\:53f7\:306f FE \:306e\:30c7\:30c3\:30ad\:3068\:540c\:3058) *)
-  outline = iTalkDeckOutline[iSWDeckSource[nb]];
+  outline = iTalkDeckOutline[iSWDeckTextSource[nb]];
   If[outline === $Failed,
     iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093", "No slides found"]]; iSWStatusClearLater[nb];
     Return[$Failed]];
@@ -9130,7 +11513,7 @@ iSWTalkFillChain[nb_, ctx_Association, idx_Integer] := If[idx > Length[ctx["Batc
       If[$iSWTalkFillRun["Failed"] > 0, " (" <> ToString[$iSWTalkFillRun["Failed"]] <> " failed)", ""] <> ". Review, then Register."]],
   Module[{targets = ctx["Batches"][[idx]], prompt},
     $iSWTalkFillRun["Since"] = AbsoluteTime[];
-    iSWStatus[nb, iSL["\:539f\:7a3f\:3092\:66f8\:3044\:3066\:3044\:307e\:3059 " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "\:2026",
+    iSWStatus[nb, iSL["\:539f\:7a3f\:3092\:66f8\:3044\:3066\:3044\:307e\:3059 " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "\[Ellipsis]",
       "Writing talks " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "..."]];
     prompt = iSWTalkFillPrompt[ctx["Title"], ctx["Slides"], targets, ctx["Meta"]];
     With[{n2 = nb, c = ctx, i2 = idx, nums = Lookup[targets, "Slide"]},
@@ -9145,6 +11528,734 @@ iSWTalkFillChain[nb_, ctx_Association, idx_Integer] := If[idx > Length[ctx["Batc
         n2, Fallback -> iSWFallback[]]]]];
 
 iSWTalkFillAction[nb_] := SlideTalkFill[nb];
+
+(* ===================== v1.35: \:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620 (\:624b\:3067\:76f4\:3057\:305f\:30b9\:30e9\:30a4\:30c9 \[RightArrow] \:539f\:7a3f\:30fbKG) =====================
+   \:30b9\:30e9\:30a4\:30c9\:3092\:6b63\:672c\:3068\:3057\:3066\:3001\:539f\:7a3f (\:30c8\:30fc\:30af\:30bb\:30eb) \:306e\:98df\:3044\:9055\:3044\:30fb\:8aa4\:308a\:3092\:6700\:5c0f\:9650\:306b\:76f4\:3057\:3001KG \:306e\:30ce\:30fc\:30c9\:3092\:30b9\:30e9\:30a4\:30c9\:306e\:6587\:8a00\:306b\:5408\:308f\:305b\:308b\:3002
+   \:30b9\:30e9\:30a4\:30c9\:81ea\:4f53\:306f\:66f8\:304d\:63db\:3048\:306a\:3044 (\:6c17\:306b\:306a\:308b\:70b9\:306f\:300c\:8981\:78ba\:8a8d\:300d\:3068\:3057\:3066\:5831\:544a\:3060\:3051\:3059\:308b)\:3002
+   \:5909\:66f4\:306e\:691c\:51fa: \:524d\:56de\:53cd\:6620\:3057\:305f\:3068\:304d\:306e\:679a\:3054\:3068\:306e\:30cf\:30c3\:30b7\:30e5 (\:672c\:6587\:3068\:539f\:7a3f) \:3092\:30c7\:30c3\:30ad\:306e TaggingRules "SWSyncHashes" \:306b\:6301\:3061\:3001
+   \:65e2\:5b9a ("Slides" -> Automatic) \:306f\:30cf\:30c3\:30b7\:30e5\:306e\:5909\:308f\:3063\:305f\:679a\:3060\:3051\:3092 LLM \:306b\:6e21\:3059 (\:6d41\:308c\:3092\:898b\:308b\:305f\:3081\:5168\:4f53\:306e\:76ee\:6b21\:306f\:6bce\:56de\:6e21\:3059)\:3002
+   \:679a\:3068 KG \:30ce\:30fc\:30c9\:306e\:5bfe\:5fdc: KG \:304b\:3089\:751f\:6210\:3057\:305f\:679a\:306f KGNode:<id> (\:56fa\:5b9a)\:3001\:305d\:308c\:4ee5\:5916 (\:5c55\:958b\:30fb\:624b\:4f5c\:308a) \:306f KGSync:<id> \:3092\:984c\:76ee\:30bb\:30eb\:306b\:4ed8\:3051\:308b\:3002
+   KGSync \:306f\:300c\:751f\:6210\:300d\:306e\:7f6e\:304d\:63db\:3048\:5bfe\:8c61\:306b\:306a\:3089\:306a\:3044 (\:624b\:3067\:4f5c\:3063\:305f\:679a\:3084\:5f15\:7528\:3057\:305f\:56f3\:3092\:6d88\:3055\:306a\:3044\:305f\:3081)\:3002
+   \:5fdc\:7b54\:3092\:5f85\:3064\:9593\:306b\:5229\:7528\:8005\:304c\:30c7\:30c3\:30ad\:3092\:76f4\:3057\:3066\:3082\:58ca\:3055\:306a\:3044: \:66f8\:304f\:76f4\:524d\:306b\:984c\:76ee\:3067\:679a\:3092\:63a2\:3057\:76f4\:3057\:3001\:539f\:7a3f\:304c\:9001\:3063\:305f\:3068\:304d\:304b\:3089
+   \:5909\:308f\:3063\:3066\:3044\:308c\:3070\:305d\:306e\:679a\:306f\:66f8\:304b\:306a\:3044 (\:5229\:7528\:8005\:306e\:76f4\:3057\:3092\:512a\:5148)\:3002\:539f\:7a3f\:306e\:76f4\:3057\:306f SlideGraphSyncUndo \:3067\:623b\:305b\:308b\:3002 *)
+$iSWSyncTagPrefix = "KGSync:";
+$iSWSyncBatch = 6;
+$iSWSyncCharsPerSecond = 5.5;
+$iSWSyncRun = <|"Busy" -> False|>;
+$iSWSyncLast = None;
+
+iSWSyncBusyQ[] := TrueQ[Lookup[$iSWSyncRun, "Busy", False]] && AbsoluteTime[] - Lookup[$iSWSyncRun, "Since", 0] < 1200;
+
+iSWSyncHash[md_, talk_] := Hash[{ToString[md], StringTrim[ToString[talk]]}, "SHA256", "HexString"];
+
+iSWSyncExpected[md_String] := With[{m = StringCases[md, "expected=" ~~ d : DigitCharacter .. :> d, 1]},
+  If[m === {}, None, ToExpression[First[m]]]];
+iSWSyncExpected[_] := None;
+
+iSWSyncStrings[x_] := StringTrim /@ Select[Flatten[{x}], StringQ[#] && StringTrim[#] =!= "" &];
+iSWSyncString[x_] := If[StringQ[x] && StringTrim[x] =!= "", StringTrim[x], None];
+
+(* \:984c\:76ee\:306f FE \:304b\:3089\:6bce\:56de\:8aad\:307f\:76f4\:3059 (iSWSlideTitles \:306f\:30bb\:30eb\:6570\:3067\:899a\:3048\:308b\:306e\:3067\:3001\:984c\:76ee\:3060\:3051\:76f4\:3057\:305f\:3068\:304d\:306b\:53e4\:3044) *)
+iSWSyncTitles[nb_NotebookObject] := Block[{$iSWTitleCache = <||>}, Quiet[iSWSlideTitles[nb]]];
+
+iSWSyncTitleCell[nb_NotebookObject, n_Integer] := Module[{ranges = iSWSlideRanges[nb], styles, cells, idx},
+  If[! (1 <= n <= Length[ranges]), Return[None]];
+  styles = iSWCellStyles[nb]; cells = Cells[nb];
+  idx = SelectFirst[Range[ranges[[n, 1]], Min[ranges[[n, 2]], Length[styles]]],
+    MemberQ[Flatten[{styles[[#]]}], "Subsection"] &, None];
+  If[IntegerQ[idx], cells[[idx]], None]];
+
+iSWSyncNodeOfTags[tags_] := FirstCase[Flatten[{tags}], s_String /; StringStartsQ[s, $iSWSyncTagPrefix] :>
+  StringDrop[s, StringLength[$iSWSyncTagPrefix]], None];
+
+(* \:679a\:3054\:3068\:306e\:5bfe\:5fdc\:30ce\:30fc\:30c9: KGNode (\:751f\:6210\:3057\:305f\:679a\:3001\:56fa\:5b9a) \:3092\:512a\:5148\:3057\:3001\:7121\:3051\:308c\:3070 KGSync (\:524d\:56de\:306e\:53cd\:6620\:3067\:4ed8\:3051\:305f\:5bfe\:5fdc) *)
+iSWSyncSlideNodes[nb_NotebookObject] := Table[
+  With[{co = iSWSyncTitleCell[nb, i]},
+    If[co === None, <|"Node" -> None, "Fixed" -> False|>,
+      With[{tags = iSWCellTags[co]},
+        With[{g = iSWKGNodeOfTags[tags]},
+          If[StringQ[g], <|"Node" -> g, "Fixed" -> True|>, <|"Node" -> iSWSyncNodeOfTags[tags], "Fixed" -> False|>]]]]],
+  {i, Length[iSWSlideRanges[nb]]}];
+
+iSWSyncSetTag[nb_NotebookObject, n_Integer, id_String] := Module[{co = iSWSyncTitleCell[nb, n], tags},
+  If[co === None, Return[$Failed]];
+  tags = Flatten[{Replace[iSWCellTags[co], Except[_List | _String] -> {}]}];
+  If[iSWKGNodeOfTags[tags] =!= None, Return[n]];
+  tags = Append[Select[tags, StringQ[#] && ! StringStartsQ[#, $iSWSyncTagPrefix] &], $iSWSyncTagPrefix <> id];
+  SetOptions[co, CellTags -> tags];
+  n];
+
+(* \:679a n \:306e\:5143\:306e\:539f\:7a3f (\:8a00\:8a9e\:30bf\:30b0\:306e\:7121\:3044\:30c8\:30fc\:30af\:30bb\:30eb) \:3092 FE \:304b\:3089\:8aad\:3080 *)
+iSWSyncTalkCells[nb_NotebookObject, n_Integer] := Module[{ranges = iSWSlideRanges[nb], cells, styles, span},
+  If[! (1 <= n <= Length[ranges]), Return[$Failed]];
+  cells = Cells[nb]; styles = iSWCellStyles[nb];
+  span = Range[ranges[[n, 1]], Min[ranges[[n, 2]], Length[styles]]];
+  cells[[Select[span, MemberQ[Flatten[{styles[[#]]}], "SlideTalk"] && iSWTalkCellLangFE[cells[[#]]] === None &]]]];
+iSWSyncTalkFE[nb_NotebookObject, n_Integer] := With[{cs = iSWSyncTalkCells[nb, n]},
+  If[! ListQ[cs], $Failed,
+    StringTrim[StringRiffle[Map[With[{c = Quiet[NotebookRead[#]]}, If[Head[c] === Cell, iCellText[c], ""]] &, cs], "\n"]]]];
+
+(* \:984c\:76ee\:3067\:679a\:3092\:63a2\:3057\:76f4\:3059: \:540c\:3058\:756a\:53f7\:3067\:984c\:76ee\:304c\:540c\:3058\:306a\:3089\:305d\:306e\:679a\:3001\:9055\:3048\:3070\:540c\:3058\:984c\:76ee\:306e\:679a\:304c 1 \:3064\:3060\:3051\:306e\:3068\:304d\:305d\:306e\:679a *)
+iSWSyncLocate[nb_NotebookObject, n_Integer, title_String] := Module[{titles = iSWSyncTitles[nb], hits},
+  If[! ListQ[titles], Return[None]];
+  If[1 <= n <= Length[titles] && titles[[n]] === title, Return[n]];
+  hits = Flatten[Position[titles, title, {1}]];
+  If[Length[hits] === 1, First[hits], None]];
+
+(* KG \:306e\:30ce\:30fc\:30c9\:4e00\:89a7 (Id | \:984c\:76ee) \:3068\:3001\:5bfe\:5fdc\:306e\:4ed8\:3044\:305f\:679a\:306b\:6e21\:3059\:4e2d\:8eab *)
+iSWSyncKGInfo[kg_Association] := Module[{nodes, index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], txt},
+  nodes = SortBy[kg["Nodes"], {Replace[Lookup[#, "Order", None], Except[_?NumericQ] -> 10^6], #["Id"]} &];
+  txt = StringRiffle[Map[#["Id"] <> " | " <> SourceVault`SourceVaultKGText[#, "Label"] <>
+      If[Lookup[#, "Layer", ""] === "Background", " | \:5468\:8fba\:77e5\:8b58", ""] <>
+      If[TrueQ[Lookup[#, "Hidden", False]], " | \:96a0\:3057\:3066\:3044\:308b", ""] &, nodes], "\n"];
+  <|"NodeList" -> StringTake[txt, UpTo[14000]], "Index" -> index, "Root" -> Lookup[kg, "Root", "root"]|>];
+
+iSWSyncNodeLine[kgInfo_Association, s_Association] := Module[{id = s["Node"]},
+  Which[
+    StringQ[id] && KeyExistsQ[kgInfo["Index"], id],
+      "[\:5bfe\:5fdc\:30ce\:30fc\:30c9] " <> id <> If[TrueQ[s["Fixed"]], " (\:56fa\:5b9a)", " (\:524d\:56de\:306e\:5bfe\:5fdc\:3002\:9055\:3063\:3066\:3044\:308c\:3070\:76f4\:3057\:3066\:3088\:3044)"] <> "\n" <>
+        iSWAdjustNodeDetail[kgInfo["Index"][id]],
+    True, "[\:5bfe\:5fdc\:30ce\:30fc\:30c9] \:307e\:3060\:7121\:3044 (\:4e00\:89a7\:304b\:3089\:9078\:3076\:304b new \:304b null)"]];
+
+iSWSyncPrompt[title_String, slides_List, targets_List, meta_String, kgInfo_] := Module[{kgOn = AssociationQ[kgInfo]},
+  meta <>
+  "\:3042\:306a\:305f\:306f\:767a\:8868\:30b9\:30e9\:30a4\:30c9\:306e\:6821\:95b2\:8005\:3067\:3059\:3002\:767a\:8868\:300c" <> title <> "\:300d\:306e\:30b9\:30e9\:30a4\:30c9\:306f\:767a\:8868\:8005\:304c\:624b\:3067\:76f4\:3057\:307e\:3057\:305f\:3002" <>
+  "\:30b9\:30e9\:30a4\:30c9\:3092\:6b63\:672c\:3068\:3057\:3066\:3001\:539f\:7a3f (\:8aad\:307f\:4e0a\:3052\:308b\:53f0\:672c)" <> If[kgOn, "\:3068\:77e5\:8b58\:30b0\:30e9\:30d5 (KG) \:306e\:30ce\:30fc\:30c9", ""] <> "\:3092\:30b9\:30e9\:30a4\:30c9\:306b\:5408\:308f\:305b\:3066\:304f\:3060\:3055\:3044\:3002\n\n" <>
+  "\:767a\:8868\:5168\:4f53\:306e\:6d41\:308c (\:756a\:53f7 \:984c\:76ee / \:539f\:7a3f\:306e\:5192\:982d):\n" <>
+  StringRiffle[Map[Function[s, "  " <> ToString[s["Slide"]] <> " " <> iSWQAOneLine[s["Title"]] <>
+    With[{t = StringTrim[ToString[Lookup[s, "Talk", ""]]]}, If[t === "", " / (\:539f\:7a3f\:306a\:3057)", " / " <> StringTake[StringReplace[t, "\n" -> " "], UpTo[50]]]]], slides], "\n"] <>
+  "\n\n" <>
+  If[kgOn, "=== KG \:306e\:30ce\:30fc\:30c9\:4e00\:89a7 (Id | \:984c\:76ee) ===\n" <> kgInfo["NodeList"] <> "\n\n", ""] <>
+  "=== \:78ba\:8a8d\:3059\:308b\:30b9\:30e9\:30a4\:30c9 ===\n" <>
+  StringRiffle[Map[Function[s,
+    "--- \:30b9\:30e9\:30a4\:30c9 " <> ToString[s["Slide"]] <> ": " <> iSWQAOneLine[s["Title"]] <> "\n" <>
+    "[\:30b9\:30e9\:30a4\:30c9 (\:6b63\:672c)]\n" <> StringTake[ToString[s["Text"]], UpTo[2500]] <> "\n" <>
+    With[{e = iSWSyncExpected[s["Text"]]}, If[IntegerQ[e],
+      "[\:60f3\:5b9a\:6642\:9593] " <> ToString[e] <> " \:79d2 (\:65e5\:672c\:8a9e\:306e\:539f\:7a3f\:306a\:3089 " <> ToString[Round[$iSWSyncCharsPerSecond e]] <> " \:5b57\:524d\:5f8c)\n", ""]] <>
+    "[\:3044\:307e\:306e\:539f\:7a3f]\n" <> With[{t = StringTrim[ToString[Lookup[s, "Talk", ""]]]}, If[t === "", "(\:7121\:3044)", StringTake[t, UpTo[2500]]]] <>
+    If[kgOn, "\n" <> iSWSyncNodeLine[kgInfo, s], ""]], targets], "\n\n"] <>
+  "\n\n\:898f\:5247 (\:53b3\:5b88):\n" <>
+  "- \:30b9\:30e9\:30a4\:30c9\:306e\:984c\:76ee\:30fb\:7b87\:6761\:66f8\:304d\:30fb\:56f3\:30fb\:51fa\:5178\:306f\:767a\:8868\:8005\:304c\:76f4\:3057\:305f\:6b63\:672c\:3002\:30b9\:30e9\:30a4\:30c9\:306e\:5185\:5bb9\:3092\:5909\:3048\:308b\:63d0\:6848\:306f\:3057\:306a\:3044\:3002\n" <>
+  "- \:539f\:7a3f\:306f\:767a\:8868\:8005\:306e\:8a00\:3044\:56de\:3057\:3092\:5c0a\:91cd\:3057\:3001\:76f4\:3059\:5fc5\:8981\:306e\:3042\:308b\:7b87\:6240\:3060\:3051\:3092\:6700\:5c0f\:9650\:306b\:76f4\:3059\:3002\:76f4\:3059\:7406\:7531\:306f\:6b21\:306e\:3069\:308c\:304b: " <>
+    "(1) \:30b9\:30e9\:30a4\:30c9\:3068\:98df\:3044\:9055\:3046 (\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:6d88\:3048\:305f\:9805\:76ee\:30fb\:65b0\:3057\:304f\:52a0\:308f\:3063\:305f\:9805\:76ee\:306b\:5408\:3063\:3066\:3044\:306a\:3044\:3001\:6570\:5024\:30fb\:540d\:79f0\:30fb\:9806\:5e8f\:304c\:9055\:3046) " <>
+    "(2) \:30b9\:30e9\:30a4\:30c9\:306b\:7121\:3044\:56f3\:30fb\:8868\:30fb\:5199\:771f\:306b\:89e6\:308c\:3066\:3044\:308b\:3001\:307e\:305f\:306f\:30b9\:30e9\:30a4\:30c9\:306e\:56f3\:306b\:89e6\:308c\:3066\:3044\:306a\:3044 " <>
+    "(3) \:8aa4\:308a (\:8aa4\:5b57\:8131\:5b57\:3001\:56fa\:6709\:540d\:8a5e\:306e\:8aa4\:8a18\:3001\:4e8b\:5b9f\:306e\:8aa4\:308a\:3001\:524d\:5f8c\:306e\:30b9\:30e9\:30a4\:30c9\:3068\:306e\:77db\:76fe) " <>
+    "(4) \:60f3\:5b9a\:6642\:9593\:306b\:5bfe\:3057\:3066\:9577\:3055\:304c\:5927\:304d\:304f\:5916\:308c\:308b\:3002\n" <>
+  "- \:76f4\:3059\:5fc5\:8981\:304c\:7121\:3051\:308c\:3070 \"Talk\": null\:3002\:539f\:7a3f\:304c\:7121\:3044\:679a\:306f\:65b0\:3057\:304f\:66f8\:304f (\:3067\:3059\:30fb\:307e\:3059\:8abf\:30012\:301c6 \:6587\:3001\:524d\:306e\:679a\:304b\:3089\:306e\:3064\:306a\:304c\:308a\:3092\:4e00\:8a00)\:3002\n" <>
+  "- \:8aad\:307f\:4e0a\:3052\:308b\:539f\:7a3f\:306a\:306e\:3067 $...$ \:3084 ** \:3084 URL \:3084\:8a18\:53f7\:5217\:3092\:66f8\:304b\:306a\:3044\:3002\:30b9\:30e9\:30a4\:30c9\:306b\:7121\:3044\:4e8b\:5b9f\:30fb\:6570\:5024\:3092\:8db3\:3055\:306a\:3044\:3002\n" <>
+  If[kgOn,
+    "- Node: \:305d\:306e\:679a\:306b\:5bfe\:5fdc\:3059\:308b KG \:30ce\:30fc\:30c9\:306e Id\:3002[\:5bfe\:5fdc\:30ce\:30fc\:30c9] \:306b (\:56fa\:5b9a) \:3068\:3042\:308c\:3070\:305d\:306e Id\:3002\:305d\:308c\:4ee5\:5916\:306f\:4e00\:89a7\:304b\:3089\:9078\:3073\:3001" <>
+      "\:5bfe\:5fdc\:3059\:308b\:30ce\:30fc\:30c9\:304c\:7121\:3044\:5185\:5bb9\:306a\:3089 \"new\"\:3001\:30bf\:30a4\:30c8\:30eb\:306e\:679a\:30fb\:76ee\:6b21\:30fb\:6328\:62f6\:3060\:3051\:306e\:679a\:306a\:3089 null\:3002\n" <>
+    "- Label \:306f\:30b9\:30e9\:30a4\:30c9\:306e\:984c\:76ee\:3001Points \:306f\:30b9\:30e9\:30a4\:30c9\:306e\:7b87\:6761\:66f8\:304d\:3092\:305d\:306e\:307e\:307e\:306e\:6587\:8a00\:3067 (2\:301c6 \:500b\:3002\:7b87\:6761\:66f8\:304d\:304c\:7121\:3044\:679a\:306f\:5185\:5bb9\:3092 1\:301c3 \:500b\:306e\:4f53\:8a00\:6b62\:3081\:306b\:8981\:7d04)\:3001" <>
+      "Lead \:306f 1 \:6587 40 \:5b57\:4ee5\:5185\:306e\:5c0e\:5165\:6587\:3002Node \:304c null \:306a\:3089\:7701\:3044\:3066\:3088\:3044\:3002\n", ""] <>
+  "- Issues: \:30b9\:30e9\:30a4\:30c9\:81ea\:4f53\:306e\:8aa4\:308a\:30fb\:7591\:554f (\:8aa4\:5b57\:3001\:4e8b\:5b9f\:306e\:8aa4\:308a\:3001\:4ed6\:306e\:30b9\:30e9\:30a4\:30c9\:3068\:306e\:77db\:76fe\:3001\:51fa\:5178\:306e\:6b20\:843d) \:3092\:77ed\:304f\:66f8\:304f\:3002\:30b9\:30e9\:30a4\:30c9\:306f\:76f4\:3055\:305a\:6307\:6458\:3060\:3051\:3002\:7121\:3051\:308c\:3070 []\:3002\n" <>
+  "- TalkReasons: \:539f\:7a3f\:3092\:76f4\:3057\:305f\:7406\:7531\:3092\:77ed\:304f (\:76f4\:3055\:306a\:3044\:3068\:304d\:306f [])\:3002\n\n" <>
+  "\:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057:\n" <>
+  "{\"Slides\": [{\"Slide\": <\:756a\:53f7>, \"Talk\": \"\:76f4\:3057\:305f\:539f\:7a3f\" \:307e\:305f\:306f null, \"TalkReasons\": [\"..\"], " <>
+    If[kgOn, "\"Node\": \"<Id>\" \:307e\:305f\:306f \"new\" \:307e\:305f\:306f null, \"Label\": \"..\", \"Lead\": \"..\", \"Points\": [\"..\"], ", ""] <>
+    "\"Issues\": [\"..\"]}]}"];
+
+iSWSyncParse[resp_, nums_List] := Module[{json, d, rows},
+  json = If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"], iSWRefineExtractJSON[resp], $Failed];
+  d = If[StringQ[json], Quiet @ Check[Developer`ReadRawJSONString[json], $Failed], $Failed];
+  If[! AssociationQ[d], Return[$Failed]];
+  rows = Replace[Lookup[d, "Slides", {}], Except[_List] -> {}];
+  Association @ Cases[rows, r_Association /; IntegerQ[Lookup[r, "Slide", None]] && MemberQ[nums, r["Slide"]] :>
+    (r["Slide"] -> <|
+      "Talk" -> iSWSyncString[Lookup[r, "Talk", None]],
+      "TalkReasons" -> iSWSyncStrings[Lookup[r, "TalkReasons", {}]],
+      "Node" -> iSWSyncString[Lookup[r, "Node", None]],
+      "Label" -> iSWSyncString[Lookup[r, "Label", None]],
+      "Lead" -> iSWSyncString[Lookup[r, "Lead", None]],
+      "Points" -> iSWSyncStrings[Lookup[r, "Points", {}]],
+      "Issues" -> iSWSyncStrings[Lookup[r, "Issues", {}]]|>)]];
+
+iSWSyncRunAppend[key_String, x_] := ($iSWSyncRun[key] = Append[Lookup[$iSWSyncRun, key, {}], x]);
+
+Options[SlideGraphSync] = {"Slides" -> Automatic, "KG" -> Automatic, "Talk" -> True, "Translate" -> Automatic, "Then" -> None};
+SlideGraphSync[opts : OptionsPattern[]] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphSync[nb, opts]]];
+SlideGraphSync[nb_NotebookObject, OptionsPattern[]] := Module[
+  {outline, n, titles, nodes, slides, prev, sel, targets, title, meta, kg = None, gid = None, kgInfo = None, pl = None, batches},
+  If[! iSWRequireLLM[], Return[$Failed]];
+  If[iSWSyncBusyQ[],
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620\:3057\:3066\:3044\:307e\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "Syncing from the slides; wait until it finishes"]];
+    Return[<|"Status" -> "Busy"|>]];
+  If[TrueQ[Quiet[iSWSlidesShowTranslationQ[nb]]],
+    iSWStatus[nb, iSL["\:82f1\:8a33\:3092\:8868\:793a\:4e2d\:306e\:679a\:304c\:3042\:308a\:307e\:3059\:3002\:539f\:6587\:306e\:8868\:793a\:306b\:623b\:3057\:3066\:304b\:3089\:53cd\:6620\:3057\:3066\:304f\:3060\:3055\:3044 (SlideShowLanguage[\"Original\"])",
+      "Some slides show the translation; switch back to the original first (SlideShowLanguage[\"Original\"])"]];
+    Return[<|"Status" -> "ShowingTranslation"|>]];
+  (* \:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:8aad\:3080 (iSWDeckSource \:306f\:672a\:5909\:66f4\:306e\:3068\:304d\:30d5\:30a1\:30a4\:30eb\:3092\:8aad\:3080\:304c\:3001DocumentModified \:304c\:7acb\:305f\:306a\:3044\:66f8\:304d\:8fbc\:307f\:304c\:3042\:308b\:3068\:53e4\:3044\:4e2d\:8eab\:3068\:6bd4\:3079\:3066\:3057\:307e\:3046) *)
+  outline = iTalkDeckOutline[iSWDeckTextNotebook[nb]];
+  If[outline === $Failed,
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093", "No slides found"]]; iSWStatusClearLater[nb];
+    Return[$Failed]];
+  n = outline["Count"];
+  titles = iSWSyncTitles[nb];
+  nodes = Quiet[iSWSyncSlideNodes[nb]];
+  If[! ListQ[titles] || Length[titles] =!= n || ! ListQ[nodes] || Length[nodes] =!= n,
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:306e\:533a\:5207\:308a\:3092\:8aad\:307f\:53d6\:308c\:307e\:305b\:3093 (\:4fdd\:5b58\:3057\:3066\:304b\:3089\:3082\:3046\:4e00\:5ea6)", "Could not read the slide boundaries (save and retry)"]];
+    Return[$Failed]];
+  slides = Table[<|"Slide" -> i, "Title" -> titles[[i]], "Text" -> outline["Markdown"][[i]], "Talk" -> StringTrim[outline["Talks"][[i]]],
+      "Node" -> nodes[[i, "Node"]], "Fixed" -> nodes[[i, "Fixed"]],
+      "Translated" -> Length[Replace[outline["TalkLangs"][[i]], Except[_Association | _List] -> {}]] > 0,
+      "Hash" -> iSWSyncHash[outline["Markdown"][[i]], outline["Talks"][[i]]]|>, {i, n}];
+  prev = Replace[Quiet[CurrentValue[nb, {TaggingRules, "SWSyncHashes"}]], Except[{___String}] -> None];
+  sel = OptionValue["Slides"];
+  targets = Which[
+    MatchQ[sel, {__Integer}], Select[slides, MemberQ[sel, #["Slide"]] &],
+    sel === All || prev === None, slides,
+    True, Select[slides, ! MemberQ[prev, #["Hash"]] &]];
+  If[OptionValue["KG"] =!= False,
+    gid = Quiet[Lookup[SlideGraphSpec[nb], "Graph", None]];
+    kg = If[StringQ[gid], Quiet[iSWKGResolve[gid]], None];
+    If[! AssociationQ[kg], kg = None; gid = None]];
+  (* \:76f4\:3057\:305f\:679a\:304c\:7121\:304f\:3066\:3082\:3001\:524d\:56de\:3042\:3063\:305f\:679a\:3092\:6d88\:3057\:3066\:3044\:308c\:3070 KG \:3067\:305d\:306e\:30ce\:30fc\:30c9\:3092\:96a0\:3059 (LLM \:306f\:547c\:3070\:306a\:3044) *)
+  If[targets === {} && ! (AssociationQ[kg] &&
+      Complement[Replace[Quiet[CurrentValue[nb, {TaggingRules, "SWSyncNodes"}]], Except[{___String}] -> {}],
+        Cases[Lookup[slides, "Node"], _String]] =!= {}),
+    iSWStatus[nb, iSL["\:524d\:56de\:306e\:53cd\:6620\:304b\:3089\:76f4\:3057\:305f\:679a\:306f\:3042\:308a\:307e\:305b\:3093 (\:5168\:90e8\:898b\:76f4\:3059\:306a\:3089 SlideGraphSync[\"Slides\" -> All])",
+      "No slide changed since the last sync (SlideGraphSync[\"Slides\" -> All] checks every slide)"]];
+    iSWStatusClearLater[nb];
+    Return[<|"Status" -> "UpToDate", "Slides" -> n|>]];
+  If[AssociationQ[kg], kgInfo = iSWSyncKGInfo[kg]; pl = iSWRefinePrivacy[nb, kg]];
+  title = With[{t = Lookup[SlideTalkMeta[nb], "Title", ""]},
+    If[StringQ[t] && StringTrim[t] =!= "", t, Last[iSWDeckBaseName[nb]]]];
+  meta = iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb] <> iSWStoryBlock[nb];
+  batches = Partition[targets, UpTo[$iSWSyncBatch]];
+  $iSWSyncRun = <|"Busy" -> True, "Since" -> AbsoluteTime[], "Rows" -> <||>, "Written" -> {}, "Skipped" -> {}, "Failed" -> {}|>;
+  iSWSyncChain[nb, <|"Title" -> title, "Slides" -> slides, "Meta" -> meta, "Batches" -> batches, "KG" -> kg, "Graph" -> gid,
+    "KGInfo" -> kgInfo, "PL" -> pl, "Talk" -> TrueQ[OptionValue["Talk"]], "Translate" -> OptionValue["Translate"],
+    "Then" -> OptionValue["Then"], "Targets" -> (#["Slide"] & /@ targets)|>, 1];
+  <|"Status" -> "Submitted", "Slides" -> (#["Slide"] & /@ targets), "Batches" -> Length[batches], "Graph" -> gid|>];
+
+iSWSyncChain[nb_, ctx_Association, idx_Integer] := If[idx > Length[ctx["Batches"]], iSWSyncFinish[nb, ctx],
+  Module[{targets = ctx["Batches"][[idx]], prompt},
+    $iSWSyncRun["Since"] = AbsoluteTime[];
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620: \:78ba\:8a8d\:4e2d " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "\[Ellipsis]",
+      "Sync from slides: checking " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "..."]];
+    prompt = iSWSyncPrompt[ctx["Title"], ctx["Slides"], targets, ctx["Meta"], ctx["KGInfo"]];
+    With[{n2 = nb, c = ctx, i2 = idx, tg = targets},
+      NBAccess`$NBLLMQueryFunc[prompt,
+        Function[resp, Quiet[iSWSyncApplyBatch[n2, c, tg, resp]]; iSWSyncChain[n2, c, i2 + 1]],
+        n2, Fallback -> iSWFallback[], Sequence @@ If[NumericQ[ctx["PL"]], {PrivacyLevel -> ctx["PL"]}, {}]]]]];
+
+(* 1 \:56de\:5206\:306e\:5fdc\:7b54: \:539f\:7a3f\:306f\:5f8c\:308d\:306e\:679a\:304b\:3089\:66f8\:304f (\:524d\:306e\:679a\:306e\:30bb\:30eb\:4f4d\:7f6e\:304c\:305a\:308c\:306a\:3044)\:3002KG \:306f\:6700\:5f8c\:306b\:307e\:3068\:3081\:3066 *)
+iSWSyncApplyBatch[nb_, ctx_Association, targets_List, resp_] := Module[{rows = iSWSyncParse[resp, Lookup[targets, "Slide"]]},
+  If[! AssociationQ[rows],
+    Scan[iSWSyncRunAppend["Failed", <|"Slide" -> #["Slide"], "Title" -> #["Title"], "Reason" -> "LLM \:306e\:5fdc\:7b54\:3092\:8aad\:3081\:306a\:3044"|>] &, targets];
+    Return[Null]];
+  Do[Module[{s = t, r = Lookup[rows, t["Slide"], None], new, k, cur},
+      If[! AssociationQ[r],
+        iSWSyncRunAppend["Failed", <|"Slide" -> s["Slide"], "Title" -> s["Title"], "Reason" -> "\:5fdc\:7b54\:306b\:3053\:306e\:679a\:304c\:7121\:3044"|>]; Continue[]];
+      new = r["Talk"];
+      If[TrueQ[ctx["Talk"]] && StringQ[new] && new =!= s["Talk"],
+        k = iSWSyncLocate[nb, s["Slide"], s["Title"]];
+        cur = If[IntegerQ[k], iSWSyncTalkFE[nb, k], $Failed];
+        Which[
+          ! IntegerQ[k],
+            iSWSyncRunAppend["Skipped", <|"Slide" -> s["Slide"], "Title" -> s["Title"], "Reason" -> "\:679a\:304c\:898b\:3064\:304b\:3089\:306a\:3044 (\:984c\:76ee\:304c\:5909\:308f\:3063\:305f)"|>];
+            r["Talk"] = None,
+          cur =!= s["Talk"],
+            iSWSyncRunAppend["Skipped", <|"Slide" -> k, "Title" -> s["Title"], "Reason" -> "\:53cd\:6620\:4e2d\:306b\:539f\:7a3f\:304c\:76f4\:3055\:308c\:305f"|>];
+            r["Talk"] = None,
+          iSWTalkWriteCell[nb, k, new] === $Failed,
+            iSWSyncRunAppend["Failed", <|"Slide" -> k, "Title" -> s["Title"], "Reason" -> "\:539f\:7a3f\:3092\:66f8\:3051\:306a\:3044"|>];
+            r["Talk"] = None,
+          True,
+            iSWSyncRunAppend["Written", <|"Slide" -> k, "Title" -> s["Title"], "Old" -> s["Talk"], "New" -> new,
+              "Reasons" -> r["TalkReasons"], "Translated" -> s["Translated"]|>]],
+        r["Talk"] = None];
+      $iSWSyncRun["Rows"] = Append[$iSWSyncRun["Rows"], s["Slide"] -> r]],
+    {t, Reverse[targets]}]];
+
+(* KG: \:30b9\:30e9\:30a4\:30c9\:9806\:306b\:5bfe\:5fdc\:30ce\:30fc\:30c9\:3092\:6c7a\:3081\:3066\:5dee\:5206\:306b\:3057\:3001\:8abf\:6574\:3068\:540c\:3058\:691c\:67fb (iSWAdjustDelta) \:3092\:901a\:3057\:3066\:53d6\:308a\:8fbc\:3080 *)
+iSWSyncApplyKG[nb_, ctx_Association, rows_Association] := Module[
+  {kg = iSWKGResolve[ctx["Graph"]], index, root, raw = {}, map = <||>, last = None, prevNodes, nowNodes, hide, key, d, res},
+  If[! AssociationQ[kg], Return[<|"Status" -> "NoGraph"|>]];
+  index = Association[(#["Id"] -> #) & /@ kg["Nodes"]];
+  root = Lookup[kg, "Root", "root"];
+  Do[Module[{r = Lookup[rows, s["Slide"], None], id = None, label, pts, lead, talk},
+      If[AssociationQ[r],
+        id = Which[
+          TrueQ[s["Fixed"]] && StringQ[s["Node"]] && KeyExistsQ[index, s["Node"]], s["Node"],
+          StringQ[r["Node"]] && r["Node"] =!= root && KeyExistsQ[index, r["Node"]], r["Node"],
+          r["Node"] === "new", "adj_sync_" <> StringTake[Hash[{s["Title"], s["Slide"]}, "SHA256", "HexString"], 10],
+          True, None];
+        If[StringQ[id],
+          label = Replace[r["Label"], None -> s["Title"]];
+          lead = r["Lead"];
+          pts = r["Points"];
+          If[pts === {}, pts = Take[Select[{lead, label}, StringQ], UpTo[1]]];
+          talk = Replace[r["Talk"], None -> s["Talk"]];
+          AppendTo[raw, Select[<|"Id" -> id, "Label" -> label, "Lead" -> lead, "Points" -> pts, "Talk" -> talk,
+              "Importance" -> Max[0.9, Replace[Lookup[Lookup[index, id, <||>], "Importance", 0.], Except[_?NumericQ] -> 0.]],
+              "Hidden" -> False, "After" -> If[! KeyExistsQ[index, id] && StringQ[last], last, None]|>,
+            ! MatchQ[#, None | "" | {}] &]];
+          map[s["Slide"]] = id]];
+      With[{cur = Lookup[map, s["Slide"], s["Node"]]}, If[StringQ[cur], last = cur]]],
+    {s, ctx["Slides"]}];
+  (* \:524d\:56de\:306e\:53cd\:6620\:3067\:679a\:304c\:3042\:3063\:305f\:306e\:306b\:3001\:3044\:307e\:306f\:3069\:306e\:679a\:306b\:3082\:7121\:3044\:30ce\:30fc\:30c9 = \:5229\:7528\:8005\:304c\:679a\:3092\:6d88\:3057\:305f \[RightArrow] KG \:304b\:3089\:306f\:6d88\:3055\:305a\:96a0\:3059 *)
+  prevNodes = Replace[Quiet[CurrentValue[nb, {TaggingRules, "SWSyncNodes"}]], Except[{___String}] -> {}];
+  nowNodes = DeleteDuplicates[Join[Cases[Lookup[ctx["Slides"], "Node"], _String], Values[map]]];
+  hide = Select[Complement[prevNodes, nowNodes], KeyExistsQ[index, #] && # =!= root &];
+  If[raw === {} && hide === {}, Return[<|"Status" -> "NoChange", "Map" -> map, "Added" -> {}, "Changed" -> {}, "Hidden" -> {}, "Warnings" -> {}|>]];
+  key = iSWAdjustKey[kg];
+  d = iSWAdjustDelta[kg, <|"Nodes" -> raw, "Hide" -> hide|>, None, If[StringQ[key], key, ""]];
+  res = SlideGraphIngest[ctx["Graph"], d["Delta"], "Merge" -> True];
+  If[! MatchQ[res, _Success],
+    Return[<|"Status" -> "Failed", "Message" -> StringTake[ToString[res], UpTo[200]], "Map" -> map,
+      "Added" -> {}, "Changed" -> {}, "Hidden" -> {}, "Warnings" -> d["Warnings"]|>]];
+  (* \:984c\:76ee\:30bb\:30eb\:306b\:5bfe\:5fdc\:3092\:523b\:3080 (KGNode \:306e\:679a\:306f\:305d\:306e\:307e\:307e) *)
+  KeyValueMap[Function[{k, id},
+      If[MemberQ[Join[d["Added"], d["Changed"]], id],
+        With[{j = iSWSyncLocate[nb, k, SelectFirst[ctx["Slides"], #["Slide"] === k &]["Title"]]},
+          If[IntegerQ[j], iSWSyncSetTag[nb, j, id]]]]],
+    map];
+  <|"Status" -> "Applied", "Map" -> map, "Added" -> d["Added"], "Changed" -> d["Changed"], "Hidden" -> d["Hidden"],
+    "Warnings" -> d["Warnings"]|>];
+
+(* \:53cd\:6620\:6e08\:307f\:306e\:5370: \:5931\:6557\:30fb\:898b\:9001\:308a\:306e\:679a\:4ee5\:5916\:306e\:30cf\:30c3\:30b7\:30e5\:3068\:3001\:679a\:306e\:3042\:308b\:30ce\:30fc\:30c9 *)
+iSWSyncSaveState[nb_NotebookObject, badTitles_List] := Module[{outline = iTalkDeckOutline[iSWDeckTextNotebook[nb]], titles, hashes},
+  If[! AssociationQ[outline], Return[$Failed]];
+  titles = iSWSyncTitles[nb];
+  hashes = MapThread[iSWSyncHash, {outline["Markdown"], outline["Talks"]}];
+  If[ListQ[titles] && Length[titles] === Length[hashes],
+    hashes = Pick[hashes, Map[! MemberQ[badTitles, #] &, titles]]];
+  CurrentValue[nb, {TaggingRules, "SWSyncHashes"}] = hashes;
+  CurrentValue[nb, {TaggingRules, "SWSyncNodes"}] = DeleteDuplicates[Cases[Lookup[iSWSyncSlideNodes[nb], "Node", {}], _String]];
+  CurrentValue[nb, {TaggingRules, "SWSyncTime"}] = DateString["ISODateTime"];
+  Length[hashes]];
+
+iSWSyncReport[ctx_Association, kgRes_, issues_List] := Module[{w = $iSWSyncRun["Written"], sk = $iSWSyncRun["Skipped"],
+    fl = $iSWSyncRun["Failed"], lines = {}, line},
+  line[s_] := "  " <> ToString[s["Slide"]] <> "\:300c" <> iSWQAOneLine[s["Title"]] <> "\:300d";
+  AppendTo[lines, "\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620 (" <> DateString[{"Year", "/", "Month", "/", "Day", " ", "Hour", ":", "Minute"}] <> ", \:78ba\:8a8d\:3057\:305f\:679a " <>
+    ToString[Length[ctx["Targets"]]] <> ")"];
+  AppendTo[lines, "\:539f\:7a3f\:3092\:76f4\:3057\:305f\:679a: " <> ToString[Length[w]]];
+  Scan[AppendTo[lines, line[#] <> If[#["Reasons"] =!= {}, ": " <> StringRiffle[#["Reasons"], " / "], ""]] &, SortBy[w, #["Slide"] &]];
+  If[AssociationQ[kgRes] && KeyExistsQ[kgRes, "Status"],
+    AppendTo[lines, "\:77e5\:8b58\:30b0\:30e9\:30d5 (" <> ToString[ctx["Graph"]] <> "): " <> Switch[kgRes["Status"],
+      "Applied", "\:5909\:66f4 " <> ToString[Length[kgRes["Changed"]]] <> " / \:8ffd\:52a0 " <> ToString[Length[kgRes["Added"]]] <>
+        " / \:96a0\:3059 " <> ToString[Length[kgRes["Hidden"]]] <>
+        If[kgRes["Hidden"] =!= {}, " (\:679a\:3092\:6d88\:3057\:305f\:30ce\:30fc\:30c9: " <> StringRiffle[kgRes["Hidden"], ", "] <> ")", ""],
+      "NoChange", "\:5909\:66f4\:306a\:3057",
+      _, "\:53cd\:6620\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f " <> ToString[Lookup[kgRes, "Message", ""]]] <>
+      If[Lookup[kgRes, "Warnings", {}] =!= {}, " (\:6ce8\:610f: " <> StringRiffle[kgRes["Warnings"], " / "] <> ")", ""]],
+    AppendTo[lines, "\:77e5\:8b58\:30b0\:30e9\:30d5: \:306a\:3057 (Story \:306e Graph \:304c\:7121\:3044\:304b\:672a\:69cb\:7bc9\:3002\:539f\:7a3f\:3060\:3051\:76f4\:3057\:305f)"]];
+  If[issues =!= {},
+    AppendTo[lines, "\:8981\:78ba\:8a8d (\:30b9\:30e9\:30a4\:30c9\:306f\:76f4\:3057\:3066\:3044\:307e\:305b\:3093):"];
+    Scan[AppendTo[lines, line[#] <> ": " <> StringRiffle[#["Issues"], " / "]] &, issues]];
+  If[sk =!= {}, AppendTo[lines, "\:66f8\:304b\:306a\:304b\:3063\:305f\:679a:"]; Scan[AppendTo[lines, line[#] <> ": " <> #["Reason"]] &, sk]];
+  If[fl =!= {}, AppendTo[lines, "\:78ba\:8a8d\:3067\:304d\:306a\:304b\:3063\:305f\:679a (\:6b21\:56de\:307e\:305f\:78ba\:8a8d\:3057\:307e\:3059):"]; Scan[AppendTo[lines, line[#] <> ": " <> #["Reason"]] &, fl]];
+  If[w =!= {}, AppendTo[lines, "\:539f\:7a3f\:3092\:5143\:306b\:623b\:3059: SlideGraphSyncUndo[]"]];
+  StringRiffle[lines, "\n"]];
+
+iSWSyncFinish[nb_, ctx_Association] := Module[{rows = $iSWSyncRun["Rows"], kgRes = None, issues, report, summary, bad, tr = False},
+  If[AssociationQ[ctx["KG"]], kgRes = Quiet @ Check[iSWSyncApplyKG[nb, ctx, rows], <|"Status" -> "Failed", "Message" -> "error"|>]];
+  issues = SortBy[KeyValueMap[Function[{k, r}, <|"Slide" -> k, "Title" -> SelectFirst[ctx["Slides"], #["Slide"] === k &]["Title"],
+      "Issues" -> r["Issues"]|>], Select[rows, #["Issues"] =!= {} &]], #["Slide"] &];
+  bad = Lookup[Join[$iSWSyncRun["Skipped"], $iSWSyncRun["Failed"]], "Title", {}];
+  Quiet[iSWSyncSaveState[nb, bad]];
+  If[$iSWSyncRun["Written"] =!= {},
+    Quiet[CurrentValue[nb, {TaggingRules, "SWSyncUndo"}] = Map[{#["Title"], #["Old"], #["New"]} &, $iSWSyncRun["Written"]]]];
+  report = iSWSyncReport[ctx, kgRes, issues];
+  Quiet @ Check[iSWEnsureEndMarkerAtEnd[nb]; SelectionMove[nb, After, Notebook]; NotebookWrite[nb, Cell[report, "Text"]], Null];
+  summary = iSL["\:30b9\:30e9\:30a4\:30c9\:304b\:3089\:53cd\:6620\:3057\:307e\:3057\:305f: \:539f\:7a3f " <> ToString[Length[$iSWSyncRun["Written"]]] <> " \:679a" <>
+      If[AssociationQ[kgRes] && kgRes["Status"] === "Applied",
+        " / KG \:5909\:66f4 " <> ToString[Length[kgRes["Changed"]]] <> "\:30fb\:8ffd\:52a0 " <> ToString[Length[kgRes["Added"]]], ""] <>
+      " / \:8981\:78ba\:8a8d " <> ToString[Length[issues]] <> " \:679a (\:8a73\:7d30\:306f\:30ce\:30fc\:30c8\:672b\:5c3e)",
+    "Synced from the slides: talks " <> ToString[Length[$iSWSyncRun["Written"]]] <> ", issues " <> ToString[Length[issues]] <> " (see the end of the notebook)"];
+  iSWStatus[nb, summary];
+  (* \:8a33\:306e\:3042\:308b\:679a\:306e\:539f\:7a3f\:3092\:76f4\:3057\:305f\:3089\:8a33\:3082\:76f4\:3059 (SlideTalkTranslate \:306e\:65e2\:5b9a\:306f\:539f\:7a3f\:3092\:76f4\:3057\:305f\:679a\:3060\:3051) *)
+  If[ctx["Translate"] =!= False && AnyTrue[$iSWSyncRun["Written"], TrueQ[#["Translated"]] &],
+    tr = True; Quiet[SlideTalkTranslate[nb]]];
+  $iSWSyncRun["Busy"] = False;
+  $iSWSyncLast = <|"Status" -> "Done", "Written" -> $iSWSyncRun["Written"], "Skipped" -> $iSWSyncRun["Skipped"],
+    "Failed" -> $iSWSyncRun["Failed"], "Issues" -> issues, "KG" -> kgRes, "Translate" -> tr, "Report" -> report|>;
+  If[ctx["Then"] =!= None, Quiet[ctx["Then"][]]];
+  $iSWSyncLast];
+
+(* \:539f\:7a3f\:306e\:76f4\:3057\:3092\:623b\:3059: \:524d\:56de\:306e\:53cd\:6620\:3067\:66f8\:3044\:305f\:539f\:7a3f\:304c\:305d\:306e\:307e\:307e\:6b8b\:3063\:3066\:3044\:308b\:679a\:3060\:3051 (\:305d\:306e\:5f8c\:306b\:624b\:3067\:76f4\:3057\:305f\:679a\:306f\:89e6\:3089\:306a\:3044) *)
+SlideGraphSyncUndo[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphSyncUndo[nb]]];
+SlideGraphSyncUndo[nb_NotebookObject] := Module[{undo, restored = 0, skipped = 0},
+  undo = Replace[Quiet[CurrentValue[nb, {TaggingRules, "SWSyncUndo"}]], Except[{{_String, _String, _String} ...}] -> {}];
+  If[undo === {}, iSWStatus[nb, iSL["\:623b\:3059\:539f\:7a3f\:306f\:3042\:308a\:307e\:305b\:3093", "Nothing to undo"]]; Return[<|"Restored" -> 0, "Skipped" -> 0|>]];
+  Do[Module[{k = iSWSyncLocate[nb, 0, u[[1]]], cur},
+      cur = If[IntegerQ[k], iSWSyncTalkFE[nb, k], $Failed];
+      If[IntegerQ[k] && cur === StringTrim[u[[3]]],
+        If[StringTrim[u[[2]]] === "",
+          Quiet[NotebookDelete[iSWSyncTalkCells[nb, k]]],
+          iSWTalkWriteCell[nb, k, u[[2]]]];
+        restored++,
+        skipped++]],
+    {u, undo}];
+  CurrentValue[nb, {TaggingRules, "SWSyncUndo"}] = {};
+  iSWStatus[nb, iSL["\:539f\:7a3f\:3092 " <> ToString[restored] <> " \:679a\:623b\:3057\:307e\:3057\:305f" <> If[skipped > 0, " (\:305d\:306e\:5f8c\:306b\:76f4\:3055\:308c\:305f " <> ToString[skipped] <> " \:679a\:306f\:305d\:306e\:307e\:307e)", ""],
+    "Restored " <> ToString[restored] <> " talks" <> If[skipped > 0, " (" <> ToString[skipped] <> " edited since were kept)", ""]]];
+  <|"Restored" -> restored, "Skipped" -> skipped|>];
+
+iSWSyncAction[nb_] := SlideGraphSync[nb];
+
+(* ===================== v1.34: \:8a71\:3059\:8a00\:8a9e\:3068\:539f\:7a3f\:306e\:591a\:8a00\:8a9e\:5316 =====================
+   \:8aad\:307f\:4e0a\:3052\:306e\:8a00\:8a9e = \:6307\:793a\:30bb\:30eb\:306e Language: > TaggingRules "SWTalkMeta" > $SlideTalkLanguage (Automatic = $Language)\:3002
+   \:5143\:306e\:539f\:7a3f (\:8a00\:8a9e\:30bf\:30b0\:306e\:7121\:3044 SlideTalk \:30bb\:30eb) \:306f\:305d\:306e\:307e\:307e\:306b\:3001\:8a33\:306f\:540c\:3058\:30b9\:30e9\:30a4\:30c9\:306e SlideTalk \:30bb\:30eb\:3068\:3057\:3066
+   TaggingRules {"SWTalkLang" -> "en", "SWTalkSrc" -> \:5143\:539f\:7a3f\:306e\:30cf\:30c3\:30b7\:30e5} \:3092\:4ed8\:3051\:3066\:4e26\:3079\:308b (\:8907\:6570\:8a00\:8a9e\:3092\:4f75\:7528\:3067\:304d\:308b)\:3002
+   \:518d\:751f\:306f\:6307\:5b9a\:8a00\:8a9e\:306e\:8a33 \[RightArrow] \:7121\:3051\:308c\:3070\:5143\:306e\:539f\:7a3f\:3002\:5143\:306e\:539f\:7a3f\:3092\:76f4\:3059\:3068\:30cf\:30c3\:30b7\:30e5\:304c\:5909\:308f\:308b\:306e\:3067\:300c\:53e4\:3044\:8a33\:300d\:3068\:5206\:304b\:308b\:3002
+   \:8a33\:30bb\:30eb\:306f md (talk:) \:306b\:3082\:82f1\:8a33 (SlideTranslate) \:306b\:3082\:51fa\:3055\:306a\:3044\:3002\:898b\:5206\:3051\:306f\:5de6\:306e\:5e2f\:306e\:8272\:3060\:3051
+   (\:30bb\:30eb\:5358\:4f4d\:306e CellDingbat / CellLabel \:306f SlideShow \:3067\:9589\:3058\:305f\:30bb\:30eb\:306b\:3082\:63cf\:304b\:308c\:3066\:3057\:307e\:3046: \:5b9f\:6e2c) *)
+$iSWTalkLangFrameColor = RGBColor[0.25, 0.6, 0.6];
+
+$iSWTalkLangNames = <|"ja" -> {"\:65e5\:672c\:8a9e", "Japanese"}, "en" -> {"\:82f1\:8a9e", "English"},
+  "zh" -> {"\:4e2d\:56fd\:8a9e", "Chinese"}, "ko" -> {"\:97d3\:56fd\:8a9e", "Korean"}, "fr" -> {"\:30d5\:30e9\:30f3\:30b9\:8a9e", "French"},
+  "de" -> {"\:30c9\:30a4\:30c4\:8a9e", "German"}, "es" -> {"\:30b9\:30da\:30a4\:30f3\:8a9e", "Spanish"}, "jv" -> {"\:30b8\:30e3\:30ef\:8a9e", "Javanese"}|>;
+
+(* \:8a00\:8a9e\:306e\:66f8\:304d\:65b9 (ja / Japanese / \:65e5\:672c\:8a9e / en-US / $Language \:306e\:5024) -> 2 \:6587\:5b57\:30b3\:30fc\:30c9\:3002\:7a7a\:30fbAutomatic \:306f None *)
+iSWTalkLangCode[v_] := Module[{s = ToLowerCase[StringTrim[ToString[v]]]},
+  Which[
+    MemberQ[{"", "automatic", "none", "null", "inherited"}, s], None,
+    MemberQ[{"ja", "jp", "japanese", "\:65e5\:672c\:8a9e"}, s], "ja",
+    MemberQ[{"en", "english", "\:82f1\:8a9e"}, s], "en",
+    StringStartsQ[s, "chinese"] || MemberQ[{"zh", "\:4e2d\:6587", "\:4e2d\:56fd\:8a9e", "\:6c49\:8bed"}, s], "zh",
+    MemberQ[{"ko", "korean", "\:97d3\:56fd\:8a9e", "\:d55c\:ad6d\:c5b4"}, s], "ko",
+    MemberQ[{"fr", "french", "\:30d5\:30e9\:30f3\:30b9\:8a9e", "fran\[CCedilla]ais", "francais"}, s], "fr",
+    MemberQ[{"de", "german", "\:30c9\:30a4\:30c4\:8a9e", "deutsch"}, s], "de",
+    MemberQ[{"es", "spanish", "\:30b9\:30da\:30a4\:30f3\:8a9e", "espa\[NTilde]ol", "espanol"}, s], "es",
+    MemberQ[{"jv", "javanese", "\:30b8\:30e3\:30ef\:8a9e", "basa jawa", "jawa"}, s], "jv",
+    StringMatchQ[s, RegularExpression["[a-z]{2}([-_][a-z0-9]+)*"]], StringTake[s, 2],
+    True, s]];
+
+iSWTalkLangName[code_String] := With[{e = Lookup[$iSWTalkLangNames, code, None]},
+  If[ListQ[e], iSL[e[[1]], e[[2]]], code]];
+iSWTalkLangName[_] := "?";
+(* LLM \:3078\:306e\:6307\:793a\:7528 (\:5e38\:306b\:82f1\:8a9e\:540d) *)
+iSWTalkLangNameEn[code_String] := With[{e = Lookup[$iSWTalkLangNames, code, None]},
+  If[ListQ[e], e[[2]], code]];
+
+iSWTalkDefaultLang[] := Replace[
+  iSWTalkLangCode[Replace[$SlideTalkLanguage, Automatic | None -> $Language]],
+  Except[_String] -> "ja"];
+
+SlideTalkLanguage[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideTalkLanguage[nb], iSWTalkDefaultLang[]]];
+SlideTalkLanguage[nb_NotebookObject] := Module[{v},
+  v = iSWTalkLangCode[Lookup[Join[iSWTalkStoredMeta[nb], iSWDirectiveMeta[nb]], "Language", None]];
+  If[StringQ[v], v, iSWTalkDefaultLang[]]];
+SlideTalkLanguage[_] := iSWTalkDefaultLang[];
+
+(* \:6587\:5b57\:7a2e\:304b\:3089\:539f\:7a3f\:306e\:8a00\:8a9e\:3092\:63a8\:5b9a\:3059\:308b (\:304b\:306a\:304c\:3042\:308c\:3070 ja\:3001\:30cf\:30f3\:30b0\:30eb ko\:3001\:6f22\:5b57\:3060\:3051 zh\:3001\:4ed6\:306f en) *)
+iSWTextLang[s_String] := Module[{cc = ToCharacterCode[s], cnt},
+  cnt[a_, b_] := Count[cc, x_ /; a <= x <= b];
+  Which[cnt[16^^3040, 16^^30FF] > 0, "ja", cnt[16^^AC00, 16^^D7AF] > 0, "ko",
+    cnt[16^^4E00, 16^^9FFF] > 0, "zh", True, "en"]];
+iSWTextLang[_] := "en";
+
+iSWTalkSrcHash[s_String] := StringTake[Hash[StringTrim[s], "SHA256", "HexString"], 16];
+
+iSWTalkCellRule[c_Cell, key_String] := Module[{tr},
+  tr = FirstCase[c, (TaggingRules -> r_) :> r, <||>, {1}];
+  tr = Replace[tr, {a_Association :> a, l : {___Rule} :> Association[l], _ -> <||>}];
+  With[{v = Lookup[tr, key, None]}, If[StringQ[v] && v =!= "", v, None]]];
+
+(* \:8a33\:30bb\:30eb\:306a\:3089\:305d\:306e\:8a00\:8a9e\:30b3\:30fc\:30c9\:3001\:5143\:306e\:539f\:7a3f\:306a\:3089 None *)
+iSWTalkCellLang[c_Cell] := iSWTalkCellRule[c, "SWTalkLang"];
+iSWTalkCellLang[_] := None;
+iSWTalkLangCellQ[c_] := MatchQ[c, Cell[_, "SlideTalk", ___]] && StringQ[iSWTalkCellLang[c]];
+
+iSWTalkCellLangFE[cellObj_] := With[{v = Quiet[CurrentValue[cellObj, {TaggingRules, "SWTalkLang"}]]},
+  If[StringQ[v] && v =!= "", v, None]];
+
+(* \:30bb\:30eb\:5217 (1 \:679a\:5206 / \:524d\:7f6e\:304d) \:306e\:8a33: <|"en" -> <|"Text" -> .., "Src" -> ..|>, ..|> *)
+iSWTalkLangCellsOf[cells_List] := Association @ Cases[cells,
+  c : Cell[_, "SlideTalk", ___] /; StringQ[iSWTalkCellLang[c]] :>
+    (iSWTalkCellLang[c] -> <|"Text" -> StringTrim[iCellText[c]], "Src" -> iSWTalkCellRule[c, "SWTalkSrc"]|>),
+  {1}];
+
+(* \:539f\:7a3f\:9023\:60f3 (iSWTalkFromCellsCore) \:306e\:5143\:8a00\:8a9e\:3002\:539f\:7a3f\:30bb\:30eb\:306e\:6587\:5b57\:7a2e\:304b\:3089 *)
+iSWTalkBaseLang[talk_Association] := iSWTextLang[StringJoin[Riffle[
+  Join[{ToString[Lookup[talk, "Opening", ""]]},
+    ToString[Lookup[#, "Text", ""]] & /@ Select[Lookup[talk, "Slides", {}], AssociationQ]], "\n"]]];
+iSWTalkBaseLang[_] := "ja";
+
+(* \:6307\:5b9a\:8a00\:8a9e\:3067\:8aad\:3080\:30c6\:30ad\:30b9\:30c8\:3002\:8a33\:304c\:3042\:308c\:3070\:8a33\:3001\:7121\:3051\:308c\:3070\:5143\:306e\:539f\:7a3f (Missing \:306b\:756a\:53f7\:3092\:6b8b\:3059)\:3002
+   \:8a33\:306e\:5143\:539f\:7a3f\:304c\:76f4\:3055\:308c\:3066\:3044\:308c\:3070\:8a33\:306f\:4f7f\:3046\:304c Stale \:306b\:756a\:53f7\:3092\:6b8b\:3059\:3002\:756a\:53f7 0 = \:524d\:7f6e\:304d (Opening) *)
+iSWTalkLangPlan[talk_Association, langIn_] := Module[
+  {lang, base, tr, slides, texts = <||>, missing = {}, stale = {}, pick, keys, op, cl},
+  lang = Replace[iSWTalkLangCode[langIn], Except[_String] -> "ja"];
+  base = iSWTalkBaseLang[talk];
+  tr = Replace[Lookup[Replace[Lookup[talk, "Translations", <||>], Except[_Association] -> <||>], lang, <||>],
+    Except[_Association] -> <||>];
+  pick[k_, raw_String] := Which[
+    StringTrim[raw] === "", "",
+    lang === base, raw,
+    AssociationQ[Lookup[tr, k, None]] && StringTrim[tr[k]["Text"]] =!= "",
+      If[tr[k]["Src"] =!= iSWTalkSrcHash[raw], AppendTo[stale, k]];
+      tr[k]["Text"],
+    True, AppendTo[missing, k]; raw];
+  slides = Select[Lookup[talk, "Slides", {}], AssociationQ];
+  Do[
+    With[{k = Lookup[s, "Slide", None], raw = ToString[Lookup[s, "Text", ""]]},
+      If[IntegerQ[k] && k >= 1,
+        With[{t = iSWVoicePlainText[pick[k, raw]]},
+          If[t =!= "", texts[k] = If[KeyExistsQ[texts, k], texts[k] <> "\n" <> t, t]]]]],
+    {s, slides}];
+  If[Length[texts] === 0,
+    Return[<|"Texts" -> $Failed, "Language" -> lang, "Base" -> base, "Missing" -> {}, "Stale" -> {}|>]];
+  keys = Sort[Keys[texts]];
+  op = iSWVoicePlainText[pick[0, ToString[Lookup[talk, "Opening", ""]]]];
+  cl = iSWVoicePlainText[Lookup[talk, "Closing", ""]];
+  If[op =!= "", texts[First[keys]] = op <> "\n" <> texts[First[keys]]];
+  If[cl =!= "", texts[Last[keys]] = texts[Last[keys]] <> "\n" <> cl];
+  <|"Texts" -> texts, "Language" -> lang, "Base" -> base,
+    "Missing" -> Sort[DeleteDuplicates[missing]], "Stale" -> Sort[DeleteDuplicates[stale]]|>];
+iSWTalkLangPlan[_, langIn_] := <|"Texts" -> $Failed,
+  "Language" -> Replace[iSWTalkLangCode[langIn], Except[_String] -> "ja"],
+  "Base" -> "ja", "Missing" -> {}, "Stale" -> {}|>;
+
+iSWTalkLangPlanOf[nb_NotebookObject] := iSWTalkLangPlan[iSWTalkResolve[nb], SlideTalkLanguage[nb]];
+
+SlideTalkLanguages[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideTalkLanguages[nb],
+    Failure["NoNotebook", <|"MessageTemplate" -> "target notebook not found"|>]]];
+SlideTalkLanguages[nb_NotebookObject] := Module[{talk, plan, tr, slides},
+  talk = iSWTalkResolve[nb];
+  plan = iSWTalkLangPlan[talk, SlideTalkLanguage[nb]];
+  tr = If[AssociationQ[talk], Replace[Lookup[talk, "Translations", <||>], Except[_Association] -> <||>], <||>];
+  slides = If[AssociationQ[talk], Length[Select[Lookup[talk, "Slides", {}], AssociationQ]], 0];
+  <|"Language" -> plan["Language"], "Base" -> plan["Base"], "Slides" -> slides,
+    "Translated" -> Map[Length[KeyDrop[#, 0]] &, tr],
+    "Missing" -> plan["Missing"], "Stale" -> plan["Stale"]|>];
+
+iSWTalkLangInfoText[nb_] := Module[{s = Quiet[SlideTalkLanguages[nb]]},
+  If[! AssociationQ[s], Return[iSWTalkLangName[SlideTalkLanguage[nb]]]];
+  iSWTalkLangName[s["Language"]] <> iSL[" (\:539f\:7a3f: ", " (script: "] <> iSWTalkLangName[s["Base"]] <>
+    Which[
+      s["Language"] === s["Base"], "",
+      s["Missing"] === {} && s["Stale"] === {}, iSL["\:3001\:8a33\:306f\:3059\:3079\:3066\:63c3\:3063\:3066\:3044\:307e\:3059", ", all translated"],
+      True, iSL["\:3001\:8a33\:306e\:7121\:3044\:679a ", ", untranslated "] <> ToString[Length[s["Missing"]]] <>
+        If[s["Stale"] =!= {}, iSL[" / \:53e4\:3044\:8a33 ", " / stale "] <> ToString[Length[s["Stale"]]], ""]] <>
+    With[{others = KeyDrop[s["Translated"], s["Language"]]},
+      If[others === <||>, "",
+        iSL["\:3002\:4ed6\:306e\:8a33: ", ". other translations: "] <>
+          StringRiffle[KeyValueMap[iSWTalkLangName[#1] <> " " <> ToString[#2] &, others], ", "]]] <> ")"];
+
+(* ---- \:539f\:7a3f\:306e\:7ffb\:8a33 (\:8a33\:30bb\:30eb\:3092\:66f8\:304f) ---- *)
+$iSWTalkTransBatch = 8;
+$iSWTalkTransRun = <|"Busy" -> False|>;
+iSWTalkTransBusyQ[] := TrueQ[Lookup[$iSWTalkTransRun, "Busy", False]] &&
+  AbsoluteTime[] - Lookup[$iSWTalkTransRun, "Since", 0] < 1200;
+
+(* \:8a33\:3059\:5bfe\:8c61: \:5143\:306e\:539f\:7a3f\:304c\:3042\:308b\:679a (0 = \:524d\:7f6e\:304d) *)
+iSWTalkTransItems[outline_Association] := Module[{pre, preBase, items},
+  pre = Lookup[outline, "Prelude", {}];
+  preBase = StringTrim[StringRiffle[Cases[pre,
+    c : Cell[_, "SlideTalk", ___] /; iSWTalkCellLang[c] === None :> iCellText[c], {1}], "\n"]];
+  items = Table[<|"Slide" -> i, "Title" -> outline["Titles"][[i]], "Text" -> outline["Talks"][[i]],
+      "Langs" -> outline["TalkLangs"][[i]]|>, {i, outline["Count"]}];
+  items = Join[
+    If[preBase === "", {},
+      {<|"Slide" -> 0, "Title" -> iSL["(\:524d\:7f6e\:304d)", "(opening)"], "Text" -> preBase,
+        "Langs" -> iSWTalkLangCellsOf[pre]|>}],
+    items];
+  Select[items, StringQ[#["Text"]] && StringTrim[#["Text"]] =!= "" &]];
+
+iSWTalkTransPrompt[title_String, lang_String, targets_List, meta_String] :=
+  meta <>
+  "\:3042\:306a\:305f\:306f\:7814\:7a76\:767a\:8868\:306e\:8aad\:307f\:4e0a\:3052\:539f\:7a3f\:306e\:7ffb\:8a33\:8005\:3067\:3059\:3002\:767a\:8868\:300c" <> title <> "\:300d\:306e\:5404\:30b9\:30e9\:30a4\:30c9\:306e\:539f\:7a3f\:3092 " <>
+  iSWTalkLangNameEn[lang] <> " \:306b\:8a33\:3057\:3066\:304f\:3060\:3055\:3044\:3002\n\n" <>
+  StringRiffle[Map[Function[s, "--- \:30b9\:30e9\:30a4\:30c9 " <> ToString[s["Slide"]] <> ": " <> iSWQAOneLine[s["Title"]] <> "\n" <>
+    StringTake[ToString[s["Text"]], UpTo[2400]]], targets], "\n\n"] <>
+  "\n\n\:898f\:5247 (\:53b3\:5b88):\n" <>
+  "- \:805e\:304d\:624b\:306b\:5411\:3051\:3066\:58f0\:306b\:51fa\:3059\:539f\:7a3f\:306a\:306e\:3067\:3001\:305d\:306e\:8a00\:8a9e\:306e\:81ea\:7136\:306a\:8a71\:3057\:8a00\:8449\:306e\:767a\:8868\:53e3\:8abf\:306b\:3059\:308b\:3002\:76f4\:8a33\:8abf\:306b\:3057\:306a\:3044\:3002\n" <>
+  "- \:610f\:5473\:30fb\:4e8b\:5b9f\:30fb\:6570\:5024\:30fb\:8a71\:306e\:9806\:5e8f\:3092\:5909\:3048\:306a\:3044\:3002\:539f\:7a3f\:306b\:7121\:3044\:5185\:5bb9\:3092\:8db3\:3055\:306a\:3044\:3002\:7701\:304b\:306a\:3044\:3002\n" <>
+  "- \:30b9\:30e9\:30a4\:30c9\:756a\:53f7\:30fb\:984c\:76ee\:306f\:53c2\:8003\:3002\:8a33\:6587\:306b\:542b\:3081\:306a\:3044\:3002\n" <>
+  "- $...$ \:3084 ** \:3084\:8a18\:53f7\:5217\:30fbURL \:3092\:66f8\:304b\:306a\:3044\:3002\:5f0f\:306f\:753b\:9762\:3092\:6307\:3057\:3066\:8a00\:8449\:3067\:8a9e\:308b\:3002\n" <>
+  "- Dictionary \:304c\:3042\:308c\:3070\:7528\:8a9e\:306e\:5bfe\:5fdc\:3092\:5b88\:308b\:3002\:56fa\:6709\:540d\:8a5e\:306f\:4e00\:822c\:7684\:306a\:8868\:8a18\:306b\:3059\:308b\:3002\n\n" <>
+  "\:51fa\:529b (\:53b3\:5b88): JSON \:30aa\:30d6\:30b8\:30a7\:30af\:30c8 1 \:3064\:3060\:3051\:3002\:8aac\:660e\:6587\:30fb\:30b3\:30fc\:30c9\:30d5\:30a7\:30f3\:30b9\:7121\:3057:\n" <>
+  "{\"Talks\": [{\"Slide\": <\:756a\:53f7>, \"Talk\": \"\:8a33\:6587\"}]}";
+
+(* \:30b9\:30e9\:30a4\:30c9 k (0 = \:524d\:7f6e\:304d) \:306e\:8a33\:30bb\:30eb\:3092\:66f8\:304f\:3002\:540c\:3058\:8a00\:8a9e\:306e\:8a33\:30bb\:30eb\:304c\:3042\:308c\:3070\:7f6e\:304d\:63db\:3048\:3001\:7121\:3051\:308c\:3070\:305d\:306e\:679a\:306e\:6700\:5f8c\:306e\:539f\:7a3f\:30bb\:30eb\:306e\:5f8c\:308d\:3078 *)
+iSWTalkWriteLangCell[nb_NotebookObject, k_Integer, lang_String, text_String, src_String] :=
+  Module[{ranges, cells, styles, span, talkIdx, langs, same, cell},
+    ranges = iSWSlideRanges[nb];
+    cells = Cells[nb]; styles = iSWCellStyles[nb];
+    span = Which[
+      k === 0, If[ranges === {}, {}, Range[1, ranges[[1, 1]] - 1]],
+      1 <= k <= Length[ranges], Range[ranges[[k, 1]], Min[ranges[[k, 2]], Length[styles]]],
+      True, {}];
+    talkIdx = Select[span, MemberQ[Flatten[{styles[[#]]}], "SlideTalk"] &];
+    If[talkIdx === {}, Return[$Failed]];
+    langs = iSWTalkCellLangFE[cells[[#]]] & /@ talkIdx;
+    If[FreeQ[langs, None], Return[$Failed]];  (* \:5143\:306e\:539f\:7a3f\:304c\:7121\:3044\:679a\:306b\:306f\:66f8\:304b\:306a\:3044 *)
+    same = Pick[talkIdx, langs, lang];
+    cell = Cell[iSWTalkSpeakText[StringTrim[text]], "SlideTalk",
+      CellFrameColor -> $iSWTalkLangFrameColor,
+      TaggingRules -> {"SWTalkLang" -> lang, "SWTalkSrc" -> src}];
+    If[same =!= {},
+      SelectionMove[cells[[First[same]]], All, Cell]; NotebookWrite[nb, cell, All],
+      SelectionMove[cells[[Last[talkIdx]]], After, Cell]; NotebookWrite[nb, cell]];
+    k];
+
+Options[SlideTalkTranslate] = {"Mode" -> "Changed", "Then" -> None};
+
+SlideTalkTranslate[opts : OptionsPattern[]] := With[{nb = iSWNotebook[]},
+  If[nb === $Failed, $Failed, SlideTalkTranslate[nb, opts]]];
+(* v1.36: \:8a33\:3059\:8a00\:8a9e\:306f\:3001\:6307\:5b9a (\:6307\:793a\:30bb\:30eb\:306e Language: / SWTalkMeta / $SlideTalkLanguage) \:304c\:3042\:3063\:3066\:5143\:306e\:539f\:7a3f\:3068\:9055\:3048\:3070\:305d\:306e\:8a00\:8a9e\:3001
+   \:7121\:3051\:308c\:3070\:65e2\:5b9a = $Language \:304c\:82f1\:8a9e\:3067\:306a\:3051\:308c\:3070\:82f1\:8a9e\:3001\:82f1\:8a9e\:306a\:3089\:65e5\:672c\:8a9e (documentation.wl \:306e $DocTranslationLanguage \:3068\:540c\:3058)\:3002
+   \:65e2\:5b9a\:304c\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e\:3068\:540c\:3058\:306b\:306a\:308b\:3068\:304d\:306f\:82f1\:8a9e\:3068\:65e5\:672c\:8a9e\:306e\:3082\:3046\:4e00\:65b9 *)
+iSWTalkExplicitLang[nb_NotebookObject] := Module[{v},
+  v = iSWTalkLangCode[Lookup[Join[iSWTalkStoredMeta[nb], iSWDirectiveMeta[nb]], "Language", None]];
+  If[StringQ[v], v, iSWTalkLangCode[Replace[$SlideTalkLanguage, Automatic | None -> None]]]];
+iSWTalkTranslateTargetFor[explicit_, base_] := Module[{d},
+  If[StringQ[explicit] && explicit =!= base, Return[explicit]];
+  d = If[iSWTalkLangCode[$Language] === "en", "ja", "en"];
+  If[d === base, If[d === "en", "ja", "en"], d]];
+SlideTalkTranslate[nb_NotebookObject, opts : OptionsPattern[]] :=
+  SlideTalkTranslate[nb, Automatic, opts];
+(* \:8907\:6570\:8a00\:8a9e\:306f\:9806\:306b *)
+SlideTalkTranslate[nb_NotebookObject, langs_List, opts : OptionsPattern[]] := Module[{ls},
+  ls = DeleteDuplicates[Select[iSWTalkLangCode /@ langs, StringQ]];
+  Which[
+    ls === {}, With[{then = OptionValue["Then"]}, If[then =!= None, then[]]]; <|"Status" -> "Complete"|>,
+    Length[ls] === 1, SlideTalkTranslate[nb, First[ls], opts],
+    True, With[{rest = Rest[ls], then = OptionValue["Then"], mode = OptionValue["Mode"]},
+      SlideTalkTranslate[nb, First[ls], "Mode" -> mode,
+        "Then" -> Function[SlideTalkTranslate[nb, rest, "Mode" -> mode, "Then" -> then]]]]]];
+
+SlideTalkTranslate[nb_NotebookObject, langIn : (_String | Automatic), OptionsPattern[]] := Module[
+  {lang, outline, items, base, todo, title, meta, then},
+  then = OptionValue["Then"];
+  lang = If[langIn === Automatic, None, iSWTalkLangCode[langIn]];
+  If[! iSWRequireLLM[], Return[$Failed]];
+  If[iSWTalkTransBusyQ[] || iSWTalkFillBusyQ[],
+    iSWStatus[nb, iSL["\:539f\:7a3f\:3092\:66f8\:3044\:3066\:3044\:307e\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "Writing talks; wait until it finishes"]];
+    Return[<|"Status" -> "Busy"|>]];
+  outline = iTalkDeckOutline[iSWDeckTextSource[nb]];
+  If[outline === $Failed,
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093", "No slides found"]]; iSWStatusClearLater[nb];
+    Return[$Failed]];
+  items = iSWTalkTransItems[outline];
+  If[items === {},
+    iSWStatus[nb, iSL["\:8a33\:3059\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093 (\:5148\:306b\:300c\:539f\:7a3f\:300d)", "No talks to translate (write talks first)"]];
+    iSWStatusClearLater[nb];
+    Return[<|"Status" -> "NoTalk"|>]];
+  base = iSWTextLang[StringRiffle[Lookup[items, "Text"], "\n"]];
+  If[! StringQ[lang], lang = iSWTalkTranslateTargetFor[iSWTalkExplicitLang[nb], base]];
+  If[lang === base,
+    iSWStatus[nb, iSL["\:539f\:7a3f\:306f\:3059\:3067\:306b" <> iSWTalkLangName[lang] <> "\:3067\:3059", "The talks are already in " <> iSWTalkLangName[lang]]];
+    iSWStatusClearLater[nb];
+    If[then =!= None, then[]];
+    Return[<|"Status" -> "SameLanguage", "Language" -> lang|>]];
+  todo = If[OptionValue["Mode"] === "All", items,
+    Select[items, With[{have = Lookup[#["Langs"], lang, None]}, ! AssociationQ[have] || have["Src"] =!= iSWTalkSrcHash[#["Text"]]] &]];
+  If[todo === {},
+    iSWStatus[nb, iSL[iSWTalkLangName[lang] <> "\:306e\:8a33\:306f\:3059\:3079\:3066\:6700\:65b0\:3067\:3059", "All " <> iSWTalkLangName[lang] <> " translations are up to date"]];
+    iSWStatusClearLater[nb];
+    If[then =!= None, then[]];
+    Return[<|"Status" -> "Complete", "Language" -> lang, "Translated" -> 0|>]];
+  title = With[{t = Lookup[SlideTalkMeta[nb], "Title", ""]},
+    If[StringQ[t] && StringTrim[t] =!= "", t, Last[iSWDeckBaseName[nb]]]];
+  meta = iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb];
+  $iSWTalkTransRun = <|"Written" -> 0, "Failed" -> 0, "Busy" -> True, "Since" -> AbsoluteTime[], "Language" -> lang|>;
+  iSWTalkTransChain[nb, <|"Title" -> title, "Language" -> lang, "Meta" -> meta, "Then" -> then,
+    "Batches" -> Partition[todo, UpTo[$iSWTalkTransBatch]]|>, 1];
+  <|"Status" -> "Submitted", "Language" -> lang, "Slides" -> Length[todo]|>];
+
+iSWTalkTransChain[nb_, ctx_Association, idx_Integer] := If[idx > Length[ctx["Batches"]],
+  $iSWTalkTransRun["Busy"] = False;
+  iSWStatus[nb, iSL[iSWTalkLangName[ctx["Language"]] <> "\:306e\:539f\:7a3f\:3092 " <> ToString[$iSWTalkTransRun["Written"]] <> " \:679a\:66f8\:304d\:307e\:3057\:305f" <>
+      If[$iSWTalkTransRun["Failed"] > 0, " (\:66f8\:3051\:306a\:304b\:3063\:305f\:679a " <> ToString[$iSWTalkTransRun["Failed"]] <> ")", ""],
+    "Wrote " <> iSWTalkLangName[ctx["Language"]] <> " talks for " <> ToString[$iSWTalkTransRun["Written"]] <> " slides" <>
+      If[$iSWTalkTransRun["Failed"] > 0, " (" <> ToString[$iSWTalkTransRun["Failed"]] <> " failed)", ""]]];
+  iSWStatusClearLater[nb];
+  If[TrueQ[Quiet[CurrentValue[nb, {TaggingRules, "SWTalkView"}]]], Quiet[iSWTalkShowLanguage[nb, SlideTalkLanguage[nb]]]];
+  If[ctx["Then"] =!= None, ctx["Then"][]],
+  Module[{targets = ctx["Batches"][[idx]], prompt},
+    $iSWTalkTransRun["Since"] = AbsoluteTime[];
+    iSWStatus[nb, iSL[iSWTalkLangName[ctx["Language"]] <> "\:306b\:8a33\:3057\:3066\:3044\:307e\:3059 " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "\[Ellipsis]",
+      "Translating to " <> iSWTalkLangName[ctx["Language"]] <> " " <> ToString[idx] <> "/" <> ToString[Length[ctx["Batches"]]] <> "..."]];
+    prompt = iSWTalkTransPrompt[ctx["Title"], ctx["Language"], targets, ctx["Meta"]];
+    With[{n2 = nb, c = ctx, i2 = idx, nums = Lookup[targets, "Slide"],
+        srcs = Association[(#["Slide"] -> iSWTalkSrcHash[#["Text"]]) & /@ targets]},
+      NBAccess`$NBLLMQueryFunc[prompt,
+        Function[resp, Module[{talks = iSWTalkFillParse[resp, nums]},
+          Do[If[KeyExistsQ[talks, k] &&
+                iSWTalkWriteLangCell[n2, k, c["Language"], talks[k], srcs[k]] =!= $Failed,
+              $iSWTalkTransRun["Written"] = $iSWTalkTransRun["Written"] + 1,
+              $iSWTalkTransRun["Failed"] = $iSWTalkTransRun["Failed"] + 1],
+            {k, Reverse[nums]}];
+          iSWTalkTransChain[n2, c, i2 + 1]]],
+        n2, Fallback -> iSWFallback[]]]]];
+
+(* \:30d1\:30ec\:30c3\:30c8\:306e\:300c\:539f\:7a3f\:8a33\:300d: \:8a71\:3059\:8a00\:8a9e\:304c\:539f\:7a3f\:3068\:9055\:3048\:3070\:305d\:306e\:8a00\:8a9e\:3078\:3002\:540c\:3058\:306a\:3089\:8a33\:3059\:8a00\:8a9e\:3092\:9078\:3076 *)
+(* \:30d1\:30ec\:30c3\:30c8\:306e\:300c\:539f\:7a3f\:8a33\:300d: \:8a33\:3059\:8a00\:8a9e\:306f SlideTalkTranslate \:306e\:65e2\:5b9a (\:6307\:5b9a\:304c\:3042\:308c\:3070\:305d\:306e\:8a00\:8a9e\:3001\:7121\:3051\:308c\:3070 $Language \:3067\:82f1\:8a9e / \:65e5\:672c\:8a9e) *)
+iSWTalkTranslateAction[nb_] := SlideTalkTranslate[nb];
+
+(* ---- v1.36: \:8a71\:3059\:8a00\:8a9e\:306e\:5207\:308a\:66ff\:3048 (\:5143\:306e\:539f\:7a3f\:3092\:6b8b\:3057\:305f\:307e\:307e\:3001\:8a33\:306e\:539f\:7a3f\:3068\:5207\:308a\:66ff\:3048\:308b) ----
+   \:539f\:7a3f\:306e\:591a\:8a00\:8a9e\:306f v1.34 \:306e\:3068\:304a\:308a: \:5143\:306e\:539f\:7a3f (\:8a00\:8a9e\:30bf\:30b0\:306a\:3057) \:3068\:8a33 (TaggingRules "SWTalkLang") \:3092\:540c\:3058\:679a\:306b\:4e26\:3079\:308b\:3002
+   \:3053\:3053\:3067\:306f (1) \:8a71\:3059\:8a00\:8a9e\:3092\:5207\:308a\:66ff\:3048\:308b (\:6307\:793a\:30bb\:30eb\:306e Language: \:884c\:3092\:66f8\:304d\:63db\:3048\:308b\:3002\:884c\:304c\:7121\:3051\:308c\:3070\:30c7\:30c3\:30ad\:306e TaggingRules "SWTalkMeta")\:3001
+   (2) \:4f5c\:696d\:753b\:9762\:3067\:306f\:8a71\:3059\:8a00\:8a9e\:306e\:539f\:7a3f\:3060\:3051\:3092\:958b\:304d\:3001\:307b\:304b\:306e\:8a00\:8a9e\:306e\:539f\:7a3f\:306f\:9589\:3058\:308b (\:6d88\:3055\:306a\:3044)\:3002\:8a33\:306e\:7121\:3044\:679a\:306f\:5143\:306e\:539f\:7a3f\:3092\:958b\:304f (\:8aad\:307f\:4e0a\:3052\:3068\:540c\:3058)\:3002
+   \:9589\:3058\:308b\:306e\:306f inline \:306e CellOpen -> False\:3001\:958b\:304f\:306e\:306f Inherited (SlideShow \:74b0\:5883\:3067\:306f\:30b9\:30bf\:30a4\:30eb\:304c\:539f\:7a3f\:3092\:96a0\:3059)\:3002 *)
+$iSWTalkLangLabel = "";
+
+iSWTalkAvailableLangs[nb_NotebookObject] := Module[{s = Quiet[SlideTalkLanguages[nb]]},
+  DeleteDuplicates[Select[Join[
+    {If[AssociationQ[s], s["Base"], "ja"]},
+    If[AssociationQ[s], Keys[Select[s["Translated"], # > 0 &]], {}],
+    {SlideTalkLanguage[nb]}], StringQ]]];
+
+(* \:4f5c\:696d\:753b\:9762\:3067 lang \:306e\:539f\:7a3f\:3060\:3051\:3092\:958b\:304f\:3002All \:306a\:3089\:3059\:3079\:3066\:958b\:304f *)
+iSWTalkShowLanguage[nb_NotebookObject, lang_] := Module[{ranges = iSWSlideRanges[nb], cells = Cells[nb], styles = iSWCellStyles[nb],
+    spans, opened = 0, closed = 0},
+  spans = Join[If[ranges === {}, {}, {Range[1, ranges[[1, 1]] - 1]}],
+    Map[Range[#[[1]], Min[#[[2]], Length[styles]]] &, ranges]];
+  Do[Module[{tIdx = Select[span, MemberQ[Flatten[{styles[[#]]}], "SlideTalk"] &], langs, show},
+      If[tIdx =!= {},
+        langs = iSWTalkCellLangFE[cells[[#]]] & /@ tIdx;
+        show = If[StringQ[lang] && MemberQ[langs, lang], lang, None];
+        Do[If[lang === All || langs[[j]] === show,
+            Quiet[SetOptions[cells[[tIdx[[j]]]], CellOpen -> Inherited]]; opened++,
+            Quiet[SetOptions[cells[[tIdx[[j]]]], CellOpen -> False]]; closed++],
+          {j, Length[tIdx]}]]],
+    {span, spans}];
+  <|"Opened" -> opened, "Closed" -> closed|>];
+
+Options[SlideSetTalkLanguage] = {"View" -> True};
+SlideSetTalkLanguage[lang_String, opts : OptionsPattern[]] := With[{nb = iSWNotebook[]},
+  If[nb === $Failed, $Failed, SlideSetTalkLanguage[nb, lang, opts]]];
+SlideSetTalkLanguage[nb_NotebookObject, langIn_String, OptionsPattern[]] := Module[{lang = iSWTalkLangCode[langIn], dcs, hit = False, view},
+  If[! StringQ[lang], Return[Failure["BadLanguage", <|"MessageTemplate" -> "unknown language `1`", "MessageParameters" -> {langIn}|>]]];
+  (* \:6307\:793a\:30bb\:30eb\:306b Language: \:884c\:304c\:3042\:308c\:3070\:305d\:308c\:3092\:66f8\:304d\:63db\:3048\:308b (\:6307\:793a\:30bb\:30eb\:306e\:5024\:304c\:3044\:3061\:3070\:3093\:5f37\:3044) *)
+  dcs = Replace[Quiet[Cells[nb, CellStyle -> "Directive"]], Except[_List] -> {}];
+  Do[Module[{c = Quiet[NotebookRead[co]], lines},
+      If[! hit && Head[c] === Cell,
+        lines = StringSplit[StringReplace[iCellText[c], "\r\n" -> "\n"], "\n", All];
+        If[AnyTrue[lines, With[{kv = iSWDirectiveMetaLine[#]}, ListQ[kv] && kv[[1]] === "Language"] &],
+          NotebookWrite[co, Cell[StringRiffle[Map[With[{kv = iSWDirectiveMetaLine[#]},
+              If[ListQ[kv] && kv[[1]] === "Language", "Language: " <> lang, #]] &, lines], "\n"],
+            Sequence @@ Rest[List @@ c]]];
+          hit = True]]],
+    {co, dcs}];
+  If[! hit, SlideTalkMeta[nb, "Language" -> lang]];
+  view = If[TrueQ[OptionValue["View"]],
+    Quiet[CurrentValue[nb, {TaggingRules, "SWTalkView"}] = True]; iSWTalkShowLanguage[nb, lang], None];
+  iSWRefreshTalkLangLabel[nb];
+  iSWStatus[nb, iSL["\:8a71\:3059\:8a00\:8a9e: ", "Speaking language: "] <> iSWTalkLangInfoText[nb]];
+  iSWStatusClearLater[nb];
+  <|"Language" -> lang, "Directive" -> hit, "View" -> view|>];
+
+(* \:30d1\:30ec\:30c3\:30c8: \:8a71\:3059\:8a00\:8a9e\:3092\:9806\:306b (\:5143\:306e\:539f\:7a3f\:306e\:8a00\:8a9e \[RightArrow] \:8a33\:306e\:3042\:308b\:8a00\:8a9e \[RightArrow] \[Ellipsis]) *)
+SlideCycleTalkLanguage[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideCycleTalkLanguage[nb]]];
+SlideCycleTalkLanguage[nb_NotebookObject] := Module[{langs = iSWTalkAvailableLangs[nb], cur = SlideTalkLanguage[nb], pos},
+  If[Length[langs] < 2,
+    iSWStatus[nb, iSL["\:8a33\:306e\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093 (\:300c\:539f\:7a3f\:8a33\:300d\:3067\:4f5c\:308a\:307e\:3059)", "No translated talks yet (use Translate talks)"]];
+    iSWStatusClearLater[nb]; iSWRefreshTalkLangLabel[nb];
+    Return[<|"Language" -> cur, "Languages" -> langs|>]];
+  pos = FirstPosition[langs, cur, {0}][[1]];
+  SlideSetTalkLanguage[nb, langs[[Mod[pos, Length[langs]] + 1]]]];
+
+iSWRefreshTalkLangLabel[] := iSWRefreshTalkLangLabel[iSWResolveTargetNb[]];
+iSWRefreshTalkLangLabel[nb_] := ($iSWTalkLangLabel = iSL["\:8a71\:3059\:8a00\:8a9e: ", "Speaking: "] <>
+  If[Head[nb] === NotebookObject, iSWTalkLangName[Quiet[SlideTalkLanguage[nb]]], iSWTalkLangName[iSWTalkDefaultLang[]]]);
 
 (* QA\:751f\:6210: KG \:304b\:3089\:4f5c\:3063\:305f\:679a\:306e\:300c\:5143\:306e\:8cc7\:6599\:300d(\:30ce\:30fc\:30c9\:306e\:672c\:6587\:3002\:7121\:3051\:308c\:3070\:89aa\:306e\:7bc0\:306e\:7b4b\:66f8\:304d\:3001\:8981\:7d04) \:3068\:51fa\:5178 *)
 iSWQAKGSources[nb_NotebookObject] := Module[{none = <|"Graph" -> None, "Sources" -> <||>, "PL" -> None|>, rows, gid, kg, index, parent,
@@ -9175,17 +12286,17 @@ iSWQANodeSource[index_Association, parent_Association, id_String] := Module[{n =
    2. \:95a2\:9023\:7814\:7a76 (\:975e\:540c\:671f): LLM \:304c\:7b4b\:66f8\:304d\:304b\:3089\:691c\:7d22\:8a9e\:3092\:51fa\:3057\:3001SourceVault \:306e\:6a2a\:65ad\:691c\:7d22 (\:53d6\:308a\:8fbc\:307f\:6e08\:307f\:306e\:8ad6\:6587\:30fbEagle) \:3067\:5019\:88dc\:3092\:96c6\:3081\:308b\:3002
       Story \:306e Survey: web \:306e\:3068\:304d\:3060\:3051 Web \:691c\:7d22\:3082\:4f7f\:3046 (\:691c\:7d22\:8a9e\:304c\:5916\:306b\:51fa\:308b\:306e\:3067\:3001\:66f8\:3044\:305f\:3068\:304d\:3060\:3051)\:3002
       \:516c\:958b\:3067\:304d\:306a\:3044\:5019\:88dc (PrivacyLevel >= 0.5) \:306f\:30c7\:30c3\:30ad\:306e PrivacyLevel \:304c\:305d\:308c\:4ee5\:4e0a\:306e\:3068\:304d\:3060\:3051\:4f7f\:3046
-   3. \:5c55\:958b (\:63a8\:6572\:306e\:9023\:9396): \:7bc0\:3054\:3068\:306b\:7b4b\:66f8\:304d + \:5019\:88dc \:2192 \:767a\:8868\:7528\:306e\:30ce\:30fc\:30c9 (<\:7bc0>_1.. / \:95a2\:9023\:7814\:7a76 rw_<\:5019\:88dc\:756a\:53f7> / \:524d\:63d0 bg_\:2026)
-   \:4ee5\:5f8c\:306f\:8ad6\:6587\:3068\:540c\:3058 (\:5468\:8fba\:77e5\:8b58 \:2192 \:56f3\:89e3 \:2192 \:8abf\:6574 \:2192 \:8a08\:753b \:2192 \:751f\:6210)\:3002\:9014\:4e2d\:3067\:6b62\:307e\:3063\:3066\:3082\:300c\:63a8\:6572\:300d\:3067\:7d9a\:304d\:304b\:3089\:5c55\:958b\:3059\:308b *)
+   3. \:5c55\:958b (\:63a8\:6572\:306e\:9023\:9396): \:7bc0\:3054\:3068\:306b\:7b4b\:66f8\:304d + \:5019\:88dc \[RightArrow] \:767a\:8868\:7528\:306e\:30ce\:30fc\:30c9 (<\:7bc0>_1.. / \:95a2\:9023\:7814\:7a76 rw_<\:5019\:88dc\:756a\:53f7> / \:524d\:63d0 bg_\[Ellipsis])
+   \:4ee5\:5f8c\:306f\:8ad6\:6587\:3068\:540c\:3058 (\:5468\:8fba\:77e5\:8b58 \[RightArrow] \:56f3\:89e3 \[RightArrow] \:8abf\:6574 \[RightArrow] \:8a08\:753b \[RightArrow] \:751f\:6210)\:3002\:9014\:4e2d\:3067\:6b62\:307e\:3063\:3066\:3082\:300c\:63a8\:6572\:300d\:3067\:7d9a\:304d\:304b\:3089\:5c55\:958b\:3059\:308b *)
 $iSWPromptHintPrefixes := {StringTake[iSWPromptHintText["ja"], 12], StringTake[iSWPromptHintText["en"], 20]};
 iSWPromptHintText["ja"] := "\:3053\:3053\:306b\:3053\:306e\:30b9\:30e9\:30a4\:30c9\:3067\:4f1d\:3048\:305f\:3044\:5185\:5bb9(\:30d7\:30ed\:30f3\:30d7\:30c8)\:3092\:66f8\:304d\:3001\:300c\:5c55\:958b\:300d\:3092\:62bc\:3059\:3002";
 iSWPromptHintText["en"] := "Write the prompt for this slide here and press Expand.";
 iSWScenarioHintQ[s_String] := AnyTrue[$iSWPromptHintPrefixes, StringStartsQ[StringTrim[s], #] &];
 
 iSWScenarioTitleOf[s_String] := Module[{l = StringTrim[First[StringSplit[s, "\n"], ""]]},
-  l = StringTrim[StringReplace[l, RegularExpression["^([-*\:30fb\:2022]|\\d+[.)\:ff0e\:3001])\\s*"] -> ""]];
+  l = StringTrim[StringReplace[l, RegularExpression["^([-*\:30fb\[Bullet]]|\\d+[.)\:ff0e\:3001])\\s*"] -> ""]];
   l = First[StringSplit[l, "\:3002" | ". " | "\:ff1a" | ": "], l];
-  If[StringLength[l] > 40, StringTake[l, 39] <> "\:2026", l]];
+  If[StringLength[l] > 40, StringTake[l, 39] <> "\[Ellipsis]", l]];
 
 (* 1 \:3064\:306e\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:3092\:90e8\:306b\:5206\:3051\:308b: \:898b\:51fa\:3057 (#) > \:884c\:982d\:306e\:756a\:53f7 (1. 2.) > \:7a7a\:884c\:3067\:533a\:5207\:3063\:305f\:584a > \:5168\:4f53\:3067 1 \:90e8 *)
 iSWScenarioSplit[text_String] := Module[{t = StringTrim[StringReplace[text, "\r\n" -> "\n"]], lines, heads, blocks, mk},
@@ -9357,7 +12468,7 @@ iSWRelatedRun[nb_, spec_Association, kg_Association, web_, maxC_, then_, metaBlo
   If[iSWRefineBusyQ[],
     iSWStatusIf[nb, iSL["KG \:306e\:63a8\:6572\:30fb\:56f3\:89e3\:30fb\:8abf\:6574\:3092\:5b9f\:884c\:4e2d\:3067\:3059\:3002\:7d42\:308f\:308b\:307e\:3067\:5f85\:3063\:3066\:304f\:3060\:3055\:3044", "A KG run is in progress"]];
     Return[<|"Status" -> "Busy", "Graph" -> gid|>]];
-  iSWStatusIf[nb, iSL["\:95a2\:9023\:7814\:7a76: \:7b4b\:66f8\:304d\:304b\:3089\:691c\:7d22\:8a9e\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059\:2026", "Related work: drafting search terms from the scenario..."]];
+  iSWStatusIf[nb, iSL["\:95a2\:9023\:7814\:7a76: \:7b4b\:66f8\:304d\:304b\:3089\:691c\:7d22\:8a9e\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059\[Ellipsis]", "Related work: drafting search terms from the scenario..."]];
   $iSWRefineBusy = True; $iSWRefineBusySince = AbsoluteTime[];
   With[{n2 = nb, g = gid, w = TrueQ[web], m = If[IntegerQ[maxC], maxC, 20], th = then, p = pl},
     NBAccess`$NBLLMQueryFunc[iSWRelatedQueryPrompt[kg, spec, metaBlocks],
@@ -9370,7 +12481,7 @@ iSWRelatedApply[nb_, gid_String, resp_, web_, maxC_Integer, then_, pl_] := Modul
   $iSWRefineBusy = False;
   qs = iSWRelatedQueries[resp];
   Do[
-    iSWStatusIf[nb, iSL["\:95a2\:9023\:7814\:7a76\:3092\:691c\:7d22\:4e2d (" <> ToString[i] <> "/" <> ToString[Length[qs]] <> ": " <> qs[[i]] <> ")\:2026",
+    iSWStatusIf[nb, iSL["\:95a2\:9023\:7814\:7a76\:3092\:691c\:7d22\:4e2d (" <> ToString[i] <> "/" <> ToString[Length[qs]] <> ": " <> qs[[i]] <> ")\[Ellipsis]",
       "Searching related work (" <> ToString[i] <> "/" <> ToString[Length[qs]] <> ": " <> qs[[i]] <> ")..."]];
     rows = Join[rows, iSWRelatedSearchLocal[qs[[i]]]];
     If[TrueQ[web], rows = Join[rows, iSWRelatedSearchWeb[qs[[i]]]]],
@@ -9419,10 +12530,10 @@ iSWRefineScenarioPrompt[spec_Association, gid_String, sectionIds_List, metaBlock
   " {\"Id\": \"bg_<\:82f1\:5c0f\:6587\:5b57>\", \"Layer\": \"Background\", \"Label\": \"\:524d\:63d0\:77e5\:8b58\", \"Summary\": \"...\", \"Points\": [\"...\"], \"Difficulty\": 0-1}],\n" <>
   " \"Edges\": [{\"From\": \"<Id>\", \"To\": \"<Id>\", \"EdgeKind\": \"Motivates|Derives|LeadsTo|Prerequisite|Supports|Explains|Contrasts|RelatedTo\", \"Weight\": 0-1}]}\n" <>
   "\:898f\:5247:\n" <>
-  "- 1 \:7bc0\:3042\:305f\:308a 2\:301c6 \:30ce\:30fc\:30c9 (1 \:30ce\:30fc\:30c9 = \:30b9\:30e9\:30a4\:30c9 1 \:679a)\:3002Id \:306f <\:7bc0 Id>_1, <\:7bc0 Id>_2 \:2026 \:3067\:3001\:3053\:306e\:9806\:306b\:30b9\:30e9\:30a4\:30c9\:306b\:306a\:308b\:3002\:7bc0\:30ce\:30fc\:30c9\:81ea\:4f53\:306b\:3082 Label \:3068 Summary \:3092\:4ed8\:3051\:308b\:3002\n" <>
+  "- 1 \:7bc0\:3042\:305f\:308a 2\:301c6 \:30ce\:30fc\:30c9 (1 \:30ce\:30fc\:30c9 = \:30b9\:30e9\:30a4\:30c9 1 \:679a)\:3002Id \:306f <\:7bc0 Id>_1, <\:7bc0 Id>_2 \[Ellipsis] \:3067\:3001\:3053\:306e\:9806\:306b\:30b9\:30e9\:30a4\:30c9\:306b\:306a\:308b\:3002\:7bc0\:30ce\:30fc\:30c9\:81ea\:4f53\:306b\:3082 Label \:3068 Summary \:3092\:4ed8\:3051\:308b\:3002\n" <>
   "- \:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc\:3092\:7d39\:4ecb\:3059\:308b\:3068\:304d\:306f Id \:3092 rw_<\:5019\:88dc\:756a\:53f7> \:306b\:3057\:3001\:305d\:306e\:7bc0\:306b\:7f6e\:304f (Parent)\:3002Points \:306f\:5019\:88dc\:306e\:8981\:7d04\:306b\:3042\:308b\:3053\:3068\:3060\:3051\:3002\:672c\:6587\:306e\:30ce\:30fc\:30c9\:304c\:5019\:88dc\:306b\:4f9d\:62e0\:3059\:308b\:3068\:304d\:306f \"Ref\": [\:5019\:88dc\:756a\:53f7]\:3002\:5019\:88dc\:306b\:7121\:3044\:6587\:732e\:30fb\:8457\:8005\:30fb\:5e74\:3092\:4f5c\:3089\:306a\:3044\:3002\n" <>
   "- \:7b4b\:66f8\:304d\:306b\:7121\:3044\:5177\:4f53\:7684\:306a\:6570\:5024\:30fb\:5b9f\:9a13\:7d50\:679c\:3092\:4f5c\:3089\:306a\:3044\:3002\:8074\:304d\:624b\:306b\:7121\:3044\:524d\:63d0\:77e5\:8b58\:306f bg_ \:30ce\:30fc\:30c9\:306b\:3057\:3066 Prerequisite \:8fba\:3092\:5f35\:308b\:3002\:9806\:5e8f\:8fba\:306f From \:3092\:5148\:306b\:63d0\:793a\:3059\:308b\:5411\:304d\:3002\n" <>
-  "- \:30b9\:30e9\:30a4\:30c9\:306f\:305d\:308c\:3060\:3051\:898b\:3066\:3082\:5185\:5bb9\:304c\:5206\:304b\:308b\:3088\:3046\:306b: Lead + Points + Details\:3002\:5f37\:8abf\:3057\:305f\:3044\:8a9e\:53e5\:306f **\:2026** (1 \:30ce\:30fc\:30c9 1\:301c2 \:304b\:6240)\:3002\:56f3\:8868\:756a\:53f7\:306f\:66f8\:304b\:306a\:3044\:3002\n" <>
+  "- \:30b9\:30e9\:30a4\:30c9\:306f\:305d\:308c\:3060\:3051\:898b\:3066\:3082\:5185\:5bb9\:304c\:5206\:304b\:308b\:3088\:3046\:306b: Lead + Points + Details\:3002\:5f37\:8abf\:3057\:305f\:3044\:8a9e\:53e5\:306f **\[Ellipsis]** (1 \:30ce\:30fc\:30c9 1\:301c2 \:304b\:6240)\:3002\:56f3\:8868\:756a\:53f7\:306f\:66f8\:304b\:306a\:3044\:3002\n" <>
   "- Talk (\:8aad\:307f\:4e0a\:3052\:539f\:7a3f) \:306b\:306f $...$ \:3084 ** \:3092\:66f8\:304b\:306a\:3044\:3002\:5f0f\:306f\:300c\:3053\:306e\:5f0f\:306f\:301c\:3092\:8868\:3057\:307e\:3059\:300d\:3068\:753b\:9762\:3092\:6307\:3057\:3066\:8a9e\:308b\:3002\:5f0f\:306b\:51fa\:308b\:8a18\:53f7\:306e\:610f\:5473\:306f Points \:304b Details \:306b\:66f8\:304f\:3002\n\n" <>
   "=== \:5c55\:958b\:3059\:308b\:7bc0 (\:7b4b\:66f8\:304d) ===\n" <>
   StringRiffle[Map[Function[sid, With[{n = Lookup[index, sid, <||>]},
@@ -9517,7 +12628,7 @@ iSWStoryScenarioTemplate[parts_List, ja_] := Module[{titles = Take[Lookup[parts,
     "Graph: \nAudience: \:5927\:5b66\:7406\:7cfb\:5b66\:90e8\:5352\nSlides: 20\nMinutes: \nLanguage: ja\nStrategy: Source\n" <>
       "Source: \:30b7\:30ca\:30ea\:30aa\n# Survey: \:95a2\:9023\:7814\:7a76\:306e\:63a2\:3057\:65b9 (local = \:53d6\:308a\:8fbc\:307f\:6e08\:307f\:306e\:6587\:732e\:3001web = Web \:691c\:7d22\:3082\:4f7f\:3046\:3001off = \:63a2\:3055\:306a\:3044)\nSurvey: local\n" <>
       "Story: \:7d50\:8ad6\:30d5\:30a1\:30fc\:30b9\:30c8\:3002\:6700\:521d\:306e 1 \:679a\:3067\:767a\:8868\:306e\:7d50\:8ad6\:3068\:65b0\:3057\:3055\:3092\:793a\:3059\:3002\n" <>
-      "\:9806\:5e8f: " <> If[titles === {}, "\:7d50\:8ad6 \:2192 \:80cc\:666f \:2192 \:672c\:984c \:2192 \:307e\:3068\:3081", StringRiffle[titles, " \:2192 "]] <> "\:3002\n" <>
+      "\:9806\:5e8f: " <> If[titles === {}, "\:7d50\:8ad6 \[RightArrow] \:80cc\:666f \[RightArrow] \:672c\:984c \[RightArrow] \:307e\:3068\:3081", StringRiffle[titles, " \[RightArrow] "]] <> "\:3002\n" <>
       "\:95a2\:9023\:7814\:7a76: \:53d6\:308a\:8fbc\:307f\:6e08\:307f\:306e\:6587\:732e\:304b\:3089\:7b4b\:66f8\:304d\:306b\:95a2\:4fc2\:3059\:308b\:7814\:7a76\:3092\:9078\:3073\:3001\:51fa\:5178\:3092\:4ed8\:3051\:3066\:7d39\:4ecb\:3059\:308b\:3002\n" <>
       "\:56f3\:3084\:8868\:3067\:793a\:305b\:308b\:5185\:5bb9\:306f\:56f3\:3092\:4e3b\:5f79\:306b\:3057\:3001\:7b87\:6761\:66f8\:304d\:306f\:305d\:306e\:8aac\:660e\:306b\:3059\:308b (\:7121\:3044\:6240\:306f\:6982\:5ff5\:56f3\:304b\:8868\:3092\:63cf\:304f)\:3002\n" <>
       "\:8074\:304d\:624b\:306f\:3053\:306e\:5206\:91ce\:306e\:5c02\:9580\:5bb6\:3067\:306f\:306a\:3044\:306e\:3067\:3001\:521d\:51fa\:306e\:7528\:8a9e\:306f\:4e00\:8a00\:3067\:8a00\:3044\:63db\:3048\:308b\:3002",
@@ -9555,7 +12666,7 @@ iSWVizPlan[gid_String, deck_, rev_ : 0] := Module[{key = {gid, iSWVizStamp[gid],
 
 Options[SlideGraphVisualize] = {"View" -> "Story", "Focus" -> None, "Radius" -> 1, "EdgeKinds" -> Automatic, "Layers" -> All,
   "Labels" -> Automatic, "Plan" -> Automatic, "Selected" -> None, "OnClick" -> None, "Language" -> Automatic,
-  "Legend" -> True, "Hidden" -> True};
+  "Legend" -> True, "Hidden" -> True, "MaxDegree" -> Automatic, "Strategy" -> Automatic, "Balance" -> Automatic};
 SlideGraphVisualize[opts : OptionsPattern[]] := SlideGraphVisualize[iSWResolveTargetNb[], opts];
 SlideGraphVisualize[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[{kg, plan},
   If[! iSWKGEnsure[], Return[iSWKGFail[]]];
@@ -9566,7 +12677,10 @@ SlideGraphVisualize[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[{kg, 
     True :> iSWVizPlan[kg["GraphId"], src],
     False -> None}];
   SourceVault`SourceVaultKGVisualize[kg, "Plan" -> plan,
-    Sequence @@ FilterRules[Join[{opts}, Options[SlideGraphVisualize]], Except["Plan"]]]];
+    "MaxDegree" -> Replace[OptionValue["MaxDegree"], Automatic :> iSWMaxDegree[]],
+    "Strategy" -> Replace[OptionValue["Strategy"], Automatic :> If[Head[src] === NotebookObject,
+      Replace[Quiet @ Check[SlideGraphSpec[src]["Strategy"], "Source"], Except[_String] -> "Source"], "Source"]],
+    Sequence @@ FilterRules[Join[{opts}, Options[SlideGraphVisualize]], Except["Plan" | "MaxDegree" | "Strategy"]]]];
 
 SetAttributes[iSWVizSafe, HoldAll];
 iSWVizSafe[expr_] := Quiet @ Check[expr, Style[iSL["\:56f3\:3092\:63cf\:3051\:307e\:305b\:3093\:3067\:3057\:305f", "Could not draw the graph"], RGBColor[0.7, 0.1, 0.1]]];
@@ -9597,15 +12711,15 @@ iSWVizSummaryLine[gid_String] := Module[{kg = iSWVizKG[gid], nodes, secs, paper,
     If[hid > 0, iSL["\:96a0\:3059 ", "hidden "] <> ToString[hid], Nothing],
     If[un === {}, iSL["\:672a\:63a8\:6572\:306e\:7bc0\:306a\:3057", "all sections refined"],
       iSL["\:672a\:63a8\:6572\:306e\:7bc0 ", "unrefined sections "] <> ToString[Length[un]] <> " (" <> StringRiffle[Take[un, UpTo[5]], ", "] <> ")"]},
-    "  \:00b7  "], 10, GrayLevel[0.3]]];
+    "  \[CenterDot]  "], 10, GrayLevel[0.3]]];
 
 (* \:9078\:3093\:3060\:30ce\:30fc\:30c9\:306e\:8a73\:7d30 *)
 iSWVizNeighborLines[kg_Association, id_String, lang_String] := Module[{index = Association[(#["Id"] -> #) & /@ kg["Nodes"]], lab, out = {}},
   lab[x_] := If[KeyExistsQ[index, x], SourceVault`SourceVaultKGText[index[x], "Label", lang], x];
   Do[With[{ins = Select[kg["Edges"], #["To"] === id && MemberQ[kinds[[2]], #["EdgeKind"]] &],
       outs = Select[kg["Edges"], #["From"] === id && MemberQ[kinds[[2]], #["EdgeKind"]] &]},
-      If[ins =!= {}, AppendTo[out, {kinds[[1]] <> iSL[" \:2190 ", " <- "], StringRiffle[Take[lab /@ Lookup[ins, "From"], UpTo[6]], " / "]}]];
-      If[outs =!= {}, AppendTo[out, {kinds[[1]] <> iSL[" \:2192 ", " -> "], StringRiffle[Take[lab /@ Lookup[outs, "To"], UpTo[6]], " / "]}]]],
+      If[ins =!= {}, AppendTo[out, {kinds[[1]] <> iSL[" \[LeftArrow] ", " <- "], StringRiffle[Take[lab /@ Lookup[ins, "From"], UpTo[6]], " / "]}]];
+      If[outs =!= {}, AppendTo[out, {kinds[[1]] <> iSL[" \[RightArrow] ", " -> "], StringRiffle[Take[lab /@ Lookup[outs, "To"], UpTo[6]], " / "]}]]],
     {kinds, {{iSL["\:5305\:542b", "contains"], {"Contains"}}, {iSL["\:9806\:5e8f", "order"], {"Precedes", "LeadsTo", "Derives", "Motivates"}},
       {iSL["\:524d\:63d0", "prerequisite"], {"Prerequisite"}}, {iSL["\:652f\:3048", "support"], {"Supports", "Explains"}},
       {iSL["\:95a2\:9023", "related"], {"Contrasts", "RelatedTo", "Cites"}}}}];
@@ -9617,6 +12731,10 @@ iSWVizDetail[gid_String, sel_, _] := Module[{kg = iSWVizKG[gid], n, lang, txt, p
       "Click a node in the graph, or search below, to see its content here."], 10, GrayLevel[0.45]], 330]]];
   If[! AssociationQ[kg], Return[Style[iSL["KG \:3092\:8aad\:3081\:307e\:305b\:3093", "Cannot read the KG"], RGBColor[0.7, 0.1, 0.1]]]];
   n = SourceVault`SourceVaultKGNode[kg, sel];
+  (* v1.44: \:968e\:5c64\:306e\:4e0b\:898b\:3067\:63cf\:3044\:305f\:4fdd\:5b58\:524d\:306e\:307e\:3068\:307e\:308a (Id \:304c grp_ \:3067\:59cb\:307e\:308b) *)
+  If[! AssociationQ[n] && StringStartsQ[sel, "grp_"],
+    Return[Pane[Style[sel <> ": \:4fdd\:5b58\:524d\:306e\:307e\:3068\:307e\:308a (\:5b50\:306e\:6570\:306e\:4e0a\:9650\:3092\:5b88\:308b\:305f\:3081\:306e\:6a5f\:68b0\:7684\:306a\:4e0b\:898b)\:3002\:300c\:968e\:5c64\:5316\:300d\:3092\:62bc\:3059\:3068\:3001LLM \:306e\:5206\:3051\:65b9\:30fb\:984c\:76ee\:30fb\:4e00\:884c\:8981\:7d04\:3067\:77e5\:8b58\:30b0\:30e9\:30d5\:306b\:4fdd\:5b58\:3055\:308c\:307e\:3059 (\:300c\:751f\:6210\:300d\:3082\:5148\:306b\:3053\:308c\:3092\:884c\:3044\:307e\:3059)\:3002",
+      10, GrayLevel[0.35]], 330]]];
   If[! AssociationQ[n], Return[Style[iSL["\:30ce\:30fc\:30c9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093: ", "No such node: "] <> sel, RGBColor[0.7, 0.1, 0.1]]]];
   lang = Lookup[kg, "Language", "ja"];
   pts = SourceVault`SourceVaultKGText[n, "Points", lang];
@@ -9630,25 +12748,25 @@ iSWVizDetail[gid_String, sel_, _] := Module[{kg = iSWVizKG[gid], n, lang, txt, p
   nb = iSWVizNeighborLines[kg, sel, lang];
   Pane[Column[Join[
       {Style[SourceVault`SourceVaultKGText[n, "Label", lang], Bold, 13, RGBColor[0.55, 0.28, 0.05]],
-       Style[sel <> " \:00b7 " <> ToString[Lookup[n, "Kind", ""]] <> " \:00b7 " <> ToString[Lookup[n, "Layer", ""]] <>
-         iSL[" \:00b7 \:91cd\:8981\:5ea6 ", " \:00b7 importance "] <> ToString[Round[Lookup[n, "Importance", 0.5], 0.01]] <>
-         iSL[" \:00b7 \:96e3\:3057\:3055 ", " \:00b7 difficulty "] <> ToString[Round[Lookup[n, "Difficulty", 0.5], 0.01]], 9, GrayLevel[0.45]]},
+       Style[sel <> " \[CenterDot] " <> ToString[Lookup[n, "Kind", ""]] <> " \[CenterDot] " <> ToString[Lookup[n, "Layer", ""]] <>
+         iSL[" \[CenterDot] \:91cd\:8981\:5ea6 ", " \[CenterDot] importance "] <> ToString[Round[Lookup[n, "Importance", 0.5], 0.01]] <>
+         iSL[" \[CenterDot] \:96e3\:3057\:3055 ", " \[CenterDot] difficulty "] <> ToString[Round[Lookup[n, "Difficulty", 0.5], 0.01]], 9, GrayLevel[0.45]]},
       If[TrueQ[Lookup[n, "Hidden", False]], {Style[iSL["\:96a0\:3059 (\:30b9\:30e9\:30a4\:30c9\:306b\:3057\:306a\:3044)", "hidden (not on slides)"], 9, RGBColor[0.6, 0.3, 0.1]]}, {}],
       If[StringTrim[txt] =!= "" && ! MatchQ[pts, {__String}] && ! MemberQ[iSWKGSectionIdSet[kg], sel],
         {Style[iSL["\:672a\:63a8\:6572 (\:8981\:70b9\:304c\:7121\:3044)\:3002\:300c\:63a8\:6572\:300d\:3067\:8981\:70b9\:306b\:306a\:308a\:307e\:3059", "not refined yet (no points); Refine makes them"], 9, RGBColor[0.8, 0.1, 0.1]]}, {}],
       If[lead =!= "", {Style[lead, 11]}, {}],
       If[MatchQ[pts, {__String}],
-        {Column[MapIndexed[Function[{p, k}, Column[{Style["\:2022 " <> p, 11],
+        {Column[MapIndexed[Function[{p, k}, Column[{Style["\[Bullet] " <> p, 11],
             If[k[[1]] <= Length[det] && StringQ[det[[k[[1]]]]] && det[[k[[1]]]] =!= "", Style["   " <> det[[k[[1]]]], 9, GrayLevel[0.4]], Nothing]}]], pts],
           Spacings -> 0.2]}, {}],
       If[StringTrim[SourceVault`SourceVaultKGText[n, "Summary", lang]] =!= "" && ! MatchQ[pts, {__String}],
         {Style[SourceVault`SourceVaultKGText[n, "Summary", lang], 10]}, {}],
-      If[talk =!= "", {Style[iSL["\:539f\:7a3f: ", "Talk: "] <> StringTake[talk, UpTo[220]] <> If[StringLength[talk] > 220, "\:2026", ""], 9, GrayLevel[0.3]]}, {}],
+      If[talk =!= "", {Style[iSL["\:539f\:7a3f: ", "Talk: "] <> StringTake[talk, UpTo[220]] <> If[StringLength[talk] > 220, "\[Ellipsis]", ""], 9, GrayLevel[0.3]]}, {}],
       If[assets =!= {}, {Style[iSL["\:56f3: ", "Assets: "] <> StringRiffle[DeleteDuplicates[assets], ", "], 9, RGBColor[0.4, 0.35, 0.65]]}, {}],
       If[qa =!= {}, {Style[iSL["\:8cea\:7591\:5fdc\:7b54: ", "Q&A: "] <> StringTake[StringRiffle[qa, "\n"], UpTo[200]], 9, RGBColor[0.7, 0.4, 0.1]]}, {}],
       If[cite =!= "", {Style[iSL["\:51fa\:5178: ", "Source: "] <> cite, 9, GrayLevel[0.35]]}, {}],
       If[StringTrim[txt] =!= "", {Style[iSL["\:672c\:6587: ", "Text: "] <> StringTake[StringReplace[txt, "\n" -> " "], UpTo[300]] <>
-        If[StringLength[txt] > 300, "\:2026", ""], 9, GrayLevel[0.35]]}, {}],
+        If[StringLength[txt] > 300, "\[Ellipsis]", ""], 9, GrayLevel[0.35]]}, {}],
       If[nb =!= {}, {Grid[Map[{Style[#[[1]], 9, Bold, GrayLevel[0.35]], Style[#[[2]], 9, GrayLevel[0.3]]} &, nb], Alignment -> {Left, Top}, Spacings -> {0.5, 0.2}]}, {}]],
     Spacings -> 0.45], 330]];
 
@@ -9701,13 +12819,15 @@ iSWVizToAdjust[nb_NotebookObject, gid_String, id_String] := Module[{kg = iSWVizK
 iSWVizToAdjust[_, _, _] := iSL["\:30c7\:30c3\:30ad\:304c\:958b\:3044\:3066\:3044\:307e\:305b\:3093", "No deck is open"];
 
 iSWVizPanel[gid_String, deck_] := With[{g = gid, d = deck, hasDeck = Head[deck] === NotebookObject,
+    strat = If[Head[deck] === NotebookObject, Replace[Quiet @ Check[SlideGraphSpec[deck]["Strategy"], "Source"], Except[_String] -> "Source"], "Source"],
     lang = With[{kg = iSWVizKG[gid]}, If[AssociationQ[kg], Lookup[kg, "Language", "ja"], "ja"]]},
   DynamicModule[{view = "Story", groups = {"Order", "Prerequisite", "Support"}, layers = {"Paper", "Background", "Related"},
       labels = Automatic, planQ = hasDeck, sel = None, radius = 1, rev = 0, query = "", msg = ""},
     Column[{
       Grid[{
         {Style[iSL["\:8868\:793a", "View"], Bold, 10],
-         SetterBar[Dynamic[view], {"Story" -> iSL["\:8a71\:306e\:6d41\:308c", "Story"], "Sections" -> iSL["\:7bc0", "Sections"],
+         SetterBar[Dynamic[view], {"Story" -> iSL["\:8a71\:306e\:6d41\:308c", "Story"], "Hierarchy" -> iSL["\:968e\:5c64", "Hierarchy"],
+           "Sections" -> iSL["\:7bc0", "Sections"],
            "Focus" -> iSL["\:5468\:8fba", "Around"], "Plan" -> iSL["\:8a08\:753b", "Plan"], "Nodes" -> iSL["\:4e00\:89a7", "Nodes"]}],
          Button[iSL["\:66f4\:65b0", "Reload"], ($iSWVizCache = KeyDrop[$iSWVizCache, g]; rev = rev + 1), Method -> "Queued", ImageSize -> {70, Automatic}]},
         {Style[iSL["\:8fba", "Edges"], Bold, 10],
@@ -9727,6 +12847,10 @@ iSWVizPanel[gid_String, deck_] := With[{g = gid, d = deck, hasDeck = Head[deck] 
             "Story" -> Dynamic[iSWVizSafe[SlideGraphVisualize[iSWVizKG[g], "View" -> "Story", "EdgeKinds" -> groups, "Layers" -> layers,
                 "Labels" -> labels, "Plan" -> If[TrueQ[planQ], iSWVizPlan[g, d, rev], None], "OnClick" -> ((sel = #) &), "Legend" -> False]],
               TrackedSymbols :> {groups, layers, labels, planQ, rev}, SynchronousUpdating -> False],
+            "Hierarchy" -> Dynamic[iSWVizSafe[SlideGraphVisualize[iSWVizKG[g], "View" -> "Hierarchy", "Labels" -> labels,
+                "Plan" -> If[TrueQ[planQ], iSWVizPlan[g, d, rev], None], "Selected" -> sel, "OnClick" -> ((sel = #) &), "Legend" -> False,
+                "Strategy" -> strat]],
+              TrackedSymbols :> {labels, planQ, sel, rev}, SynchronousUpdating -> False],
             "Sections" -> Dynamic[iSWVizSafe[SlideGraphVisualize[iSWVizKG[g], "View" -> "Sections",
                 "EdgeKinds" -> DeleteCases[groups, "Contains"], "Selected" -> sel, "OnClick" -> ((sel = #) &), "Legend" -> False]],
               TrackedSymbols :> {groups, sel, rev}, SynchronousUpdating -> False],
@@ -9771,32 +12895,731 @@ SlideGraphViewer[src_] := Module[{kg, gid, title, deck},
   CreateDocument[{
       Cell[iSL["\:77e5\:8b58\:30b0\:30e9\:30d5: ", "Knowledge graph: "] <> title, "Subsection"],
       ExpressionCell[iSWVizPanel[gid, deck], "Output", ShowCellLabel -> False, CellMargins -> {{10, 10}, {6, 6}}]},
-    WindowTitle -> iSL["\:77e5\:8b58\:30b0\:30e9\:30d5 \:2014 ", "Knowledge graph \:2014 "] <> title, WindowSize -> {1280, 900},
+    WindowTitle -> iSL["\:77e5\:8b58\:30b0\:30e9\:30d5 \[LongDash] ", "Knowledge graph \[LongDash] "] <> title, WindowSize -> {1280, 900},
     Saveable -> False, ShowCellBracket -> False, WindowMargins -> {{40, Automatic}, {Automatic, 30}}]];
 
 iSWGraphViewerAction[nb_] := SlideGraphViewer[nb];
 
+
+(* ===================== v1.37: \:767a\:8868\:306e\:8a18\:9332 (\:30ab\:30e1\:30e9\:30fb\:9032\:884c\:30fb\:8cea\:554f) \:3068\:3001\:8cea\:554f\:304b\:3089\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc =====================
+   \:767a\:8868 (\:518d\:751f / \:5fdc\:7b54 on / \:30ab\:30e1\:30e9 on) \:306e\:3042\:3044\:3060\:30011 \:3064\:306e\:300c\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:300d\:3068\:3057\:3066 SourceVault \:306e MultimodalEvent \:306b\:6b8b\:3059\:3002
+   \:5f8c\:304b\:3089\:767a\:8868\:3092\:632f\:308a\:8fd4\:308b\:305f\:3081\:306e\:3001\:9032\:884c\:306e\:30bf\:30a4\:30e0\:30b9\:30bf\:30f3\:30d7\:3068\:5bfe\:5fdc\:3057\:305f\:30c7\:30fc\:30bf\:306e\:7d44:
+     SessionMarker (Start / End / CameraOn / CameraOff)\:3001SlideChange (\:8868\:793a\:3057\:305f\:30b9\:30e9\:30a4\:30c9)\:3001
+     CameraFrame (\:30ab\:30e1\:30e9\:753b\:50cf\:3002blob \:306b\:4fdd\:5b58\:3001PL \:65e2\:5b9a 0.6)\:3001UserQuestion / ResponseDraft (\:8cea\:554f\:3068\:7b54\:3048)\:3001
+     FAQCandidate (\:60f3\:5b9a\:554f\:7b54\:3092\:76f4\:3059 / \:8db3\:3059\:5019\:88dc\:3002\:63a1\:5426\:3082\:540c\:3058\:7a2e\:985e\:306e\:4e8b\:8c61\:3067\:8ffd\:8a18\:3059\:308b)\:3002
+   \:3069\:306e\:4e8b\:8c61\:306b\:3082 SessionID / Deck / At (UTC) / Elapsed (\:958b\:59cb\:304b\:3089\:306e\:79d2) / Slide \:304c\:4ed8\:304f\:3002
+   \:30ab\:30e1\:30e9\:753b\:50cf\:306f\:4fdd\:5b58\:3059\:308b\:3060\:3051\:3067\:3001LLM \:306b\:306f\:6e21\:3055\:306a\:3044\:3002
+   \:30ab\:30e1\:30e9\:306f ffmpeg (dshow) \:3092 1 \:672c\:3060\:3051\:8d77\:52d5\:3057\:3001\:4e00\:5b9a\:9593\:9694\:3067\:6642\:523b\:5165\:308a\:306e JPEG \:3092\:66f8\:304b\:305b\:308b
+   (1 \:679a\:305a\:3064 RunProcess \:3067\:64ae\:308b\:3068\:30ab\:30e1\:30e9\:3092\:958b\:304f\:305f\:3073\:306b\:6570\:79d2\:30ab\:30fc\:30cd\:30eb\:304c\:6b62\:307e\:308b)\:3002ScheduledTask \:304c 2 \:79d2\:3054\:3068\:306b
+   \:51fa\:6765\:4e0a\:304c\:3063\:305f\:753b\:50cf\:3092\:53d6\:308a\:8fbc\:307f\:3001FE \:306e\:30b9\:30e9\:30a4\:30c9\:756a\:53f7\:3092\:898b\:3066 SlideChange \:3092\:8a18\:9332\:3059\:308b\:3002
+   \:4f55\:3082\:52d5\:3044\:3066\:3044\:306a\:3044\:72b6\:614b (\:518d\:751f\:30fb\:5fdc\:7b54\:30fb\:30ab\:30e1\:30e9\:304c\:5168\:90e8\:6b62\:307e\:3063\:3066\:3044\:308b) \:304c $SlideRecordIdleSeconds \:7d9a\:3044\:305f\:3089\:30bb\:30c3\:30b7\:30e7\:30f3\:3092\:9589\:3058\:308b\:3002 *)
+
+$iSWTalkRec = <|"Session" -> None|>;
+$iSWRecAsk = <||>;
+$iSWCameraLabel = "\[EmptyCircle] \:30ab\:30e1\:30e9off";
+$iSWCameraColor = GrayLevel[0.55];
+
+iSWRecLayerQ[] := Length[DownValues[SourceVault`SourceVaultAppendMultimodalEvent]] > 0 &&
+  Length[DownValues[SourceVault`SourceVaultCommitBlob]] > 0;
+
+iSWRecPL["CameraFrame"] := N[$SlideCameraPrivacyLevel];
+iSWRecPL["UserQuestion" | "ResponseDraft" | "FAQCandidate"] :=
+  N[Max[$SlideQuestionPrivacyLevel, $SlideRecordPrivacyLevel]];
+iSWRecPL[_] := N[$SlideRecordPrivacyLevel];
+
+iSWRecUTC[] := DateString[TimeZoneConvert[Now, 0], "ISODateTime"] <> "Z";
+iSWRecUTC[t_?NumericQ] := DateString[TimeZoneConvert[FromAbsoluteTime[t], 0], "ISODateTime"] <> "Z";
+
+iSWRecActiveQ[] := StringQ[Lookup[$iSWTalkRec, "Session", None]];
+
+(* \:4e8b\:8c61\:3092 1 \:3064\:66f8\:304f\:3002\:8a18\:9332\:306f\:767a\:8868\:3092\:6b62\:3081\:306a\:3044: \:5931\:6557\:3057\:3066\:3082\:9ed9\:3063\:3066 $Failed *)
+iSWRecAppend[kind_String, fields_Association, t_: Automatic] := Module[{now, rec = $iSWTalkRec},
+  If[! iSWRecActiveQ[] || ! iSWRecLayerQ[], Return[$Failed]];
+  now = Replace[t, Automatic :> AbsoluteTime[]];
+  Quiet @ Check[
+    SourceVault`SourceVaultAppendMultimodalEvent[Join[
+      <|"SessionID" -> rec["Session"], "Kind" -> kind, "PrivacyLevel" -> iSWRecPL[kind],
+        "Tags" -> {"slidetalk"}, "SourceRef" -> "SlideWorkflow",
+        "Deck" -> rec["Deck"], "Rendition" -> Lookup[rec, "Rendition", ""], "Graph" -> Lookup[rec, "Graph", ""],
+        "At" -> iSWRecUTC[now],
+        "Elapsed" -> Round[now - rec["StartedAt"], 0.1],
+        "Slide" -> Replace[iSWRecSlideAt[now], Except[_Integer] -> 0],
+        "Node" -> iSWRecNodeOf[iSWRecSlideAt[now]]|>,
+      fields]],
+    $Failed]];
+
+(* v1.38: \:679a\:756a\:53f7 -> \:305d\:306e\:679a\:306e KG \:30ce\:30fc\:30c9 ("" = KG \:304b\:3089\:4f5c\:3063\:3066\:3044\:306a\:3044\:679a) *)
+iSWRecNodeOf[n_Integer] := With[{ns = Lookup[$iSWTalkRec, "SlideNodes", {}]},
+  If[ListQ[ns] && 1 <= n <= Length[ns] && StringQ[ns[[n]]], ns[[n]], ""]];
+iSWRecNodeOf[_] := "";
+
+(* \:305d\:306e\:6642\:523b\:306b\:8868\:793a\:3057\:3066\:3044\:305f\:30b9\:30e9\:30a4\:30c9 (\:8a18\:9332\:3057\:305f SlideChange \:304b\:3089) *)
+iSWRecSlideAt[t_] := Module[{log = Lookup[$iSWTalkRec, "SlideLog", {}], hit},
+  hit = Select[log, #[[1]] <= t + 0.5 &];
+  If[hit === {}, Lookup[$iSWTalkRec, "LastSlide", None], Last[hit][[2]]]];
+
+iSWRecSlideTitle[n_Integer] := With[{ts = Lookup[$iSWTalkRec, "Titles", {}]},
+  If[ListQ[ts] && 1 <= n <= Length[ts] && StringQ[ts[[n]]], ts[[n]], ""]];
+iSWRecSlideTitle[_] := "";
+
+(* \:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:3092\:59cb\:3081\:308b (\:65e2\:306b\:3042\:308c\:3070\:305d\:308c\:3092\:4f7f\:3046)\:3002SourceVault \:304c\:7121\:3051\:308c\:3070 None *)
+iSWTalkRecEnsure[nb_] := Module[{sid, deck, fn, title, now = AbsoluteTime[], rend},
+  If[iSWRecActiveQ[], Return[$iSWTalkRec["Session"]]];
+  If[Head[nb] =!= NotebookObject || ! iSWRecLayerQ[], Return[None]];
+  deck = Last[iSWDeckBaseName[nb]];
+  fn = Replace[Quiet[NotebookFileName[nb]], Except[_String] -> ""];
+  title = With[{t = Quiet[Lookup[SlideTalkMeta[nb], "Title", ""]]},
+    If[StringQ[t] && StringTrim[t] =!= "", t, deck]];
+  (* v1.38: \:3053\:306e\:767a\:8868\:304c\:3069\:306e\:7248 (\:3068\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:6539\:8a02) \:3092\:4f7f\:3063\:305f\:304b\:3002\:767a\:8868\:306e\:305f\:3073\:306b\:7248\:3078\:6539\:8a02\:3092\:8a18\:9332\:3059\:308b *)
+  rend = Replace[Quiet[iSWRenditionNote[nb, "Talk"]], Except[_Association] -> <||>];
+  sid = "slidetalk-" <> DateString[TimeZoneConvert[Now, 0],
+    {"Year", "Month", "Day", "-", "Hour", "Minute", "Second"}] <> "-" <> StringTake[CreateUUID[], 6];
+  $iSWTalkRec = <|"Session" -> sid, "Notebook" -> nb, "Deck" -> deck, "DeckFile" -> fn,
+    "Title" -> title, "StartedAt" -> now, "LastSlide" -> None, "SlideLog" -> {},
+    "Titles" -> Replace[Quiet[iSWSlideTitles[nb]], Except[_List] -> {}],
+    "Rendition" -> Lookup[rend, "Id", ""], "Graph" -> Lookup[rend, "Graph", ""],
+    "SlideNodes" -> Lookup[rend, "SlideNodes", {}],
+    "QAQuestions" -> None, "IdleSince" -> None, "Camera" -> None, "Task" -> None,
+    "Busy" -> False, "Counts" -> <||>|>;
+  iSWRecAppend["SessionMarker", <|"Event" -> "Start", "Title" -> title, "DeckFile" -> FileNameTake[fn],
+    "DeckRev" -> Lookup[rend, "DeckRev", ""], "GraphRev" -> Lookup[rend, "GraphRev", ""],
+    "Language" -> Quiet[SlideTalkLanguage[nb]], "Voice" -> ToString[Quiet[iSWVoiceName[]]],
+    "Model" -> ToString[Quiet[iSWVoiceModel[]]]|>, now];
+  iSWTalkRecSampleSlide[];
+  $iSWTalkRec["Task"] = Quiet[SessionSubmit[ScheduledTask[If[! iSWFEHeldQ[], iSWTraced["RecTick", iSWTalkRecTick[]]], $SlideRecordTick]]];
+  sid];
+
+iSWRecCount[k_String] := ($iSWTalkRec["Counts"] = Merge[{Lookup[$iSWTalkRec, "Counts", <||>], <|k -> 1|>}, Total]);
+
+(* \:30b9\:30e9\:30a4\:30c9\:304c\:5909\:308f\:3063\:305f\:3089\:8a18\:9332\:3059\:308b\:3002source = "Play" (\:8aad\:307f\:4e0a\:3052) | "Display" (\:753b\:9762\:306e\:756a\:53f7) *)
+iSWTalkRecSlide[n_Integer, source_String] := If[iSWRecActiveQ[] && n >= 1 && n =!= $iSWTalkRec["LastSlide"],
+  With[{now = AbsoluteTime[]},
+    $iSWTalkRec["LastSlide"] = n;
+    $iSWTalkRec["SlideLog"] = Append[$iSWTalkRec["SlideLog"], {now, n}];
+    iSWRecCount["SlideChange"];
+    iSWRecAppend["SlideChange", <|"Title" -> iSWRecSlideTitle[n], "Source" -> source|>, now]]];
+iSWTalkRecSlide[___] := Null;
+
+iSWTalkRecSampleSlide[] := With[{nb = Lookup[$iSWTalkRec, "Notebook", None]},
+  If[Head[nb] === NotebookObject && iSWSlideShowQ[nb],
+    With[{n = iSWSlideNumberFE[nb]}, If[IntegerQ[n], iSWTalkRecSlide[n, "Display"]]]]];
+
+iSWTalkRecTick[] := Module[{nb, now = AbsoluteTime[], active},
+  If[! iSWRecActiveQ[] || TrueQ[$iSWTalkRec["Busy"]], Return[Null]];
+  $iSWTalkRec["Busy"] = True;
+  Quiet @ Check[
+    nb = $iSWTalkRec["Notebook"];
+    (* \:9589\:3058\:305f\:3068\:5224\:3081\:308b\:306e\:306f Notebooks[] \:304c\:53d6\:308c\:3066\:305d\:3053\:306b\:7121\:3044\:3068\:304d\:3060\:3051 (\:53d6\:308c\:306a\:3044 = \:5224\:5b9a\:6750\:6599\:304c\:7121\:3044\:3002\:518d\:751f\:306e tick \:3068\:540c\:3058) *)
+    If[Head[nb] =!= NotebookObject || With[{nbs = iSWTraced["Rec:Notebooks", Quiet[Notebooks[]]]}, ListQ[nbs] && ! MemberQ[nbs, nb]],
+      iSWTalkRecEnd["NotebookClosed"],
+      iSWTraced["Rec:SampleSlide", iSWTalkRecSampleSlide[]];
+      iSWTraced["Rec:Camera", iSWCameraIngest[False]];
+      active = iSWCameraRunningQ[] || Lookup[$iSWPlayState, "Status", "Idle"] =!= "Idle" ||
+        iSWRealtimeRunningQ[];
+      Which[
+        active, $iSWTalkRec["IdleSince"] = None,
+        $iSWTalkRec["IdleSince"] === None, $iSWTalkRec["IdleSince"] = now,
+        now - $iSWTalkRec["IdleSince"] > $SlideRecordIdleSeconds, iSWTalkRecEnd["Idle"]]],
+    Null];
+  If[iSWRecActiveQ[], $iSWTalkRec["Busy"] = False];
+  Null];
+
+iSWTalkRecEnd[reason_String] := Module[{t = Lookup[$iSWTalkRec, "Task", None], sid},
+  If[! iSWRecActiveQ[], Return[None]];
+  If[iSWCameraRunningQ[], iSWCameraStopCore[]];
+  sid = $iSWTalkRec["Session"];
+  iSWRecAppend["SessionMarker", <|"Event" -> "End", "Reason" -> reason,
+    "Counts" -> Lookup[$iSWTalkRec, "Counts", <||>],
+    "Seconds" -> Round[AbsoluteTime[] - $iSWTalkRec["StartedAt"], 0.1]|>];
+  If[Head[t] === TaskObject, Quiet[TaskRemove[t]]];
+  $iSWTalkRec = <|"Session" -> None|>;
+  $iSWRecAsk = <||>;
+  sid];
+
+(* ---- \:30ab\:30e1\:30e9 ---- *)
+
+iSWFFmpegRunsQ[exe_String] := (exe === "ffmpeg" || FileExistsQ[exe]) &&
+  Quiet[Check[RunProcess[{exe, "-hide_banner", "-version"}, "ExitCode"], $Failed]] === 0;
+
+(* ffmpeg \:306e\:5834\:6240: $SlideFFmpegPath \[RightArrow] PresentationListener \:306e\:8a2d\:5b9a\:30fb\:89e3\:6c7a\:7d50\:679c \[RightArrow] PATH \[RightArrow] WinGet / Wolfram \:5229\:7528\:8005\:9818\:57df
+   (\:30d1\:30b9\:306f\:74b0\:5883\:5909\:6570\:3068 $UserBaseDirectory \:304b\:3089\:7d44\:3080\:3002\:6c7a\:3081\:6253\:3061\:3057\:306a\:3044) *)
+$iSWFFmpegExe = None;
+iSWFFmpegExe[] := Module[{c = {}, la = Environment["LOCALAPPDATA"]},
+  If[StringQ[$iSWFFmpegExe] && iSWFFmpegRunsQ[$iSWFFmpegExe], Return[$iSWFFmpegExe]];
+  If[StringQ[$SlideFFmpegPath], AppendTo[c, $SlideFFmpegPath]];
+  If[Names["PresentationListener`$FFmpegPath"] =!= {},
+    With[{p = Symbol["PresentationListener`$FFmpegPath"]}, If[StringQ[p], AppendTo[c, p]]]];
+  If[Names["PresentationListener`Private`ffmpegExe"] =!= {},
+    With[{p = Quiet[ToExpression["PresentationListener`Private`ffmpegExe[]"]]}, If[StringQ[p], AppendTo[c, p]]]];
+  AppendTo[c, "ffmpeg"];
+  If[StringQ[la], AppendTo[c, FileNameJoin[{la, "Microsoft", "WinGet", "Links", "ffmpeg.exe"}]]];
+  c = Join[c, Quiet[FileNames["ffmpeg.exe", FileNames["*ffmpeg*", $UserBaseDirectory], 3]]];
+  $iSWFFmpegExe = SelectFirst[DeleteDuplicates[Select[c, StringQ]], iSWFFmpegRunsQ, None]];
+
+$iSWCameraDeviceCache = {0, {}};
+SlideCameraDevices[] := Module[{exe, r, err, names},
+  If[AbsoluteTime[] - $iSWCameraDeviceCache[[1]] < 30 && $iSWCameraDeviceCache[[2]] =!= {},
+    Return[$iSWCameraDeviceCache[[2]]]];
+  exe = iSWFFmpegExe[];
+  If[! StringQ[exe], Return[{}]];
+  r = Quiet[RunProcess[{exe, "-hide_banner", "-list_devices", "true", "-f", "dshow", "-i", "dummy"}]];
+  err = If[AssociationQ[r], r["StandardError"], ""];
+  If[! StringQ[err], Return[{}]];
+  (* ffmpeg \:306f UTF-8 \:3067\:66f8\:304f\:304c RunProcess \:306f 1 \:30d0\:30a4\:30c8 1 \:6587\:5b57\:3067\:8fd4\:3059 *)
+  If[Max[ToCharacterCode[err], 0] < 256,
+    err = Quiet[Check[FromCharacterCode[ToCharacterCode[err], "UTF-8"], err]]];
+  names = Flatten[StringCases[Select[StringSplit[err, "\n"], StringContainsQ[#, "(video)"] &],
+    "\"" ~~ n : Shortest[__] ~~ "\"" :> n, 1]];
+  $iSWCameraDeviceCache = {AbsoluteTime[], DeleteDuplicates[names]};
+  $iSWCameraDeviceCache[[2]]];
+
+(* Automatic = \:4eee\:60f3\:30ab\:30e1\:30e9 (OBS \:306a\:3069) \:3067\:306a\:3044\:6700\:521d\:306e\:30ab\:30e1\:30e9 *)
+iSWCameraDevice[] := Which[
+  StringQ[$SlideCameraDevice] && StringTrim[$SlideCameraDevice] =!= "", $SlideCameraDevice,
+  $SlideCameraDevice === None, None,
+  True, With[{ds = SlideCameraDevices[]},
+    SelectFirst[ds, ! StringContainsQ[#, "Virtual", IgnoreCase -> True] &, First[ds, None]]]];
+
+iSWCameraRunningQ[] := With[{c = Lookup[$iSWTalkRec, "Camera", None]},
+  AssociationQ[c] && Head[c["Process"]] === ProcessObject];
+
+iSWRefreshCameraLabel[] := If[iSWCameraRunningQ[],
+  $iSWCameraLabel = "\[FilledCircle] " <> iSL["\:30ab\:30e1\:30e9on", "Camera on"]; $iSWCameraColor = RGBColor[0.3, 0.6, 0.35],
+  $iSWCameraLabel = "\[EmptyCircle] " <> iSL["\:30ab\:30e1\:30e9off", "Camera off"]; $iSWCameraColor = GrayLevel[0.55]];
+
+SlideCameraStart[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideCameraStart[nb],
+    Failure["NoNotebook", <|"MessageTemplate" -> "target notebook not found"|>]]];
+
+SlideCameraStart[nb_NotebookObject] := Module[{dev, exe, sid, dir, iv, proc, err},
+  If[iSWCameraRunningQ[], Return[SlideCameraStatus[]]];
+  exe = iSWFFmpegExe[];
+  If[! StringQ[exe],
+    Return[Failure["SlideCameraNoFFmpeg", <|"MessageTemplate" ->
+      iSL["ffmpeg \:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093 (winget install Gyan.FFmpeg \:3067\:5165\:308c\:308b\:304b $SlideFFmpegPath \:3092\:8a2d\:5b9a)\:3002",
+        "ffmpeg was not found (install it with winget install Gyan.FFmpeg or set $SlideFFmpegPath)."]|>]]];
+  dev = iSWCameraDevice[];
+  If[! StringQ[dev],
+    Return[Failure["SlideCameraNoDevice", <|"MessageTemplate" ->
+      iSL["\:30ab\:30e1\:30e9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093 (SlideCameraDevices[] \:3092\:78ba\:8a8d)\:3002", "No camera found (see SlideCameraDevices[])."]|>]]];
+  sid = iSWTalkRecEnsure[nb];
+  If[! StringQ[sid],
+    Return[Failure["SlideCameraNoVault", <|"MessageTemplate" ->
+      iSL["SourceVault \:304c\:8aad\:307f\:8fbc\:307e\:308c\:3066\:3044\:306a\:3044\:306e\:3067\:8a18\:9332\:3067\:304d\:307e\:305b\:3093\:3002", "SourceVault is not loaded, so nothing can be recorded."]|>]]];
+  dir = FileNameJoin[{$TemporaryDirectory, "SlideWorkflowCamera", sid}];
+  Quiet[CreateDirectory[dir, CreateIntermediateDirectories -> True]];
+  iv = Max[5, Round[N[$SlideCameraInterval]]];
+  proc = Quiet[StartProcess[{exe, "-hide_banner", "-loglevel", "error",
+    "-f", "dshow", "-rtbufsize", "100M", "-i", "video=" <> dev,
+    "-vf", "fps=1/" <> ToString[iv] <> ",scale=" <> ToString[Round[$SlideCameraWidth]] <> ":-2",
+    "-q:v", "4", "-f", "image2", "-strftime", "1", FileNameJoin[{dir, "cam-%Y%m%d-%H%M%S.jpg"}]}]];
+  If[Head[proc] =!= ProcessObject, Return[Failure["SlideCameraStartFailed", <|"MessageTemplate" -> "ffmpeg did not start"|>]]];
+  Pause[1.5];
+  If[! iSWRecActiveQ[] || Lookup[$iSWTalkRec, "Session", None] =!= sid,
+    (* \:5f85\:3063\:3066\:3044\:308b\:9593\:306b\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:304c\:9589\:3058\:305f *)
+    Quiet[KillProcess[proc]]; Quiet[DeleteDirectory[dir, DeleteContents -> True]];
+    Return[Failure["SlideCameraSessionClosed", <|"MessageTemplate" -> "the talk session closed while the camera was starting"|>]]];
+  If[ProcessStatus[proc] =!= "Running",
+    err = Quiet[ReadString[ProcessConnection[proc, "StandardError"]]];
+    Quiet[DeleteDirectory[dir, DeleteContents -> True]];
+    Return[Failure["SlideCameraStartFailed", <|"MessageTemplate" ->
+      iSL["\:30ab\:30e1\:30e9\:3092\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f (\:4ed6\:306e\:30a2\:30d7\:30ea\:304c\:4f7f\:7528\:4e2d?): ", "Could not open the camera (in use by another app?): "] <>
+        If[StringQ[err], StringTake[StringTrim[err], UpTo[300]], ""], "Device" -> dev|>]]];
+  $iSWTalkRec["Camera"] = <|"Process" -> proc, "Dir" -> dir, "Device" -> dev, "Interval" -> iv,
+    "Frames" -> 0, "StartedAt" -> AbsoluteTime[]|>;
+  iSWRecAppend["SessionMarker", <|"Event" -> "CameraOn", "Device" -> dev, "IntervalSeconds" -> iv|>];
+  iSWRefreshCameraLabel[];
+  SlideCameraStatus[]];
+
+(* JPEG \:306e\:7d42\:7aef (FF D9) \:307e\:3067\:66f8\:3051\:3066\:3044\:308b\:304b *)
+iSWJpegCompleteQ[b_ByteArray] := Length[b] > 1000 && Normal[b[[-2 ;;]]] === {255, 217};
+iSWJpegCompleteQ[_] := False;
+
+(* "cam-20260927-200003.jpg" -> AbsoluteTime (ffmpeg -strftime \:306f\:30ed\:30fc\:30ab\:30eb\:6642\:523b) *)
+iSWCameraFileTime[f_String] := Module[{m = StringCases[FileBaseName[f],
+    "cam-" ~~ y : (DigitCharacter ~~ DigitCharacter ~~ DigitCharacter ~~ DigitCharacter) ~~
+      mo : (DigitCharacter ~~ DigitCharacter) ~~ d : (DigitCharacter ~~ DigitCharacter) ~~ "-" ~~
+      h : (DigitCharacter ~~ DigitCharacter) ~~ mi : (DigitCharacter ~~ DigitCharacter) ~~
+      s : (DigitCharacter ~~ DigitCharacter) :> ToExpression /@ {y, mo, d, h, mi, s}]},
+  If[m === {}, Replace[Quiet[AbsoluteTime[FileDate[f]]], Except[_?NumericQ] -> AbsoluteTime[]], AbsoluteTime[First[m]]]];
+
+(* \:51fa\:6765\:4e0a\:304c\:3063\:305f\:753b\:50cf\:3092 SourceVault \:3078\:3002final = \:6b62\:3081\:305f\:3042\:3068 (\:66f8\:304d\:304b\:3051\:306f\:6368\:3066\:308b) *)
+iSWCameraIngest[final_] := Module[{c = Lookup[$iSWTalkRec, "Camera", None], files, n = 0},
+  If[! AssociationQ[c] || ! DirectoryQ[c["Dir"]], Return[0]];
+  files = Sort[FileNames["cam-*.jpg", c["Dir"]]];
+  (* ffmpeg \:304c\:66f8\:3044\:3066\:3044\:308b\:6700\:4e2d\:306e 1 \:679a\:306b\:306f\:89e6\:3089\:306a\:3044 *)
+  If[! TrueQ[final], files = Select[files, AbsoluteTime[] - Quiet[AbsoluteTime[FileDate[#]]] > 1.5 &]];
+  Do[
+    If[n >= 6 && ! TrueQ[final], Break[]];
+    Module[{bytes = Quiet[ReadByteArray[f]], t, blob, slide},
+      If[iSWJpegCompleteQ[bytes],
+        t = iSWCameraFileTime[f];
+        blob = Quiet[SourceVault`SourceVaultCommitBlob[bytes,
+          "Meta" -> <|"SessionID" -> $iSWTalkRec["Session"], "Kind" -> "CameraFrame", "MediaType" -> "image/jpeg"|>]];
+        If[AssociationQ[blob] && Lookup[blob, "Status"] === "OK",
+          slide = iSWRecSlideAt[t];
+          iSWRecAppend["CameraFrame", <|"BlobRef" -> blob["BlobRef"], "MediaHash" -> blob["Hash"],
+            "MediaType" -> "image/jpeg", "Bytes" -> Length[bytes], "Device" -> c["Device"],
+            "CapturedAt" -> iSWRecUTC[t], "SlideTitle" -> iSWRecSlideTitle[slide]|>, t];
+          $iSWTalkRec[["Camera", "Frames"]] = $iSWTalkRec["Camera"]["Frames"] + 1;
+          iSWRecCount["CameraFrame"];
+          n++;
+          Quiet[DeleteFile[f]]],
+        If[TrueQ[final] || AbsoluteTime[] - Quiet[AbsoluteTime[FileDate[f]]] > 30, Quiet[DeleteFile[f]]]]],
+    {f, files}];
+  n];
+
+iSWCameraStopCore[] := Module[{c = Lookup[$iSWTalkRec, "Camera", None]},
+  If[! AssociationQ[c], Return[0]];
+  Quiet[KillProcess[c["Process"]]];
+  Pause[0.3];
+  iSWCameraIngest[True];
+  iSWRecAppend["SessionMarker", <|"Event" -> "CameraOff", "Frames" -> $iSWTalkRec["Camera"]["Frames"]|>];
+  Quiet[DeleteDirectory[c["Dir"], DeleteContents -> True]];
+  $iSWTalkRec["Camera"] = None;
+  iSWRefreshCameraLabel[];
+  c["Frames"]];
+
+SlideCameraStop[] := (If[iSWCameraRunningQ[], iSWCameraStopCore[]]; iSWRefreshCameraLabel[]; SlideCameraStatus[]);
+
+SlideCameraToggle[] := With[{nb = iSWResolveTargetNb[]},
+  If[iSWCameraRunningQ[], SlideCameraStop[],
+    If[Head[nb] =!= NotebookObject,
+      MessageDialog[iSL["\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093\:3002", "No notebook found."]]; $Failed,
+      With[{r = SlideCameraStart[nb]},
+        If[FailureQ[r], MessageDialog[iSWFailureText[r]]];
+        r]]]];
+
+SlideCameraStatus[] := With[{c = Lookup[$iSWTalkRec, "Camera", None]},
+  <|"Camera" -> If[iSWCameraRunningQ[], "On", "Off"],
+    "Device" -> If[AssociationQ[c], c["Device"], iSWCameraDevice[]],
+    "IntervalSeconds" -> If[AssociationQ[c], c["Interval"], $SlideCameraInterval],
+    "Frames" -> If[AssociationQ[c], c["Frames"], 0],
+    "PrivacyLevel" -> N[$SlideCameraPrivacyLevel],
+    "Session" -> Lookup[$iSWTalkRec, "Session", None]|>];
+
+(* \:30ab\:30e1\:30e9\:3068\:64ae\:5f71\:9593\:9694\:3092\:9078\:3076 (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30ab\:30e1\:30e9\:8a2d\:5b9a\:300d) *)
+SlideCameraSelect[] := Module[{devs = SlideCameraDevices[], res},
+  If[devs === {},
+    MessageDialog[iSL["\:30ab\:30e1\:30e9\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093 (ffmpeg: ", "No camera found (ffmpeg: "] <> ToString[iSWFFmpegExe[]] <> ")"];
+    Return[$Failed]];
+  res = DialogInput[DynamicModule[{sel = Replace[$SlideCameraDevice, Except[_String] -> Automatic],
+      iv = ToString[$SlideCameraInterval]},
+    Column[{Style[iSL["\:767a\:8868\:306e\:8a18\:9332: \:30ab\:30e1\:30e9", "Talk recording: camera"], Bold, 13],
+      Grid[{
+        {iSL["\:30ab\:30e1\:30e9", "Camera"], PopupMenu[Dynamic[sel],
+          Join[{Automatic -> iSL["(\:81ea\:52d5)", "(automatic)"], None -> iSL["(\:4f7f\:308f\:306a\:3044)", "(none)"]}, (# -> #) & /@ devs],
+          ImageSize -> {300, Automatic}]},
+        {iSL["\:9593\:9694 (\:79d2)", "Interval (s)"], InputField[Dynamic[iv], String, FieldSize -> 6]}},
+        Alignment -> {{Right, Left}}, Spacings -> {1, 1}],
+      Style[iSL["\:753b\:50cf\:306f SourceVault \:306b PL ", "Frames are saved to SourceVault at PL "] <>
+        ToString[N[$SlideCameraPrivacyLevel]] <> iSL[" \:3067\:4fdd\:5b58\:3059\:308b\:3060\:3051\:3067\:3059 (LLM \:306b\:306f\:6e21\:3057\:307e\:305b\:3093)\:3002", " only (never sent to an LLM)."],
+        9, GrayLevel[0.4]],
+      Row[{DefaultButton[DialogReturn[{sel, iv}]], Spacer[12], CancelButton[DialogReturn[$Canceled]]}]},
+      Spacings -> 0.8]], WindowTitle -> iSL["\:30ab\:30e1\:30e9", "Camera"]];
+  If[res === $Canceled || ! ListQ[res], Return[$Canceled]];
+  $SlideCameraDevice = res[[1]];
+  With[{v = Quiet[Check[ToExpression[res[[2]]], $Failed]]},
+    If[NumericQ[v] && v >= 5, $SlideCameraInterval = v]];
+  SlideCameraStatus[]];
+
+(* ---- \:8cea\:554f\:306e\:8a18\:9332\:3068\:3001\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc ---- *)
+
+iSWRecNormQ[s_String] := StringDelete[ToLowerCase[Quiet[Check[CharacterNormalize[s, "NFKC"], s]]],
+  WhitespaceCharacter | PunctuationCharacter | "\:ff1f" | "\:3002" | "\:3001" | "!" | "?"];
+
+iSWRecBigrams[s_String] := With[{c = Characters[iSWRecNormQ[s]]},
+  If[Length[c] < 2, c, StringJoin /@ Partition[c, 2, 1]]];
+iSWRecDice[a_String, b_String] := Module[{x = iSWRecBigrams[a], y = iSWRecBigrams[b], i},
+  If[x === {} || y === {}, Return[0.]];
+  i = Total[Values[Merge[{Counts[x], Counts[y]}, Min[#] * Boole[Length[#] == 2] &]]];
+  N[2 i / (Length[x] + Length[y])]];
+
+(* \:30c7\:30c3\:30ad\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:554f\:3044: {<|"Slide", "Question"|>..} (\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:3054\:3068\:306b 1 \:56de\:3060\:3051\:8aad\:3080) *)
+iSWRecQAQuestions[] := Module[{cached = Lookup[$iSWTalkRec, "QAQuestions", None], nb, outline},
+  If[ListQ[cached], Return[cached]];
+  nb = Lookup[$iSWTalkRec, "Notebook", None];
+  outline = If[Head[nb] === NotebookObject, Quiet[iTalkDeckOutline[iSWDeckTextSource[nb]]], $Failed];
+  cached = If[! AssociationQ[outline], {},
+    Flatten[MapIndexed[Function[{txt, pos},
+      <|"Slide" -> First[pos], "Question" -> StringTrim[StringDrop[#, 2]]|> & /@
+        Select[StringTrim /@ StringSplit[ToString[txt], "\n"], StringStartsQ[#, "Q:" | "Q\:ff1a"] &]],
+      outline["QAs"]]]];
+  If[iSWRecActiveQ[], $iSWTalkRec["QAQuestions"] = cached];
+  cached];
+
+(* \:53d7\:3051\:305f\:8cea\:554f\:3092\:8a18\:9332\:3059\:308b (\:7b54\:3048\:306f\:5f8c\:3067 iSWRecAnswer) *)
+iSWRecQuestion[req_Association] := Module[{q, id, nb, prev},
+  q = StringTrim[ToString[Lookup[req, "query", ""]]];
+  id = ToString[Lookup[req, "id", ""]];
+  If[q === "" || id === "", Return[Null]];
+  nb = iSWAskNotebook[];
+  If[! iSWRecActiveQ[] && Head[nb] === NotebookObject, iSWTalkRecEnsure[nb]];
+  If[! iSWRecActiveQ[], Return[Null]];
+  (* \:30a6\:30a7\:30d6\:8a31\:53ef\:306e\:3042\:3068\:306e\:518d\:554f\:3044\:5408\:308f\:305b (id:web) \:306f\:540c\:3058\:554f\:3044\:306a\:306e\:3067\:554f\:3044\:306f\:66f8\:304d\:76f4\:3055\:306a\:3044 *)
+  prev = SelectFirst[Values[$iSWRecAsk], #["Q"] === q && AbsoluteTime[] - #["At"] < 180 &, None];
+  $iSWRecAsk[id] = <|"Q" -> q, "At" -> AbsoluteTime[], "Slide" -> iSWRecSlideAt[AbsoluteTime[]],
+    "QuestionEvent" -> If[AssociationQ[prev], prev["QuestionEvent"], None]|>;
+  If[! AssociationQ[prev],
+    iSWRecCount["UserQuestion"];
+    $iSWRecAsk[[id, "QuestionEvent"]] = Lookup[Replace[iSWRecAppend["UserQuestion",
+      <|"Text" -> q, "QuestionID" -> id, "AllowWeb" -> TrueQ[Lookup[req, "allowWeb", False]]|>],
+      Except[_Association] -> <||>], "EventID", ""]];
+  Null];
+
+(* \:7b54\:3048 (\:307e\:305f\:306f\:7b54\:3048\:3089\:308c\:306a\:304b\:3063\:305f\:3053\:3068) \:3092\:8a18\:9332\:3057\:3001\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc\:3092\:4f5c\:308b *)
+iSWRecAnswer[id_String, res_] := Module[{p = Lookup[$iSWRecAsk, id, None], r, ans, status, route, matched, best, type, slide},
+  If[! AssociationQ[p] || ! iSWRecActiveQ[], Return[Null]];
+  $iSWRecAsk = KeyDrop[$iSWRecAsk, id];
+  r = If[AssociationQ[res], res, <||>];
+  ans = StringTrim[ToString[Lookup[r, "answer", ""]]];
+  status = ToLowerCase[ToString[Lookup[r, "status", "none"]]];
+  route = ToString[Lookup[r, "route", ""]];
+  matched = StringTrim[ToString[Lookup[r, "matchedQuestion", ""]]];
+  iSWRecAppend["ResponseDraft", <|"Text" -> ans, "QuestionID" -> id, "Question" -> p["Q"],
+    "Status" -> status, "Route" -> route, "MatchedQuestion" -> matched|>];
+  (* \:30a6\:30a7\:30d6\:691c\:7d22\:3092\:5f85\:3064\:554f\:3044 (needweb) \:3082\:3001\:7b54\:3048\:3089\:308c\:306a\:304b\:3063\:305f\:554f\:3044\:3068\:3057\:3066\:5019\:88dc\:306b\:3059\:308b\:3002\:8a31\:53ef\:304c\:51fa\:3066\:30a6\:30a7\:30d6\:306e\:7b54\:3048\:304c
+     \:6765\:308c\:3070\:540c\:3058\:554f\:3044\:306e\:5019\:88dc\:304c\:3082\:3046 1 \:3064\:3067\:304d\:3001\:4e00\:89a7\:3067\:306f\:65b0\:3057\:3044\:65b9 (\:7b54\:3048\:306e\:3042\:308b\:65b9) \:3060\:3051\:3092\:898b\:305b\:308b *)
+  (* \:60f3\:5b9a\:554f\:7b54\:306b\:5f53\:305f\:3063\:305f (TalkQA \:306e pack) \:304b\:3001\:554f\:3044\:304c\:4f3c\:3066\:3044\:308c\:3070\:300c\:898b\:76f4\:3057\:300d\:3001\:7121\:3051\:308c\:3070\:300c\:8ffd\:52a0\:300d *)
+  best = MaximalBy[({#, iSWRecDice[p["Q"], #["Question"]]} &) /@ iSWRecQAQuestions[], Last, 1];
+  type = Which[
+    route === "pack" && matched =!= "", "Revise",
+    best =!= {} && best[[1, 2]] >= $SlideQACandidateSimilarity, matched = best[[1, 1, "Question"]]; "Revise",
+    True, matched = ""; "Add"];
+  slide = Which[type === "Revise" && best =!= {} && matched === best[[1, 1, "Question"]], best[[1, 1, "Slide"]],
+    IntegerQ[p["Slide"]], p["Slide"], True, 0];
+  iSWRecCount["FAQCandidate"];
+  iSWRecAppend["FAQCandidate", <|"CandidateID" -> "qac-" <> StringTake[CreateUUID[], 12],
+    "Question" -> p["Q"], "Answer" -> ans, "Status" -> "Pending", "Type" -> type,
+    "TargetSlide" -> slide, "MatchedQuestion" -> matched, "Route" -> route, "AnswerStatus" -> status,
+    "QuestionEvent" -> Replace[p["QuestionEvent"], Except[_String] -> ""],
+    (* v1.38: \:5019\:88dc\:306e\:5bfe\:8c61\:3092 KG \:30ce\:30fc\:30c9\:3067\:3082\:6301\:3064 (\:679a\:6570\:306e\:9055\:3046\:5225\:306e\:7248\:3067\:3082\:540c\:3058\:8a71\:984c\:306e\:679a\:3078\:623b\:305b\:308b) *)
+    "TargetNode" -> iSWRecNodeOf[slide]|>];
+  Null];
+
+(* ---- \:632f\:308a\:8fd4\:308a: \:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:4e00\:89a7\:30fb\:4e2d\:8eab\:30fb\:753b\:50cf ---- *)
+
+iSWRecEvents[] := Select[
+  Replace[Quiet[SourceVault`SourceVaultTransactionLog["Limit" -> All, "EventClass" -> "MultimodalEvent"]], Except[_List] -> {}],
+  AssociationQ[#] && StringQ[Lookup[#, "SessionID", None]] && StringStartsQ[#["SessionID"], "slidetalk-"] &];
+
+SlideTalkSessions[] := Module[{evs = iSWRecEvents[], bySid},
+  bySid = GroupBy[evs, #["SessionID"] &];
+  Dataset[ReverseSortBy[KeyValueMap[Function[{sid, es},
+      With[{start = SelectFirst[es, Lookup[#, "Kind"] === "SessionMarker" && Lookup[#, "Event"] === "Start" &, <||>],
+          end = SelectFirst[es, Lookup[#, "Kind"] === "SessionMarker" && Lookup[#, "Event"] === "End" &, <||>],
+          cnt = Counts[Lookup[es, "Kind", ""]]},
+        <|"Session" -> sid, "Deck" -> Lookup[First[es], "Deck", ""], "Title" -> Lookup[start, "Title", ""],
+          "Rendition" -> Lookup[start, "Rendition", ""], "Language" -> Lookup[start, "Language", ""],
+          "Start" -> Lookup[start, "At", Lookup[First[SortBy[es, Lookup[#, "At", ""] &]], "At", ""]],
+          "Seconds" -> Lookup[end, "Seconds", Missing["Open"]],
+          "Slides" -> Lookup[cnt, "SlideChange", 0], "Frames" -> Lookup[cnt, "CameraFrame", 0],
+          "Questions" -> Lookup[cnt, "UserQuestion", 0], "Candidates" -> Lookup[cnt, "FAQCandidate", 0]|>]],
+    bySid], #["Start"] &]]];
+
+(* 1 \:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:6642\:7cfb\:5217 (\:958b\:59cb\:304b\:3089\:306e\:79d2\:30fb\:7a2e\:985e\:30fb\:30b9\:30e9\:30a4\:30c9\:30fb\:30c6\:30ad\:30b9\:30c8\:30fb\:753b\:50cf\:53c2\:7167) *)
+SlideTalkSessionData[sid_String] := Module[{evs},
+  (* \:6642\:523b (UTC) \:9806\:3002\:5019\:88dc\:306e\:63a1\:5426\:306f\:767a\:8868\:306e\:3042\:3068\:306b\:4ed8\:304f\:306e\:3067 Elapsed \:3092\:6301\:305f\:305a\:3001\:672b\:5c3e\:306b\:6765\:308b *)
+  evs = SortBy[Select[iSWRecEvents[], #["SessionID"] === sid &], {Lookup[#, "At", ""] &, Lookup[#, "Elapsed", 0] &}];
+  Dataset[Map[<|"Elapsed" -> Lookup[#, "Elapsed", Missing[]], "At" -> Lookup[#, "At", ""],
+      "Kind" -> Lookup[#, "Kind", ""], "Slide" -> Lookup[#, "Slide", 0],
+      "Text" -> Which[
+        StringQ[Lookup[#, "Text", None]], #["Text"],
+        Lookup[#, "Kind"] === "FAQCandidate", Lookup[#, "Type", ""] <> ": " <> ToString[Lookup[#, "Question", Lookup[#, "Decision", ""]]],
+        Lookup[#, "Kind"] === "SlideChange", Lookup[#, "Title", ""],
+        Lookup[#, "Kind"] === "SessionMarker", ToString[Lookup[#, "Event", ""]],
+        True, ""],
+      "BlobRef" -> Lookup[#, "BlobRef", ""], "PrivacyLevel" -> Lookup[#, "PrivacyLevel", Missing[]]|> &, evs]]];
+
+(* \:4fdd\:5b58\:3057\:305f\:30ab\:30e1\:30e9\:753b\:50cf\:3092\:53d6\:308a\:51fa\:3059 (BlobRef) *)
+SlideTalkSessionFrame[ref_String] := With[{r = Quiet[SourceVault`SourceVaultReadBlob[ref]]},
+  If[AssociationQ[r] && r["Status"] === "OK", ImportByteArray[r["Bytes"], "JPEG"], $Failed]];
+
+(* ---- \:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc: \:4e00\:89a7\:30fb\:63a1\:7528\:30fb\:5374\:4e0b ---- *)
+
+(* \:5019\:88dc\:3068\:63a1\:5426 (\:540c\:3058\:7a2e\:985e\:306e\:4e8b\:8c61\:3092\:8ffd\:8a18) \:3092\:7a81\:304d\:5408\:308f\:305b\:3001\:6700\:65b0\:306e\:72b6\:614b\:3092\:4ed8\:3051\:308b *)
+(* v1.38: \:5019\:88dc\:306e\:7bc4\:56f2 scope = <|"Graph", "Rendition", "Deck"|>\:3002\:540c\:3058\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:4f5c\:3063\:305f\:7248\:306e\:5019\:88dc\:306f\:5168\:90e8\:3001
+   KG \:304b\:3089\:4f5c\:3063\:3066\:3044\:306a\:3044\:30c7\:30c3\:30ad\:306f\:540c\:3058\:7248 (\:7121\:3051\:308c\:3070\:540c\:3058\:30c7\:30c3\:30ad\:540d) \:306e\:5019\:88dc\:3060\:3051\:3002All = \:5168\:90e8 *)
+iSWQACandidateScope[nb_NotebookObject] := With[{tag = iSWRenditionTag[nb], spec = iSWRenditionSpec[nb]},
+  <|"Graph" -> Lookup[spec, "Graph", ""], "Rendition" -> If[AssociationQ[tag], Lookup[tag, "Id", ""], ""],
+    "Deck" -> Last[iSWDeckBaseName[nb]]|>];
+
+iSWQACandidateInScopeQ[ev_, All] := True;
+iSWQACandidateInScopeQ[ev_, scope_Association] := Which[
+  StringQ[scope["Graph"]] && scope["Graph"] =!= "" && Lookup[ev, "Graph", ""] === scope["Graph"], True,
+  StringQ[scope["Rendition"]] && scope["Rendition"] =!= "" && Lookup[ev, "Rendition", ""] === scope["Rendition"], True,
+  True, Lookup[ev, "Deck", ""] === scope["Deck"] && Lookup[ev, "Graph", ""] === ""];
+
+iSWQACandidateRows[scope_] := Module[{evs = Select[iSWRecEvents[], Lookup[#, "Kind"] === "FAQCandidate" &], cands, decided},
+  decided = Association[(#["CandidateID"] -> #["Decision"]) & /@
+    SortBy[Select[evs, StringQ[Lookup[#, "Decision", None]] &], Lookup[#, "At", ""] &]];
+  cands = Select[evs, StringQ[Lookup[#, "Question", None]] && StringQ[Lookup[#, "CandidateID", None]] &&
+    iSWQACandidateInScopeQ[#, scope] &];
+  (* \:540c\:3058\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:540c\:3058\:554f\:3044 (\:30a6\:30a7\:30d6\:8a31\:53ef\:306e\:524d\:5f8c\:306a\:3069) \:306f 1 \:4ef6\:306b\:3059\:308b: \:7b54\:3048\:306e\:3042\:308b\:65b9\:3001\:65b0\:3057\:3044\:65b9\:3092\:6b8b\:3059 *)
+  cands = Values[GroupBy[SortBy[cands, {StringTrim[ToString[Lookup[#, "Answer", ""]]] =!= "" &, Lookup[#, "At", ""] &}],
+    {#["SessionID"], iSWRecNormQ[#["Question"]]} &, Last]];
+  SortBy[Map[<|"CandidateID" -> #["CandidateID"], "Session" -> #["SessionID"], "At" -> Lookup[#, "At", ""],
+      "Deck" -> Lookup[#, "Deck", ""], "Rendition" -> Lookup[#, "Rendition", ""], "Graph" -> Lookup[#, "Graph", ""],
+      "Type" -> Lookup[#, "Type", "Add"],
+      "Slide" -> Lookup[#, "TargetSlide", Lookup[#, "Slide", 0]], "Node" -> Lookup[#, "TargetNode", ""],
+      "Question" -> #["Question"],
+      "Answer" -> Lookup[#, "Answer", ""], "MatchedQuestion" -> Lookup[#, "MatchedQuestion", ""],
+      "Status" -> Lookup[decided, #["CandidateID"], "Pending"]|> &, cands], #["At"] &]];
+
+Options[SlideQACandidates] = {"Status" -> "Pending"};
+SlideQACandidates[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
+  SlideQACandidates[If[Head[nb] === NotebookObject, nb, All], opts]];
+SlideQACandidates[src : Except[_Rule | _RuleDelayed], OptionsPattern[]] := Module[{scope, rows},
+  scope = Which[Head[src] === NotebookObject, iSWQACandidateScope[src],
+    StringQ[src] && StringStartsQ[src, "rend-"], <|"Graph" -> "", "Rendition" -> src, "Deck" -> ""|>,
+    StringQ[src], <|"Graph" -> "", "Rendition" -> "", "Deck" -> FileBaseName[src]|>,
+    True, All];
+  rows = iSWQACandidateRows[scope];
+  If[OptionValue["Status"] =!= All, rows = Select[rows, #["Status"] === OptionValue["Status"] &]];
+  Dataset[rows]];
+
+iSWQACandidateDecide[row_Association, decision_String] := (
+  If[! iSWRecLayerQ[], Return[$Failed]];
+  Quiet @ Check[SourceVault`SourceVaultAppendMultimodalEvent[<|"SessionID" -> row["Session"], "Kind" -> "FAQCandidate",
+    "PrivacyLevel" -> iSWRecPL["FAQCandidate"], "Tags" -> {"slidetalk"}, "SourceRef" -> "SlideWorkflow",
+    "Deck" -> row["Deck"], "Rendition" -> Lookup[row, "Rendition", ""], "Graph" -> Lookup[row, "Graph", ""],
+    "At" -> iSWRecUTC[], "CandidateID" -> row["CandidateID"], "Decision" -> decision|>], $Failed]);
+
+iSWQACandidateFind[cid_String] := SelectFirst[iSWQACandidateRows[All], #["CandidateID"] === cid &, None];
+
+(* \:5019\:88dc\:3092\:3053\:306e\:30c7\:30c3\:30ad\:306e\:3069\:306e\:679a\:3078\:623b\:3059\:304b: KG \:30ce\:30fc\:30c9\:304c\:3042\:308c\:3070\:3001\:3053\:306e\:7248\:3067\:305d\:306e\:30ce\:30fc\:30c9\:3092\:6271\:3046\:6700\:521d\:306e\:679a\:3002
+   \:30ce\:30fc\:30c9\:304c\:7121\:3051\:308c\:3070\:3001\:540c\:3058\:7248 (\:307e\:305f\:306f\:540c\:3058\:30c7\:30c3\:30ad\:540d) \:306e\:3068\:304d\:3060\:3051\:8a18\:9332\:3057\:305f\:679a\:756a\:53f7 *)
+iSWQACandidateSlideIn[nb_NotebookObject, row_Association] := Module[{node = Lookup[row, "Node", ""], nodes, hit, scope},
+  If[StringQ[node] && node =!= "",
+    nodes = iSWRenditionSlideNodes[nb];
+    hit = FirstPosition[nodes, node, None, {1}];
+    If[hit =!= None, Return[First[hit]]]];
+  scope = iSWQACandidateScope[nb];
+  If[(row["Rendition"] =!= "" && row["Rendition"] === scope["Rendition"]) ||
+      (row["Rendition"] === "" && row["Deck"] === scope["Deck"]),
+    row["Slide"], None]];
+
+(* \:63a1\:7528: \:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306e\:672b\:5c3e\:306b\:8db3\:3059\:3002\:300c\:8ffd\:52a0\:300d\:306f Q:/A: \:3068\:3057\:3066\:3001\:300c\:898b\:76f4\:3057\:300d\:306f\:65e2\:5b58\:306e\:554f\:3044\:3092
+   \:66f8\:304d\:63db\:3048\:305a\:306b\:30b3\:30e1\:30f3\:30c8 (#) \:3067\:4e26\:3079\:308b (\:3069\:3046\:76f4\:3059\:304b\:306f\:4eba\:304c\:6c7a\:3081\:308b)\:3002
+   v1.38: \:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:4f5c\:3063\:305f\:30c7\:30c3\:30ad\:306a\:3089\:3001\:66f8\:3044\:305f\:8cea\:7591\:5fdc\:7b54\:3092\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:30ce\:30fc\:30c9\:3078\:3082\:4fdd\:5b58\:3059\:308b
+   (\:6b63\:672c\:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:3002\:751f\:6210\:3057\:76f4\:3059\:3068\:3069\:306e\:7248\:306b\:3082\:623b\:308b) *)
+SlideQACandidateAccept[nb_NotebookObject, cid_String] := Module[
+  {row, n, ranges, cells, styles, idx, cur, date, block, gid, kgRes = None},
+  row = iSWQACandidateFind[cid];
+  If[! AssociationQ[row], Return[Failure["SlideQACandidateNotFound", <|"CandidateID" -> cid|>]]];
+  ranges = iSWSlideRanges[nb];
+  n = iSWQACandidateSlideIn[nb, row];
+  If[! IntegerQ[n] || ! (1 <= n <= Length[ranges]),
+    Return[Failure["SlideQACandidateNoSlide", <|"MessageTemplate" ->
+      iSL["\:3053\:306e\:7248\:306b\:306f\:5019\:88dc\:306e\:8a71\:984c (KG \:30ce\:30fc\:30c9 ", "This version has no slide for the candidate's topic (KG node "] <>
+        ToString[row["Node"]] <> iSL[" / \:679a ", " / slide "] <> ToString[row["Slide"]] <> iSL[") \:306e\:679a\:304c\:3042\:308a\:307e\:305b\:3093\:3002", ")."]|>]]];
+  cells = Cells[nb]; styles = iSWCellStyles[nb];
+  idx = SelectFirst[Range[ranges[[n, 1]], ranges[[n, 2]]], MemberQ[Flatten[{styles[[#]]}], "SlideQA"] &, None];
+  cur = If[IntegerQ[idx], With[{c = Quiet[NotebookRead[cells[[idx]]]]}, If[Head[c] === Cell, StringTrim[iCellText[c]], ""]], ""];
+  date = StringTake[row["At"], UpTo[10]];
+  block = If[row["Type"] === "Revise",
+    "# " <> iSL["\:898b\:76f4\:3057\:5019\:88dc (\:767a\:8868 ", "Revision candidate (talk "] <> date <>
+      iSL["\:3001\:65e2\:5b58\:306e\:554f\:3044\:300c", ", existing question \""] <> row["MatchedQuestion"] <> iSL["\:300d)", "\")"] <> "\n" <>
+      "# Q: " <> row["Question"] <> "\n# A: " <> StringReplace[row["Answer"], "\n" -> " "],
+    "# " <> iSL["\:767a\:8868 ", "From the talk on "] <> date <> iSL[" \:306e\:8cea\:554f\:304b\:3089", ""] <> "\n" <>
+      "Q: " <> row["Question"] <> "\nA: " <> StringReplace[row["Answer"], "\n" -> " "]];
+  iSWQAWriteCell[nb, n, If[cur === "", block, cur <> "\n" <> block]];
+  gid = Lookup[iSWRenditionSpec[nb], "Graph", ""];
+  If[StringQ[gid] && gid =!= "", kgRes = Quiet[iSWKGHarvestQA[nb, gid]]];
+  iSWQACandidateDecide[row, "Accepted"];
+  <|"Status" -> "Accepted", "CandidateID" -> cid, "Slide" -> n, "Node" -> row["Node"], "Type" -> row["Type"],
+    "KnowledgeGraph" -> If[AssociationQ[kgRes], kgRes["Status"], "NoGraph"]|>];
+SlideQACandidateAccept[cid_String] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideQACandidateAccept[nb, cid], $Failed]];
+
+SlideQACandidateReject[cid_String] := With[{row = iSWQACandidateFind[cid]},
+  If[AssociationQ[row], iSWQACandidateDecide[row, "Rejected"]; <|"Status" -> "Rejected", "CandidateID" -> cid|>,
+    Failure["SlideQACandidateNotFound", <|"CandidateID" -> cid|>]]];
+
+(* \:30d1\:30ec\:30c3\:30c8\:306e\:300c\:8cea\:554f\:5019\:88dc\:300d: \:672a\:51e6\:7406\:306e\:5019\:88dc\:3092\:4e00\:89a7\:3057\:3001\:63a1\:7528 / \:5374\:4e0b\:3092\:62bc\:305b\:308b\:7a93 *)
+SlideQACandidateView[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideQACandidateView[nb], $Failed]];
+SlideQACandidateView[nb_NotebookObject] := Module[{rows = Normal[SlideQACandidates[nb]], grid},
+  If[rows === {},
+    MessageDialog[iSL["\:3053\:306e\:30c7\:30c3\:30ad\:306e\:672a\:51e6\:7406\:306e\:8cea\:554f\:5019\:88dc\:306f\:3042\:308a\:307e\:305b\:3093 (\:767a\:8868\:4e2d\:306e\:8cea\:554f\:304c SourceVault \:306b\:8a18\:9332\:3055\:308c\:308b\:3068\:5019\:88dc\:306b\:306a\:308a\:307e\:3059)\:3002",
+      "No pending question candidates for this deck (questions asked during a talk become candidates)."]];
+    Return[Null]];
+  grid = Grid[Prepend[Map[Function[r, {
+        Style[StringTake[r["At"], UpTo[16]], 9], r["Slide"],
+        Style[If[r["Type"] === "Revise", iSL["\:898b\:76f4\:3057", "Revise"], iSL["\:8ffd\:52a0", "Add"]], 9, Bold],
+        Column[{Style[r["Question"], 10, Bold], Style[r["Answer"], 9, GrayLevel[0.3]],
+            If[r["MatchedQuestion"] =!= "", Style[iSL["\:65e2\:5b58: ", "Existing: "] <> r["MatchedQuestion"], 8, GrayLevel[0.5]], Nothing]},
+          ItemSize -> 44],
+        With[{cid = r["CandidateID"]}, Row[{
+          Button[iSL["\:63a1\:7528", "Accept"], With[{res = SlideQACandidateAccept[nb, cid]},
+              If[FailureQ[res], MessageDialog[iSWFailureText[res]], MessageDialog[iSL["\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306b\:66f8\:304d\:307e\:3057\:305f (\:30b9\:30e9\:30a4\:30c9 ", "Written to the Q&A cell (slide "] <> ToString[res["Slide"]] <> ")"]]],
+            Method -> "Queued", ImageSize -> {50, 20}],
+          Button[iSL["\:5374\:4e0b", "Reject"], (SlideQACandidateReject[cid]; MessageDialog[iSL["\:5374\:4e0b\:3057\:307e\:3057\:305f", "Rejected"]]),
+            Method -> "Queued", ImageSize -> {50, 20}]}]]}], rows],
+      Style[#, Bold, 9] & /@ {iSL["\:65e5\:6642 (UTC)", "When (UTC)"], iSL["\:679a", "Slide"], iSL["\:7a2e\:985e", "Type"], iSL["\:8cea\:554f\:3068\:7b54\:3048", "Question and answer"], ""}],
+    Alignment -> {Left, Top}, Frame -> All, FrameStyle -> GrayLevel[0.85], Spacings -> {1, 0.8}];
+  CreateDocument[{Cell[iSL["\:8cea\:554f\:304b\:3089\:306e\:60f3\:5b9a\:554f\:7b54\:306e\:5019\:88dc", "Q&A candidates from questions"], "Subsection"],
+      Cell[iSL["\:63a1\:7528\:3059\:308b\:3068\:3001\:305d\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306e\:672b\:5c3e\:306b\:8db3\:3057\:307e\:3059 (\:898b\:76f4\:3057\:5019\:88dc\:306f # \:306e\:30b3\:30e1\:30f3\:30c8\:3068\:3057\:3066\:4e26\:3079\:308b\:306e\:3067\:3001\:65e2\:5b58\:306e\:554f\:7b54\:3092\:3069\:3046\:76f4\:3059\:304b\:306f\:624b\:3067\:6c7a\:3081\:3066\:304f\:3060\:3055\:3044)\:3002",
+        "Accept appends to that slide's Q&A cell (revision candidates go in as # comments; edit the existing entry by hand)."], "Text"],
+      ExpressionCell[grid, "Output"]},
+    WindowTitle -> iSL["\:8cea\:554f\:5019\:88dc", "Question candidates"], WindowSize -> {1000, 700}, Saveable -> False]];
+
+iSWQACandidateAction[nb_] := SlideQACandidateView[nb];
+
+(* ===================== v1.38: \:69cb\:9020 (\:77e5\:8b58\:30b0\:30e9\:30d5) \[RightArrow] \:7248 (\:751f\:6210\:3057\:305f\:30c7\:30c3\:30ad) \[RightArrow] \:767a\:8868 (\:4e0a\:6f14) =====================
+   \:77e5\:8b58\:30b0\:30e9\:30d5 = \:6b63\:672c (SourceVault \:306e knowledgegraph)\:3002\:6539\:8a02\:306f\:5185\:5bb9 (\:30ce\:30fc\:30c9\:3068\:8fba) \:306e\:30cf\:30c3\:30b7\:30e5 GraphRev \:3067\:6307\:3059\:3002
+   \:7248 (rendition) = \:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:8074\:304d\:624b\:30fb\:679a\:6570\:30fb\:6642\:9593\:30fb\:65b9\:91dd\:3092\:6c7a\:3081\:3066\:751f\:6210\:3057\:305f\:30c7\:30c3\:30ad\:3002.nb \:306f $onWork \:306a\:3069\:306e\:4f5c\:696d\:5834\:6240\:306b\:7f6e\:304d\:3001
+     \:7248\:306e\:60c5\:5831 (\:30de\:30cb\:30d5\:30a7\:30b9\:30c8) \:306f SourceVault \:306e slidetalk/renditions/<Id>.json \:306b\:7f6e\:304f:
+     Id / Parent / DeckName / Graph / Spec / SpecKey / PrivacyLevel / Revisions (\:751f\:6210\:30fb\:767a\:8868\:306e\:305f\:3073\:306e DeckRev\:30fbGraphRev\:30fb\:679a\:3054\:3068\:306e KG \:30ce\:30fc\:30c9)\:3002
+     \:8a00\:8a9e\:306f\:7248\:3092\:5206\:3051\:306a\:3044 (\:8a33\:306f\:540c\:3058 .nb \:306e\:8a33\:30bb\:30eb\:3002documentation.wl \:3068\:540c\:3058\:8003\:3048\:65b9)\:3002
+     \:5225\:540d\:3067\:4fdd\:5b58\:3057\:305f\:30b3\:30d4\:30fc\:3001\:307e\:305f\:306f\:751f\:6210\:6761\:4ef6 (Graph / Audience / Slides / Minutes / Strategy) \:3092\:5909\:3048\:305f\:751f\:6210\:306f\:3001\:89aa\:3092\:6301\:3064\:65b0\:3057\:3044\:7248\:3002
+     .nb \:306e\:5834\:6240\:306f\:8a18\:9332\:3057\:306a\:3044 (PC \:3054\:3068\:306b\:9055\:3046)\:3002\:30c7\:30c3\:30ad\:306e TaggingRules "SWRendition" \:306b Id \:3092\:6301\:305f\:305b\:3066\:7d50\:3076\:3002
+   \:767a\:8868 = 1 \:56de\:3054\:3068\:306e\:5225\:306e\:30a4\:30d9\:30f3\:30c8 (\:767a\:8868\:30bb\:30c3\:30b7\:30e7\:30f3)\:3002\:7248\:306e Id\:30fbDeckRev\:30fb\:8a71\:3057\:305f\:8a00\:8a9e\:3092\:6301\:3061\:3001\:8cea\:554f\:3084\:753b\:50cf\:306f
+     \:679a\:756a\:53f7\:306b\:52a0\:3048\:3066 KG \:30ce\:30fc\:30c9\:306b\:3082\:7d50\:3076\:306e\:3067\:3001\:679a\:6570\:306e\:9055\:3046\:5225\:306e\:7248\:3068\:3082\:7a81\:304d\:5408\:308f\:305b\:3089\:308c\:308b\:3002 *)
+
+iSWKGRev[kg_Association] := StringTake[
+  Hash[{Lookup[kg, "Nodes", {}], Lookup[kg, "Edges", {}]}, "SHA256", "HexString"], 16];
+iSWKGRev[_] := None;
+
+iSWRenditionDir[] := With[{r = Quiet[SourceVault`SourceVaultCoreRoot[]]},
+  If[StringQ[r], FileNameJoin[{r, "slidetalk", "renditions"}], None]];
+iSWRenditionFile[id_String] := With[{d = iSWRenditionDir[]},
+  If[StringQ[d], FileNameJoin[{d, id <> ".json"}], None]];
+
+SlideRendition[id_String] := With[{f = iSWRenditionFile[id]},
+  If[StringQ[f] && FileExistsQ[f], Replace[Quiet[Import[f, "RawJSON"]], Except[_Association] -> Missing["NotFound", id]],
+    Missing["NotFound", id]]];
+SlideRendition[nb_NotebookObject] := With[{t = iSWRenditionTag[nb]},
+  If[AssociationQ[t] && StringQ[Lookup[t, "Id", None]], SlideRendition[t["Id"]], Missing["NoRendition"]]];
+SlideRendition[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideRendition[nb], Missing["NoNotebook"]]];
+
+iSWRenditionWrite[m_Association] := With[{f = iSWRenditionFile[m["Id"]]},
+  If[! StringQ[f], Return[$Failed]];
+  Quiet[CreateDirectory[DirectoryName[f], CreateIntermediateDirectories -> True]];
+  Quiet[Export[f, m, "RawJSON"]]];
+
+iSWRenditionTag[nb_NotebookObject] := With[{v = Quiet[CurrentValue[nb, {TaggingRules, "SWRendition"}]]},
+  Which[AssociationQ[v], v, MatchQ[v, {___Rule}], Association[v], True, None]];
+iSWRenditionSetTag[nb_NotebookObject, t_Association] :=
+  Quiet[CurrentValue[nb, {TaggingRules, "SWRendition"}] = Normal[t]];
+
+(* \:7248\:3092\:5206\:3051\:308b\:751f\:6210\:6761\:4ef6 (\:8a00\:8a9e\:306f\:542b\:3081\:306a\:3044) *)
+iSWRenditionSpec[nb_NotebookObject] := With[{s = Quiet[SlideGraphSpec[nb]]},
+  If[! AssociationQ[s], <|"Graph" -> ""|>,
+    Association[# -> ToString[Replace[Lookup[s, #, ""], None | Automatic | _Missing -> ""]] & /@
+      {"Graph", "Audience", "Slides", "Minutes", "Strategy"}]]];
+iSWRenditionSpecKey[spec_Association] := StringTake[Hash[spec, "SHA256", "HexString"], 12];
+
+iSWRenditionPL[gid_] := Module[{kg = If[StringQ[gid] && gid =!= "", Quiet[iSWKGResolve[gid]], None]},
+  If[! AssociationQ[kg], N[$SlideRecordPrivacyLevel],
+    N[Max[Lookup[kg, "PrivacyLevel", 0.], Lookup[Select[Lookup[kg, "Nodes", {}], AssociationQ], "PrivacyLevel", 0.]]]]];
+
+(* \:679a\:3054\:3068\:306e KG \:30ce\:30fc\:30c9 ("" = KG \:304b\:3089\:4f5c\:3063\:3066\:3044\:306a\:3044\:679a) *)
+iSWRenditionSlideNodes[nb_NotebookObject] := With[{rows = Quiet[iSWKGDeckSlideNodes[nb]]},
+  If[ListQ[rows], Replace[Lookup[rows, "Node", None], Except[_String] -> "", {1}], {}]];
+
+(* \:30c7\:30c3\:30ad\:306e\:7248\:3092\:78ba\:304b\:3081\:3001\:7121\:3051\:308c\:3070\:4f5c\:308b\:3002generated = \:751f\:6210\:3057\:305f\:76f4\:5f8c (\:6761\:4ef6\:304c\:5909\:308f\:3063\:3066\:3044\:308c\:3070\:65b0\:3057\:3044\:7248) *)
+iSWRenditionEnsure[nb_NotebookObject, generated_ : False] := Module[
+  {tag = iSWRenditionTag[nb], deck = Last[iSWDeckBaseName[nb]], spec, key, id, parent = None, m, same},
+  spec = iSWRenditionSpec[nb]; key = iSWRenditionSpecKey[spec];
+  same = AssociationQ[tag] && StringQ[Lookup[tag, "Id", None]] &&
+    (Lookup[tag, "DeckName", ""] === deck ||
+      (* \:672a\:4fdd\:5b58 (Untitled-n) \:3067\:4f5c\:3063\:3066\:5f8c\:304b\:3089\:540d\:524d\:3092\:4ed8\:3051\:305f: \:540c\:3058\:7248\:306e\:307e\:307e\:540d\:524d\:3092\:76f4\:3059 *)
+      StringStartsQ[Lookup[tag, "DeckName", ""], "Untitled"]) &&
+    (! TrueQ[generated] || Lookup[tag, "SpecKey", ""] === key);
+  If[same,
+    id = tag["Id"];
+    If[tag["DeckName"] =!= deck, iSWRenditionSetTag[nb, Append[tag, "DeckName" -> deck]];
+      With[{mm = SlideRendition[id]}, If[AssociationQ[mm], iSWRenditionWrite[Append[mm, "DeckName" -> deck]]]]];
+    If[AssociationQ[SlideRendition[id]], Return[id]],
+    If[AssociationQ[tag] && StringQ[Lookup[tag, "Id", None]], parent = tag["Id"]];
+    id = "rend-" <> DateString[TimeZoneConvert[Now, 0], {"Year", "Month", "Day", "-", "Hour", "Minute", "Second"}] <>
+      "-" <> StringTake[CreateUUID[], 6]];
+  m = <|"ObjectClass" -> "SlideRendition", "Id" -> id, "Parent" -> Replace[parent, None -> ""],
+    "DeckName" -> deck, "Title" -> With[{t = Quiet[Lookup[SlideTalkMeta[nb], "Title", ""]]}, If[StringQ[t] && t =!= "", t, deck]],
+    "Graph" -> spec["Graph"], "Spec" -> spec, "SpecKey" -> key,
+    "PrivacyLevel" -> iSWRenditionPL[spec["Graph"]],
+    "CreatedAtUTC" -> iSWRecUTC[], "Revisions" -> {}|>;
+  If[iSWRenditionWrite[m] === $Failed, Return[None]];
+  iSWRenditionSetTag[nb, <|"Id" -> id, "DeckName" -> deck, "SpecKey" -> key|>];
+  id];
+
+(* \:7248\:306b\:6539\:8a02 (\:751f\:6210 / \:767a\:8868\:306e\:305f\:3073) \:3092\:8db3\:3059\:3002\:540c\:3058\:4e2d\:8eab (DeckRev) \:304c\:7d9a\:3051\:3070\:8db3\:3055\:306a\:3044\:3002
+   \:623b\:308a\:5024 <|Id, DeckRev, Graph, GraphRev, SlideNodes|> *)
+iSWRenditionNote[nb_NotebookObject, reason_String] := Module[{id, m, src, rev, gid, kg, grev, nodes, last, entry},
+  (* \:4fdd\:5b58\:6e08\:307f\:3067\:76f4\:3057\:304c\:7121\:3051\:308c\:3070\:30d5\:30a1\:30a4\:30eb\:304b\:3089\:63cf\:753b\:30cf\:30c3\:30b7\:30e5\:3092\:53d6\:308b\:3002\:672a\:4fdd\:5b58\:30fb\:76f4\:3057\:9014\:4e2d\:306e\:5927\:304d\:306a\:30c7\:30c3\:30ad\:3092
+     FE \:304b\:3089\:4e38\:3054\:3068\:53d6\:308a\:5bc4\:305b\:306a\:3044 (99MB \:7d1a\:3067\:56fa\:307e\:308b) *)
+  src = Quiet[iSWDeckSource[nb]];
+  rev = If[StringQ[src], Replace[Quiet[iSWDeckDigest[src]], Except[_String] -> "unknown"], "unsaved"];
+  (* \:7248\:306e Id \:3092 TaggingRules \:306b\:66f8\:304f\:3068\:5909\:66f4\:3042\:308a\:306b\:306a\:308b\:306e\:3067\:3001\:63cf\:753b\:30cf\:30c3\:30b7\:30e5\:306f\:305d\:306e\:524d\:306b\:53d6\:308b *)
+  id = iSWRenditionEnsure[nb, reason === "Generated"];
+  If[! StringQ[id], Return[None]];
+  m = SlideRendition[id];
+  If[! AssociationQ[m], Return[None]];
+  gid = Lookup[m, "Graph", ""];
+  kg = If[StringQ[gid] && gid =!= "", Quiet[iSWKGResolve[gid]], None];
+  grev = Replace[iSWKGRev[kg], None -> ""];
+  nodes = iSWRenditionSlideNodes[nb];
+  last = Last[Lookup[m, "Revisions", {}], <||>];
+  entry = <|"At" -> iSWRecUTC[], "Reason" -> reason, "DeckRev" -> rev, "GraphRev" -> grev,
+    "Slides" -> Length[nodes], "SlideNodes" -> nodes|>;
+  If[reason === "Generated" || Lookup[last, "DeckRev", None] =!= rev || rev === "unsaved" ||
+      Lookup[last, "SlideNodes", {}] =!= nodes,
+    iSWRenditionWrite[Append[m, "Revisions" -> Append[Lookup[m, "Revisions", {}], entry]]]];
+  <|"Id" -> id, "DeckRev" -> rev, "Graph" -> gid, "GraphRev" -> grev, "SlideNodes" -> nodes|>];
+
+(* \:7248\:306e\:4e00\:89a7 (graph \:3092\:6307\:5b9a\:3059\:308c\:3070\:305d\:306e\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:4f5c\:3063\:305f\:7248\:3060\:3051) *)
+SlideRenditions[] := SlideRenditions[All];
+SlideRenditions[graph_] := Module[{d = iSWRenditionDir[], ms},
+  If[! StringQ[d] || ! DirectoryQ[d], Return[Dataset[{}]]];
+  ms = Select[Quiet[Import[#, "RawJSON"]] & /@ FileNames["rend-*.json", d], AssociationQ];
+  If[graph =!= All, ms = Select[ms, Lookup[#, "Graph", ""] === graph &]];
+  Dataset[ReverseSortBy[Map[<|"Id" -> #["Id"], "Parent" -> Lookup[#, "Parent", ""], "DeckName" -> Lookup[#, "DeckName", ""],
+      "Title" -> Lookup[#, "Title", ""], "Graph" -> Lookup[#, "Graph", ""],
+      "Audience" -> Lookup[Lookup[#, "Spec", <||>], "Audience", ""], "Slides" -> Lookup[Lookup[#, "Spec", <||>], "Slides", ""],
+      "Revisions" -> Length[Lookup[#, "Revisions", {}]], "Created" -> Lookup[#, "CreatedAtUTC", ""],
+      "PrivacyLevel" -> Lookup[#, "PrivacyLevel", Missing[]]|> &, ms], #["Created"] &]]];
+
+(* \:30d1\:30ec\:30c3\:30c8\:306e\:300c\:751f\:6210\:300d: \:524d\:56de\:3068\:751f\:6210\:6761\:4ef6\:304c\:9055\:3048\:3070\:3001\:5225\:306e\:7248\:3068\:3057\:3066\:65b0\:3057\:3044\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:306b\:4f5c\:308b\:304b\:3092\:805e\:304f *)
+iSWRenditionForkQ[nb_NotebookObject] := With[{tag = iSWRenditionTag[nb]},
+  AssociationQ[tag] && StringQ[Lookup[tag, "SpecKey", None]] &&
+    tag["SpecKey"] =!= iSWRenditionSpecKey[iSWRenditionSpec[nb]]];
+
+(* \:5225\:306e\:7248\:306e\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:3092\:4f5c\:308b: \:4fdd\:5b58\:3057\:3066\:304b\:3089\:540c\:3058\:30d5\:30a9\:30eb\:30c0\:306b <\:540d\:524d>_v<n>.nb \:3068\:3057\:3066\:5199\:3057\:3001\:958b\:304f\:3002
+   \:5199\:3057\:306f DeckName \:304c\:9055\:3046\:306e\:3067\:3001\:6700\:521d\:306b\:7248\:3092\:78ba\:304b\:3081\:305f\:3068\:304d\:306b\:89aa\:4ed8\:304d\:306e\:65b0\:3057\:3044\:7248\:306b\:306a\:308b *)
+iSWRenditionForkNotebook[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]], dir, base, k = 2, path, new},
+  If[! StringQ[fn],
+    new = NotebookPut[NotebookGet[nb]];
+    Return[new]];
+  Quiet[NotebookSave[nb]];
+  dir = DirectoryName[fn];
+  base = StringReplace[FileBaseName[fn], RegularExpression["_v\\d+$"] -> ""];
+  While[FileExistsQ[path = FileNameJoin[{dir, base <> "_v" <> ToString[k] <> ".nb"}]], k++];
+  If[Quiet[CopyFile[fn, path]] === $Failed, Return[$Failed]];
+  new = NotebookOpen[path];
+  If[Head[new] === NotebookObject, new, $Failed]];
 End[]
 
 EndPackage[]
 
-Print[Style["SlideWorkflow \:30d1\:30c3\:30b1\:30fc\:30b8\:304c\:30ed\:30fc\:30c9\:3055\:308c\:307e\:3057\:305f\:3002", Bold]];
+(*Print[Style["SlideWorkflow \:30d1\:30c3\:30b1\:30fc\:30b8\:304c\:30ed\:30fc\:30c9\:3055\:308c\:307e\:3057\:305f\:3002", Bold]];
 Print["
-  SlideScenarioFromMarkdown[md]            \:2192 Markdown \:30b7\:30ca\:30ea\:30aa\:3092\:89e3\:6790
-  SlideDeckBuild[scenario, \"deck.nb\"]      \:2192 \:30b7\:30ca\:30ea\:30aa\:304b\:3089\:30b9\:30e9\:30a4\:30c9\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:751f\:6210
-  SlideDeckOverview[\"deck.nb\"]             \:2192 \:30b9\:30e9\:30a4\:30c9\:4e00\:89a7 (Dataset)
-  SlideDeckReplaceSlide[nb, n, slide]      \:2192 n \:679a\:76ee\:3092\:5dee\:3057\:66ff\:3048 (\"Target\"->\:5225\:540d\:3067\:5225\:30d0\:30fc\:30b8\:30e7\:30f3)
+  SlideScenarioFromMarkdown[md]            \[RightArrow] Markdown \:30b7\:30ca\:30ea\:30aa\:3092\:89e3\:6790
+  SlideDeckBuild[scenario, \"deck.nb\"]      \[RightArrow] \:30b7\:30ca\:30ea\:30aa\:304b\:3089\:30b9\:30e9\:30a4\:30c9\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:751f\:6210
+  SlideDeckOverview[\"deck.nb\"]             \[RightArrow] \:30b9\:30e9\:30a4\:30c9\:4e00\:89a7 (Dataset)
+  SlideDeckReplaceSlide[nb, n, slide]      \[RightArrow] n \:679a\:76ee\:3092\:5dee\:3057\:66ff\:3048 (\"Target\"->\:5225\:540d\:3067\:5225\:30d0\:30fc\:30b8\:30e7\:30f3)
   SlideDeckInsertSlide / DeleteSlide / MoveSlide
-  SlideDeckImages[\"deck.nb\"]               \:2192 16:9 \:753b\:50cf\:30ea\:30b9\:30c8 (\:5b89\:5b9a\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba)
-  SlideDeckExportImages[\"deck.nb\"]         \:2192 \:9023\:756a PNG \:66f8\:304d\:51fa\:3057
-  SlideDeckExportVideo[\"deck.nb\", \"deck.mp4\"] \:2192 Sliden \:7528 mp4
-  $SlideTheme / SlideThemeColor[name]      \:2192 \:30c7\:30c3\:30ad\:914d\:8272 (\:56f3\:306e\:751f\:6210\:306b\:4f7f\:7528)
-  SlideGraphBuild[] / SlideGraphApply[]     \:2192 \:77e5\:8b58\:30b0\:30e9\:30d5 (KG) \:304b\:3089\:8074\:304d\:624b\:30fb\:6642\:9593\:306b\:5fdc\:3058\:305f\:30b9\:30e9\:30a4\:30c9\:3092\:751f\:6210 (v1.20)
+  SlideDeckImages[\"deck.nb\"]               \[RightArrow] 16:9 \:753b\:50cf\:30ea\:30b9\:30c8 (\:5b89\:5b9a\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba)
+  SlideDeckExportImages[\"deck.nb\"]         \[RightArrow] \:9023\:756a PNG \:66f8\:304d\:51fa\:3057
+  SlideDeckExportVideo[\"deck.nb\", \"deck.mp4\"] \[RightArrow] Sliden \:7528 mp4
+  $SlideTheme / SlideThemeColor[name]      \[RightArrow] \:30c7\:30c3\:30ad\:914d\:8272 (\:56f3\:306e\:751f\:6210\:306b\:4f7f\:7528)
+  SlideGraphBuild[] / SlideGraphApply[]     \[RightArrow] \:77e5\:8b58\:30b0\:30e9\:30d5 (KG) \:304b\:3089\:8074\:304d\:624b\:30fb\:6642\:9593\:306b\:5fdc\:3058\:305f\:30b9\:30e9\:30a4\:30c9\:3092\:751f\:6210 (v1.20)
       \:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:7121\:3051\:308c\:3070\:30d7\:30ed\:30f3\:30d7\:30c8\:306e\:30b7\:30ca\:30ea\:30aa\:304b\:3089 KG (\:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc\:3064\:304d\:3002SlideGraphSeedScenario / SlideGraphRelated\:3001v1.30)
       \:300c\:751f\:6210\:300d\:306f\:524d\:56de\:306e\:751f\:6210\:30b9\:30e9\:30a4\:30c9\:3092\:7f6e\:304d\:63db\:3048\:3001\:8cea\:7591\:5fdc\:7b54\:306f KG \:306b\:4fdd\:5b58\:3057\:3066\:5f15\:304d\:7d99\:3050
-  SlideGraphSurvey[{ids}, \"survey.nb\"]   \:2192 \:8907\:6570\:306e KG \:3092\:5408\:6210\:3057\:305f\:30b5\:30fc\:30d9\:30a4\:30c7\:30c3\:30ad
+  SlideGraphSurvey[{ids}, \"survey.nb\"]   \[RightArrow] \:8907\:6570\:306e KG \:3092\:5408\:6210\:3057\:305f\:30b5\:30fc\:30d9\:30a4\:30c7\:30c3\:30ad
 "];
-
+*)
 (* \:58f0\:304b\:3089\:306e\:30b9\:30e9\:30a4\:30c9\:8868\:793a\:8981\:6c42\:306e\:53d7\:3051\:53e3\:3092 SourceVault_realtime \:3078\:767b\:9332\:3059\:308b\:3002
    \:3053\:308c\:304c\:3042\:308b\:3068 show_slide \:30c4\:30fc\:30eb\:304c\:30e2\:30c7\:30eb\:306b\:63d0\:793a\:3055\:308c\:308b *)
 If[Length[DownValues[SourceVault`SourceVaultRealtimeStart]] > 0,
@@ -9804,47 +13627,48 @@ If[Length[DownValues[SourceVault`SourceVaultRealtimeStart]] > 0,
     SlideWorkflow`Private`iSWSlideRequestHandler];
 
 (* ---- ClaudeCode \:30ad\:30fc\:30ef\:30fc\:30c9\:81ea\:52d5\:6ce8\:5165\:767b\:9332 (PDFIndex \:3068\:540c\:30d1\:30bf\:30fc\:30f3) ---- *)
-Print["
-  ShowSlidePalette[]        \:2192 \:30b9\:30e9\:30a4\:30c9\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8 (v" <> SlideWorkflow`$SlideWorkflowInteractiveVersion <> ", \"Safe\"->True \:3067\:975e\:5e72\:6e09\:30e2\:30fc\:30c9)
-  SlideAddSlide[] / SlideExpand[]          \:2192 \:65b0\:898f\:9aa8\:683c / \:30d7\:30ed\:30f3\:30d7\:30c8\:2192\:30b9\:30e9\:30a4\:30c9\:5c55\:958b (LLM)
+(*Print["
+  ShowSlidePalette[]        \[RightArrow] \:30b9\:30e9\:30a4\:30c9\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8 (v" <> SlideWorkflow`$SlideWorkflowInteractiveVersion <> ", \"Safe\"->True \:3067\:975e\:5e72\:6e09\:30e2\:30fc\:30c9)
+  ShowSlideTalkPalette[]    \[RightArrow] \:767a\:8868\:30d1\:30ec\:30c3\:30c8 (Slideshow\:30fb\:518d\:751f\:30fb\:97f3\:58f0\:5fdc\:7b54\:30fb\:30ab\:30e1\:30e9\:30fb\:58f0/\:8a00\:8a9e/\:5b57\:5e55/\:8cea\:554f\:306e\:8a2d\:5b9a)
+  SlideAddSlide[] / SlideExpand[]          \[RightArrow] \:65b0\:898f\:9aa8\:683c / \:30d7\:30ed\:30f3\:30d7\:30c8\[RightArrow]\:30b9\:30e9\:30a4\:30c9\:5c55\:958b (LLM)
   SlideTranslate[] / SlideTranslateRevert[] / SlideTranslateDeck[]
   SlideInsertPrompt/Citation/Note/Directive/Dictionary/Bibliography/EndMarker[]
-  SlideTogglePrompts[]      \:2192 \:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:8868\:793a\:5207\:66ff
-  SlideToggleScreenEnvironment[]           \:2192 Working \:21d4 Slideshow \:5207\:66ff (\:30e1\:30e2/\:6307\:793a/\:6587\:732e/\:30d7\:30ed\:30f3\:30d7\:30c8\:306f Slideshow \:3067\:975e\:8868\:793a)
-  SlideInsertReferences[]                  \:2192 \:6587\:732e\:30ea\:30b9\:30c8\:30bb\:30eb ([key] locator | \:30e1\:30e2\:3001\:5c55\:958b\:6642\:306b\:53c2\:7167)
-  SlideTable[rows]                         \:2192 \:30c6\:30fc\:30de\:914d\:8272\:306e\:8868 (md \:3067\:306f | \:69cb\:6587)
-  SlidePDFFigure[\"key|path\", page]     \:2192 \:6587\:732e PDF \:306e\:30da\:30fc\:30b8/\:9818\:57df\:3092\:56f3\:3068\:3057\:3066\:5207\:308a\:51fa\:3057
-  SlideInsertTalk[]                        \:2192 \:30c8\:30fc\:30af\:30bb\:30eb (\:767a\:8868\:539f\:7a3f\:3002Slideshow \:3067\:975e\:8868\:793a\:3001md \:3067\:306f talk: \:884c)
-  SlideInsertQA[]                          \:2192 \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb (\:60f3\:5b9a\:554f\:7b54\:3002Q: / A: \:306e\:884c\:3002md \:3067\:306f qa: \:884c)
-  SlideQAGenerate[]                        \:2192 \:5909\:66f4\:3055\:308c\:305f\:30b9\:30e9\:30a4\:30c9\:3068 QA \:7121\:3057\:30b9\:30e9\:30a4\:30c9\:3060\:3051\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:300cQA \:751f\:6210\:300d)
-  SlideQAMarkCurrent[]                     \:2192 \:65e2\:5b58\:306e QA \:30bb\:30eb\:306b\:4eca\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:5370\:3060\:3051\:6253\:3064 (LLM \:4e0d\:8981\:3001\:5185\:5bb9\:306f\:305d\:306e\:307e\:307e)
-  SlideQAGenerateAll[] / SlideQAUpdateAll[] \:2192 \:5168\:679a\:4f5c\:308a\:76f4\:3059 / \:5168\:679a\:3092\:65e2\:5b58\:3092\:6d3b\:304b\:3057\:3066\:898b\:76f4\:3059
-  SlideQAView[] / SlideQAStateView[]       \:2192 \:60f3\:5b9a\:554f\:7b54\:306e\:4e00\:89a7 / \:30b9\:30e9\:30a4\:30c9\:3054\:3068\:306e\:72b6\:614b (\:672a\:4f5c\:6210\:30fb\:8981\:66f4\:65b0)
-  SlideQAFromPack[]                        \:2192 \:65e2\:5b58\:306e QA \:30d1\:30c3\:30af\:3092\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:3078\:623b\:3059 (\:79fb\:884c\:7528\:3001LLM \:672a\:4f7f\:7528)
-  SlideQABuild[]                           \:2192 \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:2192 gpt-realtime \:304c\:5f15\:3051\:308b QA \:30d1\:30c3\:30af (\:300c\:767b\:9332\:300d\:304b\:3089\:3082\:81ea\:52d5)
-  SlideDeckChangeStatus[]                  \:2192 \:300c\:767b\:9332\:300d\:304c\:4f55\:3092\:3084\:308a\:76f4\:3059\:304b (mp4 / QA \:306e\:5dee\:5206)
-  SlideDeckMarkVideoCurrent[]              \:2192 \:4eca\:306e mp4 \:3092\:300c\:6700\:65b0\:300d\:3068\:3057\:3066\:8a18\:9332 (\:65e2\:5b58\:30c7\:30c3\:30ad\:306e\:79fb\:884c\:7528\:30021 \:56de\:3060\:3051\:306e\:518d\:751f\:6210\:3092\:907f\:3051\:308b)
+  SlideTogglePrompts[]      \[RightArrow] \:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:8868\:793a\:5207\:66ff
+  SlideToggleScreenEnvironment[]           \[RightArrow] Working \[DoubleLeftRightArrow] Slideshow \:5207\:66ff (\:30e1\:30e2/\:6307\:793a/\:6587\:732e/\:30d7\:30ed\:30f3\:30d7\:30c8\:306f Slideshow \:3067\:975e\:8868\:793a)
+  SlideInsertReferences[]                  \[RightArrow] \:6587\:732e\:30ea\:30b9\:30c8\:30bb\:30eb ([key] locator | \:30e1\:30e2\:3001\:5c55\:958b\:6642\:306b\:53c2\:7167)
+  SlideTable[rows]                         \[RightArrow] \:30c6\:30fc\:30de\:914d\:8272\:306e\:8868 (md \:3067\:306f | \:69cb\:6587)
+  SlidePDFFigure[\"key|path\", page]     \[RightArrow] \:6587\:732e PDF \:306e\:30da\:30fc\:30b8/\:9818\:57df\:3092\:56f3\:3068\:3057\:3066\:5207\:308a\:51fa\:3057
+  SlideInsertTalk[]                        \[RightArrow] \:30c8\:30fc\:30af\:30bb\:30eb (\:767a\:8868\:539f\:7a3f\:3002Slideshow \:3067\:975e\:8868\:793a\:3001md \:3067\:306f talk: \:884c)
+  SlideInsertQA[]                          \[RightArrow] \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb (\:60f3\:5b9a\:554f\:7b54\:3002Q: / A: \:306e\:884c\:3002md \:3067\:306f qa: \:884c)
+  SlideQAGenerate[]                        \[RightArrow] \:5909\:66f4\:3055\:308c\:305f\:30b9\:30e9\:30a4\:30c9\:3068 QA \:7121\:3057\:30b9\:30e9\:30a4\:30c9\:3060\:3051\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:300cQA \:751f\:6210\:300d)
+  SlideQAMarkCurrent[]                     \[RightArrow] \:65e2\:5b58\:306e QA \:30bb\:30eb\:306b\:4eca\:306e\:30b9\:30e9\:30a4\:30c9\:306e\:5370\:3060\:3051\:6253\:3064 (LLM \:4e0d\:8981\:3001\:5185\:5bb9\:306f\:305d\:306e\:307e\:307e)
+  SlideQAGenerateAll[] / SlideQAUpdateAll[] \[RightArrow] \:5168\:679a\:4f5c\:308a\:76f4\:3059 / \:5168\:679a\:3092\:65e2\:5b58\:3092\:6d3b\:304b\:3057\:3066\:898b\:76f4\:3059
+  SlideQAView[] / SlideQAStateView[]       \[RightArrow] \:60f3\:5b9a\:554f\:7b54\:306e\:4e00\:89a7 / \:30b9\:30e9\:30a4\:30c9\:3054\:3068\:306e\:72b6\:614b (\:672a\:4f5c\:6210\:30fb\:8981\:66f4\:65b0)
+  SlideQAFromPack[]                        \[RightArrow] \:65e2\:5b58\:306e QA \:30d1\:30c3\:30af\:3092\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:3078\:623b\:3059 (\:79fb\:884c\:7528\:3001LLM \:672a\:4f7f\:7528)
+  SlideQABuild[]                           \[RightArrow] \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\[RightArrow] gpt-realtime \:304c\:5f15\:3051\:308b QA \:30d1\:30c3\:30af (\:300c\:767b\:9332\:300d\:304b\:3089\:3082\:81ea\:52d5)
+  SlideDeckChangeStatus[]                  \[RightArrow] \:300c\:767b\:9332\:300d\:304c\:4f55\:3092\:3084\:308a\:76f4\:3059\:304b (mp4 / QA \:306e\:5dee\:5206)
+  SlideDeckMarkVideoCurrent[]              \[RightArrow] \:4eca\:306e mp4 \:3092\:300c\:6700\:65b0\:300d\:3068\:3057\:3066\:8a18\:9332 (\:65e2\:5b58\:30c7\:30c3\:30ad\:306e\:79fb\:884c\:7528\:30021 \:56de\:3060\:3051\:306e\:518d\:751f\:6210\:3092\:907f\:3051\:308b)
       \:5c55\:958b\:306f\:5404\:30b9\:30e9\:30a4\:30c9\:672b\:5c3e\:306b talk: \:539f\:7a3f\:3092\:751f\:6210\:3002\:539f\:7a3f\:306e\:7121\:3044\:679a\:306f\:300c\:539f\:7a3f\:300d(SlideTalkFill) \:3067\:57cb\:3081\:308b
-  SlidePDFImages[\"key|path\"]           \:2192 PDF \:57cb\:3081\:8fbc\:307f\:753b\:50cf(\:5199\:771f\:30fb\:30e9\:30b9\:30bf\:56f3)\:306e\:62bd\:51fa
-  SlideDeckFigure[\"deck.nb\", n]        \:2192 \:904e\:53bb\:30c7\:30c3\:30ad\:306e\:30b9\:30e9\:30a4\:30c9 1 \:679a\:3092\:753b\:50cf\:5f15\:7528
+  SlidePDFImages[\"key|path\"]           \[RightArrow] PDF \:57cb\:3081\:8fbc\:307f\:753b\:50cf(\:5199\:771f\:30fb\:30e9\:30b9\:30bf\:56f3)\:306e\:62bd\:51fa
+  SlideDeckFigure[\"deck.nb\", n]        \[RightArrow] \:904e\:53bb\:30c7\:30c3\:30ad\:306e\:30b9\:30e9\:30a4\:30c9 1 \:679a\:3092\:753b\:50cf\:5f15\:7528
       locator \:306f URL / arxiv:ID / Google Slides \:3082\:53ef (\:81ea\:52d5\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9+PDF \:5316+\:30ad\:30e3\:30c3\:30b7\:30e5)\:3002\:539f\:56f3\:5f15\:7528\:304c\:65e2\:5b9a
-  SlideTalkFill[] / SlideTalkBuild[\"deck.nb\"] \:2192 \:539f\:7a3f\:306e\:7121\:3044\:679a\:306b\:539f\:7a3f\:3092\:66f8\:304f / \:539f\:7a3f\:3092 deck_talk.md \:3078\:66f8\:304d\:51fa\:3057 (\:518d\:751f\:30fb\:767b\:9332\:306b\:306f\:4e0d\:8981)
-  SlideDeckRegister[\"deck.nb\"]             \:2192 \:30bf\:30a4\:30c8\:30eb/URL/\:539f\:7a3f\:3092 SourceVault \:767b\:9332\:7c3f\:3078 (\:30c8\:30fc\:30af\:30bb\:30eb\:304b\:3089\:76f4\:63a5)
-  SlideTalkMeta[nb, \"SlideURL\"->url]       \:2192 \:767b\:9332\:7528\:30e1\:30bf (URL/\:5225\:540d/PL) \:3092\:30c7\:30c3\:30ad\:306b\:6c38\:7d9a\:5316
-  SlideDeckRegistry[]                      \:2192 \:767b\:9332\:6e08\:307f\:767a\:8868\:306e\:4e00\:89a7
-  SlideDeckUpload[nb] / SlideUploadCredential[nb] \:2192 mp4 \:3092 sftp \:3067 web \:30b5\:30fc\:30d0\:3078\:914d\:7f6e (\:6307\:793a\:30bb\:30eb\:306e Host: \:884c) / \:30d1\:30b9\:30ef\:30fc\:30c9\:4fdd\:5b58 (NBAccess \:7ba1\:8f44)
-  SlidePlay[] / SlidePause[] / SlideStop[]  \:2192 \:539f\:7a3f\:3092\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:81ea\:52d5\:9001\:308a
-  SlideVoices[] / SlideCycleVoice[]        \:2192 \:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3068\:5207\:308a\:66ff\:3048 ($SlideVoice)
-  SlideVoiceModels[] / SlideCycleVoiceModel[] \:2192 \:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb (gpt-realtime / gpt-live-1\:3001$SlideVoiceModel)
-  SlideCycleQuestionMode[]                 \:2192 \:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:8cea\:554f\:30bf\:30a4\:30e0 / \:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:3001$SlideQuestionMode)
-  SlideVoicePrepare[]                      \:2192 \:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066\:30ad\:30e3\:30c3\:30b7\:30e5
-  SlideTalkDuration[]                      \:2192 \:539f\:7a3f\:304b\:3089\:767a\:8868\:6642\:9593\:3092\:898b\:7a4d\:3082\:308b (\:8cea\:554f\:306a\:3057)
-  SlideIndex[] / SlideInfo[]               \:2192 \:982d\:51fa\:3057\:30fb\:8a66\:8074\:4ed8\:304d\:306e\:7d22\:5f15 / \:767a\:8868\:306e\:60c5\:5831
-  SlideToggleMic[]                         \:2192 \:30de\:30a4\:30af\:306e mute / unmute (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30de\:30a4\:30afon/off\:300d)
-  SlideRemoteStart[] / SlideRemoteProbe[]  \:2192 \:624b\:5143\:30ea\:30e2\:30b3\:30f3(Relacon \:7b49)\:306e\:898b\:5f35\:308a\:958b\:59cb / \:3069\:306e\:4eee\:60f3\:30ad\:30fc\:304b\:5b9f\:6e2c
-      \:65e2\:5b9a\:306e\:5272\:308a\:5f53\:3066 ($SlideRemoteBindings): \:524d\:306e\:66f2 \:2192 \:30de\:30a4\:30af\:5207\:66ff\:3001\:518d\:751f/\:4e00\:6642\:505c\:6b62 \:2192 \:8aad\:307f\:4e0a\:3052\:306e\:518d\:751f/\:4e00\:6642\:505c\:6b62
+  SlideTalkFill[] / SlideTalkBuild[\"deck.nb\"] \[RightArrow] \:539f\:7a3f\:306e\:7121\:3044\:679a\:306b\:539f\:7a3f\:3092\:66f8\:304f / \:539f\:7a3f\:3092 deck_talk.md \:3078\:66f8\:304d\:51fa\:3057 (\:518d\:751f\:30fb\:767b\:9332\:306b\:306f\:4e0d\:8981)
+  SlideDeckRegister[\"deck.nb\"]             \[RightArrow] \:30bf\:30a4\:30c8\:30eb/URL/\:539f\:7a3f\:3092 SourceVault \:767b\:9332\:7c3f\:3078 (\:30c8\:30fc\:30af\:30bb\:30eb\:304b\:3089\:76f4\:63a5)
+  SlideTalkMeta[nb, \"SlideURL\"->url]       \[RightArrow] \:767b\:9332\:7528\:30e1\:30bf (URL/\:5225\:540d/PL) \:3092\:30c7\:30c3\:30ad\:306b\:6c38\:7d9a\:5316
+  SlideDeckRegistry[]                      \[RightArrow] \:767b\:9332\:6e08\:307f\:767a\:8868\:306e\:4e00\:89a7
+  SlideDeckUpload[nb] / SlideUploadCredential[nb] \[RightArrow] mp4 \:3092 sftp \:3067 web \:30b5\:30fc\:30d0\:3078\:914d\:7f6e (\:6307\:793a\:30bb\:30eb\:306e Host: \:884c) / \:30d1\:30b9\:30ef\:30fc\:30c9\:4fdd\:5b58 (NBAccess \:7ba1\:8f44)
+  SlidePlay[] / SlidePause[] / SlideStop[]  \[RightArrow] \:539f\:7a3f\:3092\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089\:30b9\:30e9\:30a4\:30c9\:3092\:81ea\:52d5\:9001\:308a
+  SlideVoices[] / SlideCycleVoice[]        \[RightArrow] \:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3068\:5207\:308a\:66ff\:3048 ($SlideVoice)
+  SlideVoiceModels[] / SlideCycleVoiceModel[] \[RightArrow] \:97f3\:58f0\:4f1a\:8a71\:306e\:30e2\:30c7\:30eb (gpt-realtime / gpt-live-1\:3001$SlideVoiceModel)
+  SlideCycleQuestionMode[]                 \[RightArrow] \:8cea\:554f\:306e\:53d7\:3051\:65b9 (\:8cea\:554f\:30bf\:30a4\:30e0 / \:7279\:5b9a\:30ef\:30fc\:30c9 / \:4e8c\:6bb5\:69cb\:3048\:3001$SlideQuestionMode)
+  SlideVoicePrepare[]                      \[RightArrow] \:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066\:30ad\:30e3\:30c3\:30b7\:30e5
+  SlideTalkDuration[]                      \[RightArrow] \:539f\:7a3f\:304b\:3089\:767a\:8868\:6642\:9593\:3092\:898b\:7a4d\:3082\:308b (\:8cea\:554f\:306a\:3057)
+  SlideIndex[] / SlideInfo[]               \[RightArrow] \:982d\:51fa\:3057\:30fb\:8a66\:8074\:4ed8\:304d\:306e\:7d22\:5f15 / \:767a\:8868\:306e\:60c5\:5831
+  SlideToggleMic[]                         \[RightArrow] \:30de\:30a4\:30af\:306e mute / unmute (\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30de\:30a4\:30afon/off\:300d)
+  SlideRemoteStart[] / SlideRemoteProbe[]  \[RightArrow] \:624b\:5143\:30ea\:30e2\:30b3\:30f3(Relacon \:7b49)\:306e\:898b\:5f35\:308a\:958b\:59cb / \:3069\:306e\:4eee\:60f3\:30ad\:30fc\:304b\:5b9f\:6e2c
+      \:65e2\:5b9a\:306e\:5272\:308a\:5f53\:3066 ($SlideRemoteBindings): \:524d\:306e\:66f2 \[RightArrow] \:30de\:30a4\:30af\:5207\:66ff\:3001\:518d\:751f/\:4e00\:6642\:505c\:6b62 \[RightArrow] \:8aad\:307f\:4e0a\:3052\:306e\:518d\:751f/\:4e00\:6642\:505c\:6b62
 "];
-
+*)
 (* ---- NBAccess \:627f\:8a8d\:30b2\:30fc\:30c8\:306e\:8a31\:53ef head \:767b\:9332 ----
    SlideThemeColor(\:7d14\:95a2\:6570)\:3068 SlideApplyScenario(\:30b9\:30e9\:30a4\:30c9\:66f8\:8fbc\:307f\:306e\:552f\:4e00\:306e
    \:6c7a\:5b9a\:7684\:5165\:53e3\:3001\:5165\:529b\:691c\:8a3c\:4ed8\:304d)\:3092 UnknownHead \:627f\:8a8d\:304b\:3089\:5916\:3059\:3002 *)
@@ -9857,7 +13681,9 @@ SlideWorkflow`Private`$iSWAgentHeads = {"SlideThemeColor", "SlideApplyScenario",
   "SlideNotebookFormula",
   "SlideGraphIngest", "SlideGraphSpec", "SlideGraphPlan", "SlideGraphPlanView",
   "SlideGraphGenerate", "SlideGraphApply", "SlideGraphView", "SlideGraphLoad", "SlideGraphShow",
-  "SlideGraphSeed", "SlideGraphSectionText"};
+  "SlideGraphSeed", "SlideGraphSectionText",
+  "SlideComputeNew", "SlideComputeOpen", "SlideComputeAdd", "SlideComputeFinish", "SlideComputeGraph",
+  "SlideComputeRegister", "SlideComputeList", "SlideGraphReuse"};
 
 Quiet @ Check[NBAccess`NBRegisterAllowedHeads[SlideWorkflow`Private`$iSWAgentHeads], Null];
 
@@ -9892,6 +13718,11 @@ If[TrueQ[$Notebooks],
       Item["SlideWorkflow",
         FrontEnd`KernelExecute[{EvaluatePacket[
           dummyFunction["Needs[\"SlideWorkflow`\"]; SlideWorkflow`ShowSlidePalette[]"]]}],
+        FrontEnd`MenuEvaluator -> Automatic],
+      (* v1.39: \:767a\:8868\:30d1\:30ec\:30c3\:30c8 *)
+      Item["SlideWorkflow Talk",
+        FrontEnd`KernelExecute[{EvaluatePacket[
+          dummyFunction["Needs[\"SlideWorkflow`\"]; SlideWorkflow`ShowSlideTalkPalette[]"]]}],
         FrontEnd`MenuEvaluator -> Automatic]};
     temp = Function[x,
       tempFunction[{FrontEnd`AddMenuCommands["MenuListPalettesMenu",

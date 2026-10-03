@@ -255,6 +255,14 @@ ShowSlidePalette[]
 ShowSlidePalette["Safe" -> True]
 ```
 
+#### `ShowSlideTalkPalette`
+
+発表パレットを開きます。Slideshow・再生・音声応答・カメラ・声や言語や質問の受け方の設定がまとまっています。作成パレット(`ShowSlidePalette`)の上のボタンからも開けます。
+
+```wolfram
+ShowSlideTalkPalette[]
+```
+
 ### 8.2 スライド追加
 
 #### `SlideAddSlide`
@@ -297,7 +305,7 @@ SlideExpand[]
 - `md`には複数の`##`を含められ、その場合は複数枚のスライドとして展開されます。
 - `md`中の`<<FIGn>>`トークンは、`n = 1..k`が既存の図・コードセル(元の並び順で再利用)、`n = k+1..`が`"Figures"`オプションで渡した新規図(`Graphics`/`Image`)に対応します。
 - `SlidePrompt`セルは適用後に自動でスライド先頭に戻されます。
-- 成功時は`Success`、失敗時は`Failure`を返します。
+- 成功時は`Success`、失敗時は`Failure`を返します。新規図に`Failure` / `$Failed`や、評価されずに残った画像処理の式が混じっている場合は、何も書かずに`Failure["BadFigures"]`を返します。
 
 オプション: `"Figures"->{}`(新規図のリスト)
 
@@ -322,11 +330,13 @@ SlideDeckInsertScenario[nb, 3, "## 追加スライド {expected=30}\n- 新しい
 
 ### 8.4 翻訳
 
-`SlideTranslate` / `SlideTranslateRevert` / `SlideTranslateDeck` / `$SlideTranslationLanguage`
+`SlideTranslate` / `SlideTranslateRevert` / `SlideTranslateDeck` / `SlideShowLanguage` / `$SlideTranslationLanguage`
 
-- `SlideTranslate[]` — 現在スライドのテキストセルを`$SlideTranslationLanguage`へ一括翻訳します。`Dictionary`セルの用語対応を厳守します。原文は`TaggingRules`の`"SWOrigText"`に保存されるため、元に戻せます。
-- `SlideTranslateRevert[]` — 現在スライドの翻訳を`"SWOrigText"`に保存された原文に戻します。
-- `SlideTranslateDeck[]` — 全スライドを順に(非同期的に連鎖させながら)翻訳します。
+- `SlideTranslate[]` — 現在スライドの見出し・箇条書き・本文を`$SlideTranslationLanguage`へ翻訳し、訳の表示にします(v1.36)。`Dictionary`セルの用語対応を厳守します。原文は消さず、セルの`TaggingRules`(`documentation.wl`と同じ`"documentation"` -> `translationSrc` / `translation` / `showTranslation`、書式つきの原文は`SWOrigContent`)に残るため、LLMを呼ばずに切り替えられます。訳のあるセルは表示を切り替えるだけで、訳の無いセルと原文を直したセルだけを1回にまとめてLLMへ渡します。発表原稿(トークセル)は訳しません(原稿の訳は`SlideTalkTranslate`)。
+  - v1.40: 同じ枚の図(Output / Print / Graphicsセル = Mathematicaで描いた図や表)の中の日本語の文字列も訳し、原文の図(`SWOrigContent`)と訳の図(`SWTransContent`)を持って切り替えます(`SlideTranslateRevert` / `SlideShowLanguage`も図に効きます)。オプションの値(フォント名など)と画像の中の文字は訳しません。
+- `SlideTranslateRevert[]` — 現在スライドを原文の表示に戻します(訳は残る。訳を手で直していればその直しも残ります)。
+- `SlideTranslateDeck[]` — 全スライドを順に訳の表示にします(訳の無いセルだけLLMで訳す。非同期的に連鎖)。
+- `SlideShowLanguage[]` / `SlideShowLanguage[nb, "Toggle" | "Original" | "Translation"]` — デッキ全体のスライドの表示を原文と訳で切り替えます(LLMは呼ばず、訳の無いセルは原文のまま)。画像・mp4の書き出しは表示中の言語になります。
 - `$SlideTranslationLanguage` — 翻訳先言語(既定は日本語環境なら`"English"`)。
 
 ```wolfram
@@ -334,6 +344,7 @@ $SlideTranslationLanguage = "English";
 SlideTranslate[]
 SlideTranslateRevert[]
 SlideTranslateDeck[]
+SlideShowLanguage[nb, "Toggle"]
 ```
 
 ### 8.5 補助セルの挿入
@@ -782,6 +793,36 @@ SlideInsertTalk[]
 $SlideTalkPerSlide = False;
 ```
 
+### 発表原稿の言語(多言語原稿)
+
+原稿は元の言語を残したまま、言語ごとの訳のトークセルを同じスライドに並べて複数言語を併用できます。
+
+#### `SlideTalkLanguage` / `$SlideTalkLanguage`
+
+- `SlideTalkLanguage[nb]` — そのデッキを読み上げる言語コード(`"ja"` / `"en"` …)を返します。優先順は、指示セルの`Language:` > `SlideTalkMeta`の`Language` > `$SlideTalkLanguage` > `$Language`です。
+- `$SlideTalkLanguage` — 発表を読み上げる言語の既定(`"en"` / `"English"` / `"英語"`など)。既定`Automatic`なら`$Language`。デッキの指示セルに`Language:`行があればそちらが優先されます。
+
+```wolfram
+SlideTalkLanguage["lecture1.nb"]
+$SlideTalkLanguage = "English";
+```
+
+#### `SlideTalkLanguages`
+
+`SlideTalkLanguages[nb]`は原稿の言語の状況`<|"Language"(話す言語), "Base"(元の原稿の言語), "Slides", "Translated"(言語ごとの訳の枚数), "Missing"(話す言語の訳が無い枚), "Stale"(元の原稿を直した後の古い訳)|>`を返します。番号0は前置きです。
+
+```wolfram
+SlideTalkLanguages["lecture1.nb"]
+```
+
+#### `SlideTalkTranslate`
+
+`SlideTalkTranslate[nb]`は元の原稿(トークセル)をLLMで訳し、同じスライドに訳のトークセル(`TaggingRules`の`SWTalkLang`)を並べます。元の原稿は残るので複数言語を併用できます。訳す言語は、指示セルの`Language:`(または`SWTalkMeta` / `$SlideTalkLanguage`)の指定に従います。
+
+```wolfram
+SlideTalkTranslate["lecture1.nb"]
+```
+
 ### 質疑応答セル (パレットの「質疑」)
 
 `SlideInsertQA[]`で、トークセルの隣にそのスライドで訊かれそうな質問と回答を書くセル(`SlideQA`スタイル、mdでは`"qa: "`行)を挿入します。見え方と書き出しの扱いはトークセルと同じです(`Working`で可視、`SlideShow`で非表示、画像・mp4の書き出しからも除外)。
@@ -884,7 +925,7 @@ SlideDeckMarkVideoCurrent["lecture1.nb"]
 
 #### `SlideTalkMeta`
 
-`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `Aliases` / `PrivacyLevel`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `Host: sftp://user@host/dir`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
+`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `Aliases` / `PrivacyLevel` / `Language`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `Language:` / `Host: sftp://user@host/dir`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
 
 `SlideTalkMeta[nb, "SlideURL" -> url, ...]`はノートブックの`TaggingRules`に永続化します(指示セルに同名の行があればそちらが優先されるため、登録簿への登録が`_talk.md`無しで完結します)。
 
@@ -954,8 +995,11 @@ $SlideVoiceInputGate      (* 質問受付でマイクを送る下限の音量(0�
 $SlideQuestionMaxSeconds  (* 1枚の合間に質疑で留まれる上限の秒数(既定 60) *)
 $SlideVoiceTick           (* 読み上げ進行を見るカーネル側ScheduledTaskの周期(秒、既定 0.3) *)
 $SlideRealtimeVoices      (* ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime)の声名(既定 {"marin","cedar"})。一覧には "realtime:<声>" として出る *)
-$SlideVoiceModel          (* 音声会話のモデル。既定 Automatic = gpt-realtime-2.1。"gpt-live-1" で GPT-Live。パレット「音声モデル」行 *)
-$SlideVoiceProvider       (* 音声会話のプロバイダ。既定 Automatic = "OpenAI"。パレット「音声プロバイダ」行 *)
+$SlideVoiceModel          (* 音声会話のモデル。既定 Automatic = $SlideVoiceDefaultModel (gpt-live-1。v1.36 から。そのプロバイダの一覧に無ければ $SourceVaultRealtimeModel)。"gpt-realtime-2.1" などを直接指定もできる。パレット「音声モデル」行 *)
+$SlideVoiceDefaultModel   (* $SlideVoiceModel が Automatic のときに使うモデル(既定 "gpt-live-1")。SourceVault 全体の既定($SourceVaultRealtimeModel)は変えない *)
+$SlideVoiceProvider       (* 音声会話のプロバイダ。既定 Automatic = 登録簿の先頭("OpenAI")。候補は SlideVoiceModels[] のキー。パレット「音声プロバイダ」行 *)
+$SlideQuestionMode        (* 発表中の質問の受け方。"QuestionTime"(既定) | "Words" | "Detect"。詳細は 10.4 *)
+$SlideInterruptWords      (* "Words" モードで発表を止めてよい語のリスト(既定 Automatic = $SourceVaultRealtimeInterruptWords = {"質問","スライド"}) *)
 $SlideSpeechRate          (* 話速(1秒あたりの文字数)をエンジンごとに持つ連想。既定 <|"Local"->6.95, "Realtime"->5.6|>。SlideTalkDuration が使う *)
 $SlideSpeechLatency       (* 1枚あたり声が出るまでの待ち(秒)をエンジンごとに持つ連想(既定 Local 0.3 / Realtime 1.5) *)
 ```
@@ -1030,20 +1074,47 @@ SlideToggleMic["Quiet" -> True]
 
 #### 音声会話のモデル(gpt-realtime / gpt-live)
 
-パレットの「設定」欄に「音声プロバイダ: OpenAI」「音声モデル: realtime-2.1」の 2 行があり、押すたびに次のモデル(gpt-realtime-2.1 → gpt-realtime-2.1-mini → gpt-live-1)へ切り替わります。関数では`SlideCycleVoiceModel[]`、`SlideSetVoiceModel["gpt-live-1"]`、`SlideVoiceModels[]`(候補一覧)です。明示的にモデル名を指定した場合は登録簿の一覧になくてもそのまま使えます(未登録の新しいモデルも試せます)。
+パレットの「設定」欄に「音声プロバイダ: OpenAI」「音声モデル: …」の 2 行があり、押すたびに次の候補へ切り替わります。既定のモデルは v1.36 から`$SlideVoiceDefaultModel`(`"gpt-live-1"`)です。関数では次を使います。
+
+- `SlideVoiceModels[]` — プロバイダ -> 選べる音声会話モデルの一覧(SourceVault_realtimeの登録簿。未ロードなら組み込みの既定)。
+- `SlideCycleVoiceProvider[]` — `$SlideVoiceProvider`を次のプロバイダへ切り替えます(モデルがそのプロバイダに無ければ既定に戻す)。パレットの「音声プロバイダ」行。
+- `SlideCycleVoiceModel[]` — `$SlideVoiceModel`を同じプロバイダの次のモデルへ切り替えます。パレットの「音声モデル」行。
+- `SlideSetVoiceModel[model]` — モデルを直接選びます(登録簿にあればプロバイダも合わせる)。`SlideSetVoiceModel[Automatic]`で既定に戻します。
+
+明示的にモデル名を指定した場合は登録簿の一覧になくてもそのまま使えます(未登録の新しいモデルも試せます)。
+
+```wolfram
+SlideVoiceModels[]
+SlideCycleVoiceProvider[]
+SlideCycleVoiceModel[]
+SlideSetVoiceModel["gpt-live-1"]
+SlideSetVoiceModel[Automatic]
+```
 
 - **gpt-realtime-2.1 / -mini**: 1 つのモデルが聞いて考えて話します。スライド操作と資料の問い合わせは関数呼び出し(`show_slide` / `ask_sourcevault`)です。
-- **gpt-live-1**(GPT-Live): 聞きながら話せる全二重の音声モデルです。作業は「クライアント委譲」でアプリ側へ回ってきます。スライド操作(「次のスライド」「3枚目を見せて」「〜のスライドを出して」)と発表内容の質問は、ワーカーが書き起こしから依頼を読み取り、Realtime と同じ処理(スライド操作 / SourceVault の資料 / 許可を得てからウェブ)で答えます。手元の資料に無いときは「ウェブで調べてもよいですか」と尋ね、「はい」でウェブを引きます。音声は 1 分 $0.05(秒単位の課金)。「情報」に通話秒数が出ます。モデルには、質疑を開くまで部屋の音を渡しません(スピーカー自身の音声応答の声を、スピーカーの自分の声を拾わないようにするため)。
+- **gpt-live-1**(GPT-Live、既定): 聞きながら話せる全二重の音声モデルです。作業は「クライアント委譲」でアプリ側へ回ってきます。スライド操作(「次のスライド」「3枚目を見せて」「〜のスライドを出して」)と発表内容の質問は、ワーカーが書き起こしから依頼を読み取り、Realtime と同じ処理(スライド操作 / SourceVault の資料 / 許可を得てからウェブ)で答えます。手元の資料に無いときは「ウェブで調べてもよいですか」と尋ね、「はい」でウェブを引きます。音声は 1 分 $0.05(秒単位の課金)。「情報」に通話秒数が出ます。モデルには、質疑を開くまで部屋の音を渡しません(スピーカー自身の音声応答の声を、スピーカーの自分の声を拾わないようにするため)。
 
 原稿の読み上げ・質問受付・マイクの操作はどちらのモデルでも同じです。動いている音声会話のモデルは途中で変えられないので、切り替えは「応答off→on」(または次の再生)から効きます。
 
 #### 発表中の質問の受け方(質問タイム / 特定ワード / 二段構え)
 
-パレットの「設定」欄の「質問: …」行で切り替えます(`SlideCycleQuestionMode[]`、`$SlideQuestionMode`)。選んだモードが今のモデルで効かないとき(gpt-live-1 以外での「特定ワード」「二段構え」)は、質問タイムとして動きます。
+パレットの「設定」欄の「質問: …」行で切り替えます。関数では次の3つです。
 
-- **質問タイム**(既定・全モデル): 1枚読むごとに`$SlideQuestionSeconds`の間だけ質問を待ちます。読み上げ中はマイクを切ります。
-- **特定ワード**(gpt-live-1のみ): 読み上げ中もマイクを聞き、聞き手が「質問」「スライド」(`$SlideInterruptWords`)を含む言葉で話しかけたときだけ発表を止めます。gpt-liveが「はい、どうぞ」と促し、質疑中は何でも受け付けます。独り言は無視します。
-- **二段構え**(gpt-live-1のみ): 聞き手の声が0.35秒続いたら発表を止め、質問かどうかはgpt-liveが判断します(独り言なら黙って数秒後に再開)。二段構えは読み上げ中も聞いているため質問タイムの待ちは取りません。
+- `$SlideQuestionMode` — 質問の受け方(`"QuestionTime"` | `"Words"` | `"Detect"`)。
+- `SlideCycleQuestionMode[]` — 質問タイム → 特定ワード → 二段構え の順に切り替えます(パレットの「質問: …」行)。
+- `SlideSetQuestionMode["QuestionTime" | "Words" | "Detect"]` — 直接指定します。
+
+選んだモードが今のモデルで効かないとき(gpt-live-1 以外での「特定ワード」「二段構え」)は、質問タイムとして動きます。
+
+- **質問タイム**(`"QuestionTime"`、既定・全モデル): 1枚読むごとに`$SlideQuestionSeconds`の間だけ質問を待ちます。読み上げ中はマイクを切ります。
+- **特定ワード**(`"Words"`、gpt-live-1のみ): 読み上げ中もマイクを聞き、聞き手が「質問」「スライド」(`$SlideInterruptWords`)を含む言葉で話しかけたときだけ発表を止めます。gpt-liveが「はい、どうぞ」と促し、質疑中は何でも受け付けます。独り言は無視します。
+- **二段構え**(`"Detect"`、gpt-live-1のみ): 聞き手の声が0.35秒続いたら発表を止め、質問かどうかはgpt-liveが判断します(独り言なら黙って数秒後に再開)。二段構えは読み上げ中も聞いているため質問タイムの待ちは取りません。
+
+```wolfram
+SlideSetQuestionMode["Words"]
+$SlideInterruptWords = {"質問", "スライド"};
+SlideCycleQuestionMode[]
+```
 
 どちらも、スピーカーから出ている自分の声(エコー)より大きい声だけを聞き手の声とみなします。質疑が4秒ほど静かになると、中断した文から「それでは、説明に戻ります」で再開し、質疑中にスライドを動かしていれば元のスライドへ戻します。特定ワードには`SourceVaultRealtimeInstall["Vosk" -> True]`と音声認識モデル(`SourceVaultInstallSpeechModel[]`)が要ります(無い間は二段構えで動きます)。聞き分けの良し悪しは部屋の音響(スピーカーとマイクの位置・音量)に左右されます。エコー除去付きのUSBスピーカーフォンやヘッドセットが最も確実です。マイクoffにすると割り込みも止まります。
 
