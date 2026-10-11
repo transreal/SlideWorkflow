@@ -102,7 +102,6 @@ n枚目をm番目へ移動する。
 ### SlideDeckImages[nbfile, opts] → {Image...}
 全スライドを16:9画像リストとして安定に生成する(クリップボード/ウィンドウ非依存)。
 Options: `ImageSize -> $SlideImageSize`, `"Slides" -> All | 範囲` (対象スライド指定), `"Environment" -> "SlideShow"` (ScreenStyleEnvironment), `"WindowWidth" -> 960`, `"IncludeInput" -> Automatic` (`$SlideIncludeInput`を参照。`Automatic|True|False|"Visual"`。個別セルは`CellTags->"ShowInput"`で常に残せる), `"Verbose" -> False`, `"Margins" -> Automatic` ($SlideMarginsまたは`{{left,right},{bottom,top}}` px), `"Reflow" -> True`, `"MaxWindowWidth" -> 1600`
-
 **自動リフロー(`"Reflow"`)**: 内容が縦に収まらないスライドは、そのままでは縦横一律に縮小され幅も縮むため右に大きな余白が残る(実測: 高さ1215pxのスライドが0.79倍→右余白439px)。`"Reflow" -> True`(既定)は折返し幅 `WindowWidth` を段階的に広げて再描画し、**最終的な内容幅が最大になる幅**を探索する(広げすぎると図など不動要素が相対的に小さくなり再び余白が増えるため、単純な最大化ではなく最良点を選ぶ)。最初から収まるスライドは初回描画で確定するので出力・処理時間とも従来と同一。上限は `"MaxWindowWidth"`(pt)で、そこまで広げても収まらない場合のみ従来どおり縮小して `SlideDeckImages::ovflw` を出す。`"Verbose" -> True` でリフロー後の幅を表示。
 
 ### SlideDeckExportImages[nbfile] / SlideDeckExportImages[nbfile, dir, opts] → {String...}
@@ -113,6 +112,132 @@ Options: `SlideDeckImages`と同じ
 Sliden(VRChat)互換のmp4(30fps、1枚≒1秒、先頭29フレーム+末尾スライド重複)を書き出す。
 Options: `"Durations" -> Automatic | {秒...}` (各スライドの表示秒数), `FrameRate -> 30`
 例: `SlideDeckExportVideo["deck.nb", "out.mp4", "Durations" -> {3, 5, 4}]`
+
+## 読み上げ付きの動画 (録画) と YouTube の限定公開 (v1.59)
+発表パレットの「動画」節: **動画作成** (`SlideTalkVideo`) と **YouTube** (`SlideYouTubeUpload`)。
+
+### SlideTalkVideo[] / SlideTalkVideo[nb, opts] → Association
+発表の設定で選んだ声 (発表ボイス `$SlideVoice` + 音声モデル `$SlideVoiceModel`) で原稿を読んだ音声と、スライドの画像を合わせて `<デッキ>_narrated.mp4` を作る。原稿はライブの再生と同じ (話す言語の訳、無ければ元の原稿。原稿モードがポスターならポスター原稿の枚だけ) で、読みの辞書も当てる。
+- ローカルの声 (Piper / AivisSpeech): 合成した wav をそのまま使う (再生しない。`<デッキ>_voice/` は再生と共通のキャッシュ)。
+- `realtime:` の声 + gpt-realtime-*: `SourceVaultRealtimeRender` が **再生せずに** wav へ書く (実時間より速い。1 枚 1 セッションを `$SlideTalkVideoParallel` 本並べる)。キャッシュ名は `rt-<モデル>-<声>`。
+- `realtime:` の声 + gpt-live-1: GPT-Live は実時間でしか話さないので、押すと「gpt-live-1 で録る (実時間) / 同じ声の gpt-realtime で速く作る / やめる」を聞く。録るときは原稿を読み上げながら 1 枚ずつ録音し (質問は受けない、ワーカー 1.13 の narrate `"record"`)、読み終えると自動で動画にする。止めても録れた枚は残り、次は続きから録る。
+- 枚の長さ = `$SlideTalkVideoLeadIn` (0.5 s) + 声 + `$SlideVoiceGap` (0.8 s)。原稿の無い枚は 3 秒、最後の枚に `$SlideTalkVideoTail` (1.5 s)。
+- 画像は `<デッキ>_slides/NN.png` (保存済みなら別プロセスで描く)。描画のハッシュ (`<デッキ>_state.json` の `ImagesSlidesDigest`) が同じなら描き直さない。
+- 合成は ffmpeg 1 回 (`iSWFFmpegExe` = 完全なパス、無ければ `winget install Gyan.FFmpeg` か `$SlideFFmpegPath`): 画像は concat demuxer、声はカーネルが枚の長さどおりに 1 本の wav (48 kHz) にまとめる、H.264 (`-tune stillimage`, CRF `$SlideTalkVideoQuality`) + AAC 48 kHz、`$SlideTalkVideoFrameRate` fps。ffmpeg には ASCII のパスだけを渡す (作業フォルダへ写す)。実測: 47 枚・29 分の発表 (ほのか) で 70 秒、57 MB。
+- 隣に時刻表 `<デッキ>_narrated.json` (各枚の Start / Duration / Title / Narrated、SlidesDigest) を書く。YouTube のチャプターの元。
+Options: `"Output"`, `"Voice"`, `"Model"`, `"Live"` (Automatic = 聞く | `"Record"` | `"Fast"`), `"Parallel"`, `"Interactive"`。
+戻り値: `<|"Status" -> "Done", "File", "Duration", "Slides", "Missing" (声の無い枚), "Timeline", ...|>`、録音を始めたときは `<|"Status" -> "Recording", "From", "Slides"|>`。
+
+### SlideTalkVideoStatus[] → Association
+`<|"Recording" (gpt-live-1 で録っている最中), "Encoding" (ffmpeg の進み), "Last" (最後の結果)|>`。
+
+### SlideYouTubeUpload[] / SlideYouTubeUpload[nb | deck.nb | video.mp4, opts] → Association
+読み上げ付きの動画を YouTube Data API v3 で **限定公開 (unlisted)** でアップロードする (再開可能アップロード、8 MiB ずつ、5xx は位置を訊いて続きから)。
+- 題 = 指示セルの `Title:` (無ければデッキ名)。説明欄 = 題・集会と日付・著者 + 時刻表から作る **チャプター** (同じ題目の続きはまとめ、10 秒未満の章は次の題目に譲る。3 つ未満なら付けない)。
+- 動画が無い / スライドが動画より新しいときは作り直すかを聞く。同じファイルを前に上げていれば知らせる (`"Force" -> True` で上げる)。
+- **上げない**: 指示セルの `PrivacyLevel:` が 0.5 以上の発表、非公開 (TaggingRules SourceVault/CloudPublishable = False) と宣言したノート。上げる前に必ず確認のダイアログを出す。
+- 上げた記録は `<デッキ>_narrated_youtube.json`、URL はクリップボードへ。
+Options: `"File"`, `"Title"`, `"Description"`, `"Tags"`, `"Privacy"` (既定 `$SlideYouTubePrivacy = "unlisted"`), `"Category"` (既定 `$SlideYouTubeCategory = "27"` 教育), `"Language"`, `"MadeForKids"` (False), `"Chapters"` (True), `"Interactive"`, `"Force"`。
+戻り値: `<|"Status" -> "Uploaded", "VideoId", "URL", "Privacy", "Title", ...|>`。
+
+### SlideYouTubeClient[] / SlideYouTubeClient[id, secret] / SlideYouTubeClient[File[json]] / SlideYouTubeClient[None]
+OAuth クライアント (Google Cloud の「OAuth クライアント ID」、種類は **テレビと入力が限られたデバイス**) を NBAccess 管轄の SystemCredential に保存する。`SlideYouTubeClientQ[]` で登録の有無 (値は返さない)。
+
+### SlideYouTubeAuthorize[opts] / SlideYouTubeSignOut[]
+デバイスコードで許可をもらう (ブラウザで表示されたコードを入れる。ローカルにサーバを立てない。スコープ `https://www.googleapis.com/auth/youtube`)。リフレッシュトークンは SystemCredential に保存。初回のアップロードで自動的に呼ばれる。テスト中 (Testing) の OAuth 同意画面ではリフレッシュトークンが 7 日で切れるので、そのときは自動で許可をやり直す。
+
+### $SlideYouTubeHTTPHandler
+HTTP の差し込み口 (テスト用)。`<|Method, URL, Headers, Body, TimeConstraint|>` を受けて `<|StatusCode, Headers (小文字), BodyBytes|>` を返す関数。
+
+## ポスター (v1.54): 生成したスライドを KG の部で束ねて A0 に組む
+スライド (≤ 32 枚) とポスターは同じ KG の 2 つの投影。ポスターはデッキから作る: 枚の題目セルの CellTags `KGNode:<id>` で
+KG の部 (目次の根の子) に束ね、列 (facet) と段に二次元配置し、各枚をポスター幅で再組版して 1 つの `Graphics` に組む。LLM は呼ばない。
+仕様: `SlideWorkflow_info/design/slide_poster_spec_v0_1.md`。パレット「確認・書き出し」の「ポスター設定」(セル挿入) と「ポスター」(書き出し)。
+
+### SlideInsertPoster[]
+ポスター設定セル (`SlidePoster`、Working で可視・SlideShow と書き出しで非表示) を挿入する。`Key: value` 行:
+`Size` (A0|A1|A2|A3|841x1189 mm) / `Orientation` (Portrait|Landscape) / `Columns` (既定 2) / `Blocks` (Automatic = 部の数を 3〜10 に丸める) /
+`Panels` (1 ブロックの枚の上限、既定 4) / `Layout` (Flow = 列ごとに上から | Rows = 段ごとに左から | Pairs = KG の辺で対応する部を同じ段に) /
+`Axis` (列の見出し、`|` 区切り) / `Column 1:` (その列に置く部の Id・題目・番号) / `Grid: <Id>=段,列` / `PanelMode` (Reflow | Slides) / `Scale` /
+`Title` `Subtitle` `Author` `Affiliation` `Event` `Date` `Abstract` `QR` `Footer` `Resolution` (PNG dpi) / `PanelColumns` (ブロック内の列数 1〜3、既定は自動。v1.57)。無い行は指示セルから補う。日本語キーも可。
+
+### SlidePosterSpec[nb | path | Notebook] → Association
+設定 (ポスターセル + 指示セル + 既定)。`"SizePt"` は用紙の {幅, 高さ} (pt)。
+
+### SlidePosterPlan[nb | path | Notebook, opts] → Association
+計画 (決定的)。`"Blocks" -> {<|"Id", "Title", "Gist", "Facet", "Position" -> {段, 列}, "Panels" -> {<|"Slide", "Node", "Title", "Reason"|>..}, "Folded"|>..}`、
+`"Links"` (Pairs の対応)、`"Rows"`、`"Warnings"` (Folded / NoPairs / BlockCount)。枚の選び方: 必ず出す (Pinned) > 図のある枚 > 重要度 > デッキ順
+(部自身の道標の枚は後回し)。外した枚は `"Folded"` で題目だけブロックに並ぶ。ブロック数が多ければ隣どうしを併合、少なければ目次の子の境で割る。
+opts は設定セルの鍵と同じ (`"Blocks"` / `"Columns"` / `"Layout"` / `"Panels"` / `"Facets"` / `"Grid"` / `"PanelMode"` / `"Size"` / `"Orientation"` / `"Scale"`)、
+`"Graph" -> graphId` で KG を明示 (headless)、`"Spec" -> <|...|>` で連想ごと。KG が無いデッキはパンくず「第k部」か等分で束ねる。
+
+### SlidePosterPlanView[nb | path | plan, opts] → Dataset
+番号 / 段,列 / 列 / ブロック / 枚 / ほかに。
+
+### SlidePosterRender[nb | path | plan, opts] → Graphics
+用紙サイズ (pt) の `Graphics`。題名帯 (題目・著者・集会・概要・QR) / 列の見出し / ブロック (角丸の枠、番号つき題目、一行要約 = Gist > Summary > Role、
+枚の再組版画像の 2 列 masonry、「ほかに: …」) / 対応の矢印 / 脚注 (文献 `[key] メモ — locator` と Footer)。
+枚は書き出しと同じセル列 (navbar・メタ・閉じたセル・NoExport・パンくずを除く) を `ScreenStyleEnvironment -> "SlideShow"` でパネル幅に再組版して
+`Rasterize` (高さは内容なり)。`Scale` (既定 0.7) = SlideShow の文字に対する倍率で、升の高さの 82% も使っていなければ 1.35 倍まで大きく組み直し (`"FillHeight"`)、入らなければ縮める。補足 (ItemParagraph 系)・用語の行・パンくずは出さず、図は幅と高さ (幅の 0.72、最大 330 pt) に縦横比を保って収める (窓より広い図は描画で切れる)。対応の矢印の語 (つながる / 対比 …) と「ほかに」はデッキの言語 (KG の Language) に従う。`"PanelResolution"` (既定 `$SlidePosterPanelResolution` = 144 dpi)、
+`"Notebook" -> nb` で状態行に進み具合。列の色は `$SlidePosterFacetColors` (`$SlideTheme` の鍵。既定 Dim → Title → Bullet → Arrow)、
+Axis か Pairs のときだけ列で色を変える。
+
+### SlidePosterImage[nb | path | plan | graphics, "Resolution" -> dpi] → Image
+
+### SlidePosterExport[nb | path | plan] / SlidePosterExport[src, "file.pdf" | "file.png", opts] → {paths}
+省略時は `<deck>_poster.pdf` (用紙サイズそのまま) と `<deck>_poster.png` (設定の Resolution dpi) の両方。`"Graphics" -> g` で描画済みを使う。
+
+### SlidePosterShow[nb]
+計画の一覧と縮小画像をノートブック末尾 (終端マーカーの後) に書く。パレット「ポスター」が書き出しの後に呼ぶ。
+
+### ポスター原稿 (v1.55): SlidePosterTalkFill / SlidePosterTalks / SlidePosterTalkDuration / SlideTalkMode
+スライド原稿とは別の、ポスターを見ながら数分で説明する短い原稿。同じ枚に専用スタイル `SlidePosterTalk` のセル (紫の帯、左に「ポスター」の印。TaggingRules `SWTalkKind -> "Poster"` も持つ)
+として並び、前置きの Poster セルが Opening。md では `postertalk:` 行 (`talk:` とは別)。原稿の収穫 (`iTalkDeckOutline` の Talks、原稿の補完、
+訳、スライドから反映) は Poster セルを数えない。
+- `SlidePosterTalkFill[nb, "Minutes" -> m, "Mode" -> "LLM" | "Skeleton"]`: ポスター計画のブロックごとに、最初の枚を「課題 1『…』です」と
+  **題目で指して**始め (位置「左の二番目」では指さない。列の意味は Opening で一度だけ)、各枚 1〜3 文、全体を m 分 (既定: ポスター設定セルの
+  `TalkMinutes:` > `$SlidePosterTalkMinutes` = 7) に収める。説明の順は対応があれば段ごとに左 → 右。LLM が無ければ骨格。既存のポスター原稿は置き換え。
+  パレット「原稿と想定問答」の「ポスター原稿」。
+- `SlidePosterTalks[nb | path]` → `<|"Opening", "Slides" -> <|枚 -> 原稿|>, "Count"|>`、`SlidePosterTalkDuration[nb]` → 秒の見積もり。
+- `SlideTalkMode[]` / `SlideSetTalkMode["Slides" | "Poster"]` / `SlideCycleTalkMode[]` (発表パレット「発表の設定」の「原稿: スライド | ポスター」):
+  Poster では `SlidePlay` がポスター原稿のある枚だけを順に表示しながら (原稿の無い枚は飛ばす) その短い原稿を読む。訳の確認は無し、字幕は
+  `$SlideSubtitles === True` のときだけ。
+- `SlidePosterTalkMinutes[nb]` / `SlideSetPosterTalkMinutes[nb, m]` / `SlideCyclePosterTalkMinutes[]` (「ポスター原稿の長さ: 7 分」、3 → 5 → 7 → 10 → 15):
+  ポスター設定セルがあれば `TalkMinutes:` 行にも書く (設定セルが正)。
+
+### ブロック内の配置の最適化 (v1.57): PanelColumns / $SlidePosterScaleRange / $iSWPosterLastLayouts
+v1.54〜1.56 は列数を枚数で固定し (2 枚 → 2 列、3 枚 → 3 列)、升に入らない分を一律に縮めていたので、長い枚のあるブロックは幅も一緒に縮んで
+右と下が空いた (課題 4 で文字 0.35 倍)。v1.57 はブロックごとに次の順で組む (`iSWPosterBlockLayout`):
+1. 描けた枚数から列数の候補 (1 枚: 幅 62 / 80 / 100%、2 枚: 2 列、3 枚: 3 列 | 2 列 masonry、4 枚以上: 2 | 3 列) と、等幅で描いた面積に
+   比例させた列幅の候補 (各列は 22〜60%) を低解像度で実際に組版し、score = 到達倍率 × (0.35 + 0.65 面積率) で選ぶ。
+2. 最も高い列の枚に図が 2 つ以上あれば、図を集めて 2 つずつ横に並べる (1 割以上低くなるときだけ。箇条書きを挟んで離れていても集める)。
+3. 升の高さに合わせて倍率を Sqrt で寄せる (2 回まで。設定セルの `Scale` × `$SlidePosterScaleRange` = {0.6, 1.6} の範囲)。
+4. それでも列の下が空いていれば、その列の枚の図を大きくする (枚の幅まで)。5. 残りのはみ出しだけ一律に縮める。
+セルの左右余白のぶん組版の中身は窓より約 17% 狭い (切り抜いた画像が列より細く、列の間が空く) ので、最初の試し描きで余白を測って窓を
+広げ、図は列の幅で止める。`PanelColumns: 2` (設定セル) で列数を固定、`"FillHeight" -> False` で倍率を変えない。
+結果は `SlideWorkflow`Private`$iSWPosterLastLayouts` (ブロック番号 → Columns / Widths / FigureColumns / Scale / Shrink / Fill / Height /
+Scores / Margins)。実測 (CIHCD9、A0 2 列 × 4 段): 面積率 0.64〜0.87 → 0.78〜0.92、課題 4 の文字 0.35 倍 → 0.73 倍、描画 19 s → 62 s。
+テスト: slidegraph_test T44 (12 件、`iSWPosterPanelImage` を合成パネルに差し替えて FE 無しで)。
+
+### $SlidePosterFacetColors / $SlidePosterPanelResolution
+列の色の名前のリスト / パネルの描画解像度 (dpi、既定 144。印刷なら 200 程度)。
+
+### ポスターの配置 (v1.56): SlidePosterUpload / PosterURL: / PosterHost:
+ポスター PDF を web に置き、ポスターの QR をその URL にする。指示セルに
+```
+PosterURL: https://transreal.sakura.ne.jp/cn/CIHCD9-poster.pdf
+PosterHost: sftp://transreal@transreal.sakura.ne.jp/home/transreal/www/cn
+```
+と書くと (`PosterHost:` が無ければ `Host:` と同じ場所)、「登録」(`SlideDeckRegister`) が `<deck>_poster.pdf` を `PosterURL:` の末尾の名前で sftp 配置する
+(戻り値の `"PosterUpload"` キー)。`SlideURL:` + `Host:` があれば mp4 も配置する (両方あれば両方へ。`SlideURL:` が無くても `PosterURL:` だけで登録できる)。
+登録簿のエントリと質疑応答 (QA) はスライドとポスターで共有 (1 デッキ = 1 エントリ。エントリに `PosterURL` も入り、前回の特定にも使う)。
+- `SlidePosterUpload[nb | deck.nb, opts]` → `<|"Status" -> "Uploaded" | "Unchanged", "File", "Remote", "PosterURL", "Bytes", "Verified", "Seconds"|>`。
+  PDF が無ければ `SlidePosterFileMissing` (「ポスター」で作る)、「ポスター」で書き出した後にスライドを変えていれば `SlidePosterStale`
+  (古い PDF は上げない。作り直してから登録。判定は書き出し時に `<deck>_state.json` へ記録する描画ハッシュ `PosterSlidesDigest`、無ければファイル日付)。
+  配信中と同サイズなら送らない (Unchanged)。資格情報は mp4 と同じ `sftp://user@host`。
+  opts: `"UploadURL"` / `"PosterURL"` / `"File"` / `"Method"` / `"Password"` / `"User"` / `"Force"` / `"Verify"` / `"Interactive"`。
+- ポスターの QR の既定は `PosterURL:` > `SlideURL:` (ポスター設定セルに `QR:` 行があればそれが優先。古い設定セルに mp4 の `QR:` が残っていれば消すか書き換える)。
+- パレットの「登録」は状態行にポスターの結果も出す (配置 / 変更なし / 古いまま / PDF なし)。失敗しても登録簿への登録は完了している。
 
 ## デッキ構造の拡張要素
 
@@ -177,9 +302,7 @@ Options: `"HeaderRows" -> 1` (ヘッダ行として強調する行数), `FontSiz
 `True`(既定)なら、展開プロンプトが「原則すべてのスライドに図か表を1つ以上」を要求する。`False`で従来の文章中心生成。
 
 ## 発表シナリオ (talk)
-
 **位置づけ (v1.30)**: スライドの作り方 (知識グラフから生成 / プロンプトから展開 / 手書き) によらず、発表の準備はデッキのセルが正本 — 原稿 = トークセル、想定問答 = 質疑応答セル、登録用メタ = 指示セル。パレット「発表の準備」は **原稿** (`SlideTalkFill`: 原稿の無い枚だけ LLM が書く) / **QA生成** / **QA一覧** / **登録**。知識グラフから作った枚は生成時にノードの原稿 (Talk) が入り、質疑応答は知識グラフのノードにも保存されるので「生成」し直しても消えない (下の SlideQAGenerate と SlideGraphApply)。以下の md (`<deck>_talk.md`) は書き出しと旧デッキのフォールバックで、パレットからは外した。
-
 スライドの「中身」ではなく「話す原稿」を扱う層。1枚ずつ独立に説明文を作ると発表としての流れが出ないため、原稿はデッキ全体を1度に見て書く。**正本は各スライド末尾の SlideTalk セル**(md の `talk:` 行)と、デッキ先頭の指示(Directive)セルに書く `Key: value` 行のメタ(`Title:` / `SlideURL:` / `Host: sftp://user@host/dir` など)。Markdown(front matter + `# Opening` + `## n タイトル {seconds=秒}` + `# Closing`)は書き出し用と、トークセルの無い旧デッキのフォールバック。
 
 ### $SlideTalkSecondsPerSlide
@@ -203,9 +326,34 @@ Options: `SlideTalkSkeleton`と同じ + `"Instructions" -> ""`, `"Meta" -> ""`
 ### SlideTalkFill[] / SlideTalkFill[nb] (v1.30)
 原稿 (トークセル) の無いスライドにだけ原稿を書く (パレット「発表の準備」の「原稿」)。LLM がデッキ全体の流れ (各枚の題目と既存原稿の冒頭) を見て 8 枚ずつ書き、JSON `{"Talks": [{"Slide", "Talk"}]}` で返したものを各スライドのトークセルへ入れる (質疑応答セルがあればその前、既にあるトークセルは上書き)。規則: です・ます調 2〜6 文、前の枚とのつながり、箇条書きと同じ順、スライドに無い事実を作らない、`$...$` や `**` を書かない。全枚に原稿があれば何もしない。
 
+### 読みの辞書 (v1.51)
+gpt-realtime は原稿を読んで自分で声を出す LLM なので、漢字の読みを毎回その場で決める (手錠を「しゅじょう」、音場を「おんじょう」と読む回と正しく読む回がある)。指示で読みを教えても従うかは確率的なので、**声に渡す直前の文で語を仮名に置き換える**。スライド・字幕・原稿 (トークセル) は書き換えない。効く経路: 再生 (SlidePlay、realtime もローカルの声も)、索引の試聴 (SlideSpeakSlide)、SlideVoicePrepare、発表時間の見積もり (合成済みの音声を同じ文で探す)。質疑の自由な答えは原稿を経ないので置き換えられず、発表の文脈 (応答 on・最後の枚の後の質疑で渡す) に読みの一覧を添えるだけ (効くかは確率的)。
+辞書は 2 段で、同じ語はデッキ側が優先: (1) 全デッキ共通のファイル `SlideReadingFile[]` (既定は SourceVault の `slidedecks/readings.txt`、PC 間で共有。初回によく誤読される語を入れて作る)、(2) デッキの **読みセル** (スタイル `SlideReading`、パレット「原稿と想定問答」の「読み」。Working で見え、SlideShow と書き出しでは隠れる)。書式は 1 行 1 語 `語 = よみ` (区切りは `=` `＝` `→` `->` タブ)、`#` から行末はコメント。置き換えは日本語の文だけ・長い語から。1 文字の語 (節など) は前後が漢字でないときだけ、英字だけの語は単語の境目でだけ置き換える。文脈で読みが変わる語は句ごと書く (`定常波の節 = ていじょうはのふし`)。読みを直すとローカルの声の合成キャッシュも作り直される (ハッシュは置き換え後の文で取る)。
+
+### $SlidePlayAnswering (v1.52, v1.53)
+型: Automatic | True | False, 初期値: `Automatic`
+realtime: の声で再生するときに質問 (音声応答) を受けるか。**Automatic (既定)** = 再生を押したときの状態に従う: 「応答on」かつマイクon なら質問を受け (各枚のあとの質問タイム)、それ以外は読み上げだけ。**再生は「応答on/off」の表示を変えない**: 応答off から再生すると音声会話は読み上げのためだけに起き、表示は「応答off」のまま、再生が終わると閉じる。**再生中はマイクボタン (と手元リモコン) で質問を受けるかを切り替える**: マイクon = 質問タイムと最後の質疑応答あり、マイクoff = 読み上げだけ (読み上げ中にマイクon にすると、読み終えたところで質問タイムが開く)。`True` = いつも質問を受ける (v1.51 までの動き)。`False` = いつも読み上げだけ。
+
+### SlideReadings[] / SlideReadings[nb] → Association (v1.51)
+読み上げに使う辞書 `<|語 -> よみ|>` (共通 + デッキの読みセル)。`SlideReadings["Global"]` は共通の読みだけ。
+
+### SlideReadingApply[text] / SlideReadingApply[nb, text] / SlideReadingApply[text, readings] → String (v1.51)
+声に渡す文 (数式・強調の印・引用番号を外し、辞書の語を仮名に置き換えたもの)。読みの確認用。
+
+### SlideReadingFile[] → String / $SlideReadingFile (v1.51)
+全デッキ共通の辞書ファイル (UTF-8 テキスト) のパス。無ければ作る。`$SlideReadingFile` (既定 Automatic。SourceVault が無ければ `$UserBaseDirectory/ApplicationData/SlideWorkflow/readings.txt`) で場所を変えられる。
+
+### SlideReadingAdd["語" -> "よみ"] / SlideReadingAdd[{rules..}] → Association (v1.51)
+共通の辞書に語を足す (同じ語は読みを置き換える)。デッキだけの読みは読みセルに書く。
+
+### SlideInsertReading[] (v1.51)
+読みセルを入れる (パレット「読み」)。
+
+### SlideReadingCheck[] / SlideReadingCheck[nb] (v1.51)
+原稿 (日本語のトークセル) を 20 枚ずつ LLM に見せ、声に出すと読み間違えやすい語 (専門用語・同じ字で読みが変わる語・固有名詞・読み方の決まった英字略語) と読みの案を JSON `{"Readings": [{"Word", "Reading", "Slide", "Why"}]}` で受け、デッキの読みセルに書き足す (無ければ指示セルの後に作る。パレット「読みチェック」、非同期)。原稿に無い語・漢字の残る読み・辞書にある語は捨てる。案は確かめてから使う (要らない行は消すか先頭に `#`)。
+
 ### 話す言語と原稿の多言語化 (v1.34)
 読み上げ (SlidePlay / 索引の試聴 / SlideVoicePrepare) は **話す言語** で行う。話す言語 = 指示セルの `Language:` 行 (`en` / `English` / `英語` など) > `SlideTalkMeta[nb, "Language" -> ..]` > `$SlideTalkLanguage` (既定 Automatic = `$Language`)。質疑は従来どおり質問者の言語で答える (音声会話のセッション指示で指定)。
-
 原稿は元の言語のトークセルを正本として残し、訳は **同じスライドに並ぶ別のトークセル** (TaggingRules `{"SWTalkLang" -> "en", "SWTalkSrc" -> 元原稿のハッシュ16桁}`、左の帯が青緑) として持つので、複数言語を併用できる。再生は話す言語の訳 → 無ければ元の原稿。元の原稿を直すと「古い訳」になる。訳セルは md (`talk:`) にも `SlideTranslate` (セル単位の英訳) にも出ず、元の原稿を書く `SlideTalkFill` も触らない。スライドを作り直す (展開・生成・ReplaceSlide) と訳セルは消えるので訳し直す。
 
 #### SlideTalkLanguage[nb] → "ja" | "en" | ...
@@ -231,23 +379,22 @@ Options: `"Output" -> Automatic`, `"UseLLM" -> Automatic`, `"Notebook" -> Automa
 発表シナリオの規約パス`<deck>_talk.md`を返す(トークセルの無い旧デッキ用のフォールバック)。
 
 ### SlideTalkMeta[nb] → Association
-デッキ単位の発表メタ(Title / SlideURL / UploadURL / Aliases / PrivacyLevel など)を返す。ソースの優先順は **デッキ先頭の指示(Directive)セルの `Key: value` 行** > TaggingRules `"SWTalkMeta"` > `_talk.md` front matter。指示セルには次のように書く(`Host:` / `Upload:` / `UploadURL:` は同義で `UploadURL` に正規化。`Aliases:`(カンマ区切り) / `PrivacyLevel:` / `SecondsPerSlide:` / `Event:` / `Author:` / `Date:` も可。これらの行は LLM への指示ブロックからは除かれる):
-
+デッキ単位の発表メタ(Title / SlideURL / UploadURL / Aliases / PrivacyLevel など)を返す。ソースの優先順は **デッキ先頭の指示(Directive)セルの `Key: value` 行** > TaggingRules `"SWTalkMeta"` > `_talk.md` front matter。指示セルには次のように書く(`Host:` / `Upload:` / `UploadURL:` は同義で `UploadURL` に正規化。`PosterURL:` / `PosterHost:` はポスター PDF を置く URL とその配置先 (v1.56。`PosterHost` は `PosterUploadURL` に正規化、無ければ `Host:` と同じ場所)。`Aliases:`(カンマ区切り) / `PrivacyLevel:` / `SecondsPerSlide:` / `Event:` / `Author:` / `Date:` も可。これらの行は LLM への指示ブロックからは除かれる):
 ```
 Title: 計算と自然 32
 SlideURL: https://transreal.sakura.ne.jp/cn/32.mp4
 Host: sftp://transreal@transreal.sakura.ne.jp/home/transreal/www/cn
+PosterURL: https://transreal.sakura.ne.jp/cn/32_poster.pdf
 Language: en
 ```
-
 `Language:` は読み上げの言語 (v1.34。空・無しなら `$SlideTalkLanguage` / `$Language`)。
 
 ### SlideTalkMeta[nb, "SlideURL" -> url, ...]
 ノートブックのTaggingRulesにメタを永続化する(指示セルに同じキーがあればそちらが優先)。
 
 ### SlideDeckRegister[nb | deck.nb | talkfile | md, opts] → 登録結果
-発表(トークセル + 指示セルのメタ)をSourceVaultの登録簿へ登録し、メタに `UploadURL`(指示セルの `Host:` 行)があれば続けて Sliden 用 mp4 を web サーバへアップロードする(結果は戻り値の `"Upload"` キー。登録簿への登録は mp4 の成否に関係なく完了する)。以後VRCRealtimeが発表タイトルからスライドURLと原稿を引ける。パレットの「登録」はこの関数。
-同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きする(前回の特定は `Id` > `DeckFile` > `SlideURL` の優先順。指示セルの `Id:` 行で固定できる)。何が変わったかは戻り値の`RegistryStatus`(Created|Updated)と`ChangedKeys`で分かる。
+発表(トークセル + 指示セルのメタ)をSourceVaultの登録簿へ登録し、メタに `UploadURL`(指示セルの `Host:` 行)があれば続けて Sliden 用 mp4 を web サーバへアップロードする(結果は戻り値の `"Upload"` キー。登録簿への登録は mp4 の成否に関係なく完了する)。`PosterURL:` があれば `<deck>_poster.pdf` も同様に配置する (戻り値の `"PosterUpload"` キー、v1.56。両方あれば両方へ、`SlideURL:` が無くても `PosterURL:` だけで登録できる。登録簿・QA はスライドと共有)。以後VRCRealtimeが発表タイトルからスライドURLと原稿を引ける。パレットの「登録」はこの関数。
+同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きする(前回の特定は `Id` > `DeckFile` > `SlideURL` > `PosterURL` の優先順。指示セルの `Id:` 行で固定できる)。何が変わったかは戻り値の`RegistryStatus`(Created|Updated)と`ChangedKeys`で分かる。
 Options: `"SlideURL" -> Automatic`, `"Title" -> Automatic`, `"Id" -> Automatic`, `"DeckFile" -> Automatic`, `"PrivacyLevel" -> Automatic`, `"SlideCount" -> Automatic`, `"Upload" -> Automatic`(Automatic = UploadURL があれば送る / True = 必須 / False = 送らない), `"QA" -> Automatic` (Automaticなら質疑応答セルがあれば`SlideQABuild`を自動実行、`False`で抑止)
 
 ### SlideDeckRegistry[] → Dataset
@@ -277,18 +424,14 @@ mp4 の転送手段の既定。
 `True`(既定)なら、展開プロンプトが各スライド末尾に`talk:`原稿(です・ます調、2〜6文)を要求し、スライド本文は図表+短い体言止めに絞る(スライドとトークで解説が完成する分業)。`False`で従来どおり。
 
 ## 質疑応答 (QA)
-
 発表中に声で聞かれた質問へ即答するための作り置きを、**スライドの中**に置く層。正本は各スライド末尾の SlideQA セル(md の `qa:` 行)で、トークセルと同じく Working で可視・SlideShow で非表示・画像/mp4 の書き出しから除外。パレットの「登録」を押すと SourceVault の QA パックへ焼かれ、発表中の gpt-realtime が数十 ms で引ける。
-
 セルの書式(1 セルに何問でも、`Q:` ごとに 1 問):
-
 ```
 Q: 想定質問
 A: そのまま読み上げられる回答
 cite: sv://... または出典テキスト   (省略可、複数可)
 PL: 0.6                              (省略可。この 1 問だけ非公開扱いにする)
 ```
-
 接頭辞の無い行は直前の項目の続き、`#` 行はコメント。`質問:` / `回答:` も使える。**回答の空な想定質問はパックに焼かない**(焼くと作り置きに当たってしまい、KB に答えがあっても届かない)。
 
 ### SlideInsertQA[]
@@ -304,7 +447,6 @@ PL: 0.6                              (省略可。この 1 問だけ非公開扱
 LLM に**1 枚ずつ**読ませ、想定問答の**下書き**を質疑応答セルとして書き込む(非同期連鎖)。書いたあとは人が直すことが前提。
 **知識グラフから作った枚 (v1.30)**: 題目セルの CellTags `"KGNode:<id>"` からノードを引き、その「元の資料」(ノードの本文 = 論文の段落。無ければ親の節の筋書き、要約) と出典を添えて問答を作らせる (回答は「スライド・原稿・元の資料」にあることだけ)。LLM 呼び出しの PrivacyLevel は KG のノードと関連研究の候補から取る。終わったら**デッキの質疑応答セルを KG のノード (`"QA"`) へ保存**する (`iSWKGHarvestQA`)。次の「生成」でその問答は同じノードの枚へ `qa:` として戻る。「登録」は従来どおりデッキのセルから焼く。
 Options: `"Mode" -> Automatic`, `"QuestionsPerSlide" -> Automatic` (既定 `$SlideQAPerSlide` = 3), `"Vision" -> Automatic` (既定 `$SlideQAVision`), `"Slides" -> All | {n..}`
-
 **3 つの流儀** (`"Mode"`):
 
 | Mode | 別名 | 対象 | 既存の問答 |
@@ -314,11 +456,8 @@ Options: `"Mode" -> Automatic`, `"QuestionsPerSlide" -> Automatic` (既定 `$Sli
 | `"Changed"` | 3 (既定) | 未作成 + スライドを直した枚 | 同上 |
 
 パレットの「QA 生成」は 3。質疑応答セルが 1 つも無いデッキなら結局すべて生成になる。
-
 **変更の判定**: 質疑応答セルの先頭に `# slide: <16 桁>` として、**書いた時点のスライドのハッシュ**を残す。セルに付いて回るので、スライドを並べ替えても挿入しても対応が崩れない(番号で覚えると崩れる)。マーカーの無いセル(手書き)は「判定できない」ので 3 では**触らない**— 人が書いたものを勝手に上書きしないため。全部見直したいときは 2。
-
 **図・写真・表**: 図や写真を含むスライドでは、そのスライドの**描画画像を LLM に添付**し、軸・系列・傾向・写っているものなど本文に現れない内容についても問答を作らせる(表は md の `|` 構文で既にテキスト化されている)。画像は `<deck>_qa_images/slide-NN-<ハッシュ>.png` にキャッシュされるので、同じスライドを二度描画しない。描画は別プロセス(必要な枚だけ)、添付は `ClaudeAttach` → 応答後に `ClaudeDetach`。未保存デッキでは描画できないのでテキストのみになる。
-
 画像を添付する都合上、**1 枚 1 リクエスト**。全枚やり直す(1/2)とスライド数だけ呼ぶので、普段は 3 を使う。実行中は二重起動を拒む。
 
 ### SlideQAMarkCurrent[nb]
@@ -337,13 +476,11 @@ Options: `"Mode" -> Automatic`, `"QuestionsPerSlide" -> Automatic` (既定 `$Sli
 ### SlideQAFromPack[nb, opts] → Association
 すでに登録済みの QA パック(以前 `SourceVaultTalkQABuild` で LLM から作ったものを含む)を、スライドの質疑応答セルへ書き戻す。セルが正本になったあとも古い作り置きを捨てずに人が直せる形へ移せる。LLM は使わない。
 Options: `"Rebuild" -> False` (既に質疑応答セルのあるスライドは触らない)
-
 パレットの「QA 生成」は、質疑応答セルが 1 つも無く既存パックがある場合はこちらを先に使う(LLM を回す前に、いまあるものを捨てない)。
 
 ### SlideQABuild[nb | deck.nb, opts] → Association
 質疑応答セルを SourceVault の QA パックへ焼く(`SourceVaultTalkQAImport` へ委譲)。**人が書いた答えを LLM が言い換えない**。「登録」から自動で呼ばれる。
 Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> True` (KB へも取り込んで、作り置きに無い質問の受け皿を作る), `"Enrich" -> True` (回答が空の問だけ KB から補う), `"Verbose" -> False`
-
 **パックの同一性**: 同じデッキに対して 2 つのパックが残ると、`SourceVaultTalkQASelectForDeck` が古いほう(別の発表の作り置き)を掴んで答えてしまう。そのため `SourceVaultTalkQAImport` は、そのデッキのパックが既にあれば**その `PackId` / `KBId` / `SourceId` を引き継ぐ**(`cn31` のような手で付けた id を保つ)。それでも複数残っている場合は、最後に書かれたものを使う(パックに `SavedAt` を焼いてある)。
 
 ### $SlideQAPerSlide
@@ -351,7 +488,6 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 `SlideQAGenerate` が 1 枚あたりに作る想定質問の数。
 
 ## 発表の記録 (カメラ・進行・質問) と質問からの想定問答の候補 (v1.37)
-
 再生 (SlidePlay)・音声応答 on・カメラ on のどれかで **発表セッション** (`slidetalk-<UTC>-<id>`) が始まり、SourceVault の MultimodalEvent として残る。後から発表を振り返るための、進行のタイムスタンプと対応したデータの組。全部止まって `$SlideRecordIdleSeconds` (既定 120 秒) で閉じる。どの事象にも SessionID / Deck / At (UTC) / Elapsed (開始からの秒) / Slide が付く。
 
 | Kind | 中身 | PL 既定 |
@@ -383,7 +519,6 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 パレット「発表の準備」の **質問候補**。採用すると、そのスライドの質疑応答セルの末尾に足す (Add は `Q:`/`A:`、Revise は既存の問答を書き換えずに `#` のコメントで並べる)。
 
 ## 構造・版・発表 (v1.38)
-
 - **知識グラフ = 構造 (正本)**: SourceVault の `knowledgegraph/graphs/<id>.json`。改訂は内容 (ノードと辺) のハッシュ GraphRev で指す。想定問答の正本もノード (QA)。
 - **版 (rendition) = 生成したデッキ**: .nb は作業場所 ($onWork など)、版の情報は SourceVault の `slidetalk/renditions/<Id>.json` (Id / Parent / DeckName / Graph / Spec / PrivacyLevel = 知識グラフの PL / Revisions)。デッキの TaggingRules `"SWRendition"` が Id を持つ。.nb の絶対パスは記録しない。
   - **言語は版を分けない**: 訳は同じ .nb の訳セル (documentation.wl と同じ考え方)。
@@ -398,13 +533,10 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 
 ### SlideRenditions[] / SlideRenditions[graphId] → Dataset
 版の一覧 (Id, Parent, DeckName, Title, Graph, Audience, Slides, Revisions, Created, PrivacyLevel)。
-
 `SlideTalkSessions[]` の行には Rendition と Language が付く。`SlideQACandidates[nb]` の行には Node / Rendition / Graph が付き、`SlideQACandidateAccept` は `"KnowledgeGraph" -> "Saved" | "Unchanged" | "NoGraph"` を返す。
 
 ## 変更検出 (登録の空振りを避ける)
-
 「登録」は登録簿・QA パックセ・mp4 の 3 つを触るが、中身が変わっていなければやり直さない。判定は**ファイル日付ではなく、スライドとして描かれるセルを順番どおりに並べたもののハッシュ**。
-
 - トークセル・質疑応答セル・メモ・指示などのメタセルを直しても mp4 は作り直さない(見た目が 1 ピクセルも変わらないため)。
 - スライドの**並び替え・挿入・削除**は列が変わるので必ず検出され、mp4 を作り直す。
 - `CellChangeTimes` / `CellID` / `ExpressionUUID` / `CellLabel` は中身ではないので落とす(触っただけで作り直しにならない)。
@@ -417,7 +549,6 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 「登録」が何をやり直すかを返す(`"SlidesDigest"`, `"VideoSlidesDigest"`, `"VideoStale"`, `"QADigest"`, `"QAStale"`)。「登録しても何も起きない」ときの切り分けに使う。
 
 ## 音声再生・自動進行
-
 発表シナリオをSourceVaultのローカル音声(Piper)またはクラウドRealtime音声で読み上げながらスライドを自動で進める層。FEを止めないため、パレット側に常駐Dynamicのポーリングを置かず、進行はカーネル側のScheduledTaskが回す。
 
 ### $SlideVoice
@@ -517,7 +648,7 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 音声応答(SourceVaultRealtimeStart / Stop)を切り替える(パレットの「応答on/off」)。
 
 ### SlideToggleMic[]
-音声応答のマイクをmute / unmuteで切り替える(パレットの「マイクon/off」ボタン、手元リモコンの「前の曲」ボタンと同じ動作)。音声応答が動いていないときは何もしない。`"Quiet" -> False`(既定)。`"Quiet" -> True`で知らせのダイアログも出さない(手元リモコンからはこちらで呼ぶ)。
+音声応答のマイクをmute / unmuteで切り替える(パレットの「マイクon/off」ボタン、手元リモコンの「前の曲」ボタンと同じ動作)。音声応答が動いていないときは何もしない。realtime: の声で再生中は質問を受けるかの切り替えになる(v1.53)。`"Quiet" -> False`(既定)。`"Quiet" -> True`で知らせのダイアログも出さない(手元リモコンからはこちらで呼ぶ)。
 
 ### SlideCurrentNumber[] → Integer
 今画面に出ているスライド番号を返す。
@@ -532,7 +663,7 @@ n枚目の原稿を今の声で読み上げる(索引のPlayボタンと同じ)�
 ### SlideInfo[]
 デッキと発表の情報(枚数・原稿・見積時間・声・音声会話の状態)をまとめたウインドウを開く(パレットの「情報」と同じ)。
 
-### SlideTalkDuration[] / SlideTalkDuration[nb | "deck.nb" | "deck_talk.md"], opts] → 秒数
+### SlideTalkDuration[] / SlideTalkDuration[nb | "deck.nb" | "deck_talk.md", opts] → 秒数
 発表シナリオ`<deck>_talk.md`から発表にかかる時間を見積もる(質問は無いものとする)。
 Options: `"Voice" -> Automatic` (選択中の声), `"Questions" -> False` (Trueで質問受付の待ち時間も足す), `"View" -> False` (Trueで Dataset表示)
 ローカル音声で合成済みのスライドはキャッシュの実長を使い、それ以外は文字数と話速から見積もる。
@@ -541,7 +672,6 @@ Options: `"Voice" -> Automatic` (選択中の声), `"Questions" -> False` (True�
 読み上げ再生の状態を返す。
 
 ## 手元リモコン
-
 Elecom Relaconなどのメディアキー付きリモコンでスライド操作をする層。Windows専用。フロントエンドのキーイベントを経由しないためスライドを全画面表示したままでも効く。
 
 ### SlideRemoteStart[opts]
@@ -594,7 +724,7 @@ Options: `"Seconds" -> 10.`, `"IncludeMouse" -> False` (マウスボタンも候
 現在スライドの直後に新規スライド骨格(navbar+タイトル+SlidePrompt セル)を挿入。プロンプトに「◯枚構成で」等と書けば「展開」で複数スライドに一括展開できる(SlideApplyScenario は複数 ## を複数枚に分割する)。
 
 ### SlideExpand[] / SlideExpand[nb]
-現在スライドの SlidePrompt セル(無ければ選択セルの本文=自動で SlidePrompt セルに変換)を指示としてスライドを展開・更新する。**既定(`$SlideExpandMode="Agent"`)は ClaudeEval(ClaudeRuntime アダプタ)へ委譲**: 終端マーカー以降(Appendix)に `ClaudeEval["…タスク…"]` セルを書いて評価し、エージェントが文献検索(SourceVault/pdfSearch/web)・WL Graphics での図生成・出典付与を行った後、**`SlideApplyScenario` を一度だけ呼んで適用**する(安全な書込み口を一点に限定)。`$SlideExpandMode="Direct"` で旧来の軽量直接 LLM(NBAccess`$NBLLMQueryFunc、ツール無し)。
+現在スライドの SlidePrompt セル(無ければ選択セルの本文=自動で SlidePrompt セルに変換)を指示としてスライドを展開・更新する。**既定(`$SlideExpandMode="Agent"`)は ClaudeEval(ClaudeRuntime アダプタ)へ委譲**: 終端マーカー以降(Appendix)に `ClaudeEval["…タスク…"]` セルを書いて評価し、エージェントが文献検索(SourceVault/pdfSearch/web)・WL Graphics での図生成・出典付与を行った後、**`SlideApplyScenario` を一度だけ呼んで適用**する(安全な書込み口を一点に限定)。指示(Directive)・辞書(Dictionary)セルを厳守し、既存の図・コードセルは `<<FIGn>>` トークンで保持される。`$SlideExpandMode="Direct"` で旧来の軽量直接 LLM(NBAccess`$NBLLMQueryFunc`、ツール無し)。
 
 ### $SlideExpandMode
 型: String, 初期値: `"Agent"`
@@ -639,7 +769,6 @@ Options: `"Figures" -> {}` (mdの`<<FIG1>>`..に対応するGraphics/Graphics3D/
 ### $SlideExportExternal
 型: `Automatic | True | False`, 初期値: `Automatic`
 パレットの画像/mp4 書き出しを別プロセス(wolframscript)で行うかどうか。`Automatic`(既定)は 1 度試し、ライセンス席不足等で子プロセスが起動できなければ以後は FE 内処理へ自動フォールバックする。`True`強制 / `False`無効。
-
 **大きなデッキで FE がフリーズする問題への対策**: パレットの書き出し・一覧・シナリオ md は、以前ノートブック全体を `NotebookGet` でカーネルへ転送していた。99MB のデッキではこの FE→カーネル転送だけで FE が長時間応答不能になる。現在は**保存済みであればファイルパスを渡し、カーネル側の `Get` で読む**(FE を介さない)。未保存の場合のみ従来経路になるため、大きなデッキでは**書き出し前に保存**すること(ステータスバーにも警告が出る)。
 
 ### $SlideHideToolbarInSlideshow
@@ -647,7 +776,6 @@ Options: `"Figures" -> {}` (mdの`<<FIG1>>`..に対応するGraphics/Graphics3D/
 `True`(既定)なら、表示切替(SlideToggleScreenEnvironment)でSlideShowへ入るときに標準ノートブックツールバー(MultipurposeBar)とノートブック側DockedCells(CloudPublishableのPublic/Privateバッジ等)を一時退避し、Workingへ戻すときに復元する。ノートブック側DockedCellsはスタイルシートのスライドナビバー定義を上書きするため、退避しないとナビバーが出ない。
 
 ## 知識グラフ駆動生成 (v1.20)
-
 仕様: `SlideWorkflow_info/design/slide_knowledge_graph_spec_v0_1.md`。計算は `SourceVault_knowledgegraph.wl` (`SourceVaultKG*`)、ここは接合層。生成物は知識グラフ (KG) で、スライドは「聴き手 × 時間」への決定的な投影。
 
 ### 素材は 2 通り (v1.30)
@@ -689,6 +817,26 @@ Options: `"Web" -> Automatic` (Story の `Survey: web`), `"MaxCandidates" -> 20`
 KG の Kind が `"Scenario"` なら、推敲 (`SlideGraphRefine` の Direct 連鎖) は節ごとに筋書きを発表用のノードへ**展開**する (状態欄「KG 展開」)。プロンプト = 聴き手・ストーリー・全体の筋書き (節の並び)・展開する節の筋書き・関連研究の候補 (番号. 題目 / 著者 / 年 / 種類 と要約)。LLM は節ノード (Label / Summary)、`<節>_1..` (1 ノード = 1 枚、Lead / Points / Details / Talk / Importance / Kind、候補に依拠するなら `"Ref": [番号]`)、`rw_<候補番号>` (関連研究の紹介、`"Parent"` で節)、`bg_*` (前提) を返す。受理 (`iSWScenarioSanitize`): それ以外の Id は落とす / 候補に無い番号の `rw_` は落とす / 新しい枚には節からの Contains と、節の Order + 0.01 刻みの順序 (LLM が並べた順) と Precedes / `rw_` の Cite は候補の「題目 (著者, 年) 所在」、PrivacyLevel は候補から / 同じ候補は最初に出た節にだけ置く / 枚ができた節の筋書きノード (`<節>_d`) は外す。ノードの Kind に `RelatedWork` と `Example` を足した (SourceVault_knowledgegraph)。KG の Kind に `Scenario` を足した。
 KG構築 (シナリオ) の流れ: `SlideGraphSeedScenario` → `SlideGraphRelated` (`Survey: off` なら飛ばす) → 展開。途中で止まっても筋書きノードが残るので「推敲」で続きから、「図解」「調整」は先にその節を展開する (v1.29 の未推敲の節の検出がそのまま効く)。
 
+### SlideGraphFromSlides[nb | deck.nb, opts] → Success["GraphFromSlides", <|"GraphId", "Nodes", "Parts", "Slides", "Covers", "Tail", "PrivacyLevel", "Language", "Refreshed", "Written", "KG" (, "File")|>] (v1.58)
+SlideStory を書かずに作った過去のデッキ (筋を考えて作り込んだ既存のスライド) から、**枚の順と見出しの構成をそのまま写した** KG を作り、
+デッキを SlideWorkflow 準拠にする。KG から枚を作り直すのではない。LLM は呼ばない。
+- 読み方: 枚の先頭 3 セル以内の最初の見出し (Title・Chapter = デッキの題 > Section > Subsection > Subsubsection) がその枚の題目。
+  見出しの無い枚と、同じ題目が続く枚は「続き」として同じノード。見出しが 2 段以上あれば上の段を部 (Section ノード)、1 段なら根の下に平らに並べる
+  (部が要れば「階層化」)。題目が空の表紙は根の要約に、題目が `$SlideGraphTailTitles` (既定 最後尾 / Appendix / 付録) の枚から後ろは入れない。
+  ノード = 題目 (Label)、最初の箇条書きより前の Text (Lead)、箇条書き (Points、無ければ Text)、副項目と箇条書きの後ろの注記 (Details)、
+  トークセル (Talk)、全文 (Text)、`Source` = 枚の番号・図とコードの数。Id は題目セルに既にある KGNode / KGSync を使い、無ければ `s<最初の枚>`。
+- デッキへの書き込み: スライドの中身は変えない。題目セルに `KGSync:<id>` (「生成」の置き換え対象にならない対応タグ)、前置きに指示セル
+  (無ければ: Title / PrivacyLevel) と Story セル (`Graph:` / `Source: スライド` / `Slides:` / `Language:` / 既存の題目の並び)。
+  ファイルを渡すと元を残して `<名前>_sw.nb` に書く (`"Output" -> path`、`"InPlace" -> True` で上書き)。
+- 写し直し (`"Refresh" -> Automatic`: Story の `Graph:` がこの KG のとき): スライドから取れる項目だけ置き換え、推敲・意味付けで足された項目
+  (Role など) と周辺知識 (Layer が Paper 以外) と、その辺は残す。別のデッキの同じ Id の KG があれば Id を `-2` などにずらす (`"Overwrite" -> True` で上書き)。
+- PrivacyLevel: `"PrivacyLevel"` > 指示セルの `PrivacyLevel:` > 0.5 (未記入は非公開寄り)。
+- パレット: **「反映」を KG の無いデッキで押す**と、確かめてからこれを呼ぶ (KG があれば従来どおり原稿と KG を合わせる)。
+  Story が `Source: スライド` のデッキでは「生成」は止まり (既存のスライドが正)、「KG構築」はスライドから写し直す。
+- 併せて直した既存のバグ: スタイルを 2 つ持つ区切りセル (`{"SlideShowNavigationBar", "FirstSlide"}`) を枚の区切り 2 つに数えていた
+  (`iSWSlideRanges` ほか 4 か所。再生・反映・プロンプトの位置がずれていた)。ポスターは Subsection 以外の見出しと KGSync タグも読み、題目が空の枚を表紙として扱う。
+- テスト: slidegraph_test T45 (9 件)。
+
 ### SlideGraphBuild[] / SlideGraphBuild[nb, "Mode" -> Automatic | "Extract"]
 v1.30: 素材を選ぶ (上の「素材は 2 通り」)。シナリオなら `SlideGraphSeedScenario` → `SlideGraphRelated` → 筋書きの展開。以下は論文の場合。
 Options: `"Mode" -> Automatic` (`Automatic` = `SlideGraphRefine` の Direct 連鎖、`"Agent"` = 推敲をエージェント (ClaudeEval) に委譲、`"Extract"` = 和訳ノート無しで PDF をエージェントに読ませる旧経路)
@@ -700,7 +848,6 @@ References の locator が SourceVault 取り込み済みの論文 (`src-…` / 
 ### SlideGraphSeed[nb | key | path, opts] → <|"Graph", "Title", "PaperTitle", "NodeCount", "EdgeCount", "Sections", "Paragraphs", "Figures", "Formulas", "Kept", "Authors", "Skipped", "Warnings", "KG"|>
 和訳ノートブックの構造から第一次 KG: 見出し → Section (階層は Contains)、段落 → Concept (本文は `"Text"`、ラベルは冒頭、要約は先頭 2 文)、図 → Figure (NotebookFigure 資産、キャプション「図 n.」「図n |」「Figure n:」「Fig. n.」がラベル。図の前後どちらにあっても合流)、数式 → Equation (Formula 資産)。同じ節の段落・式は Precedes で順序づけ、図は前後の段落へ Supports。Abstract セルは根 (Claim) の要約。
 Options: `"Graph" -> Automatic`, `"Title" -> Automatic`, `"Language" -> "ja"`, `"MinCharacters" -> 40`, `"Save" -> True`, `"Notebook" -> Automatic` (対象の和訳ノートブックを直接指定、既定は References から解決), `"Reconstruction" -> False`, `"Keep" -> "Background"`
-
 v1.23 の規則 (DocImportPaper 出力を WikiSkill で実測して追加):
 - Title セルが無く、最初の見出しより深い見出しが後に続くなら、その最初の見出し (論文題名) は節にせず root に畳む (`"PaperTitle"`)。以後の章は root の直下 = 「部」。
 - 題名直後の著者・所属行 (`^{1}` / † / 大学名 + カンマ) はノードにしない (`"Authors"`)。
@@ -781,7 +928,6 @@ KG から生成するスライドは、階層 (順序木) を視聴者に見せ�
 2. 直したいことを書いて、もう一度「調整」を押す (例: 「論文の最初のページの図を説明するスライドを、結論の枚の後に入れる」「t 検定の枚は要らない」「実験系の枚の説明をもっと具体的に」)。
 3. LLM が KG の差分を返し、検査してから反映する。反映したセルは灰色になり ✓ が付く (TaggingRules `SWAdjustApplied`。次に押すと、まだ反映していない次の調整セルを処理する)。
 4. 古い生成スライドを消して「生成」。
-
 LLM に渡すもの: 指示、いまのスライド構成 (番号・題目・ノード Id)、KG のノード一覧 (出現順、節の要約、図の有無、隠したノード)、使える図 (論文の図のノード / 論文 PDF の埋め込み画像 / 表 / 概念図)。
 LLM が返す差分:
 - `Nodes`: 新しいスライド = 新しいノード (Id は `adj_` で始める。`After` で位置、`Parent` で節、`Label` と `Points` は必須)、既存ノードの修正 (変えたいキーだけ: `Label` / `Lead` / `Points` / `Details` / `Talk` / `Importance` / `Assets` / `After` / `Hidden`)。
@@ -789,7 +935,6 @@ LLM が返す差分:
 - `Assets`: `{"Type": "Figure", "Of": "fig3"}` (論文の図の再掲) / `{"Type": "PDFImage", "Page": 1, "N": 1}` (論文 PDF の埋め込み画像) / `{"Type": "Table", "Rows": ..}` / `{"Type": "Code", "Code": .., "Caption": ..}` (図解と同じ検査)。使えない指定は落として注意に出す。PDF の画像の出典は「(key) p.n」。
 - 新しいノードの Order は `After` の直後 (次のノードとの中点) で、`After → 新ノード` の Precedes 辺と、節からの Contains 辺を足す。
 - `SlideGraphAdjust[nb | graphId, "指示"]` で直接渡せる。opts: `"PDF"` (論文 PDF の locator。既定は文献欄 → KG の出典から PDF に解決できるもの)、`"Then"` (反映後に呼ぶ関数)、`"Cell" -> None` (対象の調整セルを直接指定)、`"Audience"` / `"Story"` -> Automatic (未指定は Story セル)、`"Refine"` (v1.29。False で未推敲の節の先行推敲をしない)。結果は `SlideWorkflow`Private`$iSWAdjustLast`。
-
 **論文 1 ページ目の図 (全体像)**: 和訳ノートはキャプション (「図n |」) のある図だけを取り込むので、キャプションのない 1 ページ目の図 (グラフィカルアブストラクト。システムの全体像を示す、論文でいちばん大事な図) が KG に入らない。「図解」は最初に、この図がどのノードにも無く論文 PDF の 1 ページ目に画像があれば、調整の仕組みで「全体像」の枚 (結論・要点の直後、Importance 0.95) を足してから図解する (`"Overview" -> False` で止める)。
 - `SlidePDFImages[src, "Page" -> n]` = そのページの埋め込み画像。各ページのラスタ (と Inset の画像) を PageGraphics で数え、`Import[pdf, "Images"]` の並びに縦横比で突き合わせる (ページに現れないアイコン画像は飛ばす)。1 ページだけの PDF は全部をそのページとみなす。対応が取れなければ Failure。初回の Import が文字コードの警告を出しても画像は取れているので `Check` では判定しない。
 - 資産の型 `"PDFImage"` (`"Ref"`, `"Page"`, `"N"`)。図の枚では縦長・正方形の図を高さ 360pt までに収める (幅は 560pt)。

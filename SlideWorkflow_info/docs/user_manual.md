@@ -232,7 +232,7 @@ $SlideExportExternal = False;
 
 ## 8. インタラクティブ編集(スライドパレット)
 
-旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿・質疑応答・調整)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
+旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿・質疑応答・読み・調整)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
 
 ### 8.1 バージョンとパレット表示
 
@@ -357,6 +357,7 @@ SlideShowLanguage[nb, "Toggle"]
 - `SlideInsertNote[]` — メモセルを挿入します(`documentation.wl`のメモセルと互換)。`Working`環境では可視、`SlideShow`(スライドショー環境)では非表示になり、書き出しからも除外されます。
 - `SlideInsertDirective[]` — 指示セルを挿入します。`SlideExpand`(展開)・`SlideTranslate`(翻訳)実行時にLLMが厳守すべき指示を書きます。`Working`で可視、`SlideShow`では非表示です。
 - `SlideInsertDictionary[]` — 辞書セルを挿入します。翻訳時の用語対応(専門用語の訳語固定など)を指定します。
+- `SlideInsertReading[]` — 読みセル(`SlideReading`スタイル)を挿入します(v1.51)。読み上げ(gpt-realtime・ローカルの声)のときだけ語を仮名に置き換える辞書で、1行1語`語 = よみ`、`#`から行末はコメントです。スライド・字幕・原稿は書き換えません。全デッキ共通の読み(`SlideReadingFile[]`)より優先されます。`Working`で見え、`SlideShow`と書き出しでは隠れます。詳細は10.1の「読みの辞書」を参照してください。
 - `SlideInsertBibliography[]` — 文献セルを挿入します(`documentation.wl`と互換)。
 - `SlideInsertReferences[]` — 文献リストセルを挿入します(パレットの「文献」)。1行1文献`"[key] locator | メモ"`の書式で、`locator`はURL / `arxiv:ID` / `sv://URI` / `eagle:ID` / PDF・ノートブックのパス(過去スライド可)。スライド指示(プロンプト)からは`[key]`で参照し、展開エージェントが取得・引用します。`#`で始まる行はコメントです。
 - `SlideTogglePrompts[]` — デッキ内の全`SlidePrompt`セルの表示/非表示を一括で切り替えます。
@@ -364,6 +365,7 @@ SlideShowLanguage[nb, "Toggle"]
 ```wolfram
 SlideInsertDirective[]
 SlideInsertDictionary[]
+SlideInsertReading[]
 SlideInsertPrompt[]
 SlideInsertCitation[]
 SlideInsertBibliography[]
@@ -377,7 +379,7 @@ SlideTogglePrompts[]
 
 #### `SlideToggleScreenEnvironment`
 
-対象ノートブックのスクリーン環境を`Working` ⇄ `SlideShow`で切り替えます(書式メニューの「スクリーンスタイル環境」と同じ)。メモ・指示・辞書・文献・プロンプトの各セルは`Working`で可視、`SlideShow`で非表示になります。
+対象ノートブックのスクリーン環境を`Working` ⇄ `SlideShow`で切り替えます(書式メニューの「スクリーンスタイル環境」と同じ)。メモ・指示・辞書・読み・文献・プロンプトの各セルは`Working`で可視、`SlideShow`で非表示になります。
 
 ```wolfram
 SlideToggleScreenEnvironment[]
@@ -385,7 +387,7 @@ SlideToggleScreenEnvironment[]
 
 #### `SlideEnsureDeckStyles`
 
-デッキにメタセル用スタイル定義(`Note`/`Directive`/`Dictionary`/`Bibliography`/`References`/`SlidePrompt`/`SlideTalk`/`SlideQA`。`SlideShow`環境で非表示)を埋め込みます。パレットの挿入・展開・表示切替から自動で呼ばれ、`documentation.wl`の`DocInsert*`もこの定義を共用します。
+デッキにメタセル用スタイル定義(`Note`/`Directive`/`Dictionary`/`SlideReading`/`Bibliography`/`References`/`SlidePrompt`/`SlideTalk`/`SlideQA`。`SlideShow`環境で非表示)を埋め込みます。パレットの挿入・展開・表示切替から自動で呼ばれ、`documentation.wl`の`DocInsert*`もこの定義を共用します。
 
 ```wolfram
 SlideEnsureDeckStyles[nb]
@@ -823,6 +825,44 @@ SlideTalkLanguages["lecture1.nb"]
 SlideTalkTranslate["lecture1.nb"]
 ```
 
+### 読みの辞書(読みセル)
+
+読み上げ(gpt-realtime・ローカルの声)のときだけ、語を仮名に置き換えて誤読を防ぐ仕組みです(v1.51)。スライド・字幕・原稿の文面は書き換えません。置き換えるのは日本語の文だけで、長い語から順に置き換えます。1文字の語(「節」など)は前後が漢字でないときだけ、英字だけの語は単語の境目でだけ置き換えます。数式・強調の印は外してから置き換えます。
+
+読みの辞書は2段構えです。
+
+- **デッキの読みセル**(`SlideInsertReading[]`で挿入) — そのデッキだけの読み。1行1語`語 = よみ`、`#`から行末はコメントです。区切りは`=`・`＝`・`→`・`->`・タブも使えます。
+- **全デッキ共通の読み**(`SlideReadingFile[]`のファイル) — UTF-8テキストで1行1語`語 = よみ`。同じ語はデッキ側が優先されます。
+
+```
+# 例
+慣性モーメント = かんせいもーめんと
+GPU = じーぴーゆー
+```
+
+#### `SlideReadings` / `SlideReadingApply`
+
+- `SlideReadings[]` / `SlideReadings[nb]` — 読み上げに使う読みの辞書`<|語 -> よみ|>`を返します(全デッキ共通の読み+デッキの読みセル。同じ語はデッキ側が優先)。`SlideReadings["Global"]`は共通の読みだけです。
+- `SlideReadingApply[text]` / `SlideReadingApply[nb, text]` / `SlideReadingApply[text, readings]` — 声に渡す文(数式・強調の印を外し、読みの辞書の語を仮名に置き換えたもの)を返します。
+
+#### `SlideReadingFile` / `$SlideReadingFile` / `SlideReadingAdd`
+
+- `SlideReadingFile[]` — 全デッキ共通の読みの辞書ファイルのパスを返します。無ければよく誤読される語を入れて作ります。
+- `$SlideReadingFile` — そのファイルの場所。既定`Automatic`はSourceVaultの`slidedecks/readings.txt`(PC間で共有)で、SourceVaultが無ければ`$UserBaseDirectory/ApplicationData/SlideWorkflow/readings.txt`です。
+- `SlideReadingAdd["語" -> "よみ"]` / `SlideReadingAdd[{rules..}]` — 全デッキ共通の読みに語を足します(同じ語があれば読みを置き換えます)。そのデッキだけの読みは読みセルに書きます。
+
+#### `SlideReadingCheck`
+
+`SlideReadingCheck[]` / `SlideReadingCheck[nb]`は、原稿(トークセル)をLLMに見せ、声に出すと読み間違えやすい語(専門用語・同じ字で読みが変わる語・固有名詞など)とその読みの案を、デッキの読みセルへ書き足します(パレットの「読みチェック」、非同期)。辞書にある語は除きます。**案は確かめてから使ってください**(要らない行は消すか、行頭に`#`を付けます)。
+
+```wolfram
+SlideInsertReading[]
+SlideReadingAdd["GPU" -> "じーぴーゆー"]
+SlideReadings[nb]
+SlideReadingApply[nb, "GPUの慣性モーメント"]
+SlideReadingCheck[nb]
+```
+
 ### 質疑応答セル (パレットの「質疑」)
 
 `SlideInsertQA[]`で、トークセルの隣にそのスライドで訊かれそうな質問と回答を書くセル(`SlideQA`スタイル、mdでは`"qa: "`行)を挿入します。見え方と書き出しの扱いはトークセルと同じです(`Working`で可視、`SlideShow`で非表示、画像・mp4の書き出しからも除外)。
@@ -925,7 +965,7 @@ SlideDeckMarkVideoCurrent["lecture1.nb"]
 
 #### `SlideTalkMeta`
 
-`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `Aliases` / `PrivacyLevel` / `Language`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `Language:` / `Host: sftp://user@host/dir`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
+`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `PosterURL` / `Aliases` / `PrivacyLevel` / `Language`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `PosterURL:` / `Language:` / `Host: sftp://user@host/dir` / `PosterHost:`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
 
 `SlideTalkMeta[nb, "SlideURL" -> url, ...]`はノートブックの`TaggingRules`に永続化します(指示セルに同名の行があればそちらが優先されるため、登録簿への登録が`_talk.md`無しで完結します)。
 
@@ -938,7 +978,9 @@ SlideTalkMeta["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
 
 `SlideDeckRegister[nb|deck.nb|talkfile|md]`は発表(トークセル+指示セルのメタ)をSourceVaultの登録簿へ登録します。メタに`UploadURL`(指示セルの`Host:`行)があれば、Sliden用mp4をwebサーバへ自動でアップロードします(結果は戻り値の`"Upload"`キー)。以後、VRCRealtimeが発表タイトルからスライドURLと原稿を引けます。
 
-同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きします(前回の特定は`Id` > `DeckFile` > `SlideURL`の順。指示セルの`Id:`行で固定できます)。何が変わったかは戻り値の`RegistryStatus`(`"Created"`|`"Updated"`)と`ChangedKeys`で分かります。
+同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きします(前回の特定は`Id` > `DeckFile` > `SlideURL` > `PosterURL`の順。指示セルの`Id:`行で固定できます)。何が変わったかは戻り値の`RegistryStatus`(`"Created"`|`"Updated"`)と`ChangedKeys`で分かります。
+
+**ポスター(v1.56)**: 指示セルに`PosterURL:`(ポスターPDFを置くURL)があれば、`<deck>_poster.pdf`も配置します(結果は戻り値の`"PosterUpload"`キー)。配置先は`PosterHost:`、無ければ`Host:`です。`SlideURL`か`PosterURL`のどちらかがあれば登録でき、両方あれば両方を扱います。
 
 オプション: `"SlideURL"`, `"Title"`, `"Id"`, `"DeckFile"`, `"PrivacyLevel"`, `"SlideCount"`, `"Upload"`(`Automatic`|`True`|`False`)
 
@@ -981,7 +1023,7 @@ $SlideUploadMethod = "curl";
 
 ### 10.3 ローカル音声読み上げと自動ページ送り
 
-`<deck>_talk.md`の原稿をSourceVaultのローカル音声(Piper)で読み上げながら、1枚読み終わるごとにスライドを1枚進めます。対象はスクリーン環境が`SlideShow`のノートブックです。合成結果は`<deck>_voice/`にキャッシュするため、2回目以降の再生は待たされません。ウィンドウのスナップショットやクリップボードには依存しないため、FEを止めずに裏で動きます。
+`<deck>_talk.md`の原稿をSourceVaultのローカル音声(Piper)で読み上げながら、1枚読み終わるごとにスライドを1枚進めます。対象はスクリーン環境が`SlideShow`のノートブックです。合成結果は`<deck>_voice/`にキャッシュするため、2回目以降の再生は待たされません。ウィンドウのスナップショットやクリップボードには依存しないため、FEを止めずに裏で動きます。声に渡す文には読みの辞書(10.1の「読みの辞書」)が適用されます。
 
 #### 音声関連の定数
 
@@ -994,6 +1036,8 @@ $SlideQuestionSeconds     (* 1枚読み終えてから次へ送るまでに質�
 $SlideVoiceInputGate      (* 質問受付でマイクを送る下限の音量(0〜1、既定 0 = 制限なし) *)
 $SlideQuestionMaxSeconds  (* 1枚の合間に質疑で留まれる上限の秒数(既定 60) *)
 $SlideVoiceTick           (* 読み上げ進行を見るカーネル側ScheduledTaskの周期(秒、既定 0.3) *)
+$SlidePlayAnswering       (* realtime: の声で再生するときに質問(音声応答)を受けるか。Automatic(既定) | True | False。下記参照 *)
+$SlideReadingFile         (* 全デッキ共通の読みの辞書ファイル。既定 Automatic = SourceVault の slidedecks/readings.txt *)
 $SlideRealtimeVoices      (* ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime)の声名(既定 {"marin","cedar"})。一覧には "realtime:<声>" として出る *)
 $SlideVoiceModel          (* 音声会話のモデル。既定 Automatic = $SlideVoiceDefaultModel (gpt-live-1。v1.36 から。そのプロバイダの一覧に無ければ $SourceVaultRealtimeModel)。"gpt-realtime-2.1" などを直接指定もできる。パレット「音声モデル」行 *)
 $SlideVoiceDefaultModel   (* $SlideVoiceModel が Automatic のときに使うモデル(既定 "gpt-live-1")。SourceVault 全体の既定($SourceVaultRealtimeModel)は変えない *)
@@ -1002,6 +1046,18 @@ $SlideQuestionMode        (* 発表中の質問の受け方。"QuestionTime"(既
 $SlideInterruptWords      (* "Words" モードで発表を止めてよい語のリスト(既定 Automatic = $SourceVaultRealtimeInterruptWords = {"質問","スライド"}) *)
 $SlideSpeechRate          (* 話速(1秒あたりの文字数)をエンジンごとに持つ連想。既定 <|"Local"->6.95, "Realtime"->5.6|>。SlideTalkDuration が使う *)
 $SlideSpeechLatency       (* 1枚あたり声が出るまでの待ち(秒)をエンジンごとに持つ連想(既定 Local 0.3 / Realtime 1.5) *)
+```
+
+#### `$SlidePlayAnswering`
+
+`realtime:`の声で再生するときに質問(音声応答)を受けるかどうかです(v1.52、v1.53)。
+
+- `Automatic`(既定) — 再生を押したときの状態に従います。「応答on」かつマイクonなら質問を受け(各枚のあとの質問タイム)、それ以外は読み上げだけです(マイクは閉じたまま)。再生は「応答on/off」の表示を変えません。応答offから再生すると、音声会話は読み上げのためだけに起き、表示は「応答off」のまま、再生が終わると閉じます。再生中はマイクボタン(と手元リモコン)で質問を受けるかを切り替えられます: マイクon = 質問タイムあり、マイクoff = 読み上げだけ。
+- `True` — いつも質問を受けます(v1.51までの動き)。
+- `False` — いつも読み上げだけです(再生の間はマイクを閉じ、終わったら戻します)。
+
+```wolfram
+$SlidePlayAnswering = Automatic;
 ```
 
 #### `SlideVoices` / `SlideCycleVoice` / `SlideVoicePrepare`
@@ -1061,14 +1117,14 @@ SlidePlayStatus[]
 #### `SlideToggleRealtime` / `SlideToggleMic`
 
 - `SlideToggleRealtime[]` — 音声応答(`SourceVaultRealtimeStart` / `Stop`)を切り替えます。パレットの「応答on/off」と同じです。
-- `SlideToggleMic[]` — 音声応答のマイクをmute/unmuteで切り替えます。パレットの「マイクon/off」ボタン、および手元リモコンの「前の曲」ボタンと同じ動作です。音声応答が動いていないときは何もしません。`"Quiet"->True`で知らせのダイアログも出しません(手元リモコンからはこちらで呼ぶ)。
+- `SlideToggleMic[]` — 音声応答のマイクをmute/unmuteで切り替えます。パレットの「マイクon/off」ボタン、および手元リモコンの「前の曲」ボタンと同じ動作です。音声応答が動いていないときは何もしません。`"Quiet"->True`で知らせのダイアログも出しません(手元リモコンからはこちらで呼ぶ)。v1.53: `realtime:`の声で再生している間は、質問を受けるかどうかを切り替えます(マイクon = 各枚のあとの質問タイムと最後の質疑応答あり、マイクoff = 読み上げだけ)。このとき「応答on/off」の表示は変わりません。
 
 ```wolfram
 SlideToggleRealtime[]
 SlideToggleMic["Quiet" -> True]
 ```
 
-読み上げ中(`SlidePlay`)は、クラウド音声(`realtime:`)のときだけ`$SlideQuestionSeconds`の間、質問を待ちます。話しかけられたら`$SlideQuestionMaxSeconds`まではデッキが止まらずに待ち、答えている最中は打ち切りません。会場の物音で勝手に応答が始まるときは`$SlideVoiceInputGate`を上げて、マイクを送る下限音量を設定します。
+読み上げ中(`SlidePlay`)は、クラウド音声(`realtime:`)のときだけ`$SlideQuestionSeconds`の間、質問を待ちます(`$SlidePlayAnswering`の設定により質問を受けない場合は待ちません)。話しかけられたら`$SlideQuestionMaxSeconds`まではデッキが止まらずに待ち、答えている最中は打ち切りません。会場の物音で勝手に応答が始まるときは`$SlideVoiceInputGate`を上げて、マイクを送る下限音量を設定します。
 
 なお、スライドの表示に関する依頼(次/前/最初/最後/何枚目/特定の内容のスライド)と、発表の内容や事実についての質問は、いずれもモデルが自分で処理せずバックエンド(SourceVault)へ委譲する設計です。スライド操作と質問応答はどちらも同じ`handler`を介して答え、会話中にセッションのモデル(Realtime / Live)が途中で切り替わることはありません。
 
