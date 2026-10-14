@@ -177,7 +177,7 @@ SlideToggleScreenEnvironment::usage = "SlideToggleScreenEnvironment[] \:306f\:5b
 SlideEnsureDeckStyles::usage = "SlideEnsureDeckStyles[nb] \:306f\:30c7\:30c3\:30ad\:306b\:30e1\:30bf\:30bb\:30eb\:7528\:30b9\:30bf\:30a4\:30eb\:5b9a\:7fa9(Note/Directive/Dictionary/Bibliography/References/SlidePrompt/SlideTalk/SlideQA\:3002SlideShow \:74b0\:5883\:3067\:975e\:8868\:793a)\:3092\:57cb\:3081\:8fbc\:3080\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:633f\:5165\:30fb\:5c55\:958b\:30fb\:8868\:793a\:5207\:66ff\:304b\:3089\:81ea\:52d5\:3067\:547c\:3070\:308c\:3001documentation.wl \:306e DocInsert* \:3082\:3053\:306e\:5b9a\:7fa9\:3092\:4f7f\:3046\:3002";
 SlideTogglePrompts::usage = "SlideTogglePrompts[] \:306f\:5168 SlidePrompt \:30bb\:30eb\:306e\:8868\:793a/\:975e\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:308b\:3002";
 $SlideTranslationLanguage::usage = "$SlideTranslationLanguage \:306f\:7ffb\:8a33\:5148\:8a00\:8a9e\:3002\:65e2\:5b9a\:306f\:65e5\:672c\:8a9e\:74b0\:5883\:306a\:3089 \"English\"\:3002";
-$SlideExportExternal::usage = "$SlideExportExternal \:30d1\:30ec\:30c3\:30c8\:306e\:753b\:50cf/mp4 \:66f8\:304d\:51fa\:3057\:3092\:5225\:30d7\:30ed\:30bb\:30b9(wolframscript)\:3067\:884c\:3046\:304b\:3002Automatic(\:65e2\:5b9a)=1 \:5ea6\:8a66\:3057\:3001\:30e9\:30a4\:30bb\:30f3\:30b9\:5e2d\:4e0d\:8db3\:7b49\:3067\:8d77\:52d5\:3067\:304d\:306a\:3051\:308c\:3070\:4ee5\:5f8c\:306f FE \:5185\:51e6\:7406\:306b\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af | True | False\:3002";
+$SlideExportExternal::usage = "$SlideExportExternal \:30d1\:30ec\:30c3\:30c8\:306e\:753b\:50cf/mp4 \:66f8\:304d\:51fa\:3057\:3092\:5225\:30d7\:30ed\:30bb\:30b9(wolframscript)\:3067\:884c\:3046\:304b\:3002Automatic(\:65e2\:5b9a)=1 \:5ea6\:8a66\:3057\:3001\:30e9\:30a4\:30bb\:30f3\:30b9\:5e2d\:4e0d\:8db3\:7b49\:3067\:8d77\:52d5\:3067\:304d\:306a\:3051\:308c\:3070\:4ee5\:5f8c\:306f FE \:5185\:51e6\:7406\:306b\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af (\:72b6\:614b\:6b04\:306b\:5e2d\:306e\:6848\:5185\:3092\:51fa\:3059) | True | False\:3002\:767b\:9332\:306e mp4 \:306e\:4f5c\:308a\:76f4\:3057\:306f\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af\:304c\:7121\:3044\:306e\:3067\:6bce\:56de\:8a66\:3057\:76f4\:3057\:3001\:8d77\:52d5\:3067\:304d\:306a\:3051\:308c\:3070\:5e2d\:306e\:6848\:5185\:3068 Wolfram \:306e\:30d7\:30ed\:30bb\:30b9\:306e\:4e00\:89a7\:3092\:51fa\:3059 (v1.62)\:3002";
 
 SlideTable::usage = "SlideTable[rows] \:306f\:30c7\:30c3\:30ad\:914d\:8272($SlideTheme)\:306e\:8868\:3092\:8fd4\:3059\:3002rows \:306f\:6587\:5b57\:5217\:306e\:884c\:30ea\:30b9\:30c8\:3002\"HeaderRows\"->n (\:65e2\:5b9a 1) \:3067\:30d8\:30c3\:30c0\:884c\:3092\:5f37\:8abf\:3002\:30b7\:30ca\:30ea\:30aa md \:3067\:306f | \:69cb\:6587 (\"| a | b |\"\:30012 \:884c\:76ee\:306b \"| --- | --- |\" \:3067 1 \:884c\:76ee\:304c\:30d8\:30c3\:30c0) \:304c\:540c\:3058\:8868\:306b\:306a\:308b\:3002";
 SlidePDFFigure::usage = "SlidePDFFigure[src, page] \:306f PDF \:306e\:30da\:30fc\:30b8\:3092\:56f3(Image)\:3068\:3057\:3066\:5207\:308a\:51fa\:3059\:3002src \:306f\:30d5\:30a1\:30a4\:30eb\:30d1\:30b9 / eagle:ID / sv://URI / src-ID / URL / arxiv:ID / \:6587\:732e\:30ea\:30b9\:30c8(References)\:306e key\:3002URL\:30fbarxiv\:30fbGoogle Slides(\:30d7\:30ec\:30bc\:30f3 URL)\:306f\:81ea\:52d5\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:3057\:3066 PDF \:5316\:3057\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b\:3002png \:7b49\:306e\:753b\:50cf\:30d5\:30a1\:30a4\:30eb\:3082 src \:306b\:6307\:5b9a\:3067\:304d\:308b\:3002\"Crop\"->{{x1,x2},{y1,y2}} (\:5de6\:4e0a\:539f\:70b9\:306e\:30da\:30fc\:30b8\:6bd4\:7387 0..1) \:3067\:9818\:57df\:6307\:5b9a\:3001\"Trim\"->Automatic (\:65e2\:5b9a) \:3067\:767d\:4f59\:767d\:3092\:81ea\:52d5\:30c8\:30ea\:30e0\:3001ImageResolution (\:65e2\:5b9a 144)\:3002\:6587\:732e PDF \:306e\:56f3\:3092\:30b9\:30e9\:30a4\:30c9\:3078\:5f15\:7528\:3059\:308b\:3068\:304d\:306f\:76f4\:5f8c\:306b cite: \:3092\:4ed8\:3059\:3002";
@@ -278,6 +278,7 @@ SlideGraphAdjust::usage = "SlideGraphAdjust[] / SlideGraphAdjust[nb] \:306f\:300
 SlideGraphPin::usage = "SlideGraphPin[nb | graphId, id | {ids}] \:306f\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:30ce\:30fc\:30c9\:306b\:300c\:5fc5\:305a\:51fa\:3059\:300d\:5370 (Pinned) \:3092\:4ed8\:3051\:308b (v1.42)\:3002\:8a08\:753b\:306f\:305d\:306e\:679a\:306e\:67a0\:3092\:70b9\:6570\:30fb\:524d\:63d0\:77e5\:8b58\:306e\:5224\:5b9a\:306b\:3088\:3089\:305a\:5148\:306b\:53d6\:308b\:3002SlideGraphPin[.., ids, False] \:3067\:5916\:3059\:3002SlideGraphPin[nb | graphId] \:306f\:5370\:306e\:4ed8\:3044\:305f\:30ce\:30fc\:30c9 Id \:306e\:4e00\:89a7\:3002\:30b9\:30e9\:30a4\:30c9\:3078\:306e\:53cd\:6620\:306f\:300c\:751f\:6210\:300d\:3067\:3002\:300c\:8abf\:6574\:300d\:3067\:8db3\:3057\:305f\:679a\:306f\:81ea\:52d5\:3067\:5370\:304c\:4ed8\:304f\:3002";
 SlideGraphHierarchy::usage = "SlideGraphHierarchy[] / SlideGraphHierarchy[nb | graphId, opts] \:306f\:767a\:8868\:306e\:76ee\:6b21\:3092\:30dc\:30c8\:30e0\:30a2\:30c3\:30d7\:306b\:4f5c\:3063\:3066 KG \:306b\:4fdd\:5b58\:3059\:308b (v1.46\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:968e\:5c64\:5316\:300d)\:3002\:7b2c 1 \:6bb5\:3067 KG \:306e\:9805\:76ee (\:5185\:5bb9\:306e\:6700\:5c0f\:5358\:4f4d) \:3092\:7bc0\:306b\:3001\:7b2c 2 \:6bb5\:304b\:3089\:7bc0\:3092\:7ae0\:306b\:307e\:3068\:3081\:3001\:6839\:306e\:5b50\:304c $SlideGraphMaxDegree \:500b\:4ee5\:4e0b\:306b\:306a\:308b\:307e\:3067 LLM \:306b\:6bb5\:3054\:3068\:306b\:554f\:3046\:3002\:4e26\:3076\:5b50\:306f\:7b87\:6761\:66f8\:304d\:306b\:3057\:305f\:3068\:304d\:540c\:3058\:30ec\:30d9\:30eb\:306e\:8a71\:3068\:3057\:3066\:4e26\:7acb\:3055\:305b (\:66f8\:7c4d\:306e\:76ee\:6b21)\:3001\:8cc7\:6599\:304c\:9055\:3063\:3066\:3082\:540c\:3058\:8a71\:984c\:306f\:307e\:3068\:3081\:3001\:5404\:6bb5\:306b\:984c\:76ee\:30fb\:4e00\:884c\:8981\:7d04 (Gist)\:30fb\:8981\:7d04\:30fb\:91cd\:8981\:5ea6\:30fb\:8981\:5426 (Must / Optional) \:3092\:4ed8\:3051\:3001\:8074\:304d\:624b\:306b\:8981\:3089\:306a\:3044\:9805\:76ee\:306f\:5916\:3059\:3002\:305d\:306e\:3042\:3068 SourceVaultKGSetToc \:304c\:5144\:5f1f\:306e\:9806\:3092\:5b9a\:7fa9\:30fb\:524d\:63d0 (Prerequisite / Derives) \:3067\:5165\:308c\:66ff\:3048\:308b\:3002LLM \:304c\:7121\:3051\:308c\:3070\:8cc7\:6599\:306e\:69cb\:9020\:304b\:3089\:6a5f\:68b0\:7684\:306b\:4f5c\:308b (SourceVaultKGMechanicalToc)\:3002\:8a08\:753b (SlideGraphPlan) \:306f\:76ee\:6b21\:304c\:3042\:308c\:3070 SourceVaultKGTocPlan \:3067\:679a\:6570\:306b\:5408\:308f\:305b\:3066\:76ee\:6b21\:306e\:4e0a\:304b\:3089\:958b\:304f (1 \:679a\:306a\:3089\:6839\:306b\:90e8\:306e\:4e00\:884c\:8981\:7d04\:3092\:4e26\:3079\:308b\:3060\:3051)\:3002opts: \"Then\" (\:7d42\:308f\:3063\:305f\:3089\:547c\:3076\:95a2\:6570)\:3001\"MaxDegree\"\:3001\"Strategy\" (\:6a5f\:68b0\:7684\:306b\:4f5c\:308b\:3068\:304d\:306e\:9806\:5e8f\:6728)\:3002\:623b\:308a\:5024\:306f\:554f\:3044\:5408\:308f\:305b\:4e2d\:306a\:3089 <|\"Status\" -> \"Submitted\"|>\:3001\:7d50\:679c\:306f SlideWorkflow`Private`$iSWHierarchyLast\:3002";
 SlideGraphNarrate::usage = "SlideGraphNarrate[] / SlideGraphNarrate[nb | graphId, opts] \:306f\:767a\:8868\:306e\:610f\:5473\:4ed8\:3051 (v1.48\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:610f\:5473\:4ed8\:3051\:300d)\:3002\:8a08\:753b\:3067\:6c7a\:307e\:3063\:305f\:679a\:306e\:4e26\:3073\:3092\:90e8\:3054\:3068\:306b LLM \:306b\:898b\:305b\:3001\:5404\:679a\:306e\:5f79\:5272 (Role: \:306a\:305c\:3053\:306e\:679a\:304c\:3053\:3053\:306b\:3042\:308b\:304b)\:30fb\:524d\:306e\:679a\:304b\:3089\:306e\:3064\:306a\:304e (Bridge\:3002\:540c\:3058\:89aa\:306e\:7d9a\:304d\:306a\:3089\:8a71\:984c\:8ee2\:63db\:306e\:8a9e\:3092\:4f7f\:308f\:306a\:3044)\:30fb\:521d\:3081\:3066\:51fa\:308b\:7528\:8a9e\:306e\:4e00\:884c\:8aac\:660e (Terms) \:3092\:66f8\:304b\:305b\:3066 KG \:306e\:30ce\:30fc\:30c9\:306b\:4fdd\:5b58\:3059\:308b\:3002\:751f\:6210\:3067\:306f\:5f79\:5272\:304c\:5c0e\:5165\:6587\:3001\:3064\:306a\:304e\:304c\:539f\:7a3f\:306e\:5192\:982d\:3001\:7528\:8a9e\:304c\:679a\:306e\:4e0b\:306e\:300c\:7528\:8a9e\:300d\:306e\:884c\:3068\:539f\:7a3f\:306e\:6700\:5f8c\:306e\:4e00\:8a00\:306b\:306a\:308b\:3002\:8074\:304d\:624b\:304c\:3064\:307e\:305a\:304d\:305d\:3046\:306a\:629c\:3051\:306f\:8abf\:6574\:30bb\:30eb\:306b\:63d0\:6848\:3068\:3057\:3066\:66f8\:304f\:3002kg[\"Narrative\"][\"Sequence\"] \:304c\:4eca\:306e\:4e26\:3073\:3068\:9055\:3048\:3070\:300c\:751f\:6210\:300d\:304c\:5148\:306b\:3053\:308c\:3092\:884c\:3046 ($SlideGraphNarrateAuto)\:3002opts: \"Then\"\:3001\"Chunk\" (1 \:56de\:306e\:554f\:3044\:5408\:308f\:305b\:306e\:679a\:6570\:3001\:65e2\:5b9a 24)\:3001\"Slides\"\:3001\"Audience\"\:3002\:7d50\:679c\:306f SlideWorkflow`Private`$iSWNarrateLast\:3002";
+SlideGraphSubgraph::usage = "SlideGraphSubgraph[] / SlideGraphSubgraph[nb] \:306f\:3001\:6bcd\:4f53\:306e\:5927\:304d\:306a\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:3053\:306e\:767a\:8868\:3076\:3093\:306e\:90e8\:5206\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:5207\:308a\:51fa\:3059 (v1.60\:3001\:30d1\:30ec\:30c3\:30c8\:300c\:5207\:308a\:51fa\:3057\:300d\:3002Story \:306b Parent: \:304c\:3042\:308c\:3070\:300cKG\:69cb\:7bc9\:300d\:3082\:3053\:308c\:306b\:306a\:308b)\:3002Story \:30bb\:30eb\:306b Parent: <\:6bcd\:4f53 KG \:306e Id> \:3068\:3001Focus: <\:767a\:8868\:3067\:6271\:3046\:5185\:5bb9\:306e\:8a18\:8ff0> (LLM \:304c\:6bcd\:4f53\:306e\:7bc0\:3068\:9805\:76ee\:306e\:4e00\:89a7\:304b\:3089\:90e8 (Label / Gist / Role / Members) \:3068\:9664\:304f Id \:3092\:9078\:3076) \:307e\:305f\:306f Include: <\:90e8\:306e\:6307\:5b9a> (\:6c7a\:5b9a\:7684\:3002\"Main: \:984c = id, id | Intro: \:984c = key:*, key:s3\"\:3002\:30c8\:30fc\:30af\:30f3\:306f Id / key:* (\:305d\:306e\:8cc7\:6599\:5168\:4f53) / key:id / \:984c\:76ee\:306b\:542b\:307e\:308c\:308b\:6587) \:3092\:66f8\:304f\:3002Exclude: \:3067\:9664\:304f Id\:3002\:6bcd\:4f53\:306f\:5206\:5272\:3082\:8907\:5199\:3082\:3057\:306a\:3044: \:90e8\:5206 KG \:306f\:9078\:3093\:3060 Id \:3068\:81ea\:5206\:306e\:30ce\:30fc\:30c9 (root / \:90e8 / adj_* / \:5468\:8fba\:77e5\:8b58)\:3001\:6bcd\:4f53\:30ce\:30fc\:30c9\:306e\:767a\:8868\:7528\:306e\:4e0a\:66f8\:304d (Pinned / Hidden / Role / Bridge / Terms / Order / Importance)\:3001\:76ee\:6b21\:3001\:610f\:5473\:4ed8\:3051\:3060\:3051\:3092\:6301\:3061 (SourceVaultKGSubgraphNew)\:3001\:63a8\:6572\:3084\:8abf\:6574\:3067\:76f4\:3057\:305f\:672c\:6587\:306f\:6bcd\:4f53\:306b\:66f8\:304d\:623b\:308b\:3002\:5207\:308a\:76f4\:3057\:306f\:524d\:306e\:7248\:306e\:4e0a\:66f8\:304d\:3068 adj_*\:30fb\:5468\:8fba\:77e5\:8b58\:3092\:6b8b\:3059\:3002headless / \:30a8\:30fc\:30b8\:30a7\:30f3\:30c8: SlideGraphSubgraph[parentId, subId, <|\"Title\", \"Description\", \"Parts\" -> {<|\"Label\", \"Gist\", \"Role\", \"Members\"|>..}, \"Members\", \"Exclude\", \"Language\"|>]\:3002\:6bcd\:4f53\:306f References \:306b\:8cc7\:6599\:3092\:4e26\:3079 Story \:306b Root: <\:984c> \:3092\:66f8\:3044\:3066\:300cKG\:69cb\:7bc9\:300d(SlideGraphSeed \:306e \"Root\": \:5408\:6210\:306e\:6839\:306e\:4e0b\:306b\:8cc7\:6599\:304c\:90e8\:3068\:3057\:3066\:4e26\:3076)\:3002opts: \"Mode\" -> \"Include\" (Focus \:304c\:3042\:3063\:3066\:3082 Include \:3067\:5207\:308b)\:3001\"Then\"\:3001\"MaxDegree\" (\:76ee\:6b21\:306e\:5b50\:306e\:4e0a\:9650\:3001\:65e2\:5b9a Max[$SlideGraphMaxDegree, 6])\:3002";
 $SlideGraphNarrateAuto::usage = "$SlideGraphNarrateAuto \:304c True (\:65e2\:5b9a) \:306a\:3089\:3001\:300c\:751f\:6210\:300d\:306f\:679a\:306e\:4e26\:3073\:304c\:610f\:5473\:4ed8\:3051\:3057\:305f\:3068\:304d\:3068\:9055\:3046\:3068\:304d\:5148\:306b SlideGraphNarrate \:3092\:884c\:3046 (LLM \:304c\:3042\:308b\:3068\:304d\:3060\:3051)\:3002False \:3067\:624b\:52d5 (\:30d1\:30ec\:30c3\:30c8\:300c\:610f\:5473\:4ed8\:3051\:300d) \:306e\:307f\:3002";
 SlideComputeBuild::usage = "SlideComputeBuild[] / SlideComputeBuild[nb] \:306f\:30d1\:30ec\:30c3\:30c8\:300c\:8a08\:7b97\:30ce\:30fc\:30c8\:300d(v1.47)\:3002\:30c7\:30c3\:30ad\:306e\:6587\:732e (\:8ad6\:6587\:30fb\:8cc7\:6599\:30fb\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30fbSourceVault \:306e\:6587\:66f8) \:3068 KG (\:3042\:308c\:3070) \:304b\:3089\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:4f5c\:308b\:4ed5\:4e8b\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8 (ClaudeEval) \:306b\:6e21\:3059\:3002\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306f SlideComputeNew \[RightArrow] \:5358\:4f4d\:3054\:3068\:306b SlideComputeAdd \[RightArrow] SlideComputeFinish \:306e\:9806\:306b\:66f8\:304f\:3002";
 SlideComputeNew::usage = "SlideComputeNew[title, opts] \:306f\:65b0\:3057\:3044\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:59cb\:3081\:308b (v1.47)\:3002SourceVault \:306e\:8a08\:7b97\:30ce\:30fc\:30c8\:767b\:9332\:7c3f\:306e\:5834\:6240\:306b\:4f5c\:3063\:3066\:767b\:9332\:3057 (Id = cnb-<8 \:6841>\:3001URI = sv://computenb/<Id>\:3001PL \:306f\:7d20\:6750\:304b\:3089)\:3001\:4ee5\:5f8c\:306e SlideComputeAdd \:306e\:66f8\:304d\:5148\:306b\:3059\:308b\:3002opts: \"Notebook\" (\:6587\:732e\:3092\:8aad\:3080\:30c7\:30c3\:30ad\:3001\:65e2\:5b9a \:5bfe\:8c61\:30c7\:30c3\:30ad)\:3001\"Sources\" (\:65e2\:5b9a \:30c7\:30c3\:30ad\:306e\:6587\:732e)\:3001\"PrivacyLevel\"\:3001\"Language\"\:3001\"Path\"\:3001\"Intro\" (\:984c\:540d\:306e\:4e0b\:306e\:8aac\:660e)\:3002\:623b\:308a <|\"Id\", \"URI\", \"File\", \"PrivacyLevel\"|>\:3002";
@@ -361,6 +362,12 @@ SlideYouTubeSignOut::usage = "SlideYouTubeSignOut[] \:306f\:4fdd\:5b58\:3057\:30
 $SlideYouTubePrivacy::usage = "$SlideYouTubePrivacy \:306f YouTube \:3078\:4e0a\:3052\:308b\:3068\:304d\:306e\:516c\:958b\:7bc4\:56f2 (\:65e2\:5b9a \"unlisted\" = \:9650\:5b9a\:516c\:958b\:3002\"private\" | \"public\" \:3082\:53ef)\:3002";
 $SlideYouTubeCategory::usage = "$SlideYouTubeCategory \:306f YouTube \:306e\:30ab\:30c6\:30b4\:30ea ID (\:65e2\:5b9a \"27\" = \:6559\:80b2)\:3002";
 $SlideYouTubeHTTPHandler::usage = "$SlideYouTubeHTTPHandler \:306f YouTube / Google OAuth \:3078\:306e HTTP \:306e\:5dee\:3057\:8fbc\:307f\:53e3 (\:30c6\:30b9\:30c8\:7528\:3001\:65e2\:5b9a None)\:3002\:8981\:6c42 <|Method, URL, Headers, Body, TimeConstraint|> \:3092\:53d7\:3051\:3066 <|StatusCode, Headers, BodyBytes|> \:3092\:8fd4\:3059\:95a2\:6570\:3002";
+
+
+(* ---- v1.61: \:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:306e\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb ---- *)
+SlidePosterAudio::usage = "SlidePosterAudio[] / SlidePosterAudio[nb, opts] \:306f\:3001\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f (SlidePosterTalk \:30bb\:30eb\:3001\:524d\:7f6e\:304d\:306e Opening \:306f\:6700\:521d\:306e\:679a\:306e\:982d) \:3092\:767a\:8868\:306e\:8a2d\:5b9a\:306e\:58f0 (\:767a\:8868\:30dc\:30a4\:30b9 $SlideVoice + \:97f3\:58f0\:30e2\:30c7\:30eb $SlideVoiceModel) \:3067\:8aad\:3093\:3060 1 \:672c\:306e\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb <\:30c7\:30c3\:30ad>_poster_talk.m4a \:3092\:4f5c\:308b (v1.61\:3001\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:300d)\:3002\:58f0\:30fb\:8aad\:307f\:306e\:8f9e\:66f8\:30fb\:58f0\:306e\:30ad\:30e3\:30c3\:30b7\:30e5 (<\:30c7\:30c3\:30ad>_voice/) \:306f\:8aad\:307f\:4e0a\:3052\:52d5\:753b SlideTalkVideo \:3068\:540c\:3058 (\:52d5\:753b\:3092\:4f5c\:3063\:305f\:5f8c\:306a\:3089\:5408\:6210\:3057\:306a\:3044)\:3002\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:5408\:6210\:3001realtime: \:306e\:58f0\:306f SourceVaultRealtimeRender (\:518d\:751f\:3057\:306a\:3044)\:3001gpt-live-1 \:306f\:540c\:3058\:58f0\:306e gpt-realtime \:3067\:4f5c\:308b\:3002\:679a\:306e\:9577\:3055\:306f\:52d5\:753b\:3068\:540c\:3058 ($SlideTalkVideoLeadIn + \:58f0 + $SlideVoiceGap\:3001\:6700\:5f8c\:306b $SlideTalkVideoTail)\:3002\:5f62\:5f0f\:306f \"m4a\" (\:65e2\:5b9a $SlidePosterAudioFormat) / \"mp3\" / \"wav\" (m4a \:3068 mp3 \:306f ffmpeg\:3001\:7121\:3051\:308c\:3070 wav)\:3002\:96a3\:306b\:6642\:523b\:8868 <\:51fa\:529b>.json (\:679a\:30fb\:984c\:76ee\:30fb\:30dd\:30b9\:30bf\:30fc\:306e\:30d6\:30ed\:30c3\:30af\:30fb\:958b\:59cb\:30fb\:9577\:3055\:30fb\:539f\:7a3f)\:3002opts: \"Output\" / \"Format\" / \"Voice\" / \"Model\" / \"Parallel\" / \"Bitrate\" (\:65e2\:5b9a $SlidePosterAudioBitrate = 96k)\:3002\:623b\:308a\:5024 <|\"Status\" -> \"Done\", \"File\", \"Format\", \"Duration\", \"Slides\", \"Timeline\", \"Synthesized\", \"Reused\"|>\:3002";
+$SlidePosterAudioFormat::usage = "$SlidePosterAudioFormat \:306f SlidePosterAudio \:306e\:65e2\:5b9a\:306e\:5f62\:5f0f (\"m4a\" | \"mp3\" | \"wav\"\:3001\:65e2\:5b9a \"m4a\")\:3002";
+$SlidePosterAudioBitrate::usage = "$SlidePosterAudioBitrate \:306f SlidePosterAudio \:304c m4a / mp3 \:306b\:3059\:308b\:3068\:304d\:306e\:30d3\:30c3\:30c8\:30ec\:30fc\:30c8 (\:65e2\:5b9a \"96k\")\:3002";
 
 Begin["`Private`"]
 
@@ -537,7 +544,7 @@ SlideScenarioFromMarkdown[File[f_String]] := SlideScenarioFromMarkdown[
 
 SlideScenarioFromMarkdown[md_String] := Module[
   {lines, meta, body, slides = {}, cur = None, curContent = {}, curTalk = {}, curPosterTalk = {},
-   curQA = {},
+   curQA = {}, curTalkLangs = <||>,
    lastBulletLevel = 0,
    inCode = False, codeLines = {}, pushSlide, finishCode,
    inAppendix = False, appendixLines = {},
@@ -549,6 +556,11 @@ SlideScenarioFromMarkdown[md_String] := Module[
   pushSlide[] := (
     If[curTalk =!= {},
       AppendTo[curContent, {"Talk", StringRiffle[curTalk, "\n"]}]];
+    (* v1.60: talk[lang]: lines = the same talk in another language (subtitles) -> a translation talk cell after the talk *)
+    If[curTalkLangs =!= <||>,
+      With[{src = iSWTalkSrcHash[iSWTalkSpeakText[StringRiffle[curTalk, "\n"]]]},
+        KeyValueMap[AppendTo[curContent, {"TalkLang", <|"Lang" -> #1, "Text" -> StringRiffle[#2, "\n"], "Src" -> src|>}] &, curTalkLangs]]];
+    curTalkLangs = <||>;
     curTalk = {};
     If[curPosterTalk =!= {},
       AppendTo[curContent, {"PosterTalk", StringRiffle[curPosterTalk, "\n"]}]];
@@ -597,6 +609,10 @@ SlideScenarioFromMarkdown[md_String] := Module[
          StringTrim[StringDrop[StringTrim[line], 2]]}],
       StringStartsQ[StringTrim[line], "postertalk:"],
       AppendTo[curPosterTalk, StringTrim[StringDrop[StringTrim[line], 11]]],
+      (* v1.60: talk[ja]: = the talk in another language (subtitles) *)
+      StringMatchQ[StringTrim[line], RegularExpression["^talk\\[[A-Za-z][A-Za-z0-9_-]{1,7}\\]:.*"]],
+      With[{m = StringCases[StringTrim[line], RegularExpression["^talk\\[([A-Za-z][A-Za-z0-9_-]{1,7})\\]:(.*)$"] -> {"$1", "$2"}, 1]},
+        If[m =!= {}, With[{l = ToLowerCase[m[[1, 1]]]}, curTalkLangs[l] = Append[Lookup[curTalkLangs, l, {}], StringTrim[m[[1, 2]]]]]]],
       StringStartsQ[StringTrim[line], "talk:"],
       AppendTo[curTalk, StringTrim[StringDrop[StringTrim[line], 5]]],
       StringStartsQ[StringTrim[line], "qa:"],
@@ -680,6 +696,7 @@ SlideScenarioToMarkdown[scenario_Association] := Module[{out = {}, meta},
           "KeepRow", StringRiffle[("<<FIG" <> ToString[#] <> ">>") & /@ item[[2]], " "],
           "Table", iSWTableToMd[item[[2]]],
           "Talk", StringRiffle[("talk: " <> #) & /@ StringSplit[item[[2]], "\n"], "\n"],
+          "TalkLang", StringRiffle[("talk[" <> Lookup[item[[2]], "Lang", "en"] <> "]: " <> #) & /@ StringSplit[Lookup[item[[2]], "Text", ""], "\n"], "\n"],
           "PosterTalk", StringRiffle[("postertalk: " <> #) & /@ StringSplit[item[[2]], "\n"], "\n"],
           "QA", StringRiffle[("qa: " <> #) & /@ StringSplit[item[[2]], "\n"], "\n"],
           "Input", "```wl\n" <> item[[2]] <> "\n```",
@@ -731,6 +748,10 @@ iContentCell[{"Images", specs_List}] :=
 (* \:8868\:30bb\:30eb: \:5185\:5bb9\:306f TaggingRules \:306b\:4fdd\:6301\:3057\:3066 md \:3078\:5f80\:5fa9\:53ef\:80fd\:306b\:3059\:308b\:3002
    "ShowInput" \:30bf\:30b0\:3067 IncludeInput \:8a2d\:5b9a\:306b\:3088\:3089\:305a\:66f8\:304d\:51fa\:3057\:306b\:6b8b\:308b *)
 iContentCell[{"Talk", text_String}] := Cell[iSWTalkSpeakText[text], "SlideTalk"];
+(* v1.60: translation talk cell = the same talk in another language (TaggingRules SWTalkLang / SWTalkSrc exactly as SlideTalkTranslate writes them) *)
+iContentCell[{"TalkLang", a_Association}] := Cell[iSWTalkSpeakText[Lookup[a, "Text", ""]], "SlideTalk",
+  CellFrameColor -> $iSWTalkLangFrameColor,
+  TaggingRules -> {"SWTalkLang" -> Lookup[a, "Lang", "en"], "SWTalkSrc" -> Lookup[a, "Src", ""]}];
 
 (* \:30d1\:30f3\:304f\:305a (v1.25): \:300c\:7b2ck\:90e8 \[Ellipsis] \:203a \:89aa\:300d\:3092\:984c\:76ee\:306e\:76f4\:4e0b\:306b\:5c0f\:3055\:304f\:51fa\:3057\:3001\:4eca\:306e\:8a71\:304c\:5168\:4f53\:306e\:3069\:3053\:304b\:3092\:793a\:3059\:3002KG \:751f\:6210\:304c crumb: \:884c\:3067\:51fa\:3059 *)
 iContentCell[{"Crumb", text_String}] := Cell[iSWInlineTextData[text], "SlideCrumb"];
@@ -1565,7 +1586,7 @@ iBuildSlideCells[slide_Association] := Module[{cells},
       Cell[iSWInlineTextData[iLookupString[slide, "Title"]], "Subsection", CellOpen -> False, CellTags -> iSubsectionTags[slide]],
       Cell[BoxData[ToBoxes[iSizedSlideImage[<|"Path" -> slide["ImagePage"], "Width" -> Automatic|>, 900, 500]]],
         "Input", TextAlignment -> Center, CellMargins -> {{0, 0}, {0, 0}}, CellTags -> "ImagePage"]},
-     iContentCell /@ Cases[Lookup[slide, "Content", {}], {"Talk" | "QA", _}]],
+     iContentCell /@ Cases[Lookup[slide, "Content", {}], {"Talk" | "TalkLang" | "QA", _}]],
     cells = iContentCell /@ Lookup[slide, "Content", {}];
     Join[{iNavBarCell[],
       Cell[iSWInlineTextData[iLookupString[slide, "Title"]], "Subsection", CellTags -> iSubsectionTags[slide]]}, cells]]];
@@ -1592,6 +1613,7 @@ iBuildTitleSlideCells[scenario_Association] := Module[
 Options[SlideDeckBuild] = {
   "TitleSlide" -> True,
   "EndMarker" -> True,
+  "Prelude" -> {},
   StyleDefinitions -> Automatic,
   WindowSize -> {960, 540}};
 
@@ -1610,6 +1632,8 @@ SlideDeckBuild[scenario_Association, nbfile_String, OptionsPattern[]] := Module[
   If[title =!= "",
     AppendTo[cells, Cell[TextData[StyleBox[title, FontSize -> 48, FontWeight -> "Plain"]], "Section"]]];
   If[date =!= "", AppendTo[cells, Cell[date, "Text"]]];
+  (* v1.60: meta cells (Directive / Story / References ...) of the deck, before the first slide (SlideGraphBuildDeck "Prelude") *)
+  cells = Join[cells, Select[Flatten[{OptionValue["Prelude"]}], Head[#] === Cell &]];
   If[TrueQ[OptionValue["TitleSlide"]],
     cells = Join[cells, iBuildTitleSlideCells[scenario]]];
   cells = Join[cells, Flatten[iBuildSlideCells /@ scenario["Slides"], 1]];
@@ -3295,6 +3319,47 @@ iSWExternalErrorText[res_Association, msgs_List] := Module[{m, se},
     se =!= "", "exit " <> ToString[Lookup[res, "ExitCode", "?"]] <> ": " <> StringTake[se, UpTo[300]],
     True, "exit " <> ToString[Lookup[res, "ExitCode", "?"]]]];
 
+(* v1.62: \:5b50\:304c\:8d77\:52d5\:3067\:304d\:306a\:304b\:3063\:305f\:3068\:304d (\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5e2d\:304c\:57cb\:307e\:3063\:3066\:3044\:308b\:3068\:304d\:306a\:3069) \:306e\:6848\:5185\:3002
+   \:30e6\:30fc\:30b6\:30fc\:306e\:6307\:793a (2026-08-03): \:80cc\:666f\:30ab\:30fc\:30cd\:30eb\:306e\:8d77\:52d5\:5931\:6557\:3067\:306f\:5fc5\:305a (1) \:8d77\:52d5\:3067\:304d\:306a\:304b\:3063\:305f\:3053\:3068
+   (2) \:5e2d\:304c\:57cb\:307e\:3063\:3066\:3044\:308b\:53ef\:80fd\:6027 (\:5e2d\:304c\:8db3\:308a\:306a\:3044\:3068\:304d\:3082 "not activated" \:3068\:51fa\:308b)
+   (3) \:4f7f\:3063\:3066\:3044\:306a\:3044 WolframKernel.exe / wolframscript.exe \:3092\:7d42\:4e86\:3057\:3066\:5e2d\:3092\:7a7a\:3051\:3066\:304b\:3089\:3084\:308a\:76f4\:3059\:3053\:3068
+   \:3068 Wolfram \:306e\:30d7\:30ed\:30bb\:30b9\:306e\:4e00\:89a7\:3092\:51fa\:3059\:3002FE \:5185\:3078\:306e\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af\:3067\:9ed9\:3063\:3066\:96a0\:3055\:306a\:3044\:3002
+   2026-10-13 \:5b9f\:6e2c: FE + SourceVault \:30b5\:30fc\:30d3\:30b9 + Wolfram MCP + \:547c\:3073\:51fa\:3057\:5074\:3067 4 \:5e2d\:304c\:57cb\:307e\:308a\:3001
+   \:767b\:9332\:306e mp4 \:306e\:5b50\:304c exit -1 \:3067\:5373\:6b7b\:3057\:3066\:3044\:305f\:306e\:306b\:3001\:6848\:5185\:306f\:5b50\:306e\:751f\:306e\:82f1\:6587 (\:6570\:884c) \:3060\:3051\:3060\:3063\:305f *)
+iSWFirstLine[s_String] := First[Select[StringTrim /@ StringSplit[s, "\n"], # =!= "" &], ""];
+iSWFirstLine[_] := "";
+
+(* \:3044\:307e\:52d5\:3044\:3066\:3044\:308b Wolfram \:306e\:30d7\:30ed\:30bb\:30b9 (\:3053\:306e FE \:306e\:5206\:3082\:542b\:3080)\:3002\:3069\:308c\:3092\:7d42\:4e86\:3059\:308b\:304b\:306e\:898b\:5f53\:7528\:3002
+   FE \:30ab\:30fc\:30cd\:30eb\:3067\:306f RunProcess \:306e tasklist \:306f\:623b\:308b (\:5171\:6709\:306e MCP \:30ab\:30fc\:30cd\:30eb\:3084 tick \:306e\:4e2d\:3067\:306f\:56fa\:307e\:3063\:305f\:5b9f\:7e3e\:304c
+   \:3042\:308b\:306e\:3067\:3001\:305d\:3053\:304b\:3089\:547c\:3076\:4f7f\:3044\:65b9\:3092\:3059\:308b\:306a\:3089 $iSWListWolframProcesses = False \:306b\:3059\:308b) *)
+If[! ValueQ[$iSWListWolframProcesses], $iSWListWolframProcesses = True];
+iSWWolframProcessList[] := If[! TrueQ[$iSWListWolframProcesses] || $OperatingSystem =!= "Windows", {},
+  Quiet @ Check[
+    Module[{out, rows},
+      out = TimeConstrained[RunProcess[{"tasklist", "/FO", "CSV", "/NH"}, "StandardOutput"], 10, ""];
+      If[! StringQ[out], out = ""];
+      rows = StringCases[#, "\"" ~~ f : (Except["\""] ...) ~~ "\"" :> f] & /@
+        Select[StringSplit[out, "\n"], StringContainsQ[#, "wolfram", IgnoreCase -> True] &];
+      Take[Cases[rows, {name_, pid_, ___, mem_} :> name <> "  PID " <> pid <> "  " <> mem], UpTo[20]]],
+    {}]];
+
+iSWWolframProcessNote[ps_List] := If[ps =!= {},
+  iSL["\n\:3044\:307e\:306e Wolfram \:306e\:30d7\:30ed\:30bb\:30b9 (\:3053\:306e FE \:306e\:5206\:3082\:542b\:3080):\n", "\nWolfram processes now (incl. this FE):\n"] <>
+    StringRiffle[ps, "\n"],
+  iSL["\n\:6b8b\:3063\:3066\:3044\:308b\:30d7\:30ed\:30bb\:30b9\:306f\:7aef\:672b\:306e tasklist /FI \"IMAGENAME eq WolframKernel.exe\" \:3067\:78ba\:304b\:3081\:3089\:308c\:307e\:3059\:3002",
+    "\nCheck for leftover processes in a terminal: tasklist /FI \"IMAGENAME eq WolframKernel.exe\""]];
+
+(* \:5e2d\:306e\:6848\:5185\:306e\:672c\:6587 (\:300c\:2026\:5e2d\:3092\:7a7a\:3051\:3066\:304b\:3089\:3001\:300d\:307e\:3067\:3002\:7d9a\:304d\:306f\:547c\:3076\:5074\:304c\:66f8\:304f) *)
+iSWExternalSeatAdvice[] := iSL[
+  "\:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5e2d (\:540c\:6642\:306b\:52d5\:304b\:305b\:308b Wolfram \:306e\:30d7\:30ed\:30bb\:30b9\:306e\:6570) \:304c\:57cb\:307e\:3063\:3066\:3044\:308b\:53ef\:80fd\:6027\:304c\:3042\:308a\:307e\:3059 (\:5e2d\:304c\:8db3\:308a\:306a\:3044\:3068\:304d\:3082\:300cnot activated\:300d\:3068\:8868\:793a\:3055\:308c\:307e\:3059)\:3002\:4f7f\:3063\:3066\:3044\:306a\:3044 WolframKernel.exe / wolframscript.exe \:3092\:7d42\:4e86\:3057\:3066\:5e2d\:3092\:7a7a\:3051\:3066\:304b\:3089\:3001",
+  "The Wolfram license seats (how many Wolfram processes may run at once) may be exhausted (the \"not activated\" message also appears when no seat is free). End unused WolframKernel.exe / wolframscript.exe processes to free a seat, then "];
+
+(* FE \:5185\:3078\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af\:3059\:308b\:3068\:304d\:306b\:72b6\:614b\:6b04\:3078\:8db3\:3059\:6ce8\:8a18\:3002\:5b50\:304c\:8d77\:52d5\:3067\:304d\:306a\:304b\:3063\:305f\:3068\:304d ($iSWExternalBroken) \:3060\:3051 *)
+iSWExternalSeatNote[] := If[$SlideExportExternal =!= False && TrueQ[$iSWExternalBroken],
+  iSL[" (\:5225\:30d7\:30ed\:30bb\:30b9\:3092\:8d77\:52d5\:3067\:304d\:307e\:305b\:3093: \:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5e2d\:304c\:57cb\:307e\:3063\:3066\:3044\:308b\:53ef\:80fd\:6027\:3002\:4f7f\:3063\:3066\:3044\:306a\:3044 WolframKernel.exe / wolframscript.exe \:3092\:7d42\:4e86\:3059\:308b\:3068\:5e2d\:304c\:7a7a\:304d\:307e\:3059)",
+    " (the separate process could not start: license seats may be exhausted; end unused WolframKernel.exe / wolframscript.exe to free a seat)"],
+  ""];
+
 iSWExternalExport[deckFile_String, kind_String, outSpec_String, optsCode_String] := Module[
   {script, tmp, res, out, so, msgs, r},
   $iSWExternalLastError = None; $iSWExternalLastRan = False;
@@ -3352,7 +3417,7 @@ iSWExportImagesAction[nb_] := Module[{dir, base, imgs, files, ext, outdir},
   If[iSWUnsavedQ[nb],
     iSWStatus[nb, iSL["\:672a\:4fdd\:5b58\:306e\:305f\:3081 FE \:5185\:3067\:51e6\:7406\:3057\:307e\:3059 (\:4fdd\:5b58\:5f8c\:306a\:3089\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:9ad8\:901f)",
       "Unsaved: processing inside FE (save first to use the external process)"]]];
-  iSWStatus[nb, iSL["\:753b\:50cf\:66f8\:304d\:51fa\:3057\:4e2d...", "Exporting images..."]];
+  iSWStatus[nb, iSL["\:753b\:50cf\:66f8\:304d\:51fa\:3057\:4e2d...", "Exporting images..."] <> iSWExternalSeatNote[]];
   imgs = SlideDeckImages[iSWDeckSource[nb]];
   If[!MatchQ[imgs, {__Image}],
     iSWStatus[nb, iSL["\:66f8\:304d\:51fa\:3057\:5931\:6557", "Export failed"]]; iSWStatusClearLater[nb];
@@ -3381,7 +3446,7 @@ iSWExportVideoAction[nb_] := Module[{dir, base, imgs, out, ext, mp4},
   If[iSWUnsavedQ[nb],
     iSWStatus[nb, iSL["\:672a\:4fdd\:5b58\:306e\:305f\:3081 FE \:5185\:3067\:51e6\:7406\:3057\:307e\:3059 (\:4fdd\:5b58\:5f8c\:306a\:3089\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:9ad8\:901f)",
       "Unsaved: processing inside FE (save first to use the external process)"]]];
-  iSWStatus[nb, iSL["mp4 \:66f8\:304d\:51fa\:3057\:4e2d...", "Exporting mp4..."]];
+  iSWStatus[nb, iSL["mp4 \:66f8\:304d\:51fa\:3057\:4e2d...", "Exporting mp4..."] <> iSWExternalSeatNote[]];
   imgs = SlideDeckImages[iSWDeckSource[nb]];
   If[!MatchQ[imgs, {__Image}],
     iSWStatus[nb, iSL["\:66f8\:304d\:51fa\:3057\:5931\:6557", "Export failed"]]; iSWStatusClearLater[nb];
@@ -4245,7 +4310,9 @@ iSWQARenderExternal[deck_String, nums_List, outdir_String] := Module[{r},
   If[$SlideExportExternal === False || TrueQ[$iSWExternalBroken], Return[$Failed]];
   r = iSWExternalExport[deck, "SlideDeckExportImages", outdir,
     "\"Slides\" -> " <> ToString[nums, InputForm]];
-  If[r === $Failed && $SlideExportExternal === Automatic, $iSWExternalBroken = True];
+  (* v1.62: \:5b50\:304c\:30b9\:30af\:30ea\:30d7\:30c8\:3092\:8d70\:3089\:305b\:3066\:5931\:6557\:3057\:305f\:3068\:304d (\:30c7\:30c3\:30ad\:306e\:554f\:984c) \:306f\:6b21\:3082\:8a66\:3059 (iSWTryExternal \:3068\:540c\:3058) *)
+  If[r === $Failed && $SlideExportExternal === Automatic && ! TrueQ[$iSWExternalLastRan],
+    $iSWExternalBroken = True];
   If[MatchQ[r, {__String}], r, $Failed]];
 
 (* \:5fc5\:8981\:306a\:30b9\:30e9\:30a4\:30c9\:306e\:753b\:50cf\:3092\:7528\:610f\:3057\:3066 <\:756a\:53f7 -> \:30d1\:30b9> \:3092\:8fd4\:3059\:3002\:65e2\:306b\:3042\:308b\:3082\:306e\:306f\:4f5c\:3089\:306a\:3044 *)
@@ -4270,6 +4337,8 @@ iSWQAEnsureImages[nb_, deck_, nums_List, digestOf_Association] := Module[
       If[FileExistsQ[want[n]], out[n] = iSWQANormalizeImageFile[want[n]]]],
       {missing, files}],
     (* \:5225\:30d7\:30ed\:30bb\:30b9\:304c\:4f7f\:3048\:306a\:3044: FE \:5185\:3067\:63cf\:304f (\:679a\:6570\:304c\:5c11\:306a\:3044\:306e\:3067\:8a31\:5bb9) *)
+    iSWStatus[nb, iSL["\:30b9\:30e9\:30a4\:30c9\:753b\:50cf\:3092 FE \:5185\:3067\:7528\:610f\:4e2d (" <> ToString[Length[missing]] <> " \:679a)...",
+      "Rendering slide images inside the FE (" <> ToString[Length[missing]] <> ")..."] <> iSWExternalSeatNote[]];
     imgs = Quiet[SlideDeckImages[deck, "Slides" -> missing]];
     If[MatchQ[imgs, {__Image}] && Length[imgs] === Length[missing],
       MapThread[Function[{n, im},
@@ -5006,37 +5075,62 @@ Options[SlideDeckUpload] = {
    \:5225\:30d7\:30ed\:30bb\:30b9 (wolframscript) \:3067\:3060\:3051\:4f5c\:308a\:76f4\:3059\:3002FE \:5185\:306e\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:306f\:5168\:30b9\:30e9\:30a4\:30c9\:3092\:63cf\:304f\:9593 FE \:3092
    \:5360\:6709\:3057\:3001\:88cf\:306e ScheduledTask \:3068\:565b\:307f\:5408\:3046\:3068 FE \:3068\:30ab\:30fc\:30cd\:30eb\:304c\:5f85\:3061\:5408\:3063\:3066\:6b62\:307e\:308b
    (2026-10-03: 54 \:679a\:306e\:30c7\:30c3\:30ad\:3092\:767b\:9332 -> mp4 \:306e\:4f5c\:308a\:76f4\:3057\:3067 FE \:304c\:5fdc\:7b54\:306a\:3057\:306e\:307e\:307e 40 \:5206\:3001CPU \:306f\:53cc\:65b9 0)\:3002
-   \:4f5c\:308a\:76f4\:305b\:306a\:3044\:3068\:304d\:306f\:53e4\:3044 mp4 \:3092\:4e0a\:3052\:305a\:3001\:7406\:7531\:3068\:6b21\:306e\:624b\:3092 Failure \:3067\:8fd4\:3059 *)
-iSWExportVideoForUpload[nb_NotebookObject] := Module[{dir, base, mp4, reason, ext},
+   \:4f5c\:308a\:76f4\:305b\:306a\:3044\:3068\:304d\:306f\:53e4\:3044 mp4 \:3092\:4e0a\:3052\:305a\:3001\:7406\:7531\:3068\:6b21\:306e\:624b\:3092 Failure \:3067\:8fd4\:3059\:3002
+   v1.62: mp4 \:304c\:7121\:3044\:3068\:304d\:306f\:300c\:307e\:3060\:3042\:308a\:307e\:305b\:3093\:300d(\:4ee5\:524d\:306f\:7121\:304f\:3066\:3082\:300c\:53e4\:3044\:307e\:307e\:300d\:3068\:51fa\:3066\:3044\:305f)\:3002
+   \:5b50\:304c\:8d77\:52d5\:3067\:304d\:306a\:304b\:3063\:305f\:3068\:304d (\:5e2d\:306e\:67af\:6e07\:306a\:3069) \:306f\:3001\:5e2d\:306e\:6848\:5185\:3068 Wolfram \:306e\:30d7\:30ed\:30bb\:30b9\:306e\:4e00\:89a7\:3092\:51fa\:3059\:3002
+   \:767b\:9332\:306b\:306f FE \:5185\:306e\:30d5\:30a9\:30fc\:30eb\:30d0\:30c3\:30af\:304c\:7121\:304f\:3001\:6848\:5185\:306f\:300c\:5e2d\:3092\:7a7a\:3051\:3066\:3082\:3046\:4e00\:5ea6\:767b\:9332\:300d\:306a\:306e\:3067\:3001
+   \:524d\:306e\:5931\:6557 ($iSWExternalBroken) \:3067\:8a66\:3055\:305a\:306b\:65ad\:308b\:3053\:3068\:306f\:3057\:306a\:3044 (\:8d77\:52d5\:3067\:304d\:306a\:3044\:5b50\:306f\:6570\:79d2\:3067\:7d42\:308f\:308b)\:3002
+   \:4f5c\:308c\:305f\:3089 $iSWExternalBroken \:306f False \:306e\:307e\:307e\:306a\:306e\:3067\:3001\:307b\:304b\:306e\:66f8\:304d\:51fa\:3057\:3082\:5225\:30d7\:30ed\:30bb\:30b9\:306b\:623b\:308b *)
+iSWExportVideoForUpload[nb_NotebookObject] := Module[
+  {dir, base, mp4, reason, ext, exists, err, seatQ, ps = {}, lead, why, notSent},
   {dir, base} = iSWDeckBaseName[nb];
   mp4 = FileNameJoin[{dir, base <> ".mp4"}];
   reason = Which[
     $SlideExportExternal === False, "ExternalDisabled",
-    TrueQ[$iSWExternalBroken], "ExternalUnavailable",
     iSWUnsavedQ[nb], "Unsaved",
     True, None];
   If[reason === None,
+    $iSWExternalBroken = False;
+    $iSWExternalLastError = None; $iSWExternalLastRan = False;
     ext = iSWTryExternal[nb, "SlideDeckExportVideo", mp4];
     If[StringQ[ext],
       Quiet[iSWRecordVideoDigest[Quiet[NotebookFileName[nb]]]];
       Return[ext]];
     reason = "ExternalUnavailable"];
+  exists = FileExistsQ[mp4];
+  err = $iSWExternalLastError;
+  (* \:5b50\:3092\:8d77\:52d5\:3057\:3088\:3046\:3068\:3057\:3066\:3001\:30b9\:30af\:30ea\:30d7\:30c8\:307e\:3067\:5c4a\:304b\:306a\:304b\:3063\:305f *)
+  seatQ = reason === "ExternalUnavailable" && StringQ[err] && ! TrueQ[$iSWExternalLastRan];
+  If[seatQ, ps = iSWWolframProcessList[]];
+  lead = If[exists,
+    iSL["mp4 \:304c\:30b9\:30e9\:30a4\:30c9\:3088\:308a\:53e4\:3044\:307e\:307e\:3067\:3059\:3002", "The mp4 is older than the slides. "],
+    iSL["mp4 \:304c\:307e\:3060\:3042\:308a\:307e\:305b\:3093\:3002", "The mp4 does not exist yet. "]];
+  notSent = If[exists,
+    iSL["\:53e4\:3044 mp4 \:306f\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:305b\:3093\:3002", "The old mp4 was not uploaded."],
+    iSL["\:4f55\:3082\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:305b\:3093\:3002", "Nothing was uploaded."]];
+  why = Which[
+    reason === "Unsaved", iSL[
+      "\:30c7\:30c3\:30ad\:306b\:4fdd\:5b58\:3057\:3066\:3044\:306a\:3044\:5909\:66f4\:304c\:3042\:308b\:305f\:3081\:3001\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:66f8\:304d\:51fa\:305b\:307e\:305b\:3093\:3002\:4fdd\:5b58\:3057\:3066\:304b\:3089\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
+      "The deck has unsaved changes, so it cannot be exported in a separate process. Save the deck and press Register again. "],
+    reason === "ExternalDisabled", iSL[
+      "\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:306e\:66f8\:304d\:51fa\:3057\:304c\:5207\:3063\:3066\:3042\:308a\:307e\:3059 ($SlideExportExternal = False)\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300cmp4\:300d\:3067\:66f8\:304d\:51fa\:3057\:3066\:304b\:3089 (FE \:5185\:3067\:63cf\:304f\:306e\:3067\:6570\:5206\:304b\:304b\:308a\:307e\:3059)\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
+      "External export is disabled ($SlideExportExternal = False). Export it with the palette's mp4 button (renders inside the FE, takes minutes), then press Register again. "],
+    seatQ, iSL["\:5225\:30d7\:30ed\:30bb\:30b9 (wolframscript) \:3092\:8d77\:52d5\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f", "The separate process (wolframscript) could not start"] <>
+      If[iSWFirstLine[err] =!= "", ":\n" <> iSWFirstLine[err] <> "\n", iSL["\:3002", ". "]] <>
+      iSWExternalSeatAdvice[] <> iSL["\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002", "press Register again. "],
+    True, iSL["\:5225\:30d7\:30ed\:30bb\:30b9 (wolframscript) \:3067\:66f8\:304d\:51fa\:305b\:307e\:305b\:3093\:3067\:3057\:305f", "It could not be exported in a separate process (wolframscript)"] <>
+      If[StringQ[err], ":\n" <> err <> "\n", iSL["\:3002", ". "]] <>
+      iSL["\:30d1\:30ec\:30c3\:30c8\:306e\:300cmp4\:300d\:3067\:66f8\:304d\:51fa\:3057\:3066\:304b\:3089 (FE \:5185\:3067\:63cf\:304f\:306e\:3067\:6570\:5206\:304b\:304b\:308a\:307e\:3059)\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
+        "Export it with the palette's mp4 button (renders inside the FE, takes minutes), then press Register again. "]];
   Failure["SlideVideoStale", <|
-    "MessageTemplate" -> Switch[reason,
-      "Unsaved", iSL[
-        "mp4 \:304c\:30b9\:30e9\:30a4\:30c9\:3088\:308a\:53e4\:3044\:307e\:307e\:3067\:3059\:3002\:30c7\:30c3\:30ad\:306b\:4fdd\:5b58\:3057\:3066\:3044\:306a\:3044\:5909\:66f4\:304c\:3042\:308b\:305f\:3081\:3001\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:4f5c\:308a\:76f4\:305b\:307e\:305b\:3093\:3002\:4fdd\:5b58\:3057\:3066\:304b\:3089\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:53e4\:3044 mp4 \:306f\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:305b\:3093\:3002",
-        "The mp4 is older than the slides. The deck has unsaved changes, so it cannot be rebuilt in a separate process. Save the deck and press Register again. The old mp4 was not uploaded."],
-      "ExternalDisabled", iSL[
-        "mp4 \:304c\:30b9\:30e9\:30a4\:30c9\:3088\:308a\:53e4\:3044\:307e\:307e\:3067\:3059\:3002\:5225\:30d7\:30ed\:30bb\:30b9\:3067\:306e\:66f8\:304d\:51fa\:3057\:304c\:5207\:3063\:3066\:3042\:308a\:307e\:3059 ($SlideExportExternal = False)\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:300cmp4\:300d\:3067\:4f5c\:308a\:76f4\:3057\:3066\:304b\:3089 (FE \:5185\:3067\:63cf\:304f\:306e\:3067\:6570\:5206\:304b\:304b\:308a\:307e\:3059)\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:53e4\:3044 mp4 \:306f\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:305b\:3093\:3002",
-        "The mp4 is older than the slides. External export is disabled ($SlideExportExternal = False). Rebuild it with the palette's mp4 button (renders inside the FE, takes minutes), then press Register again. The old mp4 was not uploaded."],
-      _, iSL[
-        "mp4 \:304c\:30b9\:30e9\:30a4\:30c9\:3088\:308a\:53e4\:3044\:307e\:307e\:3067\:3059\:3002\:5225\:30d7\:30ed\:30bb\:30b9 (wolframscript) \:3067\:4f5c\:308a\:76f4\:305b\:307e\:305b\:3093\:3067\:3057\:305f" <>
-          If[StringQ[$iSWExternalLastError], ":\n" <> $iSWExternalLastError <> "\n", " (\:5225\:30d7\:30ed\:30bb\:30b9\:304c\:8d77\:52d5\:3067\:304d\:306a\:3044: \:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5e2d\:306a\:3069)\:3002"] <>
-          "\:30d1\:30ec\:30c3\:30c8\:306e\:300cmp4\:300d\:3067\:4f5c\:308a\:76f4\:3057\:3066\:304b\:3089 (FE \:5185\:3067\:63cf\:304f\:306e\:3067\:6570\:5206\:304b\:304b\:308a\:307e\:3059)\:3001\:3082\:3046\:4e00\:5ea6\:300c\:767b\:9332\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:53e4\:3044 mp4 \:306f\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:3066\:3044\:307e\:305b\:3093\:3002",
-        "The mp4 is older than the slides and could not be rebuilt in a separate process (wolframscript)" <>
-          If[StringQ[$iSWExternalLastError], ":\n" <> $iSWExternalLastError <> "\n", " (it could not start: license seat etc.). "] <>
-          "Rebuild it with the palette's mp4 button (renders inside the FE, takes minutes), then press Register again. The old mp4 was not uploaded."]],
-    "Reason" -> reason, "File" -> mp4|>]];
+    "MessageTemplate" -> lead <> why <> notSent <>
+      If[seatQ,
+        iSL["\n(\:5e2d\:3092\:7a7a\:3051\:3089\:308c\:306a\:3044\:3068\:304d\:306f\:3001\:30d1\:30ec\:30c3\:30c8\:306e\:300cmp4\:300d\:3067 FE \:5185\:3067\:66f8\:304d\:51fa\:3057\:3066\:304b\:3089\:300c\:767b\:9332\:300d\:3092\:62bc\:3059\:3053\:3068\:3082\:3067\:304d\:307e\:3059\:3002\:6570\:5206\:304b\:304b\:308a\:307e\:3059\:3002)",
+          "\n(If no seat can be freed, export it with the palette's mp4 button inside the FE (takes minutes), then press Register.)"] <>
+          iSWWolframProcessNote[ps],
+        ""],
+    "Reason" -> reason, "File" -> mp4, "Exists" -> exists,
+    "SeatProblem" -> seatQ, "Processes" -> ps|>]];
 
 SlideDeckUpload[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
   If[Head[nb] === NotebookObject, SlideDeckUpload[nb, opts],
@@ -5691,7 +5785,7 @@ iSWVoicePlainText[x_] := iSWVoicePlainText[ToString[x]];
    _talk.md \:304c\:3042\:308c\:3070 front matter \:304c\:4e0d\:8db3\:5206\:3092\:88dc\:3046 (TaggingRules \:304c\:512a\:5148)\:3002 *)
 
 $iSWTalkMetaKeys = {"Id", "Title", "Aliases", "Event", "Author", "Date", "SlideURL",
-  "Language", "NarrationInstructions", "SecondsPerSlide", "PrivacyLevel", "UploadURL", "PosterURL", "PosterUploadURL"};
+  "Language", "NarrationInstructions", "SecondsPerSlide", "PrivacyLevel", "UploadURL", "PosterURL", "PosterUploadURL", "Subtitle"};
 
 (* ---- \:6307\:793a (Directive) \:30bb\:30eb\:306e Key: value \:884c (v1.18) ------------------------------
    \:30c7\:30c3\:30ad\:5148\:982d (\:524d\:7f6e\:304d) \:306e\:6307\:793a\:30bb\:30eb\:306b
@@ -5709,6 +5803,8 @@ $iSWDirectiveMetaKeyMap = <|
   "posterurl" -> "PosterURL", "posterhost" -> "PosterUploadURL", "posterupload" -> "PosterUploadURL", "posteruploadurl" -> "PosterUploadURL",
   "aliases" -> "Aliases", "alias" -> "Aliases", "event" -> "Event", "author" -> "Author",
   "date" -> "Date", "language" -> "Language",
+  (* v1.60: Subtitle: <lang> = subtitles in that language while speaking another (translation talk cells) *)
+  "subtitle" -> "Subtitle", "subtitles" -> "Subtitle", "\:5b57\:5e55" -> "Subtitle",
   "narrationinstructions" -> "NarrationInstructions", "instructions" -> "NarrationInstructions",
   "secondsperslide" -> "SecondsPerSlide", "privacylevel" -> "PrivacyLevel",
   "id" -> "Id"|>;
@@ -5723,7 +5819,9 @@ iSWDirectiveTemplateText[] := StringJoin[
   (* v1.56: \:30dd\:30b9\:30bf\:30fc\:3092\:7f6e\:304f web \:306e URL \:3068\:914d\:7f6e\:5148 (\:7121\:3051\:308c\:3070 Host: \:3068\:540c\:3058) *)
   "PosterURL: \n", "PosterHost: ", $iSWDirectiveHostPlaceholder, "\n",
   (* v1.34: \:8aad\:307f\:4e0a\:3052\:306e\:8a00\:8a9e\:3002\:7a7a\:306a\:3089 $SlideTalkLanguage (Automatic = $Language) *)
-  "Language: \n\n",
+  "Language: \n",
+  (* v1.60: subtitles in another language than the one spoken (ja while speaking en etc.). Empty = the original talks when they differ *)
+  "Subtitle: \n\n",
   iSL["\:3053\:3053\:306b LLM \:3078\:306e\:6307\:793a\:3092\:8a18\:8f09...", "Write LLM directives here..."]];
 
 (* \:96db\:5f62\:306e\:307e\:307e (\:7a7a / "..." \:3092\:542b\:3080 URL) \:306f\:300c\:66f8\:3044\:3066\:3044\:306a\:3044\:300d\:3068\:540c\:3058\:6271\:3044\:3002
@@ -7940,10 +8038,17 @@ SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
   $iSWPlayState["Engine"] = engine;
   (* \:5b57\:5e55: \:8a71\:3059\:8a00\:8a9e\:304c\:5143\:306e\:539f\:7a3f\:3068\:9055\:3048\:3070\:3001\:5143\:306e\:539f\:7a3f\:3092\:5b57\:5e55\:306b *)
   $iSWPlayState["Mode"] = SlideTalkMode[];
-  $iSWPlayState["Subtitles"] = If[SlideTalkMode[] === "Poster", If[$SlideSubtitles === True, texts, None],
-    If[iSWSubtitleOnQ[plan],
-      With[{st = Quiet[iSWTalkLangPlan[iSWTalkResolve[nb], plan["Base"]]["Texts"]]}, If[AssociationQ[st], st, None]], None]];
-  $iSWPlayState["SubLangs"] = {plan["Base"], plan["Language"]};
+  (* v1.60: Subtitle: <lang> in the directive cell = subtitles from that language's translation talk cells (English talk with Japanese
+     subtitles etc.); without it, the original talks when the speaking language differs from them (v1.36) *)
+  Module[{subLang = iSWSubtitleLanguage[nb], subText},
+    subText[l_] := With[{st = Quiet[iSWTalkLangPlan[iSWTalkResolve[nb], l]["Texts"]]}, If[AssociationQ[st], st, None]];
+    $iSWPlayState["Subtitles"] = Which[
+      SlideTalkMode[] === "Poster", If[$SlideSubtitles === True, texts, None],
+      $SlideSubtitles === False, None,
+      StringQ[subLang] && subLang =!= plan["Language"], subText[subLang],
+      iSWSubtitleOnQ[plan], subText[plan["Base"]],
+      True, None];
+    $iSWPlayState["SubLangs"] = {If[StringQ[subLang], subLang, plan["Base"]], plan["Language"]}];
   $iSWPlayState["FinalQA"] = False; $iSWPlayState["SubGen"] = 0; $iSWPlayState["SubQADeckUntil"] = 0;
   Quiet[iSWInstallAskHandler[]];
   If[AssociationQ[$iSWPlayState["Subtitles"]], iSWSubtitleOpen[]; Quiet[iSWSubtitleQAStart[]], iSWSubtitleClose[]];
@@ -8224,7 +8329,11 @@ iSWTalkRegisterAction[nb_] := Module[{res, up, note, head, qa, pnote},
     up === None, iSL["(\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:5148\:306a\:3057: \:6307\:793a\:30bb\:30eb\:306b Host: \:3092\:66f8\:304f\:3068 mp4 \:3082\:914d\:7f6e)",
       "(no upload target: add a Host: line to the directive cell)"],
     FailureQ[up] && First[up] === "SlideVideoStale",
-      iSL["mp4 \:306f\:53e4\:3044\:307e\:307e (\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:305b\:305a)", "mp4 is stale (not uploaded)"],
+      Which[
+        TrueQ[Lookup[Last[up], "SeatProblem", False]],
+          iSL["mp4 \:3092\:66f8\:304d\:51fa\:305b\:305a (\:5225\:30d7\:30ed\:30bb\:30b9\:304c\:8d77\:52d5\:3067\:304d\:306a\:3044: \:30e9\:30a4\:30bb\:30f3\:30b9\:306e\:5e2d?)", "mp4 not exported (separate process could not start: license seats?)"],
+        ! TrueQ[Lookup[Last[up], "Exists", True]], iSL["mp4 \:304c\:307e\:3060\:7121\:3044 (\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:305b\:305a)", "mp4 does not exist yet (not uploaded)"],
+        True, iSL["mp4 \:306f\:53e4\:3044\:307e\:307e (\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:305b\:305a)", "mp4 is stale (not uploaded)"]],
     FailureQ[up], iSL["mp4 \:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:5931\:6557", "mp4 upload FAILED"],
     Lookup[up, "Status", ""] === "Unchanged",
       iSL["mp4 \:306f\:914d\:4fe1\:6e08\:307f (\:5909\:66f4\:306a\:3057)", "mp4 already published (unchanged)"],
@@ -8746,6 +8855,8 @@ iSWVideoImages[nb_NotebookObject] := Module[{dir, base, outdir, deck, saved, st,
     ext = iSWTryExternal[nb, "SlideDeckExportImages", outdir];
     If[MatchQ[ext, {__String}] && AllTrue[ext, FileExistsQ],
       files = ext; src = "External",
+      If[saved, iSWStatus[nb, iSL["FE \:306e\:4e2d\:3067\:30b9\:30e9\:30a4\:30c9\:306e\:753b\:50cf\:3092\:63cf\:3044\:3066\:3044\:307e\:3059...",
+        "Rendering the slide images inside the FE..."] <> iSWExternalSeatNote[]]];
       imgs = SlideDeckImages[iSWDeckSource[nb]];
       If[MatchQ[imgs, {__Image}],
         If[! DirectoryQ[outdir], Quiet[CreateDirectory[outdir, CreateIntermediateDirectories -> True]]];
@@ -9732,7 +9843,7 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.59";
+$SlideWorkflowInteractiveVersion = "1.62";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
 (* v1.39: \:30d1\:30ec\:30c3\:30c8\:3092\:300c\:4f5c\:6210\:300d\:3068\:300c\:767a\:8868\:300d\:306b\:5206\:3051\:308b\:3002\:4f5c\:6210 = \:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5 / 1 \:679a\:305a\:3064 /
@@ -9787,7 +9898,11 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:8a08\:7b97\:30ce\:30fc\:30c8", "Compute NB"], RGBColor[0.55, 0.45, 0.65], SlideComputeBuild[]],
         iSL["\:6587\:732e (\:8ad6\:6587\:30fb\:8cc7\:6599\:30fb\:904e\:53bb\:30b9\:30e9\:30a4\:30c9\:30fbSourceVault \:306e\:6587\:66f8) \:3068 KG \:304b\:3089\:3001Mathematica \:306e\:8a08\:7b97\:3068\:7d50\:679c\:3092\:307e\:3068\:3081\:305f\:8a08\:7b97\:30ce\:30fc\:30c8\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:304c\:4f5c\:308b\:3002SourceVault \:306b\:767b\:9332\:3055\:308c (sv://computenb/\[Ellipsis])\:3001\:6587\:732e\:306b\:8ffd\:8a18\:3055\:308c\:3066 KG \:306e\:7d20\:6750\:306b\:306a\:308b\:3002\:30bb\:30eb\:306e\:5358\:4f4d\:306f\:30ce\:30fc\:30c9\:3068\:3057\:3066\:4ed6\:306e KG \:3067\:3082\:518d\:5229\:7528\:3067\:304d\:308b (SlideGraphReuse)",
-          "The agent builds a compute notebook (Mathematica computations and results) from the sources and the KG; it is registered in SourceVault (sv://computenb/...), added to References as KG material, and its units can be reused as nodes in other KGs"]], Spacer[{54, 18}]],
+          "The agent builds a compute notebook (Mathematica computations and results) from the sources and the KG; it is registered in SourceVault (sv://computenb/...), added to References as KG material, and its units can be reused as nodes in other KGs"]],
+        (* v1.60: one talk cut out of a large mother KG (Story: Parent: / Focus: / Include:) *)
+        iSWTip[iSWButton2[iSL["\:5207\:308a\:51fa\:3057", "Subgraph"], RGBColor[0.55, 0.5, 0.3], SlideGraphSubgraph[]],
+          iSL["\:6bcd\:4f53\:306e\:5927\:304d\:306a\:77e5\:8b58\:30b0\:30e9\:30d5\:304b\:3089\:3001\:3053\:306e\:767a\:8868\:3076\:3093\:306e\:90e8\:5206\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:5207\:308a\:51fa\:3059 (Story \:306e Parent: \:6bcd\:4f53\:306e Id\:3001Focus: \:5185\:5bb9\:306e\:8a18\:8ff0 (LLM \:304c\:90e8\:3092\:9078\:3076) \:304b Include: \:90e8 = Id \:306e\:4e26\:3073)\:3002\:6bcd\:4f53\:306f\:5206\:5272\:3057\:306a\:3044\:3002Parent: \:304c\:3042\:308c\:3070\:300cKG\:69cb\:7bc9\:300d\:3082\:3053\:308c\:306b\:306a\:308b",
+            "Cut this talk's subgraph out of a large mother knowledge graph (Story: Parent: mother id, Focus: what the talk covers (the LLM picks the parts) or Include: parts = ids). The mother stays whole; Build KG does the same when Parent: is set"]]],
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["KG\:69cb\:7bc9", "Build KG"], RGBColor[0.5, 0.6, 0.25], SlideGraphBuild[]],
           iSL["\:6587\:732e\:306b\:548c\:8a33\:30ce\:30fc\:30c8\:304c\:3042\:308c\:3070\:8ad6\:6587\:304b\:3089\:3001\:7121\:3051\:308c\:3070\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306e\:7b4b\:66f8\:304d (\:30b7\:30ca\:30ea\:30aa) \:304b\:3089\:77e5\:8b58\:30b0\:30e9\:30d5\:3092\:4f5c\:308b (\:95a2\:9023\:7814\:7a76\:3082\:63a2\:3059)",
@@ -9924,7 +10039,11 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
       iSWButtonRow[
         iSWTip[iSWButton2[iSL["\:767b\:9332", "Register"], RGBColor[0.35, 0.55, 0.4],
           With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWTalkRegisterAction[nb]]]],
-        iSL["\:767b\:9332\:7c3f\:30fbQA\:30fbmp4 \:3092\:66f4\:65b0 (\:5909\:308f\:3063\:305f\:5206\:3060\:3051)", "Update the registry, Q&A and mp4 (only what changed)"]], Spacer[{54, 18}]]
+        iSL["\:767b\:9332\:7c3f\:30fbQA\:30fbmp4 \:3092\:66f4\:65b0 (\:5909\:308f\:3063\:305f\:5206\:3060\:3051)", "Update the registry, Q&A and mp4 (only what changed)"]],
+        iSWTip[iSWButton2[iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0", "Poster audio"], RGBColor[0.4, 0.45, 0.65],
+            With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWPosterAudioAction[nb]]]],
+          iSL["\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:3092\:767a\:8868\:306e\:8a2d\:5b9a\:306e\:58f0 (\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:306e\:767a\:8868\:30dc\:30a4\:30b9\:30fb\:97f3\:58f0\:30e2\:30c7\:30eb) \:3067\:8aad\:3093\:3060\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb <\:30c7\:30c3\:30ad>_poster_talk.m4a \:3068\:6642\:523b\:8868 (.json) \:3092\:4f5c\:308b (v1.61)\:3002\:58f0\:306e\:30ad\:30e3\:30c3\:30b7\:30e5\:306f\:8aad\:307f\:4e0a\:3052\:52d5\:753b\:3068\:5171\:901a",
+            "Make <deck>_poster_talk.m4a (and a timeline .json): the poster talk read in the voice from the talk settings. Shares the voice cache with the narrated video"]]]
 
     }, Alignment -> Center, Spacings -> 0],
     WindowTitle -> "Slides", WindowMargins -> {{Automatic, 60}, {Automatic, 60}}]];
@@ -10076,7 +10195,11 @@ $iSWStoryKeyMap = <|"graph" -> "Graph", "kg" -> "Graph", "\:30b0\:30e9\:30d5" ->
   "seconds" -> "Seconds", "\:79d2" -> "Seconds", "secondsperslide" -> "SecondsPerSlide",
   "language" -> "Language", "\:8a00\:8a9e" -> "Language", "strategy" -> "Strategy", "\:6226\:7565" -> "Strategy",
   "story" -> "Story", "\:30b9\:30c8\:30fc\:30ea\:30fc" -> "Story", "\:69cb\:6210" -> "Story", "title" -> "Title",
-  "source" -> "Source", "\:7d20\:6750" -> "Source", "\:30bd\:30fc\:30b9" -> "Source", "survey" -> "Survey", "\:30b5\:30fc\:30d9\:30a4" -> "Survey"|>;
+  "source" -> "Source", "\:7d20\:6750" -> "Source", "\:30bd\:30fc\:30b9" -> "Source", "survey" -> "Survey", "\:30b5\:30fc\:30d9\:30a4" -> "Survey",
+  (* v1.60: a subgraph of a mother KG (Parent: / Focus: / Include: / Exclude:) and a mother KG built with a synthetic project root (Root:) *)
+  "parent" -> "Parent", "\:6bcd\:4f53" -> "Parent", "\:89aa" -> "Parent", "focus" -> "Focus", "\:5207\:308a\:51fa\:3057" -> "Focus", "\:7126\:70b9" -> "Focus", "\:7bc4\:56f2" -> "Focus",
+  "include" -> "Include", "\:542b\:3081\:308b" -> "Include", "exclude" -> "Exclude", "\:9664\:304f" -> "Exclude", "\:9664\:5916" -> "Exclude",
+  "root" -> "Root", "\:6839" -> "Root", "\:5168\:4f53" -> "Root", "subtree" -> "Subtree", "\:90e8\:5206\:6728" -> "Subtree"|>;
 
 iSWStoryLine[line_String] := Module[{m},
   m = StringCases[line, StartOfString ~~ k : Except[":" | "\:ff1a"] .. ~~ (":" | "\:ff1a") ~~ v___ ~~ EndOfString :>
@@ -10119,7 +10242,8 @@ iSWKGDefaultGraphId[title_] := Module[{t = StringTrim[ToString[title]], k},
 
 $iSWStoryDefaults = <|"Audience" -> "\:4e00\:822c", "Slides" -> None, "Minutes" -> None, "Seconds" -> None,
   "Language" -> "ja", "Strategy" -> "Source", "Story" -> "", "Graph" -> None, "Title" -> "",
-  "SecondsPerSlide" -> None, "Source" -> "", "Survey" -> ""|>;
+  "SecondsPerSlide" -> None, "Source" -> "", "Survey" -> "",
+  "Parent" -> "", "Focus" -> "", "Include" -> "", "Exclude" -> "", "Root" -> "", "Subtitle" -> "", "Subtree" -> ""|>;
 
 SlideGraphSpec[] := With[{nb = iSWResolveTargetNb[]},
   If[Head[nb] === NotebookObject, SlideGraphSpec[nb], $iSWStoryDefaults]];
@@ -10127,7 +10251,7 @@ SlideGraphSpec[src_] := Module[{spec, story, meta},
   story = Fold[Join[#2, #1] &, <||>, iSWParseStoryText /@ iSWStyleTexts[src, "SlideStory"]];
   meta = Quiet @ Check[iSWDirectiveMeta[src], <||>];
   If[! AssociationQ[meta], meta = <||>];
-  spec = Join[$iSWStoryDefaults, KeyTake[meta, {"Title", "Language", "SecondsPerSlide"}], story];
+  spec = Join[$iSWStoryDefaults, KeyTake[meta, {"Title", "Language", "SecondsPerSlide", "Subtitle"}], story];
   Do[spec[k] = iSWNumberOrNone[spec[k]], {k, {"Slides", "Minutes", "Seconds", "SecondsPerSlide"}}];
   If[NumericQ[spec["Slides"]], spec["Slides"] = Round[spec["Slides"]]];
   If[! NumericQ[spec["Seconds"]] && NumericQ[spec["Minutes"]], spec["Seconds"] = 60. * spec["Minutes"]];
@@ -10346,6 +10470,8 @@ SlideGraphBuild[nb_NotebookObject, OptionsPattern[]] := Module[{spec, refs, nbRe
   If[! iSWKGEnsure[], Return[iSWKGFail[]]];
   If[MemberQ[{"Agent", "Extract"}, mode] && ! iSWAgentAvailableQ[], Return[iSWNoAgentFailure[]]];
   spec = SlideGraphSpec[nb];
+  (* v1.60: Parent: <mother KG> in the Story = this deck is one talk cut out of a larger KG -> cut it (again) instead of seeding *)
+  If[iSWSubgraphSpecQ[spec], Return[SlideGraphSubgraph[nb]]];
   refs = iSWReferencesList[nb];
   nbRefs = Select[refs, iSWRefNotebookQ];
   (* v1.30: \:7d20\:6750 = Story \:306e Source: > \:6587\:732e\:306e\:548c\:8a33\:30ce\:30fc\:30c8 > \:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306e\:30b7\:30ca\:30ea\:30aa (\:6587\:66f8\:304c\:7121\:304f\:3066\:3082\:4f5c\:308c\:308b) *)
@@ -10417,6 +10543,134 @@ SlideGraphTranslate[nb_NotebookObject, lang_String : "en"] := Module[{spec, kg, 
       "\"] \:3067\:53d6\:308a\:8fbc\:3080 (\:30ce\:30fc\:30c9\:6570\:304c\:591a\:3051\:308c\:3070 30 \:30ce\:30fc\:30c9\:305a\:3064\:5206\:3051\:3066\:4f55\:5ea6\:304b\:547c\:3076)\:3002Dictionary \:306e\:7528\:8a9e\:5bfe\:5fdc\:3092\:53b3\:5b88\:3002\:4ee3\:5165\:306f Module \:5185\:3002",
     "\:77e5\:8b58\:30b0\:30e9\:30d5\:306e\:7ffb\:8a33\:3092\:30a8\:30fc\:30b8\:30a7\:30f3\:30c8\:306b\:59d4\:8b72", "Delegated KG translation to agent"];
   Success["Delegated", <|"GraphId" -> spec["Graph"], "Language" -> code|>]];
+
+(* ---- v1.60: one talk = a subgraph of a mother KG (Story: Parent: / Focus: / Include: / Exclude:) ----
+   One large KG (the mother, seeded from many notebooks with Root: <project title>) feeds several talks. A talk's deck writes
+   Parent: <motherId> in its Story and either Focus: <what the talk covers> (an LLM picks the parts from the mother's sections and
+   items) or Include: <explicit parts>. The result is a Subgraph KG (SourceVaultKGSubgraphNew): the mother is never split; refining a
+   node from the talk improves the mother, while Pinned / Hidden / Toc / narrative stay with the talk. "KG\:69cb\:7bc9" routes here when Parent: is set. *)
+iSWSubgraphSpecQ[spec_Association] := StringQ[Lookup[spec, "Parent", None]] && StringTrim[spec["Parent"]] =!= "";
+iSWSubgraphSpecQ[_] := False;
+
+(* Include: "Main: Part title = id, id | Intro: Part 2 = key:*, key:s3 | ..." ; parts separated by "|" (the Story keeps one line per key).
+   A token is a node id, key:* (every node of that source: its part node), key:id (an id of that source), or a text (a section whose label contains it) *)
+iSWSubgraphParseInclude[text_String, kg_Association] := Module[{nodes = Lookup[kg, "Nodes", {}], index, tok, parts, srcRef},
+  index = Association[(#["Id"] -> #) & /@ nodes];
+  srcRef[n_] := Lookup[Replace[Lookup[n, "Source", <||>], Except[_Association] -> <||>], "Ref", None];
+  tok[t0_] := Module[{t = StringTrim[t0], key, rest},
+    Which[
+      t === "", {},
+      KeyExistsQ[index, t], {t},
+      StringContainsQ[t, ":"] && ! StringContainsQ[t, " "],
+        {key, rest} = StringTrim /@ StringSplit[t, ":", 2];
+        rest = StringTrim[rest, "*"];
+        Which[
+          rest === "" && KeyExistsQ[index, key <> "_root"], {key <> "_root"},
+          rest === "", Lookup[Select[nodes, srcRef[#] === key &], "Id", {}],
+          KeyExistsQ[index, key <> "_" <> rest], {key <> "_" <> rest},
+          True, Lookup[Select[nodes, srcRef[#] === key && (#["Id"] === rest || StringEndsQ[#["Id"], "_" <> rest]) &], "Id", {}]],
+      True,
+        With[{q = StringTrim[t, "\"" | "'" | "\:300c" | "\:300d"]},
+          Lookup[Select[nodes, #["Kind"] === "Section" && StringContainsQ[SourceVault`SourceVaultKGText[#, "Label"], q, IgnoreCase -> True] &], "Id", {}]]]];
+  parts = Select[StringTrim /@ StringSplit[StringReplace[text, "\r\n" -> "\n"], "|" | "\n"], # =!= "" &];
+  Map[Function[p, Module[{label = "", body = p, role = ""},
+    If[StringContainsQ[p, "="], {label, body} = StringTrim /@ StringSplit[p, "=", 2]];
+    If[StringMatchQ[label, RegularExpression["(?i)^(main|intro|context|closing)\\s*:.*"]],
+      role = ToLowerCase[StringTrim[First[StringSplit[label, ":", 2]]]];
+      label = StringTrim[Last[StringSplit[label, ":", 2]]]];
+    <|"Label" -> label, "Role" -> role, "Members" -> DeleteDuplicates[Flatten[tok /@ StringSplit[body, "," | "\:3001"]]]|>]], parts]];
+iSWSubgraphParseIds[text_, kg_Association] := If[! StringQ[text] || StringTrim[text] === "", {},
+  DeleteDuplicates[Flatten[Lookup[iSWSubgraphParseInclude[text, kg], "Members", {}]]]];
+
+Options[SlideGraphSubgraph] = {"Mode" -> Automatic, "Then" -> None, "MaxDegree" -> Automatic};
+SlideGraphSubgraph[opts : OptionsPattern[]] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideGraphSubgraph[nb, opts]]];
+SlideGraphSubgraph[nb_NotebookObject, OptionsPattern[]] := Module[{spec, parent, pkg, inc, focus, prompt, pl, maxd, excl},
+  If[! iSWKGEnsure[], Return[iSWKGFail[]]];
+  spec = SlideGraphSpec[nb];
+  If[! iSWSubgraphSpecQ[spec],
+    iSWStatus[nb, iSL["Story \:306b Parent: <\:6bcd\:4f53 KG \:306e Id> \:3092\:66f8\:3044\:3066\:304b\:3089\:62bc\:3059", "Write Parent: <mother KG id> in the Story cell first"]];
+    Return[Failure["NoParent", <|"MessageTemplate" -> "the Story cell has no Parent: line (the id of the mother knowledge graph)"|>]]];
+  parent = StringTrim[spec["Parent"]];
+  If[parent === spec["Graph"],
+    Return[Failure["SameId", <|"MessageTemplate" -> "Graph: must differ from Parent: (the subgraph gets its own id)"|>]]];
+  pkg = iSWKGResolve[parent];
+  If[! AssociationQ[pkg], iSWStatus[nb, iSL["\:6bcd\:4f53 KG " <> parent <> " \:304c\:7121\:3044", "Mother KG " <> parent <> " is not saved"]]; Return[pkg]];
+  inc = StringTrim[Lookup[spec, "Include", ""]]; focus = StringTrim[Lookup[spec, "Focus", ""]];
+  excl = iSWSubgraphParseIds[Lookup[spec, "Exclude", ""], pkg];
+  maxd = Replace[OptionValue["MaxDegree"], Except[_Integer] :> Max[iSWMaxDegree[], 6]];
+  Which[
+    inc =!= "" && (focus === "" || OptionValue["Mode"] === "Include"),
+      (* Subtree: no (Story) = each listed id is one slide node without its paragraphs; listed order = talk order *)
+      iSWSubgraphApply[nb, spec, pkg,
+        Join[If[StringContainsQ[inc, "="], <|"Parts" -> iSWSubgraphParseInclude[inc, pkg]|>, <|"Members" -> iSWSubgraphParseIds[inc, pkg]|>],
+          <|"Exclude" -> excl, "Title" -> spec["Title"], "MemberOrder" -> "Given",
+            "Subtree" -> ! MemberQ[{"false", "no", "off", "0", "none", "\:3044\:3044\:3048", "\:306a\:3057", "\:8449"}, ToLowerCase[StringTrim[Replace[Lookup[spec, "Subtree", ""], Except[_String] -> ""]]]]|>],
+        maxd, OptionValue["Then"]],
+    focus === "",
+      iSWStatus[nb, iSL["Story \:306b Focus: (\:5207\:308a\:51fa\:3059\:5185\:5bb9\:306e\:8a18\:8ff0) \:304b Include: (\:90e8 = Id \:306e\:4e26\:3073) \:3092\:66f8\:304f", "Write Focus: (what to cut out) or Include: (parts = ids) in the Story cell"]];
+      Failure["NoFocus", <|"MessageTemplate" -> "the Story cell needs Focus: (a description of the talk) or Include: (explicit parts)"|>],
+    ! iSWLLMReadyQ[],
+      Failure["NoLLM", <|"MessageTemplate" -> "LLM query function is not registered (write Include: in the Story for a deterministic cut)"|>],
+    True,
+      prompt = iSWDirectivesBlock[nb] <> iSWDictionaryBlock[nb] <>
+        SourceVault`SourceVaultKGSubgraphPrompt[pkg, focus <> If[StringQ[spec["Story"]] && spec["Story"] =!= "", "\n" <> spec["Story"], ""],
+          "Language" -> spec["Language"], "Title" -> Replace[spec["Title"], Except[_String] -> ""]];
+      pl = iSWRefinePrivacy[nb, pkg];
+      iSWStatus[nb, iSL["\:6bcd\:4f53 KG " <> parent <> " \:304b\:3089\:5207\:308a\:51fa\:3059\:90e8\:3092 LLM \:306b\:9078\:3070\:305b\:3066\:3044\:307e\:3059\:2026", "Asking the LLM which parts of " <> parent <> " to cut out..."]];
+      With[{n2 = nb, sp = spec, pk = pkg, md = maxd, th = OptionValue["Then"], ex = excl},
+        NBAccess`$NBLLMQueryFunc[prompt,
+          Function[resp, Module[{json, d},
+            json = If[StringQ[resp] && ! StringStartsQ[resp, "Error" | "[ERROR]"], iSWRefineExtractJSON[resp], $Failed];
+            d = If[StringQ[json], Quiet @ Check[Developer`ReadRawJSONString[json], $Failed], $Failed];
+            If[! AssociationQ[d],
+              iSWStatus[n2, iSL["\:5207\:308a\:51fa\:3057: LLM \:306e\:5fdc\:7b54\:3092\:8aad\:3081\:307e\:305b\:3093\:3067\:3057\:305f", "Subgraph: could not read the LLM response"]]; iSWStatusClearLater[n2],
+              iSWSubgraphApply[n2, sp, pk,
+                <|"Parts" -> Lookup[d, "Parts", {}], "Exclude" -> Join[ex, Select[Flatten[{Lookup[d, "Exclude", {}]}], StringQ]],
+                  "Title" -> With[{t = Lookup[d, "Title", ""]},
+                    If[StringQ[t] && t =!= "" && (! StringQ[sp["Title"]] || StringTrim[sp["Title"]] === ""), t, sp["Title"]]]|>, md, th]]]],
+          n2, Fallback -> iSWFallback[], PrivacyLevel -> pl]];
+      <|"Status" -> "Submitted", "Graph" -> spec["Graph"], "Parent" -> parent, "PrivacyLevel" -> pl|>]];
+
+(* headless / agent: SlideGraphSubgraph[parentId, subId, <|"Title", "Description", "Parts", "Members", "Exclude", "Language"|>] *)
+SlideGraphSubgraph[parentId_String, subId_String, cut_Association, OptionsPattern[]] := Module[{r},
+  If[! iSWKGEnsure[], Return[iSWKGFail[]]];
+  r = SourceVault`SourceVaultKGSubgraphNew[parentId, subId,
+    Sequence @@ Normal[KeyTake[cut, {"Title", "Description", "Parts", "Members", "Exclude", "Language", "Keep", "PrivacyLevel", "Subtree", "MemberOrder"}]],
+    "MaxDegree" -> Replace[OptionValue["MaxDegree"], Except[_Integer] :> Max[iSWMaxDegree[], 6]]];
+  If[! AssociationQ[r], Return[r]];
+  Success["SubgraphCut", KeyDrop[r, "KG"]]];
+
+iSWSubgraphApply[nb_, spec_Association, pkg_Association, cut_Association, maxd_, then_] := Module[{r, parts, msg, kg, labels},
+  iSWStatusIf[nb, iSL["\:6bcd\:4f53 KG " <> pkg["GraphId"] <> " \:304b\:3089\:5207\:308a\:51fa\:3057\:3066\:3044\:307e\:3059\:2026", "Cutting the subgraph out of " <> pkg["GraphId"] <> "..."]];
+  r = SourceVault`SourceVaultKGSubgraphNew[pkg["GraphId"], spec["Graph"],
+    "Title" -> With[{t = Lookup[cut, "Title", ""]}, If[StringQ[t] && StringTrim[t] =!= "", t, Automatic]],
+    "Description" -> StringTrim[Replace[Lookup[spec, "Focus", ""], Except[_String] -> ""]],
+    "Parts" -> Lookup[cut, "Parts", {}], "Members" -> Lookup[cut, "Members", {}], "Exclude" -> Lookup[cut, "Exclude", {}],
+    "Language" -> Lookup[spec, "Language", Automatic], "MaxDegree" -> maxd,
+    "Subtree" -> Lookup[cut, "Subtree", True], "MemberOrder" -> Lookup[cut, "MemberOrder", "Given"]];
+  If[! AssociationQ[r],
+    iSWStatusIf[nb, iSL["\:5207\:308a\:51fa\:305b\:307e\:305b\:3093\:3067\:3057\:305f: ", "Could not cut the subgraph: "] <>
+      StringTake[ToString[Quiet[Lookup[Replace[r, Failure[_, a_] :> a], "MessageTemplate", r]]], UpTo[200]]];
+    Return[r]];
+  kg = r["KG"]; parts = Lookup[r, "Parts", {}];
+  labels = If[parts === {}, "", " (" <> StringRiffle[Map[SourceVault`SourceVaultKGText[
+    Replace[SourceVault`SourceVaultKGNode[kg, #["Id"]], Except[_Association] -> <||>], "Label", spec["Language"]] &, parts], " / "] <> ")"];
+  msg = iSL["\:6bcd\:4f53 " <> pkg["GraphId"] <> " \:304b\:3089\:90e8\:5206 KG " <> spec["Graph"] <> " \:3092\:5207\:308a\:51fa\:3057\:307e\:3057\:305f: \:30ce\:30fc\:30c9 " <> ToString[Length[r["Selection"]]] <>
+      "\:3001\:90e8 " <> ToString[Length[parts]] <> labels <>
+      If[Lookup[r, "Kept", 0] > 0, "\:3001\:524d\:306e\:7248\:306e " <> ToString[r["Kept"]] <> " \:30ce\:30fc\:30c9\:3092\:5f15\:304d\:7d99\:304e", ""] <>
+      "\:3002\:6b21\:306f\:300c\:63a8\:6572\:300d(\:672c\:6587\:3092\:78e8\:304f\:3002\:6bcd\:4f53\:306b\:66f8\:304d\:623b\:308b) \:304b\:300c\:751f\:6210\:300d",
+    "Cut subgraph " <> spec["Graph"] <> " out of " <> pkg["GraphId"] <> ": " <> ToString[Length[r["Selection"]]] <> " nodes, " <>
+      ToString[Length[parts]] <> " parts" <> labels <>
+      If[Lookup[r, "Kept", 0] > 0, ", kept " <> ToString[r["Kept"]] <> " nodes of the previous version", ""] <>
+      ". Next: Refine (text goes back to the mother) or Generate"];
+  If[Head[nb] === NotebookObject, iSWGraphApplyNote[nb, msg], Print[msg]];
+  If[then =!= None, Quiet[then[]]];
+  Success["SubgraphCut", Join[KeyDrop[r, "KG"], <|"Message" -> msg|>]]];
+
+(* v1.60: subtitles language (directive Subtitle:); None when unset *)
+iSWSubtitleLanguage[nb_NotebookObject] := With[{v = iSWTalkLangCode[Lookup[Join[iSWTalkStoredMeta[nb], iSWDirectiveMeta[nb]], "Subtitle", None]]},
+  If[StringQ[v], v, None]];
+iSWSubtitleLanguage[_] := None;
 
 (* ---- \:8a08\:753b (\:6c7a\:5b9a\:7684) ---- *)
 Options[SlideGraphPlan] = {"Slides" -> Automatic, "Seconds" -> Automatic, "Audience" -> Automatic,
@@ -10603,7 +10857,7 @@ iSWKGRealizeMarkdown[outline_Association, slides_List, nb_, kg_ : None] := Modul
 
 (* ---- \:751f\:6210 (md + \:56f3) ---- *)
 Options[SlideGraphGenerate] = Join[Options[SlideGraphPlan],
-  {"Notebook" -> Automatic, "Talks" -> None, "Title" -> Automatic, "Outline" -> {}, "Realize" -> True}];
+  {"Notebook" -> Automatic, "Talks" -> None, "Title" -> Automatic, "Outline" -> {}, "Realize" -> True, "Subtitles" -> Automatic}];
 SlideGraphGenerate[opts : OptionsPattern[]] := SlideGraphGenerate[iSWResolveTargetNb[], opts];
 SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
   {p, outline, lang, talks, nb, r, warnings = {},
@@ -10657,6 +10911,12 @@ SlideGraphGenerate[src_?iSWNotOptionQ, opts : OptionsPattern[]] := Module[
       " (SlideGraphTranslate \:3067\:30ce\:30fc\:30c9\:5358\:4f4d\:306e\:8a33\:3092\:8db3\:3059)"]];
   (* \:8cea\:7591\:5fdc\:7b54: KG \:306e\:30ce\:30fc\:30c9\:306b\:4fdd\:5b58\:3057\:305f\:554f\:7b54\:3092\:3001\:305d\:306e\:30ce\:30fc\:30c9\:306e\:679a\:3078\:623b\:3059 (\:751f\:6210\:3057\:76f4\:3057\:3066\:3082\:6d88\:3048\:306a\:3044) *)
   outline = iSWKGAttachQA[outline, p["Graph"]];
+  (* v1.60: subtitles = the same talk in another language (directive Subtitle: or "Subtitles" -> lang): the outline is built again in
+     that language and its talks are attached by node (talk[lang]: lines -> translation talk cells, read by the subtitle window) *)
+  Module[{sub = iSWSubtitleLangOf[OptionValue["Subtitles"], p["Spec"]]},
+    If[StringQ[sub] && sub =!= lang,
+      With[{o2 = Quiet @ Check[SourceVault`SourceVaultKGOutline[p["Graph"], p["Plan"], "Language" -> sub, Sequence @@ olOpts], $Failed]},
+        If[AssociationQ[o2], outline = iSWAttachSubtitleTalks[outline, o2, sub]]]]];
   talks = OptionValue["Talks"];
   If[ListQ[talks] && talks =!= {},
     outline["Slides"] = MapIndexed[Function[{s, i},
@@ -10783,19 +11043,58 @@ iSWKGStripFrontMatter[md_String] := If[StringStartsQ[md, "---\n"],
   With[{p = StringPosition[md, "\n---\n", 1]}, If[p === {}, md, StringTrim[StringDrop[md, p[[1, 2]]], "\n"]]], md];
 
 Options[SlideGraphBuildDeck] = Join[Options[SlideGraphGenerate],
-  {"TitleSlide" -> True, "Event" -> "", "Author" -> "", "Date" -> ""}];
-SlideGraphBuildDeck[src_, nbfile_String, opts : OptionsPattern[]] := Module[{gen, md, front, file},
+  {"TitleSlide" -> True, "Event" -> "", "Author" -> "", "Date" -> "", "Prelude" -> Automatic}];
+SlideGraphBuildDeck[src_, nbfile_String, opts : OptionsPattern[]] := Module[{gen, md, front, file, prelude, meta, pick},
   gen = SlideGraphGenerate[src, "Notebook" -> None, Sequence @@ FilterRules[{opts}, Options[SlideGraphGenerate]]];
   If[! AssociationQ[gen], Return[gen]];
-  front = Select[{"Title: " <> ToString[gen["Outline"]["Title"]],
-    If[OptionValue["Event"] =!= "", "Event: " <> ToString[OptionValue["Event"]], Nothing],
-    If[OptionValue["Author"] =!= "", "Author: " <> ToString[OptionValue["Author"]], Nothing],
-    If[OptionValue["Date"] =!= "", "Date: " <> ToString[OptionValue["Date"]], Nothing]}, StringQ];
+  (* v1.60: "Prelude" -> Automatic copies the meta cells (Directive / Story / References / Dictionary / Note ...) of the source deck
+     (.nb path or Notebook expression) into the new deck, so the palette (refine / adjust / generate / register) keeps working on it;
+     the directive's Event / Author / Date fill the title slide when the options are empty *)
+  prelude = Replace[OptionValue["Prelude"], Automatic :> iSWPreludeCellsOf[src]];
+  If[! ListQ[prelude], prelude = {}];
+  meta = Quiet @ Check[iSWDirectiveMeta[Notebook[prelude]], <||>];
+  If[! AssociationQ[meta], meta = <||>];
+  pick[opt_, key_] := With[{v = Replace[OptionValue[opt], "" :> Lookup[meta, key, ""]]}, If[v =!= "" && v =!= None, key <> ": " <> ToString[v], Nothing]];
+  front = Select[{"Title: " <> ToString[gen["Outline"]["Title"]], pick["Event", "Event"], pick["Author", "Author"], pick["Date", "Date"]}, StringQ];
   md = "---\n" <> StringRiffle[front, "\n"] <> "\n---\n\n" <> iSWKGStripFrontMatter[gen["Markdown"]];
   file = Block[{$iSlideKeepCells = iSWFigureCell /@ gen["Figures"]},
-    SlideDeckBuild[md, nbfile, "TitleSlide" -> OptionValue["TitleSlide"]]];
+    SlideDeckBuild[md, nbfile, "TitleSlide" -> OptionValue["TitleSlide"], "Prelude" -> prelude]];
   <|"File" -> file, "Slides" -> gen["SlideCount"], "Warnings" -> gen["Warnings"],
-    "Verify" -> gen["Verify"], "Plan" -> gen["Plan"], "GraphId" -> gen["Graph"]["GraphId"]|>];
+    "Verify" -> gen["Verify"], "Plan" -> gen["Plan"], "GraphId" -> gen["Graph"]["GraphId"], "Prelude" -> Length[prelude]|>];
+
+(* meta cells of a deck (file path / Notebook expression), before the first slide; cell ids are dropped so the copy is a fresh cell *)
+$iSWPreludeStyles = {"Directive", "SlideStory", "References", "Dictionary", "Note", "SlideReading", "SlidePoster"};
+iSWPreludeCellsOf[src_] := Module[{e},
+  e = Which[Head[src] === Notebook, src,
+    StringQ[src] && StringEndsQ[src, ".nb", IgnoreCase -> True] && FileExistsQ[src], Quiet[iGetNotebook[src]],
+    Head[src] === File && StringQ[First[src]] && FileExistsQ[First[src]], Quiet[iGetNotebook[First[src]]],
+    True, $Failed];
+  If[Head[e] =!= Notebook, Return[{}]];
+  Cases[iFlattenCells[First[e]], c : Cell[_, st_String, ___] /; MemberQ[$iSWPreludeStyles, st] :>
+    DeleteCases[c, (ExpressionUUID | CellID | CellChangeTimes | CellLabel) -> _]]];
+
+(* v1.60: subtitles language of a generation: option > directive Subtitle: (spec) ; None when unset *)
+iSWSubtitleLangOf[opt_, spec_Association] := Module[{v = opt},
+  If[v === Automatic, v = Lookup[spec, "Subtitle", ""]];
+  If[v === None || v === False || v === "", Return[None]];
+  v = iSWTalkLangCode[v];
+  If[StringQ[v], v, None]];
+(* zip the talks of a second-language outline into the first by node id; when a node splits into a different number of
+   continuation slides in the two languages, the joined talk goes to the node's first slide *)
+iSWAttachSubtitleTalks[outline_Association, o2_Association, lang_String] := Module[{by2, by1, slides, seen = <||>},
+  by2 = GroupBy[Select[Lookup[o2, "Slides", {}], AssociationQ], Lookup[#, "NodeId", None] &, Map[ToString[Lookup[#, "Talk", ""]] &]];
+  slides = Select[Lookup[outline, "Slides", {}], AssociationQ];
+  by1 = Counts[Lookup[slides, "NodeId", None]];
+  slides = Map[Function[s, Module[{id = Lookup[s, "NodeId", None], ts, talks},
+      ts = Lookup[by2, id, {}];
+      seen[id] = Lookup[seen, id, 0] + 1;
+      talks = Replace[Lookup[s, "Talks", <||>], Except[_Association] -> <||>];
+      Which[
+        ts === {}, s,
+        Lookup[by1, id, 0] === Length[ts], Append[s, "Talks" -> Append[talks, lang -> ts[[seen[id]]]]],
+        seen[id] === 1, Append[s, "Talks" -> Append[talks, lang -> StringRiffle[Select[ts, # =!= "" &], " "]]],
+        True, s]]], slides];
+  Append[outline, "Slides" -> slides]];
 
 (* ---- \:30b5\:30fc\:30d9\:30a4 (\:8907\:6570 KG \:306e\:5408\:6210) ---- *)
 Options[SlideGraphSurvey] = Join[Options[SlideGraphBuildDeck],
@@ -10905,7 +11204,7 @@ iSWSeedHeadingImportance[t_String] := With[{k = ToLowerCase[t]},
     StringContainsQ[k, "limitation" | "future" | "\:9650\:754c" | "\:4eca\:5f8c"], 0.5,
     True, 0.6]];
 
-Options[SlideGraphSeed] = {"Graph" -> Automatic, "Title" -> Automatic, "Language" -> "ja",
+Options[SlideGraphSeed] = {"Graph" -> Automatic, "Title" -> Automatic, "Language" -> "ja", "Root" -> Automatic,
   "MinCharacters" -> 40, "Save" -> True, "Notebook" -> Automatic, "Reconstruction" -> False, "Keep" -> "Background"};
 (* ---- v1.41: \:8907\:6570\:7d20\:6750\:306e seed ----
    \:6587\:732e\:306e Notebook \:3092\:5168\:90e8\:7d20\:6750\:306b\:3059\:308b (References \:306b\:66f8\:3044\:305f\:9806)\:3002\:6700\:521d\:306e 1 \:4ef6\:304c root (Claim) \:3067\:5f93\:6765\:3069\:304a\:308a\:3001
@@ -10981,7 +11280,7 @@ SlideGraphSeed[src_, OptionsPattern[]] := Module[
    keepNodes, keepEdges, kept = 0, bgIds, newIndex, prevIndex, sameQ,
    minc = OptionValue["MinCharacters"], recon = TrueQ[OptionValue["Reconstruction"]],
    ordOff = 0, perSource = {}, srcRows = {}, skipped = <||>, authors = None,
-   sections = 0, paras = 0, figs = 0, forms = 0, parts1},
+   sections = 0, paras = 0, figs = 0, forms = 0, parts1, projectQ = False, rootTitle = None},
   If[! iSWKGEnsure[], Return[iSWKGFail[]]];
   nb = Replace[OptionValue["Notebook"], Automatic -> If[Head[src] === NotebookObject, src, iSWResolveTargetNb[]]];
   spec = Which[Head[src] === Notebook, SlideGraphSpec[src],
@@ -10996,19 +11295,23 @@ SlideGraphSeed[src_, OptionsPattern[]] := Module[
   lang = iSWKGLangCode[OptionValue["Language"]];
   gid = Replace[OptionValue["Graph"], Automatic -> Lookup[spec, "Graph", None]];
   If[! StringQ[gid] || gid === "", gid = iSWKGDefaultGraphId[FileBaseName[sources[[1, "Path"]]]]];
+  (* v1.60: Root: <title> (Story) or "Root" -> title = a mother graph: a synthetic project root with every source as a part under it
+     (no source is the root; several talks are cut out of it with SlideGraphSubgraph) *)
+  rootTitle = Replace[OptionValue["Root"], Automatic :> Lookup[spec, "Root", None]];
+  projectQ = StringQ[rootTitle] && StringTrim[rootTitle] =!= "";
   (* \:7d20\:6750\:3054\:3068\:306b\:90e8\:5206\:30b0\:30e9\:30d5\:3092\:4f5c\:3063\:3066\:7e4b\:3050\:3002\:89e3\:3051\:306a\:3044 2 \:4ef6\:76ee\:4ee5\:964d\:306f Skipped["Sources"] \:306b\:8a18\:9332\:3057\:3066\:98db\:3070\:3059
      (Return \:306f\:6700\:5185 Module \:304b\:3089\:629c\:3051\:308b\:3060\:3051\:306a\:306e\:3067\:3001\:3053\:3053\:3067\:306f\:4f7f\:308f\:306a\:3044) *)
-  Do[Module[{s = sources[[si]], parts, one, idp, ok = True},
+  Do[Module[{s = sources[[si]], parts, one, idp, ok = True, firstQ = si === 1 && ! projectQ},
       parts = If[si === 1, parts1, If[s["Path"] === $Failed, $Failed, iSWSourceNBParts[s["Path"]]]];
       If[! AssociationQ[parts],
         skipped["Sources"] = Append[Lookup[skipped, "Sources", {}], s["Key"]]; ok = False];
       If[ok,
-        idp = If[si === 1, "", iSWSeedIdPrefix[s["Key"], si]];
-        one = iSWSeedOneNotebook[parts["Items"], s["Path"], s["Key"], idp, ordOff, lang, minc, recon, si === 1,
-          If[si === 1, OptionValue["Title"], Automatic],
-          If[si === 1, spec,
+        idp = If[firstQ, "", iSWSeedIdPrefix[s["Key"], si]];
+        one = iSWSeedOneNotebook[parts["Items"], s["Path"], s["Key"], idp, ordOff, lang, minc, recon, firstQ,
+          If[firstQ, OptionValue["Title"], Automatic],
+          If[firstQ, spec,
             <|"Title" -> If[StringQ[s["Note"]] && StringTrim[s["Note"]] =!= "", StringTrim[s["Note"]], None]|>]];
-        If[si === 1,
+        If[firstQ,
           title = one["Title"]; paperTitle = one["PaperTitle"]; authors = one["Authors"];
           skipped = Join[skipped, one["Skipped"]],
           AppendTo[edges, <|"From" -> "root", "To" -> idp <> "root", "EdgeKind" -> "Contains", "Weight" -> 1.|>];
@@ -11023,6 +11326,11 @@ SlideGraphSeed[src_, OptionsPattern[]] := Module[
         AppendTo[srcRows, <|"Key" -> s["Key"], "Locator" -> s["Path"], "Kind" -> "Notebook",
           "Reference" -> If[StringQ[s["Locator"]], s["Locator"], ""]|>]]],
     {si, Length[sources]}];
+  (* v1.60: mother graph: the synthetic project root (every source is a part; no order edges between the parts, so a talk may reorder them) *)
+  If[projectQ,
+    title = StringTrim[rootTitle]; paperTitle = title;
+    PrependTo[nodes, <|"Id" -> "root", "Kind" -> "Claim", "Label" -> title, "Summary" -> "", "Points" -> {},
+      "Importance" -> 1., "Difficulty" -> 0.3, "Order" -> -1, "Layer" -> "Paper", "Source" -> <|"Ref" -> "project"|>|>]];
   (* v1.47: \:8a08\:7b97\:30ce\:30fc\:30c8\:306e\:5358\:4f4d\:304c KG \:306e\:30ce\:30fc\:30c9\:306b\:7d10\:3065\:3044\:3066\:3044\:308c\:3070 (Links "<GraphId>#<Id>")\:3001\:540c\:3058 KG \:306e\:305d\:306e\:30ce\:30fc\:30c9\:3092\:652f\:3048\:308b\:8fba\:306b\:3059\:308b *)
   edges = Join[edges, iSWSeedLinkEdges[nodes, gid]];
   kg = SourceVault`SourceVaultKGFromJSON[<|"GraphId" -> gid, "Title" -> title, "Language" -> lang, "Kind" -> "Paper",
@@ -17024,6 +17332,173 @@ iSWS2KRefreshAction[nb_NotebookObject] := Module[{res},
   iSWStatusClearLater[nb];
   res];
 
+(* ===================== v1.61: \:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:306e\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb (SlidePosterAudio) =====================
+   \:30dd\:30b9\:30bf\:30fc\:539f\:7a3f (SlidePosterTalk \:30bb\:30eb\:3002\:524d\:7f6e\:304d\:306e Opening \:306f\:6700\:521d\:306e\:679a\:306e\:982d) \:3092\:3001\:767a\:8868\:306e\:8a2d\:5b9a\:306e\:58f0 (\:767a\:8868\:30dc\:30a4\:30b9 + \:97f3\:58f0\:30e2\:30c7\:30eb) \:3067\:8aad\:3093\:3060
+   1 \:672c\:306e\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb <deck>_poster_talk.m4a \:306b\:3059\:308b\:3002\:30dd\:30b9\:30bf\:30fc\:306e\:524d\:306b\:7acb\:3066\:306a\:3044\:4eba\:3084\:3001QR \:304b\:3089\:805e\:304f\:4eba\:306e\:305f\:3081\:3002
+   - \:58f0\:30fb\:8aad\:307f\:306e\:8f9e\:66f8\:30fb\:58f0\:306e\:30ad\:30e3\:30c3\:30b7\:30e5 (<deck>_voice/) \:306f\:8aad\:307f\:4e0a\:3052\:52d5\:753b (SlideTalkVideo) \:3068\:540c\:3058\:3002\:52d5\:753b\:3092\:4f5c\:3063\:305f\:5f8c\:306a\:3089\:5408\:6210\:3057\:306a\:3044
+   - \:30ed\:30fc\:30ab\:30eb\:306e\:58f0 (Piper / AivisSpeech) \:306f\:5408\:6210\:3001realtime: + gpt-realtime-* \:306f SourceVaultRealtimeRender (\:518d\:751f\:3057\:306a\:3044)\:3002
+     gpt-live-1 \:306f\:5b9f\:6642\:9593\:3067\:3057\:304b\:8a71\:305b\:306a\:3044\:306e\:3067\:3001\:540c\:3058\:58f0\:306e gpt-realtime \:3067\:4f5c\:308b (\:52d5\:753b\:306e\:300c\:901f\:304f\:4f5c\:308b\:300d\:3068\:540c\:3058)
+   - \:9577\:3055\:306f\:52d5\:753b\:3068\:540c\:3058: \:679a\:3054\:3068\:306b\:524d\:7f6e\:304d $SlideTalkVideoLeadIn + \:58f0 + \:9593 $SlideVoiceGap\:3001\:6700\:5f8c\:306b $SlideTalkVideoTail
+   - \:5f62\:5f0f: "m4a" (AAC\:3001\:65e2\:5b9a $SlidePosterAudioFormat) / "mp3" / "wav"\:3002m4a \:3068 mp3 \:306f ffmpeg \:3067 1 \:56de\:5909\:63db (ffmpeg \:304c\:7121\:3051\:308c\:3070 wav)\:3002
+     ffmpeg \:306b\:306f ASCII \:306e\:4f5c\:696d\:30d5\:30a9\:30eb\:30c0\:306e\:540d\:524d\:3060\:3051\:3092\:6e21\:3057\:3001\:3067\:304d\:305f\:3082\:306e\:3092\:66f8\:304d\:5148\:3078\:5199\:3059 (\:65e5\:672c\:8a9e\:306e\:30d1\:30b9\:5bfe\:7b56\:3001\:52d5\:753b\:3068\:540c\:3058)
+   - \:96a3\:306b\:6642\:523b\:8868 <\:51fa\:529b>.json (\:679a\:30fb\:984c\:76ee\:30fb\:30dd\:30b9\:30bf\:30fc\:306e\:30d6\:30ed\:30c3\:30af\:30fb\:958b\:59cb\:30fb\:9577\:3055\:30fb\:539f\:7a3f)\:3002\:30d6\:30ed\:30c3\:30af\:306e\:982d\:51fa\:3057\:3084\:30c1\:30e3\:30d7\:30bf\:30fc\:306b\:4f7f\:3048\:308b *)
+
+If[! ValueQ[$SlidePosterAudioFormat], $SlidePosterAudioFormat = "m4a"];
+If[! ValueQ[$SlidePosterAudioBitrate], $SlidePosterAudioBitrate = "96k"];
+
+iSWPosterAudioOutput[nb_, fmt_String] := Module[{dir, base},
+  {dir, base} = iSWDeckBaseName[nb];
+  FileNameJoin[{dir, base <> "_poster_talk." <> fmt}]];
+
+iSWPosterAudioFormat[v_] := With[{s = ToLowerCase[StringTrim[StringReplace[ToString[v], "." -> ""]]]},
+  Which[MemberQ[{"mp3"}, s], "mp3", MemberQ[{"wav", "wave"}, s], "wav", True, "m4a"]];
+
+(* \:679a -> \:30dd\:30b9\:30bf\:30fc\:306e\:30d6\:30ed\:30c3\:30af\:306e\:984c\:76ee (\:8a08\:753b\:304c\:4f5c\:308c\:306a\:3051\:308c\:3070\:7a7a) *)
+iSWPosterAudioBlocks[nb_] := Module[{plan = Quiet @ Check[SlidePosterPlan[nb], $Failed], m = <||>},
+  If[! TrueQ[Quiet[iSWPosterPlanQ[plan]]], Return[<||>]];
+  Do[Scan[(m[#] = b["Title"]) &, Cases[Lookup[Replace[Lookup[b, "Slides", {}], Except[_List] -> {}], "Slide", Nothing], _Integer]],
+    {b, plan["Blocks"]}];
+  Select[m, StringQ]];
+
+(* wav -> m4a / mp3 (\:540c\:671f\:3001\:6570\:79d2) *)
+iSWPosterAudioEncode[wav_String, out_String, fmt_String, bitrate_String] := Module[{exe = iSWFFmpegExe[], tmpOut, args, r},
+  If[! StringQ[exe], Return[$Failed]];
+  tmpOut = FileNameJoin[{DirectoryName[wav], "poster_talk." <> fmt}];
+  args = Join[{exe, "-y", "-hide_banner", "-loglevel", "error", "-i", wav},
+    If[fmt === "mp3", {"-c:a", "libmp3lame", "-b:a", bitrate}, {"-c:a", "aac", "-b:a", bitrate, "-movflags", "+faststart"}],
+    {tmpOut}];
+  r = Quiet[RunProcess[args]];
+  If[! AssociationQ[r] || r["ExitCode"] =!= 0 || ! FileExistsQ[tmpOut],
+    Return[Failure["SlidePosterAudioEncodeFailed", <|"MessageTemplate" -> iSL["ffmpeg \:3067 " <> fmt <> " \:306b\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "ffmpeg could not make the " <> fmt <> "."],
+      "Detail" -> If[AssociationQ[r], StringTake[StringTrim[ToString[r["StandardError"]]], UpTo[400]], ToString[r]]|>]]];
+  If[Quiet[Check[CopyFile[tmpOut, out, OverwriteTarget -> True], $Failed]] === $Failed,
+    Return[Failure["SlidePosterAudioIO", <|"MessageTemplate" -> iSL["\:66f8\:304d\:5148\:3078\:5199\:305b\:307e\:305b\:3093\:3067\:3057\:305f: ", "Could not copy to: "] <> out|>]]];
+  out];
+
+Options[SlidePosterAudio] = {"Output" -> Automatic, "Format" -> Automatic, "Voice" -> Automatic, "Model" -> Automatic,
+  "Parallel" -> Automatic, "Bitrate" -> Automatic};
+
+SlidePosterAudio[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlidePosterAudio[nb, opts],
+    iSWVideoFail["NoNotebook", "\:30ce\:30fc\:30c8\:30d6\:30c3\:30af\:304c\:898b\:3064\:304b\:308a\:307e\:305b\:3093\:3002", "No notebook found."]]];
+
+SlidePosterAudio[nb_NotebookObject, opts : OptionsPattern[]] := Module[
+  {voice, model, engine, fastNote = "", texts, readings, keys, dir, vkey, speech, files, missing, failedKeys = {}, res = None, i = 0,
+   fmt, out, tmp, wav, segs, total, titles, blocks, tl, tlFile, enc, audio},
+  If[iSWPlayActiveQ[],
+    Return[iSWVideoFail["SlideVideoBusy", "\:8aad\:307f\:4e0a\:3052\:3092\:518d\:751f\:4e2d\:3067\:3059\:3002\:505c\:6b62\:3057\:3066\:304b\:3089\:4f5c\:3063\:3066\:304f\:3060\:3055\:3044\:3002", "Narration is playing; stop it first."]]];
+  voice = Replace[OptionValue["Voice"], Automatic :> iSWVoiceName[]];
+  If[! StringQ[voice],
+    Return[iSWVideoFail["SlideVideoNoVoice", "\:4f7f\:3048\:308b\:58f0\:304c\:3042\:308a\:307e\:305b\:3093\:3002" <> iSWVoiceHint[], "No voice is available. " <> iSWVoiceHint[]]]];
+  model = Replace[OptionValue["Model"], Automatic :> iSWVoiceModel[]];
+  engine = iSWVideoEngine[voice, model];
+  (* gpt-live-1 \:306f\:5b9f\:6642\:9593\:3067\:3057\:304b\:8a71\:305b\:306a\:3044: \:540c\:3058\:58f0\:306e gpt-realtime \:3067\:4f5c\:308b *)
+  If[engine === "Live",
+    fastNote = model; model = iSWVideoFastModel[]; engine = "Realtime"];
+  texts = iSWPosterVoiceTexts[nb];
+  If[! AssociationQ[texts] || Length[texts] === 0,
+    Return[iSWVideoFail["SlidePosterTalkMissing", "\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093 (\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:300d\:3067\:4f5c\:308a\:307e\:3059)\:3002",
+      "No poster talk (write it with Poster talk in the build palette)."]]];
+  If[engine === "Local",
+    If[! iSWVoiceReadyQ[],
+      Return[iSWVideoFail["SlideVoiceUnavailable", "\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:3092\:4f7f\:3048\:307e\:305b\:3093\:3002" <> iSWVoiceHint[], "The local voice is not available. " <> iSWVoiceHint[]]]];
+    If[! iSWEnsureLocalVoice[nb, voice],
+      Return[iSWVideoFail["SlideVoiceUnavailable",
+        "\:58f0\:300c" <> iSWVoiceShortName[voice] <> "\:300d\:3092\:4f7f\:3048\:308b\:72b6\:614b\:306b\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f (\:97f3\:58f0\:30a8\:30f3\:30b8\:30f3\:304c\:8d77\:52d5\:3057\:3066\:3044\:306a\:3044?)\:3002",
+        "Could not make the voice \"" <> iSWVoiceShortName[voice] <> "\" available (speech engine down?)."]]],
+    If[! iSWRealtimeLayerQ[] || ! iSWEngineReadyQ[voice],
+      Return[iSWVideoFail["SlideVoiceUnavailable", "\:3053\:306e\:58f0\:3092\:4f7f\:3048\:308b\:72b6\:614b\:3067\:306f\:3042\:308a\:307e\:305b\:3093\:3002\n" <> iSWEngineHint[voice], "This voice is not ready.\n" <> iSWEngineHint[voice]]]]];
+  fmt = iSWPosterAudioFormat[Replace[OptionValue["Format"], Automatic :> $SlidePosterAudioFormat]];
+  If[fmt =!= "wav" && ! StringQ[iSWFFmpegExe[]], fmt = "wav"];   (* ffmpeg \:304c\:7121\:3051\:308c\:3070 wav \:306e\:307e\:307e *)
+  out = Replace[OptionValue["Output"], Automatic :> iSWPosterAudioOutput[nb, fmt]];
+  readings = Replace[Quiet[iSWReadingRules[nb]], Except[_List] -> {}];
+  keys = Select[Sort[Keys[texts]], IntegerQ[#] && # >= 1 && StringQ[texts[#]] && StringTrim[texts[#]] =!= "" &];
+  If[keys === {}, Return[iSWVideoFail["SlidePosterTalkMissing", "\:8aad\:307f\:4e0a\:3052\:308b\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093\:3002", "There is no poster talk to read."]]];
+  dir = iSWVoiceCacheDir[nb];
+  vkey = iSWVideoVoiceKey[voice, model];
+  speech = AssociationMap[iSWSpeechText[texts[#], readings] &, keys];
+  files = AssociationMap[iSWVoiceCacheFile[dir, #, vkey, speech[#]] &, keys];
+  missing = Select[keys, ! (FileExistsQ[files[#]] && TrueQ[Quiet[FileByteCount[files[#]]] > 1000]) &];
+  If[engine === "Local",
+    Do[i++;
+      iSWStatus[nb, iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0: \:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 ", "Poster audio: synthesizing "] <> ToString[i] <> "/" <> ToString[Length[missing]]];
+      If[iSWVideoLocalFile[dir, k, voice, speech[k]] === $Failed, AppendTo[failedKeys, k]],
+      {k, missing}],
+    If[missing =!= {},
+      iSWStatus[nb, iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0: \:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 (" <> model <> "\:3001\:518d\:751f\:306a\:3057) 0/", "Poster audio: rendering voices (" <> model <> ", no playback) 0/"] <> ToString[Length[missing]]];
+      res = Quiet[SourceVault`SourceVaultRealtimeRender[
+        Map[<|"Id" -> "p" <> ToString[#], "Text" -> speech[#], "File" -> files[#],
+            "Heading" -> iSL["\:30dd\:30b9\:30bf\:30fc ", "Poster "] <> ToString[#]|> &, missing],
+        "Model" -> model, "Voice" -> iSWRealtimeVoiceOf[voice],
+        "Instructions" -> iSWRealtimeSessionInstructionsFor[nb, "Realtime"],
+        "NarrationInstructions" -> iSWTalkNarrationInstructions[nb],
+        "Parallel" -> Replace[OptionValue["Parallel"], Automatic :> $SlideTalkVideoParallel],
+        "Notebook" -> nb,
+        "Progress" -> Function[p, iSWStatus[nb, iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0: \:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 (\:518d\:751f\:306a\:3057) ", "Poster audio: rendering voices (no playback) "] <>
+          ToString[p["Done"]] <> "/" <> ToString[p["Total"]]]]]];
+      If[FailureQ[res], iSWStatusClearLater[nb]; Return[res]];
+      If[! AssociationQ[res],
+        iSWStatusClearLater[nb];
+        Return[iSWVideoFail["SlideVideoVoiceFailed", "\:58f0\:3092\:4f5c\:308b\:5c64 (SourceVault_realtime.wl) \:3092\:547c\:3079\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not call the voice layer (SourceVault_realtime.wl)."]]];
+      failedKeys = Select[missing, ! FileExistsQ[files[#]] &]]];
+  If[failedKeys =!= {},
+    iSWStatusClearLater[nb];
+    Return[iSWVideoFail["SlideVideoVoiceFailed",
+      ToString[Length[failedKeys]] <> " \:679a\:306e\:58f0\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f (\:30b9\:30e9\:30a4\:30c9 " <> StringRiffle[ToString /@ Take[failedKeys, UpTo[12]], ", "] <>
+        ")\:3002\:3067\:304d\:305f\:679a\:306f\:6b8b\:3063\:3066\:3044\:308b\:306e\:3067\:3001\:3082\:3046\:4e00\:5ea6\:62bc\:3059\:3068\:6b8b\:308a\:3060\:3051\:4f5c\:308a\:307e\:3059\:3002",
+      "Could not make the voice for " <> ToString[Length[failedKeys]] <> " slide(s). The finished ones are kept; press again to make only the rest.",
+      <|"Slides" -> failedKeys|>]]];
+  (* 1 \:672c\:306e wav \:306b (\:52d5\:753b\:306e\:58f0\:306e\:4e26\:3079\:65b9\:3068\:540c\:3058) \:2192 \:5f62\:5f0f\:306b\:5909\:63db *)
+  iSWStatus[nb, iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0: 1 \:672c\:306b\:307e\:3068\:3081\:3066\:3044\:307e\:3059...", "Poster audio: joining..."]];
+  titles = Replace[Quiet[iSWSlideTitles[nb]], Except[_List] -> {}];
+  audio = Select[files, StringQ[#] && FileExistsQ[#] &];
+  segs = iSWVideoSegments[ConstantArray[None, Max[keys]], audio, keys, titles];
+  If[segs === {}, Return[iSWVideoFail["SlidePosterTalkMissing", "\:8aad\:307f\:4e0a\:3052\:308b\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093\:3002", "There is no poster talk to read."]]];
+  total = Total[segs[[All, "Duration"]]];
+  tmp = FileNameJoin[{$TemporaryDirectory, "slidewf_posteraudio_" <> StringTake[StringReplace[CreateUUID[], "-" -> ""], 12]}];
+  Quiet[CreateDirectory[tmp, CreateIntermediateDirectories -> True]];
+  wav = FileNameJoin[{tmp, "poster_talk.wav"}];
+  If[iSWVideoWriteAudio[segs, wav] === $Failed,
+    Quiet[DeleteDirectory[tmp, DeleteContents -> True]];
+    Return[iSWVideoFail["SlidePosterAudioIO", "\:58f0\:3092\:307e\:3068\:3081\:305f wav \:3092\:66f8\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not write the joined voice track."]]];
+  If[! DirectoryQ[DirectoryName[out]], Quiet[CreateDirectory[DirectoryName[out], CreateIntermediateDirectories -> True]]];
+  enc = If[fmt === "wav",
+    If[Quiet[Check[CopyFile[wav, out, OverwriteTarget -> True], $Failed]] === $Failed,
+      Failure["SlidePosterAudioIO", <|"MessageTemplate" -> iSL["\:66f8\:304d\:5148\:3078\:5199\:305b\:307e\:305b\:3093\:3067\:3057\:305f: ", "Could not copy to: "] <> out|>], out],
+    iSWPosterAudioEncode[wav, out, fmt, Replace[OptionValue["Bitrate"], Automatic :> $SlidePosterAudioBitrate]]];
+  Quiet[DeleteDirectory[tmp, DeleteContents -> True]];
+  If[FailureQ[enc] || enc === $Failed, iSWStatusClearLater[nb]; Return[If[FailureQ[enc], enc,
+    iSWVideoFail["SlidePosterAudioEncodeFailed", "\:97f3\:58f0\:30d5\:30a1\:30a4\:30eb\:3092\:66f8\:3051\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not write the audio file."]]]];
+  (* \:6642\:523b\:8868: \:30d6\:30ed\:30c3\:30af\:306e\:982d\:51fa\:3057\:7528 *)
+  blocks = iSWPosterAudioBlocks[nb];
+  tlFile = FileNameJoin[{DirectoryName[out], FileBaseName[out] <> ".json"}];
+  tl = <|"Audio" -> out, "Deck" -> Replace[Quiet[NotebookFileName[nb]], Except[_String] -> ""], "Title" -> iSWVideoDeckTitle[nb],
+    "Voice" -> voice, "Model" -> If[engine === "Local", None, model], "Engine" -> engine, "Format" -> fmt,
+    "Duration" -> total, "CreatedAt" -> DateString[Now, "ISODateTime"], "SlidesDigest" -> iSWVideoDeckDigest[nb],
+    "Slides" -> Map[<|"Slide" -> #["Slide"], "Title" -> #["Title"], "Block" -> Lookup[blocks, #["Slide"], ""],
+        "Start" -> #["Start"], "Duration" -> #["Duration"], "Text" -> Lookup[texts, #["Slide"], ""]|> &, segs]|>;
+  Quiet[iSWWriteJSON[tlFile, tl]];
+  iSWStatus[nb, iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:304c\:3067\:304d\:307e\:3057\:305f: ", "Poster audio ready: "] <> FileNameTake[out] <> " (" <> iSWClock[total] <> ")" <>
+    If[fastNote =!= "", iSL["\:3002" <> fastNote <> " \:306e\:4ee3\:308f\:308a\:306b " <> model <> " \:3067\:4f5c\:308a\:307e\:3057\:305f", ". Made with " <> model <> " instead of " <> fastNote], ""]];
+  iSWStatusClearLater[nb];
+  <|"Status" -> "Done", "File" -> out, "Format" -> fmt, "Duration" -> total, "Slides" -> Length[segs], "Timeline" -> tlFile,
+    "Voice" -> voice, "Model" -> If[engine === "Local", None, model], "Engine" -> engine,
+    "Synthesized" -> Length[missing], "Reused" -> Length[keys] - Length[missing]|>];
+
+(* \:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:300d *)
+iSWPosterAudioAction[nb_] := Module[{r = SlidePosterAudio[nb]},
+  Which[
+    FailureQ[r],
+      iSWStatusClearLater[nb];
+      MessageDialog[iSL["\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f:\n", "Could not make the poster audio:\n"] <> iSWVideoFailText[r]],
+    AssociationQ[r] && r["Status"] === "Done",
+      If[TrueQ[ChoiceDialog[
+          iSL["\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:306e\:97f3\:58f0\:304c\:3067\:304d\:307e\:3057\:305f (" <> iSWClock[r["Duration"]] <> "\:3001" <> ToString[r["Slides"]] <> " \:679a\:5206)\:3002\n",
+            "The poster talk audio is ready (" <> iSWClock[r["Duration"]] <> ", " <> ToString[r["Slides"]] <> " slides).\n"] <> r["File"],
+          {iSL["\:958b\:304f", "Open"] -> True, iSL["\:9589\:3058\:308b", "Close"] -> False}]],
+        Quiet[SystemOpen[r["File"]]]]];
+  r];
+
 End[]
 
 EndPackage[]
@@ -17100,7 +17575,7 @@ If[Length[DownValues[SourceVault`SourceVaultRealtimeStart]] > 0,
 (* 2026-08-06: NBAccess \:7ba1\:7406\:5909\:6570\:3078\:306e\:76f4\:63a5\:66f8\:304d\:63db\:3048\:3092\:3084\:3081\:3001\:767b\:9332 API \:3092\:901a\:3059 *)
 SlideWorkflow`Private`$iSWAgentHeads = {"SlideThemeColor", "SlideApplyScenario",
   "SlidePosterPlan", "SlidePosterPlanView", "SlidePosterRender", "SlidePosterImage", "SlidePosterExport", "SlidePosterShow", "SlidePosterSpec",
-  "SlidePosterTalkFill", "SlidePosterTalks", "SlidePosterTalkDuration", "SlideSetTalkMode", "SlideSetPosterTalkMinutes", "SlidePosterTalkRestyle", "SlidePosterUpload", "SlideGraphFromSlides",
+  "SlidePosterTalkFill", "SlidePosterTalks", "SlidePosterTalkDuration", "SlideSetTalkMode", "SlideSetPosterTalkMinutes", "SlidePosterTalkRestyle", "SlidePosterUpload", "SlideGraphFromSlides", "SlidePosterAudio",
   "SlideTable", "SlidePDFFigure", "SlidePDFImages", "SlideDeckFigure",
   "SlideSourceFile", "SlideDeckInsertScenario",
   "SlideDeckOverview", "SlideDeckSlides",
@@ -17108,7 +17583,7 @@ SlideWorkflow`Private`$iSWAgentHeads = {"SlideThemeColor", "SlideApplyScenario",
   "SlideNotebookFormula",
   "SlideGraphIngest", "SlideGraphSpec", "SlideGraphPlan", "SlideGraphPlanView",
   "SlideGraphGenerate", "SlideGraphApply", "SlideGraphView", "SlideGraphLoad", "SlideGraphShow",
-  "SlideGraphSeed", "SlideGraphSectionText",
+  "SlideGraphSeed", "SlideGraphSectionText", "SlideGraphSubgraph",
   "SlideComputeNew", "SlideComputeOpen", "SlideComputeAdd", "SlideComputeFinish", "SlideComputeGraph",
   "SlideComputeRegister", "SlideComputeList", "SlideGraphReuse"};
 

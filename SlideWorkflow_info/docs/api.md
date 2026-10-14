@@ -131,6 +131,17 @@ Options: `"Output"`, `"Voice"`, `"Model"`, `"Live"` (Automatic = 聞く | `"Reco
 ### SlideTalkVideoStatus[] → Association
 `<|"Recording" (gpt-live-1 で録っている最中), "Encoding" (ffmpeg の進み), "Last" (最後の結果)|>`。
 
+### SlidePosterAudio[] / SlidePosterAudio[nb, opts] → <|"Status" -> "Done", "File", "Format", "Duration", "Slides", "Timeline", "Synthesized", "Reused"|> (v1.61)
+ポスター原稿 (SlidePosterTalk セル。前置きの Opening は最初の枚の頭) を、発表の設定の声 (発表ボイス + 音声モデル) で読んだ **1 本の音声ファイル**
+`<デッキ>_poster_talk.m4a` にする。作成パレット「確認・書き出し」の **ポスター音声** (「登録」の右)。
+- 声・読みの辞書・声のキャッシュ (`<デッキ>_voice/`) は `SlideTalkVideo` と同じ。動画を作った後なら合成しない (戻り値の `"Reused"`)。
+  ローカルの声は合成、`realtime:` + gpt-realtime-* は `SourceVaultRealtimeRender` (再生しない)、gpt-live-1 は同じ声の gpt-realtime で作る。
+- 長さは動画と同じ: 枚ごとに `$SlideTalkVideoLeadIn` + 声 + `$SlideVoiceGap`、最後に `$SlideTalkVideoTail`。ポスター原稿のある枚だけを並べる。
+- 形式: `"Format" -> "m4a"` (AAC、既定 `$SlidePosterAudioFormat`) / `"mp3"` / `"wav"`。m4a と mp3 は ffmpeg で 1 回変換 (ASCII の作業フォルダで変換してから写す)、
+  ffmpeg が無ければ wav。ビットレート `"Bitrate"` (既定 `$SlidePosterAudioBitrate = "96k"`)。
+- 隣に時刻表 `<出力>.json` (枚・題目・ポスターのブロック・開始・長さ・原稿)。同じデッキの wav と m4a は同じ時刻表を共有し、最後に書いたものを表す。
+- opts: `"Output"` / `"Format"` / `"Voice"` / `"Model"` / `"Parallel"` / `"Bitrate"`。テスト: slideworkflow_test T56 (声を差し替えて 4 件)。
+
 ### SlideYouTubeUpload[] / SlideYouTubeUpload[nb | deck.nb | video.mp4, opts] → Association
 読み上げ付きの動画を YouTube Data API v3 で **限定公開 (unlisted)** でアップロードする (再開可能アップロード、8 MiB ずつ、5xx は位置を訊いて続きから)。
 - 題 = 指示セルの `Title:` (無ければデッキ名)。説明欄 = 題・集会と日付・著者 + 時刻表から作る **チャプター** (同じ題目の続きはまとめ、10 秒未満の章は次の題目に譲る。3 つ未満なら付けない)。
@@ -768,7 +779,7 @@ Options: `"Figures" -> {}` (mdの`<<FIG1>>`..に対応するGraphics/Graphics3D/
 
 ### $SlideExportExternal
 型: `Automatic | True | False`, 初期値: `Automatic`
-パレットの画像/mp4 書き出しを別プロセス(wolframscript)で行うかどうか。`Automatic`(既定)は 1 度試し、ライセンス席不足等で子プロセスが起動できなければ以後は FE 内処理へ自動フォールバックする。`True`強制 / `False`無効。
+パレットの画像/mp4 書き出しを別プロセス(wolframscript)で行うかどうか。`Automatic`(既定)は 1 度試し、ライセンス席不足等で子プロセスが起動できなければ以後は FE 内処理へ自動フォールバックする (状態欄に席の案内を出す)。`True`強制 / `False`無効。v1.62: 「登録」の mp4 の作り直しは FE 内のフォールバックが無いので毎回試し直し、子が起動できなければ `SlideVideoStale` に「起動できなかった・席が埋まっている可能性 ("not activated" も出る)・使っていない WolframKernel.exe / wolframscript.exe を終了してもう一度登録」と Wolfram のプロセスの一覧を出す。mp4 が無いときは「まだありません」。
 **大きなデッキで FE がフリーズする問題への対策**: パレットの書き出し・一覧・シナリオ md は、以前ノートブック全体を `NotebookGet` でカーネルへ転送していた。99MB のデッキではこの FE→カーネル転送だけで FE が長時間応答不能になる。現在は**保存済みであればファイルパスを渡し、カーネル側の `Get` で読む**(FE を介さない)。未保存の場合のみ従来経路になるため、大きなデッキでは**書き出し前に保存**すること(ステータスバーにも警告が出る)。
 
 ### $SlideHideToolbarInSlideshow

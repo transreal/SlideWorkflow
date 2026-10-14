@@ -222,7 +222,15 @@ SlideDeckExportVideo["lecture1.nb", "C:\\slides\\lecture1.mp4"]
 
 ### `$SlideExportExternal`
 
-パレットからの画像/mp4書き出しを別プロセス(wolframscript)で行うかどうかの設定です。既定`Automatic`は1度だけ別プロセス起動を試み、ライセンス席不足などで起動できなければ以後はフロントエンド内処理にフォールバックします。`True`/`False`で固定もできます。
+パレットからの画像/mp4書き出しを別プロセス(wolframscript)で行うかどうかの設定です。既定`Automatic`は1度だけ別プロセス起動を試み、ライセンス席不足などで起動できなければ以後はフロントエンド内処理にフォールバックします(状態欄に席の案内を出します)。`True`/`False`で固定もできます。
+
+登録(`SlideDeckRegister`)でのmp4の作り直しにはフォールバックがありません(v1.62)。そのため`Automatic`でも**毎回別プロセスの起動を試し直し**、起動できないときは次の案内を出します。
+
+- ライセンスの席(同時に動かせるWolframのプロセス数)が埋まっている可能性があります(席が足りないときも「not activated」と表示されます)。
+- 今動いているWolframのプロセス(このFE分も含む)の一覧を、どれを終了するかの見当用に表示します。使っていない`WolframKernel.exe` / `wolframscript.exe`を終了して席を空けてから、やり直してください。
+- 別プロセスでの書き出しを切ってある(`$SlideExportExternal = False`)ときは、パレットの「mp4」で書き出してから(FE内で描くので数分かかります)、もう一度「登録」を押してください。
+
+前回起動に失敗した状態(内部の`$iSWExternalBroken`)で試さずに断ることはしません(起動できない場合は数秒で終わります)。
 
 ```wolfram
 $SlideExportExternal = False;
@@ -232,7 +240,7 @@ $SlideExportExternal = False;
 
 ## 8. インタラクティブ編集(スライドパレット)
 
-旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿・質疑応答・読み・調整)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
+旧`SlideWorkflow_interactive.wl`が本パッケージに統合されたレイヤーです。スライドノートブックを実機(フロントエンド)で編集しながら、パレットのボタンからスライド追加・LLMによる本文展開・翻訳・各種補助セルの挿入を行えます。ここで挿入・生成されるセルは、既存の16:9画像/mp4書き出し(`SlideDeckImages`など)と整合するように設計されており、書き出しから除外すべきセル(プロンプト・メモ・指示・辞書・文献・トーク原稿・質疑応答・読み・調整・ポスター原稿)や、スライド終端マーカー以降のセルは自動的にラスタライズ対象から外れます。
 
 ### 8.1 バージョンとパレット表示
 
@@ -515,7 +523,7 @@ SlideInsertStory[]
 
 #### `SlideGraphSpec`
 
-`SlideGraphSpec[nb]`はStoryセルとDirectiveセル(`Title:` / `Language:`)から知識グラフ生成の仕様連想`<|"Graph", "Audience", "Slides", "Minutes", "Seconds", "Language", "Strategy", "Story", "Title", "SecondsPerSlide"|>`を返します。`nb`はNotebookObject / Notebook式 / 保存済みパス。
+`SlideGraphSpec[nb]`はStoryセルとDirectiveセル(`Title:` / `Language:`)から知識グラフ生成の仕様連想`<|"Graph", "Audience", "Slides", "Minutes", "Seconds", "Language", "Strategy", "Story", "Title", "SecondsPerSlide", "Source", "Survey"|>`を返します。`nb`はNotebookObject / Notebook式 / 保存済みパス。
 
 ```wolfram
 SlideGraphSpec[nb]
@@ -645,6 +653,14 @@ SlideGraphAdjust[nb]
 SlideInsertAdjust[]
 ```
 
+#### `SlideGraphFromSlides`
+
+`SlideGraphFromSlides`は既存のスライド(デッキ)の内容から知識グラフを起こす入口です(パレットの「KG作成」系)。起こしたKGは`SlideGraphPlan` / `SlideGraphGenerate`などでそのまま扱えます。
+
+```wolfram
+SlideGraphFromSlides[nb]
+```
+
 ### 9.5 閲覧
 
 #### `SlideGraphVisualize` / `SlideGraphViewer`
@@ -700,7 +716,7 @@ SlideGraphRelated[nb]
 
 ## 10. 発表原稿・読み上げ・リモート操作
 
-スライドの「中身」ではなく「話す原稿」を扱うレイヤーです。1枚ずつ独立に説明文を作ると発表としての流れが出ないため、原稿はデッキ全体を1度に見て書きます。読み上げには、SourceVaultのローカル音声資産(Piper)またはクラウドのリアルタイム音声応答(OpenAI Realtime)を使えます。
+スライドの「中身」ではなく「話す原稿」を扱うレイヤーです。1枚ずつ独立に説明文を作ると発表としての流れが出ないため、原稿はデッキ全体を1度に見て書きます。読み上げには、SourceVaultのローカル音声資産(Piper / AivisSpeech)またはクラウドのリアルタイム音声応答(OpenAI Realtime)を使えます。
 
 ### 10.1 発表原稿シナリオ(talk markdown)
 
@@ -945,6 +961,8 @@ SlideQAFromPack["lecture1.nb"]
 
 「登録」は登録簿・QA パック・mp4 の 3 つを見ますが、変わっていないものはやり直しません。mp4 の判定はファイル日付ではなく「スライドとして描かれるセルの並び」で行うので、トークや質疑応答セルを直しただけなら mp4 は作り直されません。スライドを並べ替えた・挿入した・削除したときは列が変わるので必ず作り直されます。何がやり直されるかは `SlideDeckChangeStatus[]` で見られます。
 
+mp4が古く、作り直しが必要なのに別プロセスで作り直せないとき(v1.62)は、古いmp4をアップロードせずに、理由と次の手を添えた`Failure`を返します。デッキに保存していない変更があると別プロセスでは書き出せないので、デッキを保存してからもう一度「登録」を押してください。別プロセスが起動できないとき(ライセンスの席が埋まっているなど)は、`$SlideExportExternal`の説明にある案内(席の確認と、動いているWolframのプロセスの一覧)が出ます。作り直しに成功すれば、ほかの書き出しも別プロセスに戻ります。
+
 #### `SlideDeckChangeStatus`
 
 `SlideDeckChangeStatus[nb|deck.nb]`は「登録」が何をやり直すか(スライドの並びのハッシュ、mp4が古いか、QAが焼き直されるか)を返します。「登録しても何も起きない」ときの切り分けに使います。
@@ -980,7 +998,9 @@ SlideTalkMeta["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
 
 同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きします(前回の特定は`Id` > `DeckFile` > `SlideURL` > `PosterURL`の順。指示セルの`Id:`行で固定できます)。何が変わったかは戻り値の`RegistryStatus`(`"Created"`|`"Updated"`)と`ChangedKeys`で分かります。
 
-**ポスター(v1.56)**: 指示セルに`PosterURL:`(ポスターPDFを置くURL)があれば、`<deck>_poster.pdf`も配置します(結果は戻り値の`"PosterUpload"`キー)。配置先は`PosterHost:`、無ければ`Host:`です。`SlideURL`か`PosterURL`のどちらかがあれば登録でき、両方あれば両方を扱います。
+**ポスター(v1.56)**: 指示セルに`PosterURL:`(ポスターPDFを置くURL)があれば、`<deck>_poster.pdf`も配置します(結果は戻り値の`"PosterUpload"`キー)。配置先は`PosterHost:`、無ければ`Host:`です。`SlideURL`か`PosterURL`のどちらかがあれば登録でき、両方あれば両方を扱います。ポスターの音声(`<deck>_poster_talk.m4a`)の配置は10.6を参照してください。
+
+mp4が古いときの作り直しと、作り直せないときの案内は「登録」は変わった分だけ(10.1)と`$SlideExportExternal`(7章)を参照してください。
 
 オプション: `"SlideURL"`, `"Title"`, `"Id"`, `"DeckFile"`, `"PrivacyLevel"`, `"SlideCount"`, `"Upload"`(`Automatic`|`True`|`False`)
 
@@ -1209,6 +1229,41 @@ $SlideRemoteBindings = <|"MediaPrevTrack" -> "Mic", "MediaPlayPause" -> "Play",
   "MediaNextTrack" -> "NextSlide"|>;
 $SlideRemoteAuto = True;
 ```
+
+### 10.6 ポスター発表の音声(ポスター原稿)
+
+ポスター発表では、スライドの代わりにポスターの前で話す内容を原稿にします。ポスター原稿を発表の設定の声で読み上げ、**1本の音声ファイル`<deck>_poster_talk.m4a`**にします。ポスターの前に立てない人や、QRコードから聞く人のためのものです。
+
+#### ポスター原稿セル(`SlidePosterTalk`)
+
+ポスター原稿は`SlidePosterTalk`スタイルのセルに書きます。前置きの`Opening`は最初の枚の頭に置きます。`Working`で見え、`SlideShow`と書き出し(画像・mp4)では隠れます。
+
+#### ポスター関連の関数
+
+- `SlidePosterTalkFill[]` / `SlidePosterTalkFill[nb]` — ポスター原稿(`SlidePosterTalk`セル)を、デッキの内容から書き込みます。
+- `SlidePosterTalks[]` / `SlidePosterTalks[nb]` — ポスター原稿の内容を返します。
+- `SlidePosterTalkDuration[]` / `SlidePosterTalkDuration[nb]` — ポスター原稿を読み上げたときにかかる時間を見積もります。
+- `SlideSetTalkMode[mode]` — 発表の原稿をスライドの原稿(`SlideTalk`)とポスター原稿のどちらで扱うかを切り替えます(パレットの切替)。
+- `SlideSetPosterTalkMinutes[minutes]` — ポスター原稿の目標の長さ(分)を指定します。
+- `SlidePosterTalkRestyle[]` / `SlidePosterTalkRestyle[nb]` — 既存のポスター原稿の文体・長さを、目標の分数などに合わせて書き直します。
+- `SlidePosterUpload[]` / `SlidePosterUpload[nb]` — ポスターの音声(`<deck>_poster_talk.m4a`)を、発表メタの配置先(`PosterHost:`、無ければ`Host:`)へ送ります。
+
+```wolfram
+SlidePosterTalkFill[nb]
+SlidePosterTalks[nb]
+SlidePosterTalkDuration[nb]
+SlideSetPosterTalkMinutes[5]
+SlidePosterTalkRestyle[nb]
+SlidePosterUpload[nb]
+```
+
+#### 音声の作り方
+
+- 発表の設定の声(発表ボイスと音声モデル)で、ポスター原稿を読み上げた音声を作ります。
+- ローカルの声(Piper / AivisSpeech)は合成して1本につなぎます(複数のwavを、動画の声の並べ方と同じやり方で1本のm4aに変換します)。
+- `realtime:` + `gpt-realtime-*`の声は`SourceVaultRealtimeRender`で作ります(その場で再生はしません)。
+- 声・読みの辞書(10.1の「読みの辞書」)・声のキャッシュ(`<deck>_voice/`)は、読み上げ動画(`SlideTalkVideo`)と同じです。動画を作った後なら、合成はキャッシュを使うので速く済みます。
+- 声を使える状態にできなかったとき(音声エンジンが起動していないなど)は、使えなかった声の名前を添えたメッセージを出します。
 
 ---
 
