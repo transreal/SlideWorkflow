@@ -363,7 +363,7 @@ SlideShowLanguage[nb, "Toggle"]
 - `SlideInsertCitation[]` — 出典セル(小フォント)を挿入します。図や引用の直後に置き、URLまたは`(著者, 年)`を記入する運用です。
 - `SlideInsertEndMarker[]` — スライド終端マーカーを挿入します。以降のセルはそのスライドの一部とみなされず、書き出し(`SlideDeckImages`など)にも含まれません。追跡用セルや検討メモの置き場として使えます。
 - `SlideInsertNote[]` — メモセルを挿入します(`documentation.wl`のメモセルと互換)。`Working`環境では可視、`SlideShow`(スライドショー環境)では非表示になり、書き出しからも除外されます。
-- `SlideInsertDirective[]` — 指示セルを挿入します。`SlideExpand`(展開)・`SlideTranslate`(翻訳)実行時にLLMが厳守すべき指示を書きます。`Working`で可視、`SlideShow`では非表示です。
+- `SlideInsertDirective[]` — 指示セルを挿入します。`SlideExpand`(展開)・`SlideTranslate`(翻訳)実行時にLLMが厳守すべき指示を書きます。`Working`で可視、`SlideShow`では非表示です。雛形には`Title:` / `Aliases:` / `SlideURL:` / `Host:`などの行が入ります(`Aliases:`は発表の呼び名。10.2参照)。
 - `SlideInsertDictionary[]` — 辞書セルを挿入します。翻訳時の用語対応(専門用語の訳語固定など)を指定します。
 - `SlideInsertReading[]` — 読みセル(`SlideReading`スタイル)を挿入します(v1.51)。読み上げ(gpt-realtime・ローカルの声)のときだけ語を仮名に置き換える辞書で、1行1語`語 = よみ`、`#`から行末はコメントです。スライド・字幕・原稿は書き換えません。全デッキ共通の読み(`SlideReadingFile[]`)より優先されます。`Working`で見え、`SlideShow`と書き出しでは隠れます。詳細は10.1の「読みの辞書」を参照してください。
 - `SlideInsertBibliography[]` — 文献セルを挿入します(`documentation.wl`と互換)。
@@ -570,6 +570,8 @@ SlideGraphSectionText[graphId, "s3"]
 
 `"Mode"->"Talk"`は要点はあるがTalkの無いノードに原稿だけを足す軽い回(推敲済みの古いKG用)。`"Mode"->"Agent"`は従来のエージェント委譲。`"Sections"->{"s3", ..}`で対象を絞る。graphId形式では`"Audience"` / `"Story"`を渡せます。
 
+推敲の対象は、本文ノードのある未推敲の節です(本文の無い部の見出しをLLMに書き換えさせることはしません)。なお、シナリオKGの筋書きの展開は「展開」の操作として行うもので、後述の自動準備には含まれません。
+
 ```wolfram
 SlideGraphRefine[nb]
 ```
@@ -600,6 +602,24 @@ SlideGraphTranslate[nb, "English"]
 
 ### 9.4 計画・生成・適用・調整
 
+#### 生成前の準備(自動)
+
+パレットの「生成」(`SlideGraphApply`)を押すと、スライドを作る前に次の準備が**自動で**走ります。パレットの案内は「次は節どうしの関係づけ (自動)。そのあと「周辺知識」「図解」、そして「生成」」の順です。
+
+1. **推敲の残り** — 本文ノードのある未推敲の節を磨きます(本文の無い部の見出しはLLMに書き換えさせません。シナリオKGの推敲は「展開」なので自動にしません)。
+2. **関係づけ(節どうし)** — 節の一覧(1節あたり1枚ぶんの話題)を**発表の順に並べて LLM に1回だけ**見せ、関係の辺を提案させます。同じ部の中だけでなく、部と部・資料と資料をまたぐ関係も対象です。
+   - 挙げるのは明らかな関係だけで、1つの節から出る辺は1〜4本、全体で節の数の1.5倍以内です。
+   - 一覧に無いId・決まった種類以外・自分自身への辺・既存と同じ辺・発表の順に逆らう順序の辺は、機械的に落とされます。
+   - 同じKG・同じ未推敲の節の集合・同じ節の集合では、このセッションで一度しか試しません(推敲が要点を付けられない節で毎回LLMを呼ばないため)。まだ関係づけしていないKG(この節の集合で`"Links"`の記録が無いもの)だけが対象です。
+3. **周辺知識・図解** — 前提知識のノード(`SlideGraphBackground`)と図解を整えます。
+
+準備はLLMが無いとき、およびKGの作業が実行中のときは何もせず、そのまま生成します。無効にするには`$SlideGraphPrepareAuto = False`、または`SlideGraphApply`/`SlideGraphBuild`に`"Prepare"->False`を渡します。
+
+```wolfram
+$SlideGraphPrepareAuto = False;       (* 自動の準備を止める *)
+SlideGraphApply[nb, "Prepare" -> False]
+```
+
 #### `SlideGraphBuild`
 
 `SlideGraphBuild[]` / `SlideGraphBuild[nb, "Mode" -> Automatic | "Agent" | "Extract"]`はReferencesの和訳ノートブックから`SlideGraphSeed`で第一次KGを決定的に作って保存し、続けて節ごとの推敲を行います。既定は`SlideGraphRefine`のDirect連鎖(LLMを節ごとに直接呼ぶ)、`"Agent"`は推敲をエージェント(ClaudeEval)に委譲、`"Extract"`は和訳ノート無しでPDFをエージェントに読ませる旧経路です。和訳ノートが無ければFailure(`NoSourceNotebook`)で`DocImportPaper`を案内します。文献に和訳ノートが無く(またはStoryに`Source:`シナリオ)、プロンプトセルに筋書きがあれば、筋書きからKGを作ります(`SlideGraphSeedScenario` → 関連研究の候補`SlideGraphRelated`(Storyの`Survey:` local | web | off) → 筋書きの展開)。
@@ -629,10 +649,13 @@ gen = SlideGraphGenerate[nb, "Slides" -> 12];
 
 #### `SlideGraphApply`
 
-`SlideGraphApply[]` / `SlideGraphApply[nb, opts]`は知識グラフから生成したスライド群をデッキへ適用します(10枚ずつ`SlideDeckInsertScenario`を呼びます)。`"Mode"->Automatic`(既定)は、前回KGから作った枚(題目セルの`CellTags`に`"KGNode:<id>"`)があれば`"Replace"`(質疑応答セルをKGのノードへ保存してから前回の枚を消し、同じ位置に作り直す。問答は新しい枚へ戻る)、無ければ`"Append"`(最後のスライドの後、`"After"->n`で位置指定)。`"Polish"->True`ならtalkの推敲をエージェントへ委譲し、エージェントが`SlideGraphApply["Talks"->{..}]`で適用します。
+`SlideGraphApply[]` / `SlideGraphApply[nb, opts]`は知識グラフから生成したスライド群をデッキへ適用します(10枚ずつ`SlideDeckInsertScenario`を呼びます)。適用の前に、上記「生成前の準備(自動)」が走ります。`"Mode"->Automatic`(既定)は、前回KGから作った枚(題目セルの`CellTags`に`"KGNode:<id>"`)があれば`"Replace"`(質疑応答セルをKGのノードへ保存してから前回の枚を消し、同じ位置に作り直す。問答は新しい枚へ戻る)、無ければ`"Append"`(最後のスライドの後、`"After"->n`で位置指定)。`"Polish"->True`ならtalkの推敲をエージェントへ委譲し、エージェントが`SlideGraphApply["Talks"->{..}]`で適用します。
+
+オプション: `"Mode"` / `"After"` / `"Polish"` / `"ChunkSize"`(10) / `"Prepare"`(既定は`$SlideGraphPrepareAuto`。`False`で準備を省いてそのまま生成)。
 
 ```wolfram
 SlideGraphApply[nb]
+SlideGraphApply[nb, "Prepare" -> False]
 ```
 
 #### `SlideGraphAdjust`
@@ -983,7 +1006,7 @@ SlideDeckMarkVideoCurrent["lecture1.nb"]
 
 #### `SlideTalkMeta`
 
-`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `PosterURL` / `Aliases` / `PrivacyLevel` / `Language`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `SlideURL:` / `PosterURL:` / `Language:` / `Host: sftp://user@host/dir` / `PosterHost:`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
+`SlideTalkMeta[nb]`はデッキ単位の発表メタ(`Title` / `SlideURL` / `UploadURL` / `PosterURL` / `Aliases` / `PrivacyLevel` / `Language`など)を返します。取得元は次の優先順です: デッキ先頭の指示(Directive)セルの`Key: value`行(`Title:` / `Aliases:` / `SlideURL:` / `PosterURL:` / `Language:` / `Host: sftp://user@host/dir` / `PosterHost:`) > ノートブックの`TaggingRules`の`"SWTalkMeta"` > `_talk.md`のfront matter。
 
 `SlideTalkMeta[nb, "SlideURL" -> url, ...]`はノートブックの`TaggingRules`に永続化します(指示セルに同名の行があればそちらが優先されるため、登録簿への登録が`_talk.md`無しで完結します)。
 
@@ -995,6 +1018,10 @@ SlideTalkMeta["lecture1.nb", "SlideURL" -> "https://slide.example/1234"]
 #### `SlideDeckRegister`
 
 `SlideDeckRegister[nb|deck.nb|talkfile|md]`は発表(トークセル+指示セルのメタ)をSourceVaultの登録簿へ登録します。メタに`UploadURL`(指示セルの`Host:`行)があれば、Sliden用mp4をwebサーバへ自動でアップロードします(結果は戻り値の`"Upload"`キー)。以後、VRCRealtimeが発表タイトルからスライドURLと原稿を引けます。
+
+**呼び名(v1.63)**: 題名が長い発表(ポスターなど)は、話しかけて始めるときの短い名を指示セルの`Aliases:`行(`呼び名:` / `別名:` / `CallName:`でも可、カンマ区切りで複数)に書いておきます。登録簿の照合は呼び名を題名より優先し、呼び名が依頼文に丸ごと含まれていればその発表が始まります(例: `Aliases: CIHCD 2026, ケア情報学会` と書いておけば「CIHCD 2026のポスター発表を始めて」で始まる)。呼び名で見つからないときだけ題名で近いものを探します。「指示」ボタンの雛形にも`Aliases:`行が入ります。
+
+**ポスター原稿の登録(v1.63)**: 「登録」はスライド原稿(トークセル)に加えて、ポスター原稿(ポスター原稿セル)も登録簿へ送ります(`talks/<id>_poster.json`)。ポスター原稿は、前置き(`Opening`)と枚ごと(`Slides`)を登録簿の原稿の形にして送り、原稿の無い枚は入りません。`SlideURL:`が無く`PosterURL:`だけのデッキは登録簿で「ポスター発表」となり、VRCRealtimeは掲示済みのポスターの前でポスター原稿を段落ごとに読みます(スライドの操作はありません)。両方あるデッキは、音声で「〜のポスター発表を始めて」と言ったときだけポスター発表になります。
 
 同じデッキで再度実行すると、前回のエントリを土台に今回与えた値だけを上書きします(前回の特定は`Id` > `DeckFile` > `SlideURL` > `PosterURL`の順。指示セルの`Id:`行で固定できます)。何が変わったかは戻り値の`RegistryStatus`(`"Created"`|`"Updated"`)と`ChangedKeys`で分かります。
 

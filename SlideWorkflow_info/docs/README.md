@@ -16,7 +16,7 @@
 
 ### ラスタライズの安定性へのこだわり
 
-画像・動画書き出しは、クリップボードやウィンドウのスナップショットに依存しない設計になっている点が最大の特徴です。スライドのセル列からNotebook式を直接構成し、`ScreenStyleEnvironment->"SlideShow"` で `Rasterize` してから16:9キャンバスへ合成するため、FEセッションが裏で他の操作をしていても、あるいは `wolframscript` のheadless環境でも同じ結果が得られます。合成時には `$SlideMargins` に基づく余白処理(全面画像ページには適用しない)や、内容が高さに収まらない場合の自動リフロー・縮小(警告メッセージ付き)といった安定化ロジックが組み込まれています。書き出しに含めるInput/Codeセルの扱いは `$SlideIncludeInput`(既定`Automatic`)で一元制御でき、個別セルは`CellTags->"ShowInput"`で設定によらず常に残せます。動画書き出し(`SlideDeckExportVideo`)はSliden(VRChat)との互換性を重視し、既定では1枚あたり約1秒(30fps)・先頭スライドは29フレーム・末尾スライドを重複させるフレーム構成を採用しています。書き出したSliden用mp4は、sftp経由でのアップロード・登録(`SlideDeckUpload` / `SlideDeckRegister`)までを一連の流れとして扱えます。
+画像・動画書き出しは、クリップボードやウィンドウのスナップショットに依存しない設計になっている点が最大の特徴です。スライドのセル列からNotebook式を直接構成し、`ScreenStyleEnvironment->"SlideShow"` で `Rasterize` してから16:9キャンバスへ合成するため、FEセッションが裏で他の操作をしていても、あるいは `wolframscript` のheadless環境でも同じ結果が得られます。合成時には `$SlideMargins` に基づく余白処理(全面画像ページには適用しない)や、内容が高さに収まらない場合の自動リフロー(折返し幅の自動探索)・縮小(警告メッセージ付き)といった安定化ロジックが組み込まれています。書き出しに含めるInput/Codeセルの扱いは `$SlideIncludeInput`(既定`Automatic`)で一元制御でき、個別セルは`CellTags->"ShowInput"`で設定によらず常に残せます。動画書き出し(`SlideDeckExportVideo`)はSliden(VRChat)との互換性を重視し、既定では1枚あたり約1秒(30fps)・先頭スライドは29フレーム・末尾スライドを重複させるフレーム構成を採用しています。書き出したSliden用mp4は、sftp経由でのアップロード・登録(`SlideDeckUpload` / `SlideDeckRegister`)までを一連の流れとして扱えます。
 
 さらに、発表原稿の読み上げ音声とスライド画像を合成した「読み上げ付き動画」(`SlideTalkVideo`)も作成できます。再生と共通の音声キャッシュと描画ハッシュによる再利用を行うため、途中で止めても続きから作成でき、できあがった動画は `SlideYouTubeUpload` で YouTube に限定公開としてアップロードできます。
 
@@ -117,7 +117,7 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 
 ### 主な機能
 
-- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込みにも対応。
+- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込み、`cite:` 行による出典の明記にも対応。
 - **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。終端マーカーの付与可否は`"EndMarker"`(既定`True`)、ノートブックのウィンドウサイズは`"WindowSize"`(既定`{960,540}`)で調整可能。
 - **デッキ参照**: `SlideDeckSlides`(コア分解関数、Appendix領域も分離)、`SlideDeckOverview`(番号・タイトル・セル数・画像有無のDataset表示)。
 - **スライド単位編集**: `SlideDeckReplaceSlide` / `SlideDeckInsertSlide` / `SlideDeckDeleteSlide` / `SlideDeckMoveSlide`。既定で`.bak`付き上書き、`"Target"`指定で別名保存可能。

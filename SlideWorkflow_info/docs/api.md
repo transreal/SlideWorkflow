@@ -390,7 +390,7 @@ Options: `"Output" -> Automatic`, `"UseLLM" -> Automatic`, `"Notebook" -> Automa
 発表シナリオの規約パス`<deck>_talk.md`を返す(トークセルの無い旧デッキ用のフォールバック)。
 
 ### SlideTalkMeta[nb] → Association
-デッキ単位の発表メタ(Title / SlideURL / UploadURL / Aliases / PrivacyLevel など)を返す。ソースの優先順は **デッキ先頭の指示(Directive)セルの `Key: value` 行** > TaggingRules `"SWTalkMeta"` > `_talk.md` front matter。指示セルには次のように書く(`Host:` / `Upload:` / `UploadURL:` は同義で `UploadURL` に正規化。`PosterURL:` / `PosterHost:` はポスター PDF を置く URL とその配置先 (v1.56。`PosterHost` は `PosterUploadURL` に正規化、無ければ `Host:` と同じ場所)。`Aliases:`(カンマ区切り) / `PrivacyLevel:` / `SecondsPerSlide:` / `Event:` / `Author:` / `Date:` も可。これらの行は LLM への指示ブロックからは除かれる):
+デッキ単位の発表メタ(Title / SlideURL / UploadURL / Aliases / PrivacyLevel など)を返す。ソースの優先順は **デッキ先頭の指示(Directive)セルの `Key: value` 行** > TaggingRules `"SWTalkMeta"` > `_talk.md` front matter。指示セルには次のように書く(`Host:` / `Upload:` / `UploadURL:` は同義で `UploadURL` に正規化。`PosterURL:` / `PosterHost:` はポスター PDF を置く URL とその配置先 (v1.56。`PosterHost` は `PosterUploadURL` に正規化、無ければ `Host:` と同じ場所)。`Aliases:`(カンマ区切り。`呼び名:` / `別名:` / `CallName:` / `CallWord:` も同義で `Aliases` に正規化 (v1.63)。話しかけて始めるときの短い名で、登録簿の照合では題名より優先される) / `PrivacyLevel:` / `SecondsPerSlide:` / `Event:` / `Author:` / `Date:` も可。これらの行は LLM への指示ブロックからは除かれる):
 ```
 Title: 計算と自然 32
 SlideURL: https://transreal.sakura.ne.jp/cn/32.mp4
@@ -547,7 +547,7 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 `SlideTalkSessions[]` の行には Rendition と Language が付く。`SlideQACandidates[nb]` の行には Node / Rendition / Graph が付き、`SlideQACandidateAccept` は `"KnowledgeGraph" -> "Saved" | "Unchanged" | "NoGraph"` を返す。
 
 ## 変更検出 (登録の空振りを避ける)
-「登録」は登録簿・QA パックセ・mp4 の 3 つを触るが、中身が変わっていなければやり直さない。判定は**ファイル日付ではなく、スライドとして描かれるセルを順番どおりに並べたもののハッシュ**。
+「登録」は登録簿・QA パック・mp4 の 3 つを触るが、中身が変わっていなければやり直さない。判定は**ファイル日付ではなく、スライドとして描かれるセルを順番どおりに並べたもののハッシュ**。
 - トークセル・質疑応答セル・メモ・指示などのメタセルを直しても mp4 は作り直さない(見た目が 1 ピクセルも変わらないため)。
 - スライドの**並び替え・挿入・削除**は列が変わるので必ず検出され、mp4 を作り直す。
 - `CellChangeTimes` / `CellID` / `ExpressionUUID` / `CellLabel` は中身ではないので落とす(触っただけで作り直しにならない)。
