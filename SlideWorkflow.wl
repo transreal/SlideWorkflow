@@ -1682,10 +1682,12 @@ SlideDeckSlides[nb_Notebook] := iSlideSplit[nb, iFlattenCells];
 SlideDeckSlides[nbfile_String] := With[{nb = iGetNotebook[nbfile]},
   If[nb === $Failed, $Failed, SlideDeckSlides[nb]]];
 
+(* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
 SlideDeckSlides[nbo_NotebookObject] := SlideDeckSlides[NotebookGet[nbo]];
 
 iAsNotebook[nb_Notebook] := nb;
 iAsNotebook[nbfile_String] := iGetNotebook[nbfile];
+(* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
 iAsNotebook[nbo_NotebookObject] := NotebookGet[nbo];
 
 iSlideTitle[cells_List] := Module[{sub},
@@ -3252,6 +3254,7 @@ iSWModifiedQ[nb_NotebookObject] := Module[{info = Quiet[NotebookInformation[nb]]
   !(NumericQ[mt] && Lookup[$iSWStatusOnlyMT, nb, None] === mt)];
 
 iSWDeckSource[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
+  (* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
   If[StringQ[fn] && FileExistsQ[fn] && ! iSWModifiedQ[nb], fn, NotebookGet[nb]]];
 
 iSWUnsavedQ[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
@@ -3267,12 +3270,14 @@ $iSWTextOnlyStyles = {"Title", "Subtitle", "Chapter", "Section", "Subsection", "
   "Dictionary", "Note", "SlideNote", "SlideAdjust", "Bibliography", "SlideDirective", "SlideReading", "SlidePoster", "SlidePosterTalk"};
 iSWDeckTextNotebook[nb_NotebookObject] := Module[{cells = Cells[nb], styles, light, read, out},
   styles = iSWCellStyles[nb];
+  (* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
   If[! ListQ[styles] || Length[styles] =!= Length[cells], Return[NotebookGet[nb]]];
   light = Table[With[{st = Flatten[{styles[[i]]}]},
       Intersection[st, $iSWTextOnlyStyles] =!= {} ||
         ! FreeQ[{iSWCellTags[cells[[i]]]}, "SlideTable"]],
     {i, Length[cells]}];
   read = Flatten[{Quiet[NotebookRead[Pick[cells, light]]]}];
+  (* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
   If[Length[read] =!= Count[light, True], Return[NotebookGet[nb]]];
   out = Table[
     If[light[[i]], Null,
@@ -6419,6 +6424,9 @@ SlideSpeakSlide[nb_NotebookObject, n_Integer] := Module[
   voice = iSWVoiceName[];
   If[iSWVoiceRealtimeQ[voice],
     (* \:30af\:30e9\:30a6\:30c9\:306e\:58f0: \:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:4f1a\:8a71\:306b\:8aad\:307e\:305b\:308b *)
+    (* the running session may belong to another deck, so this deck is checked here too (2026-10-31) *)
+    With[{refusal = iSWCloudVoiceRefusal[nb]},
+      If[FailureQ[refusal], MessageDialog[iSWFailureText[refusal]]; Return[refusal]]];
     If[! iSWRealtimeRunningQ[],
       MessageDialog[iSL["\:5148\:306b\:300c\:5fdc\:7b54on\:300d\:3067\:97f3\:58f0\:4f1a\:8a71\:3092\:59cb\:3081\:3066\:304f\:3060\:3055\:3044 (realtime: \:306e\:58f0\:306f\:305d\:3053\:3067\:9cf4\:308a\:307e\:3059)\:3002",
         "Turn voice answering on first: a realtime voice speaks through that session."]];
@@ -7005,6 +7013,9 @@ SlideToggleRealtime[nb_NotebookObject] := Module[{res, voice},
     iSWRefreshTalkLabel[];
     iSWRefreshMicLabel[];
     Return[res]];
+  (* voice answering always runs on the cloud voice: not for a deck at PrivacyLevel 0.5 or more / declared Private (2026-10-31) *)
+  With[{refusal = iSWCloudVoiceRefusal[nb]},
+    If[FailureQ[refusal], MessageDialog[iSWFailureText[refusal]]; Return[refusal]]];
   $iSWBridgeNarrationOnly = False;
   iSWTrace["RT:on begin"];
   voice = With[{v = iSWVoiceName[]},
@@ -7903,7 +7914,10 @@ iSWPlayTick[] := Module[{now = AbsoluteTime[]},
 (* \:8d70\:3063\:3066\:3044\:306a\:3051\:308c\:3070\:8d77\:3053\:3059\:3002\:8d70\:3063\:3066\:3044\:3066\:3082\:58f0\:304c\:9055\:3048\:3070\:5165\:308c\:76f4\:3059 (Realtime \:306e\:58f0\:306f
    \:30bb\:30c3\:30b7\:30e7\:30f3\:958b\:59cb\:5f8c\:306b\:306f\:5909\:3048\:3089\:308c\:306a\:3044)\:3002\:81ea\:5206\:3067\:8d77\:3053\:3057\:305f\:304b\:3069\:3046\:304b\:3092\:899a\:3048\:3066\:304a\:304d\:3001
    \:7d42\:4e86\:6642\:306b\:5229\:7528\:8005\:306e\:30bb\:30c3\:30b7\:30e7\:30f3\:307e\:3067\:5dfb\:304d\:8fbc\:307e\:306a\:3044\:3088\:3046\:306b\:3059\:308b\:3002 *)
-iSWEnsureRealtimeBridge[nb_, voiceName_String, answering_ : True] := Module[{st, res},
+iSWEnsureRealtimeBridge[nb_, voiceName_String, answering_ : True] := Module[{st, res, refusal},
+  (* a deck at PrivacyLevel 0.5 or more, or declared Private, never goes to the cloud voice (2026-10-31) *)
+  refusal = iSWCloudVoiceRefusal[nb];
+  If[FailureQ[refusal], Return[refusal]];
   st = iSWRealtimeStatus[];
   If[TrueQ[Lookup[st, "Running", False]],
     (* \:58f0\:304c\:540c\:3058\:3067\:3001\:304b\:3064\:30ef\:30fc\:30ab\:30fc\:304c\:4eca\:306e\:5951\:7d04\:306a\:3089\:4f7f\:3044\:56de\:3059\:3002\:53e4\:3044\:30ef\:30fc\:30ab\:30fc\:306f
@@ -9271,6 +9285,8 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   If[engine === "Live",
     Return[iSWVideoRecordStart[nb, <|"Images" -> images, "Include" -> include, "Keys" -> keys,
       "Files" -> files, "Titles" -> titles, "Output" -> out, "Meta" -> meta, "Texts" -> texts|>]]];
+  (* a cloud voice renders the talk on OpenAI: not for a deck at PrivacyLevel 0.5 or more / declared Private (2026-10-31) *)
+  If[engine =!= "Local", With[{refusal = iSWCloudVoiceRefusal[nb]}, If[FailureQ[refusal], Return[refusal]]]];
   missing = Select[keys, ! (FileExistsQ[files[#]] && TrueQ[Quiet[FileByteCount[files[#]]] > 1000]) &];
   If[engine === "Local",
     Do[i++;
@@ -12128,14 +12144,35 @@ iSWRefineSanitize[delta_Association, batchIds_List, kgIds_List] := Module[{d = K
     TrueQ[$iSWRefineTalkOnly], d["Nodes"] = Map[KeyTake[#, {"Id", "Lead", "Details", "Talk"}] &, d["Nodes"]]; d["Edges"] = {}];
   d];
 
-iSWRefinePrivacy[nb_, kg_Association] := Module[{deckPL, nodePL, relPL},
-  deckPL = If[Head[nb] === NotebookObject, Quiet @ Check[Lookup[iSWDirectiveMeta[nb], "PrivacyLevel", 0.], 0.], 0.];
+(* The deck's own privacy: the PrivacyLevel of its directive and, through NBAccess, its Private declaration
+   (CloudPublishable -> False is 1.0 whatever the directive says; rule 61, 2026-10-31). An error from NBAccess
+   counts as Private (fail closed). Without NBAccess loaded (headless tests) there is no declaration to read and
+   no LLM router either, so the declaration adds nothing. Used for the LLM (iSWRefinePrivacy) and the cloud
+   voice (iSWCloudVoiceRefusal). *)
+iSWDeckPrivacy[nb_NotebookObject] := Module[{deckPL, declPL},
+  deckPL = Quiet @ Check[Lookup[iSWDirectiveMeta[nb], "PrivacyLevel", 0.], 0.];
   If[! NumericQ[deckPL], deckPL = 0.];
+  declPL = If[Length[DownValues[NBAccess`NBNotebookRequiredAccessLevel]] > 0,
+    Quiet @ Check[NBAccess`NBNotebookRequiredAccessLevel[nb], 1.], 0.];
+  If[! NumericQ[declPL], declPL = 1.];
+  N[Max[deckPL, declPL]]];
+iSWDeckPrivacy[_] := 0.;
+
+iSWRefinePrivacy[nb_, kg_Association] := Module[{nodePL, relPL},
   nodePL = Max[Prepend[Select[Lookup[kg["Nodes"], "PrivacyLevel", 0.], NumericQ], 0.]];
   (* \:30b7\:30ca\:30ea\:30aa\:306e\:95a2\:9023\:7814\:7a76\:306e\:5019\:88dc\:3082 LLM \:306b\:6e21\:308b\:306e\:3067\:3001\:305d\:306e\:6a5f\:5bc6\:5ea6\:3082\:6570\:3048\:308b *)
   relPL = Max[Join[{0.}, Select[Map[Lookup[#, "PrivacyLevel", 0.] &,
     Select[Replace[Lookup[kg, "Related", {}], Except[_List] -> {}], AssociationQ]], NumericQ]]];
-  N[Max[deckPL, nodePL, relPL]]];
+  N[Max[iSWDeckPrivacy[nb], nodePL, relPL]]];
+
+(* A cloud voice (realtime:) sends the talk script, the deck context and the title to OpenAI, so a deck at
+   PrivacyLevel 0.5 or more, or declared Private, is not read or answered by it (rule 61, 2026-10-31).
+   None = allowed, otherwise the Failure to show. A local voice (AivisSpeech) is not affected. *)
+iSWCloudVoiceRefusal[nb_] := With[{pl = iSWDeckPrivacy[nb]},
+  If[pl < 0.5, None,
+    Failure["SlideCloudVoicePrivate", <|"PrivacyLevel" -> pl, "MessageTemplate" -> iSL[
+      "\:3053\:306e\:30c7\:30c3\:30ad\:306f\:6a5f\:5bc6\:5ea6 " <> ToString[pl] <> " (0.5 \:4ee5\:4e0a\:3001\:307e\:305f\:306f\:975e\:516c\:958b (Private) \:3068\:5ba3\:8a00) \:306a\:306e\:3067\:3001\:30af\:30e9\:30a6\:30c9\:306e\:58f0 (realtime:) \:3067\:306f\:8aad\:307f\:4e0a\:3052\:3082\:5fdc\:7b54\:3082\:3057\:307e\:305b\:3093\:3002\:30ed\:30fc\:30ab\:30eb\:306e\:58f0 (AivisSpeech \:306a\:3069) \:3092\:9078\:3093\:3067\:304f\:3060\:3055\:3044\:3002",
+      "This deck has PrivacyLevel " <> ToString[pl] <> " (0.5 or more, or declared Private), so a cloud voice (realtime:) neither reads nor answers it. Choose a local voice (AivisSpeech etc.)."]|>]]];
 
 (* \:56de\:306e\:7a2e\:985e (\:63a8\:6572 / \:4ed5\:4e0a\:3052 / \:56f3\:89e3) \:306f\:958b\:59cb\:6642\:306b ctx \:3078\:5199\:3057\:3001\:9023\:9396\:306e\:5404\:6bb5\:306f\:305d\:308c\:3067\:52d5\:304f\:3002\:5927\:57df\:306e\:65d7\:306f\:958b\:59cb\:76f4\:5f8c\:306b\:65e2\:5b9a\:3078\:623b\:3059
    (\:9023\:9396\:306e\:9014\:4e2d\:3067\:5225\:306e\:30dc\:30bf\:30f3\:304c\:65d7\:3092\:66f8\:304d\:63db\:3048\:3066\:3082\:3001\:52d5\:3044\:3066\:3044\:308b\:56de\:306e\:7a2e\:985e\:306f\:5909\:308f\:3089\:306a\:3044\:3002\:8a08\:7b97\:3068\:81ea\:713633: \:63a8\:6572\:306e\:9014\:4e2d\:3067\:56f3\:89e3\:304c\:59cb\:307e\:308a\:3001
@@ -13237,7 +13274,7 @@ SlideComputeFinish[ref_, OptionsPattern[]] := Module[{st = iSWComputeState[ref],
     refRes = Quiet @ Check[iSWComputeReferenceLine[st["Deck"], st["URI"], st["Title"], st["File"]], "Failed"]];
   If[OptionValue["Open"] =!= False && $FrontEnd =!= Null && TrueQ[Quiet[$Notebooks]],
     Quiet @ Check[Scan[If[Quiet[NotebookFileName[#]] === st["File"], NotebookClose[#, Interactive -> False]] &, Notebooks[]];
-      NotebookOpen[st["File"]], Null]];
+      NotebookOpen[st["File"]], Null]]; (* :PolicyWaiver: PRIV-NB-READ shows the compute notebook just written above; nothing is read back into the kernel *)
   $iSWComputeLast = <|"Id" -> st["Id"], "URI" -> st["URI"], "File" -> st["File"], "Units" -> Keys[st["Units"]],
     "PrivacyLevel" -> If[AssociationQ[reg], reg["PrivacyLevel"], None], "Graph" -> g, "Reference" -> refRes|>;
   If[Head[st["Deck"]] === NotebookObject,
@@ -15321,7 +15358,8 @@ iSWFFmpegExe[] := Module[{c = {}, la = Environment["LOCALAPPDATA"]},
   If[StringQ[$iSWFFmpegExe] && iSWFFmpegRunsQ[$iSWFFmpegExe], Return[$iSWFFmpegExe]];
   If[StringQ[$SlideFFmpegPath], AppendTo[c, $SlideFFmpegPath]];
   If[Names["PresentationListener`$FFmpegPath"] =!= {},
-    With[{p = Symbol["PresentationListener`$FFmpegPath"]}, If[StringQ[p], AppendTo[c, p]]]];
+    (* Symbol[Identity[...]], not a literal Symbol["Ctx`name"]: a literal lookup that once came back unevaluated stays unevaluated on every later call (WL 15, 2026-10-30) *)
+    With[{p = Symbol[Identity["PresentationListener`$FFmpegPath"]]}, If[StringQ[p], AppendTo[c, p]]]];
   If[Names["PresentationListener`Private`ffmpegExe"] =!= {},
     With[{p = Quiet[ToExpression["PresentationListener`Private`ffmpegExe[]"]]}, If[StringQ[p], AppendTo[c, p]]]];
   (* v1.59: PATH \:4e0a\:306e ffmpeg \:306f\:5b8c\:5168\:306a\:30d1\:30b9\:306b\:3057\:3066\:8fd4\:3059\:3002RunProcess \:306f "ffmpeg" \:3092 PATH \:304b\:3089\:898b\:3064\:3051\:308b\:304c\:3001
@@ -15874,6 +15912,7 @@ iSWRenditionForkQ[nb_NotebookObject] := With[{tag = iSWRenditionTag[nb]},
    \:5199\:3057\:306f DeckName \:304c\:9055\:3046\:306e\:3067\:3001\:6700\:521d\:306b\:7248\:3092\:78ba\:304b\:3081\:305f\:3068\:304d\:306b\:89aa\:4ed8\:304d\:306e\:65b0\:3057\:3044\:7248\:306b\:306a\:308b *)
 iSWRenditionForkNotebook[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]], dir, base, k = 2, path, new},
   If[! StringQ[fn],
+    (* :PolicyWaiver: PRIV-NB-READ copies the user's own open deck into a new local window; nothing leaves the PC *)
     new = NotebookPut[NotebookGet[nb]];
     Return[new]];
   Quiet[NotebookSave[nb]];
@@ -15881,7 +15920,7 @@ iSWRenditionForkNotebook[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileNa
   base = StringReplace[FileBaseName[fn], RegularExpression["_v\\d+$"] -> ""];
   While[FileExistsQ[path = FileNameJoin[{dir, base <> "_v" <> ToString[k] <> ".nb"}]], k++];
   If[Quiet[CopyFile[fn, path]] === $Failed, Return[$Failed]];
-  new = NotebookOpen[path];
+  new = NotebookOpen[path]; (* :PolicyWaiver: PRIV-NB-READ shows the copy of the user's deck for editing; nothing is read into the kernel *)
   If[Head[new] === NotebookObject, new, $Failed]];
 (* ===================== v1.54: \:30dd\:30b9\:30bf\:30fc (\:751f\:6210\:3057\:305f\:30b9\:30e9\:30a4\:30c9\:3092 KG \:306e\:90e8\:3067\:675f\:306d\:3066 A0 \:306b\:7d44\:3080) =====================
    \:4ed5\:69d8: SlideWorkflow_info/design/slide_poster_spec_v0_1.md
@@ -17552,6 +17591,7 @@ SlideGraphFromSlides[path_String /; StringEndsQ[path, ".nb", IgnoreCase -> True]
     True, FileNameJoin[{DirectoryName[path], FileBaseName[path] <> "_sw.nb"}]];
   (* Return \:3092 UsingFrontEnd \:306e\:4e2d\:3067\:4f7f\:308f\:306a\:3044 (\:5916\:306e Module \:307e\:3067\:629c\:3051\:306a\:3044) *)
   res = UsingFrontEnd[
+    (* :PolicyWaiver: PRIV-NB-READ the deck file handed to SlideGraphFromSlides is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
     nbo = NotebookOpen[path, Visible -> False];
     If[Head[nbo] =!= NotebookObject,
       Failure["OpenFailed", <|"MessageTemplate" -> "\:958b\:3051\:307e\:305b\:3093: `1`", "MessageParameters" -> {path}|>],
@@ -17689,6 +17729,8 @@ SlidePosterAudio[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   vkey = iSWVideoVoiceKey[voice, model];
   speech = AssociationMap[iSWSpeechText[texts[#], readings] &, keys];
   files = AssociationMap[iSWVoiceCacheFile[dir, #, vkey, speech[#]] &, keys];
+  (* a cloud voice renders the talk on OpenAI: not for a deck at PrivacyLevel 0.5 or more / declared Private (2026-10-31) *)
+  If[engine =!= "Local", With[{refusal = iSWCloudVoiceRefusal[nb]}, If[FailureQ[refusal], Return[refusal]]]];
   missing = Select[keys, ! (FileExistsQ[files[#]] && TrueQ[Quiet[FileByteCount[files[#]]] > 1000]) &];
   If[engine === "Local",
     Do[i++;

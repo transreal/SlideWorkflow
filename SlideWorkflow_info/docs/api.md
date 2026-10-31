@@ -120,6 +120,7 @@ Options: `"Durations" -> Automatic | {秒...}` (各スライドの表示秒数),
 発表の設定で選んだ声 (発表ボイス `$SlideVoice` + 音声モデル `$SlideVoiceModel`) で原稿を読んだ音声と、スライドの画像を合わせて `<デッキ>_narrated.mp4` を作る。原稿はライブの再生と同じ (話す言語の訳、無ければ元の原稿。原稿モードがポスターならポスター原稿の枚だけ) で、読みの辞書も当てる。
 - ローカルの声 (Piper / AivisSpeech): 合成した wav をそのまま使う (再生しない。`<デッキ>_voice/` は再生と共通のキャッシュ)。
 - `realtime:` の声 + gpt-realtime-*: `SourceVaultRealtimeRender` が **再生せずに** wav へ書く (実時間より速い。1 枚 1 セッションを `$SlideTalkVideoParallel` 本並べる)。キャッシュ名は `rt-<モデル>-<声>`。
+- クラウドの声 (`realtime:`) は、デッキの機密度 (デッキに指定した PrivacyLevel とノートの Private 宣言の大きい方) が 0.5 以上なら使わず、`Failure["SlideCloudVoicePrivate", <|"PrivacyLevel" -> pl, ...|>]` を返す (2026-10-31)。ローカルの声 (AivisSpeech など) を選ぶ。
 - `realtime:` の声 + gpt-live-1: GPT-Live は実時間でしか話さないので、押すと「gpt-live-1 で録る (実時間) / 同じ声の gpt-realtime で速く作る / やめる」を聞く。録るときは原稿を読み上げながら 1 枚ずつ録音し (質問は受けない、ワーカー 1.13 の narrate `"record"`)、読み終えると自動で動画にする。止めても録れた枚は残り、次は続きから録る。
 - 枚の長さ = `$SlideTalkVideoLeadIn` (0.5 s) + 声 + `$SlideVoiceGap` (0.8 s)。原稿の無い枚は 3 秒、最後の枚に `$SlideTalkVideoTail` (1.5 s)。
 - 画像は `<デッキ>_slides/NN.png` (保存済みなら別プロセスで描く)。描画のハッシュ (`<デッキ>_state.json` の `ImagesSlidesDigest`) が同じなら描き直さない。
@@ -136,6 +137,7 @@ Options: `"Output"`, `"Voice"`, `"Model"`, `"Live"` (Automatic = 聞く | `"Reco
 `<デッキ>_poster_talk.m4a` にする。作成パレット「確認・書き出し」の **ポスター音声** (「登録」の右)。
 - 声・読みの辞書・声のキャッシュ (`<デッキ>_voice/`) は `SlideTalkVideo` と同じ。動画を作った後なら合成しない (戻り値の `"Reused"`)。
   ローカルの声は合成、`realtime:` + gpt-realtime-* は `SourceVaultRealtimeRender` (再生しない)、gpt-live-1 は同じ声の gpt-realtime で作る。
+  デッキの機密度が 0.5 以上 (または Private 宣言) なら、クラウドの声では作らず `Failure["SlideCloudVoicePrivate", ...]` を返す (`SlideTalkVideo` と同じ)。
 - 長さは動画と同じ: 枚ごとに `$SlideTalkVideoLeadIn` + 声 + `$SlideVoiceGap`、最後に `$SlideTalkVideoTail`。ポスター原稿のある枚だけを並べる。
 - 形式: `"Format" -> "m4a"` (AAC、既定 `$SlidePosterAudioFormat`) / `"mp3"` / `"wav"`。m4a と mp3 は ffmpeg で 1 回変換 (ASCII の作業フォルダで変換してから写す)、
   ffmpeg が無ければ wav。ビットレート `"Bitrate"` (既定 `$SlidePosterAudioBitrate = "96k"`)。
@@ -641,7 +643,7 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 発表シナリオ全スライドの音声を先に合成して`<deck>_voice/`にキャッシュする。
 
 ### SlidePlay[] / SlidePlay[nb]
-`<deck>_talk.md`の原稿をSourceVaultのローカル音声で読み上げながらスライドを自動で進める(対象ノートブックのスクリーン環境がSlideShowのとき)。一時停止中に呼ぶと再開する。
+`<deck>_talk.md`の原稿をSourceVaultのローカル音声で読み上げながらスライドを自動で進める(対象ノートブックのスクリーン環境がSlideShowのとき)。一時停止中に呼ぶと再開する。realtime:の声のときは音声会話を開いてから読む。デッキの機密度が0.5以上(またはPrivate宣言)ならクラウドの声の会話を開かず、知らせを出して$Failedを返す(2026-10-31)。
 
 ### SlidePause[]
 読み上げを一時停止する。`SlidePlay[]`で続きから再開する。
@@ -656,7 +658,7 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 開いているデッキの見出し一覧を返す。
 
 ### SlideToggleRealtime[]
-音声応答(SourceVaultRealtimeStart / Stop)を切り替える(パレットの「応答on/off」)。
+音声応答(SourceVaultRealtimeStart / Stop)を切り替える(パレットの「応答on/off」)。音声応答はクラウドの声なので、デッキの機密度(デッキに指定したPrivacyLevelとノートのPrivate宣言の大きい方)が0.5以上なら始めず、知らせを出して`Failure["SlideCloudVoicePrivate", ...]`を返す(2026-10-31)。
 
 ### SlideToggleMic[]
 音声応答のマイクをmute / unmuteで切り替える(パレットの「マイクon/off」ボタン、手元リモコンの「前の曲」ボタンと同じ動作)。音声応答が動いていないときは何もしない。realtime: の声で再生中は質問を受けるかの切り替えになる(v1.53)。`"Quiet" -> False`(既定)。`"Quiet" -> True`で知らせのダイアログも出さない(手元リモコンからはこちらで呼ぶ)。
@@ -669,7 +671,7 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 Options: `"Voice" -> Automatic`, `"Questions" -> False` (Trueで質問受付の待ちも累計に入れる)
 
 ### SlideSpeakSlide[n]
-n枚目の原稿を今の声で読み上げる(索引のPlayボタンと同じ)。ローカルの声なら合成してその場で再生し、realtime:の声なら動いている音声会話に読ませる。
+n枚目の原稿を今の声で読み上げる(索引のPlayボタンと同じ)。ローカルの声なら合成してその場で再生し、realtime:の声なら動いている音声会話に読ませる。動いている会話が別のデッキのものでもこのデッキで判定し、機密度が0.5以上(またはPrivate宣言)ならクラウドの声では読まず`Failure["SlideCloudVoicePrivate", ...]`を返す(2026-10-31)。
 
 ### SlideInfo[]
 デッキと発表の情報(枚数・原稿・見積時間・声・音声会話の状態)をまとめたウインドウを開く(パレットの「情報」と同じ)。
