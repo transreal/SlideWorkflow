@@ -18,7 +18,7 @@
 
 画像・動画書き出しは、クリップボードやウィンドウのスナップショットに依存しない設計になっている点が最大の特徴です。スライドのセル列からNotebook式を直接構成し、`ScreenStyleEnvironment->"SlideShow"` で `Rasterize` してから16:9キャンバスへ合成するため、FEセッションが裏で他の操作をしていても、あるいは `wolframscript` のheadless環境でも同じ結果が得られます。合成時には `$SlideMargins` に基づく余白処理(全面画像ページには適用しない)や、内容が高さに収まらない場合の自動リフロー(折返し幅の自動探索)・縮小(警告メッセージ付き)といった安定化ロジックが組み込まれています。書き出しに含めるInput/Codeセルの扱いは `$SlideIncludeInput`(既定`Automatic`)で一元制御でき、個別セルは`CellTags->"ShowInput"`で設定によらず常に残せます。動画書き出し(`SlideDeckExportVideo`)はSliden(VRChat)との互換性を重視し、既定では1枚あたり約1秒(30fps)・先頭スライドは29フレーム・末尾スライドを重複させるフレーム構成を採用しています。書き出したSliden用mp4は、sftp経由でのアップロード・登録(`SlideDeckUpload` / `SlideDeckRegister`)までを一連の流れとして扱えます。
 
-さらに、発表原稿の読み上げ音声とスライド画像を合成した「読み上げ付き動画」(`SlideTalkVideo`)も作成できます。再生と共通の音声キャッシュと描画ハッシュによる再利用を行うため、途中で止めても続きから作成でき、できあがった動画は `SlideYouTubeUpload` で YouTube に限定公開としてアップロードできます。
+さらに、発表原稿の読み上げ音声とスライド画像を合成した「読み上げ付き動画」(`SlideTalkVideo`)も作成できます。再生と共通の音声キャッシュと描画ハッシュによる再利用を行うため、途中で止めても続きから作成でき、できあがった動画は `SlideYouTubeUpload` で YouTube に限定公開としてアップロードできます。機密度の高いデッキ(PrivacyLevelまたはノートのPrivate宣言が0.5以上)ではクラウド音声(`realtime:`)を使わず、ローカルの声の選択を促す設計になっています。
 
 ### テーマとフォントの一元管理
 
@@ -38,7 +38,7 @@
 - **OS**: Windows 11を前提としています。macOS/Linuxではパス区切りやシェルコマンドを適宜読み替えてください。
 - **外部ツール**:
   - `SlideDeckExportVideo` や `SlideTalkVideo` でmp4を書き出す場合、環境によってはFFmpegが必要です。未インストールの場合は事前に導入し、PATHに通しておいてください。
-  - クリップボードやウィンドウスナップショットに依存しないため、headless(wolframscript)環境でも同じ結果が得られます。別プロセス(wolframscript)での書き出しにはWolframのライセンス席が必要で、席が埋まっている場合はFE内処理にフォールバックします(登録時のmp4作り直しは除く)。
+  - クリップボードやウィンドウスナップショットに依存しないため、headless(wolframscript)環境でも同じ結果が得られます。別プロセス(wolframscript)での書き出しにはWolframのライセンス席が必要で、席が埋まっている場合はFE内処理にフォールバックします(登録時のmp4作り直しを除く)。
   - インタラクティブ編集レイヤーの `SlideExpand[]` を既定の `$SlideExpandMode="Agent"` で使う場合は、[ClaudeRuntime](https://github.com/transreal/ClaudeRuntime) 経由で `ClaudeEval` が呼び出せる環境が必要です。未導入でも `$SlideExpandMode = "Direct"` に切り替えれば軽量経路で動作します。
   - 発表原稿の読み上げ・リアルタイム音声応答・想定問答(QAパック)・手元リモコン連携(SlideTalk系列・`SlidePlay`・`SlideRemoteStart`など)・読み上げ付き動画の作成を使う場合は [SourceVault](https://github.com/transreal/SourceVault) が必要です。未導入でもスライド生成・画像/動画書き出しなど基本機能には影響しません。手元リモコン連携はWindows専用です。
   - Sliden用mp4(およびポスターPDF)を `SlideDeckUpload` / `SlideDeckRegister` でアップロードする場合は、sftpの接続先(Directiveセルの `Host: sftp://user@host/dir` 行)と、リモートファイルへの `CopyFile` またはsftp対応の `curl`(Git for Windows同梱のものなど)が必要です。パスワードは [NBAccess](https://github.com/transreal/NBAccess) 経由でシステムの資格情報ストアに保管されます。
@@ -117,13 +117,13 @@ SlideDeckExportVideo[nbfile, "output/presentation.mp4"]
 
 ### 主な機能
 
-- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込み、`cite:` 行による出典の明記にも対応。
+- **シナリオ変換**: `SlideScenarioFromMarkdown` / `SlideScenarioToMarkdown` によるMarkdown⇔シナリオ連想の相互変換(ラウンドトリップ対応)。箇条書き・画像・全面画像ページに加え、表(`| a | b |` + 区切り行)、`talk:` 行による発表原稿の埋め込み、`qa:` 行による想定問答(`SlideQA`セル)の埋め込み、`cite:` 行による出典の明記、`<<FIGn>>` トークンによる既存の図・コードセルの保持、`## !end` 以降のAppendix行にも対応。
 - **デッキ構築**: `SlideDeckBuild` によるシナリオ(連想・Markdown文字列・`File[...]`のいずれか)からのスライドノートブック生成。終端マーカーの付与可否は`"EndMarker"`(既定`True`)、ノートブックのウィンドウサイズは`"WindowSize"`(既定`{960,540}`)で調整可能。
 - **デッキ参照**: `SlideDeckSlides`(コア分解関数、Appendix領域も分離)、`SlideDeckOverview`(番号・タイトル・セル数・画像有無のDataset表示)。
 - **スライド単位編集**: `SlideDeckReplaceSlide` / `SlideDeckInsertSlide` / `SlideDeckDeleteSlide` / `SlideDeckMoveSlide`。既定で`.bak`付き上書き、`"Target"`指定で別名保存可能。
 - **安定した画像書き出し**: `SlideDeckImages` / `SlideDeckExportImages` によるクリップボード・ウィンドウ非依存の16:9ラスタライズ(headless環境対応)。内容が縦に収まらないスライドは `"Reflow"` オプション(既定 `True`、上限は`"MaxWindowWidth"`)により折返し幅を自動探索し、余白を抑えて縮小率を最小化する。書き出しに含めるInput/Codeセルは `$SlideIncludeInput`(既定`Automatic`、ノートブックの表示どおり)で制御でき、個別セルは`CellTags->"ShowInput"`で常に残せる。
 - **動画書き出し・アップロード**: `SlideDeckExportVideo` によるSliden(VRChat)互換mp4の生成(表示秒数のカスタマイズ可)。パレットからの書き出しは `$SlideExportExternal`(既定`Automatic`)で別プロセス(wolframscript)実行とFE内処理を自動フォールバック切り替え(登録時のmp4作り直しはフォールバックせず、毎回別プロセスの起動を試し、失敗時はライセンス席に関する案内を表示)。生成したmp4(およびポスターPDF)はsftp経由で `SlideDeckUpload` / `SlideDeckRegister` により公開・登録でき、パスワードは `SlideUploadCredential` / `SlideUploadCredentialQ` で資格情報ストアに保管・確認・削除できる。
-- **読み上げ付き動画とYouTube公開**: `SlideTalkVideo` が、発表で選んだ声(ローカル音声合成またはリアルタイム音声)で原稿を読み上げた音声とスライド画像を合成し、`<デッキ>_narrated.mp4` を作成する。リアルタイム音声は再生せずに音声ファイルへ書き出して高速に作成でき(並列数は`$SlideTalkVideoParallel`)、実時間でしか話さないモデルでは実時間録音も選べる。音声・画像はキャッシュされ、中断しても続きから再開できる。作成した動画は `SlideYouTubeUpload` でYouTubeに限定公開としてアップロードできる(いずれも発表パレットの「動画」節から操作可能。SourceVault併用)。
+- **読み上げ付き動画とYouTube公開**: `SlideTalkVideo` が、発表で選んだ声(ローカル音声合成またはリアルタイム音声)で原稿を読み上げた音声とスライド画像を合成し、`<デッキ>_narrated.mp4` を作成する。リアルタイム音声は再生せずに音声ファイルへ書き出して高速に作成でき(並列数は`$SlideTalkVideoParallel`)、実時間でしか話さないモデルでは実時間録音も選べる。音声・画像はキャッシュされ、中断しても続きから再開できる。機密度が0.5以上のデッキではクラウド音声を使わず、ローカルの声を選ぶよう案内して中止する。作成した動画は `SlideYouTubeUpload` でYouTubeに限定公開としてアップロードできる(いずれも発表パレットの「動画」節から操作可能。SourceVault併用)。
 - **テーマ管理**: `$SlideTheme` / `SlideThemeColor` によるスライド・図の配色統一。
 - **補助セル・出典・文献**: `"Note"`/`"Directive"`/`"Dictionary"`/`"Bibliography"`/`"References"`/`"SlidePrompt"`/`"SlideTalk"`/`"SlideQA"` の各メタセル(書き出し除外)と、出典明記用のCitationセルに対応。`SlideInsertReferences` で文献リストセルを挿入し、`SlidePDFFigure` でPDFページを図として切り出せる。図・コードセルは `<<FIGn>>` トークンで再展開時にも保持できる。
 - **インタラクティブ編集(統合パレット)**: `ShowSlidePalette` から、スライド追加(`SlideAddSlide`)・LLMによる展開(`SlideExpand`、決定的な適用口として`SlideApplyScenario`)・翻訳(`SlideTranslate`/`SlideTranslateRevert`/`SlideTranslateDeck`)・各種補助セルの挿入をまとめて行える。`$SlideExpandMode`(既定`"Agent"`、軽量な`"Direct"`も選択可)、`$SlideTranslationLanguage`、`$SlideVisualsPerSlide`(図表の自動付与)、`$SlideTalkPerSlide`(発表原稿の自動生成)、`$SlideHideToolbarInSlideshow`(SlideShow切替時のツールバー退避)で挙動を調整。パレットは`"Safe"->True`でClaudeCodeなど外部エージェントの処理に完全に非干渉なモードでも開け(フリーズ時の切り分け用)、現在のバージョンは`$SlideWorkflowInteractiveVersion`で確認できる。
