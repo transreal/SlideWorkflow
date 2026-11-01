@@ -553,6 +553,8 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 - トークセル・質疑応答セル・メモ・指示などのメタセルを直しても mp4 は作り直さない(見た目が 1 ピクセルも変わらないため)。
 - スライドの**並び替え・挿入・削除**は列が変わるので必ず検出され、mp4 を作り直す。
 - `CellChangeTimes` / `CellID` / `ExpressionUUID` / `CellLabel` は中身ではないので落とす(触っただけで作り直しにならない)。
+- 図の画素は**中身で数える**。保存ファイルを読むと FE が書いた `CompressedData["…"]` の文字列、開いているノートからは `NumericArray` で来て、FE の圧縮は `Compress` とバイト列が違う。そこで文字列を評価せずにほどき(`Uncompress[s, Hold]`、配列のときだけ)、配列はバイト列の CRC32 + Adler32 + 長さに置き換える。保存してもしなくても、同じスライドは同じハッシュになる(2026-10-31 修正。以前は図のある枚で必ず食い違い、未保存で打った QA の印が保存後に「古い」扱いになっていた)。
+- 2026-10-31 より前の記録(`<deck>_state.json` の `VideoSlidesDigest` / `ImagesSlidesDigest` / `PosterSlidesDigest`、動画の時刻表、保存ファイルから打った QA の印)は、前の数え方(文字列のまま)でも照合するので、この修正で mp4 や問答が作り直しにはならない。開いているノートから前の数え方で打った印だけは照合できず「古い」になる(前から保存後は「古い」だったもの)。
 - 記録は `<deck>_state.json`。記録が無ければ(旧デッキ)従来どおりファイル日付で判断する。
 
 ### SlideDeckMarkVideoCurrent[nb | deck.nb] → Association

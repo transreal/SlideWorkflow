@@ -4084,12 +4084,13 @@ iSWQAToText[entries_List] := StringRiffle[Map[Function[e,
      "Current"  \:4e00\:81f4
      "Unmarked" \:30de\:30fc\:30ab\:30fc\:304c\:7121\:3044 (\:624b\:66f8\:304d\:30fb\:30d1\:30c3\:30af\:304b\:3089\:306e\:5fa9\:5143) = \:5224\:5b9a\:3067\:304d\:306a\:3044
      "Unknown"  \:30b9\:30e9\:30a4\:30c9\:306e\:30cf\:30c3\:30b7\:30e5\:304c\:53d6\:308c\:306a\:304b\:3063\:305f *)
-iSWQASlides[source_] := Module[{outline, digests, n, visuals},
+iSWQASlides[source_] := Module[{outline, digests, legacy, n, visuals},
   outline = iTalkDeckOutline[source];
   If[outline === $Failed, Return[$Failed]];
   n = outline["Count"];
-  digests = iSWQASlideDigestList[source];
+  {digests, legacy} = iSWQASlideDigestLists[source];
   If[Length[digests] =!= n, digests = ConstantArray["", n]];
+  If[Length[legacy] =!= n, legacy = digests];
   visuals = Lookup[outline, "Visuals", ConstantArray[False, n]];
   If[Length[visuals] =!= n, visuals = ConstantArray[False, n]];
   Table[
@@ -4100,7 +4101,7 @@ iSWQASlides[source_] := Module[{outline, digests, n, visuals},
         entries === {}, "Missing",
         marker === "", "Unmarked",
         digests[[i]] === "", "Unknown",
-        marker === digests[[i]], "Current",
+        marker === digests[[i]] || marker === legacy[[i]], "Current",
         True, "Stale"];
       <|"Slide" -> i, "Title" -> outline["Titles"][[i]],
         "Text" -> outline["Markdown"][[i]],
@@ -4315,8 +4316,13 @@ iSWQAShort[d_] := If[StringQ[d] && StringLength[d] >= 16,
   StringTake[ToLowerCase[d], 16], If[StringQ[d], ToLowerCase[d], ""]];
 
 (* \:30b9\:30e9\:30a4\:30c9\:3054\:3068\:306e\:300c\:63cf\:304b\:308c\:308b\:4e2d\:8eab\:300d\:306e\:30cf\:30c3\:30b7\:30e5 (mp4 \:306e\:5dee\:5206\:5224\:5b9a\:3068\:540c\:3058\:7269\:5dee\:3057) *)
-iSWQASlideDigestList[source_] := With[{ds = Quiet[iSWDeckSlideDigests[source]]},
-  If[ListQ[ds], iSWQAShort /@ ds, {}]];
+iSWQASlideDigestList[source_] := First[iSWQASlideDigestLists[source]];
+
+(* {\:4eca\:306e\:6570\:3048\:65b9, \:524d\:306e\:6570\:3048\:65b9}\:3002\:5370\:306f\:4eca\:306e\:6570\:3048\:65b9\:3067\:6253\:3061\:3001\:7167\:5408\:306f\:4e21\:65b9\:3092\:898b\:308b
+   (2026-10-31 \:3088\:308a\:524d\:306b\:4fdd\:5b58\:30d5\:30a1\:30a4\:30eb\:304b\:3089\:6253\:3063\:305f\:5370\:306f\:3001\:56f3\:306e\:3042\:308b\:679a\:304c\:524d\:306e\:6570\:3048\:65b9) *)
+iSWQASlideDigestLists[source_] := With[{p = Quiet[iSWDeckSlideDigestPairOf[source]]},
+  If[AssociationQ[p] && ListQ[p["Digests"]] && ListQ[p["Legacy"]],
+    {iSWQAShort /@ p["Digests"], iSWQAShort /@ p["Legacy"]}, {{}, {}}]];
 
 (* ---- \:753b\:50cf (\:56f3\:30fb\:5199\:771f\:30fb\:8868\:3092\:898b\:305b\:308b) ---- *)
 
@@ -4688,40 +4694,101 @@ SlideQAUpdateAll[nb_NotebookObject, opts : OptionsPattern[SlideQAGenerate]] :=
 
 $iSWDigestDropOptions = {CellChangeTimes, CellID, ExpressionUUID, CellLabel};
 
-iSWDigestCell[c_Cell] := DeleteCases[c,
-  Rule[Alternatives @@ $iSWDigestDropOptions, _], {1}];
+(* \:56f3\:306e\:753b\:7d20\:306f\:3001\:4fdd\:5b58\:30d5\:30a1\:30a4\:30eb\:3092 Get \:3059\:308b\:3068 FE \:304c\:66f8\:3044\:305f CompressedData["\:2026"] \:306e\:6587\:5b57\:5217\:306e\:307e\:307e\:3001
+   \:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8 (NotebookGet) \:304b\:3089\:306f NumericArray \:3067\:6765\:308b\:3002FE \:306e\:5727\:7e2e\:306f Compress \:3068\:30d0\:30a4\:30c8\:5217\:304c
+   \:9055\:3044\:6539\:884c\:3082\:5165\:308b\:306e\:3067\:3001\:6587\:5b57\:5217\:306e\:5074\:306b\:306f\:305d\:308d\:3048\:3089\:308c\:306a\:3044 \:2192 \:6587\:5b57\:5217\:3092\:307b\:3069\:3044\:3066\:4e2d\:8eab\:3067\:305d\:308d\:3048\:308b\:3002
+   \:307b\:3069\:304b\:306a\:3044\:3068\:56f3\:306e\:3042\:308b\:679a\:306f\:4fdd\:5b58\:30d5\:30a1\:30a4\:30eb\:3068\:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8\:3067\:5fc5\:305a\:5225\:306e\:30cf\:30c3\:30b7\:30e5\:306b\:306a\:308a\:3001\:672a\:4fdd\:5b58\:3067\:6253\:3063\:305f
+   QA \:306e\:5370\:304c\:4fdd\:5b58\:5f8c\:306b\:300c\:53e4\:3044\:300d\:6271\:3044\:306b\:306a\:308b (\:8a08\:7b97\:3068\:81ea\:7136 36 \:3067 46 \:679a\:4e2d 39 \:679a\:30012026-10-31)\:3002
+   - NumericArray / ByteArray \:306f\:4e2d\:8eab\:306e\:30d0\:30a4\:30c8\:5217 (BinarySerialize) \:306e CRC32 \:3068 Adler32 \:306b\:7f6e\:304d\:63db\:3048\:308b\:3002
+     Hash[.., "SHA256"] \:306f NumericArray \:3092 1 \:8981\:7d20\:305a\:3064\:305f\:3069\:308a (\:56f3 45 \:679a\:3067 94 \:79d2)\:3001\:30d0\:30a4\:30c8\:5217\:306b\:3057\:3066\:3082
+     \:6697\:53f7\:30cf\:30c3\:30b7\:30e5\:306f 1 \:79d2\:306b 10MB \:307b\:3069\:3057\:304b\:9032\:307e\:306a\:3044 (102MB \:3067 8 \:79d2)\:3002\:5909\:308f\:3063\:305f\:304b\:3092\:898b\:308b\:3060\:3051\:306a\:306e\:3067
+     32 \:30d3\:30c3\:30c8 2 \:3064\:3068\:9577\:3055\:3067\:8db3\:308a\:308b (0.5 \:79d2)
+   - CompressedData \:306f Uncompress[s, Hold] \:3067\:8a55\:4fa1\:305b\:305a\:306b\:53d6\:308a\:51fa\:3057\:3001\:4e0a\:306e\:914d\:5217\:306a\:3089\:305d\:306e\:7f6e\:304d\:63db\:3048\:3001
+     packed array \:306a\:3089\:305d\:306e\:3082\:306e\:3002\:305d\:308c\:4ee5\:5916\:306f\:307b\:3069\:304b\:306a\:3044
+   - \:5224\:5b9a (iSWDigestAtomQ / iSWDigestPackedQ) \:306f\:5f15\:6570\:3092\:8a55\:4fa1\:3057\:306a\:3044 (\:30bb\:30eb\:306e\:4e2d\:306e\:5f0f\:3092\:8d70\:3089\:305b\:306a\:3044) *)
+iSWDigestCell[c_Cell] := iSWDigestArrays[iSWDigestCellLegacy[c]];
 iSWDigestCell[c_] := c;
 
-(* \:30b9\:30e9\:30a4\:30c9\:3068\:3057\:3066\:63cf\:304b\:308c\:308b\:30bb\:30eb\:304b\:3002\:30e1\:30bf\:30bb\:30eb (\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:30c8\:30fc\:30af\:30fb\:8cea\:7591\:5fdc\:7b54\[Ellipsis]) \:3068
+(* 2026-10-31 \:3088\:308a\:524d\:306e\:6570\:3048\:65b9 (\:914d\:5217\:3082 CompressedData \:306e\:6587\:5b57\:5217\:3082\:305d\:306e\:307e\:307e\:6570\:3048\:308b)\:3002\:524d\:306b\:8a18\:9332\:3057\:305f
+   \:30cf\:30c3\:30b7\:30e5 (<deck>_state.json\:30fbQA \:306e\:5370\:30fb\:52d5\:753b\:306e\:6642\:523b\:8868) \:3092\:8aad\:3080\:305f\:3081\:3060\:3051\:306b\:6b8b\:3059 *)
+iSWDigestCellLegacy[c_Cell] := DeleteCases[c,
+  Rule[Alternatives @@ $iSWDigestDropOptions, _], {1}];
+iSWDigestCellLegacy[c_] := c;
+
+SetAttributes[{iSWDigestAtomQ, iSWDigestPackedQ}, HoldAllComplete];
+iSWDigestAtomQ[x_] := NumericArrayQ[Unevaluated[x]] || ByteArrayQ[Unevaluated[x]];
+iSWDigestPackedQ[x_] := Developer`PackedArrayQ[Unevaluated[x]];
+
+iSWDigestToken[x_] := With[{b = BinarySerialize[x]},
+  {"SWDigestArray", Length[b], Hash[b, "CRC32"], Hash[b, "Adler32"]}];
+
+iSWDigestUnpack[s_String] := With[{h = Quiet[Uncompress[s, Hold]]},
+  Replace[h, {Hold[x_?iSWDigestAtomQ] :> iSWDigestToken[x], Hold[x_?iSWDigestPackedQ] :> x}] /;
+    MatchQ[h, Hold[_?iSWDigestAtomQ] | Hold[_?iSWDigestPackedQ]]];
+
+(* RasterBox / GraphicsBox \:306f HoldAll \:306a\:306e\:3067\:3001\:7f6e\:304d\:63db\:3048\:305f\:5148\:306f With[.., v /; ..] \:3067\:8a55\:4fa1\:3057\:3066\:304b\:3089\:5165\:308c\:308b
+   (\:305d\:306e\:307e\:307e iSWDigestToken[x] \:3092\:5165\:308c\:308b\:3068\:7bb1\:306e\:4e2d\:3067\:8a55\:4fa1\:3055\:308c\:305a\:3001\:914d\:5217\:3054\:3068\:30cf\:30c3\:30b7\:30e5\:3055\:308c\:308b) *)
+iSWDigestArrays[e_] := e /. {
+  x_?iSWDigestAtomQ :> With[{v = iSWDigestToken[x]}, v /; True],
+  HoldPattern[CompressedData[s_String]] :> With[{v = iSWDigestUnpack[s]}, v /; Head[v] =!= iSWDigestUnpack]};
+
+(* \:30b9\:30e9\:30a4\:30c9\:3068\:3057\:3066\:63cf\:304b\:308c\:308b\:30bb\:30eb\:304b\:3002\:30e1\:30bf\:30bb\:30eb (\:30e1\:30e2\:30fb\:6307\:793a\:30fb\:30c8\:30fc\:30af\:30fb\:8cea\:7591\:5fdc\:7b54\:2026) \:3068
    \:97f3\:58f0\:30bb\:30eb\:306f SlideShow \:3067\:6d88\:3048\:308b\:306e\:3067\:3001\:5909\:308f\:3063\:3066\:3082 mp4 \:306f\:5909\:308f\:3089\:306a\:3044 *)
 iSWRenderedCellQ[c_Cell] := !iMetaStyleCellQ[c] && !iAudioCellQ[c];
 iSWRenderedCellQ[_] := True;
 
-iSWSlideDigest[cells_List] :=
-  Hash[iSWDigestCell /@ Select[cells, iSWRenderedCellQ], "SHA256", "HexString"];
+iSWSlideDigest[cells_List] := First[iSWSlideDigestPair[cells]];
+
+(* {\:4eca\:306e\:6570\:3048\:65b9, \:524d\:306e\:6570\:3048\:65b9}\:3002\:524d\:306e\:6570\:3048\:65b9\:306f\:4fdd\:5b58\:30d5\:30a1\:30a4\:30eb\:306e\:5f62 (CompressedData \:306e\:6587\:5b57\:5217) \:306e\:3068\:304d\:3060\:3051\:51fa\:3059\:3002
+   \:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8\:306e\:56f3 (NumericArray) \:3092\:524d\:306e\:6570\:3048\:65b9\:3067\:6570\:3048\:308b\:306e\:306f\:9045\:3059\:304e\:308b (\:4e0a) \:306e\:3067 "" (\:7167\:5408\:3057\:306a\:3044) *)
+iSWSlideDigestPair[cells_List] := Module[{old, cur, h},
+  old = iSWDigestCellLegacy /@ Select[cells, iSWRenderedCellQ];
+  cur = iSWDigestArrays /@ old;
+  h = Hash[cur, "SHA256", "HexString"];
+  {h, Which[
+    cur === old, h,
+    ! FreeQ[old, _?iSWDigestAtomQ], "",
+    True, Hash[old, "SHA256", "HexString"]]}];
 
 $iSWDeckDigestCache = <||>;
 
-iSWDeckSlideDigests[source_] := Module[{nb, data},
+(* 1 \:56de\:8aad\:3093\:3067\:4eca\:306e\:6570\:3048\:65b9 (Digests) \:3068\:524d\:306e\:6570\:3048\:65b9 (Legacy) \:3092\:4e21\:65b9\:51fa\:3059\:3002\:56f3\:306e\:7121\:3044\:679a\:306f\:540c\:3058\:5024 *)
+iSWDeckSlideDigestPair[source_] := Module[{nb, data, pairs},
   nb = iAsNotebook[source];
   If[Head[nb] =!= Notebook, Return[$Failed]];
   data = iSlideSplit[nb, iFlattenVisibleCells];
   If[!AssociationQ[data], Return[$Failed]];
-  iSWSlideDigest /@ Lookup[data, "Slides", {}]];
+  pairs = iSWSlideDigestPair /@ Lookup[data, "Slides", {}];
+  <|"Digests" -> pairs[[All, 1]], "Legacy" -> pairs[[All, 2]]|>];
 
-(* \:4fdd\:5b58\:6e08\:307f path \:306f\:30d5\:30a1\:30a4\:30eb\:65e5\:4ed8\:3067\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b (\:767b\:9332\:306e\:305f\:3073\:306b\:6570\:5341 MB \:3092 Get \:3057\:76f4\:3055\:306a\:3044) *)
-iSWDeckSlideDigestsCached[path_String] := Module[{date, entry, ds},
-  date = Quiet[FileDate[path]];
+(* \:4fdd\:5b58\:6e08\:307f path \:306f\:30d5\:30a1\:30a4\:30eb\:65e5\:4ed8\:3068\:5927\:304d\:3055\:3067\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b (\:767b\:9332\:306e\:305f\:3073\:306b\:6570\:5341 MB \:3092 Get \:3057\:76f4\:3055\:306a\:3044) *)
+iSWDeckSlideDigestPairCached[path_String] := Module[{key, entry, p},
+  key = {Quiet[FileDate[path]], Quiet[FileByteCount[path]]};
   entry = Lookup[$iSWDeckDigestCache, path, None];
-  If[AssociationQ[entry] && entry["Date"] === date, Return[entry["Digests"]]];
-  ds = iSWDeckSlideDigests[path];
-  $iSWDeckDigestCache[path] = <|"Date" -> date, "Digests" -> ds|>;
-  ds];
+  If[AssociationQ[entry] && entry["Key"] === key, Return[entry["Pair"]]];
+  p = iSWDeckSlideDigestPair[path];
+  $iSWDeckDigestCache[path] = <|"Key" -> key, "Pair" -> p|>;
+  p];
 
-iSWDeckDigest[source_] := Module[{ds},
-  ds = If[StringQ[source] && FileExistsQ[source],
-    iSWDeckSlideDigestsCached[source], iSWDeckSlideDigests[source]];
-  If[ListQ[ds] && ds =!= {}, Hash[ds, "SHA256", "HexString"], $Failed]];
+iSWDeckSlideDigestPairOf[source_] := If[StringQ[source] && FileExistsQ[source],
+  iSWDeckSlideDigestPairCached[source], iSWDeckSlideDigestPair[source]];
+
+iSWDeckSlideDigests[source_] := With[{p = iSWDeckSlideDigestPair[source]},
+  If[AssociationQ[p], p["Digests"], $Failed]];
+
+iSWDeckSlideDigestsCached[path_String] := With[{p = iSWDeckSlideDigestPairCached[path]},
+  If[AssociationQ[p], p["Digests"], $Failed]];
+
+iSWDeckDigestOfList[ds_] := If[ListQ[ds] && ds =!= {}, Hash[ds, "SHA256", "HexString"], $Failed];
+
+iSWDeckDigest[source_] := With[{p = iSWDeckSlideDigestPairOf[source]},
+  If[AssociationQ[p], iSWDeckDigestOfList[p["Digests"]], $Failed]];
+
+(* \:8a18\:9332\:3057\:305f\:63cf\:753b\:30cf\:30c3\:30b7\:30e5 rec \:304c\:4eca\:306e\:30c7\:30c3\:30ad\:3068\:5408\:3046\:304b\:30022026-10-31 \:3088\:308a\:524d\:306e\:8a18\:9332\:306f\:524d\:306e\:6570\:3048\:65b9\:306a\:306e\:3067\:3001
+   \:305d\:3061\:3089\:3067\:5408\:3063\:3066\:3082\:300c\:5909\:308f\:3063\:3066\:3044\:306a\:3044\:300d *)
+iSWDeckDigestMatchQ[source_, rec_] := StringQ[rec] &&
+  With[{p = iSWDeckSlideDigestPairOf[source]},
+    AssociationQ[p] && MemberQ[iSWDeckDigestOfList /@ {p["Digests"], p["Legacy"]}, rec]];
 
 (* \:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306e\:4e2d\:8eab\:306e\:30cf\:30c3\:30b7\:30e5\:3002\:3053\:3061\:3089\:306f\:4e26\:3073\:9806\:3064\:304d\:306e\:751f\:30c6\:30ad\:30b9\:30c8\:3067\:5341\:5206 *)
 (* \:30de\:30fc\:30ab\:30fc\:884c\:306f\:4e2d\:8eab\:3067\:306f\:306a\:3044\:306e\:3067\:843d\:3068\:3059\:3002\:843d\:3068\:3055\:306a\:3044\:3068\:3001
@@ -4763,7 +4830,7 @@ iSWVideoStaleQ[deckPath_String, mp4_String] := Module[{rec, cur},
   Which[
     !StringQ[cur], iSWFileNewerQ[deckPath, mp4],
     !StringQ[rec], iSWFileNewerQ[deckPath, mp4],
-    True, cur =!= rec]];
+    True, !iSWDeckDigestMatchQ[deckPath, rec]]];
 
 iSWRecordVideoDigest[deck_] := Module[{d},
   If[!StringQ[deck] || !FileExistsQ[deck], Return[$Failed]];
@@ -8896,7 +8963,7 @@ iSWVideoImages[nb_NotebookObject] := Module[{dir, base, outdir, deck, saved, st,
   If[saved,
     digest = Quiet[iSWDeckDigest[deck]];
     st = iSWDeckStateRead[deck];
-    If[StringQ[digest] && digest === Lookup[st, "ImagesSlidesDigest", None] &&
+    If[StringQ[digest] && iSWDeckDigestMatchQ[deck, Lookup[st, "ImagesSlidesDigest", None]] &&
         IntegerQ[Lookup[st, "ImagesCount", None]] && st["ImagesCount"] > 0,
       With[{fs = Table[FileNameJoin[{outdir, iSWVideoImageName[i]}], {i, st["ImagesCount"]}]},
         If[AllTrue[fs, FileExistsQ], files = fs; src = "Reused"]]]];
@@ -9684,7 +9751,8 @@ SlideYouTubeUpload[src : (_NotebookObject | _String), opts : OptionsPattern[]] :
   (* \:4f5c\:3063\:305f\:3042\:3068\:3067\:30b9\:30e9\:30a4\:30c9\:304c\:5909\:308f\:3063\:3066\:3044\:308c\:3070\:77e5\:3089\:305b\:308b *)
   If[Head[nb] === NotebookObject && interactive,
     cur = iSWVideoDeckDigest[nb];
-    If[StringQ[cur] && StringQ[Lookup[tl, "SlidesDigest", None]] && cur =!= tl["SlidesDigest"],
+    If[StringQ[cur] && StringQ[Lookup[tl, "SlidesDigest", None]] && cur =!= tl["SlidesDigest"] &&
+        ! iSWDeckDigestMatchQ[Quiet[NotebookFileName[nb]], tl["SlidesDigest"]],
       Switch[ChoiceDialog[iSL["\:52d5\:753b\:3092\:4f5c\:3063\:305f\:3042\:3068\:3067\:30b9\:30e9\:30a4\:30c9\:304c\:5909\:308f\:3063\:3066\:3044\:307e\:3059\:3002", "The slides changed after the video was made."],
           {iSL["\:4f5c\:308a\:76f4\:3057\:3066\:304b\:3089\:4e0a\:3052\:308b", "Remake, then upload"] -> "Remake", iSL["\:3053\:306e\:307e\:307e\:4e0a\:3052\:308b", "Upload as is"] -> "AsIs",
            iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}],
@@ -17241,7 +17309,7 @@ iSWPosterStaleQ[deckPath_String, pdf_String] := Module[{rec, cur},
   Which[
     ! StringQ[cur], iSWFileNewerQ[deckPath, pdf],
     ! StringQ[rec], iSWFileNewerQ[deckPath, pdf],
-    True, cur =!= rec]];
+    True, ! iSWDeckDigestMatchQ[deckPath, rec]]];
 iSWRecordPosterDigest[deck_] := Module[{d},
   If[! StringQ[deck] || ! FileExistsQ[deck], Return[$Failed]];
   $iSWDeckDigestCache = KeyDrop[$iSWDeckDigestCache, deck];
