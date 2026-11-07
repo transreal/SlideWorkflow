@@ -63,6 +63,7 @@ Markdown文字列(または`File[...]`)をシナリオ連想に変換する。
 - `<<FIGn>>` で既存の図・コードセルをその位置に保持(再展開時)
 - `talk: 原文` でそのスライドの発表原文(SlideTalk セル)を埋め込む
 - `qa: Q: 質問` / `qa: A: 回答` でそのスライドの想定問答(SlideQA セル)を埋め込む
+- ```` ```listing [言語] [size=13] ```` の囲み = 注釈付きプログラムリスト (v1.66、コードの説明はこれ。表にしない)。囲みの中は 1 行 = 元のコード (字下げのまま) + 2 つ以上の空白 + `← 説明`。説明の無い行は説明の欄まで伸びる。`@out ` で始まる行は出力 (灰色)、`@check ラベル | 判定 | 詳細` はリストの下の検査結果の行 (判定は緑の太字)、空行は行間。区切りは「最後の 2 つ以上の空白 + ←」なので Lean の `rw [← h]` や `let x ← f` は切られない。それ以外の ```` ``` ```` の囲みは従来どおり Input セル
 - `## !end` 以降はAppendix行になる
 例: `SlideScenarioFromMarkdown["--- Title: 発表 ---\n## 導入 {expected=30}\n- 背景\n  - 詳細\n> 補足説明\n"]`
 
@@ -110,7 +111,7 @@ Options: `SlideDeckImages`と同じ
 
 ### SlideDeckExportVideo[nbfile | images, mp4file, opts] → String
 Sliden(VRChat)互換のmp4(30fps、1枚≒1秒、先頭29フレーム+末尾スライド重複)を書き出す。
-Options: `"Durations" -> Automatic | {秒...}` (各スライドの表示秒数), `FrameRate -> 30`
+Options: `"Durations" -> Automatic | {秒...}` (各スライドの表示秒数), `FrameRate -> 30`, `BitRate -> Automatic` (`$SlideVideoBitRate`、既定 8 Mbps。v1.65)
 例: `SlideDeckExportVideo["deck.nb", "out.mp4", "Durations" -> {3, 5, 4}]`
 
 ## 読み上げ付きの動画 (録画) と YouTube の限定公開 (v1.59)
@@ -309,6 +310,26 @@ Options: `ImageResolution -> 144`, `"MaxSize" -> Automatic` ($SlideNotebookFigur
 デッキ配色($SlideTheme)の表を返す。rowsは文字列の行リスト。
 Options: `"HeaderRows" -> 1` (ヘッダ行として強調する行数), `FontSize -> 15`
 シナリオmdでは`|`構文(`"| a | b |"`、2行目に`"| --- | --- |"`で1行目がヘッダ)が同じ表になる。
+
+### SlideCodeListing[spec, opts] → 表示可能な式 (v1.66)
+注釈付きプログラムリスト: コードを等幅の細字 (Source Code Pro 13pt) で並べ、各行の右に「← 説明」(デッキの字・箇条書きの色) を揃えた横長の枠を返す。**スライドでコードを説明するときはこの形にする** (「コード | 意味」の表は、コード全体と各行の意味が同時に見えないので使わない。2026-11-07 計算と自然 36)。
+spec は次のどれでもよい:
+- md の囲みの文字列 (```` ```listing … ``` ```` または中身の行だけ)
+- 行のリスト: `{コード, 説明}` / `{コード, 説明, "Output"}` / `<|"Code", "Note", "Kind" -> "Output", "Span" -> True|>`。`{"", ""}` は空行
+- `<|"Lines" -> 行, "Footer" -> {ラベル, 判定, 詳細} | <|"Label", "Status", "Detail"|>, "FontSize" -> 13, "Language" -> "lean"|>`
+Options: `FontSize -> Automatic`, `"CodeFont" -> Automatic` (= "Source Code Pro")。
+見た目の約束: 説明の無い行は説明の欄まで伸ばす / 出力の行は灰色 / 空行は Grid の行にせず次の行の上の行間を広げる / 全体に `PrivateFontOptions -> {"OperatorSubstitution" -> False}` (FE が `#` を ♯ に、`[` を数式用の括弧に置き換えるのを止める) / 斜体は使わない (Source Code Pro の斜体が無く、代わりの字で `'` や `:` の前後に空白が入る)。
+シナリオ md の ```` ```listing ```` は `{"Listing", spec}` になり、Input セル + CellTags `{"SlideListing", "ShowInput"}`、TaggingRules `"SWListing" -> {{コード, 説明, 種類}, ..}` (+ `SWListingFooter` / `SWListingSize` / `SWListingLang` / `SWListingRev`) のセルになる。デッキ → md (展開・スライドから反映・QA 生成) では ```` ```listing ```` の囲みに戻る。1 枚の目安 (1920×1080): 導入文 + 項目 2〜3 + リスト 5〜8 行、リストだけなら 20 行。載せるコードは実行・検査してから (Lean は LeanAssist の `LeanCheck`)。
+例: `SlideCodeListing[{{"theorem t : 2 = 2 := rfl", "計算だけで証明"}, {"-- ok", "出力", "Output"}}]`
+
+### SlideListingInsert[nb, spec, opts] → Association (v1.66)
+FE で開いているデッキに、注釈付きリストの枚を差し込む (保存はしない。確かめてから人が保存する)。デッキが FE で開いている間は .nb を直接書き換えず、これを使う。`SlideListingInsert[spec]` は nb = Automatic (spec の `"Deck"` か、いまのデッキ)。
+spec: `<|"Deck" -> path (任意), "Slides" -> {枚, ..}|>` / 1 枚の Association / 枚のリスト / `File["….json"]` (同じ形の JSON)。
+枚の鍵: `Title`、`Crumb`、`Lead` (文字列、`**太字**` 可)、`Items`、`Listing` (SlideCodeListing の spec)、`Footer`、`Cite`、`Talk`、`QA`、位置 `After` / `Before` (`<|"Node" -> KG ノード Id か挿入済みの枚の Id|>` / `<|"Title" -> 題目の完全一致|>`)、`Id` か `Node` (Node があれば題目の CellTags `KGSync:<Node>`、無ければ `SWSlide:<Id>` で同一性)、`Rev` (版の印、既定 "1")、`Tags` (既定 `{"Expected:<原稿の長さから>", "Top"}`)、`ExpectedSeconds`。
+何度実行しても同じ結果: 戻り値は枚ごとに `Inserted` / `Unchanged` / `Replaced` / `Skipped` (理由つき)。`Rev` を上げるとその枚だけ置き換え、前の版のリストや表 (SlideTable) の枚は置き換えるが、どちらでもない枚 (手で直した枚) には触らない。
+セルの操作は NBAccess の公開 API だけで行う (NBCellIndicesByTag / NBCellRead / NBCellGetTaggingRule / NBCellSetOptions / NBDeleteCellsByTag / NBMoveAfterCell / NBWriteCell。分離規約 SEP-CELL) ので NBAccess.wl が要る (無ければ `Failure["NBAccessUnavailable"]`)。区切りはタグ `SlideShowHeader`、題目は区切りの直後の Subsection。デッキが FE で開いていなければ開かずに `Failure["DeckNotOpen"]`。FE の呼び出しはタグの一覧・題目の読み出し (Title で指すときだけ枚数ぶん)・書き込みだけで、全体を `iSWHoldFE` で包む (セルごとに FE を呼ぶ処理を開いたデッキで回すと、claudecode の共有 tick の FE probe と待ち合って FE が固まった。2026-11-07 実機)。
+Options: `"Verbose" -> True` (結果を Print)。
+例: `SlideListingInsert[nb, <|"Slides" -> {<|"Id" -> "omega", "After" -> <|"Title" -> "自動化タクティク"|>, "Title" -> "自動化タクティクの例: omega", "Listing" -> "```listing lean\ntheorem t (n : Nat) : 2 * n ≠ 7 := by  ← 2n = 7 となる n は無い\n  omega  ← 自動で\n```"|>}|>]`
 
 ### $SlideVisualsPerSlide
 型: Boolean, 初期値: `True`

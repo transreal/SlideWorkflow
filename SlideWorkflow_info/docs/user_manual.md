@@ -100,6 +100,7 @@ Markdown文字列(または`File[...]`)をシナリオ連想リストに変換�
 - `| a | b |` 行が2行連続し、2行目が`| --- | --- |`のとき1行目がヘッダの表(`SlideTable`と同じ表になる)
 - `cite: 出典`行で直前の図・引用の出典(URLまたは`(著者, 年)`)を明記
 - `talk: 発表原稿`行で、そのスライドの発表原稿(ナレーション草稿)を`SlideTalk`スタイルとして保持
+- ```` ```listing [言語] ```` の囲みで、注釈付きプログラムリスト (コードの各行の右に「← 説明」、v1.66)。1 行 = 元のコード + 2 つ以上の空白 + `← 説明`、`@out` で始まる行は出力 (灰色)、`@check ラベル | 判定 | 詳細` でリストの下に検査結果の行
 
 ```wolfram
 md = "--- Title: 講義1 ---\n## 導入 {expected=60}\n- ポイント1\n- ポイント2\n";
@@ -112,6 +113,30 @@ scenario = SlideScenarioFromMarkdown[md];
 
 ```wolfram
 SlideScenarioToMarkdown[scenario]
+```
+
+### コードを説明する枚: `SlideCodeListing` / `SlideListingInsert` (v1.66)
+
+スライドでコードを説明するときは、「コード | 意味」の表ではなく、元のコード全体を残して各行の右に「← 説明」を揃えた**注釈付きプログラムリスト**にします。読み手がコード全体と各行の意味を同時に把握できます。
+シナリオ md では次のように書きます (展開・知識グラフからの生成も同じ形を使います):
+
+````
+```listing lean
+theorem solve_xy (x y : Nat)          ← 定理の名前と変数
+    (h₁ : x + y = 10) :               ← 仮定
+    x = 7 := by                       ← 示したいこと
+  omega                               ← 1 次式の問題を自動で解く
+@check Lean: | Proved | solve_xy: Proved
+```
+````
+
+- 区切りは行の中の最後の「2 つ以上の空白 + ←」なので、Lean の `rw [← h]` などはコードのまま残ります。説明の無い行は説明の欄まで伸びます。
+- `SlideCodeListing[spec]` はリストの式を返します (spec は上の囲みの文字列、`{{コード, 説明}, ..}`、または `<|"Lines", "Footer"|>`)。
+- `SlideListingInsert[nb, spec]` は、FE で開いているデッキに枚を差し込みます (保存はしません)。位置は `"After"` / `"Before"` に `<|"Node" -> id|>` か `<|"Title" -> 題目|>`。何度実行しても同じ結果で、`"Rev"` を上げるとその枚だけ置き換わります。
+- 載せるコードは実行・検査してから載せます (Lean は LeanAssist の `LeanCheck`)。
+
+```wolfram
+SlideCodeListing[{{"x = 1", "代入"}, {"print(x)", "表示"}, {"# 1", "出力", "Output"}}]
 ```
 
 ---
@@ -214,7 +239,7 @@ SlideDeckExportImages["lecture1.nb", "C:\\slides\\out"]
 
 ノートブック(または既に生成した画像リスト)から、Sliden(VRChat)互換のmp4(30fps、1枚あたり秒指定、先頭29フレーム+末尾スライド繰り返し)を書き出します。
 
-オプション: `"Durations"->Automatic`または秒数のリスト、`FrameRate->30`
+オプション: `"Durations"->Automatic`または秒数のリスト、`FrameRate->30`、`BitRate->Automatic`(`$SlideVideoBitRate`を使う。既定8Mbps。v1.65)
 
 ```wolfram
 SlideDeckExportVideo["lecture1.nb", "C:\\slides\\lecture1.mp4"]
