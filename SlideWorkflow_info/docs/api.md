@@ -151,14 +151,18 @@ Options: `"Output"`, `"Voice"`, `"Model"`, `"Live"` (Automatic = 聞く | `"Reco
 - 動画が無い / スライドが動画より新しいときは作り直すかを聞く。同じファイルを前に上げていれば知らせる (`"Force" -> True` で上げる)。
 - **上げない**: 指示セルの `PrivacyLevel:` が 0.5 以上の発表、非公開 (TaggingRules SourceVault/CloudPublishable = False) と宣言したノート。上げる前に必ず確認のダイアログを出す。
 - 上げた記録は `<デッキ>_narrated_youtube.json`、URL はクリップボードへ。
-Options: `"File"`, `"Title"`, `"Description"`, `"Tags"`, `"Privacy"` (既定 `$SlideYouTubePrivacy = "unlisted"`), `"Category"` (既定 `$SlideYouTubeCategory = "27"` 教育), `"Language"`, `"MadeForKids"` (False), `"Chapters"` (True), `"Interactive"`, `"Force"`。
-戻り値: `<|"Status" -> "Uploaded", "VideoId", "URL", "Privacy", "Title", ...|>`。
+- **ブラウザで上げる (v1.67)**: Google アカウントが「高度な保護機能 (Advanced Protection)」に入っていると、Google の審査を通っていない自作の OAuth クライアントには YouTube への投稿を許可できない (google.com/device が「アクセスをブロック: SlideWorkflow は高度な保護機能で承認されていません」= エラー 400: policy_enforced)。そのときは確認のダイアログ (またはデバイスコードの窓) の「ブラウザで上げる」を押す: YouTube Studio のアップロード画面を開き、動画のパスをクリップボードに置き、題・説明 (チャプター)・タグを「コピー」ボタンで写せる窓を出す。上げたあと動画のリンクを窓に貼って「記録して確かめる」と、API で上げたときと同じ `<デッキ>_narrated_youtube.json` に `"Method" -> "Browser"` で残る (次に同じ動画を上げようとすると「前に上げています」と出る)。**題・説明・タグは自動では入らない** (Studio で手で貼る)。記録のあと公開ページ (watch) の題・説明を読み、題がファイル名のまま・説明が空なら窓を閉じずに「Studio で編集を開く」へ案内する (貼って保存したら「確かめる」)。前にブラウザで上げた動画は、もう一度「YouTube」を押すと出る「題・説明を貼り直す」で同じ窓を開き直せる (Studio の編集画面が開き、題がクリップボードに入る)。
+- 上げ方: `"Method"` / `$SlideYouTubeMethod` = `Automatic` (既定。許可済みなら API、まだなら確認のダイアログで「Google で許可して上げる」か「ブラウザで上げる」を選ぶ) | `"API"` | `"Browser"` (いつもブラウザ。高度な保護機能のアカウントはこれにしておくとよい)。ブラウザで上げるのは人の操作が要るので `"Interactive" -> False` では失敗 (`SlideYouTubeBrowserInteractive`) を返す。
+
+Options: `"File"`, `"Title"`, `"Description"`, `"Tags"`, `"Privacy"` (既定 `$SlideYouTubePrivacy = "unlisted"`), `"Category"` (既定 `$SlideYouTubeCategory = "27"` 教育), `"Language"`, `"MadeForKids"` (False), `"Chapters"` (True), `"Interactive"`, `"Force"`, `"Method"` (v1.67、既定 `$SlideYouTubeMethod = Automatic`)。
+戻り値: `<|"Status" -> "Uploaded", "VideoId", "URL", "Privacy", "Title", ...|>`。ブラウザで上げるときは窓を開いた時点で `<|"Status" -> "Browser", "File", "Title"|>` (記録は窓のボタンで)。
 
 ### SlideYouTubeClient[] / SlideYouTubeClient[id, secret] / SlideYouTubeClient[File[json]] / SlideYouTubeClient[None]
 OAuth クライアント (Google Cloud の「OAuth クライアント ID」、種類は **テレビと入力が限られたデバイス**) を NBAccess 管轄の SystemCredential に保存する。`SlideYouTubeClientQ[]` で登録の有無 (値は返さない)。
 
 ### SlideYouTubeAuthorize[opts] / SlideYouTubeSignOut[]
 デバイスコードで許可をもらう (ブラウザで表示されたコードを入れる。ローカルにサーバを立てない。スコープ `https://www.googleapis.com/auth/youtube`)。リフレッシュトークンは SystemCredential に保存。初回のアップロードで自動的に呼ばれる。テスト中 (Testing) の OAuth 同意画面ではリフレッシュトークンが 7 日で切れるので、そのときは自動で許可をやり直す。
+v1.67: コードの窓に「ブラウザで上げる」「やめる」ボタン (窓を閉じても止まる)。高度な保護機能のアカウントでは Google のページがブロックされたままポーリングが pending を返し続けるので、人が止める。Google がエラーを返したときは理由別の失敗を返す: `policy_enforced` / `admin_policy_enforced` → `SlideYouTubeBlockedByPolicy`、`access_denied` → `SlideYouTubeAuthorizationDenied`、`expired_token` → `SlideYouTubeAuthorizationTimeout` (いずれも「ブラウザで上げる」の案内付き)。窓の「ブラウザで上げる」は `SlideYouTubeUseBrowser` を返し、`SlideYouTubeUpload` はそのままブラウザで上げる窓に進む。テスト: `test codes/slideyoutube_browser_test.wls` (38 件)。
 
 ### $SlideYouTubeHTTPHandler
 HTTP の差し込み口 (テスト用)。`<|Method, URL, Headers, Body, TimeConstraint|>` を受けて `<|StatusCode, Headers (小文字), BodyBytes|>` を返す関数。

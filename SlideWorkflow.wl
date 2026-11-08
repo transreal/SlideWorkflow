@@ -359,11 +359,12 @@ $SlideTalkVideoLeadIn::usage = "$SlideTalkVideoLeadIn \:306f\:8aad\:307f\:4e0a\:
 $SlideTalkVideoTail::usage = "$SlideTalkVideoTail \:306f\:8aad\:307f\:4e0a\:3052\:4ed8\:304d\:306e\:52d5\:753b\:306e\:6700\:5f8c\:306e\:679a\:306b\:8db3\:3059\:79d2\:6570 (\:65e2\:5b9a 1.5)\:3002";
 $SlideTalkVideoParallel::usage = "$SlideTalkVideoParallel \:306f gpt-realtime \:3067\:58f0\:3092\:4f5c\:308b\:3068\:304d\:306b\:4e26\:3079\:308b\:30bb\:30c3\:30b7\:30e7\:30f3\:306e\:6570 (\:65e2\:5b9a 3)\:3002";
 $SlideTalkVideoQuality::usage = "$SlideTalkVideoQuality \:306f\:8aad\:307f\:4e0a\:3052\:4ed8\:304d\:306e\:52d5\:753b\:306e\:753b\:8cea (x264 \:306e CRF\:3001\:65e2\:5b9a 20\:3002\:5c0f\:3055\:3044\:307b\:3069\:9ad8\:753b\:8cea\:3067\:5927\:304d\:3044)\:3002";
-SlideYouTubeUpload::usage = "SlideYouTubeUpload[] / SlideYouTubeUpload[nb | deck.nb | video.mp4, opts] \:306f\:8aad\:307f\:4e0a\:3052\:4ed8\:304d\:306e\:52d5\:753b\:3092 YouTube Data API v3 \:3067\:9650\:5b9a\:516c\:958b (unlisted) \:3067\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3059\:308b (v1.59\:3002\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:306e\:300cYouTube\:300d)\:3002\:984c\:306f\:6307\:793a\:30bb\:30eb\:306e Title:\:3001\:8aac\:660e\:6b04\:306f\:96c6\:4f1a\:30fb\:65e5\:4ed8\:30fb\:8457\:8005\:3068\:3001\:6642\:523b\:8868 (<\:30c7\:30c3\:30ad>_narrated.json) \:304b\:3089\:4f5c\:308b\:679a\:3054\:3068\:306e\:30c1\:30e3\:30d7\:30bf\:30fc\:3002\:52d5\:753b\:304c\:7121\:3044 / \:30b9\:30e9\:30a4\:30c9\:304c\:52d5\:753b\:3088\:308a\:65b0\:3057\:3044\:3068\:304d\:306f\:4f5c\:308a\:76f4\:3059\:304b\:3092\:805e\:304f\:3002PrivacyLevel 0.5 \:4ee5\:4e0a\:306e\:767a\:8868\:3068\:3001\:975e\:516c\:958b (Private) \:3068\:5ba3\:8a00\:3057\:305f\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044\:3002\:4e0a\:3052\:308b\:524d\:306b\:5fc5\:305a\:78ba\:8a8d\:3059\:308b\:3002\:521d\:56de\:306f OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306e\:767b\:9332 (SlideYouTubeClient) \:3068\:30d6\:30e9\:30a6\:30b6\:3067\:306e\:8a31\:53ef (SlideYouTubeAuthorize)\:3002opts: \"File\" / \"Title\" / \"Description\" / \"Tags\" / \"Privacy\" (\:65e2\:5b9a $SlideYouTubePrivacy = \"unlisted\") / \"Category\" / \"Language\" / \"MadeForKids\" / \"Chapters\" / \"Interactive\" / \"Force\" (\:540c\:3058\:30d5\:30a1\:30a4\:30eb\:3092\:524d\:306b\:4e0a\:3052\:3066\:3044\:3066\:3082\:4e0a\:3052\:308b)\:3002\:623b\:308a\:5024 <|\"Status\" -> \"Uploaded\", \"VideoId\", \"URL\", \"Privacy\", ...|>\:3002\:4e0a\:3052\:305f\:8a18\:9332\:306f <\:30c7\:30c3\:30ad>_narrated_youtube.json\:3002";
+SlideYouTubeUpload::usage = "SlideYouTubeUpload[] / SlideYouTubeUpload[nb | deck.nb | video.mp4, opts] \:306f\:8aad\:307f\:4e0a\:3052\:4ed8\:304d\:306e\:52d5\:753b\:3092 YouTube Data API v3 \:3067\:9650\:5b9a\:516c\:958b (unlisted) \:3067\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3059\:308b (v1.59\:3002\:767a\:8868\:30d1\:30ec\:30c3\:30c8\:306e\:300cYouTube\:300d)\:3002\:984c\:306f\:6307\:793a\:30bb\:30eb\:306e Title:\:3001\:8aac\:660e\:6b04\:306f\:96c6\:4f1a\:30fb\:65e5\:4ed8\:30fb\:8457\:8005\:3068\:3001\:6642\:523b\:8868 (<\:30c7\:30c3\:30ad>_narrated.json) \:304b\:3089\:4f5c\:308b\:679a\:3054\:3068\:306e\:30c1\:30e3\:30d7\:30bf\:30fc\:3002\:52d5\:753b\:304c\:7121\:3044 / \:30b9\:30e9\:30a4\:30c9\:304c\:52d5\:753b\:3088\:308a\:65b0\:3057\:3044\:3068\:304d\:306f\:4f5c\:308a\:76f4\:3059\:304b\:3092\:805e\:304f\:3002PrivacyLevel 0.5 \:4ee5\:4e0a\:306e\:767a\:8868\:3068\:3001\:975e\:516c\:958b (Private) \:3068\:5ba3\:8a00\:3057\:305f\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044\:3002\:4e0a\:3052\:308b\:524d\:306b\:5fc5\:305a\:78ba\:8a8d\:3059\:308b\:3002\:521d\:56de\:306f OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306e\:767b\:9332 (SlideYouTubeClient) \:3068\:30d6\:30e9\:30a6\:30b6\:3067\:306e\:8a31\:53ef (SlideYouTubeAuthorize)\:3002opts: \"File\" / \"Title\" / \"Description\" / \"Tags\" / \"Privacy\" (\:65e2\:5b9a $SlideYouTubePrivacy = \"unlisted\") / \"Category\" / \"Language\" / \"MadeForKids\" / \"Chapters\" / \"Interactive\" / \"Force\" (\:540c\:3058\:30d5\:30a1\:30a4\:30eb\:3092\:524d\:306b\:4e0a\:3052\:3066\:3044\:3066\:3082\:4e0a\:3052\:308b) / \"Method\" (v1.67: Automatic | \"API\" | \"Browser\"\:3001\:65e2\:5b9a $SlideYouTubeMethod)\:3002\:623b\:308a\:5024 <|\"Status\" -> \"Uploaded\", \"VideoId\", \"URL\", \"Privacy\", ...|>\:3002\:4e0a\:3052\:305f\:8a18\:9332\:306f <\:30c7\:30c3\:30ad>_narrated_youtube.json\:3002 v1.67: Google \:306e\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd\:306e\:30a2\:30ab\:30a6\:30f3\:30c8\:306f API \:3092\:8a31\:53ef\:3067\:304d\:306a\:3044 (\:30a8\:30e9\:30fc 400: policy_enforced) \:306e\:3067\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d= YouTube Studio \:3067\:4eba\:304c\:4e0a\:3052\:3001\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:7528\:610f\:3057\:3066\:4e0a\:3052\:305f URL \:3092\:8a18\:9332\:3059\:308b (\:623b\:308a\:5024 <|\"Status\" -> \"Browser\"|>)\:3002";
 SlideYouTubeClient::usage = "SlideYouTubeClient[] \:306f YouTube \:3078\:306e\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:306b\:4f7f\:3046 OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8 (Google Cloud \:306e\:300cOAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8 ID\:300d\:3001\:7a2e\:985e\:306f\:300c\:30c6\:30ec\:30d3\:3068\:5165\:529b\:304c\:9650\:3089\:308c\:305f\:30c7\:30d0\:30a4\:30b9\:300d) \:306e ID \:3068\:30b7\:30fc\:30af\:30ec\:30c3\:30c8\:3092\:5c0b\:306d\:3066\:3001NBAccess \:7ba1\:8f44\:306e SystemCredential \:306b\:4fdd\:5b58\:3059\:308b\:3002SlideYouTubeClient[id, secret] / SlideYouTubeClient[File[\:30c0\:30a6\:30f3\:30ed\:30fc\:30c9\:3057\:305f JSON]] \:3067\:76f4\:63a5\:3001SlideYouTubeClient[None] \:3067\:524a\:9664 (v1.59)\:3002";
 SlideYouTubeClientQ::usage = "SlideYouTubeClientQ[] \:306f YouTube \:306e OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:304c\:767b\:9332\:3055\:308c\:3066\:3044\:308b\:304b (\:5024\:306f\:8fd4\:3055\:306a\:3044)\:3002";
 SlideYouTubeAuthorize::usage = "SlideYouTubeAuthorize[] \:306f YouTube \:3078\:306e\:6295\:7a3f\:3092\:8a31\:53ef\:3057\:3066\:3082\:3089\:3046 (\:30c6\:30ec\:30d3\:5411\:3051\:306e\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:3002\:30d6\:30e9\:30a6\:30b6\:3067\:8868\:793a\:3055\:308c\:305f\:30b3\:30fc\:30c9\:3092\:5165\:308c\:308b\:3002\:30b9\:30b3\:30fc\:30d7 https://www.googleapis.com/auth/youtube)\:3002\:30ea\:30d5\:30ec\:30c3\:30b7\:30e5\:30c8\:30fc\:30af\:30f3\:306f SystemCredential \:306b\:4fdd\:5b58\:3057\:3001\:4ee5\:5f8c\:306f\:805e\:304b\:306a\:3044 (v1.59)\:3002opts: \"MaxWait\" (\:79d2) / \"OpenBrowser\"\:3002";
 SlideYouTubeSignOut::usage = "SlideYouTubeSignOut[] \:306f\:4fdd\:5b58\:3057\:305f YouTube \:306e\:8a31\:53ef (\:30ea\:30d5\:30ec\:30c3\:30b7\:30e5\:30c8\:30fc\:30af\:30f3) \:3092\:6d88\:3059\:3002";
+$SlideYouTubeMethod::usage = "$SlideYouTubeMethod \:306f YouTube \:3078\:306e\:4e0a\:3052\:65b9 (v1.67)\:3002Automatic (\:65e2\:5b9a) = \:8a31\:53ef\:6e08\:307f\:306a\:3089 API\:3001\:307e\:3060\:306a\:3089\:78ba\:8a8d\:306e\:7a93\:3067\:300cGoogle \:3067\:8a31\:53ef\:3057\:3066\:4e0a\:3052\:308b\:300d\:304b\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d\:3092\:9078\:3076\:3002\"API\" = \:3044\:3064\:3082 API (\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:3067\:8a31\:53ef\:3057\:3066 Data API v3 \:3067\:4e0a\:3052\:308b)\:3002\"Browser\" = \:3044\:3064\:3082\:30d6\:30e9\:30a6\:30b6 (YouTube Studio) \:3067\:4e0a\:3052\:308b: \:984c\:30fb\:8aac\:660e (\:30c1\:30e3\:30d7\:30bf\:30fc)\:30fb\:30bf\:30b0\:3068\:52d5\:753b\:306e\:30d1\:30b9\:3092\:7a93\:306b\:4e26\:3079\:3066\:30b3\:30d4\:30fc\:3067\:304d\:3001\:4e0a\:3052\:305f\:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:8cbc\:308b\:3068 <\:52d5\:753b>_youtube.json \:306b\:8a18\:9332\:3059\:308b\:3002Google \:306e\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306b\:5165\:3063\:3066\:3044\:308b\:30a2\:30ab\:30a6\:30f3\:30c8\:306f\:81ea\:4f5c\:306e OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:3092\:8a31\:53ef\:3067\:304d\:306a\:3044 (\:30a8\:30e9\:30fc 400: policy_enforced) \:306e\:3067 \"Browser\" \:306b\:3059\:308b\:3002";
 $SlideYouTubePrivacy::usage = "$SlideYouTubePrivacy \:306f YouTube \:3078\:4e0a\:3052\:308b\:3068\:304d\:306e\:516c\:958b\:7bc4\:56f2 (\:65e2\:5b9a \"unlisted\" = \:9650\:5b9a\:516c\:958b\:3002\"private\" | \"public\" \:3082\:53ef)\:3002";
 $SlideYouTubeCategory::usage = "$SlideYouTubeCategory \:306f YouTube \:306e\:30ab\:30c6\:30b4\:30ea ID (\:65e2\:5b9a \"27\" = \:6559\:80b2)\:3002";
 $SlideYouTubeHTTPHandler::usage = "$SlideYouTubeHTTPHandler \:306f YouTube / Google OAuth \:3078\:306e HTTP \:306e\:5dee\:3057\:8fbc\:307f\:53e3 (\:30c6\:30b9\:30c8\:7528\:3001\:65e2\:5b9a None)\:3002\:8981\:6c42 <|Method, URL, Headers, Body, TimeConstraint|> \:3092\:53d7\:3051\:3066 <|StatusCode, Headers, BodyBytes|> \:3092\:8fd4\:3059\:95a2\:6570\:3002";
@@ -9198,7 +9199,10 @@ SlideToggleMic[OptionsPattern[]] := iSWToggleMic[TrueQ[OptionValue["Quiet"]]];
    \:300cYouTube\:300d= SlideYouTubeUpload: \:3067\:304d\:305f\:52d5\:753b\:3092 YouTube Data API v3 \:3067\:9650\:5b9a\:516c\:958b (unlisted) \:3067\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3059\:308b\:3002
    \:8a8d\:53ef\:306f\:30c6\:30ec\:30d3\:5411\:3051\:306e\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9 (SharePoint \:3068\:540c\:3058\:5f62\:3002\:30ed\:30fc\:30ab\:30eb\:306b\:30b5\:30fc\:30d0\:3092\:7acb\:3066\:306a\:3044\:3002\:30b9\:30b3\:30fc\:30d7 youtube)\:3002
    \:8aac\:660e\:6b04\:306b\:306f\:984c\:30fb\:96c6\:4f1a\:30fb\:8457\:8005\:3068\:3001\:5404\:679a\:306e\:982d\:306e\:6642\:523b\:304b\:3089\:4f5c\:308b\:30c1\:30e3\:30d7\:30bf\:30fc\:3092\:66f8\:304f\:3002PrivacyLevel 0.5 \:4ee5\:4e0a\:306e\:767a\:8868\:3068\:3001
-   \:975e\:516c\:958b (Private) \:3068\:5ba3\:8a00\:3057\:305f\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044\:3002\:4e0a\:3052\:308b\:524d\:306b\:5fc5\:305a\:78ba\:8a8d\:3059\:308b\:3002 *)
+   \:975e\:516c\:958b (Private) \:3068\:5ba3\:8a00\:3057\:305f\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044\:3002\:4e0a\:3052\:308b\:524d\:306b\:5fc5\:305a\:78ba\:8a8d\:3059\:308b\:3002
+   v1.67: Google \:306e\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306e\:30a2\:30ab\:30a6\:30f3\:30c8\:306f\:81ea\:4f5c\:306e OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:3092\:8a31\:53ef\:3067\:304d\:306a\:3044
+   (\:30a8\:30e9\:30fc 400: policy_enforced) \:306e\:3067\:3001\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d= \:4eba\:304c YouTube Studio \:3067\:4e0a\:3052\:3001\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:7a93\:304b\:3089\:5199\:3057\:3066
+   \:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:8a18\:9332\:3059\:308b ($SlideYouTubeMethod / "Method")\:3002\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:306e\:7a93\:306b\:306f\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d\:300c\:3084\:3081\:308b\:300d\:3002 *)
 
 If[! ValueQ[$SlideTalkVideoFrameRate], $SlideTalkVideoFrameRate = 30];
 If[! ValueQ[$SlideTalkVideoLeadIn], $SlideTalkVideoLeadIn = 0.5];
@@ -9753,6 +9757,8 @@ iSWTalkVideoAction[nb_] := Module[{r},
 If[! ValueQ[$SlideYouTubePrivacy], $SlideYouTubePrivacy = "unlisted"];
 If[! ValueQ[$SlideYouTubeCategory], $SlideYouTubeCategory = "27"];   (* Education *)
 If[! ValueQ[$SlideYouTubeHTTPHandler], $SlideYouTubeHTTPHandler = None];
+If[! ValueQ[$SlideYouTubeMethod], $SlideYouTubeMethod = Automatic];   (* v1.67: Automatic | "API" | "Browser" *)
+$iSWYTAuthAbort = None;   (* v1.67: \:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:306e\:7a93\:306e\:30dc\:30bf\:30f3 None | "Browser" | "Cancel" *)
 $iSWYTScope = "https://www.googleapis.com/auth/youtube";
 $iSWYTClientKey = "SlideWorkflow/YouTube/Client";
 $iSWYTRefreshKey = "SlideWorkflow/YouTube/RefreshToken";
@@ -9864,10 +9870,55 @@ iSWYTStoreToken[tok_Association, status_String] := Module[{rt = Lookup[tok, "ref
   rt = Null;
   <|"Status" -> status, "RefreshTokenStored" -> stored|>];
 
-(* \:30c6\:30ec\:30d3\:5411\:3051\:306e\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:3067\:8a31\:53ef\:3092\:3082\:3089\:3046\:3002\:30d6\:30e9\:30a6\:30b6\:3067\:30b3\:30fc\:30c9\:3092\:5165\:308c\:308b (\:30ed\:30fc\:30ab\:30eb\:306b\:30b5\:30fc\:30d0\:3092\:7acb\:3066\:306a\:3044) *)
+(* \:30c6\:30ec\:30d3\:5411\:3051\:306e\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:3067\:8a31\:53ef\:3092\:3082\:3089\:3046\:3002\:30d6\:30e9\:30a6\:30b6\:3067\:30b3\:30fc\:30c9\:3092\:5165\:308c\:308b (\:30ed\:30fc\:30ab\:30eb\:306b\:30b5\:30fc\:30d0\:3092\:7acb\:3066\:306a\:3044)\:3002
+   v1.67: Google \:30a2\:30ab\:30a6\:30f3\:30c8\:304c\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306b\:5165\:3063\:3066\:3044\:308b\:3068\:3001Google \:306e\:5be9\:67fb\:3092\:901a\:3063\:3066\:3044\:306a\:3044\:81ea\:4f5c\:306e
+   OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306f YouTube \:306e\:30b9\:30b3\:30fc\:30d7\:3092\:8a31\:53ef\:3057\:3066\:3082\:3089\:3048\:306a\:3044 (Google \:306e\:30da\:30fc\:30b8\:304c\:300c\:30a2\:30af\:30bb\:30b9\:3092\:30d6\:30ed\:30c3\:30af: \:2026 \:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd\:3067
+   \:627f\:8a8d\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:300d= \:30a8\:30e9\:30fc 400: policy_enforced\:30022026-11-08 \:5b9f\:6a5f)\:3002\:305d\:306e\:3068\:304d\:30dd\:30fc\:30ea\:30f3\:30b0\:306f pending \:306e\:307e\:307e\:671f\:9650 (10 \:5206)
+   \:307e\:3067\:5f85\:3064\:3060\:3051\:306a\:306e\:3067\:3001\:7a93\:306b\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d\:300c\:3084\:3081\:308b\:300d\:3092\:7f6e\:304d\:3001\:7a93\:3092\:9589\:3058\:3066\:3082\:6b62\:3081\:308b\:3002Google \:304c\:30a8\:30e9\:30fc\:3092\:8fd4\:3057\:305f\:3089
+   \:305d\:308c\:305e\:308c\:306e\:6848\:5185\:3092\:4ed8\:3051\:3066\:8fd4\:3059 *)
+$iSWYTPolicyNote = {
+  "Google \:30a2\:30ab\:30a6\:30f3\:30c8\:304c\:300c\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection)\:300d\:306b\:5165\:3063\:3066\:3044\:308b\:3068\:3001Google \:306e\:5be9\:67fb\:3092\:901a\:3063\:3066\:3044\:306a\:3044\:81ea\:4f5c\:306e OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8 (SlideWorkflow) \:306b\:306f YouTube \:3078\:306e\:6295\:7a3f\:3092\:8a31\:53ef\:3067\:304d\:307e\:305b\:3093 (\:30a8\:30e9\:30fc 400: policy_enforced)\:3002\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d(YouTube Studio) \:306a\:3089\:3001\:984c\:30fb\:8aac\:660e (\:30c1\:30e3\:30d7\:30bf\:30fc)\:30fb\:30bf\:30b0\:3092\:3053\:3061\:3089\:3067\:7528\:610f\:3057\:3001\:4e0a\:3052\:305f URL \:3092\:8a18\:9332\:3057\:307e\:3059\:3002",
+  "If the Google account is enrolled in Advanced Protection, it cannot allow a self-made, unverified OAuth client (SlideWorkflow) to post to YouTube (Error 400: policy_enforced). \"Upload in the browser\" (YouTube Studio) works instead: the title, description (chapters) and tags are prepared here and the URL is recorded."};
+
+iSWYTUseBrowserFailure[] := iSWVideoFail["SlideYouTubeUseBrowser",
+  "\:30d6\:30e9\:30a6\:30b6 (YouTube Studio) \:3067\:4e0a\:3052\:307e\:3059\:3002", "Uploading in the browser (YouTube Studio)."];
+
+iSWYTAuthErrorFailure[err_String, resp_, tok_] := Switch[err,
+  "policy_enforced" | "admin_policy_enforced",
+    iSWVideoFail["SlideYouTubeBlockedByPolicy",
+      "Google \:306e\:30dd\:30ea\:30b7\:30fc\:3067\:8a31\:53ef\:304c\:6b62\:3081\:3089\:308c\:307e\:3057\:305f (" <> err <> ")\:3002" <> $iSWYTPolicyNote[[1]],
+      "Google's policy blocked the authorization (" <> err <> "). " <> $iSWYTPolicyNote[[2]],
+      <|"Detail" -> iSWYTErrorText[resp, tok]|>],
+  "access_denied",
+    iSWVideoFail["SlideYouTubeAuthorizationDenied",
+      "\:8a31\:53ef\:3055\:308c\:307e\:305b\:3093\:3067\:3057\:305f (access_denied: \:300c\:30ad\:30e3\:30f3\:30bb\:30eb\:300d\:3092\:62bc\:3057\:305f\:304b\:3001Google \:304c\:3053\:306e\:30a2\:30d7\:30ea\:3092\:6b62\:3081\:307e\:3057\:305f)\:3002" <> $iSWYTPolicyNote[[1]],
+      "Not allowed (access_denied: cancelled, or Google stopped this app). " <> $iSWYTPolicyNote[[2]],
+      <|"Detail" -> iSWYTErrorText[resp, tok]|>],
+  _,
+    iSWVideoFail["SlideYouTubeAuthorizationFailed", "\:8a31\:53ef\:3092\:5f97\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f: " <> err,
+      "Authorization failed: " <> err, <|"Detail" -> iSWYTErrorText[resp, tok]|>]];
+
+(* \:7a93\:304c\:958b\:3044\:3066\:3044\:308b\:304b\:3002\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:304c\:7121\:3044\:30fb\:7a93\:3092\:4f5c\:308c\:306a\:304b\:3063\:305f\:3068\:304d\:306f\:958b\:3044\:3066\:3044\:308b\:3068\:307f\:306a\:3059 *)
+iSWYTWindowOpenQ[dlg_] := Head[dlg] =!= NotebookObject ||
+  With[{nbs = Quiet[Notebooks[]]}, ! ListQ[nbs] || MemberQ[nbs, dlg]];
+
+(* \:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:306e\:7a93\:3002\:30dc\:30bf\:30f3\:306f Preemptive \:3067\:65d7\:3092\:7acb\:3066\:308b\:3060\:3051 (\:5f85\:3063\:3066\:3044\:308b\:672c\:51e6\:7406\:304c 0.5 \:79d2\:3054\:3068\:306b\:898b\:308b) *)
+iSWYTDeviceCodePanel[code_String, url_String] := {
+  TextCell[iSL["YouTube \:3078\:306e\:6295\:7a3f\:3092\:8a31\:53ef\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:30d6\:30e9\:30a6\:30b6\:3067\:6b21\:306e\:30b3\:30fc\:30c9\:3092\:5165\:529b\:3057\:307e\:3059 (\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f)\:3002",
+    "Allow posting to YouTube: enter this code in the browser (copied to the clipboard)."], "Text"],
+  TextCell[Style[code, 26, Bold], "Text"],
+  TextCell[Hyperlink[url, url], "Text"],
+  TextCell[Style[iSL["\:8a31\:53ef\:304c\:7d42\:308f\:308b\:3068\:3001\:3053\:306e\:7a93\:306f\:81ea\:52d5\:3067\:9589\:3058\:307e\:3059\:3002", "This window closes by itself once you have allowed it."], 9, GrayLevel[0.4]], "Text"],
+  TextCell[Style[iSL["Google \:306e\:30da\:30fc\:30b8\:304c\:300c\:30a2\:30af\:30bb\:30b9\:3092\:30d6\:30ed\:30c3\:30af: \:2026 \:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd\:3067\:627f\:8a8d\:3055\:308c\:3066\:3044\:307e\:305b\:3093\:300d(\:30a8\:30e9\:30fc 400: policy_enforced) \:306b\:306a\:3063\:305f\:3089\:3001\:3053\:306e\:30a2\:30ab\:30a6\:30f3\:30c8\:3067\:306f\:8a31\:53ef\:3067\:304d\:307e\:305b\:3093\:3002\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d\:3092\:62bc\:3057\:3066 YouTube Studio \:304b\:3089\:4e0a\:3052\:3066\:304f\:3060\:3055\:3044\:3002",
+      "If Google says \"Access blocked: \:2026 not approved by Advanced Protection\" (Error 400: policy_enforced), this account cannot allow it. Press \"Upload in the browser\" to upload in YouTube Studio."],
+    9, RGBColor[0.6, 0.15, 0.1]], "Text"],
+  ExpressionCell[Row[{
+    Button[iSL["\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b", "Upload in the browser"], $iSWYTAuthAbort = "Browser", Method -> "Preemptive"], Spacer[10],
+    Button[iSL["\:3084\:3081\:308b", "Cancel"], $iSWYTAuthAbort = "Cancel", Method -> "Preemptive"]}], "Text"]};
+
 Options[SlideYouTubeAuthorize] = {"MaxWait" -> 600, "OpenBrowser" -> True};
 SlideYouTubeAuthorize[OptionsPattern[]] := Module[
-  {c, resp, dc, code, url, interval, deadline, tok, err, dlg, result = None},
+  {c, resp, dc, code, url, interval, deadline, tok, err, dlg, result = None, until},
   c = iSWYTClient[];
   If[c === None,
     With[{r = SlideYouTubeClient[]}, If[FailureQ[r], Return[r]]];
@@ -9883,18 +9934,18 @@ SlideYouTubeAuthorize[OptionsPattern[]] := Module[
   code = ToString[dc["user_code"]];
   url = ToString[Lookup[dc, "verification_url", Lookup[dc, "verification_uri", "https://www.google.com/device"]]];
   Quiet[CopyToClipboard[code]];
-  dlg = Quiet[CreateDialog[{
-      TextCell[iSL["YouTube \:3078\:306e\:6295\:7a3f\:3092\:8a31\:53ef\:3057\:3066\:304f\:3060\:3055\:3044\:3002\:30d6\:30e9\:30a6\:30b6\:3067\:6b21\:306e\:30b3\:30fc\:30c9\:3092\:5165\:529b\:3057\:307e\:3059 (\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f)\:3002",
-        "Allow posting to YouTube: enter this code in the browser (copied to the clipboard)."], "Text"],
-      TextCell[Style[code, 26, Bold], "Text"],
-      TextCell[Hyperlink[url, url], "Text"],
-      TextCell[Style[iSL["\:8a31\:53ef\:304c\:7d42\:308f\:308b\:3068\:3001\:3053\:306e\:7a93\:306f\:81ea\:52d5\:3067\:9589\:3058\:307e\:3059\:3002", "This window closes by itself once you have allowed it."], 9, GrayLevel[0.4]], "Text"]},
-    WindowTitle -> "YouTube", Modal -> False]];
+  $iSWYTAuthAbort = None;
+  dlg = Quiet[CreateDialog[iSWYTDeviceCodePanel[code, url], WindowTitle -> "YouTube", Modal -> False]];
   If[TrueQ[OptionValue["OpenBrowser"]], Quiet[SystemOpen[url]]];
   interval = Max[1, Replace[Lookup[dc, "interval", 5], Except[_?NumericQ] -> 5]];
   deadline = AbsoluteTime[] + Min[Replace[Lookup[dc, "expires_in", 900], Except[_?NumericQ] -> 900], OptionValue["MaxWait"]];
   While[result === None && AbsoluteTime[] < deadline,
-    Pause[interval];
+    (* 0.5 \:79d2\:305a\:3064\:5f85\:3063\:3066\:7a93\:306e\:30dc\:30bf\:30f3\:3092\:62fe\:3046\:3002\:7a93\:304c\:9589\:3058\:3089\:308c\:305f\:304b\:306f 1 \:56de\:306e\:554f\:3044\:5408\:308f\:305b\:3054\:3068\:306b 1 \:5ea6\:3060\:3051 FE \:306b\:8a0a\:304f *)
+    until = Min[deadline, AbsoluteTime[] + interval];
+    While[AbsoluteTime[] < until && $iSWYTAuthAbort === None, Pause[0.5]];
+    Which[
+      $iSWYTAuthAbort === "Browser", result = iSWYTUseBrowserFailure[]; Break[],
+      $iSWYTAuthAbort =!= None || ! iSWYTWindowOpenQ[dlg], result = Failure["Cancelled", <||>]; Break[]];
     resp = iSWYTForm["https://oauth2.googleapis.com/token", {"client_id" -> c["client_id"],
       "client_secret" -> c["client_secret"], "device_code" -> dc["device_code"],
       "grant_type" -> "urn:ietf:params:oauth:grant-type:device_code"}];
@@ -9905,13 +9956,21 @@ SlideYouTubeAuthorize[OptionsPattern[]] := Module[
       err === "authorization_pending", Null,
       err === "slow_down", interval += 5,
       err === "", Null,   (* \:901a\:4fe1\:306e\:5931\:6557: \:6b21\:306e\:56de\:306b\:3082\:3046\:4e00\:5ea6 *)
-      True, result = iSWVideoFail["SlideYouTubeAuthorizationFailed", "\:8a31\:53ef\:3092\:5f97\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f: " <> err,
-        "Authorization failed: " <> err, <|"Detail" -> iSWYTErrorText[resp, tok]|>]]];
+      err === "expired_token", Break[],   (* \:30b3\:30fc\:30c9\:306e\:671f\:9650\:5207\:308c = \:6642\:9593\:5207\:308c *)
+      True, result = iSWYTAuthErrorFailure[err, resp, tok]]];
+  $iSWYTAuthAbort = None;
   c = Null;
   If[Head[dlg] === NotebookObject, Quiet[NotebookClose[dlg]]];
   If[result === None,
-    iSWVideoFail["SlideYouTubeAuthorizationTimeout", "\:6642\:9593\:5185\:306b\:8a31\:53ef\:3055\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Not authorized in time."],
+    iSWVideoFail["SlideYouTubeAuthorizationTimeout",
+      "\:6642\:9593\:5185\:306b\:8a31\:53ef\:3055\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002(Google \:306e\:30da\:30fc\:30b8\:304c\:300c\:30a2\:30af\:30bb\:30b9\:3092\:30d6\:30ed\:30c3\:30af\:300d\:3060\:3063\:305f\:5834\:5408) " <> $iSWYTPolicyNote[[1]],
+      "Not authorized in time. (If Google said \"Access blocked\") " <> $iSWYTPolicyNote[[2]]],
     result]];
+
+(* \:8a31\:53ef\:6e08\:307f\:304b (\:5024\:306f\:8fd4\:3055\:306a\:3044): \:751f\:304d\:3066\:3044\:308b\:30a2\:30af\:30bb\:30b9\:30c8\:30fc\:30af\:30f3\:304c\:3042\:308b\:304b\:3001\:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:3068\:66f4\:65b0\:30c8\:30fc\:30af\:30f3\:304c\:63c3\:3063\:3066\:3044\:308b *)
+iSWYTAuthorizedQ[] := TrueQ[
+  (StringQ[$iSWYTToken["AccessToken"]] && $iSWYTToken["ExpiresAt"] - 120 > AbsoluteTime[]) ||
+  (iSWYTClient[] =!= None && StringQ[iSWCredGet[$iSWYTRefreshKey]])];
 
 (* \:30a2\:30af\:30bb\:30b9\:30c8\:30fc\:30af\:30f3 (\:6587\:5b57\:5217) \:304b Failure\:3002interactive \:306a\:3089\:5fc5\:8981\:306a\:3068\:304d\:306b\:8a31\:53ef\:3092\:3082\:3089\:3044\:76f4\:3059 *)
 iSWYTAccessToken[interactive_] := Module[{c, rt, resp, tok, a},
@@ -10041,7 +10100,7 @@ iSWYTHistory[mp4_String] := With[{h = iSWReadJSON[iSWYTHistoryFile[mp4]]}, If[Li
 
 Options[SlideYouTubeUpload] = {"File" -> Automatic, "Title" -> Automatic, "Description" -> Automatic,
   "Tags" -> Automatic, "Privacy" -> Automatic, "Category" -> Automatic, "Language" -> Automatic,
-  "MadeForKids" -> False, "Chapters" -> True, "Interactive" -> Automatic, "Force" -> False};
+  "MadeForKids" -> False, "Chapters" -> True, "Interactive" -> Automatic, "Force" -> False, "Method" -> Automatic};
 
 SlideYouTubeUpload[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
   If[Head[nb] === NotebookObject, SlideYouTubeUpload[nb, opts],
@@ -10049,7 +10108,7 @@ SlideYouTubeUpload[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
 
 SlideYouTubeUpload[src : (_NotebookObject | _String), opts : OptionsPattern[]] := Module[
   {interactive, nb = None, deck = None, file, tl, res, cur, meta, pl, title, desc, tags, privacy, category, lang,
-   size, fdate, prev, token, metadata, video, id, url, status, entry},
+   size, fdate, prev, token, metadata, video, id, url, status, entry, method, choice},
   interactive = Replace[OptionValue["Interactive"], Automatic -> True];
   Which[
     Head[src] === NotebookObject,
@@ -10123,13 +10182,26 @@ SlideYouTubeUpload[src : (_NotebookObject | _String), opts : OptionsPattern[]] :
   If[AssociationQ[prev] && ! TrueQ[OptionValue["Force"]],
     If[! interactive, Return[<|"Status" -> "AlreadyUploaded", "URL" -> prev["URL"], "VideoId" -> prev["VideoId"]|>]];
     Switch[ChoiceDialog[iSL["\:3053\:306e\:52d5\:753b\:306f " <> ToString[Lookup[prev, "UploadedAt", ""]] <> " \:306b\:4e0a\:3052\:3066\:3044\:307e\:3059:\n", "This video was uploaded at " <> ToString[Lookup[prev, "UploadedAt", ""]] <> ":\n"] <> ToString[prev["URL"]],
-        {iSL["\:3082\:3046\:4e00\:5ea6\:4e0a\:3052\:308b", "Upload again"] -> "Again", iSL["\:524d\:306e\:52d5\:753b\:3092\:958b\:304f", "Open the earlier one"] -> "Open", iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}],
+        Join[{iSL["\:3082\:3046\:4e00\:5ea6\:4e0a\:3052\:308b", "Upload again"] -> "Again"},
+          (* v1.67: \:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:305f\:52d5\:753b\:306f Studio \:3067\:984c\:30fb\:8aac\:660e\:3092\:8cbc\:308a\:76f4\:305b\:308b (\:8cbc\:308a\:5fd8\:308c: 2026-11-08) *)
+          If[Lookup[prev, "Method", "API"] === "Browser", {iSL["\:984c\:30fb\:8aac\:660e\:3092\:8cbc\:308a\:76f4\:3059", "Fix the title and description"] -> "Fix"}, {}],
+          {iSL["\:524d\:306e\:52d5\:753b\:3092\:958b\:304f", "Open the earlier one"] -> "Open", iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}]],
       "Again", Null,
+      "Fix", Return[iSWYTBrowserUpload[nb, file, title, desc, tags, privacy, category, size, fdate, prev["VideoId"]]],
       "Open", Quiet[SystemOpen[prev["URL"]]]; Return[<|"Status" -> "AlreadyUploaded", "URL" -> prev["URL"], "VideoId" -> prev["VideoId"]|>],
       _, Return[Failure["Cancelled", <||>]]]];
+  (* v1.67: \:4e0a\:3052\:65b9 = "API" (\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:3067\:8a31\:53ef\:3057\:3066 Data API \:3067\:4e0a\:3052\:308b) \:304b "Browser" (\:4eba\:304c YouTube Studio \:3067\:4e0a\:3052\:308b)\:3002
+     Automatic \:306f\:8a31\:53ef\:6e08\:307f\:306a\:3089 API\:3001\:307e\:3060\:306a\:3089\:78ba\:8a8d\:306e\:7a93\:3067\:9078\:3076 (\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd\:306e\:30a2\:30ab\:30a6\:30f3\:30c8\:306f API \:3092\:8a31\:53ef\:3067\:304d\:306a\:3044) *)
+  method = Replace[OptionValue["Method"], Automatic :> $SlideYouTubeMethod];
+  If[! MemberQ[{"API", "Browser"}, method], method = Automatic];
+  If[method === Automatic && (! interactive || iSWYTAuthorizedQ[]), method = "API"];
+  If[method === "Browser" && ! interactive,
+    Return[iSWVideoFail["SlideYouTubeBrowserInteractive",
+      "\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:306b\:306f\:4eba\:306e\:64cd\:4f5c\:304c\:8981\:308a\:307e\:3059 (\"Interactive\" -> True)\:3002", "Uploading in the browser needs a person (\"Interactive\" -> True)."]]];
   (* \:5916\:3078\:51fa\:3059\:524d\:306b\:5fc5\:305a\:78ba\:304b\:3081\:308b *)
   iSWTrace["YT confirm >"];
-  If[interactive && ! TrueQ[ChoiceDialog[
+  If[interactive,
+    choice = ChoiceDialog[
       Column[{Style[iSL["YouTube \:306b\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3057\:307e\:3059", "Upload to YouTube"], Bold, 12],
         Grid[{
           {iSL["\:984c", "Title"], title},
@@ -10137,12 +10209,36 @@ SlideYouTubeUpload[src : (_NotebookObject | _String), opts : OptionsPattern[]] :
             "private", iSL["\:975e\:516c\:958b", "Private"], _, iSL["\:516c\:958b", "Public"]]},
           {iSL["\:9577\:3055", "Length"], If[NumericQ[Lookup[tl, "Duration", None]], iSWClock[tl["Duration"]], "?"]},
           {iSL["\:5927\:304d\:3055", "Size"], ToString[Round[size/2.^20, 0.1]] <> " MB"},
-          {iSL["\:30d5\:30a1\:30a4\:30eb", "File"], file}}, Alignment -> Left, Spacings -> {1.5, 0.6}]}, Spacings -> 1],
-      {iSL["\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9", "Upload"] -> True, iSL["\:3084\:3081\:308b", "Cancel"] -> False}, WindowTitle -> "YouTube"]],
-    Return[Failure["Cancelled", <||>]]];
+          {iSL["\:30d5\:30a1\:30a4\:30eb", "File"], file}}, Alignment -> Left, Spacings -> {1.5, 0.6}],
+        If[method === Automatic,
+          Pane[Style[iSL["\:3053\:306e PC \:3067\:306f\:307e\:3060 YouTube \:3078\:306e\:6295\:7a3f\:3092\:8a31\:53ef\:3057\:3066\:3044\:307e\:305b\:3093\:3002\:300cGoogle \:3067\:8a31\:53ef\:3057\:3066\:4e0a\:3052\:308b\:300d\:306f\:30d6\:30e9\:30a6\:30b6\:3067\:30b3\:30fc\:30c9\:3092\:5165\:308c\:3066\:8a31\:53ef\:3057\:307e\:3059\:3002Google \:306e\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306b\:5165\:3063\:3066\:3044\:308b\:30a2\:30ab\:30a6\:30f3\:30c8\:306f\:8a31\:53ef\:3067\:304d\:306a\:3044 (\:30a8\:30e9\:30fc 400: policy_enforced) \:306e\:3067\:3001\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d(YouTube Studio) \:3092\:9078\:3093\:3067\:304f\:3060\:3055\:3044\:3002",
+            "Posting to YouTube is not allowed on this PC yet. \"Allow with Google, then upload\" asks for a code in the browser. Accounts in Google's Advanced Protection cannot allow it (Error 400: policy_enforced): choose \"Upload in the browser\" (YouTube Studio)."],
+            9, GrayLevel[0.35]], 460],
+          Nothing]}, Spacings -> 1],
+      Which[
+        method === "Browser",
+          {iSL["\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b", "Upload in the browser"] -> "Browser", iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"},
+        method === "API",
+          {iSL["\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9", "Upload"] -> "API", iSL["\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b", "Upload in the browser"] -> "Browser", iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"},
+        True,
+          {iSL["Google \:3067\:8a31\:53ef\:3057\:3066\:4e0a\:3052\:308b", "Allow with Google, then upload"] -> "API", iSL["\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b", "Upload in the browser"] -> "Browser",
+           iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}],
+      WindowTitle -> "YouTube"];
+    If[! MemberQ[{"API", "Browser"}, choice], Return[Failure["Cancelled", <||>]]];
+    method = choice];
+  If[method === "Browser",
+    Return[iSWYTBrowserUpload[nb, file, title, desc, tags, privacy, category, size, fdate]]];
   iSWTrace["YT token >"];
   token = iSWYTAccessToken[interactive];
-  If[! StringQ[token], Return[If[FailureQ[token], token, iSWVideoFail["SlideYouTubeTokenFailed", "\:8a31\:53ef\:3092\:5f97\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Not authorized."]]]];
+  If[! StringQ[token],
+    If[! FailureQ[token], token = iSWVideoFail["SlideYouTubeTokenFailed", "\:8a31\:53ef\:3092\:5f97\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Not authorized."]];
+    (* \:8a31\:53ef\:3092\:5f97\:3089\:308c\:306a\:3051\:308c\:3070\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:9053\:3092\:51fa\:3059 (\:30c7\:30d0\:30a4\:30b9\:30b3\:30fc\:30c9\:306e\:7a93\:3067\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d\:3092\:62bc\:3057\:305f\:306a\:3089\:805e\:304b\:306a\:3044)\:3002
+       \:65ad\:3089\:308c\:305f\:3089\:7406\:7531\:306f\:898b\:305b\:305f\:306e\:3067\:300c\:3084\:3081\:308b\:300d\:3068\:540c\:3058\:306b\:6271\:3046 *)
+    If[interactive && First[token] =!= "Cancelled",
+      Return[If[First[token] === "SlideYouTubeUseBrowser" || iSWYTOfferBrowserQ[token],
+        iSWYTBrowserUpload[nb, file, title, desc, tags, privacy, category, size, fdate],
+        Failure["Cancelled", <||>]]]];
+    Return[token]];
   metadata = <|"snippet" -> Join[<|"title" -> title, "description" -> desc, "categoryId" -> category|>,
       If[tags =!= {}, <|"tags" -> tags|>, <||>],
       If[StringQ[lang] && lang =!= "", <|"defaultLanguage" -> lang, "defaultAudioLanguage" -> lang|>, <||>]],
@@ -10177,6 +10273,194 @@ SlideYouTubeUpload[src : (_NotebookObject | _String), opts : OptionsPattern[]] :
       {iSL["\:958b\:304f", "Open"] -> True, iSL["\:9589\:3058\:308b", "Close"] -> False}]],
     Quiet[SystemOpen[url]]];
   Join[<|"Status" -> "Uploaded"|>, entry]];
+
+(* ===================== v1.67: \:30d6\:30e9\:30a6\:30b6 (YouTube Studio) \:3067\:4e0a\:3052\:308b =====================
+   Google \:30a2\:30ab\:30a6\:30f3\:30c8\:304c\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306b\:5165\:3063\:3066\:3044\:308b\:3068\:3001\:81ea\:4f5c\:306e OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306f YouTube \:306e
+   \:30b9\:30b3\:30fc\:30d7\:3092\:8a31\:53ef\:3057\:3066\:3082\:3089\:3048\:306a\:3044 (\:30a8\:30e9\:30fc 400: policy_enforced\:3002\:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:304c Google \:306e\:5be9\:67fb\:3092\:901a\:3089\:306a\:3044\:9650\:308a\:3001\:30d7\:30ed\:30b0\:30e9\:30e0\:304b\:3089\:306f
+   \:5909\:3048\:3089\:308c\:306a\:3044)\:3002\:305d\:306e\:4ee3\:308f\:308a\:306b\:4eba\:304c YouTube Studio \:3067\:4e0a\:3052\:308b: \:7a93\:306b\:52d5\:753b\:306e\:30d1\:30b9\:30fb\:984c\:30fb\:8aac\:660e (\:30c1\:30e3\:30d7\:30bf\:30fc)\:30fb\:30bf\:30b0\:30fb\:516c\:958b\:8a2d\:5b9a\:3092\:4e26\:3079\:3066
+   \:30dc\:30bf\:30f3\:3067\:30b3\:30d4\:30fc\:3057\:3001\:4e0a\:3052\:305f\:52d5\:753b\:306e URL \:3092\:8cbc\:3063\:3066\:300c\:8a18\:9332\:3057\:3066\:78ba\:304b\:3081\:308b\:300d\:3068\:3001API \:3068\:540c\:3058\:5c65\:6b74 (<\:52d5\:753b>_youtube.json\:3001
+   "Method" -> "Browser") \:306b\:6b8b\:3059\:3002\:6b21\:306b\:540c\:3058\:52d5\:753b\:3092\:4e0a\:3052\:3088\:3046\:3068\:3059\:308b\:3068\:3001API \:3067\:4e0a\:3052\:305f\:3068\:304d\:3068\:540c\:3058\:304f\:300c\:524d\:306b\:4e0a\:3052\:3066\:3044\:307e\:3059\:300d\:3068\:51fa\:308b\:3002
+   \:984c\:30fb\:8aac\:660e\:306f\:81ea\:52d5\:3067\:306f\:5165\:3089\:306a\:3044 (2026-11-08 \:5b9f\:6a5f: \:8cbc\:3089\:305a\:306b\:4fdd\:5b58\:3057\:3066\:3001\:984c\:304c\:30d5\:30a1\:30a4\:30eb\:540d\:30fb\:8aac\:660e\:304c\:7a7a\:306e\:307e\:307e\:516c\:958b\:3055\:308c\:305f)\:3002
+   \:305d\:3053\:3067\:8a18\:9332\:306e\:3042\:3068\:306b\:516c\:958b\:30da\:30fc\:30b8 (watch) \:306e\:984c\:30fb\:8aac\:660e\:3092\:8aad\:307f\:3001\:7528\:610f\:3057\:305f\:3082\:306e\:304c\:5165\:3063\:3066\:3044\:306a\:3051\:308c\:3070\:7a93\:3092\:9589\:3058\:305a\:306b
+   \:300cStudio \:3067\:7de8\:96c6\:3092\:958b\:304f\:300d\:3078\:6848\:5185\:3059\:308b\:3002\:524d\:306b\:4e0a\:3052\:305f\:52d5\:753b\:306f\:300c\:984c\:30fb\:8aac\:660e\:3092\:8cbc\:308a\:76f4\:3059\:300d\:3067\:3053\:306e\:7a93\:3092\:958b\:304d\:76f4\:305b\:308b *)
+$iSWYTStudioUploadURL = "https://www.youtube.com/upload";
+iSWYTStudioEditURL[id_String] := "https://studio.youtube.com/video/" <> id <> "/edit";
+
+(* \:52d5\:753b ID (11 \:6587\:5b57) \:3092\:53d6\:308a\:51fa\:3059: youtu.be/ID, watch?v=ID, /shorts/ID, /live/ID, /embed/ID,
+   studio.youtube.com/video/ID/edit, ID \:3060\:3051\:3002YouTube \:4ee5\:5916\:306e URL \:306f None *)
+iSWYTVideoIdFromURL[s_String] := Module[{t = StringTrim[s], m = {}},
+  If[StringContainsQ[t, "youtube.com" | "youtu.be", IgnoreCase -> True],
+    m = StringCases[t, RegularExpression["(?:youtu\\.be/|[?&]v=|/shorts/|/live/|/embed/|/video/)([A-Za-z0-9_-]{11})(?![A-Za-z0-9_-])"] :> "$1", 1]];
+  Which[
+    m =!= {}, First[m],
+    StringMatchQ[t, RegularExpression["[A-Za-z0-9_-]{11}"]], t,
+    True, None]];
+iSWYTVideoIdFromURL[_] := None;
+
+(* \:4e0a\:3052\:305f\:52d5\:753b\:306e URL \:3092\:5c65\:6b74\:306b\:66f8\:304f\:3002\:540c\:3058\:52d5\:753b ID \:306e\:8a18\:9332\:304c\:524d\:304b\:3089\:3042\:308c\:3070\:66f8\:304d\:63db\:3048\:306a\:3044 (\:4e0a\:3052\:305f\:6642\:523b\:3092\:6b8b\:3059) *)
+iSWYTBrowserRecord[file_String, url_String, title_String, privacy_String, size_Integer, fdate_String] := Module[{id, entry, old, w},
+  id = iSWYTVideoIdFromURL[url];
+  If[! StringQ[id],
+    Return[iSWVideoFail["SlideYouTubeBadURL", "YouTube \:306e\:52d5\:753b\:306e URL \:3067\:306f\:3042\:308a\:307e\:305b\:3093 (\:4f8b: https://youtu.be/xxxxxxxxxxx)\:3002",
+      "Not a YouTube video URL (e.g. https://youtu.be/xxxxxxxxxxx)."]]];
+  old = SelectFirst[iSWYTHistory[file], Lookup[#, "VideoId", None] === id &, None];
+  If[AssociationQ[old],
+    Quiet[CopyToClipboard[ToString[Lookup[old, "URL", "https://youtu.be/" <> id]]]];
+    Return[Join[<|"Status" -> "Recorded"|>, old]]];
+  entry = <|"VideoId" -> id, "URL" -> "https://youtu.be/" <> id, "Title" -> title, "Privacy" -> privacy, "File" -> file,
+    "Bytes" -> size, "FileDate" -> fdate,
+    "UploadedAt" -> DateString[Now, {"Year", "-", "Month", "-", "Day", " ", "Hour", ":", "Minute"}], "Method" -> "Browser"|>;
+  w = iSWWriteJSON[iSWYTHistoryFile[file], Append[iSWYTHistory[file], entry]];
+  If[! StringQ[w],
+    Return[iSWVideoFail["SlideYouTubeRecordFailed", "\:8a18\:9332\:3092\:66f8\:3051\:307e\:305b\:3093\:3067\:3057\:305f: " <> iSWYTHistoryFile[file],
+      "Could not write the record: " <> iSWYTHistoryFile[file]]]];
+  Quiet[CopyToClipboard[entry["URL"]]];
+  Join[<|"Status" -> "Recorded"|>, entry]];
+
+(* JSON \:306e\:6587\:5b57\:5217\:30ea\:30c6\:30e9\:30eb\:306e\:4e2d\:8eab (\" \n & \:306a\:3069) \:3092\:623b\:3059 *)
+iSWYTJSONString[s_String] := Replace[
+  Quiet[Check[ImportByteArray[StringToByteArray["[\"" <> s <> "\"]", "UTF-8"], "RawJSON"], $Failed]],
+  {{t_String} :> t, _ :> s}];
+
+(* \:516c\:958b\:30da\:30fc\:30b8 (watch) \:306e\:984c\:3068\:8aac\:660e (API \:3092\:4f7f\:308f\:306a\:3044\:3002\:9650\:5b9a\:516c\:958b\:306f\:8ab0\:3067\:3082\:8aad\:3081\:308b\:3002\:975e\:516c\:958b\:30fb\:51e6\:7406\:524d\:30fb\:901a\:4fe1\:306e\:5931\:6557\:306f Missing) *)
+iSWYTPublicDetails[id_String] := Module[{r, b, s, t, d},
+  r = iSWYTHTTP[<|"Method" -> "GET", "URL" -> "https://www.youtube.com/watch?v=" <> id <> "&hl=ja",
+    "Headers" -> <|"Accept-Language" -> "ja,en;q=0.8", "User-Agent" -> "Mozilla/5.0"|>, "TimeConstraint" -> 30|>];
+  b = Lookup[r, "BodyBytes", None];
+  If[Lookup[r, "StatusCode", 0] =!= 200 || ! ByteArrayQ[b], Return[Missing["Unavailable"]]];
+  s = Quiet[ByteArrayToString[b, "UTF-8"]];
+  If[! StringQ[s], Return[Missing["Unavailable"]]];
+  t = StringCases[s, RegularExpression["\"videoDetails\":\\{\"videoId\":\"" <> id <> "\",\"title\":\"((?:[^\"\\\\]|\\\\.)*)\""] :> "$1", 1];
+  d = StringCases[s, RegularExpression["\"shortDescription\":\"((?:[^\"\\\\]|\\\\.)*)\""] :> "$1", 1];
+  If[t === {}, Return[Missing["NotFound"]]];
+  <|"Title" -> iSWYTJSONString[First[t]], "Description" -> If[d === {}, Missing["NotFound"], iSWYTJSONString[First[d]]]|>];
+
+(* \:7528\:610f\:3057\:305f\:984c\:30fb\:8aac\:660e\:304c YouTube \:5074\:306b\:5165\:3063\:3066\:3044\:308b\:304b: <|Status -> "OK" | "Missing" | "Unknown", Issues, PublicTitle|> *)
+iSWYTDetailsCheck[id_String, title_String, desc_String] := Module[{p, issues = {}},
+  p = iSWYTPublicDetails[id];
+  If[! AssociationQ[p], Return[<|"Status" -> "Unknown", "Issues" -> {}|>]];
+  If[StringTrim[p["Title"]] =!= StringTrim[title], AppendTo[issues, "Title"]];
+  If[StringTrim[desc] =!= "" && StringQ[p["Description"]] && StringTrim[p["Description"]] === "", AppendTo[issues, "Description"]];
+  <|"Status" -> If[issues === {}, "OK", "Missing"], "Issues" -> issues, "PublicTitle" -> p["Title"]|>];
+
+iSWYTDetailsCheckText[c_Association] := Switch[c["Status"],
+  "OK", iSL["YouTube \:5074\:306e\:984c\:30fb\:8aac\:660e\:3082\:5165\:3063\:3066\:3044\:307e\:3059\:3002", "The title and description are on YouTube."],
+  "Missing", iSL["YouTube \:5074\:304c\:307e\:3060\:7528\:610f\:3057\:305f\:3082\:306e\:306b\:306a\:3063\:3066\:3044\:307e\:305b\:3093: ", "YouTube does not have them yet: "] <>
+    StringRiffle[Join[
+      If[MemberQ[c["Issues"], "Title"], {iSL["\:984c\:304c\:300c" <> ToString[c["PublicTitle"]] <> "\:300d\:306e\:307e\:307e", "the title is still \"" <> ToString[c["PublicTitle"]] <> "\""]}, {}],
+      If[MemberQ[c["Issues"], "Description"], {iSL["\:8aac\:660e\:304c\:7a7a", "the description is empty"]}, {}]], iSL["\:3001", ", "]] <>
+    iSL["\:3002\:300cStudio \:3067\:7de8\:96c6\:3092\:958b\:304f\:300d\:3067\:52d5\:753b\:306e\:8a73\:7d30\:3092\:958b\:304d\:3001\:984c\:306e\:6b04\:3092\:5168\:90e8\:9078\:3093\:3067 (Ctrl+A) \:8cbc\:308a\:66ff\:3048\:3001\:8aac\:660e\:30fb\:30bf\:30b0\:3082\:300c\:30b3\:30d4\:30fc\:300d\:3067\:8cbc\:3063\:3066\:4fdd\:5b58\:3057\:3066\:304b\:3089\:3001\:3082\:3046\:4e00\:5ea6\:300c\:78ba\:304b\:3081\:308b\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
+      ". Press \"Edit in Studio\", replace the title (Ctrl+A, paste), paste the description and tags with the Copy buttons, save, then press Check again."],
+  _, iSL["YouTube \:5074\:306e\:984c\:30fb\:8aac\:660e\:306f\:78ba\:304b\:3081\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f (\:51e6\:7406\:4e2d\:30fb\:975e\:516c\:958b\:30fb\:901a\:4fe1\:306e\:5931\:6557)\:3002Studio \:3067\:5165\:3063\:3066\:3044\:308b\:304b\:898b\:3066\:304f\:3060\:3055\:3044\:3002",
+    "Could not check the title and description on YouTube (processing, private or offline). Please look in Studio."]];
+
+iSWYTBrowserDone[nb_, r_Association] := (
+  iSWTrace["YT browser recorded " <> ToString[r["VideoId"]]];
+  If[Head[nb] === NotebookObject,
+    iSWStatus[nb, iSL["YouTube \:306e URL \:3092\:8a18\:9332\:3057\:307e\:3057\:305f (\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f): ", "Recorded the YouTube URL (on the clipboard): "] <> r["URL"]];
+    iSWStatusClearLater[nb]]);
+
+(* \:300c\:8a18\:9332\:3057\:3066\:78ba\:304b\:3081\:308b\:300d\:300c\:78ba\:304b\:3081\:308b\:300d: \:8a18\:9332\:3057\:3066\:304b\:3089\:516c\:958b\:30da\:30fc\:30b8\:3092\:8aad\:3080\:3002\:5165\:3063\:3066\:3044\:308c\:3070\:7a93\:3092\:9589\:3058\:3001
+   \:5165\:3063\:3066\:3044\:306a\:3051\:308c\:3070\:7406\:7531\:3068\:6b21\:306e\:624b\:3092\:7a93\:306b\:51fa\:3059 (\:623b\:308a\:5024 {\:30e1\:30c3\:30bb\:30fc\:30b8, \:9589\:3058\:308b\:304b}) *)
+iSWYTBrowserCommit[nb_, file_String, url_String, title_String, desc_String, privacy_String, size_Integer, fdate_String] :=
+  Module[{r, c},
+    r = iSWYTBrowserRecord[file, url, title, privacy, size, fdate];
+    If[FailureQ[r], Return[{iSWVideoFailText[r], False}]];
+    iSWYTBrowserDone[nb, r];
+    c = iSWYTDetailsCheck[r["VideoId"], title, desc];
+    iSWTrace["YT browser check " <> c["Status"]];
+    {iSL["\:8a18\:9332\:3057\:307e\:3057\:305f: ", "Recorded: "] <> r["URL"] <> "\n" <> iSWYTDetailsCheckText[c], c["Status"] === "OK"}];
+
+iSWYTPrivacyLabel[p_] := Switch[p,
+  "unlisted", iSL["\:9650\:5b9a\:516c\:958b", "Unlisted"], "private", iSL["\:975e\:516c\:958b", "Private"], "public", iSL["\:516c\:958b", "Public"], _, ToString[p]];
+iSWYTCategoryLabel[c_] := Switch[ToString[c],
+  "27", iSL["\:6559\:80b2", "Education"], "28", iSL["\:79d1\:5b66\:3068\:6280\:8853", "Science & Technology"], "22", iSL["\:30d6\:30ed\:30b0", "People & Blogs"],
+  _, "ID " <> ToString[c]];
+
+(* \:7a93\:306e\:4e2d\:8eab\:3002\:30dc\:30bf\:30f3\:306e\:5f0f\:306b\:306f\:5f15\:6570\:304c\:305d\:306e\:307e\:307e (\:6587\:5b57\:5217\:3068\:3057\:3066) \:57cb\:3081\:8fbc\:307e\:308c\:308b\:3002existing = \:524d\:306b\:4e0a\:3052\:305f\:52d5\:753b\:306e ID (\:8cbc\:308a\:76f4\:3057) \:304b None *)
+iSWYTBrowserPanel[nb_, file_String, title_String, desc_String, tags_List, privacy_String, category_String,
+    size_Integer, fdate_String, existing_ : None] :=
+  DynamicModule[{u = If[StringQ[existing], "https://youtu.be/" <> existing, ""], msg = ""},
+    Column[{
+      Style[If[StringQ[existing], iSL["YouTube Studio \:3067\:984c\:30fb\:8aac\:660e\:3092\:8cbc\:308a\:76f4\:3059", "Fix the title and description in YouTube Studio"],
+        iSL["YouTube Studio \:3067\:4e0a\:3052\:308b", "Upload in YouTube Studio"]], Bold, 13],
+      Pane[Style[iSL["\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:306f\:81ea\:52d5\:3067\:306f\:5165\:308a\:307e\:305b\:3093\:3002YouTube Studio \:306e\:300c\:8a73\:7d30\:300d\:3067\:3001\:984c\:306e\:6b04\:3092\:5168\:90e8\:9078\:3093\:3067 (Ctrl+A) \:8cbc\:308a\:66ff\:3048\:3001\:8aac\:660e\:306e\:6b04\:3068\:30bf\:30b0\:306e\:6b04\:306b\:3082\:4e0b\:306e\:300c\:30b3\:30d4\:30fc\:300d\:3067\:5199\:3057\:3066\:8cbc\:3063\:3066\:304f\:3060\:3055\:3044\:3002",
+          "The title, description and tags are NOT filled in automatically. In YouTube Studio's Details, select the whole title (Ctrl+A) and paste over it, and paste the description and tags with the Copy buttons below."],
+        10, Bold, RGBColor[0.6, 0.15, 0.1]], 560],
+      Pane[Style[If[StringQ[existing],
+          iSL["\:2460 \:300cStudio \:3067\:7de8\:96c6\:3092\:958b\:304f\:300d\:3067\:52d5\:753b\:306e\:8a73\:7d30\:3092\:958b\:304f\:3002\:2461 \:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:300c\:30b3\:30d4\:30fc\:300d\:3067\:5199\:3057\:3066\:8cbc\:308a\:3001\:4fdd\:5b58\:3002\:2462 \:300c\:78ba\:304b\:3081\:308b\:300d\:3002",
+            "1. Open the video's details with \"Edit in Studio\". 2. Copy and paste the title, description and tags, then save. 3. Press Check."],
+          iSL["\:2460 \:30d6\:30e9\:30a6\:30b6\:306e YouTube Studio \:3067\:300c\:30d5\:30a1\:30a4\:30eb\:3092\:9078\:629e\:300d\:3092\:62bc\:3057\:3001\:30d5\:30a1\:30a4\:30eb\:540d\:306e\:6b04\:306b\:52d5\:753b\:306e\:30d1\:30b9\:3092\:8cbc\:3063\:3066 Enter (\:30d1\:30b9\:306f\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f)\:3002\:2461 \:300c\:8a73\:7d30\:300d\:3067\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:300c\:30b3\:30d4\:30fc\:300d\:3067\:5199\:3057\:3066\:8cbc\:308b\:3002\:2462 \:516c\:958b\:8a2d\:5b9a\:3092\:5408\:308f\:305b\:3066\:4fdd\:5b58\:3002\:2463 \:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:3044\:3061\:3070\:3093\:4e0b\:306b\:8cbc\:3063\:3066\:300c\:8a18\:9332\:3057\:3066\:78ba\:304b\:3081\:308b\:300d\:3002",
+            "1. In YouTube Studio (in the browser) press \"Select files\", paste the video path into the file name box and press Enter (the path is on the clipboard). 2. In Details, copy and paste the title, description and tags. 3. Set the visibility and save. 4. Paste the video link at the bottom and press Record and check."]],
+        9, GrayLevel[0.3]], 560],
+      Row[{
+        Button[iSL["\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:753b\:9762\:3092\:958b\:304f", "Open the upload page"], SystemOpen[$iSWYTStudioUploadURL], Method -> "Preemptive"], Spacer[10],
+        Button[iSL["Studio \:3067\:7de8\:96c6\:3092\:958b\:304f", "Edit in Studio"],
+          With[{id = iSWYTVideoIdFromURL[u]},
+            If[StringQ[id], SystemOpen[iSWYTStudioEditURL[id]],
+              msg = iSL["\:5148\:306b\:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:3044\:3061\:3070\:3093\:4e0b\:306b\:8cbc\:3063\:3066\:304f\:3060\:3055\:3044\:3002", "Paste the video link at the bottom first."]]], Method -> "Preemptive"], Spacer[10],
+        Button[iSL["\:52d5\:753b\:306e\:30d1\:30b9\:3092\:30b3\:30d4\:30fc", "Copy the video path"],
+          CopyToClipboard[file]; msg = iSL["\:52d5\:753b\:306e\:30d1\:30b9\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the video path."], Method -> "Preemptive"], Spacer[10],
+        Button[iSL["\:30d5\:30a9\:30eb\:30c0\:3092\:958b\:304f", "Open the folder"], SystemOpen[DirectoryName[file]], Method -> "Preemptive"]}],
+      Grid[Join[{
+        {Style[iSL["\:52d5\:753b", "Video"], Bold, 10], Pane[Style[FileNameTake[file] <> "  (" <> ToString[Max[1, Round[size/2.^20]]] <> " MB)", 10], 430], ""},
+        {Style[iSL["\:984c", "Title"], Bold, 10], Pane[Style[title, 10], 430],
+          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[title]; msg = iSL["\:984c\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the title."], Method -> "Preemptive", ImageSize -> {64, 22}]},
+        {Style[iSL["\:8aac\:660e", "Description"], Bold, 10],
+          Framed[Pane[Style[desc, 9], {430, 150}, Scrollbars -> {False, Automatic}], FrameStyle -> GrayLevel[0.8], FrameMargins -> 4],
+          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[desc]; msg = iSL["\:8aac\:660e\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the description."], Method -> "Preemptive", ImageSize -> {64, 22}]}},
+        If[tags === {}, {},
+          {{Style[iSL["\:30bf\:30b0", "Tags"], Bold, 10], Pane[Style[StringRiffle[tags, ", "], 10], 430],
+            Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[StringRiffle[tags, ","]]; msg = iSL["\:30bf\:30b0\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the tags."], Method -> "Preemptive", ImageSize -> {64, 22}]}}],
+        {{Style[iSL["\:516c\:958b\:8a2d\:5b9a", "Visibility"], Bold, 10], Style[iSWYTPrivacyLabel[privacy], 10], ""},
+         {Style[iSL["\:8996\:8074\:8005", "Audience"], Bold, 10], Style[iSL["\:3044\:3044\:3048\:3001\:5b50\:3069\:3082\:5411\:3051\:3067\:306f\:3042\:308a\:307e\:305b\:3093", "No, it's not made for kids"], 10], ""},
+         {Style[iSL["\:30ab\:30c6\:30b4\:30ea", "Category"], Bold, 10],
+          Style[iSWYTCategoryLabel[category] <> iSL["  (\:300c\:3059\:3079\:3066\:8868\:793a\:300d\:306e\:4e2d)", "  (under \"Show more\")"], 10], ""}}],
+        Alignment -> {Left, Top}, Spacings -> {1, 0.8}],
+      Row[{Style[iSL["\:52d5\:753b\:306e\:30ea\:30f3\:30af", "Video link"], Bold, 10], Spacer[10],
+        InputField[Dynamic[u], String, FieldSize -> 34, ContinuousAction -> True,
+          FieldHint -> iSL["\:3053\:3053\:306b\:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:8cbc\:308b", "Paste the video link here"]], Spacer[10],
+        (* \:516c\:958b\:30da\:30fc\:30b8\:3092\:8aad\:3080 (\:6700\:5927 30 \:79d2) \:306e\:3067 Queued: FE \:3092\:6b62\:3081\:306a\:3044 *)
+        Button[If[StringQ[existing], iSL["\:78ba\:304b\:3081\:308b", "Check"], iSL["\:8a18\:9332\:3057\:3066\:78ba\:304b\:3081\:308b", "Record and check"]],
+          msg = iSL["\:78ba\:304b\:3081\:3066\:3044\:307e\:3059\:2026", "Checking\:2026"];
+          With[{res = iSWYTBrowserCommit[nb, file, u, title, desc, privacy, size, fdate]},
+            If[TrueQ[res[[2]]], DialogReturn[], msg = {res[[1]], "warn"}]],
+          Method -> "Queued"], Spacer[10],
+        Button[iSL["\:9589\:3058\:308b", "Close"], DialogReturn[], Method -> "Preemptive"]}],
+      (* \:6587\:5b57\:5217 = \:77e5\:3089\:305b (\:9752)\:3001{\:6587\:5b57\:5217, "warn"} = \:8db3\:308a\:306a\:3044\:3082\:306e\:30fb\:5931\:6557 (\:8d64) *)
+      Dynamic[Pane[If[ListQ[msg], Style[First[msg], 9, RGBColor[0.6, 0.15, 0.1]], Style[msg, 9, RGBColor[0.15, 0.35, 0.6]]], 560]]},
+      Spacings -> 1.1]];
+
+(* \:7a93\:3092\:958b\:304d\:3001Studio \:3092\:958b\:304d\:3001\:6700\:521d\:306b\:8cbc\:308b\:3082\:306e\:3092\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:7f6e\:304f (\:4e0a\:3052\:308b\:3068\:304d = \:52d5\:753b\:306e\:30d1\:30b9\:3001\:8cbc\:308a\:76f4\:3057 = \:984c)\:3002
+   \:8a18\:9332\:3068\:78ba\:8a8d\:306f\:7a93\:306e\:30dc\:30bf\:30f3\:3067\:3059\:308b *)
+iSWYTBrowserUpload[nb_, file_String, title_String, desc_String, tags_List, privacy_String, category_String,
+    size_Integer, fdate_String, existing_ : None] := Module[{w},
+  iSWTrace["YT browser >" <> If[StringQ[existing], " fix " <> existing, ""]];
+  w = Quiet[CreateDialog[Style[iSWYTBrowserPanel[nb, file, title, desc, tags, privacy, category, size, fdate, existing], ShowStringCharacters -> False],
+    WindowTitle -> iSL["YouTube (\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b)", "YouTube (upload in the browser)"], Modal -> False]];
+  If[Head[w] =!= NotebookObject,
+    If[Head[nb] === NotebookObject, iSWStatusClearLater[nb]];
+    Return[iSWVideoFail["SlideYouTubeBrowserFailed", "\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:7a93\:3092\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f (\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:304c\:8981\:308a\:307e\:3059)\:3002",
+      "Could not open the browser-upload window (needs the front end)."]]];
+  If[StringQ[existing],
+    Quiet[CopyToClipboard[title]]; Quiet[SystemOpen[iSWYTStudioEditURL[existing]]],
+    Quiet[CopyToClipboard[file]]; Quiet[SystemOpen[$iSWYTStudioUploadURL]]];
+  If[Head[nb] === NotebookObject,
+    iSWStatus[nb, If[StringQ[existing],
+      iSL["YouTube: Studio \:3067\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:8cbc\:3063\:3066\:4fdd\:5b58\:3057\:3001\:7a93\:306e\:300c\:78ba\:304b\:3081\:308b\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044 (\:984c\:306f\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f)\:3002",
+        "YouTube: paste the title, description and tags in Studio, save, then press Check in the window (the title is on the clipboard)."],
+      iSL["YouTube: \:30d6\:30e9\:30a6\:30b6 (YouTube Studio) \:3067\:4e0a\:3052\:3001\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:8cbc\:3063\:3066\:304f\:3060\:3055\:3044\:3002\:4e0a\:3052\:305f\:3089\:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:7a93\:306b\:8cbc\:3063\:3066\:300c\:8a18\:9332\:3057\:3066\:78ba\:304b\:3081\:308b\:300d\:3002",
+        "YouTube: upload in the browser (YouTube Studio) and paste the title, description and tags; then paste the video link into the window and press Record and check."]]]];
+  <|"Status" -> "Browser", "File" -> file, "Title" -> title|>];
+
+(* API \:306e\:8a31\:53ef\:3092\:5f97\:3089\:308c\:306a\:304b\:3063\:305f\:3068\:304d: \:7406\:7531\:3092\:898b\:305b\:3066\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:304b\:3092\:8a0a\:304f *)
+iSWYTOfferBrowserQ[f_] := TrueQ[ChoiceDialog[
+  Column[{Style[iSL["YouTube \:3078\:306e\:6295\:7a3f\:306e\:8a31\:53ef\:3092\:5f97\:3089\:308c\:307e\:305b\:3093\:3067\:3057\:305f", "Could not get permission to post to YouTube"], Bold, 12],
+    Pane[Style[iSWVideoFailText[f], 10], 460],
+    Pane[Style[iSL["\:30d6\:30e9\:30a6\:30b6 (YouTube Studio) \:3067\:4e0a\:3052\:307e\:3059\:304b? \:984c\:30fb\:8aac\:660e (\:30c1\:30e3\:30d7\:30bf\:30fc)\:30fb\:30bf\:30b0\:306f\:3053\:3061\:3089\:3067\:7528\:610f\:3057\:307e\:3059 (Studio \:3067\:8cbc\:308b\:306e\:306f\:624b\:3067)\:3002\:4e0a\:3052\:305f URL \:3092\:8a18\:9332\:3057\:3001\:984c\:30fb\:8aac\:660e\:304c\:5165\:3063\:305f\:304b\:3092\:78ba\:304b\:3081\:307e\:3059\:3002",
+      "Upload in the browser (YouTube Studio) instead? The title, description (chapters) and tags are prepared here (you paste them in Studio). The URL is recorded and the title and description are checked."], 10], 460]},
+    Spacings -> 1],
+  {iSL["\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b", "Upload in the browser"] -> True, iSL["\:3084\:3081\:308b", "Cancel"] -> False}, WindowTitle -> "YouTube"]];
 
 (* \:62bc\:3057\:305f\:3089\:3059\:3050\:72b6\:614b\:884c\:306b\:51fa\:3059 (\:51fa\:306a\:3051\:308c\:3070\:30dc\:30bf\:30f3\:306e\:51e6\:7406\:304c\:59cb\:307e\:3063\:3066\:3044\:306a\:3044)\:3002\:9014\:4e2d\:306e\:30e1\:30c3\:30bb\:30fc\:30b8\:3082\:62fe\:3044\:3001\:60f3\:5b9a\:5916\:306e\:623b\:308a\:5024\:306f\:898b\:305b\:308b *)
 iSWYouTubeAction[nb_] := Module[{ed, r, msgs},
@@ -10292,7 +10576,7 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.66";
+$SlideWorkflowInteractiveVersion = "1.67";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
 (* v1.39: \:30d1\:30ec\:30c3\:30c8\:3092\:300c\:4f5c\:6210\:300d\:3068\:300c\:767a\:8868\:300d\:306b\:5206\:3051\:308b\:3002\:4f5c\:6210 = \:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5 / 1 \:679a\:305a\:3064 /
@@ -10570,8 +10854,8 @@ ShowSlideTalkPalette[] := (
             "Make <deck>_narrated.mp4: the slides with the talk read in the voice from the talk settings (voice + voice model). Local voices and gpt-realtime render fast without playing; gpt-live-1 records while reading aloud (real time, or render fast with gpt-realtime in the same voice)"]],
         iSWTip[iSWButton2["YouTube", RGBColor[0.75, 0.22, 0.2],
             With[{nb = iSWNotebook[]}, If[nb =!= $Failed, iSWYouTubeAction[nb]]]],
-          iSL["\:4f5c\:3063\:305f\:52d5\:753b\:3092 YouTube \:306b\:9650\:5b9a\:516c\:958b (\:30ea\:30f3\:30af\:3092\:77e5\:3063\:3066\:3044\:308b\:4eba\:3060\:3051) \:3067\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3059\:308b\:3002\:8aac\:660e\:6b04\:306b\:679a\:3054\:3068\:306e\:30c1\:30e3\:30d7\:30bf\:30fc\:3002\:521d\:56de\:306f OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306e\:767b\:9332\:3068\:30d6\:30e9\:30a6\:30b6\:3067\:306e\:8a31\:53ef\:3002PrivacyLevel 0.5 \:4ee5\:4e0a\:3068\:975e\:516c\:958b\:306e\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044",
-            "Upload the video to YouTube as unlisted (anyone with the link), with per-slide chapters in the description. The first time: register an OAuth client and allow it in the browser. Talks with PrivacyLevel 0.5+ and Private notebooks are not uploaded"]]],
+          iSL["\:4f5c\:3063\:305f\:52d5\:753b\:3092 YouTube \:306b\:9650\:5b9a\:516c\:958b (\:30ea\:30f3\:30af\:3092\:77e5\:3063\:3066\:3044\:308b\:4eba\:3060\:3051) \:3067\:30a2\:30c3\:30d7\:30ed\:30fc\:30c9\:3059\:308b\:3002\:8aac\:660e\:6b04\:306b\:679a\:3054\:3068\:306e\:30c1\:30e3\:30d7\:30bf\:30fc\:3002\:521d\:56de\:306f OAuth \:30af\:30e9\:30a4\:30a2\:30f3\:30c8\:306e\:767b\:9332\:3068\:30d6\:30e9\:30a6\:30b6\:3067\:306e\:8a31\:53ef\:3002PrivacyLevel 0.5 \:4ee5\:4e0a\:3068\:975e\:516c\:958b\:306e\:30ce\:30fc\:30c8\:306f\:4e0a\:3052\:306a\:3044\:3002Google \:306e\:9ad8\:5ea6\:306a\:4fdd\:8b77\:6a5f\:80fd (Advanced Protection) \:306e\:30a2\:30ab\:30a6\:30f3\:30c8\:306f\:8a31\:53ef\:3067\:304d\:306a\:3044 (\:30a8\:30e9\:30fc 400: policy_enforced) \:306e\:3067\:300c\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:300d= YouTube Studio \:3067\:4e0a\:3052\:3001\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:5199\:3057\:3066 URL \:3092\:8a18\:9332",
+            "Upload the video to YouTube as unlisted (anyone with the link), with per-slide chapters in the description. The first time: register an OAuth client and allow it in the browser. Talks with PrivacyLevel 0.5+ and Private notebooks are not uploaded. Accounts in Google's Advanced Protection cannot allow it (Error 400: policy_enforced): use \"Upload in the browser\" (YouTube Studio; the title, description and tags are prepared and the URL is recorded)"]]],
 
       (* 5. \:767a\:8868\:306e\:8a2d\:5b9a (\:62bc\:3059\:305f\:3073\:306b\:6b21\:3078) *)
       iSWSectionLabel[" \:767a\:8868\:306e\:8a2d\:5b9a", " Talk settings"],
