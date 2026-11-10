@@ -90,7 +90,7 @@ $SlideVoiceTick::usage = "$SlideVoiceTick \:306f\:8aad\:307f\:4e0a\:3052\:9032\:
 SlideVoices::usage = "SlideVoices[] \:306f\:9078\:3079\:308b\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:540d\:306e\:4e00\:89a7\:3092\:8fd4\:3059 (SourceVault_voice.wl \:304c\:8aad\:307f\:8fbc\:307e\:308c\:3066\:3044\:306a\:3051\:308c\:3070 {})\:3002";
 SlideCycleVoice::usage = "SlideCycleVoice[] \:306f $SlideVoice \:3092\:6b21\:306e\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:3078\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:30c8\:30b0\:30eb)\:3002";
 SlideVoicePrepare::usage = "SlideVoicePrepare[] \:306f\:767a\:8868\:30b7\:30ca\:30ea\:30aa\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066 <deck>_voice/ \:306b\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b\:3002SlideVoicePrepare[nb] \:3067\:5bfe\:8c61\:6307\:5b9a\:3002";
-$SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002";
+$SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime / GPT-Live) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\", \"harema\", \"shida\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002harema (\:65e5\:672c\:8a9e\:30fb\:5973\:58f0) \:3068 shida (\:65e5\:672c\:8a9e\:30fb\:7537\:58f0) \:306f GPT-Live \:5c02\:7528\:306e\:58f0\:3067 (v1.68)\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-* \:306e\:3068\:304d\:3060\:3051\:4e00\:89a7\:306b\:51fa\:308b\:3002gpt-realtime-* \:3067\:8a71\:3055\:305b\:3088\:3046\:3068\:3059\:308b\:3068\:7406\:7531\:3092\:51fa\:3057\:3066\:6b62\:307e\:308b (\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:3068\:52d5\:753b\:306e\:300c\:901f\:304f\:4f5c\:308b\:300d\:306f gpt-realtime \:3067\:4f5c\:308b\:306e\:3067\:4f7f\:3048\:306a\:3044)\:3002";
 $SlideVoiceProvider::usage = "$SlideVoiceProvider \:306f\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0\:3067\:306e\:8aad\:307f\:4e0a\:3052) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:65e2\:5b9a Automatic = \:767b\:9332\:7c3f\:306e\:5148\:982d (\"OpenAI\")\:3002\:5019\:88dc\:306f SlideVoiceModels[] \:306e\:30ad\:30fc\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3068\:540c\:3058\:3002";
 $SlideVoiceModel::usage = "$SlideVoiceModel \:306f\:97f3\:58f0\:4f1a\:8a71 (\:8aad\:307f\:4e0a\:3052\:3068\:8cea\:7591) \:306e\:30e2\:30c7\:30eb\:3002\:65e2\:5b9a Automatic = $SlideVoiceDefaultModel (\"gpt-live-1\"\:3002v1.36 \:304b\:3089\:3002\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:4e00\:89a7\:306b\:7121\:3051\:308c\:3070 $SourceVaultRealtimeModel)\:3002\"gpt-realtime-2.1\" \:306a\:3069\:3092\:76f4\:63a5\:6307\:5b9a\:3082\:3067\:304d\:308b\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306b\:306f\:3001\:5fdc\:7b54 off \[RightArrow] on (\:307e\:305f\:306f\:6b21\:306e\:518d\:751f) \:304b\:3089\:52b9\:304f\:3002";
 $SlideVoiceDefaultModel::usage = "$SlideVoiceDefaultModel \:306f $SlideVoiceModel \:304c Automatic \:306e\:3068\:304d\:306b\:4f7f\:3046\:30e2\:30c7\:30eb (\:65e2\:5b9a \"gpt-live-1\")\:3002SourceVault \:5168\:4f53\:306e\:65e2\:5b9a ($SourceVaultRealtimeModel) \:306f\:5909\:3048\:306a\:3044\:3002";
@@ -375,6 +375,20 @@ SlidePosterAudio::usage = "SlidePosterAudio[] / SlidePosterAudio[nb, opts] \:306
 $SlidePosterAudioFormat::usage = "$SlidePosterAudioFormat \:306f SlidePosterAudio \:306e\:65e2\:5b9a\:306e\:5f62\:5f0f (\"m4a\" | \"mp3\" | \"wav\"\:3001\:65e2\:5b9a \"m4a\")\:3002";
 $SlidePosterAudioBitrate::usage = "$SlidePosterAudioBitrate \:306f SlidePosterAudio \:304c m4a / mp3 \:306b\:3059\:308b\:3068\:304d\:306e\:30d3\:30c3\:30c8\:30ec\:30fc\:30c8 (\:65e2\:5b9a \"96k\")\:3002";
 
+SlideInsertVideo::usage = "SlideInsertVideo[] / SlideInsertVideo[nb, path, opts] \:306f\:52d5\:753b\:30bb\:30eb\:3092\:3044\:307e\:306e\:4f4d\:7f6e\:306b\:633f\:5165\:3059\:308b (v1.69)\:3002\:5f15\:6570\:7121\:3057\:306f\:30d5\:30a1\:30a4\:30eb\:3092\:9078\:3076\:30c0\:30a4\:30a2\:30ed\:30b0\:3002\:52d5\:753b\:30bb\:30eb\:306f FE \:306e\:518d\:751f\:6a5f\:69cb\:306b\:3064\:306a\:3044\:3060\:81ea\:524d\:306e\:30d7\:30ec\:30a4\:30e4\:30fc (DynamicModule) \:3067\:3001\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:3067\:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d\:306b\:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8 ($SlideVideoAutoPlay)\:3001\:30af\:30ea\:30c3\:30af\:3067\:518d\:751f/\:4e00\:6642\:505c\:6b62\:3002\:30d1\:30ec\:30c3\:30c8\:306e\:518d\:751f (SlidePlay) \:306f\:518d\:751f\:524d\:306e\:539f\:7a3f (SlideTalk) \:3092\:8aad\:3093\:3067\:304b\:3089\:52d5\:753b\:3092\:982d\:304b\:3089\:518d\:751f\:3057\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f (SlideVideoTalk\:3001vtalk:) \:3092\:6642\:523b\:3069\:304a\:308a\:306b\:8aad\:3080\:3002\:9759\:6b62\:753b (\:753b\:50cf\:30fbSliden mp4\:30fb\:30dd\:30b9\:30bf\:30fc) \:306f\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0 (\"Poster\" -> \"Last\" | \"First\" | \:79d2 | \:753b\:50cf\:30d1\:30b9\:3001\:65e2\:5b9a $SlideVideoPoster) \:306b\:7f6e\:304d\:63db\:308f\:308b\:3002opts: \"Width\" (pt) / \"Poster\" / \"Talk\" (True = \:518d\:751f\:4e2d\:306e\:539f\:7a3f\:30bb\:30eb\:3082\:633f\:5165)\:3002md \:3067\:306f ![video w=600 poster=last](anim/x.mp4) (\:62e1\:5f35\:5b50 $SlideVideoFileExtensions \:3067\:753b\:50cf\:3068\:898b\:5206\:3051\:308b)\:3001\:5168\:9762\:306f ## !video path\:3002";
+SlideInsertVideoTalk::usage = "SlideInsertVideoTalk[] / SlideInsertVideoTalk[nb] \:306f\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:30bb\:30eb (SlideVideoTalk\:3001\:9752\:7dd1\:306e\:5e2f\:306b\:300c\:52d5\:753b\:300d\:306e\:5370) \:3092\:633f\:5165\:3059\:308b (v1.69)\:30021 \:884c 1 \:7247\:3001\:884c\:982d\:306e @\:79d2 (@8 / @1:05) \:304c\:305d\:306e\:7247\:3092\:8aad\:307f\:59cb\:3081\:308b\:52d5\:753b\:306e\:4e2d\:306e\:6642\:523b\:3001\:7121\:3051\:308c\:3070\:524d\:306e\:7247\:306e\:76f4\:5f8c\:3002md \:3067\:306f vtalk: \:6587 / vtalk@8: \:6587\:3002\:518d\:751f\:524d\:306b\:8aad\:3080\:539f\:7a3f\:306f\:5f93\:6765\:306e\:30c8\:30fc\:30af\:30bb\:30eb (talk:)\:3002\:8a33\:30bb\:30eb (\:539f\:7a3f\:3092\:8a33\:3059) \:306e\:5bfe\:8c61\:5916\:3002";
+SlideVideoCell::usage = "SlideVideoCell[path, \"Width\" -> pt, \"Poster\" -> spec] \:306f\:52d5\:753b\:30bb\:30eb\:306e Cell \:5f0f\:3092\:8fd4\:3059 (v1.69)\:3002SlideDeckReplaceSlide \:306a\:3069\:306e\:751f Cell \:30ea\:30b9\:30c8\:306b\:4f7f\:3048\:308b\:3002";
+SlideDeckVideos::usage = "SlideDeckVideos[] / SlideDeckVideos[nb | path | Notebook] \:306f\:30c7\:30c3\:30ad\:306e\:52d5\:753b\:306e\:4e00\:89a7 {<|\"Slide\", \"Id\", \"Path\", \"Rel\", \"Duration\", \"RasterSize\", \"Poster\", \"Page\", \"Pieces\"|> ..} \:3092\:8fd4\:3059 (v1.69)\:3002";
+SlideVideoPlay::usage = "SlideVideoPlay[] / SlideVideoPlay[nb] \:306f\:3044\:307e\:8868\:793a\:3057\:3066\:3044\:308b\:679a\:306e\:52d5\:753b\:3092\:518d\:751f\:3059\:308b (v1.69\:3002\:7d42\:308f\:3063\:3066\:3044\:308c\:3070\:982d\:304b\:3089)\:3002SlideVideoPause[] \:306f\:4e00\:6642\:505c\:6b62\:3002SlideVideoStatus[] \:306f FE \:306e\:518d\:751f\:6a5f\:69cb\:304c\:4f7f\:3048\:308b\:304b (\"FEReady\") \:3068\:767b\:9332\:6e08\:307f\:306e\:30d7\:30ec\:30a4\:30e4\:30fc\:306e\:72b6\:614b\:3002";
+SlideVideoPause::usage = "SlideVideoPause[] / SlideVideoPause[nb] \:306f\:3044\:307e\:8868\:793a\:3057\:3066\:3044\:308b\:679a\:306e\:52d5\:753b\:3092\:4e00\:6642\:505c\:6b62\:3059\:308b (v1.69)\:3002";
+SlideVideoStatus::usage = "SlideVideoStatus[] \:306f\:52d5\:753b\:30d7\:30ec\:30a4\:30e4\:30fc\:306e\:72b6\:614b (<|\"Players\", \"FEReady\", \"AutoPlay\"|>) \:3092\:8fd4\:3059 (v1.69)\:3002";
+$SlideVideoAutoPlay::usage = "$SlideVideoAutoPlay (\:65e2\:5b9a True): \:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:3067\:52d5\:753b\:306e\:679a\:304c\:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d\:3001\:30d1\:30ec\:30c3\:30c8\:306e\:518d\:751f\:304c\:52d5\:3044\:3066\:3044\:306a\:3051\:308c\:3070\:52d5\:753b\:3092\:81ea\:52d5\:3067\:59cb\:3081\:308b (v1.69)\:3002\:4f5c\:696d\:753b\:9762 (Working) \:3067\:306f\:59cb\:3081\:306a\:3044\:3002";
+$SlideVideoPoster::usage = "$SlideVideoPoster (\:65e2\:5b9a \"Last\"): \:9759\:6b62\:753b\:306e\:66f8\:304d\:51fa\:3057 (\:753b\:50cf\:30fbSliden mp4\:30fb\:30dd\:30b9\:30bf\:30fc\:30fbQA \:306e\:753b\:50cf) \:3067\:52d5\:753b\:306e\:4ee3\:308f\:308a\:306b\:7f6e\:304f\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0\:3002\"Last\" (\:6700\:5f8c\:306e\:30d5\:30ec\:30fc\:30e0) / \"First\" / \:79d2 / \:753b\:50cf\:30d5\:30a1\:30a4\:30eb\:306e\:30d1\:30b9\:3002md \:306e ![video poster=...] \:304b\:30bb\:30eb\:3054\:3068\:306e\:6307\:5b9a\:304c\:512a\:5148 (v1.69)\:3002";
+$SlideVideoFileExtensions::usage = "$SlideVideoFileExtensions \:306f md \:306e ![..](path) \:3092\:52d5\:753b\:3068\:307f\:306a\:3059\:62e1\:5f35\:5b50 (\:65e2\:5b9a mp4 mov m4v webm mkv avi mpg mpeg) (v1.69)\:3002";
+$SlideVideoGap::usage = "$SlideVideoGap (\:65e2\:5b9a 0.5 \:79d2): \:518d\:751f\:524d\:306e\:539f\:7a3f\:3092\:8aad\:307f\:7d42\:3048\:3066\:304b\:3089\:52d5\:753b\:304c\:59cb\:307e\:308b\:307e\:3067\:306e\:9593 (v1.69)\:3002$SlideVideoPieceGap (\:65e2\:5b9a 0.3 \:79d2) \:306f\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247\:3068\:7247\:306e\:9593\:3002";
+$SlideVideoPieceGap::usage = "$SlideVideoPieceGap (\:65e2\:5b9a 0.3 \:79d2): \:518d\:751f\:4e2d\:306e\:539f\:7a3f (vtalk) \:306e\:7247\:3068\:7247\:306e\:9593 (v1.69)\:3002";
+$SlideLiveNarrationGap::usage = "$SlideLiveNarrationGap (\:65e2\:5b9a 3 \:79d2): GPT-Live (gpt-live-*) \:3067\:8aad\:307f\:4e0a\:3052\:52d5\:753b\:3092\:9332\:308b\:3068\:304d\:30fb\:52d5\:753b\:306e\:679a\:306e\:7247\:3092\:8aad\:3080\:3068\:304d\:306e\:3001\:8aad\:307f\:7d42\:308f\:308a\:304b\:3089\:6b21\:306e\:8aad\:307f\:4e0a\:3052\:3092\:983c\:3080\:307e\:3067\:306e\:9593 (v1.69)\:3002GPT-Live \:306f\:524d\:306e\:8aad\:307f\:4e0a\:3052\:306e\:76f4\:5f8c\:306b\:983c\:3093\:3060\:539f\:7a3f\:3092\:8aad\:307e\:306a\:3044\:3053\:3068\:304c\:3042\:3063\:305f (11-10 \:5b9f\:6e2c)\:3002";
+
 Begin["`Private`"]
 
 (* ===================== \:8a2d\:5b9a\:30fb\:30c6\:30fc\:30de ===================== *)
@@ -437,7 +451,7 @@ iEndMarkerLabelCell[] := Cell[TextData[StyleBox[
   FontSize -> 10, FontColor -> GrayLevel[0.55]]], "Text"];
 
 (* documentation.wl \:4e92\:63db\:306e\:30e1\:30bf\:30bb\:30eb + \:30b9\:30e9\:30a4\:30c9\:7528\:30d7\:30ed\:30f3\:30d7\:30c8\:30bb\:30eb\:306f\:8868\:793a\:304b\:3089\:9664\:5916\:3059\:308b *)
-iMetaStyleCellQ[Cell[_, "Note" | "Dictionary" | "Directive" | "Bibliography" | "References" | "SlidePrompt" | "SlideTalk" | "SlideQA" | "SlideStory" | "SlideAdjust" | "SlideReading" | "SlidePoster" | "SlidePosterTalk", ___]] := True;
+iMetaStyleCellQ[Cell[_, "Note" | "Dictionary" | "Directive" | "Bibliography" | "References" | "SlidePrompt" | "SlideTalk" | "SlideQA" | "SlideStory" | "SlideAdjust" | "SlideReading" | "SlidePoster" | "SlidePosterTalk" | "SlideVideoTalk", ___]] := True;
 iMetaStyleCellQ[_] := False;
 
 iNoExportCellQ[cell_Cell] := MatchQ[cell,
@@ -544,15 +558,18 @@ iSWHeadingAttrs[exp_, node_] := With[{parts = Join[
 
 iParseImageSpecs[line_String] := StringCases[line,
   "![" ~~ alt : Except["]"] ... ~~ "](" ~~ path : Except[")"] .. ~~ ")" :>
-    With[{w = StringCases[alt, "w=" ~~ d : DigitCharacter .. :> ToExpression[d]]},
-      <|"Path" -> StringTrim[path], "Width" -> If[w === {}, Automatic, First[w]]|>]];
+    With[{w = StringCases[alt, "w=" ~~ d : DigitCharacter .. :> ToExpression[d]],
+          poster = StringCases[alt, "poster=" ~~ v : Except[WhitespaceCharacter | "]"] .. :> v]},
+      Join[<|"Path" -> StringTrim[path], "Width" -> If[w === {}, Automatic, First[w]]|>,
+        (* v1.69: poster= \:306f\:52d5\:753b\:306e\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0 (\:753b\:50cf\:306b\:306f\:4ed8\:3051\:306a\:3044) *)
+        If[poster =!= {} && iSWVideoFileQ[StringTrim[path]], <|"Poster" -> First[poster]|>, <||>]]]];
 
 SlideScenarioFromMarkdown[File[f_String]] := SlideScenarioFromMarkdown[
   Import[iResolvePath[f], "Text"]];
 
 SlideScenarioFromMarkdown[md_String] := Module[
   {lines, meta, body, slides = {}, cur = None, curContent = {}, curTalk = {}, curPosterTalk = {},
-   curQA = {}, curTalkLangs = <||>,
+   curQA = {}, curTalkLangs = <||>, curVideoTalk = {},
    lastBulletLevel = 0,
    inCode = False, codeLines = {}, codeInfo = "", pushSlide, finishCode,
    inAppendix = False, appendixLines = {},
@@ -573,6 +590,10 @@ SlideScenarioFromMarkdown[md_String] := Module[
     If[curPosterTalk =!= {},
       AppendTo[curContent, {"PosterTalk", StringRiffle[curPosterTalk, "\n"]}]];
     curPosterTalk = {};
+    (* v1.69: vtalk: \:884c = \:52d5\:753b\:306e\:518d\:751f\:4e2d\:306b\:8aad\:3080\:539f\:7a3f (1 \:679a\:306b 1 \:3064\:306e SlideVideoTalk \:30bb\:30eb\:30011 \:884c 1 \:7247) *)
+    If[curVideoTalk =!= {},
+      AppendTo[curContent, {"VideoTalk", curVideoTalk}]];
+    curVideoTalk = {};
     (* qa: \:884c\:3082\:540c\:3058\:304f\:672b\:5c3e\:306e 1 \:30a8\:30f3\:30c8\:30ea\:3078 (\:8cea\:7591\:5fdc\:7b54\:30bb\:30eb\:306f\:5e38\:306b\:30c8\:30fc\:30af\:306e\:6b21) *)
     If[curQA =!= {},
       AppendTo[curContent, {"QA", StringRiffle[curQA, "\n"]}]];
@@ -599,6 +620,14 @@ SlideScenarioFromMarkdown[md_String] := Module[
           cur = None; inAppendix = True,
           StringStartsQ[t, "!image "] || StringStartsQ[t, "!imagepage "],
           cur = <|"ImagePage" -> StringTrim[StringDrop[t, StringLength[First[StringSplit[t]]] + 1]], "Title" -> ""|>,
+          (* v1.69: \:5168\:9762\:306e\:52d5\:753b\:3002## !video path {poster=last} *)
+          StringStartsQ[t, "!video "] || StringStartsQ[t, "!videopage "],
+          Module[{rest = StringTrim[StringDrop[t, StringLength[First[StringSplit[t]]] + 1]], attrs, poster = Automatic},
+            attrs = StringCases[rest, "{" ~~ a : Except["}"] .. ~~ "}" ~~ EndOfString :> a];
+            If[attrs =!= {},
+              rest = StringTrim[StringReplace[rest, "{" <> First[attrs] <> "}" -> ""]];
+              With[{p = StringCases[First[attrs], "poster=" ~~ v : Except[WhitespaceCharacter] .. :> v]}, If[p =!= {}, poster = First[p]]]];
+            cur = <|"VideoPage" -> rest, "Title" -> "", "Poster" -> poster|>],
           True,
           {title, exp} = iParseSlideTitle[t];
           cur = <|"Title" -> title|>;
@@ -621,6 +650,10 @@ SlideScenarioFromMarkdown[md_String] := Module[
          StringTrim[StringDrop[StringTrim[line], 2]]}],
       StringStartsQ[StringTrim[line], "postertalk:"],
       AppendTo[curPosterTalk, StringTrim[StringDrop[StringTrim[line], 11]]],
+      (* v1.69: vtalk: \:6587 / vtalk@8: \:6587 (\:52d5\:753b\:306e 8 \:79d2\:304b\:3089) = \:52d5\:753b\:306e\:518d\:751f\:4e2d\:306b\:8aad\:3080\:539f\:7a3f\:306e\:7247 *)
+      StringMatchQ[StringTrim[line], RegularExpression["^vtalk(@[0-9.:]+)?:.*"]],
+      With[{m = StringCases[StringTrim[line], RegularExpression["^vtalk(?:@([0-9.:]+))?:(.*)$"] -> {"$1", "$2"}, 1]},
+        If[m =!= {}, AppendTo[curVideoTalk, <|"At" -> If[m[[1, 1]] === "", None, iSWVideoTalkSeconds[m[[1, 1]]]], "Text" -> StringTrim[m[[1, 2]]]|>]]],
       (* v1.60: talk[ja]: = the talk in another language (subtitles) *)
       StringMatchQ[StringTrim[line], RegularExpression["^talk\\[[A-Za-z][A-Za-z0-9_-]{1,7}\\]:.*"]],
       With[{m = StringCases[StringTrim[line], RegularExpression["^talk\\[([A-Za-z][A-Za-z0-9_-]{1,7})\\]:(.*)$"] -> {"$1", "$2"}, 1]},
@@ -659,7 +692,10 @@ SlideScenarioFromMarkdown[md_String] := Module[
         ToExpression[First[StringCases[line, "<<FIG" ~~ d : DigitCharacter .. ~~ ">>" :> d]]]}],
       iParseImageSpecs[line] =!= {},
       With[{specs = iParseImageSpecs[line]},
-        AppendTo[curContent, If[Length[specs] === 1, {"Image", specs[[1]]}, {"Images", specs}]]],
+        (* v1.69: \:52d5\:753b\:306e\:62e1\:5f35\:5b50 (mp4 \:306a\:3069) \:306f\:52d5\:753b\:30bb\:30eb\:3002\:753b\:50cf\:3068\:540c\:3058\:884c\:306b\:6df7\:3056\:3063\:3066\:3044\:308c\:3070\:52d5\:753b\:306f\:5225\:306e\:30bb\:30eb\:306b *)
+        Module[{vids = Select[specs, iSWVideoFileQ[#["Path"]] &], imgs = Select[specs, ! iSWVideoFileQ[#["Path"]] &]},
+          Do[AppendTo[curContent, {"Video", v}], {v, vids}];
+          If[imgs =!= {}, AppendTo[curContent, If[Length[imgs] === 1, {"Image", imgs[[1]]}, {"Images", imgs}]]]]],
       StringTrim[line] =!= "",
       AppendTo[curContent, {"Text", StringTrim[line]}]
     ],
@@ -677,11 +713,14 @@ SlideScenarioToMarkdown[scenario_Association] := Module[{out = {}, meta},
     KeyValueMap[AppendTo[out, #1 <> ": " <> ToString[#2]] &, meta];
     AppendTo[out, "---"]; AppendTo[out, ""]];
   Do[
-    If[KeyExistsQ[slide, "ImagePage"],
-      (AppendTo[out, "## !image " <> slide["ImagePage"]];
+    If[KeyExistsQ[slide, "ImagePage"] || KeyExistsQ[slide, "VideoPage"],
+      (AppendTo[out, If[KeyExistsQ[slide, "ImagePage"], "## !image " <> slide["ImagePage"],
+         "## !video " <> slide["VideoPage"] <> With[{p = Lookup[slide, "Poster", Automatic]}, If[StringQ[p], " {poster=" <> p <> "}", ""]]]];
        Do[AppendTo[out, StringRiffle[("talk: " <> #) & /@
            StringSplit[item[[2]], "\n"], "\n"]],
          {item, Cases[Lookup[slide, "Content", {}], {"Talk", _}]}];
+       Do[AppendTo[out, StringRiffle[iSWVideoTalkToMd[iSWVideoTalkText[item[[2]]]], "\n"]],
+         {item, Cases[Lookup[slide, "Content", {}], {"VideoTalk", _List}]}];
        Do[AppendTo[out, StringRiffle[("postertalk: " <> #) & /@
            StringSplit[item[[2]], "\n"], "\n"]],
          {item, Cases[Lookup[slide, "Content", {}], {"PosterTalk", _}]}];
@@ -703,6 +742,11 @@ SlideScenarioToMarkdown[scenario_Association] := Module[{out = {}, meta},
             "w=" <> ToString[item[[2, "Width"]]]] <> "](" <> item[[2, "Path"]] <> ")",
           "Images", StringJoin[("![" <> If[#["Width"] === Automatic, "", "w=" <> ToString[#["Width"]]] <>
             "](" <> #["Path"] <> ")") & /@ item[[2]]],
+          (* v1.69: \:52d5\:753b\:3068\:518d\:751f\:4e2d\:306e\:539f\:7a3f *)
+          "Video", "![" <> StringRiffle[Select[{"video", If[item[[2, "Width"]] === Automatic, "", "w=" <> ToString[item[[2, "Width"]]]],
+            With[{p = Lookup[item[[2]], "Poster", Automatic]}, If[StringQ[p], "poster=" <> p, ""]]}, # =!= "" &], " "] <>
+            "](" <> item[[2, "Path"]] <> ")",
+          "VideoTalk", StringRiffle[iSWVideoTalkToMd[If[StringQ[item[[2]]], item[[2]], iSWVideoTalkText[item[[2]]]]], "\n"],
           "Cite", "cite: " <> item[[2]],
           "Keep", "<<FIG" <> ToString[item[[2]]] <> ">>",
           "KeepRow", StringRiffle[("<<FIG" <> ToString[#] <> ">>") & /@ item[[2]], " "],
@@ -1866,6 +1910,12 @@ iSubsectionTags[slide_Association] := Join[
   If[StringQ[Lookup[slide, "Node", None]], {"KGNode:" <> slide["Node"]}, {}]];
 
 iBuildSlideCells[slide_Association] := Module[{cells},
+  (* v1.69: \:5168\:9762\:306e\:52d5\:753b (## !video path): \:984c\:76ee\:306f\:9589\:3058\:305f\:30bb\:30eb\:3001\:52d5\:753b\:30bb\:30eb\:306b VideoPage \:306e\:5370 *)
+  If[KeyExistsQ[slide, "VideoPage"],
+    Return[Join[{iNavBarCell[],
+      Cell[iSWInlineTextData[iLookupString[slide, "Title"]], "Subsection", CellOpen -> False, CellTags -> iSubsectionTags[slide]],
+      iSWVideoCell[<|"Path" -> slide["VideoPage"], "Width" -> Automatic, "Poster" -> Lookup[slide, "Poster", Automatic]|>, 900, 500, {"VideoPage"}]},
+     iContentCell /@ Cases[Lookup[slide, "Content", {}], {"Talk" | "TalkLang" | "VideoTalk" | "QA", _}]]]];
   If[KeyExistsQ[slide, "ImagePage"],
     (* \:5168\:9762\:753b\:50cf\:30da\:30fc\:30b8: Subsection \:306f\:9589\:3058\:305f\:30bb\:30eb\:3067\:4fdd\:6301(\:679a\:6570\:8a08\:6e2c\:7cfb\:3068\:306e\:4e92\:63db) *)
     Join[{iNavBarCell[],
@@ -1922,7 +1972,7 @@ SlideDeckBuild[scenario_Association, nbfile_String, OptionsPattern[]] := Module[
   cells = Join[cells, Select[Flatten[{OptionValue["Prelude"]}], Head[#] === Cell &]];
   If[TrueQ[OptionValue["TitleSlide"]],
     cells = Join[cells, iBuildTitleSlideCells[scenario]]];
-  cells = Join[cells, Flatten[iBuildSlideCells /@ scenario["Slides"], 1]];
+  cells = Join[cells, Block[{$iSWVideoBaseDir = DirectoryName[file]}, Flatten[iBuildSlideCells /@ scenario["Slides"], 1]]];
   If[TrueQ[OptionValue["EndMarker"]],
     cells = Join[cells, {iEndMarkerCell[], iEndMarkerLabelCell[]},
       Cell[#, "Text"] & /@ Select[Flatten[{Lookup[scenario, "Appendix", {}]}], StringQ]]];
@@ -2059,6 +2109,7 @@ Options[SlideDeckImages] = {
   "MaxWindowWidth" -> 1600,         (* pt: \:30ea\:30d5\:30ed\:30fc\:6642\:306e\:6298\:8fd4\:3057\:5e45\:4e0a\:9650 *)
   "IncludeInput" -> Automatic,      (* Automatic: \:56f3\:3092\:542b\:3080 Input \:306e\:307f\:6b8b\:3059 / True: \:5168\:90e8\:6b8b\:3059 *)
   "Verbose" -> False,
+  "VideoMarker" -> False,           (* v1.69: True = \:52d5\:753b\:30bb\:30eb\:3092\:4e00\:8272\:306e\:77e9\:5f62\:3067\:63cf\:304f (\:5408\:6210\:306e\:4f4d\:7f6e\:3092\:6e2c\:308b) *)
   StyleDefinitions -> Automatic,
   Background -> White};
 
@@ -2111,7 +2162,8 @@ iSlideFlattenImage[img_Image, bg_] := Image[ColorConvert[RemoveAlphaChannel[img,
 
 iRasterizeSlide[cells_List, opts_Association] := Module[
   {filtered, nbExpr, ras, scale, res, target = opts["Target"], g},
-  filtered = iRasterFilterCells[cells, opts["IncludeInput"]];
+  (* v1.69: \:52d5\:753b\:30bb\:30eb\:306f\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0\:306e\:753b\:50cf\:306b (VideoMarker \:306a\:3089\:691c\:51fa\:7528\:306e\:4e00\:8272) *)
+  filtered = iRasterFilterCells[iSWVideoCellsToStills[cells, TrueQ[Lookup[opts, "VideoMarker", False]]], opts["IncludeInput"]];
   If[filtered === {},
     Message[SlideDeckImages::emptyslide, opts["Number"]];
     Return[Image[ConstantArray[1., Reverse[target]]]]];
@@ -2184,7 +2236,7 @@ SlideDeckImages[source_ /; StringQ[source] || Head[source] === Notebook || Head[
   target = Replace[OptionValue[ImageSize], Automatic -> $SlideImageSize];
   sd = Replace[OptionValue[StyleDefinitions], Automatic :>
     FirstCase[data["Options"], HoldPattern[StyleDefinitions -> s_] :> s, $SlideStyleDefinitions]];
-  UsingFrontEnd[
+  Block[{$iSWVideoBaseDir = Replace[iSWVideoBaseDirOf[source], None -> $iSWVideoBaseDir]}, UsingFrontEnd[
     imgs = Table[
       If[TrueQ[OptionValue["Verbose"]], Print["slide ", n, " / ", Length[slides]]];
       iRasterizeSlide[slides[[n]],
@@ -2197,8 +2249,9 @@ SlideDeckImages[source_ /; StringQ[source] || Head[source] === Notebook || Head[
           "IncludeInput" -> OptionValue["IncludeInput"],
           "StyleDefinitions" -> sd,
           "Background" -> OptionValue[Background],
+          "VideoMarker" -> OptionValue["VideoMarker"],
           "Number" -> n|>],
-      {n, sel}]];
+      {n, sel}]]];
   imgs];
 
 (* ===================== \:66f8\:304d\:51fa\:3057 ===================== *)
@@ -2209,13 +2262,16 @@ SlideDeckExportImages[nbfile_String, opts : OptionsPattern[]] :=
   SlideDeckExportImages[nbfile,
     FileNameJoin[{DirectoryName[iResolvePath[nbfile]], FileBaseName[nbfile] <> "_slides"}], opts];
 
-SlideDeckExportImages[nbfile_String, dir_String, opts : OptionsPattern[]] := Module[{imgs, d = dir},
-  imgs = SlideDeckImages[nbfile, opts];
+SlideDeckExportImages[source_ /; StringQ[source] || Head[source] === Notebook || Head[source] === NotebookObject, dir_String, opts : OptionsPattern[]] := Module[{imgs, d = dir, files},
+  imgs = SlideDeckImages[source, opts];
   If[imgs === $Failed, Return[$Failed]];
   If[!DirectoryQ[d], CreateDirectory[d, CreateIntermediateDirectories -> True]];
-  MapIndexed[
+  files = MapIndexed[
     Export[FileNameJoin[{d, StringPadLeft[ToString[#2[[1]]], 2, "0"] <> ".png"}], #1] &,
-    imgs]];
+    imgs];
+  (* v1.69: \:52d5\:753b\:306e\:679a\:306e\:77e9\:5f62\:3092\:6e2c\:3063\:3066 <dir>/videos.json \:306b (\:8aad\:307f\:4e0a\:3052\:52d5\:753b\:306e\:5408\:6210\:304c\:4f7f\:3046)\:3002\:679a\:3092\:7d5e\:3063\:305f\:66f8\:304d\:51fa\:3057\:3067\:306f\:6e2c\:3089\:306a\:3044 *)
+  If[OptionValue["Slides"] === All, Quiet[iSWVideoRectsWrite[source, d, Sequence @@ FilterRules[{opts}, Except["Slides" | "VideoMarker"]]]]];
+  files];
 
 SlideDeckExportVideo::ext = "Sliden \:7528\:52d5\:753b\:306f .mp4 \:3067\:4fdd\:5b58\:3057\:3066\:304f\:3060\:3055\:3044: `1`";
 SlideDeckExportVideo::len = "Durations \:306e\:9577\:3055 `1` \:304c\:30b9\:30e9\:30a4\:30c9\:6570 `2` \:3068\:4e00\:81f4\:3057\:307e\:305b\:3093\:3002";
@@ -2491,6 +2547,9 @@ iSWSlideToMarkdown[cellExprs_List] := Module[{lines = {}, keeps = {}, txt, exp},
         StringSplit[SlideWorkflow`Private`iCellText[c], "\n"], "\n"]],
       iSWTalkLangCellQ[c],
       Null,
+      (* v1.69: \:518d\:751f\:4e2d\:306e\:539f\:7a3f -> vtalk: \:884c *)
+      iSWVideoTalkCellQ[c],
+      AppendTo[lines, StringRiffle[iSWVideoTalkToMd[SlideWorkflow`Private`iCellText[c]], "\n"]],
       MatchQ[c, Cell[_, "SlideTalk", ___]],
       AppendTo[lines, StringRiffle[("talk: " <> #) & /@
         StringSplit[SlideWorkflow`Private`iCellText[c], "\n"], "\n"]],
@@ -2647,7 +2706,7 @@ SlideApplyScenario[nb_NotebookObject, slideNo_Integer, md_String, OptionsPattern
   If[slides === {},
     Return[Failure["BadScenario",
       <|"MessageTemplate" -> "scenario md has no slides (missing \"## title\" line?)"|>]]];
-  newCells = Block[{$iSlideKeepCells = allKeeps}, iBuildSlideCells /@ slides];
+  newCells = Block[{$iSlideKeepCells = allKeeps, $iSWVideoBaseDir = Quiet[NotebookDirectory[nb]]}, iBuildSlideCells /@ slides];
   If[StringQ[ctx["PromptText"]] && StringTrim[ctx["PromptText"]] =!= "",
     newCells[[1]] = Insert[newCells[[1]], iSWPromptCell[ctx["PromptText"]], 3]];
   cells = Cells[nb];
@@ -2692,7 +2751,7 @@ SlideDeckInsertScenario[nb_NotebookObject, afterN_Integer, md_String, OptionsPat
   If[slides === {},
     Return[Failure["BadScenario",
       <|"MessageTemplate" -> "scenario md has no slides (missing \"## title\"?)"|>]]];
-  newCells = Block[{$iSlideKeepCells = figs}, iBuildSlideCells /@ slides];
+  newCells = Block[{$iSlideKeepCells = figs, $iSWVideoBaseDir = Quiet[NotebookDirectory[nb]]}, iBuildSlideCells /@ slides];
   cells = Cells[nb];
   If[afterN === 0,
     SelectionMove[cells[[ranges[[1, 1]]]], Before, Cell],
@@ -3234,9 +3293,9 @@ $iSWQACellOpts = {
    \:30e1\:30bf\:30bb\:30eb(SlidePrompt/Note/Directive/Dictionary/Bibliography/References)\:3092
    Working \:3067\:306f\:5f93\:6765\:306e\:898b\:305f\:76ee\:306e\:307e\:307e\:3001SlideShow \:74b0\:5883\:3067\:306f\:975e\:8868\:793a\:306b\:3059\:308b\:3002
    \:30bb\:30eb\:5074\:306f\:7d20\:306e Cell[text, style] \:306b\:3057\:3001\:898b\:305f\:76ee\:30fb\:53ef\:8996\:6027\:306f stylesheet \:5074\:304c\:6301\:3064\:3002 *)
-$iSWDeckStyleVersion = 9;  (* v3: +SlideQA, v4: +SlideStory, v5: +SlideCrumb, v6: +SlideAdjust, v7: +SlideReading, v8: +SlidePoster, v9: +SlidePosterTalk *)
+$iSWDeckStyleVersion = 10;  (* v3: +SlideQA, v4: +SlideStory, v5: +SlideCrumb, v6: +SlideAdjust, v7: +SlideReading, v8: +SlidePoster, v9: +SlidePosterTalk, v10: +SlideVideoTalk *)
 $iSWOwnedStyleNames = {"SWDeckStyles", "SlidePrompt", "Note", "Directive",
-  "Dictionary", "Bibliography", "References", "SlideTalk", "SlideQA", "SlideStory", "SlideCrumb", "SlideAdjust", "SlideReading", "SlidePoster", "SlidePosterTalk"};
+  "Dictionary", "Bibliography", "References", "SlideTalk", "SlideQA", "SlideStory", "SlideCrumb", "SlideAdjust", "SlideReading", "SlidePoster", "SlidePosterTalk", "SlideVideoTalk"};
 (* \:30d1\:30f3\:304f\:305a: \:984c\:76ee\:306e\:76f4\:4e0b\:306b\:5c0f\:3055\:304f\:7070\:8272\:3067\:53f3\:5bc4\:305b\:3002SlideShow \:3067\:3082\:898b\:305b\:308b (\:96a0\:3057\:30e1\:30bf\:30bb\:30eb\:3067\:306f\:306a\:3044) *)
 $iSWCrumbCellOpts = {FontSize -> 12, FontColor -> GrayLevel[0.5], TextAlignment -> Right,
   CellMargins -> {{60, 30}, {2, 0}}, ShowCellBracket -> False, Selectable -> True};
@@ -3263,7 +3322,8 @@ iSWDeckStyleCells[] := Join[
      {"SlideAdjust", $iSWAdjustCellOpts},
      {"SlideReading", $iSWReadingCellOpts},
      {"SlidePoster", $iSWPosterCellOpts},
-     {"SlidePosterTalk", $iSWPosterTalkCellOpts}}], 1],
+     {"SlidePosterTalk", $iSWPosterTalkCellOpts},
+     {"SlideVideoTalk", $iSWVideoTalkCellOpts}}], 1],
   {Cell[StyleData["SlideCrumb"], Sequence @@ $iSWCrumbCellOpts]}];
 
 iSWStyleDefsVersion[sd_Notebook] := FirstCase[First[sd],
@@ -3567,7 +3627,7 @@ iSWUnsavedQ[nb_NotebookObject] := Module[{fn = Quiet[NotebookFileName[nb]]},
 $iSWTextOnlyStyles = {"Title", "Subtitle", "Chapter", "Section", "Subsection", "Subsubsection",
   "Item", "Subitem", "Subsubitem", "ItemParagraph", "SubitemParagraph", "SubsubitemParagraph", "ItemNumbered", "SubitemNumbered",
   "Text", "SlideTalk", "SlideQA", "SlideShowNavigationBar", "Directive", "SlideStory", "References", "SlidePrompt",
-  "Dictionary", "Note", "SlideNote", "SlideAdjust", "Bibliography", "SlideDirective", "SlideReading", "SlidePoster", "SlidePosterTalk"};
+  "Dictionary", "Note", "SlideNote", "SlideAdjust", "Bibliography", "SlideDirective", "SlideReading", "SlidePoster", "SlidePosterTalk", "SlideVideoTalk"};
 iSWDeckTextNotebook[nb_NotebookObject] := Module[{cells = Cells[nb], styles, light, read, out},
   styles = iSWCellStyles[nb];
   (* :PolicyWaiver: PRIV-NB-READ the deck handed to SlideWorkflow is the tool's own input; privacy is checked where content is sent (LLM: iSWRefinePrivacy) *)
@@ -3583,7 +3643,12 @@ iSWDeckTextNotebook[nb_NotebookObject] := Module[{cells = Cells[nb], styles, lig
     If[light[[i]], Null,
       With[{tags = iSWCellTags[cells[[i]]]},
         Cell[BoxData[GraphicsBox[{}]], First[Flatten[{styles[[i]], "Input"}]],
-          Sequence @@ If[MatchQ[tags, _String | {__String}], {CellTags -> tags}, {}]]]],
+          Sequence @@ If[MatchQ[tags, _String | {__String}], {CellTags -> tags}, {}],
+          (* v1.69: \:52d5\:753b\:30bb\:30eb\:306e\:4ed5\:69d8 (TaggingRules "SWVideo") \:306f\:6b8b\:3059\:3002\:56f3\:306e\:4e2d\:8eab\:3068\:4e00\:7dd2\:306b\:843d\:3068\:3059\:3068\:3001\:518d\:751f (SlidePlay) \:304c\:305d\:306e\:679a\:3092
+             \:52d5\:753b\:306e\:679a\:3060\:3068\:5206\:304b\:3089\:305a\:3001\:52d5\:753b\:304c\:59cb\:307e\:3089\:306a\:304b\:3063\:305f (2026-11-09 \:5b9f\:6a5f\:3002\:958b\:3044\:3066\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:305f\:30c7\:30c3\:30ad\:306f\:3053\:306e\:8efd\:3044\:7d4c\:8def\:3067\:8aad\:307e\:308c\:308b) *)
+          Sequence @@ If[! FreeQ[{tags}, "SlideVideo"],
+            With[{v = Quiet[NBAccess`NBCellGetTaggingRule[nb, i, "SWVideo"]]},   (* \:30bb\:30eb\:5c5e\:6027\:306f NBAccess \:7d4c\:7531\:3067\:8aad\:3080 (rules/10) *)
+              If[MatchQ[v, {__Rule} | _Association], {TaggingRules -> {"SWVideo" -> Normal[v]}}, {}]], {}]]]],
     {i, Length[cells]}];
   (* \:6587\:5b57\:306e\:30bb\:30eb\:3092\:5143\:306e\:4f4d\:7f6e\:3078\:623b\:3059 *)
   out = ReplacePart[out, Thread[Flatten[Position[light, True]] -> read]];
@@ -3931,7 +3996,7 @@ SlideTalkToMarkdown[talk_Association] := Module[{out = {}, push, aliases},
 (* \:8a71\:901f (\:6587\:5b57/\:79d2)\:3002\:30c8\:30fc\:30af\:30bb\:30eb\:304b\:3089\:79d2\:6570\:3092\:898b\:7a4d\:3082\:308b\:306e\:306b\:4f7f\:3046 *)
 iSWTalkCharRate[] := Quiet[Check[Lookup[$SlideSpeechRate, "Local", 6.95], 6.95]];
 
-iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, talkLangs, qas, visuals},
+iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, talkLangs, qas, visuals, videos, videoTalks},
   data = SlideDeckSlides[source];
   If[!AssociationQ[data], Return[$Failed]];
   slides = Lookup[data, "Slides", {}];
@@ -3950,14 +4015,18 @@ iTalkDeckOutline[source_] := Module[{data, slides, titles, mds, talks, talkLangs
   mds = StringRiffle[
     Select[StringSplit[#, "\n"],
       !StringStartsQ[StringTrim[#], "talk:"] && !StringStartsQ[StringTrim[#], "postertalk:"] &&
-        !StringStartsQ[StringTrim[#], "qa:"] &],
+        !StringStartsQ[StringTrim[#], "vtalk"] && !StringStartsQ[StringTrim[#], "qa:"] &],
     "\n"] & /@
     (StringReplace[First[iSWSlideToMarkdown[#]],
       "<<FIG" ~~ DigitCharacter .. ~~ ">>" -> "(\:56f3)"] & /@ slides);
   (* \:56f3\:30fb\:5199\:771f\:30fb\:30b0\:30e9\:30d5\:3092\:542b\:3080\:679a\:3002QA \:751f\:6210\:3067\:63cf\:753b\:753b\:50cf\:3092\:898b\:305b\:308b\:304b\:306e\:5224\:65ad\:306b\:4f7f\:3046 *)
   visuals = AnyTrue[#, SlideWorkflow`Private`iVisualCellQ] & /@ slides;
+  (* v1.69: \:52d5\:753b\:306e\:679a (\:6700\:521d\:306e\:52d5\:753b\:30bb\:30eb\:306e\:4ed5\:69d8) \:3068\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247 *)
+  videos = iSWSlideVideoSpec /@ slides;
+  videoTalks = iSWSlideVideoTalk /@ slides;
   <|"Count" -> Length[slides], "Titles" -> titles, "Markdown" -> mds,
     "Talks" -> talks, "TalkLangs" -> talkLangs, "QAs" -> qas, "Visuals" -> visuals,
+    "Videos" -> videos, "VideoTalks" -> videoTalks,
     "Prelude" -> Lookup[data, "Prelude", {}]|>];
 
 Options[SlideTalkSkeleton] = {
@@ -5015,8 +5084,13 @@ iSWDigestCell[c_] := c;
 
 (* 2026-10-31 \:3088\:308a\:524d\:306e\:6570\:3048\:65b9 (\:914d\:5217\:3082 CompressedData \:306e\:6587\:5b57\:5217\:3082\:305d\:306e\:307e\:307e\:6570\:3048\:308b)\:3002\:524d\:306b\:8a18\:9332\:3057\:305f
    \:30cf\:30c3\:30b7\:30e5 (<deck>_state.json\:30fbQA \:306e\:5370\:30fb\:52d5\:753b\:306e\:6642\:523b\:8868) \:3092\:8aad\:3080\:305f\:3081\:3060\:3051\:306b\:6b8b\:3059 *)
-iSWDigestCellLegacy[c_Cell] := DeleteCases[c,
-  Rule[Alternatives @@ $iSWDigestDropOptions, _], {1}];
+iSWDigestCellLegacy[c_Cell] := iSWDigestVideoCell[DeleteCases[c,
+  Rule[Alternatives @@ $iSWDigestDropOptions, _], {1}]];
+(* v1.69: \:52d5\:753b\:30bb\:30eb (DynamicModule \:306e\:30d7\:30ec\:30a4\:30e4\:30fc) \:306e ImageSizeCache \:306f FE \:304c\:8868\:793a\:74b0\:5883 (Working / SlideShow) \:3054\:3068\:306b\:66f8\:304d\:76f4\:3059
+   (\:5b9f\:6e2c: \:9ad8\:3055\:306e\:5185\:8a33 109.63/115.37 -> 108.09/116.91)\:3002\:4e2d\:8eab\:3067\:306f\:306a\:3044\:306e\:3067\:5916\:3059\:3002\:5916\:3055\:306a\:3044\:3068\:3001\:958b\:3044\:3066\:8868\:793a\:3092\:5207\:308a\:66ff\:3048\:3066\:4fdd\:5b58\:3057\:305f\:3060\:3051\:3067
+   \:63cf\:753b\:30cf\:30c3\:30b7\:30e5\:304c\:5909\:308f\:308a\:3001\:300c\:767b\:9332\:300d\:306e\:305f\:3073\:306b mp4 \:3092\:4f5c\:308a\:76f4\:3057\:3001\:60f3\:5b9a\:554f\:7b54\:3082\:300c\:5909\:308f\:3063\:305f\:679a\:300d\:306b\:306a\:308b\:3002\:307b\:304b\:306e\:30bb\:30eb\:306e\:5024\:306f\:5909\:3048\:306a\:3044 (\:65e2\:5b58\:306e\:30cf\:30c3\:30b7\:30e5\:3092\:4fdd\:3064) *)
+iSWDigestVideoCell[c_Cell] := If[! FreeQ[c, "SlideVideo"] && ! FreeQ[c, DynamicModuleBox],
+  DeleteCases[c, ImageSizeCache -> _, Infinity], c];
 iSWDigestCellLegacy[c_] := c;
 
 SetAttributes[{iSWDigestAtomQ, iSWDigestPackedQ}, HoldAllComplete];
@@ -5135,7 +5209,8 @@ iSWFileNewerQ[a_, b_] := StringQ[a] && StringQ[b] &&
 $iSWSlideRenderVersion = 2;
 
 iSWFullPageImageSlideQ[cells_List] := With[{f = iRasterFilterCells[cells, Automatic]},
-  iSingleGraphicsSlideQ[f] && ! FreeQ[First[f], BoxForm`ImageTag]];
+  (iSingleGraphicsSlideQ[f] && ! FreeQ[First[f], BoxForm`ImageTag]) ||
+    (Length[f] === 1 && iSWVideoPageCellQ[First[f]])];   (* v1.69: \:5168\:9762\:306e\:52d5\:753b\:306f\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0\:3092\:5168\:9762\:306b *)
 
 (* \:5168\:9762\:753b\:50cf\:306e\:679a\:306e\:756a\:53f7 (\:63cf\:753b\:30cf\:30c3\:30b7\:30e5\:3068\:540c\:3058\:30ad\:30e3\:30c3\:30b7\:30e5\:304b\:3089\:53d6\:308b\:306e\:3067\:30c7\:30c3\:30ad\:3092\:8aad\:307f\:76f4\:3055\:306a\:3044) *)
 iSWFullPageSlides[deckPath_String] := With[{p = Quiet[iSWDeckSlideDigestPairOf[deckPath]]},
@@ -5703,7 +5778,13 @@ If[!ValueQ[$SlideVoiceGap], $SlideVoiceGap = 0.8];
 If[!ValueQ[$SlideRenderSettle], $SlideRenderSettle = 0.6];
 If[!ValueQ[$SlidePrepareBeforePlay], $SlidePrepareBeforePlay = True];
 If[!ValueQ[$SlideVoiceTick], $SlideVoiceTick = 0.3];
-If[!ValueQ[$SlideRealtimeVoices], $SlideRealtimeVoices = {"marin", "cedar"}];
+If[!ValueQ[$SlideRealtimeVoices], $SlideRealtimeVoices = {"marin", "cedar", "harema", "shida"}];
+(* v1.68: GPT-Live (gpt-live-1 \:306a\:3069) \:3060\:3051\:306b\:3042\:308b\:58f0 (OpenAI\:300cManaging GPT-Live sessions\:300d\:306e Voice options\:30012026-11)\:3002
+   Realtime API (gpt-realtime-2.1 \:306a\:3069) \:306b\:306f\:7121\:3044\:306e\:3067\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-realtime-* \:306e\:9593\:306f\:58f0\:306e\:30c8\:30b0\:30eb\:306b\:51fa\:3055\:305a\:3001
+   gpt-realtime-* \:3067\:8a71\:3055\:305b\:308b\:30fb\:4f5c\:308b\:3068\:304d\:306f\:9001\:3089\:305a\:306b\:7406\:7531\:3092\:8fd4\:3059\:3002\:3053\:306e\:4e00\:89a7\:306b\:7121\:3044\:540d\:524d (\:30ab\:30b9\:30bf\:30e0\:306e\:58f0\:30fb\:65b0\:3057\:3044\:58f0) \:306f\:5f93\:6765\:3069\:304a\:308a\:7d20\:901a\:3057 *)
+$iSWLiveOnlyVoices = {"quartz", "ripple", "vesper", "willow", "stone", "gleam", "meridian", "bossa",
+  "tempo", "beacon", "delta", "cinder", "nuri", "juni", "flitz", "brise", "sillage", "nira",
+  "harema", "shida", "noeul"};
 If[!ValueQ[$SlideVoiceProvider], $SlideVoiceProvider = Automatic];
 If[!ValueQ[$SlideVoiceModel], $SlideVoiceModel = Automatic];
 If[!ValueQ[$SlideVoiceDefaultModel], $SlideVoiceDefaultModel = "gpt-live-1"];
@@ -5772,13 +5853,36 @@ SlideVoices[] := Module[{local, def},
     local = Prepend[local, def]];
   Join[local,
     If[!iSWRealtimeLayerQ[], {},
-      ("realtime:" <> #) & /@ Select[Flatten[{$SlideRealtimeVoices}], StringQ]]]];
+      ("realtime:" <> #) & /@ iSWRealtimeVoicesForModel[]]]];
+
+(* v1.68: \:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:306e\:58f0\:3002GPT-Live \:5c02\:7528\:306e\:58f0\:306f\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-* \:306e\:3068\:304d\:3060\:3051 *)
+iSWRealtimeVoicesForModel[] := With[{vs = Select[Flatten[{$SlideRealtimeVoices}], StringQ]},
+  If[iSWVoiceModelAPI[iSWVoiceModel[]] === "Live", vs, Select[vs, ! iSWVoiceLiveOnlyQ[#] &]]];
 
 iSWRealtimeLayerQ[] := Length[DownValues[SourceVault`SourceVaultRealtimeStart]] > 0;
 
 iSWVoiceRealtimeQ[name_] := StringQ[name] && StringStartsQ[name, "realtime:"];
 
 iSWRealtimeVoiceOf[name_] := If[iSWVoiceRealtimeQ[name], StringDrop[name, 9], name];
+
+(* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:304b ("realtime:" \:4ed8\:304d\:3067\:3082\:7d20\:306e\:540d\:524d\:3067\:3082) *)
+iSWVoiceLiveOnlyQ[name_String] := MemberQ[$iSWLiveOnlyVoices, ToLowerCase[StringTrim[iSWRealtimeVoiceOf[name]]]];
+iSWVoiceLiveOnlyQ[_] := False;
+
+(* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:3092 gpt-realtime-* \:3067\:8a71\:3055\:305b\:3088\:3046\:3068\:3057\:305f\:3089 Failure\:3001\:5408\:3063\:3066\:3044\:308c\:3070 None\:3002
+   hint = {ja, en} \:306e\:76f4\:3057\:65b9 (Automatic = \:97f3\:58f0\:30e2\:30c7\:30eb\:3092 gpt-live-1 \:306b\:3059\:308b\:304b\:3001\:58f0\:3092\:66ff\:3048\:308b) *)
+iSWLiveVoiceMismatch[voice_, model_, hint_ : Automatic] := If[
+  StringQ[voice] && iSWVoiceLiveOnlyQ[voice] && iSWVoiceModelAPI[model] =!= "Live",
+  With[{v = iSWRealtimeVoiceOf[voice], m = ToString[model],
+      h = Replace[hint, Except[{_String, _String}] -> {
+        "\:97f3\:58f0\:30e2\:30c7\:30eb\:3092 gpt-live-1 \:306b\:3059\:308b\:304b\:3001\:58f0\:3092 marin / cedar \:306a\:3069\:306b\:66ff\:3048\:3066\:304f\:3060\:3055\:3044\:3002",
+        "Switch the voice model to gpt-live-1, or choose a voice such as marin or cedar."}]},
+    Failure["SlideVoiceLiveOnly", <|
+      "MessageTemplate" -> iSL[
+        "\:58f0\:300c" <> v <> "\:300d\:306f GPT-Live (gpt-live-*) \:5c02\:7528\:306e\:58f0\:3067\:3001" <> m <> " \:3067\:306f\:8a71\:305b\:307e\:305b\:3093\:3002" <> h[[1]],
+        "The voice \"" <> v <> "\" exists only on GPT-Live (gpt-live-*); " <> m <> " cannot speak with it. " <> h[[2]]],
+      "Voice" -> v, "Model" -> m|>]],
+  None];
 
 iSWPlayRealtimeQ[] := $iSWPlayState["Engine"] === "Realtime";
 
@@ -6345,11 +6449,14 @@ SlideTalkMeta[nb_NotebookObject, rules__Rule] := Module[{stored},
 (* \:30c7\:30c3\:30ad (path | Notebook \:5f0f) \:3068\:30e1\:30bf\:304b\:3089\:30c8\:30fc\:30af\:9023\:60f3\:3092\:7d44\:307f\:7acb\:3066\:308b\:7d14\:95a2\:6570\:3002
    \:30c8\:30fc\:30af\:30bb\:30eb\:304c 1 \:3064\:3082\:7121\:3051\:308c\:3070 $Failed (\:547c\:3073\:51fa\:3057\:5074\:304c _talk.md \:3078\:843d\:3068\:3059)\:3002 *)
 iSWTalkFromCellsCore[src_, meta_Association, deckFile_String, fallbackTitle_String] :=
-  Module[{outline, talks, opening, slides, rate, translations},
+  Module[{outline, talks, opening, slides, rate, translations, videos, vtalks},
     outline = iTalkDeckOutline[src];
     If[outline === $Failed, Return[$Failed]];
     talks = Lookup[outline, "Talks", {}];
-    If[!AnyTrue[talks, StringQ[#] && StringTrim[#] =!= "" &], Return[$Failed]];
+    videos = Replace[Lookup[outline, "Videos", None], Except[_List] :> ConstantArray[None, outline["Count"]]];
+    vtalks = Replace[Lookup[outline, "VideoTalks", None], Except[_List] :> ConstantArray[{}, outline["Count"]]];
+    (* v1.69: \:539f\:7a3f\:304c 1 \:3064\:3082\:7121\:304f\:3066\:3082\:3001\:52d5\:753b\:306e\:679a\:304c\:3042\:308c\:3070\:9023\:60f3\:3092\:4f5c\:308b (\:518d\:751f\:306f\:52d5\:753b\:3060\:3051\:3067\:3082\:9032\:3080) *)
+    If[!AnyTrue[talks, StringQ[#] && StringTrim[#] =!= "" &] && !AnyTrue[videos, AssociationQ], Return[$Failed]];
     opening = StringTrim[StringRiffle[
       Cases[Lookup[outline, "Prelude", {}],
         c : Cell[_, "SlideTalk", ___] /; iSWTalkOriginalCellQ[c] :> iCellText[c], {1}], "\n"]];
@@ -6361,14 +6468,19 @@ iSWTalkFromCellsCore[src_, meta_Association, deckFile_String, fallbackTitle_Stri
           Lookup[outline, "TalkLangs", {}]]]],
       Apply[Join]];
     rate = iSWTalkCharRate[];
+    (* v1.69: \:52d5\:753b\:306e\:679a\:306f "Text" = \:518d\:751f\:524d\:306e\:539f\:7a3f + \:518d\:751f\:4e2d\:306e\:539f\:7a3f (\:767b\:9332\:7c3f\:30fb\:898b\:7a4d\:3082\:308a\:7528\:3002\:9759\:6b62\:753b\:306e Sliden \:3067\:306f\:7d9a\:3051\:3066\:8aad\:307e\:308c\:308b)\:3001
+       "PreTalk" = \:518d\:751f\:524d\:306e\:539f\:7a3f\:3060\:3051 (SlidePlay / \:8aad\:307f\:4e0a\:3052\:52d5\:753b\:306f\:3053\:3061\:3089\:3092\:8aad\:307f\:3001\:7247\:306f "VideoTalk" \:304b\:3089\:6642\:523b\:3069\:304a\:308a\:306b) *)
     slides = MapThread[
-      Function[{i, title, talk},
-        If[StringQ[talk] && StringTrim[talk] =!= "",
-          <|"Slide" -> i, "Title" -> title,
-            "Seconds" -> Max[10., N[Round[StringLength[StringTrim[talk]]/rate]]],
-            "Text" -> StringTrim[talk]|>,
-          Nothing]],
-      {Range[outline["Count"]], outline["Titles"], talks}];
+      Function[{i, title, talk, vid, vt},
+        Module[{pre = If[StringQ[talk], StringTrim[talk], ""], vtext, full, secs},
+          vtext = StringRiffle[Select[Lookup[#, "Text", ""] & /@ Select[vt, AssociationQ], StringQ[#] && # =!= "" &], "\n"];
+          full = StringTrim[StringRiffle[Select[{pre, vtext}, # =!= "" &], "\n"]];
+          If[full === "" && ! AssociationQ[vid], Nothing,
+            secs = N[StringLength[pre]/rate] + If[AssociationQ[vid],
+              Max[Replace[Lookup[vid, "Duration", 0.], Except[_?NumericQ] -> 0.], N[StringLength[vtext]/rate]], N[StringLength[vtext]/rate]];
+            Join[<|"Slide" -> i, "Title" -> title, "Seconds" -> Max[10., N[Round[secs]]], "Text" -> full|>,
+              If[AssociationQ[vid], <|"PreTalk" -> pre, "VideoTalk" -> vt, "Video" -> vid|>, <||>]]]]],
+      {Range[outline["Count"]], outline["Titles"], talks, videos, vtalks}];
     <|"Id" -> Lookup[meta, "Id", ""],
       "Title" -> Lookup[meta, "Title", fallbackTitle],
       "Aliases" -> Flatten[{Lookup[meta, "Aliases", {}]}],
@@ -6386,6 +6498,7 @@ iSWTalkFromCellsCore[src_, meta_Association, deckFile_String, fallbackTitle_Stri
       "Opening" -> opening, "Closing" -> "",
       "Slides" -> slides,
       "Translations" -> translations,
+      "Videos" -> Association[Cases[slides, s_Association /; KeyExistsQ[s, "Video"] :> (s["Slide"] -> Join[s["Video"], <|"Pieces" -> s["VideoTalk"]|>])]],
       "TalkSource" -> "Cells"|>];
 
 (* \:4fdd\:5b58\:6e08\:307f path \:306f\:30d5\:30a1\:30a4\:30eb\:65e5\:4ed8+\:30e1\:30bf\:3067\:30ad\:30e3\:30c3\:30b7\:30e5 (\:518d\:751f\:30fb\:898b\:7a4d\:30fb\:60c5\:5831\:304c\:7e70\:308a\:8fd4\:3057
@@ -7413,6 +7526,9 @@ SlideToggleRealtime[nb_NotebookObject] := Module[{res, voice},
   iSWTrace["RT:on begin"];
   voice = With[{v = iSWVoiceName[]},
     If[iSWVoiceRealtimeQ[v], iSWRealtimeVoiceOf[v], Automatic]];
+  (* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:306f gpt-realtime-* \:306b\:9001\:3089\:306a\:3044 *)
+  With[{mis = iSWLiveVoiceMismatch[voice, iSWVoiceModel[]]},
+    If[FailureQ[mis], MessageDialog[iSWFailureText[mis]]; Return[mis]]];
   $iSWRealtimeContextKey = iSWTraced["RT:ContextKey", iSWRealtimeContextKey[nb]];
   (* v1.37: \:53d7\:3051\:53e3\:306f\:8d77\:52d5\:306e\:524d\:306b\:5165\:308c\:308b\:3002\:30ef\:30fc\:30ab\:30fc\:306f\:8d77\:52d5\:6642\:306b\:53d7\:3051\:53e3\:304c\:3042\:308b\:3068\:304d\:3060\:3051 ask \:30c4\:30fc\:30eb\:3092\:6301\:3064
      (TalkQA \:304c\:7121\:3044\:74b0\:5883\:3067\:8d77\:52d5\:5f8c\:306b\:5165\:308c\:308b\:3068\:3001\:8cea\:554f\:304c\:8cc7\:6599\:3078\:5c4a\:304b\:306a\:304b\:3063\:305f) *)
@@ -7483,6 +7599,8 @@ iSWPlayReleaseRealtime[] := If[iSWPlayRealtimeQ[] && iSWRealtimeLayerQ[],
 
 iSWPlayHalt[] := (
   Quiet[iSWSubtitleClose[]];
+  Quiet[iSWPlayVideoHalt[]];   (* v1.69 *)
+  $iSWPlayState["RetryNarration"] = None;
   iSWPlayReleaseStream[];
   iSWPlayReleaseRealtime[];
   iSWPlayStopTask[];
@@ -7526,13 +7644,17 @@ iSWPlaySlide[nIn_Integer] := Module[{nb, n, text, now},
   iSWPlayReleaseStream[];
   text = Lookup[$iSWPlayState["Texts"], n, ""];
   Quiet[iSWSubtitleSlide[n]];
+  (* v1.69: \:52d5\:753b\:306e\:679a\:306a\:3089\:6bb5\:53d6\:308a (\:518d\:751f\:524d\:306e\:539f\:7a3f -> \:52d5\:753b + \:518d\:751f\:4e2d\:306e\:539f\:7a3f) \:3092\:7528\:610f\:3057\:3001\:52d5\:753b\:306f\:6700\:521d\:306e\:30d5\:30ec\:30fc\:30e0\:3067\:6b62\:3081\:3066\:304a\:304f *)
+  $iSWPlayState["Video"] = Quiet[iSWPlayVideoBegin[nb, n]];
   now = AbsoluteTime[];
   If[!StringQ[text] || StringTrim[text] === "",
     (* \:539f\:7a3f\:306e\:7121\:3044\:30b9\:30e9\:30a4\:30c9: \:5c11\:3057\:898b\:305b\:3066\:304b\:3089\:6b21\:3078 *)
-    $iSWPlayState["StartedAt"] = now;
-    $iSWPlayState["Duration"] = $iSWVoiceSilentSeconds;
-    $iSWPlayState["AudioEnd"] = now + $iSWVoiceSilentSeconds;
-    $iSWPlayState["Deadline"] = now + $iSWVoiceSilentSeconds;
+    (* v1.69: \:52d5\:753b\:306e\:679a\:3067\:518d\:751f\:524d\:306e\:539f\:7a3f\:304c\:7121\:3051\:308c\:3070\:3001\:5c11\:3057\:898b\:305b\:3066\:3059\:3050\:52d5\:753b\:3078 *)
+    With[{silent = If[AssociationQ[$iSWPlayState["Video"]], 0.5, $iSWVoiceSilentSeconds]},
+      $iSWPlayState["StartedAt"] = now;
+      $iSWPlayState["Duration"] = silent;
+      $iSWPlayState["AudioEnd"] = now + silent;
+      $iSWPlayState["Deadline"] = now + silent];
     iSWPlayNote[iSL["\:30b9\:30e9\:30a4\:30c9 ", "Slide "] <> ToString[n] <> "/" <>
       ToString[$iSWPlayState["Count"]] <> iSL[" (\:539f\:7a3f\:306a\:3057)", " (no narration)"]];
     Return[Null]];
@@ -7573,8 +7695,15 @@ iSWPlaySlideLocal[nb_, n_Integer, text_String] :=
 
 (* Realtime (gpt-realtime): \:539f\:7a3f\:3092\:6e21\:3057\:3066\:8aad\:307e\:305b\:3001\:300c\:9cf4\:308a\:7d42\:308f\:3063\:305f\:300d\:3068\:8a00\:3063\:3066\:304d\:305f\:3089\:6b21\:3078\:3002
    \:9577\:3055\:306f\:4e8b\:524d\:306b\:5206\:304b\:3089\:306a\:3044\:306e\:3067\:3001\:7de0\:5207\:306f\:66b4\:8d70\:3088\:3051\:306e\:4e0a\:9650\:3068\:3057\:3066\:3060\:3051\:4f7f\:3046\:3002 *)
-iSWPlaySlideRealtime[n_Integer, text_String] := Module[{id, res, now, budget, qmode},
-  id = "s" <> ToString[n] <> "r" <> ToString[$iSWPlayState["Run"]];
+(* v1.69: \:5f15\:6570\:306e\:5f62\:304c\:5909\:308f\:3063\:305f (tag, retry)\:3002Get \:3057\:76f4\:3057\:305f\:3068\:304d\:53e4\:3044\:5b9a\:7fa9\:304c\:5148\:306b\:5f53\:305f\:3089\:306a\:3044\:3088\:3046\:6d88\:3057\:3066\:304b\:3089\:5b9a\:7fa9\:3059\:308b *)
+Clear[iSWPlaySlideRealtime];
+iSWPlaySlideRealtime[n_Integer, text_String, tag_String : "", retry_Integer : 0] := Module[{id, res, now, budget, qmode, recFile, seq0},
+  (* v1.69: tag = \:540c\:3058\:679a\:306e\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247 (v1, v2, ..)\:3001retry = \:8aad\:307f\:76f4\:3057 (\:539f\:7a3f\:3068\:9055\:3046\:6587\:3092\:8aad\:3093\:3060\:3068\:304d\:3001iSWPlayNarrationRetryQ) *)
+  id = "s" <> ToString[n] <> "r" <> ToString[$iSWPlayState["Run"]] <> tag <> If[retry > 0, "x" <> ToString[retry], ""];
+  (* \:9332\:97f3\:306e\:30d5\:30a1\:30a4\:30eb: \:9375\:306f\:679a\:306e\:756a\:53f7\:304b {\:679a, "vN"}\:3002Lookup \:306b\:7d44\:3092\:305d\:306e\:307e\:307e\:6e21\:3059\:3068\:8907\:6570\:306e\:9375\:3068\:3057\:3066\:5f15\:304b\:308c\:3066\:9332\:97f3\:5148\:304c\:6e21\:3089\:306a\:304b\:3063\:305f (11-10) *)
+  recFile = If[TrueQ[Lookup[$iSWPlayState, "Record", False]] && AssociationQ[$iSWVideoRecord],
+    Lookup[$iSWVideoRecord["Files"], Key[If[tag === "", n, {n, tag}]], None], None];
+  seq0 = If[TrueQ[Lookup[$iSWPlayState, "Record", False]] || StringStartsQ[tag, "v"], iSWPlayNarrationMsgSeq[], 0];
   (* v1.52: \:5fdc\:7b54off \:3067\:518d\:751f\:3057\:3066\:3044\:308b\:3068\:304d\:306f\:8aad\:307f\:4e0a\:3052\:3060\:3051: \:30de\:30a4\:30af\:306f\:9589\:3058\:305f\:307e\:307e\:3001\:8aad\:307f\:7d42\:3048\:3066\:3082\:8cea\:554f\:3092\:53d7\:3051\:306a\:3044 *)
   qmode = If[iSWPlayAnsweringQ[], iSWQuestionModeEffective[], "None"];
   $iSWPlayState["QuestionMode"] = qmode;
@@ -7595,8 +7724,7 @@ iSWPlaySlideRealtime[n_Integer, text_String] := Module[{id, res, now, budget, qm
     "Interrupt" -> Replace[qmode, "QuestionTime" | "None" -> None],
     "InterruptWords" -> $SlideInterruptWords,
     (* v1.59: \:52d5\:753b\:306e\:305f\:3081\:306e\:9332\:97f3\:306a\:3089\:3001\:3053\:306e\:679a\:306e\:58f0\:3092 wav \:306b\:6b8b\:3055\:305b\:308b (\:30ef\:30fc\:30ab\:30fc 1.13) *)
-    "RecordFile" -> If[TrueQ[Lookup[$iSWPlayState, "Record", False]] && AssociationQ[$iSWVideoRecord],
-      Lookup[$iSWVideoRecord["Files"], n, None], None]]];
+    "RecordFile" -> recFile]];
   If[FailureQ[res],
     $iSWPlayState["LastFailure"] = res;
     iSWPlayFailReason[iSL["\:8aad\:307f\:4e0a\:3052\:3092\:4f9d\:983c\:3067\:304d\:307e\:305b\:3093\:3067\:3057\:305f",
@@ -7606,6 +7734,10 @@ iSWPlaySlideRealtime[n_Integer, text_String] := Module[{id, res, now, budget, qm
   (* \:65e5\:672c\:8a9e\:3067\:6bce\:79d2 6-7 \:6587\:5b57\:307b\:3069\:3002\:4e0a\:9650\:306f\:305d\:306e\:500d\:306b 45 \:79d2\:8db3\:3059 *)
   budget = Max[60., N[StringLength[text]]/3. + 45.];
   $iSWPlayState["NarrationId"] = id;
+  (* v1.69: \:983c\:3093\:3060\:539f\:7a3f\:3068\:9001\:3063\:305f\:6642\:523b (\:8a71\:3057\:59cb\:3081\:306e\:9045\:308c\:3092\:6e2c\:308b\:30fb\:8aad\:307f\:7d42\:308f\:308a\:306b\:539f\:7a3f\:3069\:304a\:308a\:304b\:78ba\:304b\:3081\:308b) *)
+  $iSWPlayState["NarrationInfo"] = <|"Id" -> id, "Slide" -> n, "Text" -> text, "Tag" -> tag, "Retry" -> retry,
+    "Speech" -> iSWSpeechText[text, Replace[Lookup[$iSWPlayState, "Readings", {}], Except[_List] -> {}]],
+    "RecordFile" -> recFile, "MsgSeq" -> seq0, "SentAt" -> now, "SpokeAt" -> None|>;
   $iSWPlayState["StartedAt"] = now;
   $iSWPlayState["Duration"] = budget;
   $iSWPlayState["AudioEnd"] = now + budget;
@@ -7634,6 +7766,11 @@ iSWPlayAdvance[] := Module[{nb, cur, feBefore, feN, next},
   nb = $iSWPlayState["Notebook"];
   cur = $iSWPlayState["Slide"];
   iSWPlayReleaseStream[];
+  (* v1.69: \:539f\:7a3f\:3068\:9055\:3046\:6587\:3092\:8aad\:3093\:3060\:8aad\:307f\:4e0a\:3052\:306e\:983c\:307f\:76f4\:3057\:304c\:5f85\:3063\:3066\:3044\:308c\:3070\:3001\:305d\:308c\:3092\:5148\:306b\:9001\:308b *)
+  If[TrueQ[Quiet[iSWPlayRetrySend[]]], Return[Null]];
+  (* v1.69: \:52d5\:753b\:306e\:679a\:306f\:3001\:518d\:751f\:524d\:306e\:539f\:7a3f\:306e\:3042\:3068\:306b\:52d5\:753b\:3068\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:6bb5\:304c\:7d9a\:304f\:3002\:6bb5\:304c\:6b8b\:3063\:3066\:3044\:308c\:3070\:6b21\:306e\:679a\:3078\:9001\:3089\:306a\:3044 *)
+  If[AssociationQ[$iSWPlayState["Video"]] && $iSWPlayState["Video"]["Slide"] === cur && TrueQ[iSWPlayVideoStep[]],
+    Return[Null]];
   If[cur >= $iSWPlayState["Count"],
     If[AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]] && iSWPlayRealtimeQ[] && iSWPlayAnsweringQ[] && ! TrueQ[Lookup[$iSWPlayState, "FinalQA", False]],
       iSWPlayEnterFinalQA[], iSWPlayFinish[]];
@@ -8219,6 +8356,11 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
     Quiet[iSWSubtitleQATick[rt, now]];
     If[StringQ[$iSWPlayState["NarrationId"]],
       Quiet[iSWSubtitleTickRealtime[rt, now]];
+      (* v1.69: \:8a71\:3057\:59cb\:3081 (\:9045\:308c\:3092\:6e2c\:308b\:3001\:5f85\:3063\:3066\:3044\:308b\:52d5\:753b\:3092\:59cb\:3081\:308b) *)
+      Quiet[iSWPlayNarrationSpeechTick[rt, now]];
+      If[Lookup[rt, "NarrationDone", None] === $iSWPlayState["NarrationId"] && TrueQ[Quiet[iSWPlayNarrationRetryQ[]]],
+        (* v1.69: \:539f\:7a3f\:3068\:9055\:3046\:6587\:3092\:8aad\:3093\:3060: \:983c\:307f\:76f4\:3057\:305f (\:6b21\:3078\:9032\:307e\:306a\:3044) *)
+        Return[Null]];
       If[Lookup[rt, "NarrationDone", None] === $iSWPlayState["NarrationId"],
         Quiet[iSWSubtitleDone[now]];
         $iSWPlayState["NarrationId"] = None;
@@ -8227,10 +8369,12 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
            \:4e8c\:6bb5\:69cb\:3048\:306f\:8aad\:307f\:4e0a\:3052\:4e2d\:3082\:805e\:3044\:3066\:3044\:308b\:306e\:3067\:8cea\:554f\:6642\:9593\:306f\:53d6\:3089\:306a\:3044 (\:8cea\:7591\:4e2d\:306f
            NarrationDone \:304c\:51fa\:306a\:3044\:306e\:3067\:3001\:3053\:3053\:3078\:6765\:308b\:306e\:306f\:8cea\:7591\:304c\:6e08\:3093\:3067\:304b\:3089) *)
         $iSWPlayState["WindowStart"] = now;
-        If[Lookup[$iSWPlayState, "QuestionMode", "QuestionTime"] === "QuestionTime",
+        (* v1.69: \:52d5\:753b\:306e\:6bb5\:304c\:6b8b\:3063\:3066\:3044\:308b\:679a\:3067\:306f\:8cea\:554f\:30bf\:30a4\:30e0\:3092\:958b\:304b\:306a\:3044 (\:679a\:306e\:6700\:5f8c\:3001\:52d5\:753b\:306e\:3042\:3068\:3067\:958b\:304f)\:3002
+           GPT-Live \:306e\:9332\:97f3\:3068\:52d5\:753b\:306e\:7247\:306f\:3001\:6b21\:306e\:8aad\:307f\:4e0a\:3052\:307e\:3067\:9577\:3081\:306b\:7a7a\:3051\:308b (iSWPlayNarrationGap) *)
+        If[Lookup[$iSWPlayState, "QuestionMode", "QuestionTime"] === "QuestionTime" && ! iSWPlayVideoPendingQ[],
           iSWRealtimeMic[True]; $iSWPlayState["AutoMuted"] = False;
           $iSWPlayState["Deadline"] = now + $SlideVoiceGap + iSWQuestionWindow[],
-          $iSWPlayState["Deadline"] = now + $SlideVoiceGap],
+          $iSWPlayState["Deadline"] = now + iSWPlayNarrationGap[]],
         (* \:307e\:3060\:8aad\:3093\:3067\:3044\:308b\:6700\:4e2d\:306b\:7de0\:5207\:304c\:6765\:3066\:3082\:6253\:3061\:5207\:3089\:306a\:3044\:3002\:7de0\:5207\:306f\:300c\:8fd4\:4e8b\:304c
            \:6765\:306a\:304f\:306a\:3063\:305f\:300d\:3068\:304d\:306e\:4fdd\:967a\:3067\:3042\:3063\:3066\:3001\:8a71\:306e\:9577\:3055\:306e\:4e0a\:9650\:3067\:306f\:306a\:3044 *)
         If[now >= $iSWPlayState["Deadline"] &&
@@ -8290,6 +8434,8 @@ iSWPlayTickBody[] := Module[{nb, nbs, now, stream, pos, rt, elapsed},
     $iSWPlayState["Deadline"] = Max[$iSWPlayState["Deadline"], now + 1.5]];
   If[TrueQ[Lookup[$iSWPlayState, "FinalQA", False]] && now < Lookup[$iSWPlayState, "FinalQAUntil", 0],
     $iSWPlayState["Deadline"] = $iSWPlayState["FinalQAUntil"]];
+  (* v1.69: \:6700\:521d\:306e\:7247\:306e\:8a71\:3057\:59cb\:3081\:3092\:5f85\:3063\:3066\:3044\:308b\:52d5\:753b\:3092\:3001\:898b\:3048\:306a\:3044\:307e\:307e\:6642\:9593\:304c\:904e\:304e\:305f\:3089\:59cb\:3081\:308b *)
+  If[AssociationQ[$iSWPlayState["Video"]], Quiet[iSWPlayVideoTick[now]]];
   If[now >= $iSWPlayState["Deadline"], iSWPlayAdvance[]];
   Null];
 
@@ -8310,6 +8456,9 @@ iSWPlayTick[] := Module[{now = AbsoluteTime[]},
 iSWEnsureRealtimeBridge[nb_, voiceName_String, answering_ : True] := Module[{st, res, refusal},
   (* a deck at PrivacyLevel 0.5 or more, or declared Private, never goes to the cloud voice (2026-10-31) *)
   refusal = iSWCloudVoiceRefusal[nb];
+  If[FailureQ[refusal], Return[refusal]];
+  (* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:306f gpt-realtime-* \:306b\:9001\:3089\:306a\:3044 *)
+  refusal = iSWLiveVoiceMismatch[voiceName, iSWVoiceModel[]];
   If[FailureQ[refusal], Return[refusal]];
   st = iSWRealtimeStatus[];
   If[TrueQ[Lookup[st, "Running", False]],
@@ -8387,7 +8536,7 @@ SlidePlay[] := With[{nb = iSWResolveTargetNb[]},
 Options[SlidePlay] = {"Translate" -> Automatic, "Record" -> False, "StartSlide" -> Automatic};
 
 SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
-  {voice, engine, texts, count, feCount, feN, start, bridge, plan, lack, choice},
+  {voice, engine, texts, count, feCount, feN, start, bridge, plan, lack, choice, videosAll = <||>, allKeys},
   If[$iSWPlayState["Status"] === "Playing", Return[SlidePlayStatus[]]];
   If[$iSWPlayState["Status"] === "Paused" && $iSWPlayState["Notebook"] === nb,
     Return[iSWPlayResume[]]];
@@ -8446,14 +8595,19 @@ SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
             "Then" -> Function[SlidePlay[n2, "Translate" -> False]]]]],
       "Play", Null,
       _, Return[$Failed]]];
-  If[texts === $Failed,
+  (* v1.69: \:52d5\:753b\:306e\:679a (\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:306e\:3068\:304d\:306f\:7121\:3057)\:3002\:539f\:7a3f\:304c\:7121\:304f\:3066\:3082\:52d5\:753b\:3060\:3051\:306e\:679a\:306f\:9032\:3080 *)
+  videosAll = If[SlideTalkMode[] === "Poster", <||>, iSWTalkVideos[iSWTalkResolve[nb]]];
+  If[texts === $Failed && videosAll === <||>,
     MessageDialog[iSL[
       "\:767a\:8868\:306e\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093\:3002\:30b9\:30e9\:30a4\:30c9\:306b\:30c8\:30fc\:30af\:30bb\:30eb\:3092\:4f5c\:308b\:304b (\:633f\:5165 > \:30c8\:30fc\:30af\:3001\:307e\:305f\:306f\:5c55\:958b)\:3001\:300c\:30b7\:30ca\:30ea\:30aa\:300d\:3067 " <>
         FileNameTake[SlideTalkFile[nb]] <> " \:3092\:4f5c\:6210\:3057\:3066\:304f\:3060\:3055\:3044\:3002",
       "No narration found. Add in-slide talk cells (Insert > Talk, or expand), or press \"Talk\" to write " <>
         FileNameTake[SlideTalkFile[nb]] <> "."]];
     Return[$Failed]];
-  count = Max[Keys[texts]];
+  If[texts === $Failed, texts = <||>];
+  allKeys = Join[Keys[texts], Keys[videosAll]];
+  If[allKeys === {}, Return[$Failed]];
+  count = Max[allKeys];
   feCount = iSWSlideCountOf[nb];
   If[IntegerQ[feCount] && feCount > 0, count = Min[count, feCount]];
   feN = iSWSlideNumberFE[nb];
@@ -8476,6 +8630,8 @@ SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
   $iSWSlideControlNotebook = nb;
   $iSWPlayState["Notebook"] = nb;
   $iSWPlayState["Texts"] = texts;
+  $iSWPlayState["Videos"] = videosAll;   (* v1.69 *)
+  $iSWPlayState["Video"] = None;
   (* v1.51: \:8aad\:307f\:306e\:8f9e\:66f8\:306f\:59cb\:3081\:308b\:3068\:304d\:306b 1 \:56de\:3060\:3051\:8aad\:3080 (\:9032\:884c\:306e\:30bf\:30b9\:30af\:306e\:4e2d\:3067 FE \:3092\:8aad\:307e\:306a\:3044) *)
   $iSWPlayState["Readings"] = Replace[Quiet[iSWReadingRules[nb]], Except[_List] -> {}];
   $iSWPlayState["Count"] = count;
@@ -8506,7 +8662,12 @@ SlidePlay[nb_NotebookObject, OptionsPattern[]] := Module[
         iSWPlayNote[iSL["\:97f3\:58f0\:3092\:7528\:610f\:4e2d ", "Preparing audio "] <> ToString[i] <> "/" <>
           ToString[Length[keys]]];
         Quiet[iSWVoiceFileFor[nb, k, texts[k]]],
-        {k, keys}]]];
+        {k, keys}];
+      (* v1.69: \:52d5\:753b\:306e\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247\:3082\:5148\:306b\:5408\:6210\:3059\:308b (\:52d5\:753b\:306e\:9014\:4e2d\:3067\:5408\:6210\:3092\:5f85\:3064\:3068\:7247\:304c\:9045\:308c\:308b) *)
+      KeyValueMap[Function[{k, v}, Do[
+          If[AssociationQ[p] && StringQ[p["Text"]] && StringTrim[p["Text"]] =!= "", Quiet[iSWVoiceFileFor[nb, k, p["Text"]]]],
+          {p, Replace[Lookup[v, "Pieces", {}], Except[_List] -> {}]}]],
+        KeySelect[videosAll, # <= count &]]]];
   $iSWPlayState["Run"] = $iSWPlayState["Run"] + 1;
   $iSWPlayState["Instructions"] = iSWTalkNarrationInstructions[nb];
   $iSWPlayState["UseFECounter"] = IntegerQ[feN];
@@ -8543,6 +8704,7 @@ SlidePause[] := Module[{s, now = AbsoluteTime[]},
     s = $iSWPlayState["Stream"];
     If[Head[s] === AudioStream, Quiet[AudioPause[s]]]];
   iSWPlayStopTask[];
+  Quiet[iSWPlayVideoPause[]];   (* v1.69 *)
   $iSWPlayState["Remaining"] = Max[0., $iSWPlayState["Deadline"] - now];
   $iSWPlayState["Status"] = "Paused";
   iSWPlayLabelResume[];
@@ -8565,6 +8727,7 @@ iSWPlayResume[] := Module[{s, now = AbsoluteTime[], pos, rest},
     pos = iSWSeconds[s["Position"]];
     If[NumericQ[pos], rest = Max[0., $iSWPlayState["Duration"] - pos]];
     Quiet[AudioPlay[s]]];
+  Quiet[iSWPlayVideoResume[]];   (* v1.69 *)
   $iSWPlayState["StartedAt"] = now;
   $iSWPlayState["AudioEnd"] = now + rest;
   $iSWPlayState["Deadline"] = now + rest + $SlideVoiceGap;
@@ -9306,11 +9469,9 @@ iSWVideoImages[nb_NotebookObject] := Module[{dir, base, outdir, deck, saved, st,
       files = ext; src = "External",
       If[saved, iSWStatus[nb, iSL["FE \:306e\:4e2d\:3067\:30b9\:30e9\:30a4\:30c9\:306e\:753b\:50cf\:3092\:63cf\:3044\:3066\:3044\:307e\:3059...",
         "Rendering the slide images inside the FE..."] <> iSWExternalSeatNote[]]];
-      imgs = SlideDeckImages[iSWDeckSource[nb]];
-      If[MatchQ[imgs, {__Image}],
-        If[! DirectoryQ[outdir], Quiet[CreateDirectory[outdir, CreateIntermediateDirectories -> True]]];
-        files = MapIndexed[Export[FileNameJoin[{outdir, iSWVideoImageName[First[#2]]}], #1] &, imgs];
-        src = "FE"]];
+      (* v1.69: SlideDeckExportImages \:306f\:52d5\:753b\:306e\:679a\:306e\:77e9\:5f62 (videos.json) \:3082\:66f8\:304f *)
+      imgs = SlideDeckExportImages[iSWDeckSource[nb], outdir];
+      If[MatchQ[imgs, {__String}], files = imgs; src = "FE"]];
     If[MatchQ[files, {__String}] && saved,
       $iSWDeckDigestCache = KeyDrop[$iSWDeckDigestCache, deck];
       With[{d = Quiet[iSWDeckDigest[deck]]},
@@ -9318,7 +9479,11 @@ iSWVideoImages[nb_NotebookObject] := Module[{dir, base, outdir, deck, saved, st,
           "ImagesRenderVersion" -> $iSWSlideRenderVersion|>]]]]];
   If[! MatchQ[files, {__String}],
     Return[iSWVideoFail["SlideVideoImages", "\:30b9\:30e9\:30a4\:30c9\:306e\:753b\:50cf\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not render the slide images."]]];
-  <|"Files" -> files, "Source" -> src|>];
+  (* v1.69: \:52d5\:753b\:306e\:679a\:306e\:77e9\:5f62\:3002\:4f7f\:3044\:56de\:3057\:305f\:753b\:50cf\:306b\:7121\:3051\:308c\:3070 (\:53e4\:3044\:7248\:304c\:63cf\:3044\:305f) \:3053\:3053\:3067\:6e2c\:308b *)
+  Module[{rects = iSWVideoRectsRead[outdir]},
+    If[rects === <||> && ListQ[Quiet[SlideDeckVideos[iSWDeckSource[nb]]]] && Quiet[SlideDeckVideos[iSWDeckSource[nb]]] =!= {},
+      rects = Replace[Quiet[iSWVideoRectsWrite[iSWDeckSource[nb], outdir]], Except[_Association] -> <||>]];
+    <|"Files" -> files, "Source" -> src, "Videos" -> rects|>]];
 
 (* ---- \:30ed\:30fc\:30ab\:30eb\:306e\:58f0: \:518d\:751f\:3068\:540c\:3058\:30ad\:30e3\:30c3\:30b7\:30e5 (iSWVoiceFileInDir \:3068\:540c\:3058\:540d\:524d) \:306b\:3001\:58f0\:3092\:660e\:793a\:3057\:3066\:5408\:6210 ---- *)
 iSWVideoLocalFile[dir_String, k_Integer, voice_String, speech_String] := Module[{file},
@@ -9329,20 +9494,30 @@ iSWVideoLocalFile[dir_String, k_Integer, voice_String, speech_String] := Module[
   If[FileExistsQ[file], file, $Failed]];
 
 (* ---- \:679a\:306e\:4e26\:3073\:3068\:9577\:3055\:3002\:6642\:523b\:306f 48 kHz \:306e\:6a19\:672c\:3067\:5207\:308a\:63c3\:3048\:308b (\:6620\:50cf\:306e\:679a\:306e\:9577\:3055\:3068\:58f0\:306e\:9577\:3055\:3092\:540c\:3058\:6570\:3067\:5207\:308b) ---- *)
-iSWVideoSegments[images_List, audio_Association, include_List, titles_List] := Module[
+Clear[iSWVideoSegments];   (* v1.69: \:5f15\:6570\:304c 1 \:3064\:5897\:3048\:305f\:3002\:53e4\:3044\:5b9a\:7fa9\:3092\:6b8b\:3055\:306a\:3044 *)
+(* v1.69: videos = <|k -> <|"File", "Rect", "Duration", "Pieces" -> {<|"At" -> \:79d2|None, "Audio" -> wav|>..}|>|> (\:52d5\:753b\:306e\:679a)\:3002
+   \:3069\:306e\:679a\:3082 "Pieces" = {<|"At" -> \:679a\:306e\:4e2d\:306e\:958b\:59cb\:79d2, "Audio", "Seconds"|> ..} \:3092\:6301\:3061\:3001wav \:306f\:305d\:308c\:306b\:5f93\:3063\:3066\:4e26\:3079\:308b\:3002
+   \:52d5\:753b\:306e\:679a: \:524d\:7f6e\:304d + \:518d\:751f\:524d\:306e\:539f\:7a3f + $SlideVideoGap \:3067\:52d5\:753b\:304c\:59cb\:307e\:308a (\:6700\:521d\:306e\:30d5\:30ec\:30fc\:30e0\:306f\:305d\:306e\:524d\:304b\:3089\:898b\:3048\:3066\:3044\:308b)\:3001\:7247\:306f\:52d5\:753b\:306e\:4e2d\:306e\:6642\:523b
+   (\:7121\:3051\:308c\:3070\:524d\:306e\:7247\:306e\:76f4\:5f8c + $SlideVideoPieceGap)\:3001\:52d5\:753b\:3068\:7247\:306e\:9045\:3044\:65b9\:304c\:7d42\:308f\:3063\:3066\:304b\:3089 $SlideVoiceGap *)
+iSWVideoSegments[images_List, audio_Association, include_List, titles_List, videos_Association : <||>] := Module[
   {lead, gap, silent, tail, segs, t = 0.},
   lead = Replace[$SlideTalkVideoLeadIn, Except[_?NumericQ] -> 0.5];
   gap = Replace[$SlideVoiceGap, Except[_?NumericQ] -> 0.8];
   silent = Replace[$iSWVoiceSilentSeconds, Except[_?NumericQ] -> 3.];
   tail = Replace[$SlideTalkVideoTail, Except[_?NumericQ] -> 1.5];
-  segs = Map[Function[k, Module[{f = Lookup[audio, k, None], s},
+  segs = Map[Function[k, Module[{f = Lookup[audio, k, None], s, vid = Lookup[videos, k, None], vinfo, pieces, base},
       s = If[StringQ[f], iSWAudioSeconds[f], $Failed];
-      <|"Slide" -> k, "Image" -> images[[k]],
+      If[! (NumericQ[s] && s > 0), s = 0.; f = None];
+      pieces = If[StringQ[f], {<|"At" -> N[lead], "Audio" -> f, "Seconds" -> N[s]|>}, {}];
+      base = <|"Slide" -> k, "Image" -> images[[k]],
         "Title" -> If[k <= Length[titles], ToString[titles[[k]]], ""],
-        "Audio" -> If[NumericQ[s] && s > 0, f, None],
-        "AudioSeconds" -> If[NumericQ[s] && s > 0, N[s], 0.],
-        "Lead" -> N[lead],
-        "Duration" -> If[NumericQ[s] && s > 0, N[lead + s + gap], N[silent]]|>]],
+        "Audio" -> f, "AudioSeconds" -> N[s], "Lead" -> N[lead]|>;
+      If[AssociationQ[vid],
+        vinfo = iSWVideoSegmentVideo[k, N[lead], N[s], vid];
+        Join[base, <|"Pieces" -> Join[pieces, vinfo["Pieces"]], "Duration" -> N[vinfo["Ends"] + gap],
+          "Video" -> If[StringQ[vinfo["File"]] && MatchQ[vinfo["Rect"], {_?NumericQ, _?NumericQ, _?NumericQ, _?NumericQ}],
+            KeyDrop[vinfo, {"Pieces", "Ends"}], None]|>],
+        Join[base, <|"Pieces" -> pieces, "Duration" -> If[StringQ[f], N[lead + s + gap], N[silent]]|>]]]],
     Select[include, IntegerQ[#] && 1 <= # <= Length[images] &]];
   If[segs === {}, Return[{}]];
   segs[[-1, "Duration"]] = segs[[-1, "Duration"]] + N[tail];
@@ -9368,7 +9543,7 @@ iSWVideoSamples[file_String, rate_Integer] := Module[{a = Quiet[Import[file]]},
 
 (* \:5168\:90e8\:306e\:679a\:306e\:58f0\:3092\:3001\:679a\:306e\:9577\:3055 (\:524d\:7f6e\:304d + \:58f0 + \:9593\:3001\:6a19\:672c\:3067\:5207\:308a\:63c3\:3048\:6e08\:307f) \:3069\:304a\:308a\:306b 1 \:672c\:306e wav \:3078\:66f8\:304f\:3002
    1 \:679a\:305a\:3064\:8aad\:3093\:3067\:66f8\:304d\:8db3\:3059\:306e\:3067\:300130 \:5206\:306e\:767a\:8868\:3067\:3082\:5927\:304d\:306a\:914d\:5217\:3092\:6301\:305f\:306a\:3044 *)
-iSWVideoWriteAudio[segs_List, path_String] := Module[{rate = 48000, counts, total, s, data, lead, ok = True},
+iSWVideoWriteAudio[segs_List, path_String] := Module[{rate = 48000, counts, total, s, buf, data, a, n, ok = True, pieces},
   counts = Round[rate #["Duration"]] & /@ segs;
   total = Total[counts];
   s = Quiet[OpenWrite[path, BinaryFormat -> True]];
@@ -9384,17 +9559,24 @@ iSWVideoWriteAudio[segs_List, path_String] := Module[{rate = 48000, counts, tota
     BinaryWrite[s, ToCharacterCode["data"], "Byte"];
     BinaryWrite[s, 2 total, "UnsignedInteger32", ByteOrdering -> -1];
     Do[
-      data = If[StringQ[segs[[i, "Audio"]]], iSWVideoSamples[segs[[i, "Audio"]], rate], {}];
-      lead = If[data === {}, 0, Min[counts[[i]], Round[rate segs[[i, "Lead"]]]]];
-      (* PadRight \:306f\:9577\:3059\:304e\:308c\:3070\:5207\:308a\:3001\:77ed\:3051\:308c\:3070 0 (\:7121\:97f3) \:3067\:57cb\:3081\:308b *)
-      data = PadRight[Join[ConstantArray[0, lead], data], counts[[i]]];
-      If[BinaryWrite[s, data, "Integer16", ByteOrdering -> -1] === $Failed, ok = False],
+      (* v1.69: \:679a\:306e\:4e2d\:306e\:58f0\:306e\:7247 ("Pieces" \:306e At \:79d2\:304b\:3089)\:3002\:53e4\:3044\:5f62 ("Audio" + "Lead") \:3082\:540c\:3058\:306b\:6271\:3046 *)
+      pieces = Replace[Lookup[segs[[i]], "Pieces", None], Except[_List] :>
+        If[StringQ[Lookup[segs[[i]], "Audio", None]], {<|"At" -> Lookup[segs[[i]], "Lead", 0.], "Audio" -> segs[[i, "Audio"]]|>}, {}]];
+      buf = ConstantArray[0, counts[[i]]];
+      Do[
+        data = If[StringQ[Lookup[p, "Audio", None]], iSWVideoSamples[p["Audio"], rate], {}];
+        If[data =!= {},
+          a = 1 + Clip[Round[rate Replace[Lookup[p, "At", 0.], Except[_?NumericQ] -> 0.]], {0, counts[[i]]}];
+          n = Min[Length[data], counts[[i]] - a + 1];
+          If[n > 0, buf[[a ;; a + n - 1]] = data[[;; n]]]],
+        {p, Select[pieces, AssociationQ]}];
+      If[BinaryWrite[s, buf, "Integer16", ByteOrdering -> -1] === $Failed, ok = False],
       {i, Length[segs]}],
     Quiet[Close[s]]];
   If[ok && FileExistsQ[path], path, $Failed]];
 
 iSWVideoComposeStart[segs_List, out_String, meta_Association] := Module[
-  {exe, tmp, lines, fr, crf, total, prog, tmpOut, vlist, awav, args, proc, okCopy},
+  {exe, tmp, lines, fr, crf, total, prog, tmpOut, vlist, awav, args, proc, okCopy, vinputs = {}, vfiles = {}, vfilter = None, vgraph = ""},
   exe = iSWFFmpegExe[];
   If[! StringQ[exe],
     Return[iSWVideoFail["SlideVideoNoFFmpeg",
@@ -9431,13 +9613,31 @@ iSWVideoComposeStart[segs_List, out_String, meta_Association] := Module[
   total = Total[segs[[All, "Duration"]]];
   prog = FileNameJoin[{tmp, "progress.txt"}];
   tmpOut = FileNameJoin[{tmp, "out.mp4"}];
-  args = {exe, "-hide_banner", "-nostdin", "-loglevel", "error", "-nostats", "-y",
-    "-f", "concat", "-safe", "0", "-i", vlist, "-i", awav,
-    "-map", "0:v", "-map", "1:a",
-    "-vf", "fps=" <> ToString[fr] <> ",scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p",
-    "-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage", "-crf", ToString[crf],
-    "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
-    "-t", iSWDecimal[total], "-movflags", "+faststart", "-progress", prog, tmpOut};
+  (* v1.69: \:52d5\:753b\:306e\:679a\:306f overlay \:3067\:5408\:6210\:3059\:308b\:3002\:52d5\:753b\:306f\:4f5c\:696d\:30d5\:30a9\:30eb\:30c0\:3078\:5199\:3057 (ASCII \:306e\:540d\:524d)\:3001filter_complex \:306f\:30d5\:30a1\:30a4\:30eb\:306b\:66f8\:304f
+     (\:679a\:3054\:3068\:306b -i \:3092\:4e26\:3079\:308b\:3068 StartProcess \:306e\:30b3\:30de\:30f3\:30c9\:30e9\:30a4\:30f3\:306e\:9577\:3055\:306e\:7f60\:306b\:5f53\:305f\:308b)\:3002\:5165\:529b\:756a\:53f7: 0 = \:753b\:50cf\:30011 = wav\:30012.. = \:52d5\:753b *)
+  Do[If[AssociationQ[Lookup[segs[[i]], "Video", None]] && StringQ[segs[[i, "Video", "File"]]] && FileExistsQ[segs[[i, "Video", "File"]]] &&
+      MatchQ[segs[[i, "Video", "Rect"]], {_?NumericQ, _?NumericQ, _?NumericQ, _?NumericQ}],
+      With[{a = "a" <> IntegerString[Length[vfiles] + 1, 10, 3] <> "." <> ToLowerCase[FileExtension[segs[[i, "Video", "File"]]]]},
+        If[Quiet[Check[CopyFile[segs[[i, "Video", "File"]], FileNameJoin[{tmp, a}], OverwriteTarget -> True], $Failed]] =!= $Failed,
+          AppendTo[vfiles, FileNameJoin[{tmp, a}]];
+          AppendTo[vinputs, {i, 1 + Length[vfiles]}]]]],
+    {i, Length[segs]}];
+  If[vinputs =!= {},
+    vfilter = FileNameJoin[{tmp, "filter.txt"}];
+    vgraph = iSWVideoFilterScript[segs, vinputs, fr];
+    Export[vfilter, vgraph, "Text", CharacterEncoding -> "UTF-8"]];
+  args = Join[{exe, "-hide_banner", "-nostdin", "-loglevel", "error", "-nostats", "-y",
+      "-f", "concat", "-safe", "0", "-i", vlist, "-i", awav},
+    Flatten[{"-i", #} & /@ vfiles],
+    If[vfilter === None,
+      {"-map", "0:v", "-map", "1:a",
+       "-vf", "fps=" <> ToString[fr] <> ",scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p",
+       "-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage"},
+      Join[iSWVideoFilterArgs[exe, vfilter, vgraph], {"-map", "[out]", "-map", "1:a",
+       "-c:v", "libx264", "-preset", "veryfast"}]],
+    {"-crf", ToString[crf],
+     "-c:a", "aac", "-b:a", "160k", "-ar", "48000",
+     "-t", iSWDecimal[total], "-movflags", "+faststart", "-progress", prog, tmpOut}];
   proc = Quiet[Check[StartProcess[args], $Failed]];
   If[! MatchQ[proc, _ProcessObject],
     Quiet[DeleteDirectory[tmp, DeleteContents -> True]];
@@ -9476,7 +9676,9 @@ iSWVideoFinalize[job_Association, res_Association] := Module[{meta = job["Meta"]
     "CreatedAt" -> DateString[Now, "ISODateTime"],
     "SlidesDigest" -> Lookup[meta, "SlidesDigest", None], "TalkDigest" -> Lookup[meta, "TalkDigest", None],
     "Slides" -> Map[<|"Slide" -> #["Slide"], "Title" -> #["Title"], "Start" -> #["Start"],
-        "Duration" -> #["Duration"], "Narrated" -> StringQ[#["Audio"]]|> &, job["Segments"]]|>;
+        "Duration" -> #["Duration"], "Narrated" -> StringQ[#["Audio"]] || Length[Replace[Lookup[#, "Pieces", {}], Except[_List] -> {}]] > 0,
+        "Video" -> If[AssociationQ[Lookup[#, "Video", None]],
+          <|"Start" -> #["Start"] + #["Video"]["Start"], "Duration" -> #["Video"]["Duration"]|>, None]|> &, job["Segments"]]|>;
   Quiet[iSWWriteJSON[tlFile, tl]];
   $iSWVideoLast = <|"Status" -> "Done", "File" -> job["Output"], "Duration" -> job["Total"],
     "Slides" -> Length[job["Segments"]], "Timeline" -> tlFile,
@@ -9485,10 +9687,11 @@ iSWVideoFinalize[job_Association, res_Association] := Module[{meta = job["Meta"]
     "Seconds" -> Round[AbsoluteTime[] - job["StartedAt"], 0.1]|>];
 
 (* \:30dc\:30bf\:30f3\:304b\:3089: \:72b6\:614b\:884c\:306b\:9032\:307f\:5177\:5408\:3092\:51fa\:3057\:306a\:304c\:3089\:5f85\:3064 *)
-iSWVideoCompose[nb_, images_List, include_List, files_Association, titles_List, out_String, meta_Association] :=
+Clear[iSWVideoCompose];   (* v1.69: \:5f15\:6570\:304c 1 \:3064\:5897\:3048\:305f\:3002\:53e4\:3044\:5b9a\:7fa9\:3092\:6b8b\:3055\:306a\:3044 *)
+iSWVideoCompose[nb_, images_List, include_List, files_Association, titles_List, out_String, meta_Association, videos_Association : <||>] :=
   Module[{audio, segs, job, r},
-    audio = Select[files, StringQ[#] && FileExistsQ[#] &];
-    segs = iSWVideoSegments[images, audio, include, titles];
+    audio = Select[KeySelect[files, IntegerQ], StringQ[#] && FileExistsQ[#] &];
+    segs = iSWVideoSegments[images, audio, include, titles, videos];
     job = iSWVideoComposeStart[segs, out, Join[meta, <|"Missing" -> Complement[Keys[files], Keys[audio]]|>]];
     If[FailureQ[job], Return[job]];
     iSWStatus[nb, iSL["\:52d5\:753b\:3092\:66f8\:304d\:51fa\:3057\:3066\:3044\:307e\:3059 0%", "Encoding the video 0%"]];
@@ -9537,9 +9740,12 @@ iSWVideoJobWatch[job_Association] := (
 
 (* gpt-live-1: \:539f\:7a3f\:3092\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089 1 \:679a\:305a\:3064\:9332\:308b\:3002\:9332\:308c\:3066\:3044\:306a\:3044\:6700\:521d\:306e\:679a\:304b\:3089 *)
 iSWVideoRecordStart[nb_NotebookObject, spec_Association] := Module[{need, res},
-  need = Select[spec["Keys"], ! FileExistsQ[spec["Files"][#]] &];
+  (* v1.69: \:679a\:306e\:58f0 (n) \:3068\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247 ({n, "v1"} ..) \:306e\:3069\:308c\:304b\:304c\:7121\:3051\:308c\:3070\:305d\:306e\:679a\:304b\:3089\:9332\:308b *)
+  need = Select[spec["Keys"], Function[k, AnyTrue[Select[Keys[spec["Files"]], # === k || (ListQ[#] && First[#] === k) &],
+    ! FileExistsQ[spec["Files"][#]] &]]];
   If[need === {},
-    Return[iSWVideoCompose[nb, spec["Images"], spec["Include"], spec["Files"], spec["Titles"], spec["Output"], spec["Meta"]]]];
+    Return[iSWVideoCompose[nb, spec["Images"], spec["Include"], spec["Files"], spec["Titles"], spec["Output"], spec["Meta"],
+      Replace[Lookup[spec, "VideoSegs", <||>], Except[_Association] -> <||>]]]];
   If[! iSWSlideShowQ[nb], Quiet[SlideToggleScreenEnvironment[nb]]];
   $iSWVideoRecord = Join[spec, <|"Notebook" -> nb, "StartedAt" -> AbsoluteTime[]|>];
   res = SlidePlay[nb, "Translate" -> False, "Record" -> True, "StartSlide" -> First[need]];
@@ -9554,10 +9760,10 @@ iSWVideoRecordDone[] := Module[{spec = $iSWVideoRecord, nb, audio, segs, job},
   If[! AssociationQ[spec], Return[Null]];
   $iSWVideoRecord = None;
   nb = spec["Notebook"];
-  audio = Select[spec["Files"], StringQ[#] && FileExistsQ[#] &];
-  segs = iSWVideoSegments[spec["Images"], audio, spec["Include"], spec["Titles"]];
+  audio = Select[KeySelect[spec["Files"], IntegerQ], StringQ[#] && FileExistsQ[#] &];
+  segs = iSWVideoSegments[spec["Images"], audio, spec["Include"], spec["Titles"], Replace[Lookup[spec, "VideoSegs", <||>], Except[_Association] -> <||>]];
   job = iSWVideoComposeStart[segs, spec["Output"],
-    Join[spec["Meta"], <|"Missing" -> Complement[Keys[spec["Files"]], Keys[audio]]|>]];
+    Join[spec["Meta"], <|"Missing" -> Complement[Keys[KeySelect[spec["Files"], IntegerQ]], Keys[audio]]|>]];
   If[FailureQ[job],
     $iSWVideoLast = <|"Status" -> "Failed", "Error" -> iSWFailureText[job]|>;
     If[Head[nb] === NotebookObject, iSWStatus[nb, iSL["\:9332\:97f3\:304b\:3089\:52d5\:753b\:3092\:4f5c\:308c\:307e\:305b\:3093\:3067\:3057\:305f: ", "Could not make the video from the recording: "] <> iSWFailureText[job]]];
@@ -9586,7 +9792,8 @@ SlideTalkVideo[opts : OptionsPattern[]] := With[{nb = iSWResolveTargetNb[]},
 
 SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   {interactive, voice, model, engine, mode, plan = None, texts, lack, choice, lang, img, images, count,
-   readings, keys, include, dir, vkey, speech, files, missing, res = None, failedKeys = {}, titles, out, meta, i = 0},
+   readings, keys, include, dir, vkey, speech, files, missing, res = None, failedKeys = {}, titles, out, meta, i = 0,
+   videos = <||>, pspeech = <||>, pfiles = <||>, pmissing = {}, vsegs = <||>},
   interactive = Replace[OptionValue["Interactive"], Automatic -> True];
   If[iSWPlayActiveQ[],
     Return[iSWVideoFail["SlideVideoBusy", "\:8aad\:307f\:4e0a\:3052\:3092\:518d\:751f\:4e2d\:3067\:3059\:3002\:505c\:6b62\:3057\:3066\:304b\:3089\:4f5c\:3063\:3066\:304f\:3060\:3055\:3044\:3002", "Narration is playing; stop it first."]]];
@@ -9620,7 +9827,16 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
     choice = Switch[OptionValue["Live"],
       "Record" | True, "Record",
       "Fast" | "Realtime", "Fast",
-      _, If[! interactive, "Record", ChoiceDialog[
+      _, Which[! interactive, "Record",
+        (* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:306f gpt-realtime \:3067\:901f\:304f\:4f5c\:308c\:306a\:3044: \:9332\:308b\:304b\:3084\:3081\:308b\:304b *)
+        iSWVoiceLiveOnlyQ[voice], ChoiceDialog[
+          iSL["\:58f0\:300c" <> iSWRealtimeVoiceOf[voice] <> "\:300d\:306f GPT-Live \:5c02\:7528\:306e\:58f0\:306a\:306e\:3067\:3001" <> model <> " \:3067\:9332\:308a\:307e\:3059\:3002\:539f\:7a3f\:3092\:30b9\:30d4\:30fc\:30ab\:30fc\:3067\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089 1 \:679a\:305a\:3064\:9332\:97f3\:3059\:308b\:306e\:3067\:3001\:304a\:3088\:305d " <>
+              ToString[Max[1, Round[iSWVideoEstimate[texts]/60.]]] <> " \:5206\:304b\:304b\:308a\:307e\:3059 (\:305d\:306e\:9593\:3001\:8cea\:554f\:306f\:53d7\:3051\:307e\:305b\:3093)\:3002",
+            "The voice \"" <> iSWRealtimeVoiceOf[voice] <> "\" exists only on GPT-Live, so it is recorded with " <> model <> ": the talk is read aloud and recorded slide by slide, about " <>
+              ToString[Max[1, Round[iSWVideoEstimate[texts]/60.]]] <> " min (no questions meanwhile)."],
+          {iSL[model <> " \:3067\:9332\:308b (\:5b9f\:6642\:9593)", "Record with " <> model <> " (real time)"] -> "Record",
+           iSL["\:3084\:3081\:308b", "Cancel"] -> "Cancel"}],
+        True, ChoiceDialog[
         iSL["\:97f3\:58f0\:30e2\:30c7\:30eb " <> model <> " (GPT-Live) \:306f\:5b9f\:6642\:9593\:3067\:3057\:304b\:58f0\:3092\:4f5c\:308c\:307e\:305b\:3093\:3002\:9332\:308b\:3068\:304d\:306f\:539f\:7a3f\:3092\:30b9\:30d4\:30fc\:30ab\:30fc\:3067\:8aad\:307f\:4e0a\:3052\:306a\:304c\:3089 1 \:679a\:305a\:3064\:9332\:97f3\:3059\:308b\:306e\:3067\:3001\:304a\:3088\:305d " <>
             ToString[Max[1, Round[iSWVideoEstimate[texts]/60.]]] <> " \:5206\:304b\:304b\:308a\:307e\:3059 (\:305d\:306e\:9593\:3001\:8cea\:554f\:306f\:53d7\:3051\:307e\:305b\:3093)\:3002\n\:540c\:3058\:58f0\:306e " <> iSWVideoFastModel[] <>
             " \:306a\:3089\:518d\:751f\:305b\:305a\:306b\:901f\:304f\:4f5c\:308c\:307e\:3059\:3002",
@@ -9634,6 +9850,12 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
       "Fast", model = iSWVideoFastModel[]; engine = "Realtime",
       "Record", Null,
       _, Return[Failure["Cancelled", <||>]]]];
+  (* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:306f gpt-realtime-* \:3067\:4f5c\:308c\:306a\:3044 (\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-realtime-* \:306e\:3068\:304d\:30fb\:300c\:901f\:304f\:4f5c\:308b\:300d) *)
+  If[engine === "Realtime",
+    With[{mis = iSWLiveVoiceMismatch[voice, model, If[choice === "Fast",
+        {"gpt-live-1 \:3067\:9332\:308b (\"Live\" -> \"Record\") \:304b\:3001\:58f0\:3092 marin / cedar \:306a\:3069\:306b\:66ff\:3048\:3066\:304f\:3060\:3055\:3044\:3002",
+         "Record with gpt-live-1 (\"Live\" -> \"Record\"), or choose a voice such as marin or cedar."}, Automatic]]},
+      If[FailureQ[mis], Return[mis]]]];
   (* \:58f0\:3092\:4f7f\:3048\:308b\:72b6\:614b\:304b *)
   If[engine === "Local",
     If[! iSWVoiceReadyQ[],
@@ -9673,29 +9895,50 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   vkey = iSWVideoVoiceKey[voice, model];
   speech = AssociationMap[iSWSpeechText[texts[#], readings] &, keys];
   files = AssociationMap[iSWVoiceCacheFile[dir, #, vkey, speech[#]] &, keys];
+  (* v1.69: \:52d5\:753b\:306e\:679a\:3068\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247 ({\:679a, \:7247\:756a\:53f7} -> \:6587 / wav) *)
+  videos = If[mode === "Poster", <||>, KeySelect[iSWTalkVideos[iSWTalkResolve[nb]], IntegerQ[#] && 1 <= # <= count &]];
+  KeyValueMap[Function[{k, v}, MapIndexed[Function[{p, pos}, With[{j = First[pos], t = Lookup[p, "Text", ""]},
+      If[StringQ[t] && StringTrim[t] =!= "",
+        pspeech[{k, j}] = iSWSpeechText[t, readings];
+        pfiles[{k, j}] = iSWVoiceCacheFile[dir, k, vkey, pspeech[{k, j}]]]]],
+    Select[Replace[Lookup[v, "Pieces", {}], Except[_List] -> {}], AssociationQ]]], videos];
+  vsegs = Association @ KeyValueMap[Function[{k, v}, k -> <|
+      "File" -> iSWVideoResolve[v, iSWVideoBaseDirOf[nb]],
+      "Rect" -> Lookup[Lookup[Replace[img["Videos"], Except[_Association] -> <||>], ToString[k], <||>], "Rect", None],
+      "Duration" -> Replace[Lookup[v, "Duration", 0.], Except[_?NumericQ] -> 0.],
+      "Pieces" -> MapIndexed[<|"At" -> Lookup[#1, "At", None], "Audio" -> Lookup[pfiles, Key[{k, First[#2]}], None]|> &,
+        Select[Replace[Lookup[v, "Pieces", {}], Except[_List] -> {}], AssociationQ]]|>], videos];
   titles = Replace[Quiet[iSWSlideTitles[nb]], Except[_List] -> {}];
   out = Replace[OptionValue["Output"], Automatic :> iSWVideoOutput[nb]];
   meta = <|"Notebook" -> nb, "Deck" -> Replace[Quiet[NotebookFileName[nb]], Except[_String] -> ""],
     "Title" -> iSWVideoDeckTitle[nb], "Voice" -> voice, "Model" -> If[engine === "Local", None, model],
     "Engine" -> engine, "Language" -> If[AssociationQ[plan], plan["Language"], Quiet[SlideTalkLanguage[nb]]],
     "Mode" -> mode, "SlidesDigest" -> iSWVideoDeckDigest[nb],
-    "TalkDigest" -> Hash[{vkey, Normal[speech]}, "SHA256", "HexString"]|>;
+    "TalkDigest" -> Hash[{vkey, Normal[speech], Normal[pspeech]}, "SHA256", "HexString"]|>;
   If[engine === "Live",
-    Return[iSWVideoRecordStart[nb, <|"Images" -> images, "Include" -> include, "Keys" -> keys,
-      "Files" -> files, "Titles" -> titles, "Output" -> out, "Meta" -> meta, "Texts" -> texts|>]]];
+    Return[iSWVideoRecordStart[nb, <|"Images" -> images, "Include" -> include, "Keys" -> Union[keys, First /@ Keys[pfiles]],
+      "Files" -> Join[files, KeyMap[{First[#], "v" <> ToString[Last[#]]} &, pfiles]], "PieceFiles" -> pfiles, "VideoSegs" -> vsegs,
+      "Titles" -> titles, "Output" -> out, "Meta" -> meta, "Texts" -> texts|>]]];
   (* a cloud voice renders the talk on OpenAI: not for a deck at PrivacyLevel 0.5 or more / declared Private (2026-10-31) *)
   If[engine =!= "Local", With[{refusal = iSWCloudVoiceRefusal[nb]}, If[FailureQ[refusal], Return[refusal]]]];
   missing = Select[keys, ! (FileExistsQ[files[#]] && TrueQ[Quiet[FileByteCount[files[#]]] > 1000]) &];
+  pmissing = Select[Keys[pfiles], ! (FileExistsQ[pfiles[#]] && TrueQ[Quiet[FileByteCount[pfiles[#]]] > 1000]) &];
   If[engine === "Local",
     Do[i++;
-      iSWStatus[nb, iSL["\:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 ", "Synthesizing "] <> ToString[i] <> "/" <> ToString[Length[missing]]];
+      iSWStatus[nb, iSL["\:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 ", "Synthesizing "] <> ToString[i] <> "/" <> ToString[Length[missing] + Length[pmissing]]];
       If[iSWVideoLocalFile[dir, k, voice, speech[k]] === $Failed, AppendTo[failedKeys, k]],
-      {k, missing}],
-    If[missing =!= {},
+      {k, missing}];
+    Do[i++;
+      iSWStatus[nb, iSL["\:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 ", "Synthesizing "] <> ToString[i] <> "/" <> ToString[Length[missing] + Length[pmissing]]];
+      If[iSWVideoLocalFile[dir, First[k], voice, pspeech[k]] === $Failed, AppendTo[failedKeys, k]],
+      {k, pmissing}],
+    If[missing =!= {} || pmissing =!= {},
       iSWStatus[nb, iSL["\:58f0\:3092\:4f5c\:3063\:3066\:3044\:307e\:3059 (" <> model <> "\:3001\:518d\:751f\:306a\:3057) 0/", "Rendering voices (" <> model <> ", no playback) 0/"] <> ToString[Length[missing]]];
       res = Quiet[SourceVault`SourceVaultRealtimeRender[
-        Map[<|"Id" -> "s" <> ToString[#], "Text" -> speech[#], "File" -> files[#],
+        Join[Map[<|"Id" -> "s" <> ToString[#], "Text" -> speech[#], "File" -> files[#],
             "Heading" -> iSL["\:30b9\:30e9\:30a4\:30c9 ", "Slide "] <> ToString[#] <> "/" <> ToString[count]|> &, missing],
+          Map[<|"Id" -> "s" <> ToString[First[#]] <> "v" <> ToString[Last[#]], "Text" -> pspeech[#], "File" -> pfiles[#],
+            "Heading" -> iSL["\:30b9\:30e9\:30a4\:30c9 ", "Slide "] <> ToString[First[#]] <> "/" <> ToString[count]|> &, pmissing]],
         "Model" -> model, "Voice" -> iSWRealtimeVoiceOf[voice],
         "Instructions" -> iSWRealtimeSessionInstructionsFor[nb, "Realtime"],
         "NarrationInstructions" -> iSWTalkNarrationInstructions[nb],
@@ -9708,7 +9951,7 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
       If[! AssociationQ[res],
         iSWStatusClearLater[nb];
         Return[iSWVideoFail["SlideVideoVoiceFailed", "\:58f0\:3092\:4f5c\:308b\:5c64 (SourceVault_realtime.wl) \:3092\:547c\:3079\:307e\:305b\:3093\:3067\:3057\:305f\:3002", "Could not call the voice layer (SourceVault_realtime.wl)."]]];
-      failedKeys = Select[missing, ! FileExistsQ[files[#]] &]]];
+      failedKeys = Join[Select[missing, ! FileExistsQ[files[#]] &], Select[pmissing, ! FileExistsQ[pfiles[#]] &]]]];
   If[failedKeys =!= {},
     iSWStatusClearLater[nb];
     Return[iSWVideoFail["SlideVideoVoiceFailed",
@@ -9718,7 +9961,7 @@ SlideTalkVideo[nb_NotebookObject, opts : OptionsPattern[]] := Module[
         "). The finished ones are kept; press again to make only the rest.",
       <|"Slides" -> failedKeys,
         "Detail" -> If[AssociationQ[res], StringRiffle[Take[Values[Lookup[res, "Failed", <||>]], UpTo[3]], "; "], ""]|>]]];
-  iSWVideoCompose[nb, images, include, files, titles, out, meta]];
+  iSWVideoCompose[nb, images, include, files, titles, out, meta, vsegs]];
 
 SlideTalkVideoStatus[] := <|
   "Recording" -> If[AssociationQ[$iSWVideoRecord],
@@ -10576,7 +10819,7 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.67";
+$SlideWorkflowInteractiveVersion = "1.69";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
 (* v1.39: \:30d1\:30ec\:30c3\:30c8\:3092\:300c\:4f5c\:6210\:300d\:3068\:300c\:767a\:8868\:300d\:306b\:5206\:3051\:308b\:3002\:4f5c\:6210 = \:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5 / 1 \:679a\:305a\:3064 /
@@ -10699,6 +10942,13 @@ ShowSlidePalette[OptionsPattern[]] := Module[{safe = TrueQ[OptionValue["Safe"]]}
         iSWButton3[iSL["\:30c8\:30fc\:30af", "Talk"], RGBColor[0.45, 0.42, 0.7], SlideInsertTalk[]],
         iSWButton3[iSL["\:8cea\:7591", "QA"], RGBColor[0.8, 0.45, 0.15], SlideInsertQA[]],
         iSWButton3[iSL["\:7d42\:7aef", "End"], RGBColor[0.5, 0.45, 0.35], SlideInsertEndMarker[]]],
+      (* v1.69: \:52d5\:753b (\:30d5\:30a1\:30a4\:30eb\:3092\:9078\:3093\:3067\:52d5\:753b\:30bb\:30eb + \:518d\:751f\:4e2d\:306e\:539f\:7a3f\:30bb\:30eb) / \:52d5\:753b\:539f\:7a3f (\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:30bb\:30eb\:3060\:3051) *)
+      iSWButtonRow3[
+        iSWTip[iSWButton3[iSL["\:52d5\:753b", "Video"], RGBColor[0.2, 0.55, 0.6], SlideInsertVideo[]],
+          iSL["\:52d5\:753b\:30d5\:30a1\:30a4\:30eb\:3092\:9078\:3093\:3067\:3053\:306e\:4f4d\:7f6e\:306b\:8cbc\:308b (\:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:3067\:81ea\:52d5\:518d\:751f\:3001\:30af\:30ea\:30c3\:30af\:3067\:518d\:751f/\:4e00\:6642\:505c\:6b62)\:3002\:518d\:751f\:524d\:306e\:539f\:7a3f\:306f\:300c\:30c8\:30fc\:30af\:300d\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306f\:300c\:52d5\:753b\:539f\:7a3f\:300d", "Pick a video file and embed it here (autoplays in the slideshow; click to play/pause). Talk before it: Talk cell; talk during it: Video talk cell"]],
+        iSWTip[iSWButton3[iSL["\:52d5\:753b\:539f\:7a3f", "VTalk"], RGBColor[0.3, 0.6, 0.65], SlideInsertVideoTalk[]],
+          iSL["\:52d5\:753b\:306e\:518d\:751f\:4e2d\:306b\:8aad\:3080\:539f\:7a3f (1 \:884c 1 \:7247\:3001\:884c\:982d\:306e @\:79d2 \:3067\:52d5\:753b\:306e\:4f55\:79d2\:304b\:3089\:8aad\:3080\:304b)", "Talk read while the video plays (one piece per line; @seconds = when in the video)"]],
+        Nothing],
 
       (* 4. \:539f\:7a3f\:3068\:60f3\:5b9a\:554f\:7b54 (\:3069\:308c\:3082\:30b9\:30e9\:30a4\:30c9\:306e\:4f5c\:308a\:65b9\:306b\:3088\:3089\:306a\:3044) *)
       iSWSectionLabel[" \:539f\:7a3f\:3068\:60f3\:5b9a\:554f\:7b54", " Talks and Q&A"],
@@ -14987,7 +15237,7 @@ iSWTalkLangPlan[talk_Association, langIn_] := Module[
     True, AppendTo[missing, k]; raw];
   slides = Select[Lookup[talk, "Slides", {}], AssociationQ];
   Do[
-    With[{k = Lookup[s, "Slide", None], raw = ToString[Lookup[s, "Text", ""]]},
+    With[{k = Lookup[s, "Slide", None], raw = ToString[Lookup[s, "PreTalk", Lookup[s, "Text", ""]]]},   (* v1.69: \:52d5\:753b\:306e\:679a\:306f\:518d\:751f\:524d\:306e\:539f\:7a3f\:3060\:3051 *)
       If[IntegerQ[k] && k >= 1,
         With[{t = iSWVoicePlainText[pick[k, raw]]},
           If[t =!= "", texts[k] = If[KeyExistsQ[texts, k], texts[k] <> "\n" <> t, t]]]]],
@@ -16749,7 +16999,7 @@ iSWPosterCellTags[cell_Cell] := Flatten[Cases[Rest[List @@ cell], (CellTags -> t
 (* v1.58: Subsection \:304c\:7121\:3051\:308c\:3070\:3001\:5148\:982d 3 \:30bb\:30eb\:4ee5\:5185\:306e\:5225\:306e\:898b\:51fa\:3057 (\:904e\:53bb\:306e\:30c7\:30c3\:30ad: Section / Subsubsection / Chapter) *)
 iSWPosterTitleCell[cells_List] := With[{c = SelectFirst[cells, MatchQ[#, Cell[_, "Subsection", ___]] &, None]},
   If[c =!= None, c,
-    SelectFirst[Take[Select[cells, ! MatchQ[#, Cell[_, "SlideShowNavigationBar" | "SlideCrumb" | "SlideTalk" | "SlidePosterTalk", ___]] &], UpTo[3]],
+    SelectFirst[Take[Select[cells, ! MatchQ[#, Cell[_, "SlideShowNavigationBar" | "SlideCrumb" | "SlideTalk" | "SlidePosterTalk" | "SlideVideoTalk", ___]] &], UpTo[3]],
       MatchQ[#, Cell[_, "Section" | "Subsubsection" | "Chapter" | "Title", ___]] &, None]]];
 (* \:30bf\:30a4\:30c8\:30eb\:30b9\:30e9\:30a4\:30c9: iBuildTitleSlideCells \:304c\:66f8\:304f FontSize 48 \:306e StyleBox *)
 iSWPosterDeckTitleText[cells_List] := With[{m = Cases[cells, StyleBox[t_String, ___, FontSize -> 48, ___] :> t, Infinity, 1]},
@@ -17773,7 +18023,7 @@ iSWPosterTalkWriteCell[nb_NotebookObject, n_Integer, text_String] := Module[{ran
     True, Return[$Failed]];
   cell = iContentCell[{"PosterTalk", text}];
   pIdx = SelectFirst[span, iSWPosterTalkCellFEQ[styles[[#]], cells[[#]]] &, None];
-  tIdx = Select[span, Intersection[Flatten[{styles[[#]]}], {"SlideTalk", "SlidePosterTalk"}] =!= {} &];
+  tIdx = Select[span, Intersection[Flatten[{styles[[#]]}], {"SlideTalk", "SlidePosterTalk", "SlideVideoTalk"}] =!= {} &];
   qIdx = SelectFirst[span, MemberQ[Flatten[{styles[[#]]}], "SlideQA"] &, None];
   Which[
     IntegerQ[pIdx], SelectionMove[cells[[pIdx]], All, Cell]; NotebookWrite[nb, cell, All],
@@ -18036,7 +18286,7 @@ iSWPosterUploadNote[pu_] := Which[
 
 $SlideGraphTailTitles = {"\:6700\:5f8c\:5c3e", "Appendix", "\:4ed8\:9332"};
 $iSWS2KHeadingRank = <|"Title" -> 0, "Chapter" -> 0, "Section" -> 1, "Subsection" -> 2, "Subsubsection" -> 3|>;
-$iSWS2KSkipStyles = {"SlideShowNavigationBar", "SlideTalk", "SlidePosterTalk", "SlideQA", "SlidePrompt", "SlideCrumb", "Note",
+$iSWS2KSkipStyles = {"SlideShowNavigationBar", "SlideTalk", "SlidePosterTalk", "SlideVideoTalk", "SlideQA", "SlidePrompt", "SlideCrumb", "Note",
   "Directive", "SlideStory", "References", "SlidePoster", "SlideReading", "SlideDictionary", "SlideAdjust", "Print", "Message", "Echo"};
 $iSWS2KSubStyles = {"Subitem", "Subsubitem", "SubitemNumbered", "SubsubitemNumbered", "ItemParagraph", "SubitemParagraph", "SubsubitemParagraph"};
 
@@ -18393,6 +18643,12 @@ SlidePosterAudio[nb_NotebookObject, opts : OptionsPattern[]] := Module[
   (* gpt-live-1 \:306f\:5b9f\:6642\:9593\:3067\:3057\:304b\:8a71\:305b\:306a\:3044: \:540c\:3058\:58f0\:306e gpt-realtime \:3067\:4f5c\:308b *)
   If[engine === "Live",
     fastNote = model; model = iSWVideoFastModel[]; engine = "Realtime"];
+  (* v1.68: \:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:306f gpt-realtime \:3067\:4f5c\:308b\:306e\:3067\:3001GPT-Live \:5c02\:7528\:306e\:58f0\:306f\:4f7f\:3048\:306a\:3044 *)
+  If[engine === "Realtime",
+    With[{mis = iSWLiveVoiceMismatch[voice, model, {
+        "\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:306f gpt-realtime \:3067\:4f5c\:308b\:306e\:3067\:3001\:58f0\:3092 marin / cedar \:306a\:3069\:306b\:66ff\:3048\:3066\:304f\:3060\:3055\:3044\:3002",
+        "Poster audio is rendered on gpt-realtime; choose a voice such as marin or cedar."}]},
+      If[FailureQ[mis], Return[mis]]]];
   texts = iSWPosterVoiceTexts[nb];
   If[! AssociationQ[texts] || Length[texts] === 0,
     Return[iSWVideoFail["SlidePosterTalkMissing", "\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:304c\:3042\:308a\:307e\:305b\:3093 (\:4f5c\:6210\:30d1\:30ec\:30c3\:30c8\:306e\:300c\:30dd\:30b9\:30bf\:30fc\:539f\:7a3f\:300d\:3067\:4f5c\:308a\:307e\:3059)\:3002",
@@ -18498,6 +18754,832 @@ iSWPosterAudioAction[nb_] := Module[{r = SlidePosterAudio[nb]},
           {iSL["\:958b\:304f", "Open"] -> True, iSL["\:9589\:3058\:308b", "Close"] -> False}]],
         Quiet[SystemOpen[r["File"]]]]];
   r];
+
+(* ===================== v1.69: \:52d5\:753b\:306e\:57cb\:3081\:8fbc\:307f (SlideVideo) =====================
+   \:30ef\:30fc\:30e0\:3084\:30bf\:30fc\:30c8\:30eb\:306e\:52d5\:4f5c\:306e\:3088\:3046\:306b\:3001\:5b9a\:7fa9\:3084\:5b9a\:7406\:306e\:5217\:6319\:3088\:308a\:52d5\:753b\:306e\:65b9\:304c\:4f1d\:308f\:308b\:5185\:5bb9\:306e\:305f\:3081\:306b\:3001\:30b9\:30e9\:30a4\:30c9\:306b\:52d5\:753b\:3092\:8cbc\:308b\:3002
+   - \:30b7\:30ca\:30ea\:30aa md: ![video w=600 poster=last](anim/x.mp4) (\:62e1\:5f35\:5b50\:3067\:753b\:50cf\:3068\:898b\:5206\:3051\:308b)\:3001\:5168\:9762\:306f ## !video path\:3002
+     \:518d\:751f\:524d\:306e\:539f\:7a3f\:306f\:5f93\:6765\:306e talk:\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306f vtalk: (vtalk@8: \:3067\:52d5\:753b\:306e 8 \:79d2\:304b\:3089) \:2192 \:5c02\:7528\:30b9\:30bf\:30a4\:30eb SlideVideoTalk \:306e\:30bb\:30eb
+     (\:30bb\:30eb\:306e\:4e2d\:3067\:306f 1 \:884c 1 \:7247\:3001\:884c\:982d\:306e @\:79d2 \:304c\:958b\:59cb\:6642\:523b\:3002\:7121\:3051\:308c\:3070\:524d\:306e\:7247\:306e\:76f4\:5f8c)\:3002
+   - \:52d5\:753b\:30bb\:30eb = FE \:306e\:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc (VideoBox2) \:3068\:540c\:3058 FE \:306e\:518d\:751f\:6a5f\:69cb (FFmpegTools`FE`FrontEndVideoPlayback.. ) \:3092\:4f7f\:3046\:81ea\:524d\:306e
+     \:30d7\:30ec\:30a4\:30e4\:30fc (DynamicModule)\:3002\:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc\:306f\:30ab\:30fc\:30cd\:30eb\:304b\:3089\:518d\:751f\:3092\:59cb\:3081\:3089\:308c\:306a\:3044 (\:518d\:751f id \:304c GUI \:306e DynamicModule \:306e\:4e2d\:306b\:3042\:308b) \:306e\:3067\:3001
+     \:3053\:3061\:3089\:306f id \:3092\:30ab\:30fc\:30cd\:30eb\:306e\:767b\:9332\:7c3f $iSWVideoPlayers (uuid -> id) \:306b\:6301\:3063\:3066 FE \:5074\:306e\:5927\:57df\:8a18\:53f7\:306b\:516c\:958b\:3057\:3001\:30d1\:30ec\:30c3\:30c8\:306e\:518d\:751f (SlidePlay) \:304c\:958b\:59cb\:30fb\:7d42\:4e86\:691c\:77e5\:30fb\:4e00\:6642\:505c\:6b62\:3092\:884c\:3046\:3002
+     \:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d (SlideShow \:74b0\:5883\:3001SlidePlay \:304c\:52d5\:3044\:3066\:3044\:306a\:3044\:3068\:304d) \:306f\:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8\:3001\:30af\:30ea\:30c3\:30af\:3067\:518d\:751f/\:4e00\:6642\:505c\:6b62\:3002
+   - \:9759\:6b62\:753b (\:753b\:50cf / Sliden mp4 / \:30dd\:30b9\:30bf\:30fc / QA \:306e\:753b\:50cf) \:306f\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0 (poster=last \:304c\:65e2\:5b9a) \:306b\:5dee\:3057\:66ff\:3048\:3066\:63cf\:304f\:3002
+     VRChat \:306e Sliden mp4 \:306b\:306f\:52d5\:753b\:3092\:5165\:308c\:3089\:308c\:306a\:3044 (\:753b\:50cf\:3060\:3051) \:306e\:3067\:3001\:52d5\:753b\:306e\:679a\:3082 1 \:679a\:306e\:9759\:6b62\:753b\:306b\:306a\:308b\:3002
+   - \:8aad\:307f\:4e0a\:3052\:52d5\:753b (SlideTalkVideo) \:306f ffmpeg \:306e overlay \:3067\:52d5\:753b\:306e\:77e9\:5f62 (\:30de\:30fc\:30ab\:30fc\:8272\:3067\:63cf\:3044\:3066\:691c\:51fa) \:306b\:5b9f\:52d5\:753b\:3092\:5408\:6210\:3057\:3001
+     vtalk \:306e\:58f0\:3092\:6642\:523b\:3069\:304a\:308a\:306b\:7f6e\:304f\:3002\:524d\:306e\:539f\:7a3f\:306e\:9593\:306f\:6700\:521d\:306e\:30d5\:30ec\:30fc\:30e0\:3067\:6b62\:307e\:308a\:3001\:52d5\:753b\:304c\:7d42\:308f\:308b\:3068\:6700\:5f8c\:306e\:30d5\:30ec\:30fc\:30e0\:3067\:6b62\:307e\:308b\:3002 *)
+
+
+(* Get \:3057\:76f4\:3057\:305f\:3068\:304d\:3001\:5f15\:6570\:306e\:5f62\:304c\:5909\:308f\:3063\:305f\:53e4\:3044\:5b9a\:7fa9\:304c\:6b8b\:308b\:3068\:65b0\:3057\:3044\:5b9a\:7fa9\:3088\:308a\:5148\:306b\:5f53\:305f\:308b (11-10 \:5b9f\:6e2c: \:7247\:306e\:9332\:97f3\:5148\:3068\:78ba\:304b\:3081\:304c\:52d5\:304b\:306a\:304b\:3063\:305f)\:3002
+   \:3053\:306e\:7bc0\:306e\:95a2\:6570\:306e\:5b9a\:7fa9\:306f\:5148\:306b\:6d88\:3059 (Clear \:306f\:4f7f\:3044\:65b9\:306e\:8aac\:660e\:30fb\:5c5e\:6027\:30fb\:30aa\:30d7\:30b7\:30e7\:30f3\:3092\:6b8b\:3059) *)
+Clear[SlideDeckVideos, SlideInsertVideo, SlideInsertVideoTalk, SlideVideoPause, SlideVideoPlay, SlideVideoStatus, iSWCurrentVideoUuid, iSWDeckVideoMap, iSWFFmpegMajorVersion, iSWNarrationTailCoverage, iSWNarrationVoicedShortQ, iSWPlayLatency, iSWPlayLatencyDefault, iSWPlayLatencyKey, iSWPlayLatencySample, iSWPlayLiveQ, iSWPlayLiveRestart, iSWPlayNarrationGap, iSWPlayNarrationMsgSeq, iSWPlayNarrationRetryQ, iSWPlayNarrationSaid, iSWPlayNarrationSpeechTick, iSWPlayRecordingQ, iSWPlayRetrySend, iSWPlaySpeak, iSWPlayVideoActiveQ, iSWPlayVideoBegin, iSWPlayVideoHalt, iSWPlayVideoOnSpeech, iSWPlayVideoPause, iSWPlayVideoPendingQ, iSWPlayVideoResume, iSWPlayVideoSendPiece, iSWPlayVideoStartNow, iSWPlayVideoStep, iSWPlayVideoTick, iSWSlideVideoSpec, iSWSlideVideoTalk, iSWSubtitleText, iSWTalkVideos, iSWVideoBaseDirOf, iSWVideoCell, iSWVideoCellQ, iSWVideoCellShown, iSWVideoCellToStill, iSWVideoCellsToStills, iSWVideoEnsurePlayer, iSWVideoFEBoxSymbol, iSWVideoFEGet, iSWVideoFEReadyQ, iSWVideoFESet, iSWVideoFESymbol, iSWVideoFileQ, iSWVideoFilterArgs, iSWVideoFilterScript, iSWVideoIdAliveQ, iSWVideoInfo, iSWVideoLocate, iSWVideoMarkerRect, iSWVideoPageCellQ, iSWVideoPlaceholderImage, iSWVideoPlayer, iSWVideoPlayerBoxID, iSWVideoPlayerEntry, iSWVideoPlayerPause, iSWVideoPlayerPlay, iSWVideoPlayerRebind, iSWVideoPlayerRelease, iSWVideoPlayerRewind, iSWVideoPlayerState, iSWVideoPlayerToggle, iSWVideoPosterDir, iSWVideoPosterImage, iSWVideoPosterSpec, iSWVideoRasterSize, iSWVideoRectsFile, iSWVideoRectsRead, iSWVideoRectsWrite, iSWVideoRelPath, iSWVideoResolve, iSWVideoSegmentVideo, iSWVideoSlideQ, iSWVideoSpecOf, iSWVideoTalkCellQ, iSWVideoTalkClock, iSWVideoTalkPieces, iSWVideoTalkSeconds, iSWVideoTalkText, iSWVideoTalkToMd, iSWVideoPlayerBind, iSWVideoPlayerAutoStart];
+
+If[! ValueQ[$SlideVideoAutoPlay], $SlideVideoAutoPlay = True];
+If[! ValueQ[$SlideVideoPoster], $SlideVideoPoster = "Last"];
+If[! ValueQ[$SlideVideoFileExtensions], $SlideVideoFileExtensions = {"mp4", "mov", "m4v", "webm", "mkv", "avi", "mpg", "mpeg"}];
+If[! ValueQ[$SlideVideoGap], $SlideVideoGap = 0.5];        (* \:518d\:751f\:524d\:306e\:539f\:7a3f\:3092\:8aad\:307f\:7d42\:3048\:3066\:304b\:3089\:52d5\:753b\:304c\:59cb\:307e\:308b\:307e\:3067 (\:79d2) *)
+If[! ValueQ[$SlideVideoPieceGap], $SlideVideoPieceGap = 0.3];  (* \:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247\:3068\:7247\:306e\:9593 (\:79d2) *)
+$iSWVideoMaxPixels = 1280*720;   (* \:30d7\:30ec\:30a4\:30e4\:30fc\:304c FE \:306b\:5fa9\:53f7\:3055\:305b\:308b\:753b\:7d20\:6570\:306e\:4e0a\:9650 (\:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc\:306e $maxPixels \:3068\:540c\:3058\:8003\:3048) *)
+$iSWVideoMarkerColor = RGBColor[1, 0, 1];
+(* uuid -> <|"Id", "Path", "Size", "Notebook", "BoxID", "CreatedAt"|>\:3002Get \:3057\:76f4\:3057\:3066\:3082\:6d88\:3055\:306a\:3044 (FE \:306e\:518d\:751f\:306f\:6b8b\:3063\:3066\:3044\:308b) *)
+If[! AssociationQ[$iSWVideoPlayers], $iSWVideoPlayers = <||>];
+$iSWVideoInfoCache = <||>;
+$iSWVideoPosterCache = <||>;
+
+iSWVideoFileQ[path_String] := MemberQ[$SlideVideoFileExtensions, ToLowerCase[FileExtension[path]]];
+iSWVideoFileQ[_] := False;
+
+(* \:52d5\:753b\:306e\:9577\:3055\:3068\:753b\:7d20\:6570 (\:30d5\:30a1\:30a4\:30eb\:306e\:65e5\:4ed8\:3067\:8a18\:61b6)\:3002\:8aad\:3081\:306a\:3051\:308c\:3070 $Failed *)
+iSWVideoInfo[path_String] := Module[{p = iResolvePath[path], key, v, d, rs},
+  If[! StringQ[p] || ! FileExistsQ[p], Return[$Failed]];
+  key = {p, Quiet[FileDate[p]], Quiet[FileByteCount[p]]};
+  With[{c = Lookup[$iSWVideoInfoCache, Key[key], None]}, If[AssociationQ[c], Return[c]]];
+  v = Quiet[Check[Video[p], $Failed]];
+  If[! TrueQ[Quiet[VideoQ[v]]], Return[$Failed]];
+  d = Quiet[iSWSeconds[Information[v, "Duration"]]];
+  (* \:753b\:7d20\:6570\:306f\:30c8\:30e9\:30c3\:30af\:3054\:3068\:306e\:9023\:60f3 <|1 -> {w, h}|> \:3067\:8fd4\:308b (15.0 \:5b9f\:6e2c) *)
+  rs = Quiet[Information[v, "OriginalRasterSize"]];
+  If[AssociationQ[rs], rs = First[Values[rs], None]];
+  If[! MatchQ[rs, {_Integer, _Integer}], rs = Quiet[Information[v, "RasterSize"]]; If[AssociationQ[rs], rs = First[Values[rs], None]]];
+  If[! MatchQ[rs, {_Integer, _Integer}], rs = {1920, 1080}];
+  If[! NumericQ[d] || d <= 0, Return[$Failed]];
+  $iSWVideoInfoCache[key] = <|"Path" -> p, "Duration" -> N[d], "RasterSize" -> rs|>];
+iSWVideoInfo[_] := $Failed;
+
+(* FE \:306b\:5fa9\:53f7\:3055\:305b\:308b\:5927\:304d\:3055: \:5143\:306e\:753b\:7d20\:6570\:306e\:307e\:307e\:3001\:4e0a\:9650\:3092\:8d85\:3048\:308c\:3070\:7e2e\:3081\:308b (\:5076\:6570\:306b\:4e38\:3081\:308b) *)
+iSWVideoRasterSize[{w_Integer, h_Integer}] := Module[{s = 1.},
+  If[w h > $iSWVideoMaxPixels, s = Sqrt[$iSWVideoMaxPixels/(w h)]];
+  {Max[2, 2 Round[s w/2]], Max[2, 2 Round[s h/2]]}];
+iSWVideoRasterSize[_] := {960, 540};
+
+(* \:4ee3\:8868\:30d5\:30ec\:30fc\:30e0\:3002spec: "Last" | "First" | \:79d2 | \:753b\:50cf\:30d5\:30a1\:30a4\:30eb\:306e\:30d1\:30b9\:3002size = {w, h} \:3067\:7e2e\:3081\:308b (None = \:305d\:306e\:307e\:307e)\:3002
+   \:540c\:3058\:52d5\:753b\:30fb\:540c\:3058\:6307\:5b9a\:306f $TemporaryDirectory \:306e PNG \:306b\:8a18\:61b6\:3059\:308b (\:5225\:30d7\:30ed\:30bb\:30b9\:306e\:66f8\:304d\:51fa\:3057\:3067\:3082\:4f7f\:3048\:308b) *)
+iSWVideoPosterDir[] := FileNameJoin[{$TemporaryDirectory, "SlideWorkflowVideoPosters"}];
+iSWVideoPosterSpec[spec_] := Which[
+  spec === Automatic || spec === None || spec === "", $SlideVideoPoster,
+  StringQ[spec] && MemberQ[{"last", "first", "end", "start"}, ToLowerCase[spec]],
+    Switch[ToLowerCase[spec], "last" | "end", "Last", _, "First"],
+  StringQ[spec] && StringMatchQ[spec, (DigitCharacter | ".") ..], ToExpression[spec],
+  True, spec];
+iSWVideoPosterImage[path_String, specIn_, size_ : None] := Module[{p = iResolvePath[path], spec = iSWVideoPosterSpec[specIn], info, key, file, img, t},
+  info = iSWVideoInfo[p];
+  If[info === $Failed, Return[iSWVideoPlaceholderImage[size]]];
+  key = Hash[{info["Path"], Quiet[FileDate[info["Path"]]], spec, size}, "SHA256", "HexString"];
+  With[{c = Lookup[$iSWVideoPosterCache, key, None]}, If[ImageQ[c], Return[c]]];
+  file = FileNameJoin[{iSWVideoPosterDir[], StringTake[key, 24] <> ".png"}];
+  img = If[FileExistsQ[file], Quiet[Check[Import[file], $Failed]], $Failed];
+  If[! ImageQ[img],
+    img = Which[
+      StringQ[spec] && ! MemberQ[{"Last", "First"}, spec],
+        With[{f = iResolvePath[spec]}, If[FileExistsQ[f], Quiet[Check[Import[f], $Failed]], $Failed]],
+      spec === "First",
+        (* VideoExtractFrames \:306f 0 \:79d2\:3061\:3087\:3046\:3069\:3067\:5931\:6557\:3059\:308b (15.0 \:5b9f\:6e2c) \:306e\:3067\:6700\:521d\:306e\:30d5\:30ec\:30fc\:30e0\:306f VideoFrameList \:3067 *)
+        Quiet[Check[VideoFrameList[Video[info["Path"]], 1], $Failed]],
+      True,
+        t = Which[NumericQ[spec], Clip[N[spec], {0.02, Max[0.02, info["Duration"] - 0.05]}],
+          True, Max[0.02, info["Duration"] - 0.1]];
+        Quiet[Check[VideoExtractFrames[Video[info["Path"]], Quantity[t, "Seconds"]], $Failed]]];
+    If[ListQ[img] && img =!= {}, img = First[img]];
+    If[! ImageQ[img], Return[iSWVideoPlaceholderImage[size]]];
+    img = Image[RemoveAlphaChannel[img, White], "Byte"];
+    If[MatchQ[size, {_Integer, _Integer}] && ImageDimensions[img] =!= size, img = ImageResize[img, size]];
+    Quiet[CreateDirectory[iSWVideoPosterDir[], CreateIntermediateDirectories -> True]];
+    Quiet[Export[file, img, "PNG"]]];
+  $iSWVideoPosterCache[key] = img];
+iSWVideoPlaceholderImage[size_] := Image[ConstantArray[{0.9, 0.9, 0.9}, Reverse[If[MatchQ[size, {_Integer, _Integer}], size, {640, 360}]]]];
+
+(* \:52d5\:753b\:30bb\:30eb\:306e\:4e2d\:8eab\:306e\:4ed5\:69d8 (TaggingRules "SWVideo")\:3002None = \:52d5\:753b\:30bb\:30eb\:3067\:306f\:306a\:3044 *)
+iSWVideoCellQ[c_] := MatchQ[c, Cell[___, CellTags -> t_ /; ! FreeQ[{t}, "SlideVideo"], ___]] && iSWVideoSpecOf[c] =!= None;
+iSWVideoSpecOf[c_Cell] := Module[{tr, v},
+  tr = FirstCase[c, (TaggingRules -> r_) :> r, None, {1}];
+  tr = Replace[tr, {a_Association :> a, l : {___Rule} :> Association[l], _ -> <||>}];
+  v = Lookup[tr, "SWVideo", None];
+  v = Replace[v, {a_Association :> a, l : {___Rule} :> Association[l], _ -> None}];
+  If[AssociationQ[v] && StringQ[Lookup[v, "Path", None]], v, None]];
+iSWVideoSpecOf[_] := None;
+iSWVideoPageCellQ[c_] := iSWVideoCellQ[c] && MatchQ[c, Cell[___, CellTags -> t_ /; ! FreeQ[{t}, "VideoPage"], ___]];
+
+(* \:52d5\:753b\:30d5\:30a1\:30a4\:30eb\:306e\:5b9f\:4f53: \:7d76\:5bfe\:30d1\:30b9 \:2192 \:30c7\:30c3\:30ad\:304b\:3089\:306e\:76f8\:5bfe\:30d1\:30b9 (\:5225\:306e\:6a5f\:68b0\:306e Dropbox \:3067\:3082\:958b\:3051\:308b) *)
+iSWVideoResolve[spec_Association, nbDir_] := Module[{p = Lookup[spec, "Path", ""], rel = Lookup[spec, "Rel", None], cands},
+  cands = Join[{p},
+    If[StringQ[rel] && StringQ[nbDir], {FileNameJoin[{nbDir, rel}]}, {}],
+    If[StringQ[nbDir] && StringQ[p], {FileNameJoin[{nbDir, FileNameTake[p]}]}, {}]];
+  SelectFirst[cands, StringQ[#] && FileExistsQ[#] &, None]];
+$iSWVideoBaseDir = None;
+(* \:30c7\:30c3\:30ad\:306e\:30d5\:30a9\:30eb\:30c0 (\:52d5\:753b\:306e\:76f8\:5bfe\:30d1\:30b9\:306e\:57fa\:70b9)\:3002\:958b\:3044\:3066\:3044\:308b\:30ce\:30fc\:30c8\:306f\:305d\:306e\:30d5\:30a9\:30eb\:30c0\:3001\:30d1\:30b9\:306f\:305d\:306e\:89aa\:3001\:305d\:308c\:4ee5\:5916\:306f None *)
+iSWVideoBaseDirOf[nb_NotebookObject] := With[{d = Quiet[NotebookDirectory[nb]]}, If[StringQ[d], d, None]];
+iSWVideoBaseDirOf[path_String] := With[{f = iResolvePath[path]}, If[FileExistsQ[f] && ! DirectoryQ[f], DirectoryName[f], If[DirectoryQ[f], f, None]]];
+iSWVideoBaseDirOf[_] := None;
+iSWVideoRelPath[path_String] := With[{base = $iSWVideoBaseDir},
+  If[StringQ[base] && StringStartsQ[ToLowerCase[path], ToLowerCase[base]],
+    StringTrim[StringDrop[path, StringLength[base]], "\\" | "/"], FileNameTake[path]]];
+
+(* \:52d5\:753b\:30bb\:30eb\:3002spec: <|"Path", "Width" (pt | Automatic), "Poster"|>\:3002maxW/maxH \:306f\:753b\:50cf\:306e iSizedSlideImage \:3068\:540c\:3058\:65e2\:5b9a *)
+SlideDeckBuild::novideo = "\:52d5\:753b\:30d5\:30a1\:30a4\:30eb\:304c\:898b\:3064\:304b\:3089\:306a\:3044\:304b\:8aad\:3081\:307e\:305b\:3093: `1` (\:30d7\:30ec\:30fc\:30b9\:30db\:30eb\:30c0\:3092\:633f\:5165\:3057\:307e\:3059)";
+(* \:52d5\:753b\:30d5\:30a1\:30a4\:30eb\:306e\:6240\:5728: \:30c7\:30c3\:30ad\:306e\:30d5\:30a9\:30eb\:30c0 ($iSWVideoBaseDir) \:304b\:3089\:306e\:76f8\:5bfe \:2192 \:305d\:306e\:307e\:307e \:2192 iResolvePath (\:30ce\:30fc\:30c8\:306e\:30d5\:30a9\:30eb\:30c0 / \:30d1\:30c3\:30b1\:30fc\:30b8)\:3002\:898b\:3064\:304b\:308c\:3070\:7d76\:5bfe\:30d1\:30b9 *)
+iSWVideoLocate[p_String] := Module[{cands},
+  cands = Select[{If[StringQ[$iSWVideoBaseDir], FileNameJoin[{$iSWVideoBaseDir, p}], Nothing], p, iResolvePath[p]}, StringQ];
+  With[{hit = SelectFirst[cands, FileExistsQ[#] && ! DirectoryQ[#] &]}, If[StringQ[hit], ExpandFileName[hit], p]]];
+iSWVideoLocate[_] := "";
+iSWVideoCell[spec_Association, maxW_ : 820, maxH_ : 360, extraTags_List : {}] := Module[
+  {path = iSWVideoLocate[Lookup[spec, "Path", ""]], info, dims, wpt, uuid, raster, poster, posterSpec, expr},
+  info = iSWVideoInfo[path];
+  posterSpec = iSWVideoPosterSpec[Lookup[spec, "Poster", Automatic]];
+  If[info === $Failed,
+    Message[SlideDeckBuild::novideo, Lookup[spec, "Path", ""]];
+    Return[Cell[BoxData[ToBoxes[Image[iSWVideoPlaceholderImage[{640, 360}], ImageSize -> If[NumberQ[spec["Width"]], spec["Width"], 480]]]],
+      "Input", TextAlignment -> Center, CellTags -> Join[{"SlideVideo"}, extraTags],
+      TaggingRules -> {"SWVideo" -> {"Id" -> "swv" <> StringTake[StringDelete[CreateUUID[], "-"], 12], "Path" -> path,
+        "Rel" -> iSWVideoRelPath[path], "Width" -> If[NumberQ[spec["Width"]], spec["Width"], 480], "Duration" -> 0.,
+        "RasterSize" -> {640, 360}, "Poster" -> posterSpec, "Missing" -> True}}]]];
+  dims = info["RasterSize"];
+  wpt = If[NumberQ[spec["Width"]], N[spec["Width"]], N[Min[maxW, 0.75 dims[[1]], maxH dims[[1]]/dims[[2]]]]];
+  uuid = "swv" <> StringTake[StringDelete[CreateUUID[], "-"], 12];
+  raster = iSWVideoRasterSize[dims];
+  poster = iSWVideoPosterImage[path, "First", raster];
+  expr = iSWVideoPlayer[uuid, path, iSWVideoRelPath[path], raster, wpt, poster];
+  Cell[BoxData[ToBoxes[expr]], "Input", TextAlignment -> Center, ShowStringCharacters -> False,
+    CellTags -> Join[{"SlideVideo"}, extraTags],
+    TaggingRules -> {"SWVideo" -> {"Id" -> uuid, "Path" -> path, "Rel" -> iSWVideoRelPath[path], "Width" -> wpt,
+      "Duration" -> info["Duration"], "RasterSize" -> raster, "Poster" -> posterSpec}}]];
+
+SlideVideoCell[path_String, opts : OptionsPattern[]] := iSWVideoCell[<|"Path" -> path,
+  "Width" -> OptionValue[SlideVideoCell, {opts}, "Width"], "Poster" -> OptionValue[SlideVideoCell, {opts}, "Poster"]|>];
+Options[SlideVideoCell] = {"Width" -> Automatic, "Poster" -> Automatic};
+
+(* ---- \:30d7\:30ec\:30a4\:30e4\:30fc (FE \:306e\:518d\:751f\:6a5f\:69cb\:306b\:76f4\:63a5\:3064\:306a\:3050) ----
+   \:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc (Video`VideoGUI\:3001FE \:306e VideoBox2) \:306e frontEndVideoDisplayArea \:3068\:540c\:3058\:4f5c\:308a: RasterBox[Dynamic[bytes]] \:3092
+   FE \:5074\:306e\:30b3\:30fc\:30c9 (Evaluator -> None) \:304c FrontEndVideoPlaybackGetCurrentFrame \:3067\:6bce\:30d5\:30ec\:30fc\:30e0\:66f4\:65b0\:3057\:3001\:8868\:793a\:306e\:7bb1\:3092
+   FrontEndVideoPlaybackSetDisplayBoxID \:3067\:7d50\:3073\:3064\:3051\:308b (\:518d\:751f\:6a5f\:69cb\:304c\:65b0\:3057\:3044\:30d5\:30ec\:30fc\:30e0\:306e\:305f\:3073\:306b\:305d\:306e\:7bb1\:3092\:63cf\:304d\:76f4\:3055\:305b\:308b)\:3002
+   \:9055\:3044\:306f\:518d\:751f id \:306e\:6301\:3061\:65b9 (2026-11-10 \:4f5c\:308a\:76f4\:3057):
+   - id \:306f\:30ab\:30fc\:30cd\:30eb\:304c\:4f5c\:3063\:3066\:767b\:9332\:7c3f $iSWVideoPlayers (uuid -> id) \:306b\:6301\:3061\:3001**FE \:5074\:306e\:5927\:57df\:8a18\:53f7** SlideWorkflow`FEVideo`<uuid> \:306b\:516c\:958b\:3059\:308b\:3002
+     \:30bb\:30eb\:306e FE \:5074\:306e\:30b3\:30fc\:30c9\:306f\:305d\:306e\:8a18\:53f7\:3092\:8aad\:3080\:3060\:3051 (\:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc\:306f id \:3092 DynamicModule \:306e\:5c40\:6240\:5909\:6570\:306b\:6301\:3064\:306e\:3067\:3001\:30ab\:30fc\:30cd\:30eb\:304b\:3089\:59cb\:3081\:3089\:308c\:306a\:3044)\:3002
+     \:6700\:521d\:306e\:7248\:306f id \:3092\:30bb\:30eb\:306e\:5c40\:6240\:5909\:6570\:306b\:3082\:6301\:3063\:3066\:3044\:305f\:306e\:3067\:3001\:30d1\:30c3\:30b1\:30fc\:30b8\:306e\:8aad\:307f\:8fbc\:307f\:524d\:306b\:8868\:793a\:3055\:308c\:305f\:30bb\:30eb\:30fb\:30ab\:30fc\:30cd\:30eb\:306e\:518d\:8d77\:52d5\:30fbGet \:306e\:3084\:308a\:76f4\:3057\:3067
+     \:30bb\:30eb\:3068\:30ab\:30fc\:30cd\:30eb\:306e id \:304c\:305a\:308c\:3001\:30ab\:30fc\:30cd\:30eb\:304c\:518d\:751f\:3057\:3066\:3082\:7d75\:304c\:51fa\:306a\:304b\:3063\:305f\:3002
+   - \:30bb\:30eb\:306f\:81ea\:5206\:306e\:7bb1\:306e\:756a\:53f7\:3092 FE \:5074\:306e\:5927\:57df\:8a18\:53f7 <uuid>Box \:306b\:66f8\:304f (FE \:5074\:3001\:30ab\:30fc\:30cd\:30eb\:4e0d\:8981)\:3002\:30ab\:30fc\:30cd\:30eb\:306f\:305d\:308c\:3092\:8aad\:3093\:3067\:7bb1\:3092\:7d50\:3079\:308b\:306e\:3067\:3001
+     \:30bb\:30eb\:304c\:5148\:306b\:8868\:793a\:3055\:308c\:3066\:3044\:3066\:3082\:5f8c\:304b\:3089\:518d\:751f\:3092\:59cb\:3081\:3089\:308c\:308b\:3002
+   - \:30bb\:30eb\:304c\:30ab\:30fc\:30cd\:30eb\:3092\:547c\:3076\:306e\:306f 2 \:304b\:6240\:3060\:3051: \:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d (\:7bb1\:306e\:756a\:53f7\:3092\:53d6\:308a\:3001iSWVideoCellShown = \:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8) \:3068\:3001\:30af\:30ea\:30c3\:30af\:3002
+     \:3069\:3061\:3089\:3082\:30d1\:30c3\:30b1\:30fc\:30b8\:304c\:7121\:3051\:308c\:3070\:4f55\:3082\:3057\:306a\:3044 (\:9759\:6b62\:753b\:306e\:307e\:307e)\:3002\:8868\:793a\:306e\:3068\:304d\:306b\:30ab\:30fc\:30cd\:30eb\:304c\:624b\:3092\:96e2\:305b\:306a\:3044\:3068\:3001FE \:306f Initialization \:306e
+     \:3046\:3061\:81ea\:5206\:3067\:8a55\:4fa1\:3067\:304d\:308b\:90e8\:5206 (\:7bb1\:306e\:756a\:53f7) \:3060\:3051\:3092\:8a55\:4fa1\:3057\:3001\:30ab\:30fc\:30cd\:30eb\:306e\:95a2\:6570\:306f\:547c\:3070\:308c\:306a\:3044 (\:96a0\:308c\:305f FE \:3067\:5b9f\:6e2c)\:3002\:305d\:306e\:5834\:5408\:3082\:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8\:304c
+     \:7121\:3044\:3060\:3051\:3067\:3001\:5f8c\:304b\:3089\:306e\:518d\:751f (SlidePlay\:30fb\:30af\:30ea\:30c3\:30af) \:306f\:7bb1\:306e\:756a\:53f7\:3092 FE \:5074\:306e\:8a18\:53f7\:304b\:3089\:8aad\:3093\:3067\:52d5\:304f\:3002
+   UnsavedVariables \:306e\:5909\:6570\:306f\:4fdd\:5b58\:3057\:3066\:958b\:304d\:76f4\:3059\:3068\:521d\:671f\:5024\:304c\:7121\:3044 (\:672a\:5b9a\:7fa9) \:306e\:3067\:3001FE \:5074\:306e\:30b3\:30fc\:30c9\:306f\:672a\:5b9a\:7fa9\:3067\:3082\:56f0\:3089\:306a\:3044\:5f62\:306b\:3057\:3066\:3042\:308b
+   (FEPrivate`Greater[\:672a\:5b9a\:7fa9, n] \:306f\:8a55\:4fa1\:3055\:308c\:305a FEPrivate`If \:306f\:4f55\:3082\:3057\:306a\:3044\:3002PaneSelector \:306f\:5408\:3046\:5024\:304c\:7121\:3051\:308c\:3070\:65e2\:5b9a = \:9759\:6b62\:753b)\:3002 *)
+iSWVideoFESymbol[uuid_String] := Symbol[Identity["SlideWorkflow`FEVideo`" <> StringReplace[uuid, Except[WordCharacter] -> ""]]];
+iSWVideoFEBoxSymbol[uuid_String] := Symbol[Identity["SlideWorkflow`FEVideo`" <> StringReplace[uuid, Except[WordCharacter] -> ""] <> "Box"]];
+(* FE`Evaluate \:306f HoldFirst \:306a\:306e\:3067 With \:3067\:5024\:3092\:5165\:308c\:3066\:304b\:3089\:6e21\:3059\:3002FE \:304c\:7121\:3051\:308c\:3070\:8a55\:4fa1\:3055\:308c\:305a\:306b\:6b8b\:308b -> $Failed *)
+iSWVideoFEGet[sym_Symbol] := With[{s = sym}, Replace[Quiet[Check[FE`Evaluate[s], $Failed]], _FE`Evaluate -> $Failed]];
+iSWVideoFESet[sym_Symbol, v_Integer] := With[{s = sym, x = v}, Replace[Quiet[Check[FE`Evaluate[FEPrivate`Set[s, x]], $Failed]], _FE`Evaluate -> $Failed]];
+
+iSWVideoPlayer[uuid_String, path_String, rel_String, {w_Integer, h_Integer}, wpt_, poster_Image] :=
+  With[{sym = iSWVideoFESymbol[uuid], symBox = iSWVideoFEBoxSymbol[uuid]},
+    DynamicModule[{bytes = {{{0, 0, 0}}}, boxID = 0, live = False},
+      EventHandler[
+        DynamicWrapper[
+          PaneSelector[{
+            True -> Graphics[RawBoxes[TagBox[RasterBox[Dynamic[bytes], {{0, h}, {w, 0}}, {0, 255}, ColorFunction -> RGBColor],
+                BoxForm`ImageTag["Byte", ColorSpace -> Automatic, Interleaving -> True], Selectable -> False]],
+              DefaultBaseStyle -> "ImageGraphics", ImageSizeRaw -> {w, h}, ImageSize -> wpt,
+              PlotRange -> {{0, w}, {0, h}}, PlotRangePadding -> 0, ImagePadding -> 0]},
+            Dynamic[live], Image[poster, ImageSize -> wpt], ImageSize -> Automatic, Alignment -> Center],
+          (* FE \:5074 (\:30ab\:30fc\:30cd\:30eb\:3092\:547c\:3070\:306a\:3044): \:81ea\:5206\:306e\:7bb1\:306e\:756a\:53f7\:3092\:516c\:958b\:3057\:3001id \:304c\:3042\:308c\:3070\:7bb1\:3092\:7d50\:3093\:3067\:4eca\:306e\:30d5\:30ec\:30fc\:30e0\:3092\:53d6\:308b *)
+          FEPrivate`If[FEPrivate`Greater[boxID, 0],
+            FEPrivate`Set[symBox, boxID];
+            FEPrivate`If[FEPrivate`Greater[sym, -1],
+              FEPrivate`LibraryFunctionApply[FFmpegTools`FE`Private`$FrontEndVideoPlaybackSetDisplayBoxID, {sym, boxID}];
+              FEPrivate`Set[bytes, FEPrivate`LibraryFunctionApply[FFmpegTools`FE`Private`$FrontEndVideoPlaybackGetCurrentFrame, {sym, w, h}]];
+              FEPrivate`Set[live, True]]],
+          Initialization :> (
+            boxID = EvaluationBox[][[1]];
+            Quiet[SlideWorkflow`Private`iSWVideoCellShown[uuid, path, rel, w, h, boxID]]),
+          Evaluator -> None],
+        {"MouseClicked" :> Quiet[SlideWorkflow`Private`iSWVideoPlayerToggle[uuid, path, rel, w, h, boxID]]}, PassEventsDown -> True],
+      UnsavedVariables :> {bytes, boxID, live},
+      Deinitialization :> Quiet[SlideWorkflow`Private`iSWVideoPlayerRelease[uuid]]]];
+
+(* FE \:306e\:518d\:751f\:6a5f\:69cb\:304c\:4f7f\:3048\:308b\:304b (\:5185\:8535\:30d7\:30ec\:30a4\:30e4\:30fc\:306e checkFEFFmpegLoad \:3068\:540c\:3058\:78ba\:304b\:3081\:65b9)\:3002FE \:306e\:7121\:3044\:30ab\:30fc\:30cd\:30eb\:3067\:306f FE`Evaluate \:304c\:8a55\:4fa1\:3055\:308c\:305a False *)
+iSWVideoFEReadyQ[] := TrueQ[Quiet[Check[
+  (FFmpegTools`FE`FrontEndVideoPlaybackGetDuration;
+   MatchQ[FE`Evaluate[FFmpegTools`FE`Private`$FrontEndVideoPlaybackGetDuration], _FrontEnd`LibraryFunction]),
+  False]]];
+
+iSWVideoStatePlaying = 0; iSWVideoStatePaused = 1; iSWVideoStateStopped = 2; iSWVideoStateEnded = 4;
+
+iSWVideoIdAliveQ[id_] := IntegerQ[id] && id >= 0 &&
+  IntegerQ[Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackGetCurrentState[id], $Failed]]];
+
+(* \:767b\:9332\:7c3f\:306e\:9805\:76ee (id \:304c FE \:3067\:751f\:304d\:3066\:3044\:308b\:3082\:306e)\:3002\:767b\:9332\:7c3f\:306b\:7121\:304f\:3066\:3082 FE \:5074\:306e\:5927\:57df\:8a18\:53f7\:306b\:751f\:304d\:305f id \:304c\:3042\:308c\:3070\:5f15\:304d\:53d6\:308b
+   (\:30ab\:30fc\:30cd\:30eb\:3092\:518d\:8d77\:52d5\:3057\:305f\:5f8c\:30fbGet \:3057\:76f4\:3057\:305f\:5f8c\:3002FE \:306e\:518d\:751f\:306f FE \:306e\:30d7\:30ed\:30bb\:30b9\:306b\:3042\:308b\:306e\:3067\:6b8b\:3063\:3066\:3044\:308b)\:3002
+   id \:3092\:6368\:3066\:308b\:3068\:304d (iSWVideoPlayerRelease) \:306f\:5fc5\:305a\:5148\:306b FE \:5074\:306e\:8a18\:53f7\:3092 -1 \:306b\:623b\:3059\:306e\:3067\:3001\:8a18\:53f7\:306e id \:306f\:751f\:304d\:3066\:3044\:308b\:3082\:306e\:3060\:3051 *)
+iSWVideoPlayerEntry[uuid_String] := Module[{e = Lookup[$iSWVideoPlayers, uuid, None], id},
+  If[AssociationQ[e] && iSWVideoIdAliveQ[e["Id"]], Return[e]];
+  If[AssociationQ[e], $iSWVideoPlayers = KeyDrop[$iSWVideoPlayers, uuid]];
+  If[! iSWVideoFEReadyQ[], Return[None]];
+  id = iSWVideoFEGet[iSWVideoFESymbol[uuid]];
+  If[iSWVideoIdAliveQ[id],
+    $iSWVideoPlayers[uuid] = <|"Id" -> id, "Path" -> None, "Size" -> None, "Notebook" -> None, "BoxID" -> None, "CreatedAt" -> AbsoluteTime[]|>;
+    iSWTrace["Video:adopt " <> uuid <> " id=" <> ToString[id]];
+    Return[$iSWVideoPlayers[uuid]]];
+  None];
+
+(* \:518d\:751f id \:3092\:78ba\:304b\:3081\:308b (\:7121\:3051\:308c\:3070\:4f5c\:3063\:3066 FE \:5074\:306e\:8a18\:53f7\:306b\:516c\:958b\:3059\:308b)\:3002\:30bb\:30eb (\:8868\:793a\:30fb\:30af\:30ea\:30c3\:30af) \:3068 SlidePlay \:306e\:4e21\:65b9\:304b\:3089\:547c\:3070\:308c\:308b\:3002\:623b\:308a\:5024\:306f id \:304b -1 *)
+iSWVideoPlayerInit[uuid_String, path_String, rel_, w_Integer, h_Integer, opts : OptionsPattern[]] := Module[
+  {e, nb, dir, file, id},
+  e = iSWVideoPlayerEntry[uuid];
+  If[AssociationQ[e], Return[e["Id"]]];
+  If[! iSWVideoFEReadyQ[], iSWTrace["Video:init " <> uuid <> " FE not ready"]; Return[-1]];
+  nb = Replace[OptionValue[iSWVideoPlayerInit, {opts}, "Notebook"], Automatic :> Quiet[EvaluationNotebook[]]];
+  dir = If[Head[nb] === NotebookObject, Quiet[NotebookDirectory[nb]], None];
+  If[! StringQ[dir], dir = None];
+  file = iSWVideoResolve[<|"Path" -> path, "Rel" -> rel|>, dir];
+  If[! StringQ[file], iSWTrace["Video:init " <> uuid <> " file not found " <> ToString[path]]; Return[-1]];
+  id = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackInit[file, w, h, "Backend" -> Video`Internals`$GUIBackend], $Failed]];
+  If[! IntegerQ[id] || id < 0,
+    id = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackInit[file, w, h, "Backend" -> Automatic], $Failed]]];
+  If[! IntegerQ[id] || id < 0, iSWTrace["Video:init " <> uuid <> " failed"]; Return[-1]];
+  Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetLooping[id, False]];
+  $iSWVideoPlayers[uuid] = <|"Id" -> id, "Path" -> file, "Size" -> {w, h}, "Notebook" -> nb, "BoxID" -> None, "CreatedAt" -> AbsoluteTime[]|>;
+  iSWVideoFESet[iSWVideoFESymbol[uuid], id];
+  iSWTrace["Video:init " <> uuid <> " id=" <> ToString[id] <> " " <> FileNameTake[file]];
+  id];
+Options[iSWVideoPlayerInit] = {"Notebook" -> Automatic};
+
+(* \:30bb\:30eb\:306e\:8868\:793a\:306e\:7bb1\:306e\:756a\:53f7: \:767b\:9332\:7c3f (\:30bb\:30eb\:304c\:77e5\:3089\:305b\:305f) > FE \:5074\:306e\:8a18\:53f7 (\:30bb\:30eb\:304c FE \:5074\:3067\:66f8\:3044\:305f) *)
+iSWVideoPlayerBoxID[uuid_String] := Module[{e = Lookup[$iSWVideoPlayers, uuid, None], b},
+  b = iSWVideoFEGet[iSWVideoFEBoxSymbol[uuid]];
+  If[IntegerQ[b] && b > 0,
+    If[AssociationQ[e], $iSWVideoPlayers[uuid, "BoxID"] = b];
+    Return[b]];
+  b = If[AssociationQ[e], Lookup[e, "BoxID", None], None];
+  If[IntegerQ[b] && b > 0, b, None]];
+(* \:8868\:793a\:306e\:7bb1\:3092\:518d\:751f\:306b\:7d50\:3076 (\:518d\:751f\:6a5f\:69cb\:304c\:65b0\:3057\:3044\:30d5\:30ec\:30fc\:30e0\:306e\:305f\:3073\:306b\:305d\:306e\:7bb1\:3092\:63cf\:304d\:76f4\:3055\:305b\:308b)\:3002\:518d\:751f\:30fb\:4e00\:6642\:505c\:6b62\:306e\:524d\:306b\:7d50\:3073\:76f4\:3059 *)
+iSWVideoPlayerRebind[uuid_String] := Module[{e = Lookup[$iSWVideoPlayers, uuid, None], b, r},
+  If[! AssociationQ[e], Return[None]];
+  b = iSWVideoPlayerBoxID[uuid];
+  If[! IntegerQ[b], iSWTrace["Video:bind " <> uuid <> " no box yet"]; Return[None]];
+  r = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackSetDisplayBoxID[e["Id"], b], $Failed]];
+  iSWTrace["Video:bind " <> uuid <> " id=" <> ToString[e["Id"]] <> " box=" <> ToString[b] <> If[r === $Failed || FailureQ[r], " FAILED", ""]];
+  b];
+
+(* \:30bb\:30eb\:304c\:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d (DynamicWrapper \:306e Initialization) \:306b\:547c\:3070\:308c\:308b: id \:3092\:78ba\:304b\:3081\:3001\:7bb1\:3092\:7d50\:3073\:3001\:6761\:4ef6\:304c\:5408\:3048\:3070\:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8 *)
+iSWVideoCellShown[uuid_String, path_String, rel_, w_Integer, h_Integer, boxID_, nbIn_ : Automatic] := Module[{id, nb},
+  nb = Replace[nbIn, Automatic :> Quiet[EvaluationNotebook[]]];
+  id = iSWVideoPlayerInit[uuid, path, rel, w, h, "Notebook" -> nb];
+  If[! IntegerQ[id] || id < 0, Return[-1]];
+  If[IntegerQ[boxID] && boxID > 0, $iSWVideoPlayers[uuid, "BoxID"] = boxID];
+  If[Head[nb] === NotebookObject, $iSWVideoPlayers[uuid, "Notebook"] = nb];
+  iSWVideoPlayerRebind[uuid];
+  (* \:30b9\:30e9\:30a4\:30c9\:30b7\:30e7\:30fc\:3067\:521d\:3081\:3066\:8868\:793a\:3055\:308c\:305f\:3068\:304d: SlidePlay \:304c\:52d5\:3044\:3066\:3044\:306a\:3051\:308c\:3070\:52d5\:753b\:3092\:59cb\:3081\:308b *)
+  If[TrueQ[$SlideVideoAutoPlay] && ! iSWPlayActiveQ[] && Head[nb] === NotebookObject && iSWSlideShowQ[nb],
+    iSWTrace["Video:autostart " <> uuid];
+    iSWVideoPlayerPlay[uuid, True],
+    iSWTrace["Video:shown " <> uuid <> " (no autostart: play=" <> ToString[iSWPlayActiveQ[]] <> " slideshow=" <>
+      ToString[Head[nb] === NotebookObject && iSWSlideShowQ[nb]] <> ")"]];
+  id];
+
+iSWVideoPlayerState[uuid_String] := Module[{e = iSWVideoPlayerEntry[uuid], st, pos, dur},
+  If[! AssociationQ[e], Return[None]];
+  st = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackGetCurrentState[e["Id"]], None]];
+  pos = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackGetCurrentPosition[e["Id"]], None]];
+  dur = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackGetDuration[e["Id"]], None]];
+  <|"Id" -> e["Id"], "State" -> st, "Position" -> If[NumericQ[pos], N[pos], None], "Duration" -> If[NumericQ[dur], N[dur], None],
+    "Playing" -> (st === iSWVideoStatePlaying), "Ended" -> (st === iSWVideoStateEnded)|>];
+
+(* restart = True \:306a\:3089\:982d\:304b\:3089\:3002\:7bb1\:3092\:7d50\:3073\:76f4\:3057\:3066\:304b\:3089\:518d\:751f\:3059\:308b\:3002\:7d50\:679c\:306e\:72b6\:614b\:3092\:30c8\:30ec\:30fc\:30b9\:306b *)
+iSWVideoPlayerPlay[uuid_String, restart_ : True] := Module[{e = iSWVideoPlayerEntry[uuid], st, r, after},
+  If[! AssociationQ[e], iSWTrace["Video:play " <> uuid <> " no entry"]; Return[$Failed]];
+  st = iSWVideoPlayerState[uuid];
+  iSWVideoPlayerRebind[uuid];
+  If[TrueQ[restart] || TrueQ[st["Ended"]] || (NumericQ[st["Position"]] && NumericQ[st["Duration"]] && st["Position"] >= st["Duration"] - 0.05),
+    Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetState[e["Id"], iSWVideoStatePaused]];
+    Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetPosition[e["Id"], 0.]]];
+  r = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackSetState[e["Id"], iSWVideoStatePlaying], $Failed]];
+  after = Quiet[Check[FFmpegTools`FE`FrontEndVideoPlaybackGetCurrentState[e["Id"]], None]];
+  iSWTrace["Video:play " <> uuid <> " id=" <> ToString[e["Id"]] <> " restart=" <> ToString[TrueQ[restart]] <> " before=" <> ToString[st["State"]] <>
+    " after=" <> ToString[after] <> " box=" <> ToString[Lookup[$iSWVideoPlayers[uuid], "BoxID", None]]];
+  e["Id"]];
+iSWVideoPlayerPause[uuid_String] := Module[{e = iSWVideoPlayerEntry[uuid]},
+  If[! AssociationQ[e], Return[$Failed]];
+  Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetState[e["Id"], iSWVideoStatePaused]];
+  iSWTrace["Video:pause " <> uuid];
+  e["Id"]];
+iSWVideoPlayerRewind[uuid_String] := Module[{e = iSWVideoPlayerEntry[uuid]},
+  If[! AssociationQ[e], Return[$Failed]];
+  iSWVideoPlayerRebind[uuid];
+  Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetState[e["Id"], iSWVideoStatePaused]];
+  Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetPosition[e["Id"], 0.]];
+  iSWTrace["Video:rewind " <> uuid];
+  e["Id"]];
+(* \:30af\:30ea\:30c3\:30af: \:518d\:751f\:4e2d\:306a\:3089\:4e00\:6642\:505c\:6b62\:3001\:6b62\:307e\:3063\:3066\:3044\:308c\:3070 (\:7d42\:308f\:3063\:3066\:3044\:308c\:3070\:982d\:304b\:3089) \:518d\:751f\:3002id \:304c\:307e\:3060\:7121\:3051\:308c\:3070\:4f5c\:3063\:3066\:518d\:751f *)
+iSWVideoPlayerToggle[uuid_String, path_String, rel_, w_Integer, h_Integer, boxID_ : None] := Module[{id, st},
+  id = iSWVideoPlayerInit[uuid, path, rel, w, h];
+  If[! IntegerQ[id] || id < 0, Return[$Failed]];
+  If[IntegerQ[boxID] && boxID > 0, $iSWVideoPlayers[uuid, "BoxID"] = boxID];
+  st = iSWVideoPlayerState[uuid];
+  iSWTrace["Video:click " <> uuid <> " state=" <> ToString[st["State"]] <> " pos=" <> ToString[st["Position"]]];
+  If[TrueQ[st["Playing"]], iSWVideoPlayerPause[uuid], iSWVideoPlayerPlay[uuid, False]]];
+(* \:30bb\:30eb\:304c\:6d88\:3048\:305f\:3068\:304d (DynamicModule \:306e Deinitialization)\:3002FE \:5074\:306e\:8a18\:53f7\:3092\:5148\:306b -1 \:306b\:623b\:3057\:3066\:304b\:3089\:518d\:751f\:3092\:6368\:3066\:308b
+   (FE \:5074\:306e\:30b3\:30fc\:30c9\:304c\:6368\:3066\:305f id \:3067\:30d5\:30ec\:30fc\:30e0\:3092\:53d6\:308a\:306b\:884c\:304b\:306a\:3044\:3088\:3046\:306b) *)
+iSWVideoPlayerRelease[uuid_String] := Module[{e = Lookup[$iSWVideoPlayers, uuid, None], id},
+  id = If[AssociationQ[e], e["Id"], iSWVideoFEGet[iSWVideoFESymbol[uuid]]];
+  iSWVideoFESet[iSWVideoFESymbol[uuid], -1];
+  iSWVideoFESet[iSWVideoFEBoxSymbol[uuid], 0];
+  If[IntegerQ[id] && id >= 0, Quiet[FFmpegTools`FE`FrontEndVideoPlaybackFinalize[id]]];
+  $iSWVideoPlayers = KeyDrop[$iSWVideoPlayers, uuid];
+  iSWTrace["Video:release " <> uuid];
+  Null];
+
+(* ---- \:518d\:751f\:4e2d\:306e\:539f\:7a3f (SlideVideoTalk \:30bb\:30eb): 1 \:884c 1 \:7247\:3001\:884c\:982d\:306e @\:79d2 \:304c\:52d5\:753b\:306e\:4e2d\:306e\:958b\:59cb\:6642\:523b ---- *)
+$iSWVideoTalkFrameColor = RGBColor[0.2, 0.55, 0.6];
+$iSWVideoTalkCellOpts = {
+  CellFrame -> {{2, 0}, {0, 0}}, CellFrameColor -> $iSWVideoTalkFrameColor,
+  Background -> RGBColor[0.93, 0.97, 0.98], FontSize -> 11,
+  FontColor -> GrayLevel[0.3], CellMargins -> {{66, 20}, {4, 4}},
+  CellDingbat -> StyleBox["\:52d5\:753b", FontSize -> 8, FontWeight -> Bold, FontColor -> $iSWVideoTalkFrameColor]};
+
+iSWVideoTalkCellQ[c_] := MatchQ[c, Cell[_, "SlideVideoTalk", ___]];
+(* "@8 \:6587" / "@1:05 \:6587" / "\:6587" -> {<|"At" -> 8. | None, "Text" -> \:6587|> ..} *)
+iSWVideoTalkPieces[text_String] := Module[{lines = Select[StringTrim /@ StringSplit[StringReplace[text, "\r\n" -> "\n"], "\n"], # =!= "" &]},
+  Map[Function[l, With[{m = StringCases[l, StartOfString ~~ "@" ~~ t : ((DigitCharacter | "." | ":") ..) ~~ (WhitespaceCharacter | ":") ~~ rest___ ~~ EndOfString :> {t, rest}, 1]},
+      If[m === {}, <|"At" -> None, "Text" -> l|>,
+        <|"At" -> iSWVideoTalkSeconds[m[[1, 1]]], "Text" -> StringTrim[m[[1, 2]]]|>]]],
+    lines]];
+iSWVideoTalkPieces[_] := {};
+iSWVideoTalkSeconds[s_String] := Module[{parts = StringSplit[s, ":"], v},
+  v = Quiet[Check[ToExpression /@ parts, $Failed]];
+  If[! MatchQ[v, {__?NumericQ}], Return[None]];
+  N[Fold[60 #1 + #2 &, 0, v]]];
+(* \:7247\:306e\:5217 -> \:30bb\:30eb\:306e\:6587 (md \:306e vtalk@8: \:6587 \:3068\:540c\:3058\:60c5\:5831) *)
+iSWVideoTalkText[pieces_List] := StringRiffle[Map[
+  With[{at = Lookup[#, "At", None], t = Lookup[#, "Text", ""]},
+    If[NumericQ[at], "@" <> iSWVideoTalkClock[at] <> " " <> t, t]] &,
+  Select[pieces, AssociationQ]], "\n"];
+iSWVideoTalkClock[t_?NumericQ] := If[t == Round[t], ToString[Round[t]], ToString[NumberForm[N[t], {Infinity, 1}]]];
+iContentCell[{"VideoTalk", pieces_List}] := Cell[iSWVideoTalkText[pieces], "SlideVideoTalk"];
+iContentCell[{"VideoTalk", text_String}] := Cell[text, "SlideVideoTalk"];
+iContentCell[{"Video", spec_Association}] := iSWVideoCell[spec];
+iSWVideoTalkToMd[text_String] := Map[With[{at = #["At"]},
+    If[NumericQ[at], "vtalk@" <> iSWVideoTalkClock[at] <> ": " <> #["Text"], "vtalk: " <> #["Text"]]] &,
+  iSWVideoTalkPieces[text]];
+
+(* 1 \:679a\:306e\:30bb\:30eb\:5217\:304b\:3089\:52d5\:753b\:306e\:4ed5\:69d8 (\:6700\:521d\:306e\:52d5\:753b\:30bb\:30eb) \:3068\:3001\:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247 *)
+iSWSlideVideoSpec[cells_List] := With[{c = SelectFirst[cells, iSWVideoCellQ, None]},
+  If[c === None, None, Append[iSWVideoSpecOf[c], "Page" -> iSWVideoPageCellQ[c]]]];
+iSWSlideVideoTalk[cells_List] := iSWVideoTalkPieces[StringRiffle[Cases[cells, c_?iSWVideoTalkCellQ :> iCellText[c], {1}], "\n"]];
+
+(* \:30c7\:30c3\:30ad\:306e\:52d5\:753b\:306e\:4e00\:89a7 (\:8abf\:3079\:308b\:7528\:30fb\:30c6\:30b9\:30c8\:7528) *)
+SlideDeckVideos[source_] := Module[{data, slides},
+  data = Quiet @ Check[SlideDeckSlides[source], $Failed];
+  If[! AssociationQ[data], Return[$Failed]];
+  slides = Lookup[data, "Slides", {}];
+  DeleteCases[Table[With[{v = iSWSlideVideoSpec[slides[[i]]]},
+    If[v === None, Nothing,
+      Join[<|"Slide" -> i|>, v, <|"Pieces" -> iSWSlideVideoTalk[slides[[i]]]|>]]], {i, Length[slides]}], Nothing]];
+SlideDeckVideos[] := With[{nb = iSWResolveTargetNb[]},
+  If[Head[nb] === NotebookObject, SlideDeckVideos[iSWDeckTextSource[nb]], $Failed]];
+
+(* ---- \:66f8\:304d\:51fa\:3057 (\:9759\:6b62\:753b): \:52d5\:753b\:30bb\:30eb\:3092\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0\:306e\:753b\:50cf\:30bb\:30eb\:306b\:7f6e\:304d\:63db\:3048\:308b\:3002marker = True \:306a\:3089\:691c\:51fa\:7528\:306e\:4e00\:8272 ---- *)
+iSWVideoCellToStill[c_Cell, marker_ : False] := Module[{v = iSWVideoSpecOf[c], img, wpt, page, tags},
+  page = iSWVideoPageCellQ[c];
+  tags = Flatten[{FirstCase[c, (CellTags -> t_) :> t, {}, {1}]}];
+  wpt = Lookup[v, "Width", 480];
+  img = If[TrueQ[marker],
+    With[{rs = Replace[Lookup[v, "RasterSize", {640, 360}], Except[{_Integer, _Integer}] -> {640, 360}]},
+      Image[ConstantArray[List @@ $iSWVideoMarkerColor, Reverse[rs]]]],
+    iSWVideoPosterImage[Replace[iSWVideoResolve[v, $iSWVideoBaseDir], None -> Lookup[v, "Path", ""]], Lookup[v, "Poster", Automatic], None]];
+  If[page,
+    Cell[BoxData[ToBoxes[Image[img, ImageSize -> If[NumberQ[wpt], wpt, 900]]]], "Input", TextAlignment -> Center,
+      CellMargins -> {{0, 0}, {0, 0}}, CellTags -> Union[DeleteCases[tags, "SlideVideo" | "VideoPage"], {"ImagePage"}]],
+    Cell[BoxData[ToBoxes[Image[img, ImageSize -> If[NumberQ[wpt], wpt, 480]]]], "Input", TextAlignment -> Center,
+      CellTags -> DeleteCases[tags, "SlideVideo" | "VideoPage"]]]];
+iSWVideoCellsToStills[cells_List, marker_ : False] := Map[If[iSWVideoCellQ[#], iSWVideoCellToStill[#, marker], #] &, cells];
+iSWVideoSlideQ[cells_List] := AnyTrue[cells, iSWVideoCellQ];
+
+(* \:63cf\:3044\:305f 1920x1080 \:306e\:753b\:50cf\:304b\:3089\:30de\:30fc\:30ab\:30fc\:8272\:306e\:77e9\:5f62 {x, y, w, h} (\:5de6\:4e0a\:539f\:70b9\:306e\:753b\:7d20)\:3002\:898b\:3064\:304b\:3089\:306a\:3051\:308c\:3070 None *)
+iSWVideoMarkerRect[img_Image] := Module[{dims = ImageDimensions[img], mask, comps, box, x1, y1, x2, y2},
+  mask = Binarize[ColorDistance[img, $iSWVideoMarkerColor], {0., 0.12}];
+  comps = Quiet[ComponentMeasurements[mask, {"BoundingBox", "Area"}]];
+  If[! MatchQ[comps, {__Rule}], Return[None]];
+  box = First[MaximalBy[comps[[All, 2]], Last]][[1]];
+  {{x1, y1}, {x2, y2}} = box;   (* \:5de6\:4e0b\:539f\:70b9 *)
+  If[x2 - x1 < 8 || y2 - y1 < 8, Return[None]];
+  {Round[x1], Round[dims[[2]] - y2], Round[x2 - x1], Round[y2 - y1]}];
+
+(* \:52d5\:753b\:306e\:679a\:306e\:77e9\:5f62\:3092\:63cf\:3044\:3066\:6e2c\:308a\:3001<dir>/videos.json \:306b\:66f8\:304f: {"3" -> <|"Rect", "Path", "Rel", "Duration", "Id"|>} *)
+iSWVideoRectsFile[dir_String] := FileNameJoin[{dir, "videos.json"}];
+iSWVideoRectsWrite[source_, dir_String, opts___] := Module[{nb, data, slides, idx, imgs, out = <||>},
+  nb = iAsNotebook[source];
+  If[Head[nb] =!= Notebook, Return[$Failed]];
+  data = iSlideSplit[nb, iFlattenVisibleCells];
+  If[! AssociationQ[data], Return[$Failed]];
+  slides = Lookup[data, "Slides", {}];
+  idx = Select[Range[Length[slides]], iSWVideoSlideQ[slides[[#]]] &];
+  If[idx === {},
+    Quiet[DeleteFile[iSWVideoRectsFile[dir]]];
+    Return[<||>]];
+  imgs = SlideDeckImages[nb, "Slides" -> idx, "VideoMarker" -> True, opts];
+  If[! MatchQ[imgs, {__Image}], Return[$Failed]];
+  MapThread[Function[{i, img}, With[{v = iSWSlideVideoSpec[slides[[i]]], r = iSWVideoMarkerRect[img]},
+      out[ToString[i]] = <|"Slide" -> i, "Rect" -> r, "Path" -> Lookup[v, "Path", ""], "Rel" -> Lookup[v, "Rel", ""],
+        "Duration" -> Lookup[v, "Duration", 0.], "Id" -> Lookup[v, "Id", ""]|>]],
+    {idx, imgs}];
+  Quiet[CreateDirectory[dir, CreateIntermediateDirectories -> True]];
+  iSWWriteJSON[iSWVideoRectsFile[dir], out];
+  out];
+iSWVideoRectsRead[dir_String] := With[{v = iSWReadJSON[iSWVideoRectsFile[dir]]}, If[AssociationQ[v], v, <||>]];
+
+(* ---- \:633f\:5165 (FE \:3067\:958b\:3044\:3066\:3044\:308b\:30c7\:30c3\:30ad\:3078) ---- *)
+SlideInsertVideo[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideInsertVideo[nb]]];
+SlideInsertVideo[nb_NotebookObject] := Module[{f},
+  f = Quiet[SystemDialogInput["FileOpen", {"", {iSL["\:52d5\:753b", "Video"] -> ("*." <> # & /@ $SlideVideoFileExtensions), "All" -> {"*"}}},
+    WindowTitle -> iSL["\:30b9\:30e9\:30a4\:30c9\:306b\:8cbc\:308b\:52d5\:753b", "Video for the slide"]]];
+  If[! StringQ[f], Return[$Canceled]];
+  SlideInsertVideo[nb, f]];
+SlideInsertVideo[nb_NotebookObject, path_String, opts : OptionsPattern[]] := Module[{cell},
+  Quiet[SlideEnsureDeckStyles[nb]];
+  cell = Block[{$iSWVideoBaseDir = Quiet[NotebookDirectory[nb]]},
+    iSWVideoCell[<|"Path" -> path, "Width" -> OptionValue[SlideInsertVideo, {opts}, "Width"],
+      "Poster" -> OptionValue[SlideInsertVideo, {opts}, "Poster"]|>]];
+  NBAccess`NBWriteCell[nb, cell];   (* \:30bb\:30eb\:306e\:66f8\:304d\:8fbc\:307f\:306f NBAccess \:7d4c\:7531 (rules/10) *)
+  If[TrueQ[OptionValue[SlideInsertVideo, {opts}, "Talk"]], SlideInsertVideoTalk[nb]];
+  cell];
+Options[SlideInsertVideo] = {"Width" -> Automatic, "Poster" -> Automatic, "Talk" -> True};
+SlideInsertVideoTalk[] := With[{nb = iSWNotebook[]}, If[nb === $Failed, $Failed, SlideInsertVideoTalk[nb]]];
+SlideInsertVideoTalk[nb_NotebookObject] := iSWInsertMeta[nb, "", "SlideVideoTalk",
+  iSL["@0 \:52d5\:753b\:304c\:59cb\:307e\:3063\:305f\:3089\:8aad\:3080\:539f\:7a3f (1 \:884c 1 \:7247\:3001\:884c\:982d\:306e @\:79d2 \:3067\:52d5\:753b\:306e\:4f55\:79d2\:304b\:3089\:8aad\:3080\:304b\:3002\:7121\:3051\:308c\:3070\:524d\:306e\:7247\:306e\:76f4\:5f8c)\n@8 8 \:79d2\:3042\:305f\:308a\:3067\:8aad\:3080\:539f\:7a3f",
+    "@0 Talk read when the video starts (one piece per line; @seconds = when in the video; otherwise right after the previous piece)\n@8 Talk read around 8 seconds"],
+  $iSWVideoTalkCellOpts];
+
+(* ---- \:3044\:307e\:898b\:3066\:3044\:308b\:679a\:306e\:52d5\:753b\:3092\:30ab\:30fc\:30cd\:30eb\:304b\:3089\:64cd\:4f5c (\:767a\:8868\:4e2d\:306e\:624b\:5143\:64cd\:4f5c\:30fb\:30c6\:30b9\:30c8\:7528) ---- *)
+iSWCurrentVideoUuid[nb_NotebookObject] := Module[{n = iSWSlideNumberFE[nb], vids},
+  If[! IntegerQ[n], Return[None]];
+  vids = iSWDeckVideoMap[nb];
+  Lookup[Lookup[vids, n, <||>], "Id", None]];
+(* \:679a\:756a\:53f7 -> \:52d5\:753b\:306e\:4ed5\:69d8 (\:539f\:7a3f\:9023\:60f3\:306e\:30ad\:30e3\:30c3\:30b7\:30e5\:304b\:3089\:3002\:7121\:3051\:308c\:3070\:30c7\:30c3\:30ad\:3092\:8aad\:3080) *)
+iSWDeckVideoMap[nb_NotebookObject] := Module[{talk = Quiet[iSWTalkResolve[nb]], vs},
+  vs = If[AssociationQ[talk], Lookup[talk, "Videos", <||>], <||>];
+  If[AssociationQ[vs] && vs =!= <||>, Return[vs]];
+  With[{l = Quiet[SlideDeckVideos[iSWDeckTextSource[nb]]]},
+    If[ListQ[l], Association[(#["Slide"] -> #) & /@ l], <||>]]];
+SlideVideoPlay[] := With[{nb = iSWResolveTargetNb[]}, If[Head[nb] === NotebookObject, SlideVideoPlay[nb], $Failed]];
+SlideVideoPlay[nb_NotebookObject] := With[{u = iSWCurrentVideoUuid[nb]},
+  If[! StringQ[u], Return[Failure["SlideVideoNone", <|"MessageTemplate" -> "this slide has no video"|>]]];
+  iSWVideoEnsurePlayer[nb, iSWDeckVideoMap[nb][iSWSlideNumberFE[nb]]];
+  iSWVideoPlayerPlay[u, False]];
+SlideVideoPause[] := With[{nb = iSWResolveTargetNb[]}, If[Head[nb] === NotebookObject, SlideVideoPause[nb], $Failed]];
+SlideVideoPause[nb_NotebookObject] := With[{u = iSWCurrentVideoUuid[nb]},
+  If[! StringQ[u], Return[Failure["SlideVideoNone", <|"MessageTemplate" -> "this slide has no video"|>]]];
+  iSWVideoPlayerPause[u]];
+SlideVideoStatus[] := <|"Players" -> Map[Join[KeyTake[#, {"Uuid", "Id", "Path", "Size", "BoxID"}], Replace[iSWVideoPlayerState[#["Uuid"]], None -> <||>]] &,
+    KeyValueMap[Append[#2, "Uuid" -> #1] &, $iSWVideoPlayers]],
+  "FEReady" -> iSWVideoFEReadyQ[], "AutoPlay" -> $SlideVideoAutoPlay, "Trace" -> $iSWTraceFile|>;
+
+(* SlidePlay \:304b\:3089: \:305d\:306e\:679a\:306e\:52d5\:753b\:306e\:518d\:751f id \:3092\:78ba\:304b\:3081\:308b (\:30bb\:30eb\:304c\:307e\:3060\:521d\:671f\:5316\:3057\:3066\:3044\:306a\:3051\:308c\:3070\:30ab\:30fc\:30cd\:30eb\:304c\:4f5c\:308b\:3002\:30bb\:30eb\:306f\:540c\:3058 id \:3092\:4f7f\:3046) *)
+iSWVideoEnsurePlayer[nb_, v_Association] := Module[{u = Lookup[v, "Id", None], rs},
+  If[! StringQ[u], Return[$Failed]];
+  If[AssociationQ[iSWVideoPlayerEntry[u]], Return[u]];
+  rs = Replace[Lookup[v, "RasterSize", None], Except[{_Integer, _Integer}] -> {960, 540}];
+  If[iSWVideoPlayerInit[u, Lookup[v, "Path", ""], Lookup[v, "Rel", None], rs[[1]], rs[[2]], "Notebook" -> nb] >= 0, u, $Failed]];
+
+(* ---- SlidePlay \:306e\:52d5\:753b\:306e\:6bb5 (Stage): "Pre" (\:518d\:751f\:524d\:306e\:539f\:7a3f\:3092\:8aad\:3093\:3067\:3044\:308b) -> "Playing" (\:52d5\:753b + \:518d\:751f\:4e2d\:306e\:539f\:7a3f) -> "Done" (\:9593\:3092\:7f6e\:3044\:3066\:6b21\:3078) ----
+   $iSWPlayState["Video"] = <|"Slide", "Uuid", "Stage", "Pieces" (\:6b8b\:308a\:3002\:5404\:7247\:306b "N" = vtalk \:306e\:4f55\:756a\:76ee\:304b), "StartedAt", "Ends", "Duration",
+     "VideoStarted", "VideoStartBy", "StartAt0"|> \:304b None\:3002
+   2026-11-10 (GPT-Live \:306e\:5b9f\:6a5f\:3067\:7247\:304c\:9045\:308c\:30fb\:53d6\:308a\:9055\:3048\:305f):
+   - \:7247\:306e\:58f0\:306f\:9001\:3063\:3066\:304b\:3089\:8a71\:3057\:59cb\:3081\:308b\:307e\:3067\:9045\:308c\:308b (\:5b9f\:6e2c: GPT-Live \:7d04 4 \:79d2\:3001gpt-realtime \:7d04 1.5 \:79d2\:3001\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:5408\:6210\:6e08\:307f\:306a\:3089\:307b\:307c 0)\:3002
+     \:7247\:306f\:300c\:52d5\:753b\:306e At \:79d2 - \:9045\:308c\:300d\:306b\:9001\:308b\:3002\:9045\:308c\:306f\:8a71\:3057\:59cb\:3081 (\:72b6\:614b\:306e Speaking / \:30ed\:30fc\:30ab\:30eb\:306f\:518d\:751f\:958b\:59cb) \:3092\:898b\:3066\:6e2c\:308a\:3001\:79fb\:52d5\:5e73\:5747\:3067\:76f4\:3059\:3002
+   - \:6700\:521d\:306e\:7247\:304c\:9045\:308c\:3088\:308a\:524d (At \:304c\:7121\:3044\:30fb0 \:79d2\:306a\:3069) \:306e\:3068\:304d\:306f\:3001\:7247\:3092\:5148\:306b\:9001\:308a\:3001\:305d\:306e\:58f0\:304c\:8a71\:3057\:59cb\:3081\:305f\:3068\:304d\:306b\:52d5\:753b\:3092\:59cb\:3081\:308b (At \:79d2\:306e\:4f4d\:7f6e\:304b\:3089)\:3002
+     \:8a71\:3057\:59cb\:3081\:304c\:898b\:3048\:306a\:3051\:308c\:3070\:300c\:9045\:308c + 3 \:79d2\:300d\:3067\:59cb\:3081\:308b\:3002
+   - \:9332\:97f3 (\:8aad\:307f\:4e0a\:3052\:52d5\:753b\:3092 GPT-Live \:3067\:9332\:308b\:3068\:304d) \:306f\:6642\:523b\:3092\:5f85\:305f\:306a\:3044: \:7247\:306f\:524d\:306e\:7247\:306e\:76f4\:5f8c\:306b\:7d9a\:3051\:3066\:9332\:308a\:3001\:52d5\:753b\:306e\:7d42\:308f\:308a\:3082\:5f85\:305f\:306a\:3044
+     (\:52d5\:753b\:3078\:306e\:7f6e\:304d\:5834\:6240\:306f\:5408\:6210\:304c At \:3069\:304a\:308a\:306b\:6c7a\:3081\:308b)\:3002 *)
+iSWPlayVideoBegin[nb_, n_Integer] := Module[{v = Lookup[Replace[$iSWPlayState["Videos"], Except[_Association] -> <||>], n, None], u, pieces},
+  If[! AssociationQ[v] || TrueQ[Lookup[v, "Missing", False]], Return[None]];
+  u = iSWVideoEnsurePlayer[nb, v];
+  If[! StringQ[u],
+    iSWTrace["Video:begin slide " <> ToString[n] <> " no player"];
+    iSWPlayNote[iSL["\:52d5\:753b\:3092\:958b\:3051\:307e\:305b\:3093: ", "Cannot open the video: "] <> FileNameTake[Lookup[v, "Path", ""]]];
+    Return[None]];
+  iSWTrace["Video:begin slide " <> ToString[n] <> " " <> u];
+  (* \:8aad\:307f\:59cb\:3081\:306f\:6700\:521d\:306e\:30d5\:30ec\:30fc\:30e0\:3067\:6b62\:3081\:3066\:304a\:304f (\:521d\:3081\:3066\:8868\:793a\:3055\:308c\:3066\:30aa\:30fc\:30c8\:30b9\:30bf\:30fc\:30c8\:3057\:3066\:3044\:305f\:3089\:623b\:3059) *)
+  iSWVideoPlayerRewind[u];
+  (* "N" = vtalk \:306e\:4f55\:756a\:76ee\:304b (\:7a7a\:306e\:7247\:3092\:98db\:3070\:3057\:3066\:3082\:8aad\:307f\:4e0a\:3052\:52d5\:753b\:306e\:9332\:97f3\:30d5\:30a1\:30a4\:30eb {\:679a, "vN"} \:3068\:756a\:53f7\:304c\:305a\:308c\:306a\:3044) *)
+  pieces = Select[MapIndexed[If[AssociationQ[#1], Append[#1, "N" -> First[#2]], Nothing] &, Replace[Lookup[v, "Pieces", {}], Except[_List] -> {}]],
+    StringQ[#["Text"]] && StringTrim[#["Text"]] =!= "" &];
+  <|"Slide" -> n, "Uuid" -> u, "Stage" -> "Pre", "Pieces" -> pieces,
+    "Duration" -> Replace[Lookup[v, "Duration", 0.], Except[_?NumericQ] -> 0.], "StartedAt" -> None, "Ends" -> None,
+    "VideoStarted" -> False, "VideoStartBy" -> None, "StartAt0" -> 0.|>];
+iSWPlayVideoPendingQ[] := With[{v = $iSWPlayState["Video"]}, AssociationQ[v] && v["Stage"] =!= "Done"];
+iSWPlayVideoActiveQ[] := With[{v = $iSWPlayState["Video"]}, AssociationQ[v] && v["Stage"] === "Playing"];
+iSWPlayRecordingQ[] := TrueQ[Lookup[$iSWPlayState, "Record", False]];
+
+(* ---- \:8a71\:3057\:59cb\:3081\:306e\:9045\:308c (\:79d2)\:3002\:58f0\:306e\:7a2e\:985e\:3054\:3068\:306b\:6e2c\:3063\:305f\:79fb\:52d5\:5e73\:5747\:3001\:7121\:3051\:308c\:3070\:65e2\:5b9a ($SlideSpeechLatency: Local 0.3 / Realtime 1.5 / Live 4) ---- *)
+If[! AssociationQ[$iSWSpeechLatencyMeasured], $iSWSpeechLatencyMeasured = <||>];
+iSWPlayLatencyKey[] := If[iSWPlayRealtimeQ[], ToString[iSWVoiceModel[]], "Local"];
+iSWPlayLatencyDefault[] := Which[
+  ! iSWPlayRealtimeQ[], iSWLookupRate[$SlideSpeechLatency, "Local", 0.3],
+  iSWVoiceModelAPI[iSWVoiceModel[]] === "Live", iSWLookupRate[$SlideSpeechLatency, "Live", 4.],
+  True, iSWLookupRate[$SlideSpeechLatency, "Realtime", 1.5]];
+iSWPlayLatency[] := With[{m = Lookup[$iSWSpeechLatencyMeasured, iSWPlayLatencyKey[], None]},
+  If[NumericQ[m], N[m], N[iSWPlayLatencyDefault[]]]];
+iSWPlayLatencySample[dt_?NumericQ] := Module[{k = iSWPlayLatencyKey[], old, x = Clip[N[dt], {0., 15.}]},
+  old = Lookup[$iSWSpeechLatencyMeasured, k, None];
+  $iSWSpeechLatencyMeasured[k] = If[NumericQ[old], 0.5 old + 0.5 x, x];
+  iSWTrace["Video:latency " <> k <> " sample=" <> ToString[Round[x, 0.01]] <> " est=" <> ToString[Round[$iSWSpeechLatencyMeasured[k], 0.01]]]];
+
+(* \:539f\:7a3f\:306e\:7247\:3092 1 \:3064\:58f0\:306b\:51fa\:3059 (\:30ed\:30fc\:30ab\:30eb / Realtime)\:3002tag \:306f Realtime \:306e narration id \:306b\:8db3\:3059 (\:540c\:3058\:679a\:3067\:8907\:6570\:56de\:8aad\:3080\:305f\:3081)\:3002
+   Realtime \:306f\:8a71\:3057\:59cb\:3081\:3092\:9032\:884c\:306e\:30bf\:30b9\:30af\:304c\:898b\:3066\:9045\:308c\:3092\:6e2c\:308b (iSWPlayNarrationSpeechTick)\:3002\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306f\:518d\:751f\:304c\:59cb\:307e\:3063\:305f\:6642\:70b9\:3067\:8a71\:3057\:59cb\:3081\:306a\:306e\:3067\:3001
+   \:3053\:3053\:3067\:5f85\:3063\:3066\:3044\:308b\:52d5\:753b\:3092\:59cb\:3081\:308b (\:9045\:308c\:306f\:6e2c\:3089\:306a\:3044: \:7247\:306f\:518d\:751f\:524d\:306b\:5408\:6210\:3057\:3066\:3042\:308a\:3001\:5408\:6210\:306e\:6642\:9593\:306f\:9045\:308c\:3067\:306f\:306a\:3044) *)
+iSWPlaySpeak[nb_, n_Integer, text_String, tag_String] :=
+  If[iSWPlayRealtimeQ[],
+    iSWPlaySlideRealtime[n, text, tag],
+    iSWPlaySlideLocal[nb, n, text];
+    If[$iSWPlayState["Status"] === "Playing", iSWPlayVideoOnSpeech[AbsoluteTime[]]]];
+
+(* \:52d5\:753b\:3092 pos \:79d2\:306e\:4f4d\:7f6e\:304b\:3089\:59cb\:3081\:308b (pos = 0 \:306f\:982d\:304b\:3089) *)
+iSWPlayVideoStartNow[now_, pos_ : 0.] := Module[{v = $iSWPlayState["Video"], p = N[Max[0., pos]], r},
+  If[! AssociationQ[v] || TrueQ[v["VideoStarted"]], Return[Null]];
+  r = iSWVideoPlayerPlay[v["Uuid"], True];
+  If[p > 0.05, With[{e = iSWVideoPlayerEntry[v["Uuid"]]},
+    If[AssociationQ[e], Quiet[FFmpegTools`FE`FrontEndVideoPlaybackSetPosition[e["Id"], p]]]]];
+  v["VideoStarted"] = True; v["StartedAt"] = now - p; v["Ends"] = now - p + v["Duration"];
+  $iSWPlayState["Video"] = v;
+  iSWTrace["Video:start slide " <> ToString[v["Slide"]] <> " at " <> ToString[Round[p, 0.01]] <> If[r === $Failed, " FAILED", ""]];
+  Null];
+(* \:58f0\:304c\:8a71\:3057\:59cb\:3081\:305f: \:6700\:521d\:306e\:7247\:306e\:8a71\:3057\:59cb\:3081\:3092\:5f85\:3063\:3066\:3044\:308b\:52d5\:753b\:306a\:3089\:3001\:3044\:307e\:59cb\:3081\:308b (\:305d\:306e\:7247\:306e At \:79d2\:306e\:4f4d\:7f6e\:304b\:3089) *)
+iSWPlayVideoOnSpeech[now_] := With[{v = $iSWPlayState["Video"]},
+  If[AssociationQ[v] && v["Stage"] === "Playing" && ! TrueQ[v["VideoStarted"]],
+    iSWPlayVideoStartNow[now, v["StartAt0"]]]];
+(* \:9032\:884c\:306e\:30bf\:30b9\:30af\:304b\:3089\:6bce\:56de: \:8a71\:3057\:59cb\:3081\:304c\:898b\:3048\:306a\:3044\:307e\:307e\:300c\:9045\:308c + 3 \:79d2\:300d\:305f\:3063\:305f\:3089\:52d5\:753b\:3092\:59cb\:3081\:308b *)
+iSWPlayVideoTick[now_] := With[{v = $iSWPlayState["Video"]},
+  If[AssociationQ[v] && v["Stage"] === "Playing" && ! TrueQ[v["VideoStarted"]] &&
+      NumericQ[v["VideoStartBy"]] && now >= v["VideoStartBy"],
+    iSWTrace["Video:start by timeout slide " <> ToString[v["Slide"]]];
+    iSWPlayVideoStartNow[now, v["StartAt0"]]]];
+
+(* \:7247\:3092 1 \:3064\:9001\:308b (\:5b57\:5e55\:3082) *)
+iSWPlayVideoSendPiece[nb_, n_Integer, piece_Association] := (
+  Quiet[iSWSubtitleText[piece["Text"]]];
+  iSWPlaySpeak[nb, n, piece["Text"], "v" <> ToString[Lookup[piece, "N", 1]]];
+  If[$iSWPlayState["Status"] === "Playing",
+    (* \:7247\:3068\:7247\:306e\:9593\:3092\:5c11\:3057\:7a7a\:3051\:308b *)
+    $iSWPlayState["Deadline"] = $iSWPlayState["Deadline"] - $SlideVoiceGap + $SlideVideoPieceGap]);
+
+(* \:7de0\:5207\:304c\:6765\:305f\:3068\:304d\:306b iSWPlayAdvance \:304b\:3089\:547c\:3070\:308c\:308b\:3002True = \:52d5\:753b\:306e\:6bb5\:3092\:9032\:3081\:305f (\:6b21\:3078\:9001\:3089\:306a\:3044)\:3001False = \:52d5\:753b\:306e\:6bb5\:306f\:7d42\:308f\:308a (\:6b21\:3078) *)
+iSWPlayVideoStep[] := Module[{v = $iSWPlayState["Video"], nb = $iSWPlayState["Notebook"], now = AbsoluteTime[], n, st, piece, at,
+   remaining, ends, qmode, lat, a0, rec = iSWPlayRecordingQ[]},
+  If[! AssociationQ[v], Return[False]];
+  n = v["Slide"];
+  lat = If[rec, 0., iSWPlayLatency[]];
+  Switch[v["Stage"],
+    "Pre",
+    (* \:518d\:751f\:524d\:306e\:539f\:7a3f\:3092\:8aad\:307f\:7d42\:3048\:305f *)
+    remaining = v["Pieces"];
+    a0 = If[remaining === {}, None, Replace[Lookup[First[remaining], "At", None], Except[_?NumericQ] -> 0.]];
+    iSWTrace["Video:step Pre -> Playing slide " <> ToString[n] <> " latency=" <> ToString[Round[lat, 0.01]] <> " first=" <> ToString[a0]];
+    iSWPlayNote["\[FilledRightTriangle] " <> ToString[n] <> "/" <> ToString[$iSWPlayState["Count"]] <> iSL[" (\:52d5\:753b)", " (video)"]];
+    v["Stage"] = "Playing";
+    If[NumericQ[a0] && a0 < lat + 0.05 && ! rec,
+      (* \:6700\:521d\:306e\:7247\:3092\:5148\:306b\:9001\:308a\:3001\:305d\:306e\:58f0\:304c\:8a71\:3057\:59cb\:3081\:305f\:3089\:52d5\:753b\:3092 At \:79d2\:306e\:4f4d\:7f6e\:304b\:3089\:59cb\:3081\:308b *)
+      v["Pieces"] = Rest[remaining]; v["StartAt0"] = N[a0]; v["VideoStartBy"] = now + lat + 3.;
+      $iSWPlayState["Video"] = v;
+      iSWPlayVideoSendPiece[nb, n, First[remaining]];
+      Return[True]];
+    (* \:52d5\:753b\:3092\:982d\:304b\:3089 (\:9332\:97f3\:3067\:306f\:7247\:3092\:5f85\:305f\:305a\:306b\:7d9a\:3051\:3066\:9332\:308b) *)
+    $iSWPlayState["Video"] = v;
+    iSWPlayVideoStartNow[now, 0.];
+    If[! TrueQ[$iSWPlayState["Video", "VideoStarted"]],
+      iSWTrace["Video:step play failed"];
+      $iSWPlayState["Video"] = None; Return[False]];
+    $iSWPlayState["Deadline"] = now + 0.05; $iSWPlayState["AudioEnd"] = now;
+    True,
+    "Playing",
+    (* \:8a71\:3057\:59cb\:3081\:304c\:898b\:3048\:306a\:3044\:307e\:307e\:7247\:304c\:7d42\:308f\:3063\:305f: \:3053\:3053\:3067\:52d5\:753b\:3092\:59cb\:3081\:308b *)
+    If[! TrueQ[v["VideoStarted"]], iSWPlayVideoStartNow[now, v["StartAt0"]]; v = $iSWPlayState["Video"]];
+    remaining = v["Pieces"];
+    If[remaining =!= {},
+      piece = First[remaining];
+      (* \:9332\:97f3\:3067\:306f\:5f85\:305f\:306a\:3044\:3002\:30e9\:30a4\:30d6\:3067\:306f\:52d5\:753b\:306e At \:79d2 - \:8a71\:3057\:59cb\:3081\:306e\:9045\:308c\:306b\:9001\:308b *)
+      at = With[{o = Lookup[piece, "At", None]}, If[NumericQ[o] && ! rec, v["StartedAt"] + o - lat, now]];
+      If[at > now + 0.05,
+        (* \:305d\:306e\:6642\:523b\:307e\:3067\:5f85\:3064 (\:52d5\:753b\:306f\:6d41\:308c\:3066\:3044\:308b) *)
+        $iSWPlayState["Deadline"] = at; $iSWPlayState["AudioEnd"] = at;
+        Return[True]];
+      v["Pieces"] = Rest[remaining]; $iSWPlayState["Video"] = v;
+      iSWPlayVideoSendPiece[nb, n, piece];
+      Return[True]];
+    (* \:7247\:306f\:8aad\:307f\:7d42\:3048\:305f: \:52d5\:753b\:306e\:7d42\:308f\:308a\:3092\:5f85\:3064 (\:9332\:97f3\:3067\:306f\:5f85\:305f\:306a\:3044) *)
+    st = iSWVideoPlayerState[v["Uuid"]];
+    iSWTrace["Video:step wait slide " <> ToString[n] <> " state=" <> ToString[Lookup[Replace[st, None -> <||>], "State", None]] <>
+      " pos=" <> ToString[Lookup[Replace[st, None -> <||>], "Position", None]]];
+    ends = v["Ends"];
+    If[AssociationQ[st] && TrueQ[st["Playing"]] && NumericQ[st["Position"]] && NumericQ[st["Duration"]],
+      ends = Min[ends + 2., now + Max[0., st["Duration"] - st["Position"]]]];
+    If[AssociationQ[st] && (TrueQ[st["Ended"]] || st["State"] === iSWVideoStateStopped), ends = now];
+    If[rec, ends = now];
+    If[ends > now + 0.1,
+      $iSWPlayState["Deadline"] = Min[ends, now + 1.]; $iSWPlayState["AudioEnd"] = $iSWPlayState["Deadline"];
+      Return[True]];
+    v["Stage"] = "Done"; $iSWPlayState["Video"] = v;
+    (* \:6b21\:306e\:679a\:3067\:9cf4\:308a\:7d9a\:3051\:306a\:3044\:3088\:3046\:6b62\:3081\:308b (\:7d42\:308f\:3063\:3066\:3044\:308c\:3070\:4f55\:3082\:5909\:308f\:3089\:306a\:3044) *)
+    Quiet[iSWVideoPlayerPause[v["Uuid"]]];
+    (* \:679a\:306e\:6700\:5f8c\:306e\:8cea\:554f\:30bf\:30a4\:30e0 (\:5fdc\:7b54on \:304b\:3064\:8cea\:554f\:30bf\:30a4\:30e0\:306e\:3068\:304d) \:306f\:3053\:3053\:3067 *)
+    qmode = Lookup[$iSWPlayState, "QuestionMode", "QuestionTime"];
+    If[iSWPlayRealtimeQ[] && qmode === "QuestionTime" && iSWPlayAnsweringQ[],
+      iSWRealtimeMic[True]; $iSWPlayState["AutoMuted"] = False;
+      $iSWPlayState["WindowStart"] = now;
+      $iSWPlayState["Deadline"] = now + $SlideVoiceGap + iSWQuestionWindow[],
+      $iSWPlayState["Deadline"] = now + $SlideVoiceGap];
+    $iSWPlayState["AudioEnd"] = now;
+    True,
+    _,
+    $iSWPlayState["Video"] = None;
+    False]];
+
+(* ---- \:8aad\:307f\:4e0a\:3052\:306e\:78ba\:304b\:3081 (Realtime \:306e\:58f0) ----
+   GPT-Live \:306f\:7247\:3092\:9001\:3063\:3066\:3082\:8a71\:3057\:59cb\:3081\:305a\:3001\:518d\:4f9d\:983c\:306e\:3042\:3068\:524d\:306e\:539f\:7a3f\:3092\:3082\:3046\:4e00\:5ea6\:8aad\:3093\:3060 (2026-11-10 \:5b9f\:6e2c: \:300c\:52d5\:753b\:304c\:59cb\:307e\:308a\:307e\:3057\:305f\:2026\:300d\:306e\:4ee3\:308f\:308a\:306b
+   \:518d\:751f\:524d\:306e\:539f\:7a3f)\:3002\:8aad\:307f\:7d42\:308f\:308a (NarrationDone) \:306b\:3001\:305d\:306e\:8aad\:307f\:4e0a\:3052\:3067\:8a71\:3057\:305f\:6587 (\:4f1a\:8a71\:306e assistant \:306e\:884c) \:3092\:983c\:3093\:3060\:539f\:7a3f\:3068\:6bd4\:3079\:3001
+   \:9055\:3048\:3070\:983c\:307f\:76f4\:3059\:3002\:9332\:97f3 (\:8aad\:307f\:4e0a\:3052\:52d5\:753b) \:3067\:306f\:3059\:3079\:3066\:306e\:8aad\:307f\:4e0a\:3052 (\:9055\:3046\:307e\:307e\:9332\:308b\:3068\:52d5\:753b\:306b\:6b8b\:308b\:30012 \:56de\:307e\:3067)\:3001\:30e9\:30a4\:30d6\:3067\:306f\:52d5\:753b\:4e2d\:306e\:7247 (1 \:56de)\:3002
+   \:8a71\:3057\:305f\:6587\:304c\:53d6\:308c\:306a\:3044\:3068\:304d (\:66f8\:304d\:8d77\:3053\:3057\:304c\:7121\:3044) \:306f\:78ba\:304b\:3081\:306a\:3044\:3002 *)
+$iSWNarrationVerifyThreshold = 0.6;
+(* 11-10 \:9332\:308a\:76f4\:3057\:306e\:5b9f\:6e2c: \:6b63\:3057\:304f\:8aad\:3093\:3060\:7247\:306f\:4e00\:81f4\:5ea6 1.0\:3001\:8a00\:3044\:63db\:3048 (\:300c\:518d\:751f\:524d\:306e\:8aac\:660e\:3067\:3059\:300d\:2192\:300c\:518d\:751f\:306e\:524d\:306b\:7c21\:5358\:306b\:8aac\:660e\:3057\:307e\:3059\:300d) 0.62\:3001
+   \:9014\:4e2d\:3067\:5207\:308c\:305f\:8aad\:307f\:4e0a\:3052 (\:66f8\:304d\:8d77\:3053\:3057\:300c\:2026\:9589\:3058\:308b\:8ecc\:300d\:3001\:58f0 1.4 \:79d2) 0.92\:3001\:5225\:306e\:8a71 0.09\:3002\:4e00\:81f4\:5ea6\:3060\:3051\:3067\:306f\:8a00\:3044\:63db\:3048\:3068\:9014\:4e2d\:5207\:308c\:3092\:901a\:3059\:306e\:3067\:3001
+   \:539f\:7a3f\:306e\:7d42\:308f\:308a\:3092\:8aad\:3093\:3060\:304b (iSWNarrationTailCoverage) \:3068\:3001\:9332\:97f3\:306e\:58f0\:306e\:9577\:3055\:304c\:539f\:7a3f\:306b\:898b\:5408\:3046\:304b (iSWNarrationVoicedShortQ) \:3082\:898b\:308b *)
+$iSWNarrationTailThreshold = 0.6;
+(* \:539f\:7a3f\:306e\:7d42\:308f\:308a (\:6b63\:898f\:5316\:3057\:3066\:6700\:5f8c\:306e 5 \:6587\:5b57\:304b 15%) \:306e 2 \:6587\:5b57\:306e\:7d44\:306e\:3046\:3061\:3001\:8a71\:3057\:305f\:6587\:306e\:7d42\:308f\:308a\:306e\:90e8\:5206 (\:305d\:306e 2 \:500d\:306e\:9577\:3055) \:306b\:3042\:308b\:3082\:306e\:306e\:5272\:5408 *)
+iSWNarrationTailCoverage[said_String, script_String] := Module[{s = iSWRecNormQ[script], d = iSWRecNormQ[said], n, tail, dtail, bg},
+  If[StringLength[s] < 4, Return[1.]];
+  n = Min[StringLength[s], Max[5, Ceiling[0.15 StringLength[s]]]];
+  tail = StringTake[s, -n];
+  dtail = StringTake[d, -Min[StringLength[d], 2 n]];
+  bg = StringJoin /@ Partition[Characters[tail], 2, 1];
+  N[Count[bg, b_ /; StringContainsQ[dtail, b]]/Length[bg]]];
+(* \:9332\:97f3\:306e\:4e2d\:3067\:58f0\:304c\:9cf4\:3063\:3066\:3044\:308b\:79d2\:6570 (50 ms \:3054\:3068\:306e RMS \:304c 0.02 \:3092\:8d85\:3048\:308b\:533a\:9593\:306e\:548c\:3002AudioTrim \:306f\:9332\:97f3\:306e\:5c0f\:3055\:306a\:96d1\:97f3\:3067\:5207\:3089\:306a\:304b\:3063\:305f) *)
+iSWNarrationVoicedSeconds[file_String] := Module[{a, d, sr, win},
+  a = Quiet[Check[Audio[file], $Failed]];
+  If[! TrueQ[Quiet[AudioQ[a]]], Return[$Failed]];
+  If[AudioChannels[a] > 1, a = AudioChannelMix[a, "Mono"]];
+  (* AudioSampleRate \:306f Quantity (Hertz) \:3067\:8fd4\:308b *)
+  sr = With[{r = AudioSampleRate[a]}, If[QuantityQ[r], QuantityMagnitude[r, "Hertz"], r]];
+  If[! NumericQ[sr] || sr <= 0, Return[$Failed]];
+  d = First[AudioData[a]]; win = Max[1, Round[sr/20]];
+  If[Length[d] < win, Return[0.]];
+  N[Count[Sqrt[Mean[#^2]] & /@ Partition[d, win], x_ /; x > 0.02] win/sr]];
+(* \:9332\:97f3\:306e\:58f0\:304c\:3001\:539f\:7a3f\:3092\:6bce\:79d2 7 \:6587\:5b57 (\:901f\:3081\:306b\:898b\:7a4d\:3082\:308b\:3002harema \:306f\:7d04 4.7 \:6587\:5b57) \:3067\:8aad\:3093\:3060\:9577\:3055\:306e 55% \:306b\:6e80\:305f\:306a\:3044 = \:9014\:4e2d\:3067\:5207\:308c\:305f *)
+iSWNarrationVoicedShortQ[file_, script_String] := Module[{v, expect},
+  If[! StringQ[file] || ! FileExistsQ[file], Return[False]];
+  v = iSWNarrationVoicedSeconds[file];
+  expect = StringLength[iSWRecNormQ[script]]/7.;
+  NumericQ[v] && expect > 1.5 && v < 0.55 expect];
+iSWPlayNarrationMsgSeq[] := With[{m = Quiet[SourceVault`SourceVaultRealtimeMessages[1]]},
+  If[MatchQ[m, {_Association}], Replace[m[[1, "Sequence"]], Except[_Integer] -> 0], 0]];
+iSWPlayNarrationSaid[seq_Integer] := With[{m = Quiet[SourceVault`SourceVaultRealtimeMessages[40]]},
+  If[ListQ[m],
+    StringRiffle[Cases[m, a_Association /; a["Kind"] === "assistant" && IntegerQ[a["Sequence"]] && a["Sequence"] > seq :> ToString[a["Text"]]], " "],
+    ""]];
+(* \:8aad\:307f\:7d42\:308f\:308a\:304b\:3089\:6b21\:306e\:8aad\:307f\:4e0a\:3052\:307e\:3067\:306e\:9593 (\:79d2)\:3002GPT-Live \:306f\:524d\:306e\:8aad\:307f\:4e0a\:3052\:306e\:76f4\:5f8c (\:7d04 1.5 \:79d2) \:306b\:983c\:3093\:3060\:539f\:7a3f\:3092 10 \:79d2\:8aad\:307e\:305a\:3001\:518d\:4f9d\:983c\:3067\:524d\:306e\:539f\:7a3f\:3084
+   \:539f\:7a3f\:306b\:7121\:3044\:8a71\:3092\:3057\:305f (11-10 \:5b9f\:6e2c 2 \:56de)\:3002\:9332\:97f3\:3068\:52d5\:753b\:306e\:7247\:3067\:306f\:9577\:3081\:306b\:7a7a\:3051\:308b *)
+If[! ValueQ[$SlideLiveNarrationGap], $SlideLiveNarrationGap = 3.];
+iSWPlayLiveQ[] := iSWPlayRealtimeQ[] && iSWVoiceModelAPI[iSWVoiceModel[]] === "Live";
+iSWPlayNarrationGap[] := If[iSWPlayLiveQ[] && (iSWPlayRecordingQ[] || iSWPlayVideoPendingQ[]),
+  Max[N[$SlideVoiceGap], N[$SlideLiveNarrationGap]], N[$SlideVoiceGap]];
+
+(* True = \:983c\:307f\:76f4\:3059\:3053\:3068\:306b\:3057\:305f (\:3053\:306e\:8aad\:307f\:7d42\:308f\:308a\:3067\:306f\:6b21\:3078\:9032\:307e\:306a\:3044)\:3002\:983c\:307f\:76f4\:3057\:306f\:9593\:3092\:7f6e\:3044\:3066\:304b\:3089 iSWPlayAdvance \:304c\:9001\:308b (iSWPlayRetrySend) *)
+iSWPlayNarrationRetryQ[] := Module[{info = Lookup[$iSWPlayState, "NarrationInfo", None], said, sim, tailc, short, maxR, piece,
+   rec = iSWPlayRecordingQ[], now = AbsoluteTime[], none},
+  If[! AssociationQ[info] || info["Id"] =!= $iSWPlayState["NarrationId"], Return[False]];
+  piece = StringStartsQ[info["Tag"], "v"];
+  If[! (rec || piece), Return[False]];
+  said = iSWPlayNarrationSaid[info["MsgSeq"]];
+  none = StringTrim[said] === "";
+  (* \:9332\:97f3\:3067\:4f55\:3082\:8a71\:3055\:306a\:304b\:3063\:305f (\:30ef\:30fc\:30ab\:30fc\:304c\:300c\:8aad\:307f\:4e0a\:3052\:304c\:59cb\:307e\:3089\:306a\:304b\:3063\:305f\:300d\:3067\:8ae6\:3081\:305f) \:3068\:304d\:3082\:983c\:307f\:76f4\:3059\:3002\:30e9\:30a4\:30d6\:3067\:306f\:66f8\:304d\:8d77\:3053\:3057\:304c\:7121\:3051\:308c\:3070\:78ba\:304b\:3081\:306a\:3044 *)
+  If[none && ! rec, Return[False]];
+  (* \:8aad\:307f\:306e\:8f9e\:66f8\:3067\:4eee\:540d\:306b\:3057\:305f\:8a9e\:306f\:66f8\:304d\:8d77\:3053\:3057\:3067\:306f\:6f22\:5b57\:306e\:3053\:3068\:3082\:3042\:308b\:306e\:3067\:3001\:5143\:306e\:539f\:7a3f\:3068\:3082\:6bd4\:3079\:3066\:826f\:3044\:65b9\:3092\:53d6\:308b *)
+  sim = If[none, 0., Max[iSWRecDice[said, info["Speech"]], iSWRecDice[said, info["Text"]]]];
+  tailc = If[none, 0., Max[iSWNarrationTailCoverage[said, info["Speech"]], iSWNarrationTailCoverage[said, info["Text"]]]];
+  short = rec && ! none && TrueQ[iSWNarrationVoicedShortQ[info["RecordFile"], info["Speech"]]];
+  iSWTrace["Video:verify " <> info["Id"] <> " sim=" <> ToString[Round[sim, 0.01]] <> " tail=" <> ToString[Round[tailc, 0.01]] <>
+    If[short, " (voice too short)", ""] <> If[none, " (nothing said)", ""]];
+  If[sim >= $iSWNarrationVerifyThreshold && tailc >= $iSWNarrationTailThreshold && ! short, Return[False]];
+  maxR = If[rec, 2, 1];
+  If[info["Retry"] >= maxR, iSWTrace["Video:verify gave up " <> info["Id"]]; Return[False]];
+  iSWPlayNote[iSL["\:539f\:7a3f\:3069\:304a\:308a\:306b\:8aad\:307e\:306a\:304b\:3063\:305f\:306e\:3067\:8aad\:307f\:76f4\:3057\:307e\:3059", "Not read as written; asking again"]];
+  (* \:9055\:3046\:6587\:306e\:9332\:97f3\:306f\:6368\:3066\:308b (\:8aad\:307f\:76f4\:3057\:306e\:9332\:97f3\:304c\:540c\:3058\:30d5\:30a1\:30a4\:30eb\:306b\:5165\:308b) *)
+  If[StringQ[info["RecordFile"]] && FileExistsQ[info["RecordFile"]], Quiet[DeleteFile[info["RecordFile"]]]];
+  $iSWPlayState["NarrationId"] = None;
+  (* \:9332\:97f3\:306e GPT-Live \:306f\:4f1a\:8a71\:3092\:4f5c\:308a\:76f4\:3057\:3066\:304b\:3089\:983c\:307f\:76f4\:3059 (\:8a71\:304c\:305d\:308c\:305f\:4f1a\:8a71\:306f\:3001\:305d\:306e\:5f8c\:306e\:539f\:7a3f\:3082\:8aad\:307e\:306a\:304b\:3063\:305f\:3002\:59cb\:3081\:305f\:76f4\:5f8c\:306e 1 \:56de\:76ee\:306f 2 \:56de\:3068\:3082\:8aad\:3081\:305f) *)
+  $iSWPlayState["RetryNarration"] = <|"Slide" -> info["Slide"], "Text" -> info["Text"], "Tag" -> info["Tag"],
+    "Retry" -> info["Retry"] + 1, "Restart" -> (rec && iSWPlayLiveQ[])|>;
+  $iSWPlayState["Deadline"] = now + iSWPlayNarrationGap[];
+  $iSWPlayState["AudioEnd"] = now;
+  True];
+
+(* iSWPlayAdvance \:306e\:6700\:521d\:306b: \:983c\:307f\:76f4\:3057\:304c\:5f85\:3063\:3066\:3044\:308c\:3070\:9001\:308b (True = \:9001\:3063\:305f\:3001\:6b21\:306e\:679a\:3078\:306f\:9032\:307e\:306a\:3044) *)
+iSWPlayRetrySend[] := Module[{r = Lookup[$iSWPlayState, "RetryNarration", None]},
+  If[! AssociationQ[r], Return[False]];
+  $iSWPlayState["RetryNarration"] = None;
+  If[TrueQ[r["Restart"]], iSWPlayLiveRestart[]];
+  If[$iSWPlayState["Status"] =!= "Playing", Return[True]];
+  iSWTrace["Video:retry slide " <> ToString[r["Slide"]] <> " " <> r["Tag"] <> " #" <> ToString[r["Retry"]]];
+  iSWPlaySlideRealtime[r["Slide"], r["Text"], r["Tag"], r["Retry"]];
+  True];
+
+(* \:9332\:97f3\:306e GPT-Live: \:97f3\:58f0\:4f1a\:8a71\:3092\:4f5c\:308a\:76f4\:3059 (\:8aad\:307f\:4e0a\:3052\:3060\:3051\:30fb\:30de\:30a4\:30af\:306f\:9589\:3058\:305f\:307e\:307e)\:3002SourceVaultRealtimeStart \:306f\:30c0\:30a4\:30a2\:30ed\:30b0\:3092\:51fa\:3055\:306a\:3044 *)
+iSWPlayLiveRestart[] := Module[{nb = $iSWPlayState["Notebook"], voice = $iSWPlayState["Voice"], res},
+  iSWTrace["Video:live restart"];
+  Quiet[SourceVault`SourceVaultRealtimeStop[]];
+  $iSWPlayState["StartedBridge"] = False;
+  res = Quiet[iSWEnsureRealtimeBridge[nb, iSWRealtimeVoiceOf[voice], False]];
+  If[FailureQ[res] || res === $Failed,
+    iSWTrace["Video:live restart failed"];
+    $iSWPlayState["LastFailure"] = res];
+  res];
+(* \:9032\:884c\:306e\:30bf\:30b9\:30af\:304b\:3089: \:3044\:307e\:306e\:8aad\:307f\:4e0a\:3052\:304c\:8a71\:3057\:59cb\:3081\:305f\:304b (\:9045\:308c\:3092\:6e2c\:308a\:3001\:5f85\:3063\:3066\:3044\:308b\:52d5\:753b\:3092\:59cb\:3081\:308b) *)
+iSWPlayNarrationSpeechTick[rt_Association, now_] := Module[{info = Lookup[$iSWPlayState, "NarrationInfo", None]},
+  If[! AssociationQ[info] || info["Id"] =!= $iSWPlayState["NarrationId"] || NumericQ[Lookup[info, "SpokeAt", None]], Return[Null]];
+  If[TrueQ[Lookup[rt, "Speaking", False]],
+    $iSWPlayState["NarrationInfo", "SpokeAt"] = now;
+    iSWPlayLatencySample[now - info["SentAt"]];
+    iSWPlayVideoOnSpeech[now]]];
+
+(* \:505c\:6b62\:30fb\:4e00\:6642\:505c\:6b62\:30fb\:518d\:958b\:306e\:9023\:52d5 *)
+iSWPlayVideoHalt[] := With[{v = $iSWPlayState["Video"]},
+  If[AssociationQ[v] && StringQ[v["Uuid"]], Quiet[iSWVideoPlayerPause[v["Uuid"]]]];
+  $iSWPlayState["Video"] = None];
+iSWPlayVideoPause[] := With[{v = $iSWPlayState["Video"]},
+  If[AssociationQ[v] && v["Stage"] === "Playing" && StringQ[v["Uuid"]],
+    Quiet[iSWVideoPlayerPause[v["Uuid"]]];
+    $iSWPlayState["VideoPausedAt"] = AbsoluteTime[]]];
+iSWPlayVideoResume[] := Module[{v = $iSWPlayState["Video"], t0 = Lookup[$iSWPlayState, "VideoPausedAt", None], dt},
+  If[AssociationQ[v] && v["Stage"] === "Playing" && StringQ[v["Uuid"]],
+    dt = If[NumericQ[t0], AbsoluteTime[] - t0, 0.];
+    v["StartedAt"] = v["StartedAt"] + dt; v["Ends"] = v["Ends"] + dt;
+    $iSWPlayState["Video"] = v;
+    Quiet[iSWVideoPlayerPlay[v["Uuid"], False]]];
+  $iSWPlayState["VideoPausedAt"] = None];
+
+(* \:5b57\:5e55: \:518d\:751f\:4e2d\:306e\:539f\:7a3f\:306e\:7247\:3092\:305d\:306e\:307e\:307e\:51fa\:3059 (\:679a\:306e\:5b57\:5e55\:306f iSWSubtitleSlide) *)
+iSWSubtitleText[text_String] := Module[{segs},
+  If[! AssociationQ[Lookup[$iSWPlayState, "Subtitles", None]], Return[Null]];
+  segs = iSWSubtitleSegments[text];
+  $iSWPlayState["SubSegs"] = segs;
+  $iSWPlayState["SubT0"] = None;
+  $iSWPlayState["SubLen"] = StringLength[text];
+  iSWSubtitleSet[If[segs === {}, "", First[segs]]]];
+
+(* ---- \:8aad\:307f\:4e0a\:3052\:52d5\:753b: \:52d5\:753b\:306e\:679a\:306e\:533a\:9593 (\:524d\:306e\:539f\:7a3f \:2192 \:52d5\:753b + \:7247 \:2192 \:6700\:5f8c\:306e\:30d5\:30ec\:30fc\:30e0\:3067\:5f85\:3064) ---- *)
+(* \:679a\:3054\:3068\:306e\:52d5\:753b\:306e\:5408\:6210\:60c5\:5831: <|"File", "Rect", "Duration", "Pieces" -> {<|"At" -> \:79d2|None, "Audio" -> wav|>..}|> *)
+iSWVideoSegmentVideo[k_Integer, lead_, preSeconds_, vid_Association] := Module[
+  {gap = Replace[$SlideVideoGap, Except[_?NumericQ] -> 0.5], pgap = Replace[$SlideVideoPieceGap, Except[_?NumericQ] -> 0.3],
+   tv, t, pieces = {}, s, at, dv = Replace[Lookup[vid, "Duration", 0.], Except[_?NumericQ] -> 0.], ends},
+  tv = lead + If[preSeconds > 0, preSeconds + gap, 0.];
+  t = tv;
+  Do[
+    s = If[StringQ[p["Audio"]], iSWAudioSeconds[p["Audio"]], $Failed];
+    If[! NumericQ[s] || s <= 0, Continue[]];
+    at = Max[t, With[{o = Lookup[p, "At", None]}, If[NumericQ[o], tv + o, t]]];
+    AppendTo[pieces, <|"At" -> N[at], "Audio" -> p["Audio"], "Seconds" -> N[s]|>];
+    t = at + s + pgap,
+    {p, Select[Replace[Lookup[vid, "Pieces", {}], Except[_List] -> {}], AssociationQ]}];
+  ends = Max[tv + dv, If[pieces === {}, tv, Last[pieces]["At"] + Last[pieces]["Seconds"]]];
+  <|"Start" -> N[tv], "Duration" -> N[dv], "Pieces" -> pieces, "Ends" -> N[ends],
+    "File" -> Lookup[vid, "File", None], "Rect" -> Lookup[vid, "Rect", None]|>];
+
+(* ffmpeg \:306e\:7248 (\:5927\:304d\:3044\:65b9\:306e\:756a\:53f7)\:3002-/filter_complex file (7.0 \:304b\:3089\:30029.0 \:3067 -filter_complex_script \:306f\:6d88\:3048\:305f) \:3092\:4f7f\:3046\:304b\:306e\:5224\:65ad\:306b *)
+$iSWFFmpegVersionCache = <||>;
+iSWFFmpegMajorVersion[exe_String] := With[{c = Lookup[$iSWFFmpegVersionCache, exe, None]},
+  If[IntegerQ[c], c,
+    $iSWFFmpegVersionCache[exe] = Module[{o = Quiet[Check[RunProcess[{exe, "-version"}, "StandardOutput"], ""]], m},
+      m = If[StringQ[o], StringCases[o, "ffmpeg version " ~~ d : DigitCharacter .. :> ToExpression[d], 1], {}];
+      If[m === {}, 0, First[m]]]]];
+(* \:30d5\:30a3\:30eb\:30bf\:306e\:6e21\:3057\:65b9: 7 \:4ee5\:964d\:306f\:30d5\:30a1\:30a4\:30eb\:3092 -/filter_complex \:3067\:3001\:53e4\:3044\:7248\:306f\:77ed\:3051\:308c\:3070\:305d\:306e\:307e\:307e\:3001\:9577\:3051\:308c\:3070 -filter_complex_script *)
+iSWVideoFilterArgs[exe_String, file_String, graph_String] := Which[
+  iSWFFmpegMajorVersion[exe] >= 7, {"-/filter_complex", file},
+  StringLength[graph] < 2500, {"-filter_complex", StringReplace[graph, "\n" -> ""]},
+  True, {"-filter_complex_script", file}];
+
+(* ffmpeg \:306e filter_complex (\:30d5\:30a1\:30a4\:30eb\:306b\:66f8\:304f): \:52d5\:753b\:306e\:679a\:3054\:3068\:306b overlay\:3002\:52d5\:753b\:304c\:59cb\:307e\:308b\:524d\:306f\:53f0\:7d19 (\:4ee3\:8868\:30d5\:30ec\:30fc\:30e0) \:306e\:307e\:307e\:3001
+   \:7d42\:308f\:3063\:305f\:3089\:6700\:5f8c\:306e\:30d5\:30ec\:30fc\:30e0 (eof_action=repeat) \:3092\:679a\:306e\:7d42\:308f\:308a\:307e\:3067 *)
+iSWVideoFilterScript[segs_List, inputs_List, fr_] := Module[{lines = {}, base = "base0", k = 0, ov, x, y, w, h, seg, vd, s, e},
+  AppendTo[lines, "[0:v]fps=" <> ToString[fr] <> ",scale=trunc(iw/2)*2:trunc(ih/2)*2,format=yuv420p[base0]"];
+  Do[
+    seg = segs[[inputs[[i, 1]]]]; vd = seg["Video"];
+    {x, y, w, h} = Round[vd["Rect"]];
+    w = Max[2, 2 Floor[w/2]]; h = Max[2, 2 Floor[h/2]]; x = 2 Floor[x/2]; y = 2 Floor[y/2];
+    s = seg["Start"] + vd["Start"]; e = seg["Start"] + seg["Duration"];
+    k++;
+    ov = "ov" <> ToString[k];
+    AppendTo[lines, "[" <> ToString[inputs[[i, 2]]] <> ":v]scale=" <> ToString[w] <> ":" <> ToString[h] <>
+      ",fps=" <> ToString[fr] <> ",setpts=PTS-STARTPTS+" <> iSWDecimal[s] <> "/TB[" <> ov <> "]"];
+    AppendTo[lines, "[" <> base <> "][" <> ov <> "]overlay=" <> ToString[x] <> ":" <> ToString[y] <>
+      ":eof_action=repeat:enable='between(t," <> iSWDecimal[s] <> "," <> iSWDecimal[e] <> ")'[base" <> ToString[k] <> "]"];
+    base = "base" <> ToString[k],
+    {i, Length[inputs]}];
+  lines[[-1]] = StringReplace[lines[[-1]], "[" <> base <> "]" ~~ EndOfString -> "[out]"];
+  If[Length[lines] === 1, lines[[1]] = StringReplace[lines[[1]], "[base0]" ~~ EndOfString -> "[out]"]];
+  StringRiffle[lines, ";\n"] <> "\n"];
+
+(* ---- \:539f\:7a3f\:9023\:60f3\:306e\:52d5\:753b\:306e\:60c5\:5831 (iSWTalkFromCellsCore \:304c\:679a\:3054\:3068\:306b\:4ed8\:3051\:308b) \:3092 SlidePlay / SlideTalkVideo \:7528\:306b ---- *)
+(* <|k -> <|"Id", "Path", "Rel", "Duration", "RasterSize", "Pieces" -> {<|"At", "Text"|>..}, "Missing"|>|> *)
+iSWTalkVideos[talk_Association] := Replace[Lookup[talk, "Videos", <||>], Except[_Association] -> <||>];
+iSWTalkVideos[_] := <||>;
 
 End[]
 

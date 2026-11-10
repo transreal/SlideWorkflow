@@ -59,6 +59,8 @@ Markdown文字列(または`File[...]`)をシナリオ連想に変換する。
 - `> ` は説明段落
 - `![w=幅pt](画像パス)` でスライド内画像
 - `## !image 画像パス` で全面画像ページ
+- `![video w=幅pt poster=last](動画パス)` でスライド内の動画 (v1.69。拡張子が `$SlideVideoFileExtensions` = mp4 / mov / m4v / webm / mkv / avi なら動画。`poster=` は静止画の書き出しで使う代表フレーム: `last` (既定) / `first` / 秒 / 画像パス)。`## !video 動画パス {poster=first}` で全面の動画ページ
+- `vtalk: 原文` / `vtalk@8: 原文` でその動画の再生中に読む原稿 (SlideVideoTalk セル、v1.69)。`@8` は動画の 8 秒から (`@1:05` も可)、無ければ前の片の直後。再生前に読む原稿は従来の `talk:`
 - `cite: 出典` で直前の図・引用に出典セルを付与
 - `<<FIGn>>` で既存の図・コードセルをその位置に保持(再展開時)
 - `talk: 原文` でそのスライドの発表原文(SlideTalk セル)を埋め込む
@@ -102,11 +104,12 @@ n枚目をm番目へ移動する。
 
 ### SlideDeckImages[nbfile, opts] → {Image...}
 全スライドを16:9画像リストとして安定に生成する(クリップボード/ウィンドウ非依存)。
-Options: `ImageSize -> $SlideImageSize`, `"Slides" -> All | 範囲` (対象スライド指定), `"Environment" -> "SlideShow"` (ScreenStyleEnvironment), `"WindowWidth" -> 960`, `"IncludeInput" -> Automatic` (`$SlideIncludeInput`を参照。`Automatic|True|False|"Visual"`。個別セルは`CellTags->"ShowInput"`で常に残せる), `"Verbose" -> False`, `"Margins" -> Automatic` ($SlideMarginsまたは`{{left,right},{bottom,top}}` px), `"Reflow" -> True`, `"MaxWindowWidth" -> 1600`
+Options: `ImageSize -> $SlideImageSize`, `"Slides" -> All | 範囲` (対象スライド指定), `"Environment" -> "SlideShow"` (ScreenStyleEnvironment), `"WindowWidth" -> 960`, `"IncludeInput" -> Automatic` (`$SlideIncludeInput`を参照。`Automatic|True|False|"Visual"`。個別セルは`CellTags->"ShowInput"`で常に残せる), `"Verbose" -> False`, `"Margins" -> Automatic` ($SlideMarginsまたは`{{left,right},{bottom,top}}` px), `"Reflow" -> True`, `"MaxWindowWidth" -> 1600`, `"VideoMarker" -> False` (v1.69: True で動画セルを一色の矩形として描く。読み上げ動画の合成位置の計測用)
+動画セル (v1.69) は代表フレーム (`poster=`、既定 `$SlideVideoPoster` = 最後のフレーム) の画像に置き換えて描く。全面の動画 (`## !video`) は全面画像と同じく画素のまま中央に合成。
 **自動リフロー(`"Reflow"`)**: 内容が縦に収まらないスライドは、そのままでは縦横一律に縮小され幅も縮むため右に大きな余白が残る(実測: 高さ1215pxのスライドが0.79倍→右余白439px)。`"Reflow" -> True`(既定)は折返し幅 `WindowWidth` を段階的に広げて再描画し、**最終的な内容幅が最大になる幅**を探索する(広げすぎると図など不動要素が相対的に小さくなり再び余白が増えるため、単純な最大化ではなく最良点を選ぶ)。最初から収まるスライドは初回描画で確定するので出力・処理時間とも従来と同一。上限は `"MaxWindowWidth"`(pt)で、そこまで広げても収まらない場合のみ従来どおり縮小して `SlideDeckImages::ovflw` を出す。`"Verbose" -> True` でリフロー後の幅を表示。
 
-### SlideDeckExportImages[nbfile] / SlideDeckExportImages[nbfile, dir, opts] → {String...}
-各スライドを`dir/01.png`...として書き出し、パスのリストを返す。
+### SlideDeckExportImages[nbfile] / SlideDeckExportImages[nbfile | Notebook | NotebookObject, dir, opts] → {String...}
+各スライドを`dir/01.png`...として書き出し、パスのリストを返す。動画の枚があれば (v1.69) 同じフォルダに `videos.json` (枚番号 → 動画の矩形 `Rect` {x, y, w, h} px・パス・長さ) も書く (`"Slides"` が All のときだけ)。読み上げ動画の合成が使う。
 Options: `SlideDeckImages`と同じ
 
 ### SlideDeckExportVideo[nbfile | images, mp4file, opts] → String
@@ -166,6 +169,44 @@ v1.67: コードの窓に「ブラウザで上げる」「やめる」ボタン 
 
 ### $SlideYouTubeHTTPHandler
 HTTP の差し込み口 (テスト用)。`<|Method, URL, Headers, Body, TimeConstraint|>` を受けて `<|StatusCode, Headers (小文字), BodyBytes|>` を返す関数。
+
+## 動画の埋め込み (v1.69)
+ワームやタートルの動作のように、定義・定理の列挙より動画の方が伝わる内容を、スライドに貼って再生する。作成パレット「挿入」の **動画** / **動画原稿**。
+
+### 書き方
+- シナリオ md: `![video w=600 poster=last](anim/turtle-sr.mp4)` (拡張子で画像と見分ける)、全面は `## !video anim/x.mp4 {poster=first}`。パスはデッキのフォルダからの相対か絶対。
+- 再生前に読む原稿は従来の `talk:` (SlideTalk セル)。**再生中に読む原稿は `vtalk:`** (`vtalk@8:` で動画の 8 秒から、`@1:05` も可。無ければ前の片の直後 + `$SlideVideoPieceGap` 0.3 秒) → 専用スタイル **SlideVideoTalk** のセル (青緑の帯、左に「動画」の印。1 行 1 片、行頭の `@秒`)。訳セル (原稿を訳す) の対象外で、書いた言語のまま読む。
+- 動画セルの実体は FE の内蔵プレイヤー (VideoBox2) と同じ FE の再生機構 (`FFmpegTools`FE`FrontEndVideoPlayback*`) につないだ自前のプレイヤー (DynamicModule)。TaggingRules `SWVideo` に `Id` (uuid) / `Path` / `Rel` (デッキからの相対パス。別の機械の Dropbox でも開ける) / `Width` / `Duration` / `RasterSize` / `Poster`、CellTags `SlideVideo` (全面は + `VideoPage`)。内蔵プレイヤーを使わないのは、その再生 id が GUI の DynamicModule の中にあってカーネルから再生を始められないから。
+- **再生 id の持ち方 (2026-11-10 作り直し)**: id はカーネルが作って登録簿 (`$iSWVideoPlayers`、uuid → id) に持ち、**FE 側の大域記号 `SlideWorkflow`FEVideo`<uuid>`** に公開する (`FE`Evaluate[FEPrivate`Set[..]]`)。セルの FE 側のコード (`Evaluator -> None`) はその記号を読んでフレームを取るだけ。セルは自分の表示の箱の番号を FE 側の記号 `<uuid>Box` に書く (カーネル不要) ので、カーネルは後からでも箱を結べる (`FrontEndVideoPlaybackSetDisplayBoxID`)。セルがカーネルを呼ぶのは「初めて表示されたとき」(`iSWVideoCellShown` = オートスタート) と「クリック」(`iSWVideoPlayerToggle`) だけで、どちらも失敗しても静止画のまま害は無い。
+  - 最初の版は id をセルの局所変数にも持ったので、パッケージの読み込み前に表示されたセル・カーネルの再起動・`Get` のやり直しでセルとカーネルの id がずれ、カーネルが再生しても絵が出なかった。いまは登録簿が空でも FE 側の記号に生きた id があれば引き取る (`Video:adopt`)。id を捨てるとき (`iSWVideoPlayerRelease`) は先に記号を -1 に戻す。
+  - **開いているデッキを軽く読む経路 (`iSWDeckTextNotebook`、保存後に表示を切り替えたデッキなど) は図の中身を落とすが、動画セルの `SWVideo` は残す**。落としていた間は、再生 (`SlidePlay`) がその枚を動画の枚だと分からず、原稿だけ読んで動画が始まらなかった (11-09 実機)。
+  - 診断: `$TemporaryDirectory/slideworkflow-trace.log` の `Video:` 行 (init / adopt / bind / shown / autostart / play / click / step / release)。`SlideVideoStatus[]` は登録済みのプレイヤーの id・箱の番号・状態。
+- カーネル無し / SlideWorkflow 未ロードのとき (または古い版) は最初のフレームの静止画が見える (再生はできない)。
+
+### 動き
+- **スライドショーで初めて表示されたとき** に自動で始まる (`$SlideVideoAutoPlay`、既定 True。Working では始めない。SlidePlay が動いているときは SlidePlay が制御)。**クリックで再生 / 一時停止** (終わっていれば頭から)。手で戻って来た枚は自動では始まらない (クリック)。
+- **パレットの再生 (`SlidePlay`)**: 再生前の原稿を読む → `$SlideVideoGap` (0.5 秒) → 動画を頭から再生 → 再生中の原稿の片を時刻どおりに読む → 動画と片の遅い方が終わってから `$SlideVoiceGap` → (質問タイムならここで質問を受ける) → 次の枚。原稿の無い動画の枚も進む。一時停止で動画も止まり、再開で続きから (Realtime の声はその枚の頭から読み直す = 動画も頭から)。停止で動画も止まる。
+- **静止画の書き出し** (画像 / **Sliden mp4** / ポスター / QA の画像) は代表フレームに差し替える (VRChat の Sliden には動画を入れられないので 1 枚の静止画になる。登録簿の原稿は再生前 + 再生中を続けて読む形で焼かれる)。
+- **片の時刻 (11-10)**: 声は送ってから話し始めるまで遅れる (実測: GPT-Live 約 4 秒、gpt-realtime 約 1.5 秒、ローカルの声は合成済みならほぼ 0)。片は「動画の At 秒 - 遅れ」に送る。遅れは話し始め (ワーカーの状態 `Speaking`) を見て測り、声のモデルごとの移動平均で直す (既定は `$SlideSpeechLatency` の Local 0.3 / Realtime 1.5 / **Live 4**)。最初の片が遅れより前 (`vtalk:` で時刻なし、`@0` など) なら、片を先に送り、その声が話し始めたときに動画を (At 秒の位置から) 始める。話し始めが見えなければ「遅れ + 3 秒」で始める。ローカルの声は片も再生前に合成しておく (`$SlidePrepareBeforePlay`)。
+- **読み上げの確かめ (11-10)**: GPT-Live は片を送っても話し始めず、再依頼のあと前の原稿をもう一度読むことがある (実測)。読み終わりに、その読み上げで話した文 (会話の書き起こし) を頼んだ原稿と比べ (bigram の一致度 0.45 未満で違うとみなす)、違えば頼み直す。読み上げ動画の録音ではすべての読み上げを 2 回まで (違う文の録音は捨てる)、ライブでは動画中の片を 1 回。書き起こしが取れないときは確かめない。
+- **gpt-live-1 で読み上げ動画を録るとき**: 片は 1 つずつ別の wav に録る (`<デッキ>_voice/` の `{枚, "vN"}`)。時刻は待たずに前の片の直後に続けて録り、動画の終わりも待たない。動画の中の置き場所は合成が At どおりに決める (ライブの遅れに左右されない)。11-10 までは片の録音先を引くところで `{枚, "v1"}` を `Lookup` に渡して複数の鍵として引かれ、片が 1 つも録れていなかった (gpt-live の読み上げ動画は動画中が無音)。いまは `Key[..]` で引く。
+- **GPT-Live の読み上げ動画をやり直した実測 (11-10 12:50)**: 片の録音と確かめが 1 つも動かなかった。FE のカーネルに朝の版の 3 引数の `iSWPlaySlideRealtime` が残り、Get し直しても引数の形の違う古い定義が新しい定義より先に当たっていた。いまはこの版で引数の形を変えた関数の定義を先に `Clear` してから定義する (動画の節の関数 89 個と `iSWPlaySlideRealtime` / `iSWVideoSegments` / `iSWVideoCompose`)。
+  - 同じ実測で GPT-Live は、前の読み上げの約 1.5 秒後に頼んだ片を 10 秒読まず、再依頼で原稿に無い話 (「では次に、研究の概要をお話しします…」) をし、その後の原稿も読まなかった。録音では、違う文 (書き起こしと原稿の一致度 0.45 未満) か何も話さなかった読み上げを、**音声会話を作り直してから** `$SlideLiveNarrationGap` (既定 3 秒) 置いて頼み直す (2 回まで。始めた直後の 1 回目は 2 回とも読めた)。GPT-Live の録音と動画の枚の片は、読み終わりから次の読み上げまでも `$SlideLiveNarrationGap` 空ける。発表中は会話を作り直さない (質疑の文脈を消さない)。
+  - **確かめの 3 つの基準 (11-10 13:35 の録り直しの実測から)**: (1) 話した文と原稿の 2 文字の組の一致度 0.6 以上、(2) 原稿の終わり (最後の 5 文字か 15%) を話した文の終わりで読んだ (0.6 以上)、(3) 録音では、声の鳴っている秒数 (50 ms ごとの RMS > 0.02) が原稿を毎秒 7 文字で読んだ長さの 55% 以上。実測では、正しい読み上げは一致度 1.0、言い換え (「再生前の説明です」→「再生の前に簡単に説明します」) は 0.62 で終わりの基準 0.17、途中で切れた読み上げ (書き起こし「…閉じる軌」、声 1.2 秒) は 0.92 で終わりの基準 0.25。1 つ目だけでは後の 2 つを通していた。読みの辞書で仮名にした語は書き起こしでは漢字のこともあるので、元の原稿とも比べて良い方を取る。
+- **「登録」(11-10 に確かめた)**: 登録簿の原稿は、動画の枚は再生前の原稿 → 再生中の原稿 (改行でつなぐ) の 1 つの文、動画だけの枚は空。登録簿の JSON と md には動画の情報も `vtalk` 行も入らない。Sliden mp4 は動画の枚が代表フレームの静止画 (1 枚 1 秒)。開いて表示を切り替えて保存しても描画ハッシュは変わらない (動画セルの `ImageSizeCache` は FE が表示環境ごとに書き直すので、描画ハッシュでは外す。外す前は登録のたびに mp4 を作り直し、想定問答も「変わった枚」になっていた)。保存前の開いたデッキから登録しても (軽い読み取りの経路) 同じ原稿になる。
+- **読み上げ動画 (`SlideTalkVideo`、YouTube 用)**: 枚の画像を描くとき動画セルを一色の矩形で描いて位置を測り (`videos.json`)、ffmpeg の `overlay` でその矩形に実動画を合成する (filter_complex はファイルに書いて `-/filter_complex` (ffmpeg 7 以降) で渡す)。前の原稿の間は台紙 (代表フレーム)、動画が終わると最後のフレームで止まる (`eof_action=repeat`)。片の声は wav の中のその時刻に置く。埋め込み動画の音声は使わない。gpt-live-1 で録るときは片ごとに別の wav (`{枚, "v1"}`)。
+- 時刻表 `<デッキ>_narrated.json` の各枚に `Video` (Start / Duration)。
+
+### 関数
+- `SlideInsertVideo[]` (ファイル選択) / `SlideInsertVideo[nb, path, "Width" -> pt, "Poster" -> spec, "Talk" -> True]` — 動画セル (+ 再生中の原稿セル) を挿入。`SlideInsertVideoTalk[]` — 再生中の原稿セルだけ。
+- `SlideVideoCell[path, opts]` — Cell 式 (SlideDeckReplaceSlide などの生 Cell リスト用)。
+- `SlideDeckVideos[nb | path]` — デッキの動画の一覧 `{<|"Slide", "Id", "Path", "Rel", "Duration", "RasterSize", "Poster", "Page", "Pieces"|> ..}`。
+- `SlideVideoPlay[]` / `SlideVideoPause[]` — いま表示している枚の動画。`SlideVideoStatus[]` — `<|"Players", "FEReady", "AutoPlay"|>`。
+- 定数: `$SlideVideoAutoPlay` / `$SlideVideoPoster` ("Last") / `$SlideVideoFileExtensions` / `$SlideVideoGap` (0.5) / `$SlideVideoPieceGap` (0.3)。
+- 原稿連想 (`iSWTalkFromCellsCore`) の枚: `"Text"` = 再生前 + 再生中 (登録簿・見積もり用)、`"PreTalk"` = 再生前だけ、`"VideoTalk"` = 片の列、`"Video"` = 仕様。`talk["Videos"]` = 枚番号 → 仕様 + `Pieces`。再生と読み上げ動画は `PreTalk` を読む。
+- 罠: `FE`Evaluate` は HoldFirst (値は `With` で入れてから渡す)。FE 側の評価では未定義の記号との `FEPrivate`Greater` は評価されず `FEPrivate`If` は何もしない (エラーにはならない)。`UnsavedVariables` の変数は保存して開き直すと初期値が無い。`VideoExtractFrames` は 0 秒ちょうどで失敗する (最初のフレームは `VideoFrameList[v, 1]`)。`Information[v, "OriginalRasterSize"]` はトラックごとの連想。WL のコメントに `FrontEndVideoPlayback*)` と書くとコメントが閉じる。1 要素の CellTags は保存すると文字列になる。ffmpeg 9 では `-filter_complex_script` が無い (`-/filter_complex file`)。
+- テスト: `test codes/slidevideo_register_test.wls` (13 項目、仮の登録簿で「登録」を通す)。`test codes/slidevideo_test.wls` (105 項目、ソースは `_src.wls`。片の時刻・録音・確かめはスタブの声で。実 mp4 + ffmpeg で合成した短いクリップ、プレイヤーはスタブ) と、**隠れた FE で実プレイヤーを動かす** `test codes/slidevideo_fe_test.wls` (25 項目)。後者は `UsingFrontEnd` の中で `FE`Evaluate` を FE の初期化と同じ形 (`MathLink`CallFrontEndHeld[FrontEnd`Value[e]]`、HoldFirst) に定義すると FFmpegTools の FE 側ライブラリが読み込まれて再生できることを使い、`NotebookOpen[deck, Visible -> False]` + `Rasterize` でセルを描かせて、id の公開・箱の結びつけ・フレームがセルに届くこと (再生中の 2 回の描画が違う)・登録簿を消しても引き取ること・軽い読み取りに動画の仕様が残ること・オートスタート・再生の段が動画の本当の終わり (状態 4) で終わることを確かめる。
+  - 隠れた FE では、セルを描いている間カーネルが `Rasterize` の中で手を離せないので、FE は Initialization のうち自分で評価できる部分 (箱の番号) だけを評価し、カーネルの関数 (`iSWVideoCellShown`) は呼ばれない。テストはその呼び出しを手で行う。実機の FE では呼ばれる (トレースで確認済み)。
 
 ## ポスター (v1.54): 生成したスライドを KG の部で束ねて A0 に組む
 スライド (≤ 32 枚) とポスターは同じ KG の 2 つの投影。ポスターはデッキから作る: 枚の題目セルの CellTags `KGNode:<id>` で
@@ -624,8 +665,9 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 読み上げ進行を見るカーネル側ScheduledTaskの周期(秒)。
 
 ### $SlideRealtimeVoices
-型: `{String...}`, 初期値: `{"marin", "cedar"}`
-ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime)の声名。一覧には`"realtime:<声>"`として出る。
+型: `{String...}`, 初期値: `{"marin", "cedar", "harema", "shida"}`
+ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime / GPT-Live)の声名。一覧には`"realtime:<声>"`として出る。
+v1.68: `harema` (日本語・女声) と `shida` (日本語・男声) は GPT-Live 専用の声。音声モデルが gpt-live-* のときだけトグルに出る。gpt-realtime-* で話させようとすると、送らずに `Failure["SlideVoiceLiveOnly", ..]` を返す (音声応答・再生・動画の「速く作る」・ポスター音声)。ポスター音声は gpt-realtime で作るので、これらの声では作れない。動画は gpt-live-1 で録る (確認の窓に「速く作る」は出ない)。GPT-Live 専用の声の一覧は内部の `$iSWLiveOnlyVoices` (OpenAI の Voice options の 21 種)。一覧に無い名前は従来どおりそのまま送る。
 
 ### $SlideSpeechRate
 型: Association, 初期値: `<|"Local" -> 6.95, "Realtime" -> 5.6|>`

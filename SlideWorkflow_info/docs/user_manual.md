@@ -394,6 +394,8 @@ SlideShowLanguage[nb, "Toggle"]
 - `SlideInsertBibliography[]` — 文献セルを挿入します(`documentation.wl`と互換)。
 - `SlideInsertReferences[]` — 文献リストセルを挿入します(パレットの「文献」)。1行1文献`"[key] locator | メモ"`の書式で、`locator`はURL / `arxiv:ID` / `sv://URI` / `eagle:ID` / PDF・ノートブックのパス(過去スライド可)。スライド指示(プロンプト)からは`[key]`で参照し、展開エージェントが取得・引用します。`#`で始まる行はコメントです。
 - `SlideTogglePrompts[]` — デッキ内の全`SlidePrompt`セルの表示/非表示を一括で切り替えます。
+- `SlideInsertVideo[]` / `SlideInsertVideo[nb, path]` — 動画セルを挿入します (v1.69、パレット「挿入」の「動画」。引数無しはファイルを選ぶダイアログ)。スライドショーで初めて表示されたときに自動で始まり、クリックで再生/一時停止。再生前の原稿はトークセル、再生中の原稿は次の動画原稿セルに書きます。
+- `SlideInsertVideoTalk[]` — 動画の再生中に読む原稿のセル (`SlideVideoTalk`、青緑の帯) を挿入します (v1.69)。1 行 1 片、行頭の `@秒` でその片を動画の何秒から読むか (`@1:05` も可)、無ければ前の片の直後。
 
 ```wolfram
 SlideInsertDirective[]
@@ -528,6 +530,28 @@ ClaudeAttach[SlideSourceFile["ref1"]]
 
 ```wolfram
 $SlideVisualsPerSlide = False;
+```
+
+### 8.8 動画の埋め込み (v1.69)
+
+ワームやタートルの動作のように、定義や定理の列挙より動画の方が伝わる内容を、スライドに貼って再生できます。
+
+- **貼り方**: パレット「挿入」の「動画」(ファイルを選ぶ)、またはシナリオ md の `![video w=600 poster=last](anim/x.mp4)`。全面に出すなら `## !video anim/x.mp4 {poster=first}`。
+- **原稿は 2 つに分ける**: 再生前に説明する原稿は従来のトークセル (`talk:`)、動画の進行に合わせて説明する原稿は「動画原稿」セル (`vtalk:`、`vtalk@8:` で動画の 8 秒から)。
+- **再生**: スライドショーでその枚が初めて出たとき自動で始まります (`$SlideVideoAutoPlay`、既定 True。作業画面では始めません)。クリックで再生 / 一時停止。発表パレットの「▶再生」では、再生前の原稿を読んでから動画を頭から流し、再生中の原稿を時刻どおりに読み、動画と原稿の遅い方が終わってから次の枚へ進みます。一時停止・停止は動画にも効きます。
+- **静止画の書き出し** (画像・Sliden の mp4・ポスター・想定問答の画像) では動画の代わりに代表フレーム (既定は最後のフレーム。`poster=first` や秒、画像パスも可) が入ります。VRChat の Sliden には動画を入れられないためです。
+- **読み上げ付きの動画** (発表パレット「動画作成」、YouTube 用) では、スライド上の動画の位置に実際の動画を合成し、再生中の原稿の声をその時刻に置きます。
+- 関数: `SlideInsertVideo` / `SlideInsertVideoTalk` / `SlideVideoCell` / `SlideDeckVideos` / `SlideVideoPlay` / `SlideVideoPause` / `SlideVideoStatus`。定数: `$SlideVideoAutoPlay`, `$SlideVideoPoster`, `$SlideVideoFileExtensions`, `$SlideVideoGap`, `$SlideVideoPieceGap`。
+- **時刻の合わせ方**: 声は送ってから話し始めるまで遅れます (GPT-Live 約 4 秒、gpt-realtime 約 1.5 秒)。再生中の原稿はその遅れの分だけ早く送り、`@秒` の時刻に話し始めるようにします。最初の片 (時刻なし) は、その声が話し始めたときに動画を始めます。遅れは発表中に測って直します。
+- **読み間違いの読み直し**: GPT-Live が頼んだ原稿と違う文 (前の原稿など) を読んだときは、読み直しを頼みます (読み上げ動画の録音では 2 回まで、発表中は動画中の原稿を 1 回)。
+- **GPT-Live の読み違い**: GPT-Live は原稿を読まずに別の話をしたり、言い換えたり、途中で切れたりすることがあります。読み上げ動画の録音では、話した文を原稿と比べ (終わりまで読んだか、声の長さが原稿に見合うかも見ます)、違えば音声会話を作り直して読み直させます (2 回まで)。読み上げの間は `$SlideLiveNarrationGap` (既定 3 秒) 空けます。
+- **gpt-live-1 での読み上げ動画**: 再生中の原稿は 1 つずつ録音し、動画の中には `@秒` どおりに置きます (録音中の遅れは動画に影響しません)。録音中は時刻や動画の終わりを待たずに続けて録ります。
+- **登録**: 登録簿の原稿 (VRChat の発表) では、動画の枚は再生前の原稿と再生中の原稿を続けて読みます。Sliden の mp4 は静止画です。
+- 制限: 動画原稿は「原稿を訳す」の対象外 (書いた言語のまま読みます)。手で前の枚に戻ったときは自動では始まりません (クリックしてください)。カーネルが無いとき、または古い版の SlideWorkflow では最初のフレームの静止画だけが見えます。
+
+```wolfram
+SlideInsertVideo[nb, "anim/turtle-sr.mp4", "Width" -> 600, "Poster" -> "Last"]
+SlideDeckVideos[nb]
 ```
 
 ---
@@ -1119,7 +1143,7 @@ $SlideQuestionMaxSeconds  (* 1枚の合間に質疑で留まれる上限の秒�
 $SlideVoiceTick           (* 読み上げ進行を見るカーネル側ScheduledTaskの周期(秒、既定 0.3) *)
 $SlidePlayAnswering       (* realtime: の声で再生するときに質問(音声応答)を受けるか。Automatic(既定) | True | False。下記参照 *)
 $SlideReadingFile         (* 全デッキ共通の読みの辞書ファイル。既定 Automatic = SourceVault の slidedecks/readings.txt *)
-$SlideRealtimeVoices      (* ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime)の声名(既定 {"marin","cedar"})。一覧には "realtime:<声>" として出る *)
+$SlideRealtimeVoices      (* ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime / GPT-Live)の声名(既定 {"marin","cedar","harema","shida"})。一覧には "realtime:<声>" として出る。harema(日本語・女声)と shida(日本語・男声)は GPT-Live 専用で、音声モデルが gpt-live-* のときだけ出る。ポスター音声と動画の「速く作る」(gpt-realtime で作る)には使えない(v1.68) *)
 $SlideVoiceModel          (* 音声会話のモデル。既定 Automatic = $SlideVoiceDefaultModel (gpt-live-1。v1.36 から。そのプロバイダの一覧に無ければ $SourceVaultRealtimeModel)。"gpt-realtime-2.1" などを直接指定もできる。パレット「音声モデル」行 *)
 $SlideVoiceDefaultModel   (* $SlideVoiceModel が Automatic のときに使うモデル(既定 "gpt-live-1")。SourceVault 全体の既定($SourceVaultRealtimeModel)は変えない *)
 $SlideVoiceProvider       (* 音声会話のプロバイダ。既定 Automatic = 登録簿の先頭("OpenAI")。候補は SlideVoiceModels[] のキー。パレット「音声プロバイダ」行 *)
