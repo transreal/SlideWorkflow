@@ -19,7 +19,7 @@
   \:30c7\:30c3\:30ad\:69cb\:9020\:306f Templates/slides-template.nb \:306b\:5f93\:3046:
     \:30b9\:30e9\:30a4\:30c9 = Cell["","SlideShowNavigationBar",CellTags->"SlideShowHeader"] \:533a\:5207\:308a\:3001
     \:30b9\:30e9\:30a4\:30c9\:30bf\:30a4\:30c8\:30eb = "Subsection"\:3001\:7b87\:6761\:66f8\:304d = Item/Subitem/Subsubitem(+Paragraph)\:3002
-    \:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:306f "Normal use.nb"(Hiragino \:7cfb)\:3002
+    \:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:306f "SourceVault default.nb"(Hiragino \:7cfb)\:3002
 
   \:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:306f\:30a6\:30a3\:30f3\:30c9\:30a6\:306e\:30b9\:30ca\:30c3\:30d7\:30b7\:30e7\:30c3\:30c8\:3082\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:3082\:4f7f\:308f\:306a\:3044:
   \:30b9\:30e9\:30a4\:30c9\:306e\:30bb\:30eb\:5217\:304b\:3089 Notebook \:5f0f\:3092\:69cb\:6210\:3057 ScreenStyleEnvironment->"SlideShow"
@@ -33,7 +33,7 @@ BeginPackage["SlideWorkflow`"]
 
 $SlideFontFamily::usage = "$SlideFontFamily \:672c\:6587/\:30bf\:30a4\:30c8\:30eb\:306e\:6a19\:6e96\:30d5\:30a9\:30f3\:30c8\:3002NotebookExtensions`$fontFamily \:307e\:305f\:306f Global`$fontFamily \:304c\:5b9a\:7fa9\:3055\:308c\:3066\:3044\:308c\:3070\:305d\:308c\:3092\:4f7f\:3046\:3002";
 $SlideHeavyFontFamily::usage = "$SlideHeavyFontFamily \:30bf\:30a4\:30c8\:30eb\:30b9\:30e9\:30a4\:30c9\:306a\:3069\:5f37\:8abf\:7528\:306e\:30d5\:30a9\:30f3\:30c8(\:65e2\:5b9a \"Hiragino Kaku Gothic Std\")\:3002";
-$SlideStyleDefinitions::usage = "$SlideStyleDefinitions \:30c7\:30c3\:30ad\:751f\:6210\:30fb\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:306b\:4f7f\:3046\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:540d(\:65e2\:5b9a \"Normal use.nb\")\:3002";
+$SlideStyleDefinitions::usage = "$SlideStyleDefinitions \:30c7\:30c3\:30ad\:751f\:6210\:30fb\:30e9\:30b9\:30bf\:30e9\:30a4\:30ba\:306b\:4f7f\:3046\:30b9\:30bf\:30a4\:30eb\:30b7\:30fc\:30c8\:540d(\:65e2\:5b9a \"SourceVault default.nb\")\:3002";
 $SlideImageSize::usage = "$SlideImageSize \:66f8\:304d\:51fa\:3057\:753b\:50cf\:306e {\:5e45, \:9ad8\:3055}(\:65e2\:5b9a {1920,1080})\:3002";
 $SlideTheme::usage = "$SlideTheme \:30b9\:30e9\:30a4\:30c9\:306e\:30c7\:30b6\:30a4\:30f3\:30c8\:30fc\:30af\:30f3(\:8272)\:306e\:9023\:60f3\:3002\:56f3\:306e\:751f\:6210\:6642\:306b\:3053\:306e\:30d1\:30ec\:30c3\:30c8\:3092\:4f7f\:3046\:3068\:7d71\:4e00\:611f\:304c\:51fa\:308b\:3002";
 $SlideMargins::usage = "$SlideMargins \:30b9\:30e9\:30a4\:30c9\:4f59\:767d\:306e\:65e2\:5b9a {{left,right},{bottom,top}} (px)\:3002SlideDeckImages \:306e \"Margins\"->Automatic \:3067\:4f7f\:308f\:308c\:308b\:3002\:5168\:9762\:753b\:50cf\:30da\:30fc\:30b8\:306b\:306f\:9069\:7528\:3055\:308c\:306a\:3044\:3002";
@@ -90,8 +90,9 @@ $SlideVoiceTick::usage = "$SlideVoiceTick \:306f\:8aad\:307f\:4e0a\:3052\:9032\:
 SlideVoices::usage = "SlideVoices[] \:306f\:9078\:3079\:308b\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:540d\:306e\:4e00\:89a7\:3092\:8fd4\:3059 (SourceVault_voice.wl \:304c\:8aad\:307f\:8fbc\:307e\:308c\:3066\:3044\:306a\:3051\:308c\:3070 {})\:3002";
 SlideCycleVoice::usage = "SlideCycleVoice[] \:306f $SlideVoice \:3092\:6b21\:306e\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:3078\:5207\:308a\:66ff\:3048\:308b (\:30d1\:30ec\:30c3\:30c8\:306e\:30c8\:30b0\:30eb)\:3002";
 SlideVoicePrepare::usage = "SlideVoicePrepare[] \:306f\:767a\:8868\:30b7\:30ca\:30ea\:30aa\:5168\:30b9\:30e9\:30a4\:30c9\:306e\:97f3\:58f0\:3092\:5148\:306b\:5408\:6210\:3057\:3066 <deck>_voice/ \:306b\:30ad\:30e3\:30c3\:30b7\:30e5\:3059\:308b\:3002SlideVoicePrepare[nb] \:3067\:5bfe\:8c61\:6307\:5b9a\:3002";
-$SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime / GPT-Live) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\", \"harema\", \"shida\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002harema (\:65e5\:672c\:8a9e\:30fb\:5973\:58f0) \:3068 shida (\:65e5\:672c\:8a9e\:30fb\:7537\:58f0) \:306f GPT-Live \:5c02\:7528\:306e\:58f0\:3067 (v1.68)\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-* \:306e\:3068\:304d\:3060\:3051\:4e00\:89a7\:306b\:51fa\:308b\:3002gpt-realtime-* \:3067\:8a71\:3055\:305b\:3088\:3046\:3068\:3059\:308b\:3068\:7406\:7531\:3092\:51fa\:3057\:3066\:6b62\:307e\:308b (\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:3068\:52d5\:753b\:306e\:300c\:901f\:304f\:4f5c\:308b\:300d\:306f gpt-realtime \:3067\:4f5c\:308b\:306e\:3067\:4f7f\:3048\:306a\:3044)\:3002";
-$SlideVoiceProvider::usage = "$SlideVoiceProvider \:306f\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0\:3067\:306e\:8aad\:307f\:4e0a\:3052) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:65e2\:5b9a Automatic = \:767b\:9332\:7c3f\:306e\:5148\:982d (\"OpenAI\")\:3002\:5019\:88dc\:306f SlideVoiceModels[] \:306e\:30ad\:30fc\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3068\:540c\:3058\:3002";
+$SlideRealtimeVoices::usage = "$SlideRealtimeVoices \:306f\:30dc\:30a4\:30b9\:30e2\:30c7\:30eb\:306e\:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:97f3\:58f0 (OpenAI Realtime / GPT-Live) \:306e\:58f0\:540d (\:65e2\:5b9a {\"marin\", \"cedar\", \"harema\", \"shida\"})\:3002\:4e00\:89a7\:306b\:306f \"realtime:<\:58f0>\" \:3068\:3057\:3066\:51fa\:308b\:3002harema (\:65e5\:672c\:8a9e\:30fb\:5973\:58f0) \:3068 shida (\:65e5\:672c\:8a9e\:30fb\:7537\:58f0) \:306f GPT-Live \:5c02\:7528\:306e\:58f0\:3067 (v1.68)\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-* \:306e\:3068\:304d\:3060\:3051\:4e00\:89a7\:306b\:51fa\:308b\:3002gpt-realtime-* \:3067\:8a71\:3055\:305b\:3088\:3046\:3068\:3059\:308b\:3068\:7406\:7531\:3092\:51fa\:3057\:3066\:6b62\:307e\:308b (\:30dd\:30b9\:30bf\:30fc\:97f3\:58f0\:3068\:52d5\:753b\:306e\:300c\:901f\:304f\:4f5c\:308b\:300d\:306f gpt-realtime \:3067\:4f5c\:308b\:306e\:3067\:4f7f\:3048\:306a\:3044)\:3002 gpt-live \:7cfb\:306e\:3068\:304d\:306f $SlideLiveDefaultVoice (\:65e2\:5b9a \"harema\") \:304c\:5148\:982d\:306b\:4e26\:3076 (v1.70)\:3002";
+$SlideLiveDefaultVoice::usage = "$SlideLiveDefaultVoice \:306f\:97f3\:58f0\:30e2\:30c7\:30eb\:304c GPT-Live (gpt-live-1 \:306a\:3069) \:306e\:3068\:304d\:306e\:65e2\:5b9a\:306e\:30af\:30e9\:30a6\:30c9\:306e\:58f0 (\:65e2\:5b9a \"harema\"\:3002v1.70)\:3002\:767a\:8868\:30dc\:30a4\:30b9\:304c\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306e\:307e\:307e\:300c\:5fdc\:7b54on\:300d\:306b\:3059\:308b\:3068\:3001\:97f3\:58f0\:5fdc\:7b54\:306f\:3053\:306e\:58f0\:3067\:8a71\:3059\:3002\:58f0\:306e\:30c8\:30b0\:30eb\:3067\:306f\:30af\:30e9\:30a6\:30c9\:306e\:58f0\:306e\:5148\:982d\:306b\:4e26\:3073\:3001\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:304c\:7121\:3044\:3068\:304d\:306f\:767a\:8868\:30dc\:30a4\:30b9\:306e\:65e2\:5b9a\:306b\:3082\:306a\:308b\:3002gpt-realtime \:7cfb\:306e\:3068\:304d\:306f\:5f93\:6765\:3069\:304a\:308a $SourceVaultRealtimeVoice (\"marin\")\:3002None \:306b\:3059\:308b\:3068 GPT-Live \:3067\:3082 $SourceVaultRealtimeVoice \:3092\:4f7f\:3044\:3001\:4e26\:3073\:3082 $SlideRealtimeVoices \:306e\:307e\:307e\:306b\:306a\:308b\:3002";
+$SlideVoiceProvider::usage = "$SlideVoiceProvider\:306f\:97f3\:58f0\:4f1a\:8a71 (\:5fdc\:7b54 on / realtime: \:306e\:58f0\:3067\:306e\:8aad\:307f\:4e0a\:3052) \:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:3002\:65e2\:5b9a Automatic = \:767b\:9332\:7c3f\:306e\:5148\:982d (\"OpenAI\")\:3002\:5019\:88dc\:306f SlideVoiceModels[] \:306e\:30ad\:30fc\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30d7\:30ed\:30d0\:30a4\:30c0\:300d\:884c\:3068\:540c\:3058\:3002";
 $SlideVoiceModel::usage = "$SlideVoiceModel \:306f\:97f3\:58f0\:4f1a\:8a71 (\:8aad\:307f\:4e0a\:3052\:3068\:8cea\:7591) \:306e\:30e2\:30c7\:30eb\:3002\:65e2\:5b9a Automatic = $SlideVoiceDefaultModel (\"gpt-live-1\"\:3002v1.36 \:304b\:3089\:3002\:305d\:306e\:30d7\:30ed\:30d0\:30a4\:30c0\:306e\:4e00\:89a7\:306b\:7121\:3051\:308c\:3070 $SourceVaultRealtimeModel)\:3002\"gpt-realtime-2.1\" \:306a\:3069\:3092\:76f4\:63a5\:6307\:5b9a\:3082\:3067\:304d\:308b\:3002\:30d1\:30ec\:30c3\:30c8\:300c\:8a2d\:5b9a\:300d\:306e\:300c\:97f3\:58f0\:30e2\:30c7\:30eb\:300d\:884c\:3067\:5207\:308a\:66ff\:3048\:3089\:308c\:308b\:3002\:52d5\:3044\:3066\:3044\:308b\:97f3\:58f0\:5fdc\:7b54\:306b\:306f\:3001\:5fdc\:7b54 off \[RightArrow] on (\:307e\:305f\:306f\:6b21\:306e\:518d\:751f) \:304b\:3089\:52b9\:304f\:3002";
 $SlideVoiceDefaultModel::usage = "$SlideVoiceDefaultModel \:306f $SlideVoiceModel \:304c Automatic \:306e\:3068\:304d\:306b\:4f7f\:3046\:30e2\:30c7\:30eb (\:65e2\:5b9a \"gpt-live-1\")\:3002SourceVault \:5168\:4f53\:306e\:65e2\:5b9a ($SourceVaultRealtimeModel) \:306f\:5909\:3048\:306a\:3044\:3002";
 SlideVoiceModels::usage = "SlideVoiceModels[] \:306f\:30d7\:30ed\:30d0\:30a4\:30c0 -> \:9078\:3079\:308b\:97f3\:58f0\:4f1a\:8a71\:30e2\:30c7\:30eb\:306e\:4e00\:89a7\:3092\:8fd4\:3059 (SourceVault_realtime \:306e\:767b\:9332\:7c3f\:3002\:672a\:30ed\:30fc\:30c9\:306a\:3089\:7d44\:307f\:8fbc\:307f\:306e\:65e2\:5b9a)\:3002";
@@ -393,7 +394,7 @@ Begin["`Private`"]
 
 (* ===================== \:8a2d\:5b9a\:30fb\:30c6\:30fc\:30de ===================== *)
 
-$SlideStyleDefinitions = "Normal use.nb";
+$SlideStyleDefinitions = "SourceVault default.nb";
 $SlideImageSize = {1920, 1080};
 (* 2026-11-04: SlideShowVideo \:306e\:65e2\:5b9a\:306f\:7d04 1 Mbps \:3067\:30011 \:79d2 1 \:679a\:306e\:30c7\:30c3\:30ad\:3067\:306f 1 \:679a\:304c 115 KB \:307b\:3069\:306b\:62bc\:3057\:8fbc\:307e\:308c\:3001\:6587\:5b57\:306e\:591a\:3044\:679a\:304c\:30dc\:30b1\:308b *)
 If[!ValueQ[$SlideVideoBitRate], $SlideVideoBitRate = Quantity[8, "Megabits"/"Seconds"]];
@@ -5779,6 +5780,8 @@ If[!ValueQ[$SlideRenderSettle], $SlideRenderSettle = 0.6];
 If[!ValueQ[$SlidePrepareBeforePlay], $SlidePrepareBeforePlay = True];
 If[!ValueQ[$SlideVoiceTick], $SlideVoiceTick = 0.3];
 If[!ValueQ[$SlideRealtimeVoices], $SlideRealtimeVoices = {"marin", "cedar", "harema", "shida"}];
+(* v1.70: \:97f3\:58f0\:30e2\:30c7\:30eb\:304c GPT-Live (gpt-live-1 \:306a\:3069) \:306e\:3068\:304d\:306e\:65e2\:5b9a\:306e\:30af\:30e9\:30a6\:30c9\:306e\:58f0\:3002None \:3067\:5f93\:6765\:3069\:304a\:308a ($SourceVaultRealtimeVoice) *)
+If[!ValueQ[$SlideLiveDefaultVoice], $SlideLiveDefaultVoice = "harema"];
 (* v1.68: GPT-Live (gpt-live-1 \:306a\:3069) \:3060\:3051\:306b\:3042\:308b\:58f0 (OpenAI\:300cManaging GPT-Live sessions\:300d\:306e Voice options\:30012026-11)\:3002
    Realtime API (gpt-realtime-2.1 \:306a\:3069) \:306b\:306f\:7121\:3044\:306e\:3067\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-realtime-* \:306e\:9593\:306f\:58f0\:306e\:30c8\:30b0\:30eb\:306b\:51fa\:3055\:305a\:3001
    gpt-realtime-* \:3067\:8a71\:3055\:305b\:308b\:30fb\:4f5c\:308b\:3068\:304d\:306f\:9001\:3089\:305a\:306b\:7406\:7531\:3092\:8fd4\:3059\:3002\:3053\:306e\:4e00\:89a7\:306b\:7121\:3044\:540d\:524d (\:30ab\:30b9\:30bf\:30e0\:306e\:58f0\:30fb\:65b0\:3057\:3044\:58f0) \:306f\:5f93\:6765\:3069\:304a\:308a\:7d20\:901a\:3057 *)
@@ -5856,8 +5859,20 @@ SlideVoices[] := Module[{local, def},
       ("realtime:" <> #) & /@ iSWRealtimeVoicesForModel[]]]];
 
 (* v1.68: \:30c8\:30b0\:30eb\:306b\:4e26\:3079\:308b\:30af\:30e9\:30a6\:30c9\:306e\:58f0\:3002GPT-Live \:5c02\:7528\:306e\:58f0\:306f\:97f3\:58f0\:30e2\:30c7\:30eb\:304c gpt-live-* \:306e\:3068\:304d\:3060\:3051 *)
-iSWRealtimeVoicesForModel[] := With[{vs = Select[Flatten[{$SlideRealtimeVoices}], StringQ]},
-  If[iSWVoiceModelAPI[iSWVoiceModel[]] === "Live", vs, Select[vs, ! iSWVoiceLiveOnlyQ[#] &]]];
+iSWRealtimeVoicesForModel[] := With[{vs = Select[Flatten[{$SlideRealtimeVoices}], StringQ], d = iSWLiveDefaultVoice[]},
+  If[iSWVoiceModelAPI[iSWVoiceModel[]] === "Live",
+    (* v1.70: GPT-Live \:306e\:3068\:304d\:306f\:65e2\:5b9a\:306e\:58f0 ($SlideLiveDefaultVoice) \:3092\:5148\:982d\:306b\:4e26\:3079\:308b *)
+    If[StringQ[d], DeleteDuplicates[Prepend[vs, d]], vs],
+    Select[vs, ! iSWVoiceLiveOnlyQ[#] &]]];
+
+(* v1.70: GPT-Live \:306e\:65e2\:5b9a\:306e\:58f0 ($SlideLiveDefaultVoice)\:3002"realtime:" \:4ed8\:304d\:3067\:3082\:7d20\:306e\:540d\:524d\:3067\:3082\:53d7\:3051\:308b\:3002\:4f7f\:308f\:306a\:3044\:3068\:304d\:306f None *)
+iSWLiveDefaultVoice[] := With[{v = $SlideLiveDefaultVoice},
+  If[StringQ[v] && StringTrim[iSWRealtimeVoiceOf[v]] =!= "", StringTrim[iSWRealtimeVoiceOf[v]], None]];
+
+(* v1.70: \:58f0\:3092\:6307\:5b9a\:3057\:306a\:3044\:3068\:304d (\:767a\:8868\:30dc\:30a4\:30b9\:304c\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306e\:307e\:307e\:306e\:300c\:5fdc\:7b54on\:300d) \:306b\:4f7f\:3046\:30af\:30e9\:30a6\:30c9\:306e\:58f0\:3002
+   GPT-Live \:306a\:3089 $SlideLiveDefaultVoice (harema)\:3001gpt-realtime \:7cfb\:306a\:3089 Automatic = $SourceVaultRealtimeVoice (marin) *)
+iSWCloudDefaultVoice[] := With[{d = iSWLiveDefaultVoice[]},
+  If[StringQ[d] && iSWVoiceModelAPI[iSWVoiceModel[]] === "Live", d, Automatic]];
 
 iSWRealtimeLayerQ[] := Length[DownValues[SourceVault`SourceVaultRealtimeStart]] > 0;
 
@@ -7524,8 +7539,9 @@ SlideToggleRealtime[nb_NotebookObject] := Module[{res, voice},
     If[FailureQ[refusal], MessageDialog[iSWFailureText[refusal]]; Return[refusal]]];
   $iSWBridgeNarrationOnly = False;
   iSWTrace["RT:on begin"];
+  (* v1.70: \:767a\:8868\:30dc\:30a4\:30b9\:304c\:30ed\:30fc\:30ab\:30eb\:306e\:58f0\:306a\:3089\:3001\:97f3\:58f0\:30e2\:30c7\:30eb\:306e\:65e2\:5b9a\:306e\:58f0\:3067\:5fdc\:7b54\:3059\:308b (GPT-Live \:306f harema) *)
   voice = With[{v = iSWVoiceName[]},
-    If[iSWVoiceRealtimeQ[v], iSWRealtimeVoiceOf[v], Automatic]];
+    If[iSWVoiceRealtimeQ[v], iSWRealtimeVoiceOf[v], iSWCloudDefaultVoice[]]];
   (* v1.68: GPT-Live \:5c02\:7528\:306e\:58f0\:306f gpt-realtime-* \:306b\:9001\:3089\:306a\:3044 *)
   With[{mis = iSWLiveVoiceMismatch[voice, iSWVoiceModel[]]},
     If[FailureQ[mis], MessageDialog[iSWFailureText[mis]]; Return[mis]]];
@@ -10620,6 +10636,23 @@ iSWYTCategoryLabel[c_] := Switch[ToString[c],
   "27", iSL["\:6559\:80b2", "Education"], "28", iSL["\:79d1\:5b66\:3068\:6280\:8853", "Science & Technology"], "22", iSL["\:30d6\:30ed\:30b0", "People & Blogs"],
   _, "ID " <> ToString[c]];
 
+(* Text for the clipboard (2026-11-15): CopyToClipboard[string] goes through the front end, which rewrites named and some
+   special characters as escapes (\:2014 -> \[LongDash], \:2193 -> \[DownArrow], \:00d7 -> *, \:03b1 -> \[Alpha], \:2265 -> >=, U+3000 -> \:3000),
+   so a YouTube chapter list pasted as "\[LongDash]". On Windows the text goes to the OS clipboard directly: a UTF-8 temporary
+   file read by PowerShell Set-Clipboard. ASCII-only text (and other systems, or a failure) still use CopyToClipboard. *)
+iSWCopyText[s_String] := Module[{f, st, r},
+  If[$OperatingSystem =!= "Windows" || StringMatchQ[s, RegularExpression["[\\x09\\x0A\\x0D\\x20-\\x7E]*"]],
+    CopyToClipboard[s]; Return[True, Module]];
+  f = FileNameJoin[{$TemporaryDirectory, "swclip_" <> IntegerString[RandomInteger[10^9]] <> ".txt"}];
+  r = Quiet @ Check[
+    st = OpenWrite[f, BinaryFormat -> True]; BinaryWrite[st, StringToByteArray[s, "UTF-8"]]; Close[st];
+    RunProcess[{"powershell", "-NoProfile", "-NonInteractive", "-Command",
+      "Set-Clipboard -Value ([IO.File]::ReadAllText('" <> StringReplace[f, "'" -> "''"] <> "', [Text.Encoding]::UTF8))"}],
+    $Failed];
+  Quiet[DeleteFile[f]];
+  If[AssociationQ[r] && r["ExitCode"] === 0, True, CopyToClipboard[s]; False]];
+iSWCopyText[other_] := CopyToClipboard[other];
+
 (* \:7a93\:306e\:4e2d\:8eab\:3002\:30dc\:30bf\:30f3\:306e\:5f0f\:306b\:306f\:5f15\:6570\:304c\:305d\:306e\:307e\:307e (\:6587\:5b57\:5217\:3068\:3057\:3066) \:57cb\:3081\:8fbc\:307e\:308c\:308b\:3002existing = \:524d\:306b\:4e0a\:3052\:305f\:52d5\:753b\:306e ID (\:8cbc\:308a\:76f4\:3057) \:304b None *)
 iSWYTBrowserPanel[nb_, file_String, title_String, desc_String, tags_List, privacy_String, category_String,
     size_Integer, fdate_String, existing_ : None] :=
@@ -10643,18 +10676,18 @@ iSWYTBrowserPanel[nb_, file_String, title_String, desc_String, tags_List, privac
             If[StringQ[id], SystemOpen[iSWYTStudioEditURL[id]],
               msg = iSL["\:5148\:306b\:52d5\:753b\:306e\:30ea\:30f3\:30af\:3092\:3044\:3061\:3070\:3093\:4e0b\:306b\:8cbc\:3063\:3066\:304f\:3060\:3055\:3044\:3002", "Paste the video link at the bottom first."]]], Method -> "Preemptive"], Spacer[10],
         Button[iSL["\:52d5\:753b\:306e\:30d1\:30b9\:3092\:30b3\:30d4\:30fc", "Copy the video path"],
-          CopyToClipboard[file]; msg = iSL["\:52d5\:753b\:306e\:30d1\:30b9\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the video path."], Method -> "Preemptive"], Spacer[10],
+          iSWCopyText[file]; msg = iSL["\:52d5\:753b\:306e\:30d1\:30b9\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the video path."], Method -> "Queued"], Spacer[10],
         Button[iSL["\:30d5\:30a9\:30eb\:30c0\:3092\:958b\:304f", "Open the folder"], SystemOpen[DirectoryName[file]], Method -> "Preemptive"]}],
       Grid[Join[{
         {Style[iSL["\:52d5\:753b", "Video"], Bold, 10], Pane[Style[FileNameTake[file] <> "  (" <> ToString[Max[1, Round[size/2.^20]]] <> " MB)", 10], 430], ""},
         {Style[iSL["\:984c", "Title"], Bold, 10], Pane[Style[title, 10], 430],
-          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[title]; msg = iSL["\:984c\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the title."], Method -> "Preemptive", ImageSize -> {64, 22}]},
+          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], iSWCopyText[title]; msg = iSL["\:984c\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the title."], Method -> "Queued", ImageSize -> {64, 22}]},
         {Style[iSL["\:8aac\:660e", "Description"], Bold, 10],
           Framed[Pane[Style[desc, 9], {430, 150}, Scrollbars -> {False, Automatic}], FrameStyle -> GrayLevel[0.8], FrameMargins -> 4],
-          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[desc]; msg = iSL["\:8aac\:660e\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the description."], Method -> "Preemptive", ImageSize -> {64, 22}]}},
+          Button[iSL["\:30b3\:30d4\:30fc", "Copy"], iSWCopyText[desc]; msg = iSL["\:8aac\:660e\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the description."], Method -> "Queued", ImageSize -> {64, 22}]}},
         If[tags === {}, {},
           {{Style[iSL["\:30bf\:30b0", "Tags"], Bold, 10], Pane[Style[StringRiffle[tags, ", "], 10], 430],
-            Button[iSL["\:30b3\:30d4\:30fc", "Copy"], CopyToClipboard[StringRiffle[tags, ","]]; msg = iSL["\:30bf\:30b0\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the tags."], Method -> "Preemptive", ImageSize -> {64, 22}]}}],
+            Button[iSL["\:30b3\:30d4\:30fc", "Copy"], iSWCopyText[StringRiffle[tags, ","]]; msg = iSL["\:30bf\:30b0\:3092\:30b3\:30d4\:30fc\:3057\:307e\:3057\:305f\:3002", "Copied the tags."], Method -> "Queued", ImageSize -> {64, 22}]}}],
         {{Style[iSL["\:516c\:958b\:8a2d\:5b9a", "Visibility"], Bold, 10], Style[iSWYTPrivacyLabel[privacy], 10], ""},
          {Style[iSL["\:8996\:8074\:8005", "Audience"], Bold, 10], Style[iSL["\:3044\:3044\:3048\:3001\:5b50\:3069\:3082\:5411\:3051\:3067\:306f\:3042\:308a\:307e\:305b\:3093", "No, it's not made for kids"], 10], ""},
          {Style[iSL["\:30ab\:30c6\:30b4\:30ea", "Category"], Bold, 10],
@@ -10686,8 +10719,8 @@ iSWYTBrowserUpload[nb_, file_String, title_String, desc_String, tags_List, priva
     Return[iSWVideoFail["SlideYouTubeBrowserFailed", "\:30d6\:30e9\:30a6\:30b6\:3067\:4e0a\:3052\:308b\:7a93\:3092\:958b\:3051\:307e\:305b\:3093\:3067\:3057\:305f (\:30d5\:30ed\:30f3\:30c8\:30a8\:30f3\:30c9\:304c\:8981\:308a\:307e\:3059)\:3002",
       "Could not open the browser-upload window (needs the front end)."]]];
   If[StringQ[existing],
-    Quiet[CopyToClipboard[title]]; Quiet[SystemOpen[iSWYTStudioEditURL[existing]]],
-    Quiet[CopyToClipboard[file]]; Quiet[SystemOpen[$iSWYTStudioUploadURL]]];
+    Quiet[iSWCopyText[title]]; Quiet[SystemOpen[iSWYTStudioEditURL[existing]]],
+    Quiet[iSWCopyText[file]]; Quiet[SystemOpen[$iSWYTStudioUploadURL]]];
   If[Head[nb] === NotebookObject,
     iSWStatus[nb, If[StringQ[existing],
       iSL["YouTube: Studio \:3067\:984c\:30fb\:8aac\:660e\:30fb\:30bf\:30b0\:3092\:8cbc\:3063\:3066\:4fdd\:5b58\:3057\:3001\:7a93\:306e\:300c\:78ba\:304b\:3081\:308b\:300d\:3092\:62bc\:3057\:3066\:304f\:3060\:3055\:3044 (\:984c\:306f\:30af\:30ea\:30c3\:30d7\:30dc\:30fc\:30c9\:306b\:30b3\:30d4\:30fc\:6e08\:307f)\:3002",
@@ -10819,7 +10852,7 @@ iSWRefreshTalkGenLabel[] := ($iSWTalkGenLabel =
 
 (* v1.2: "Safe"->True \:3067 ClaudeCode \:3068\:5b8c\:5168\:975e\:5e72\:6e09
    (LoadPaletteSettings \:3082 P:/M: \:8a2d\:5b9a\:6b04\:3082\:7701\:7565)\:3002\:30d5\:30ea\:30fc\:30ba\:5207\:308a\:5206\:3051\:7528 *)
-$SlideWorkflowInteractiveVersion = "1.69";
+$SlideWorkflowInteractiveVersion = "1.70";
 Options[ShowSlidePalette] = {"Safe" -> False};
 
 (* v1.39: \:30d1\:30ec\:30c3\:30c8\:3092\:300c\:4f5c\:6210\:300d\:3068\:300c\:767a\:8868\:300d\:306b\:5206\:3051\:308b\:3002\:4f5c\:6210 = \:30b9\:30e9\:30a4\:30c9\:3068\:539f\:7a3f\:30fb\:60f3\:5b9a\:554f\:7b54\:3092\:4f5c\:308b (\:77e5\:8b58\:30b0\:30e9\:30d5 / 1 \:679a\:305a\:3064 /
@@ -14043,6 +14076,10 @@ iSWComputeNotebook[st_Association] := Notebook[st["Cells"], TaggingRules -> {"SW
     <|"Id" -> st["Id"], "URI" -> st["URI"], "Title" -> st["Title"], "Units" -> st["Units"], "Graph" -> st["DeckGraph"]|>, "RawJSON", "Compact" -> True]},
   StyleDefinitions -> "Default.nb"];
 iSWComputeSave[st_Association] := Quiet @ Check[Export[st["File"], iSWComputeNotebook[st], "NB"], $Failed];
+(* the path handed to NotebookOpen for a window the user edits: OS separators (on Windows a window opened from a / path
+   fails the menu Save with "cannot access the directory", 2026-11-15). Non-strings (NotebookFileName's $Failed) pass through *)
+iSWFEPath[p_String] := With[{a = Quiet @ AbsoluteFileName[p]}, If[StringQ[a], a, Replace[Quiet @ ExpandFileName[p], Except[_String] -> p]]];
+iSWFEPath[other_] := other;
 
 iSWComputeState[ref_] := Module[{id = Which[ref === Automatic || ref === None, $iSWComputeCurrent,
     StringQ[ref] && StringStartsQ[ref, "sv://computenb/"], StringDrop[ref, StringLength["sv://computenb/"]], True, ref]},
@@ -14209,9 +14246,11 @@ SlideComputeFinish[ref_, OptionsPattern[]] := Module[{st = iSWComputeState[ref],
   If[TrueQ[OptionValue["Graph"]], g = SlideComputeGraph[st["Id"]]];
   If[TrueQ[OptionValue["Reference"]] && Head[st["Deck"]] === NotebookObject,
     refRes = Quiet @ Check[iSWComputeReferenceLine[st["Deck"], st["URI"], st["Title"], st["File"]], "Failed"]];
+  (* open with \ separators: a window opened from a / path ("Path" option, registry) fails the menu Save (2026-11-15) *)
   If[OptionValue["Open"] =!= False && $FrontEnd =!= Null && TrueQ[Quiet[$Notebooks]],
-    Quiet @ Check[Scan[If[Quiet[NotebookFileName[#]] === st["File"], NotebookClose[#, Interactive -> False]] &, Notebooks[]];
-      NotebookOpen[st["File"]], Null]]; (* :PolicyWaiver: PRIV-NB-READ shows the compute notebook just written above; nothing is read back into the kernel *)
+    With[{f = iSWFEPath[st["File"]]},
+    Quiet @ Check[Scan[If[iSWFEPath[Quiet[NotebookFileName[#]]] === f, NotebookClose[#, Interactive -> False]] &, Notebooks[]];
+      NotebookOpen[f], Null]]]; (* :PolicyWaiver: PRIV-NB-READ shows the compute notebook just written above; nothing is read back into the kernel *)
   $iSWComputeLast = <|"Id" -> st["Id"], "URI" -> st["URI"], "File" -> st["File"], "Units" -> Keys[st["Units"]],
     "PrivacyLevel" -> If[AssociationQ[reg], reg["PrivacyLevel"], None], "Graph" -> g, "Reference" -> refRes|>;
   If[Head[st["Deck"]] === NotebookObject,

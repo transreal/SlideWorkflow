@@ -21,7 +21,7 @@ Mathematica用スライドノートブックのシナリオ駆動構築・編集
 タイトルスライドなど強調用フォント。
 
 ### $SlideStyleDefinitions
-型: String, 初期値: `"Normal use.nb"`
+型: String, 初期値: `"SourceVault default.nb"` (2026-11-15 に "Normal use.nb" から変更。36 回以前のデッキと同じ)
 デッキ生成・ラスタライズに使うスタイルシート名。
 
 ### $SlideImageSize
@@ -668,6 +668,16 @@ Options: `"PrivacyLevel" -> Automatic` (デッキのメタから), `"Ingest" -> 
 型: `{String...}`, 初期値: `{"marin", "cedar", "harema", "shida"}`
 ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime / GPT-Live)の声名。一覧には`"realtime:<声>"`として出る。
 v1.68: `harema` (日本語・女声) と `shida` (日本語・男声) は GPT-Live 専用の声。音声モデルが gpt-live-* のときだけトグルに出る。gpt-realtime-* で話させようとすると、送らずに `Failure["SlideVoiceLiveOnly", ..]` を返す (音声応答・再生・動画の「速く作る」・ポスター音声)。ポスター音声は gpt-realtime で作るので、これらの声では作れない。動画は gpt-live-1 で録る (確認の窓に「速く作る」は出ない)。GPT-Live 専用の声の一覧は内部の `$iSWLiveOnlyVoices` (OpenAI の Voice options の 21 種)。一覧に無い名前は従来どおりそのまま送る。
+v1.70: 音声モデルが gpt-live-* のときは `$SlideLiveDefaultVoice` (既定 `"harema"`) が先頭に並ぶ (`{"realtime:harema", "realtime:marin", "realtime:cedar", "realtime:shida"}`)。
+
+### $SlideLiveDefaultVoice
+型: String | None, 初期値: `"harema"`
+v1.70: 音声モデルが GPT-Live (gpt-live-1 など) のときの既定のクラウドの声。
+- 発表ボイスがローカルの声 (Piper / AivisSpeech) のまま「応答on」(`SlideToggleRealtime`) にすると、音声応答はこの声で話す (v1.69 までは `$SourceVaultRealtimeVoice` = `"marin"`)。
+- 声のトグル (`SlideVoices[]`) ではクラウドの声の先頭に並ぶ。`$SlideRealtimeVoices` に無い名前でも先頭に足す。ローカルの声が 1 つも無いときは、発表ボイスの既定 (`$SlideVoice = Automatic`) にもなる。
+- 発表ボイスにクラウドの声を自分で選んでいるとき (`"realtime:marin"` など) は、選んだ声をそのまま使う。
+- 音声モデルが gpt-realtime-* のときは従来どおり `$SourceVaultRealtimeVoice` (`"marin"`)。harema は GPT-Live 専用の声なので gpt-realtime-* には送らない。
+- `None` にすると GPT-Live でも `$SourceVaultRealtimeVoice` を使い、トグルの並びも `$SlideRealtimeVoices` のままになる。
 
 ### $SlideSpeechRate
 型: Association, 初期値: `<|"Local" -> 6.95, "Realtime" -> 5.6|>`

@@ -1144,6 +1144,7 @@ $SlideVoiceTick           (* 読み上げ進行を見るカーネル側Scheduled
 $SlidePlayAnswering       (* realtime: の声で再生するときに質問(音声応答)を受けるか。Automatic(既定) | True | False。下記参照 *)
 $SlideReadingFile         (* 全デッキ共通の読みの辞書ファイル。既定 Automatic = SourceVault の slidedecks/readings.txt *)
 $SlideRealtimeVoices      (* ボイスモデルのトグルに並べるクラウド音声(OpenAI Realtime / GPT-Live)の声名(既定 {"marin","cedar","harema","shida"})。一覧には "realtime:<声>" として出る。harema(日本語・女声)と shida(日本語・男声)は GPT-Live 専用で、音声モデルが gpt-live-* のときだけ出る。ポスター音声と動画の「速く作る」(gpt-realtime で作る)には使えない(v1.68) *)
+$SlideLiveDefaultVoice    (* 音声モデルが GPT-Live (gpt-live-1 など) のときの既定のクラウドの声(既定 "harema"。v1.70)。発表ボイスがローカルの声のまま「応答on」にすると音声応答はこの声で話し、声のトグルではクラウドの声の先頭に並ぶ。gpt-realtime-* のときは従来どおり $SourceVaultRealtimeVoice ("marin")。None で従来の動作 *)
 $SlideVoiceModel          (* 音声会話のモデル。既定 Automatic = $SlideVoiceDefaultModel (gpt-live-1。v1.36 から。そのプロバイダの一覧に無ければ $SourceVaultRealtimeModel)。"gpt-realtime-2.1" などを直接指定もできる。パレット「音声モデル」行 *)
 $SlideVoiceDefaultModel   (* $SlideVoiceModel が Automatic のときに使うモデル(既定 "gpt-live-1")。SourceVault 全体の既定($SourceVaultRealtimeModel)は変えない *)
 $SlideVoiceProvider       (* 音声会話のプロバイダ。既定 Automatic = 登録簿の先頭("OpenAI")。候補は SlideVoiceModels[] のキー。パレット「音声プロバイダ」行 *)
